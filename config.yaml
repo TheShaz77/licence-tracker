@@ -1,0 +1,54 @@
+# Licence tracker configuration
+# ---------------------------------------------------------------------------
+
+# Firms licensed in these countries are never included (ISO-2 codes).
+# Default = countries under comprehensive UK/EU/US sanctions programmes.
+# Syria: UK, EU and US sanctions were substantially eased in 2025-26 - keep or
+# remove SY in line with your compliance team's policy.
+excluded_countries: [RU, BY, IR, KP, CU, SY]
+
+# If a register suddenly lists fewer than 70% of yesterday's active firms,
+# treat it as a broken download: skip it for the day instead of reporting
+# mass "removals".
+drop_guard: 0.7
+
+# How many of the most recent changes to show on the "Changes" tab.
+sheet_change_rows: 5000
+
+sources:
+  fca:            # UK: EMIs, small EMIs, APIs, SPIs, RAISPs (FCA Register API)
+    enabled: true
+    requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
+    enrich_address: true          # one extra call per firm, once: town, website, phone
+    # One-off seed scan, in this order (highest-yield FRN ranges first).
+    seed_ranges:
+      - [900000, 999999]          # most EMIs and RAISPs
+      - [500000, 899999]          # most APIs / SPIs
+      - [1000000, 1100000]        # 7-digit FRNs issued since 2023
+      - [100000, 499999]          # older FSMA firms that also hold PSD status
+    frontier_back: 3000           # daily: re-scan this many FRNs below the newest
+    frontier_ahead: 2000          # ...and this many above it
+    frontier_back_weekly: 25000   # weekly wider re-scan
+    full_recheck_weekday: 6       # 0=Mon ... 6=Sun: also re-check inactive firms
+    track_services: false
+
+  pra:            # UK: banks and building societies (PRA monthly lists)
+    enabled: true
+    # urls:                       # uncomment to pin the CSVs if the page changes
+    #   banks: https://www.bankofengland.co.uk/-/media/...csv
+    #   building_societies: https://www.bankofengland.co.uk/-/media/...csv
+
+  eba:            # EU/EEA: PIs, EMIs, AISPs and small/exempt PIs & EMIs
+    enabled: true
+    entity_types: [PSD_PI, PSD_EMI, PSD_AISP, PSD_EPI, PSD_EEMI]
+    exclude_jurisdictions: [GB]   # UK comes from the FCA instead
+    track_services: true          # also flag changes to authorised services
+
+  ecb:            # EU: credit institutions (banks), ECB daily MFI list
+    enabled: true
+    exclude_jurisdictions: [GB]
+
+  finma:          # Switzerland: banks and FinTech licence holders
+    enabled: true
+    include_types: "bank|fintech"
+    exclude_types: "representative office"
