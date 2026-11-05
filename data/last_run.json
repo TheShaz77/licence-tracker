@@ -1,0 +1,8 @@
+{
+  "finished": "2026-11-05 23:34",
+  "sources_status": "fca: waiting (FCA seed scan still running: 0.0% scanned; 0 payment/e-money firms found); pra: baseline 320; eba: baseline 4415; ecb: FAILED; finma: baseline 449",
+  "changes": 0,
+  "problems": [
+    "EU banks (ECB list of credit institutions): new-line character seen in unquoted field - do you need to open the file with newline=''?"
+  ]
+}
