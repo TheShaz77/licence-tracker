@@ -1,8 +1,6 @@
 {
-  "finished": "2026-11-05 23:41",
-  "sources_status": "ecb: FAILED",
+  "finished": "2026-11-05 23:44",
+  "sources_status": "ecb: baseline 4604",
   "changes": 0,
-  "problems": [
-    "EU banks (ECB list of credit institutions): ECB file parsed but no credit institutions matched; see data/debug/ecb_sample.txt"
-  ]
+  "problems": []
 }
