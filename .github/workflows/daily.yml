@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  issues: write        # change alerts are posted as issues; GitHub emails you about them
 
 concurrency:
   group: licence-tracker      # never overlaps with the FCA seed job
@@ -42,6 +43,8 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # built in, nothing to set up
         run: |
           if [ -n "${{ github.event.inputs.sources }}" ]; then
             python -m regtracker run --sources "${{ github.event.inputs.sources }}"
