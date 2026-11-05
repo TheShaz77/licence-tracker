@@ -44,20 +44,24 @@ def pick(headers: list, names: list):
 def parse_mfi(text: str, excluded: set) -> list:
     # The ECB file mixes \r\n and bare \r line breaks; normalise them first.
     text = text.replace("\r\n", "\n").replace("\r", "\n")
-    sample = text[:5000]
-    try:
-        dialect = csv.Sniffer().sniff(sample, delimiters="\t;,|")
-    except csv.Error:
-        dialect = csv.excel_tab
-    rows = csv.reader(io.StringIO(text), dialect)
-    headers = [h.strip().strip("﻿") for h in next(rows)]
+    first_line = next((l for l in text.split("\n", 20) if l.strip()), "")
+    delim = max("\t;,|", key=first_line.count)
+    # Tab files from the ECB contain stray quote marks in names; don't let
+    # them swallow whole blocks of rows.
+    quoting = csv.QUOTE_NONE if delim == "\t" else csv.QUOTE_MINIMAL
+    rows = csv.reader(io.StringIO(text), delimiter=delim, quoting=quoting)
+    headers = []
+    for headers in rows:
+        if any(h.strip() for h in headers):
+            break
+    headers = [h.strip().strip("﻿").strip('"') for h in headers]
     col = {k: pick(headers, v) for k, v in COLS.items()}
     if col["id"] is None or col["name"] is None or col["category"] is None:
         raise RuntimeError(f"ECB MFI file layout changed; headers are: {headers}")
 
     def get(row, k):
         i = col[k]
-        return row[i].strip() if i is not None and i < len(row) else ""
+        return row[i].strip().strip('"') if i is not None and i < len(row) else ""
 
     out = {}
     for row in rows:
@@ -107,4 +111,43 @@ class ECBSource(Source):
             raw = gzip.decompress(raw)
         text = raw.decode("utf-8-sig", errors="replace")
         excluded = set(ctx.excluded_countries) | set(cfg.get("exclude_jurisdictions") or [])
-        return parse_mfi(text, excluded)
+        recs = []
+        err = None
+        try:
+            recs = parse_mfi(text, excluded)
+        except Exception as e:
+            err = e
+        write_diagnostics(ctx, url, raw, text, len(recs), err)
+        if err:
+            raise err
+        if not recs:
+            raise RuntimeError("ECB file parsed but no credit institutions matched; "
+                               "see data/debug/ecb_sample.txt")
+        return recs
+
+
+def write_diagnostics(ctx: Context, url: str, raw: bytes, text: str, n: int, err):
+    """Save a small, public sample of the file so the parser can be checked."""
+    try:
+        from collections import Counter
+        lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+        first = next((l for l in lines if l.strip()), "")
+        delim = max("\t;,|", key=first.count)
+        hdr = [h.strip().strip('"') for h in first.split(delim)]
+        cat_i = next((i for i, h in enumerate(hdr) if "CATEG" in h.upper() or h.upper() == "TYPE"), None)
+        cats = Counter()
+        if cat_i is not None:
+            for l in lines[1:]:
+                parts = l.split(delim)
+                if len(parts) > cat_i:
+                    cats[parts[cat_i].strip().strip('"')] += 1
+        out = [f"url: {url}", f"bytes: {len(raw)}  lines: {len(lines)}  records parsed: {n}",
+               f"error: {err!r}", f"delimiter: {delim!r}", f"headers: {hdr}",
+               f"line-break counts: CRLF={text.count(chr(13) + chr(10))} CR={text.count(chr(13))} LF={text.count(chr(10))}",
+               "category values: " + repr(cats.most_common(25)), "", "first 12 lines:"]
+        out += [repr(l[:400]) for l in lines[:12]]
+        p = ctx.data_dir / "debug" / "ecb_sample.txt"
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text("\n".join(out) + "\n", encoding="utf-8")
+    except Exception as e:  # diagnostics must never break the run
+        ctx.log.warning("ECB diagnostics not written: %s", e)
