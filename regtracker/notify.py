@@ -1,0 +1,152 @@
+"""Change alerts.
+
+Two channels, used independently:
+- GitHub issue (default): the day's changes are posted as an issue in the
+  repo, and GitHub emails the repo owner about it. Needs only the workflow's
+  built-in GITHUB_TOKEN with `issues: write` permission.
+- SMTP email (optional): if SMTP_* secrets are set.
+"""
+from __future__ import annotations
+
+import html
+import os
+import smtplib
+from collections import Counter
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+import requests
+
+ISSUE_ROW_LIMIT = 300        # keeps the issue under GitHub's 65,536-character limit
+BODY_LIMIT = 60000
+
+
+def smtp_enabled() -> bool:
+    return all(os.environ.get(k) for k in ("SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD", "EMAIL_TO"))
+
+
+def github_enabled() -> bool:
+    return (os.environ.get("ALERTS_VIA_GITHUB", "true").lower() != "false"
+            and bool(os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY")))
+
+
+def enabled() -> bool:
+    return smtp_enabled() or github_enabled()
+
+
+def _subject(events: list, problems: list) -> str:
+    counts = Counter(e["event_label"] for e in events)
+    s = f"Licence tracker: {len(events)} change(s)"
+    if counts:
+        s += f" ({', '.join(f'{n} {k.lower()}' for k, n in counts.most_common(3))})"
+    if problems and not events:
+        s = "Licence tracker: a register could not be read"
+    return s
+
+
+def _md(v) -> str:
+    return str(v or "").replace("|", "\\|").replace("\n", " ").strip()
+
+
+def build_issue(events: list, problems: list, sheet_url: str, today: str) -> tuple:
+    title = _subject(events, problems).replace("Licence tracker:", f"Licence changes {today}:")
+    lines = []
+    owner = os.environ.get("GITHUB_REPOSITORY_OWNER", "")
+    if owner:
+        lines.append(f"cc @{owner}\n")
+    lines.append(f"**{len(events)}** licence change(s) detected.")
+    if sheet_url:
+        lines.append(f"[Open the Google Sheet]({sheet_url})")
+    if problems:
+        lines.append("\n**Registers that couldn't be read today** (they keep yesterday's data):")
+        lines += [f"- {_md(p)}" for p in problems]
+    if events:
+        lines.append("\n| Event | Country | Regulator | Firm | Licence type | Before | After | Ref. |")
+        lines.append("|---|---|---|---|---|---|---|---|")
+        for e in events[:ISSUE_ROW_LIMIT]:
+            name = _md(e.get("name"))
+            if e.get("register_url"):
+                name = f"[{name}]({e['register_url']})"
+            lines.append("| " + " | ".join([
+                _md(e.get("event_label")), _md(e.get("jurisdiction")), _md(e.get("regulator")), name,
+                _md(e.get("licence_type")), _md(e.get("old")), _md(e.get("new")), _md(e.get("reference"))]) + " |")
+        if len(events) > ISSUE_ROW_LIMIT:
+            lines.append(f"\n…and {len(events) - ISSUE_ROW_LIMIT} more on the sheet's Changes tab.")
+    run = os.environ.get("GITHUB_RUN_ID")
+    if run:
+        lines.append(f"\n<sub>[Run log]({os.environ.get('GITHUB_SERVER_URL', 'https://github.com')}/"
+                     f"{os.environ['GITHUB_REPOSITORY']}/actions/runs/{run})</sub>")
+    body = "\n".join(lines)
+    if len(body) > BODY_LIMIT:
+        body = body[:BODY_LIMIT] + "\n\n…(truncated; see the sheet's Changes tab)"
+    return title, body
+
+
+def send_github_issue(events: list, problems: list, sheet_url: str, today: str, log):
+    title, body = build_issue(events, problems, sheet_url, today)
+    url = f"https://api.github.com/repos/{os.environ['GITHUB_REPOSITORY']}/issues"
+    r = requests.post(url, json={"title": title, "body": body}, timeout=60, headers={
+        "Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"})
+    if r.status_code == 403:
+        raise RuntimeError("GitHub refused to create the alert issue: add 'issues: write' under "
+                           "'permissions:' in .github/workflows/daily.yml")
+    if r.status_code == 410:
+        raise RuntimeError("Issues are switched off for this repo: Settings → General → Features → tick Issues")
+    r.raise_for_status()
+    log.info("Alert posted as GitHub issue %s", r.json().get("html_url"))
+
+
+def build(events: list, problems: list, sheet_url: str) -> tuple:
+    subject = _subject(events, problems)
+    rows = "".join(
+        "<tr>" + "".join(f"<td>{html.escape(str(e.get(k, '')))}</td>" for k in
+                         ("event_label", "jurisdiction", "regulator", "name", "licence_type", "old", "new", "reference"))
+        + "</tr>" for e in events[:500])
+    more = f"<p>…and {len(events) - 500} more in the sheet.</p>" if len(events) > 500 else ""
+    probs = "".join(f"<li>{html.escape(p)}</li>" for p in problems)
+    body = f"""<html><body style="font-family:Arial,sans-serif;font-size:13px">
+<p><b>{len(events)}</b> licence change(s) detected.</p>
+{f'<p>Sources needing attention:</p><ul>{probs}</ul>' if probs else ''}
+<table border="1" cellpadding="4" cellspacing="0" style="border-collapse:collapse">
+<tr style="background:#eee"><th>Event</th><th>Jurisdiction</th><th>Regulator</th><th>Firm</th>
+<th>Licence type</th><th>Before</th><th>After</th><th>Ref.</th></tr>{rows}</table>{more}
+{f'<p><a href="{html.escape(sheet_url)}">Open the full list</a></p>' if sheet_url else ''}
+</body></html>"""
+    return subject, body
+
+
+def send(events: list, problems: list, log, today: str = ""):
+    sheet_url = f"https://docs.google.com/spreadsheets/d/{os.environ['SHEET_ID']}" if os.environ.get("SHEET_ID") else ""
+    if not today:
+        import datetime as dt
+        today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+    errors = []
+    if github_enabled():
+        try:
+            send_github_issue(events, problems, sheet_url, today, log)
+        except Exception as e:
+            errors.append(e)
+    if smtp_enabled():
+        try:
+            send_email(events, problems, sheet_url, log)
+        except Exception as e:
+            errors.append(e)
+    if errors:
+        raise errors[0]
+
+
+def send_email(events: list, problems: list, sheet_url: str, log):
+    subject, body = build(events, problems, sheet_url)
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"] = os.environ.get("EMAIL_FROM") or os.environ["SMTP_USER"]
+    msg["To"] = os.environ["EMAIL_TO"]
+    msg.attach(MIMEText(body, "html", "utf-8"))
+    port = int(os.environ.get("SMTP_PORT") or 587)
+    with smtplib.SMTP(os.environ["SMTP_HOST"], port, timeout=60) as s:
+        s.starttls()
+        s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASSWORD"])
+        s.sendmail(msg["From"], [a.strip() for a in os.environ["EMAIL_TO"].split(",")], msg.as_string())
+    log.info("Email digest sent to %s", os.environ["EMAIL_TO"])
