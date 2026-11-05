@@ -42,6 +42,8 @@ def pick(headers: list, names: list):
 
 
 def parse_mfi(text: str, excluded: set) -> list:
+    # The ECB file mixes \r\n and bare \r line breaks; normalise them first.
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
     sample = text[:5000]
     try:
         dialect = csv.Sniffer().sniff(sample, delimiters="\t;,|")
