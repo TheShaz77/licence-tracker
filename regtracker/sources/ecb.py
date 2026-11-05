@@ -41,6 +41,15 @@ def pick(headers: list, names: list):
     return None
 
 
+def decode_bytes(raw: bytes) -> str:
+    """The ECB publishes the list as UTF-16 (with a byte-order mark)."""
+    if raw[:2] in (b"\xff\xfe", b"\xfe\xff"):
+        return raw.decode("utf-16", errors="replace")
+    if raw[:1000].count(b"\x00") > 100:
+        return raw.decode("utf-16-le", errors="replace")
+    return raw.decode("utf-8-sig", errors="replace")
+
+
 def parse_mfi(text: str, excluded: set) -> list:
     # The ECB file mixes \r\n and bare \r line breaks; normalise them first.
     text = text.replace("\r\n", "\n").replace("\r", "\n")
@@ -109,7 +118,7 @@ class ECBSource(Source):
         raw = r.content
         if raw[:2] == b"\x1f\x8b":
             raw = gzip.decompress(raw)
-        text = raw.decode("utf-8-sig", errors="replace")
+        text = decode_bytes(raw)
         excluded = set(ctx.excluded_countries) | set(cfg.get("exclude_jurisdictions") or [])
         recs = []
         err = None
