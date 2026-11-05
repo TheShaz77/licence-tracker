@@ -75,8 +75,9 @@ def classify(psd_status: str, firm_status: str):
 
 class FCAClient:
     def __init__(self, ctx: Context, per_second: float):
-        email = os.environ.get("FCA_API_EMAIL", "")
-        key = os.environ.get("FCA_API_KEY", "")
+        # strip(): pasted secrets often carry an invisible trailing line break
+        email = os.environ.get("FCA_API_EMAIL", "").strip()
+        key = os.environ.get("FCA_API_KEY", "").strip()
         if not email or not key:
             raise SourceNotReady("FCA_API_EMAIL / FCA_API_KEY secrets are not set")
         self.s = ctx.session
