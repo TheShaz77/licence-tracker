@@ -400,7 +400,9 @@ class FCASource(Source):
         weekday_full = int(cfg.get("full_recheck_weekday", 6))  # Sunday
         import datetime as dt
         today = dt.date.fromisoformat(ctx.today)
-        full = today.weekday() == weekday_full or not st.get("last_full_recheck")
+        # once a week (runs are every 2 hours, so only the first run that day)
+        full = (not st.get("last_full_recheck")
+                or (today.weekday() == weekday_full and st.get("last_full_recheck") != ctx.today))
         frns = [int(f) for f, r in st["tracked"].items() if full or r.get("active")]
         for frn in _watchlist(ctx):
             if str(frn) not in st["tracked"]:

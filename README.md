@@ -14,8 +14,8 @@ register with the previous day and logs:
 | Name changed | Registered name changed |
 | Permissions changed | EU firms only: the authorised payment services changed |
 
-It runs free on **GitHub Actions**, writes to your **Google Sheet**, and can email you
-a digest whenever something changes.
+It runs free on **GitHub Actions**, writes to your **Google Sheet**, and alerts you
+by email (through a GitHub issue) whenever something changes.
 
 ---
 
@@ -93,8 +93,15 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 | `GOOGLE_SERVICE_ACCOUNT_JSON` | the **entire contents** of the JSON key file |
 | `SHEET_ID` | the sheet ID from step 3.1 |
 
-Optional email digest (Gmail example: turn on 2-step verification, then create an
-**App password** at <https://myaccount.google.com/apppasswords>):
+**Change alerts need no setup.** Each day with changes, the daily run posts them as
+an issue in this repo (Issues tab), and GitHub emails you about it at your GitHub
+account's address. Check that **Settings → Notifications → Watching → Email** is
+ticked on github.com (it is by default). To switch these alerts off, add a
+repository *variable*, not a secret, called `ALERTS_VIA_GITHUB` set to `false`, and add
+`ALERTS_VIA_GITHUB: ${{ vars.ALERTS_VIA_GITHUB }}` to the `env:` block in `daily.yml`.
+
+Optional extra: a custom email via SMTP (needs a provider that gives you an SMTP
+password, e.g. Gmail app passwords or Brevo):
 
 | Name | Value |
 |---|---|
@@ -103,6 +110,7 @@ Optional email digest (Gmail example: turn on 2-step verification, then create a
 | `SMTP_USER` | your Gmail address |
 | `SMTP_PASSWORD` | the 16-character app password |
 | `EMAIL_TO` | where to send it (comma-separate several addresses) |
+| `EMAIL_FROM` | optional sender address (required for Brevo) |
 
 ### 5. Turn it on
 1. Repo → **Actions** tab → enable workflows if GitHub asks.
@@ -126,7 +134,7 @@ million lookups at the FCA's rate limit).
    the sheet. Then disable the seed workflow (**Actions → FCA seed scan → ⋯ →
    Disable workflow**).
 
-That's it. The daily job runs at 06:17 UTC every day.
+That's it. The check runs every 2 hours, at 17 minutes past (00:17, 02:17 … UTC).
 
 ---
 
@@ -180,3 +188,27 @@ python -m regtracker status
 ```
 
 Set the same secrets as environment variables to use the FCA API and Google Sheets.
+
+
+---
+
+## National registers and the "Source check" tab
+
+For countries listed under `national:` in `config.yaml` (currently the
+Netherlands, Lithuania and Slovakia), the tracker reads the regulator's own register
+directly instead of the EU (EBA) copy:
+
+- the sheet shows the national data for that country;
+- changes in the national register are alerted;
+- the EU register is still read, and its changes for those countries are logged
+  (not alerted) so the **Source check** tab can show how many hours later the EU
+  copy caught up, and which firms one register lists but the other doesn't.
+
+Use the Source check results to decide where else a direct source is worth
+adding. A country can be added when its regulator offers a CSV or Excel
+download: add an entry under `national:` with the file URL and either a fixed
+`licence_type` or `type_patterns`. Each run saves a sample of every national
+file to `data/debug/` so the reader can be checked against the real layout.
+
+If a national source fails, that country falls back to the EU copy on the sheet
+until it works again.

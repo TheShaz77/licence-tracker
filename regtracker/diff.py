@@ -14,7 +14,7 @@ EVENT_LABELS = {
 }
 
 CHANGE_COLUMNS = [
-    ("date", "Detected"),
+    ("date", "Detected (UTC)"),
     ("event_label", "Event"),
     ("jurisdiction", "Jurisdiction"),
     ("regulator", "Regulator"),

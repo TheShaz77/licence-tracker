@@ -21,6 +21,7 @@ class Context:
     data_dir: Path        # repo data folder (state + snapshots)
     excluded_countries: set
     log: logging.Logger
+    now: str = ""         # YYYY-MM-DD HH:MM (UTC), used to timestamp changes
 
     def source_config(self, name: str) -> dict:
         return (self.config.get("sources") or {}).get(name) or {}

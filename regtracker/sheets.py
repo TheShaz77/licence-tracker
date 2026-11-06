@@ -65,7 +65,8 @@ def summary_values(records: list, change_rows: list, run_info: dict) -> list:
     return out
 
 
-def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bool = True) -> dict:
+def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bool = True,
+               extra_tabs: dict | None = None) -> dict:
     """Return {tab title: rows (list of lists, header first)} in display order."""
     header = [h for _, h in SHEET_COLUMNS]
     ordered = sort_records(records)
@@ -75,6 +76,8 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     width = max(len(r) for r in summ)
     tabs["Summary"] = [r + [""] * (width - len(r)) for r in summ]
     tabs["Changes"] = [[h for _, h in CHANGE_COLUMNS]] + list(reversed(change_rows))  # newest first
+    for title, rows in (extra_tabs or {}).items():
+        tabs[title] = rows
     tabs["Licences"] = [header] + [record_row(r) for r in ordered]
 
     if per_country:
@@ -90,13 +93,14 @@ def _a1(title: str, row: int) -> str:
     return "'" + title.replace("'", "''") + f"'!A{row}"
 
 
-def publish(records: list, change_rows: list, run_info: dict, log, per_country: bool = True, sh=None):
+def publish(records: list, change_rows: list, run_info: dict, log, per_country: bool = True, sh=None,
+            extra_tabs: dict | None = None):
     if sh is None:
         import gspread
         gc = gspread.service_account_from_dict(json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"]))
         sh = gc.open_by_key(os.environ["SHEET_ID"].strip())
 
-    tabs = build_tabs(records, change_rows, run_info, per_country)
+    tabs = build_tabs(records, change_rows, run_info, per_country, extra_tabs)
     existing = {ws.title: ws.id for ws in sh.worksheets()}
 
     # 1. create any missing tabs (one request)
@@ -119,9 +123,9 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
         reqs.append({"updateSheetProperties": {
             "properties": {"sheetId": sid, "index": index,
                            "gridProperties": {"rowCount": n_rows, "columnCount": n_cols,
-                                              "frozenRowCount": 1 if title != "Summary" else 0}},
+                                              "frozenRowCount": 0 if title in ("Summary", "Source check") else 1}},
             "fields": "index,gridProperties(rowCount,columnCount,frozenRowCount)"}})
-        if title != "Summary":
+        if title not in ("Summary", "Source check"):
             reqs.append({"setBasicFilter": {"filter": {"range": {
                 "sheetId": sid, "startRowIndex": 0, "endRowIndex": n_rows,
                 "startColumnIndex": 0, "endColumnIndex": n_cols}}}})
@@ -144,6 +148,6 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     if data:
         sh.values_batch_update(body={"valueInputOption": "RAW", "data": data})
 
-    n_country = len(tabs) - len(FIXED_TABS)
+    n_country = len(tabs) - len(FIXED_TABS) - len(extra_tabs or {})
     log.info("Google Sheet updated: %d licences, %d country tabs, %d change rows",
              len(records), n_country, len(change_rows))

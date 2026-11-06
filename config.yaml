@@ -57,3 +57,47 @@ sources:
     enabled: true
     include_types: "bank|fintech"
     exclude_types: "representative office"
+
+# ---------------------------------------------------------------------------
+# Direct national registers. Where one is set up and working, the sheet shows
+# the national data for that country instead of the EU (EBA) copy, its
+# changes are alerted, and the "Source check" tab measures how far behind the
+# EU copy runs. Add a country here when its regulator offers a CSV or Excel
+# download.
+national:
+  NL:
+    enabled: true
+    regulator: DNB
+    files:
+      - url: https://www.dnb.nl/en-GB/registerdownloadcomplete/TheNetherlands/csv
+        register_url: https://www.dnb.nl/en/public-register/
+        # licence type from the register/type column; first matching pattern wins
+        type_patterns:
+          "electronic money|elektronisch geld|e-money": E-money institution
+          "account information|rekeninginformatie": Account information service provider
+          "payment (service provider|institution)|betaalinstelling|betaaldienstverlener": Payment institution
+  LT:
+    enabled: true
+    regulator: LB
+    files:
+      - url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv
+        register_url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6
+        licence_type: Payment institution
+      - url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv
+        register_url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7
+        licence_type: E-money institution
+  SK:
+    enabled: true
+    regulator: NBS
+    files:
+      # official PSD2 register feed: refreshed daily by 05:00, regenerated hourly
+      - url: https://subjekty.nbs.sk/api/psd2
+        codes_url: https://subjekty.nbs.sk/api/cl
+        register_url: https://subjekty.nbs.sk/
+        exclude_pattern: "PSD_AG|PSD_BR|PSD_EXC|PSD_ENL|agent|sprostredkovate|pobočk|branch|excluded|vyňat"
+        type_patterns:
+          "PSD_EEMI|exempted.*e-?money|výnimk.*elektronick": Exempted (small) e-money institution
+          "PSD_EPI|exempted.*payment|výnimk.*platob": Exempted (small) payment institution
+          "PSD_EMI|elektronick|e-?money|electronic money": E-money institution
+          "PSD_AISP|account information|informáci.*účt": Account information service provider
+          "PSD_PI|platobn|payment institution": Payment institution

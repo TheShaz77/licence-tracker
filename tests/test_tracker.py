@@ -371,3 +371,276 @@ def test_github_issue_alert(monkeypatch):
     assert "100 more" in body and len(body) < 65536
     monkeypatch.setenv("ALERTS_VIA_GITHUB", "false")
     assert not notify.enabled()
+
+
+def test_ecb_mixed_line_breaks():
+    recs = ecb.parse_mfi(ECB_TSV.replace("\n", "\r", 2).replace("\n", "\r\n"), {"RU"})
+    assert {r.reference for r in recs} == {"DE00001", "IE00002"}
+
+
+def test_ecb_stray_quotes_and_title_free():
+    t = ECB_TSV.replace("Deutsche Bank AG", 'Deutsche "Bank AG').replace("RIAD_CODE", '"RIAD_CODE"')
+    recs = ecb.parse_mfi(t, {"RU"})
+    assert {r.reference for r in recs} == {"DE00001", "IE00002"}
+
+
+def test_ecb_utf16_file():
+    raw = ECB_TSV.replace("\n", "\r\n").encode("utf-16")   # what the ECB actually serves
+    recs = ecb.parse_mfi(ecb.decode_bytes(raw), {"RU"})
+    assert {r.reference for r in recs} == {"DE00001", "IE00002"}
+    assert ecb.decode_bytes("abc".encode("utf-8")) == "abc"
+
+
+def test_fca_secrets_trailing_newline(tmp_path, monkeypatch):
+    monkeypatch.setenv("FCA_API_EMAIL", "me@example.com\n")
+    monkeypatch.setenv("FCA_API_KEY", " abc123\r\n")
+    c = fca.FCAClient(cli.make_context({}, tmp_path), 5)
+    assert c.headers["X-Auth-Email"] == "me@example.com" and c.headers["X-Auth-Key"] == "abc123"
+
+
+def test_fca_seed_parallel_respects_rate_and_finds_all(tmp_path, monkeypatch):
+    """With 0.2 s latency per lookup, parallel lookups should run at the rate
+    limit (not 1/latency), find every firm, and keep FRN order in state."""
+    import time as _t
+    world = {f: {"Organisation Name": f"Firm {f}", "Status": "Authorised",
+                 "PSD / EMD Status": "Small Payment Institution"} for f in range(900000, 900060, 3)}
+    world[122702] = {"Organisation Name": "Barclays", "Status": "Authorised"}
+    calls = []
+
+    class SlowClient(fca.FCAClient):
+        def __init__(self, ctx, rps):
+            from regtracker.http import RateLimiter
+            self.rl, self.errors, self.log = RateLimiter(rps), 0, ctx.log
+
+        def firm(self, frn):
+            self.rl.wait(); calls.append(_t.monotonic()); _t.sleep(0.2)
+            return world.get(frn)
+
+        def address(self, frn):
+            return {}
+
+    monkeypatch.setattr(fca, "FCAClient", SlowClient)
+    cfg = {"sources": {"fca": {"seed_ranges": [[900000, 900099]], "requests_per_second": 40,
+                               "parallel_requests": 8}}}
+    ctx = cli.make_context(cfg, tmp_path)
+    t0 = _t.monotonic()
+    st = fca.seed(ctx, hours=1)
+    took = _t.monotonic() - t0
+    assert st["seed"]["done"] and len(st["tracked"]) == 20
+    assert took < 6, took                      # sequential would take ~20 s
+    # never more than 40 calls in any 1-second window (+1 tolerance)
+    calls.sort()
+    assert max(sum(1 for c in calls if a <= c < a + 1) for a in calls) <= 41
+
+
+def test_fca_preview_shown_before_seed_completes(tmp_path):
+    data = tmp_path / "data"
+    (data / "state").mkdir(parents=True)
+    st = {"seed": {"ranges": [[900000, 999999]], "range_index": 0, "cursor": 910000, "done": False},
+          "tracked": {"900001": {**fca.record_from_firm(900001, {
+              "Organisation Name": "Pay One", "Status": "Authorised",
+              "PSD / EMD Status": "Small Electronic Money Institution"}).to_dict(), "_enriched": True}}}
+    (data / "state" / "fca.json").write_text(json.dumps(st))
+    cfgp = tmp_path / "c.yaml"
+    cfgp.write_text("sources:\n  pra: {enabled: false}\n")
+    # no sources enabled except fca (which isn't ready): master list = preview only
+    cfgp.write_text("sources:\n  fca: {enabled: true}\n")
+    rc = cli.main(["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"])
+    lic = (data / "licences.csv").read_text()
+    assert "Pay One" in lic and "Small EMI" in lic
+    assert not (data / "changes.csv").exists()
+    assert not (data / "snapshots" / "fca.json.gz").exists()
+
+
+# -------------------------------------------------------- Google Sheet ---
+
+class FakeWS:
+    def __init__(self, title, sid):
+        self.title, self.id = title, sid
+
+
+class FakeSheet:
+    """Records the requests publish() sends, like the Sheets API would get them."""
+    def __init__(self, titles):
+        self.tabs = {t: i for i, t in enumerate(titles)}
+        self.batches, self.writes = [], []
+
+    def worksheets(self):
+        return [FakeWS(t, i) for t, i in self.tabs.items()]
+
+    def batch_update(self, body):
+        self.batches.append(body)
+        replies = []
+        for r in body["requests"]:
+            if "addSheet" in r:
+                sid = 100 + len(self.tabs)
+                self.tabs[r["addSheet"]["properties"]["title"]] = sid
+                replies.append({"addSheet": {"properties": {"sheetId": sid}}})
+            else:
+                replies.append({})
+        return {"replies": replies}
+
+    def values_batch_update(self, body):
+        self.writes.append(body)
+
+
+def test_sheet_country_tabs():
+    from regtracker import sheets
+    recs = [rec("a"), {**rec("b"), "jurisdiction": "IE", "name": "Irish EMI"},
+            {**rec("c"), "jurisdiction": "IE"}, {**rec("d"), "jurisdiction": "E$"},
+            {**rec("e"), "jurisdiction": "CH", "active": False}]
+    sh = FakeSheet(["Sheet1", "Licences"])
+    sheets.publish(recs, [], {"finished": "x"}, logging.getLogger("t"), sh=sh)
+    assert len(sh.batches) == 2 and len(sh.writes) == 1        # a handful of requests in total
+    added = [r["addSheet"]["properties"]["title"] for r in sh.batches[0]["requests"]]
+    assert added == ["Summary", "Changes", "Ireland (IE)", "Switzerland (CH)", "United Kingdom (GB)", "Other"]
+    reqs = sh.batches[1]["requests"]
+    order = {sh_id: r["updateSheetProperties"]["properties"]["index"]
+             for r in reqs if "updateSheetProperties" in r
+             for sh_id in [r["updateSheetProperties"]["properties"]["sheetId"]]}
+    assert order[sh.tabs["Summary"]] == 0 and order[sh.tabs["Other"]] == len(order) - 1
+    assert {"deleteSheet": {"sheetId": 0}} in reqs                # empty default tab removed
+    data = {d["range"]: d["values"] for d in sh.writes[0]["data"]}
+    ie = data["'Ireland (IE)'!A1"]
+    assert ie[0][0] == "Jurisdiction" and len(ie) == 3 and any("Irish EMI" in row for row in ie)
+    assert len(data["'Licences'!A1"]) == 6
+    assert len(data["'Changes'!A1"]) == 2                        # header + blanked row
+    # second run: no tabs to add, still only a couple of requests
+    sh.batches, sh.writes = [], []
+    sheets.publish(recs, [], {"finished": "y"}, logging.getLogger("t"), sh=sh)
+    assert not any("addSheet" in r for r in sh.batches[0]["requests"])
+
+
+def test_sheet_big_list_is_chunked():
+    from regtracker import sheets
+    recs = [{**rec(str(i)), "jurisdiction": "DE" if i % 2 else "FR"} for i in range(9000)]
+    sh = FakeSheet(["Licences"])
+    sheets.publish(recs, [], {}, logging.getLogger("t"), sh=sh)
+    rows = sum(len(d["values"]) for w in sh.writes for d in w["data"])
+    assert rows >= 18000 and 4 <= len(sh.writes) <= 8
+    assert all(sum(len(d["values"]) for d in w["data"]) <= 8000 for w in sh.writes)
+
+
+# ------------------------------------------------ national registers ---
+
+from regtracker.sources import national
+from regtracker import compare
+
+DNB_CSV = ("﻿Register;Statutory name;Trade name;Relation number;Place;Start date;Status\n"
+           "Register of payment service providers;Mollie B.V.;Mollie;R123;Amsterdam;2013-06-01;\n"
+           "Register of electronic money institutions;Bunq Payments B.V.;;R124;Amsterdam;2020-01-01;\n"
+           "Register of banks;ING Bank N.V.;;R1;Amsterdam;1991-01-01;\n"
+           "Register of payment service providers;Gone B.V.;;R125;Utrecht;2019-01-01;Withdrawn\n")
+LB_CSV = ('"Title";"Type";"Business form";"Disputes with consumers";"Sanctions"\n'
+          '"UAB „Paysera LT\'\'";"Electronic money institution";"EMI licensed in Lithuania";"0";"1"\n'
+          '"UAB Pervesk";"Electronic money institution";"EMI licensed in Lithuania";"2";"0"\n')
+NL_SPEC = {"url": "https://dnb/x.csv", "type_patterns": {
+    "electronic money": "E-money institution", "payment service provider": "Payment institution"}}
+
+
+def test_national_dnb_like_csv():
+    recs, info = national.parse_file(DNB_CSV.encode("utf-8"), NL_SPEC, "NL", "DNB")
+    by = {r.name: r for r in recs}
+    assert set(by) == {"Mollie B.V.", "Bunq Payments B.V.", "Gone B.V."}     # bank skipped
+    assert by["Mollie B.V."].licence_type == "Payment institution" and by["Mollie B.V."].reference == "R123"
+    assert by["Bunq Payments B.V."].licence_type == "E-money institution"
+    assert by["Gone B.V."].active is False and by["Mollie B.V."].city == "Amsterdam"
+    assert info["columns"]["type"] == "Register"
+
+
+def test_national_lb_like_csv_fixed_type_and_utf16_and_xlsx():
+    spec = {"url": "https://lb/x", "licence_type": "E-money institution"}
+    for raw in (LB_CSV.encode("utf-8"), LB_CSV.encode("utf-16")):
+        recs, _ = national.parse_file(raw, spec, "LT", "LB")
+        assert {r.licence_type for r in recs} == {"E-money institution"} and len(recs) == 2
+    from openpyxl import Workbook
+    wb = Workbook(); ws = wb.active
+    ws.append(["List of payment institutions"]); ws.append(["Title", "Type"]); ws.append(["UAB X", "Payment institution"])
+    b = io.BytesIO(); wb.save(b)
+    recs, _ = national.parse_file(b.getvalue(), {"url": "u", "licence_type": "Payment institution"}, "LT", "LB")
+    assert [r.name for r in recs] == ["UAB X"]
+
+
+def test_national_no_name_column_is_loud():
+    with pytest.raises(RuntimeError, match="no name column"):
+        national.parse_file(b"foo;bar\n1;2\n", {"url": "u", "licence_type": "x"}, "LT", "LB")
+
+
+def test_match_name():
+    assert national.match_name("UAB „Paysera LT“") == national.match_name("Paysera LT, UAB")
+    assert national.match_name("Mollie B.V.") == national.match_name("MOLLIE BV") == "mollie"
+
+
+def test_cli_national_replaces_eba_and_measures_lag(tmp_path, monkeypatch):
+    from regtracker.model import Record
+    from regtracker.sources import ALL_SOURCES
+    from regtracker.sources.base import Source
+    world = {"eba": [Record("eba:1", "eba", "NL", "NL_DNB", "Mollie B.V.", "Payment institution", True),
+                     Record("eba:2", "eba", "IE", "IE_CBI", "Stripe", "E-money institution", True)],
+             "nl": [("Mollie B.V.", "payment service provider")]}
+
+    class E(Source):
+        name, label = "eba", "EBA"
+        def fetch(self, ctx): return list(world["eba"])
+
+    def nl_fetch(self, ctx):
+        csv_text = "Register;Statutory name\n" + "".join(f"{t};{n}\n" for n, t in world["nl"])
+        return national.parse_file(csv_text.encode(), NL_SPEC, "NL", "DNB")[0]
+
+    monkeypatch.setitem(ALL_SOURCES, "eba", E())
+    monkeypatch.setattr(national.NationalSource, "fetch", nl_fetch)
+    cfgp = tmp_path / "c.yaml"
+    cfgp.write_text("sources:\n  eba: {enabled: true}\nnational:\n  NL:\n    regulator: DNB\n    files: [{url: u}]\n")
+    data = tmp_path / "data"
+    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"]
+    times = iter(["2026-11-06 08:17", "2026-11-06 10:17", "2026-11-06 14:17", "2026-11-06 16:17"])
+    real = cli.make_context
+    def ctx_at(cfg, d):
+        c = real(cfg, d); c.now = next(times); return c
+    monkeypatch.setattr(cli, "make_context", ctx_at)
+
+    assert cli.main(args) == 0                                   # baselines
+    lic = (data / "licences.csv").read_text()
+    assert lic.count("Mollie") == 1 and ",DNB," in lic           # NL from DNB only, not duplicated
+    assert "Stripe" in lic
+
+    world["nl"].append(("Newpay B.V.", "electronic money institution"))
+    assert cli.main(args) == 0                                   # national sees it at 10:17
+    world["eba"].append(Record("eba:3", "eba", "NL", "NL_DNB", "NewPay BV", "E-money institution", True))
+    world["eba"].append(Record("eba:4", "eba", "IE", "IE_CBI", "Irish New", "E-money institution", True))
+    assert cli.main(args) == 0                                   # EU catches up at 14:17
+    changes = (data / "changes.csv").read_text()
+    assert changes.count("Newpay") == 1 and "NewPay BV" not in changes   # NL alert from DNB only
+    assert "Irish New" in changes                                # IE still from EBA
+    assert "2026-11-06 10:17" in changes
+    check = (data / "source_check.csv").read_text()
+    assert "Newpay B.V." in check and ",4.0" in check            # 10:17 -> 14:17 = 4 hours lag
+
+
+SK_JSON = json.dumps({"iat": 1, "data": [
+    {"EntityType": "PSD_PI", "EntityCode": "SK_NBS!1",
+     "Properties": [{"ENT_NAM": "Pay SK s.r.o."}, {"ENT_NAT_REF_COD": "12345"}, {"ENT_TOW_CIT_RES": "Bratislava"}]},
+    {"EntityType": "PSD_EMI", "EntityCode": "SK_NBS!2", "Properties": [{"ENT_NAM": ["Emoney a.s."]}]},
+    {"EntityType": "PSD_AG", "EntityCode": "SK_NBS!3", "Properties": [{"ENT_NAM": "An Agent"}]},
+]})
+SK_SPEC = {"url": "u", "exclude_pattern": "PSD_AG|agent",
+           "type_patterns": {"PSD_EMI|elektronick": "E-money institution", "PSD_PI|platobn": "Payment institution"}}
+
+
+def test_national_json_eba_style():
+    recs, info = national.parse_file(SK_JSON.encode(), SK_SPEC, "SK", "NBS")
+    by = {r.name: r for r in recs}
+    assert set(by) == {"Pay SK s.r.o.", "Emoney a.s."}
+    assert by["Pay SK s.r.o."].licence_type == "Payment institution" and by["Pay SK s.r.o."].city == "Bratislava"
+    assert by["Pay SK s.r.o."].reference == "12345" and by["Emoney a.s."].licence_type == "E-money institution"
+
+
+def test_national_json_with_code_list():
+    doc = json.dumps({"items": [{"nazov": "Firma A", "typ": "11", "ico": "1"},
+                                {"nazov": "Firma B", "typ": "12", "ico": "2"},
+                                {"nazov": "Agent C", "typ": "99", "ico": "3"}]})
+    spec = {**SK_SPEC, "_codes": {"11": "Platobná inštitúcia", "12": "Inštitúcia elektronických peňazí",
+                                  "99": "Agent platobnej inštitúcie"}}
+    recs, _ = national.parse_file(doc.encode(), spec, "SK", "NBS")
+    assert {(r.name, r.licence_type) for r in recs} == {("Firma A", "Payment institution"),
+                                                       ("Firma B", "E-money institution")}

@@ -3,3 +3,4 @@ PyYAML>=6.0
 gspread>=6.0
 google-auth>=2.20
 ijson>=3.2
+openpyxl>=3.1
