@@ -19,13 +19,14 @@ from pathlib import Path
 
 import yaml
 
-from . import canada, compare, contacts, notify, sheets
+from . import canada, compare, contacts, notify, sheets, usa
 from .diff import SuspiciousDrop, check_drop, diff
 from .http import make_session
 from .sources import ALL_SOURCES
 from .sources.base import Context, SourceNotReady
 from .sources import fca as fca_mod
 from .sources.national import national_sources
+from .sources.usstates import us_state_sources
 from .store import (append_changes_csv, load_snapshot, recent_changes,
                     save_snapshot, write_licences_csv)
 
@@ -48,7 +49,7 @@ def make_context(cfg: dict, data_dir: Path) -> Context:
 
 def all_sources(cfg: dict) -> dict:
     """Built-in sources plus the national registers configured in config.yaml."""
-    return {**ALL_SOURCES, **national_sources(cfg)}
+    return {**ALL_SOURCES, **national_sources(cfg), **us_state_sources(cfg)}
 
 
 def covered_countries(cfg: dict, data_dir: Path) -> dict:
@@ -66,8 +67,8 @@ def covered_countries(cfg: dict, data_dir: Path) -> dict:
 def enabled_sources(cfg: dict, only: str | None) -> list:
     known = all_sources(cfg)
     names = [n.strip() for n in only.split(",")] if only else [
-        n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True)
-    ] + list(national_sources(cfg))
+        n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) and n != "us_states"
+    ] + list(national_sources(cfg)) + list(us_state_sources(cfg))
     unknown = [n for n in names if n not in known]
     if unknown:
         sys.exit(f"Unknown source(s): {', '.join(unknown)}. Known: {', '.join(known)}")
@@ -92,6 +93,9 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
             records.extend(preview)
     if any(r.get("source") in ("fintrac", "boc") for r in records):
         log.info("Canada MSB/PSP linking: %s", canada.link(records))
+    if any(r.get("source") == "fincen" or str(r.get("source", "")).startswith("us_") for r in records):
+        log.info("US MSB/state licence linking: %s",
+                 usa.link(records, contacts.load(data_dir, contacts.WEB_STATE)))
     return records
 
 
@@ -109,8 +113,18 @@ def cmd_contacts(args, cfg, data_dir) -> int:
 def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     all_events, problems, status = [], [], []
+    due_file = data_dir / "state" / "last_fetch.json"
+    last_fetch = json.loads(due_file.read_text()) if due_file.exists() else {}
     for src in enabled_sources(cfg, args.sources):
         log.info("── %s", src.label)
+        conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
+        min_hours = float(conf.get("min_hours", 0) or 0)
+        if min_hours and not args.sources and load_snapshot(data_dir, src.name):
+            last = last_fetch.get(src.name, "")
+            if last and (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(last)).total_seconds() < min_hours * 3600:
+                log.info("%s: checked at %s; next check after %g hours", src.name, last[:16], min_hours)
+                status.append(f"{src.name}: not due")
+                continue
         try:
             recs = src.fetch(ctx)
         except SourceNotReady as e:
@@ -122,6 +136,9 @@ def cmd_run(args, cfg, data_dir) -> int:
             problems.append(f"{src.label}: {e}")
             status.append(f"{src.name}: FAILED")
             continue
+        last_fetch[src.name] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes")
+        due_file.parent.mkdir(parents=True, exist_ok=True)
+        due_file.write_text(json.dumps(last_fetch, indent=1, sort_keys=True))
         curr = {r.key: r.to_dict() for r in recs if r.jurisdiction not in ctx.excluded_countries}
         prev = load_snapshot(data_dir, src.name)
         fp = getattr(src, "fingerprint", None)

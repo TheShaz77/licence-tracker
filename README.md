@@ -254,3 +254,29 @@ and appear in the sheet on the next 2-hourly check.
 Firms with no known website (most EU payment and e-money firms on the EBA
 register, Swiss firms) can't be filled this way; that would need a paid search
 API.
+
+## United States: MSBs and state money transmitter licences
+
+**Every US money services business** comes from FinCEN's MSB registrant list
+(updated weekly by FinCEN; the tracker checks twice a day). One row per firm,
+with its MSB activities, whether it is a money transmitter, and the states it
+told FinCEN it operates in.
+
+**State money transmitter licences** come from the states that publish their
+own licensee list: Florida, California, Massachusetts, Connecticut, Louisiana,
+Indiana, Delaware and Alaska. Each is its own source, so a new or lost licence
+in any of them raises an alert. The other states only publish licences through
+NMLS Consumer Access, whose terms forbid automated extraction and use for
+soliciting firms, so the tracker does not use it.
+
+Columns on the **United States (US)** tab:
+
+| Column | Meaning |
+|---|---|
+| FinCEN MSB (US) | On state-licence rows: whether the firm is also on FinCEN's MSB list |
+| States of operation (FinCEN, US) | States the firm declared to FinCEN |
+| State MT licences (US published lists) | States whose published list shows the firm licensed; "per firm's website" adds states listed on the firm's own licence page (only for firms whose website is known) |
+
+Firms are matched across lists by name, so a firm registered under a different
+name in one place can be missed. No state publishes pending applications, so
+there is no "applied" group for the US.

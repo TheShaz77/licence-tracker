@@ -67,6 +67,15 @@ sources:
     include_types: "bank|fintech"
     exclude_types: "representative office"
 
+  fincen:         # US: every money services business registered with FinCEN (updated weekly)
+    enabled: true
+    min_hours: 12 # FinCEN updates weekly; no need to download the 5 MB file every 2 hours
+
+  us_states:      # US: money transmitter licensees, from the states that publish their own list
+    enabled: true # FL, CA, MA, CT, LA, IN, DE, AK (others only publish via NMLS, which can't be used)
+    skip: []      # e.g. [de, ak] to switch a state off
+    min_hours: 6  # states update monthly/quarterly; checked four times a day
+
 # ---------------------------------------------------------------------------
 # Direct national registers. Where one is set up and working, the sheet shows
 # the national data for that country instead of the EU (EBA) copy, its

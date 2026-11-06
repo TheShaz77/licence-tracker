@@ -983,3 +983,164 @@ def test_lb_slugs_and_wikidata(tmp_path):
     assert c.from_wikidata(ctx, recs, cache, logging.getLogger("t")) == 1
     assert cache["ecb:1"]["website"] == "http://www.bigbank.de" and cache["lei:" + "B" * 20]["website"] == ""
     assert c.from_wikidata(ctx, recs, cache, logging.getLogger("t")) == 0 and len(S.calls) == 1
+
+
+# ---------------------------------------------------------------- United States
+
+FINCEN_TSV = (
+    "LEGAL NAME\tDBA NAME\tSTREET ADDRESS\tCITY\tSTATE\tZIP\tMSB ACTIVITIES\tSTATES OF MSB ACTIVITIES\t"
+    "ALL STATES & TERRITORIES & FOREIGN FLAG**\tFOREIGN LOCATION\t# OF BRANCHES\tAUTH SIGN DATE\tRECEIVED DATE\n"
+    "ACME PAY LLC\tACME\t1 MAIN ST\tMIAMI\tFL\t33101\t409 415\tFL NY TX\t\t\t0\t1/2/2022\t1/3/2022\n"
+    "ACME PAY LLC\tACME\t1 MAIN ST\tMIAMI\tFL\t33101-1234\t409 415\tFL NY TX CA\t\t\t0\t11/2/2024\t11/4/2024\n"
+    "CORNER CHECKS INC\t\t5 ELM\tAUSTIN\tTX\t73301\t408\tTX\t\t\t2\t3/1/2025\t3/2/2025\n"
+    "GLOBAL REMIT CORP\tGR dba SendFast\t9 BAY\tNEW YORK\tNY\t10001\t409\t\tB\t\t10\t5/5/2025\t5/6/2025\n"
+    "** A = All States and Territories, B = All States\t\t\t\t\t\t\t\t\t\t\t\t\n"
+)
+
+
+def test_fincen_parse_merges_filings():
+    from regtracker.sources.fincen import parse_fincen
+    recs, info = parse_fincen(FINCEN_TSV.encode())
+    by = {r.name: r for r in recs}
+    assert len(recs) == 3
+    a = by["ACME PAY LLC"]
+    assert a.licence_type == "MSB – money transmitter" and a.status_date == "2022-01-03"
+    assert a.extra["latest_filing"] == "2024-11-04" and a.extra["filings"] == 2
+    assert a.extra["us_states"] == "CA, FL, NY, TX" and "Dealer in foreign exchange" in a.services
+    assert by["CORNER CHECKS INC"].licence_type == "MSB – other activities"
+    assert by["GLOBAL REMIT CORP"].extra["us_states"] == "All states"
+
+
+CA_HTML = """<html><body><h3><a href="/regulated_entity/aci">ACI Payments, Inc.</a></h3>
+<p>License#: 2436<br>Institution Name: ACI Payments, Inc.<br>Officer Name: Keith T</p>
+<p>Address:<br>6060 Coventry Drive<br>Elkhorn, NE 68022<br>Phone: 770-325-3193</p><p>DFPI Contact: J Lee</p>
+<h3><a href="/regulated_entity/barri">Barri Money Services</a></h3>
+<p>License#: 2643<br>Officer Name: X</p><p>Address:<br>1 Road<br>Los Angeles, CA 90015<br>Phone: 1</p>
+</body></html>"""
+
+TABLE_HTML = """<table><thead><tr><th>Name</th><th>Doing Business As</th><th>Address</th><th>City, State, Zip</th>
+<th>Phone</th></tr></thead><tbody><tr><td>1Money USA, Inc.</td><td></td><td>575 5th Avenue</td>
+<td>New York, NY 10017</td><td>Call 802-532-4080</td></tr>
+<tr><td>Ace Payment Services, Inc.</td><td>Ace</td><td>300 E. Fwy</td><td>Irving, TX 75062</td><td>Call 972</td></tr>
+</tbody></table>"""
+
+LA_HTML = """<table><tr><th>EntityName</th><th>AddressLine1</th><th>AddressLine2</th><th>City</th><th>StateCode</th>
+<th>PostalCode</th><th>CountryCode</th><th>AreaCode</th><th>Prefix</th><th>Number</th></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Acme Pay LLC</td><td>1 Main</td><td></td><td>Miami</td><td>FL</td><td>33101</td><td>US</td>
+<td>305</td><td>555</td><td>0100</td></tr></table>"""
+
+
+def test_us_state_parsers_html():
+    from regtracker.sources import usstates as u
+    ca, _ = u.parse_ca_html("ca", CA_HTML.encode(), u.STATES["ca"])
+    by = {r.reference: r for r in ca}
+    assert by["2436"].name == "ACI Payments, Inc." and by["2436"].city == "Elkhorn"
+    assert by["2436"].extra["phone"] == "770-325-3193" and by["2643"].name == "Barri Money Services"
+    ind, info = u.parse_html_table("in", TABLE_HTML.encode(), u.STATES["in"])
+    assert [r.name for r in ind] == ["1Money USA, Inc.", "Ace Payment Services, Inc."]
+    assert ind[0].city == "New York" and ind[0].extra["phone"] == "802-532-4080"
+    la, _ = u.parse_html_table("la", LA_HTML.encode(), u.STATES["la"])
+    assert len(la) == 1 and la[0].city == "Miami" and la[0].extra["phone"] == "305-555-0100"
+    assert all(r.active and r.jurisdiction == "US" for r in ca + ind + la)
+
+
+def test_us_state_parsers_excel_and_zip():
+    import io, zipfile
+    import openpyxl
+    from regtracker.sources import usstates as u
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(["Money Transmitter Licensees as of 9/30/2026"])
+    ws.append([])
+    ws.append(["License Number", "License Type", "Initial Approval", "Firm Name", "DBA Name", "Primary Address",
+               "Phone Number", "Status"])
+    ws.append(["FT2001", "FT2", "01/15/2020", "Acme Pay LLC", "", "1 Main St, Miami, FL 33101", "305", "Approved"])
+    ws.append(["FT2002", "FT2", "02/01/2019", "Old Remit Inc", "", "2 Rd, Tampa, FL 33601", "", "Expired"])
+    ws.append(["FT3001", "FT3", "03/01/2021", "Check Shop", "", "3 Rd, Orlando, FL 32801", "", "Approved"])
+    buf = io.BytesIO()
+    wb.save(buf)
+    zbuf = io.BytesIO()
+    with zipfile.ZipFile(zbuf, "w") as z:
+        z.writestr("Money_Transmitters.xlsx", buf.getvalue())
+    recs, info = u.parse_fl_zip("fl", zbuf.getvalue(), u.STATES["fl"])
+    by = {r.name: r for r in recs}
+    assert set(by) == {"Acme Pay LLC", "Old Remit Inc"}            # Part III check casher left out
+    assert by["Acme Pay LLC"].active and not by["Old Remit Inc"].active
+    assert by["Acme Pay LLC"].status_date == "2020-01-15" and by["Acme Pay LLC"].city == "Miami"
+    ma, _ = u.parse_table_file("ma", buf.getvalue(), u.STATES["ma"])
+    assert len(ma) == 3
+
+
+def test_us_state_parsers_pdf_text(monkeypatch):
+    from regtracker.sources import usstates as u
+    de_lines = ["Licensees and Existing Branches PDT: 8/20/2026 2:29PM", "Check Seller, Money Transmitter",
+                "042465 1Money USA, Inc.", "575 5th Avenue Floor 14 Suite 14-107 New York, NY 10017",
+                "Contact: Kristen H - (845) 999-0474", "Filing Status: Current - Licensed Expires Date: 12/31/2026",
+                "011221 ACI Payments, Inc. D/B/A Speedpay", "6060 Coventry Drive Elkhorn, NE 68022",
+                "Contact: M D - (703) 653-2515", "Filing Status: Current - Licensed Expires Date: 12/31/2026",
+                "Branches / Locations", "123456 1 Branch Road Dover, DE 19901"]
+    monkeypatch.setattr(u, "pdf_lines", lambda raw: de_lines)
+    de, _ = u.parse_de_pdf("de", b"", u.STATES["de"])
+    by = {r.reference: r for r in de}
+    assert set(by) == {"042465", "011221"}
+    assert by["011221"].name == "ACI Payments, Inc." and by["011221"].extra["dba"] == "Speedpay"
+    assert by["042465"].city == "New York" and by["042465"].extra["phone"] == "(845) 999-0474"
+    ak_lines = ["Money Transmitter", "Filing Description DBA / Trade Name Business/Physical Address Filing Status File/License #",
+                "1Money USA, Inc. 575 5th Avenue Floor 14 Suite 14-107 New York, NY 10017 Approved 018134",
+                "ACI Payments, Inc. 6060 Coventry Dr. Elkhorn, NE 68022-6482 Approved-Deficient 10036",
+                "Gone Remit LLC 1 Rd Juneau, AK 99801 Surrendered 555"]
+    monkeypatch.setattr(u, "pdf_lines", lambda raw: ak_lines)
+    ak, _ = u.parse_ak_pdf("ak", b"", u.STATES["ak"])
+    by = {r.reference: r for r in ak}
+    assert by["018134"].name == "1Money USA, Inc." and by["018134"].city == "New York"
+    assert by["10036"].active and not by["555"].active
+
+
+def test_usa_link_and_licence_page():
+    from regtracker import usa
+    from regtracker.contacts import licence_states
+    fin = {"key": "fincen:1", "source": "fincen", "name": "ACME PAY LLC", "licence_type": "MSB – money transmitter",
+           "active": True, "website": "https://acme.com", "extra": {"dba": "ACME", "us_states": "CA, FL, NY, TX"}}
+    fin2 = {"key": "fincen:2", "source": "fincen", "name": "OTHER CO", "licence_type": "MSB – other activities",
+            "active": True, "extra": {"us_states": "TX"}}
+    fl = {"key": "us_fl:1", "source": "us_fl", "name": "Acme Pay, LLC", "active": True,
+          "extra": {"licence_state": "FL"}}
+    ca = {"key": "us_ca:9", "source": "us_ca", "name": "Acme Pay LLC", "active": True, "extra": {"licence_state": "CA"}}
+    lone = {"key": "us_ca:8", "source": "us_ca", "name": "Unknown Remit", "active": True, "extra": {"licence_state": "CA"}}
+    web = {"site:acme.com": {"us_licence_states": ["CA", "TX", "NY"]}}
+    out = usa.link([fin, fin2, fl, ca, lone], web)
+    assert fin["us_licences"] == "CA, FL; per firm's website: TX, NY"
+    assert fin2["us_licences"] == "None on the published lists (CA, FL)"
+    assert fl["fincen_status"] == "Registered – money transmitter" and fl["us_states"] == "CA, FL, NY, TX"
+    assert fl["us_licences"] == "CA, FL" and lone["fincen_status"].startswith("Not found")
+    assert out["state_rows_on_fincen"] == 2
+    states, nmls = licence_states("<p>Licensed in Alabama, West Virginia, Arkansas and New York. NMLS ID: 123456</p>")
+    assert states == ["AL", "AR", "NY", "WV"] and nmls == "123456"
+
+
+def test_us_end_to_end(tmp_path, monkeypatch):
+    import csv as _csv
+    import yaml
+    from regtracker import cli
+    from regtracker.sources import fincen, usstates
+    recs, _ = fincen.parse_fincen(FINCEN_TSV.encode())
+    monkeypatch.setattr(fincen.FinCENSource, "fetch", lambda self, ctx: recs)
+
+    def state_fetch(self, ctx):
+        if self.code != "ca":
+            return []
+        return usstates.parse_ca_html("ca", CA_HTML.replace("ACI Payments, Inc.", "Acme Pay LLC").encode(),
+                                      usstates.STATES["ca"])[0]
+    monkeypatch.setattr(usstates.USStateSource, "fetch", state_fetch)
+    cfgp = tmp_path / "c.yaml"
+    cfgp.write_text(yaml.safe_dump({"sources": {"fincen": {}, "us_states": {"enabled": True, "skip": ["de", "ak"]}}}))
+    rc = cli.main(["--config", str(cfgp), "--data", str(tmp_path / "d"), "run", "--no-sheets", "--no-email",
+                   "--no-contacts"])
+    rows = list(_csv.DictReader(open(tmp_path / "d" / "licences.csv")))
+    by = {(r["Source"], r["Firm name"]): r for r in rows}
+    acme = by[("fincen", "ACME PAY LLC")]
+    assert acme["State MT licences (US published lists)"] == "CA"
+    assert acme["States of operation (FinCEN, US)"] == "CA, FL, NY, TX"
+    assert by[("us_ca", "Acme Pay LLC")]["FinCEN MSB (US)"] == "Registered – money transmitter"
+    assert rc == 0

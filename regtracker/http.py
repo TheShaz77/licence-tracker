@@ -30,6 +30,28 @@ def make_session() -> requests.Session:
     return s
 
 
+_ROBOTS = {}
+
+
+def robots_allowed(session: requests.Session, url: str, agent: str = USER_AGENT) -> bool:
+    """True unless the site's robots.txt disallows `url` (missing/unreadable
+    robots.txt counts as allowed). Cached per host."""
+    import urllib.robotparser
+    from urllib.parse import urlparse
+    p = urlparse(url)
+    root = f"{p.scheme}://{p.netloc}"
+    rp = _ROBOTS.get(root)
+    if rp is None:
+        rp = urllib.robotparser.RobotFileParser()
+        try:
+            r = session.get(root + "/robots.txt", timeout=30)
+            rp.parse(r.text.splitlines() if r.status_code == 200 else [])
+        except Exception:
+            rp.parse([])
+        _ROBOTS[root] = rp
+    return rp.can_fetch(agent, url)
+
+
 class RateLimiter:
     """Keeps requests at or below `per_second`."""
 

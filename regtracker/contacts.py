@@ -345,7 +345,48 @@ class Fetcher:
         return r, ""
 
 
-def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0) -> dict:
+US_STATE_NAMES = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR", "California": "CA", "Colorado": "CO",
+    "Connecticut": "CT", "Delaware": "DE", "District of Columbia": "DC", "Florida": "FL", "Georgia": "GA",
+    "Hawaii": "HI", "Idaho": "ID", "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD", "Massachusetts": "MA",
+    "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS", "Missouri": "MO", "Montana": "MT",
+    "Nebraska": "NE", "Nevada": "NV", "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM",
+    "New York": "NY", "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Puerto Rico": "PR", "Rhode Island": "RI", "South Carolina": "SC",
+    "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT", "Vermont": "VT", "Virginia": "VA",
+    "Washington": "WA", "West Virginia": "WV", "Wisconsin": "WI", "Wyoming": "WY",
+}
+
+
+def licence_link(base: str, html: str) -> str:
+    """A 'Licenses' / 'State licenses' / 'Regulatory disclosures' page on the firm's own site."""
+    host = urlparse(base).netloc.lower().removeprefix("www.")
+    for href, label in re.findall(r'<a[^>]+href="([^"#]+)"[^>]*>(.*?)</a>', html, re.I | re.S):
+        u = urljoin(base + "/", href.strip())
+        if urlparse(u).netloc.lower().removeprefix("www.") != host:
+            continue
+        hay = (href + " " + re.sub(r"<[^>]+>", " ", label)).lower()
+        if re.search(r"licens|regulatory[- ]disclos|state[- ]disclos", hay) and not u.lower().endswith(".pdf"):
+            return u
+    return ""
+
+
+def licence_states(html: str) -> tuple:
+    """States named on a firm's licence page, and its NMLS ID if shown."""
+    text = re.sub(r"<[^>]+>", " ", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", html))
+    found = []
+    for name, code in sorted(US_STATE_NAMES.items(), key=lambda kv: -len(kv[0])):
+        pat = r"\b" + re.escape(name) + r"\b"
+        if name in ("Virginia", "Washington", "Kansas"):
+            pat = r"(?<!West )(?<!District of )\b" + re.escape(name) + r"\b(?! D\.?C)"
+        if re.search(pat, text) and code not in found:
+            found.append(code)
+    nmls = re.search(r"NMLS\s*(?:ID|#|No\.?|Number)?\s*[:#]?\s*(\d{4,8})", text, re.I)
+    return sorted(found), (nmls.group(1) if nmls else "")
+
+
+def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0, us_licences: bool = False) -> dict:
     site = norm_site(site)
     dom = domain(site)
     res = {"website": site, "email": "", "phone": "", "pages": 0, "note": ""}
@@ -370,6 +411,18 @@ def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0) -> dict:
         h2 = r2.text[:2_000_000]
         emails += [e for e in emails_in(h2) if e not in emails]
         phones += [p for p in phones_in(h2) if p not in phones]
+    if us_licences:
+        lic = licence_link(final, html)
+        if lic:
+            time.sleep(pause)
+            r3, _ = fetcher.get(lic)
+            if r3 is not None:
+                res["pages"] += 1
+                states, nmls = licence_states(r3.text[:2_000_000])
+                if len(states) >= 2:  # one state name alone is usually just an address
+                    res["us_licence_states"], res["licence_page"] = states, lic
+                if nmls:
+                    res["nmls_id"] = nmls
     res["email"] = best_email(emails, domain(final) or dom)
     res["phone"] = phones[0] if phones else ""
     return res
@@ -382,7 +435,7 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
     cache = load(ctx.data_dir, WEB_STATE)
     deadline = time.monotonic() + hours * 3600
     today = dt.date.fromisoformat(ctx.today)
-    sites = {}
+    sites, us_domains = {}, set()
     for r in records:
         if not r.get("active"):
             continue
@@ -391,7 +444,7 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
             continue
         have_email = r.get("email") or (r.get("extra") or {}).get("email")
         have_phone = r.get("phone") or (r.get("extra") or {}).get("phone")
-        if have_email and have_phone:
+        if have_email and have_phone and r.get("jurisdiction") != "US":
             continue
         d = domain(site)
         if not d:
@@ -400,6 +453,8 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
         if c and (today - dt.date.fromisoformat(c.get("checked", "2000-01-01"))).days < recheck_days:
             continue
         sites.setdefault(d, site)
+        if r.get("jurisdiction") == "US":
+            us_domains.add(d)
     todo = list(sites.items())
     log.info("contacts: %d firm websites to read", len(todo))
     fetcher = Fetcher(ctx.session)
@@ -412,7 +467,7 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
                 d, site = next(it)
             except StopIteration:
                 return False
-            futures[pool.submit(crawl_site, fetcher, site)] = d
+            futures[pool.submit(crawl_site, fetcher, site, 1.0, d in us_domains)] = d
             return True
         for _ in range(workers * 2):
             if not submit_next():
