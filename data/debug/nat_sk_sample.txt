@@ -1,0 +1,16 @@
+url: https://subjekty.nbs.sk/api/psd2
+bytes: 826132  starts: b'{\n  "iat'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'national_id', 'lei': None, 'city': None, 'date': None, 'status': None}
+headers: ['address', 'country', 'id', 'licenses', 'name', 'founder.country', 'founder.name', 'national_id']
+data rows: 1058  kept: 4
+type values: [('', 1058)]
+first lines:
+'{'
+'  "iat": 1793964629,'
+'  "institutions": ['
+'    {'
+'      "address": "Dvořákovo nábrežie 4, 81102 Bratislava",'
+'      "country": "SK",'
+'      "id": "31340890",'
+'      "licenses": ['

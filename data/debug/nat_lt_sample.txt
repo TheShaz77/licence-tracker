@@ -1,0 +1,33 @@
+url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv
+bytes: 76895  starts: b'\xef\xbb\xbfTitle'
+error: None
+columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': None, 'status': None}
+headers: ['Title', 'Type', 'Business form', 'Company code', 'Registration code', 'Licence type/kind', 'Authorization code', 'valid from', 'valid till']
+data rows: 419  kept: 417
+type values: [('Payment institution', 378), ('Payment institution, Currency exchange operator', 33), ('Payment institution, Currency exchange operator, Electronic money institution intermediary', 3), ('Payment institution, Electronic money institution', 3), ('Payment institution, Credit servicer', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
+first lines:
+'Title;Type;Business form;Company code;Registration code;Licence type/kind;Authorization code;valid from;valid till'
+' Unzer Luxembourg S.A.;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;; B 144133;;;;'
+'Acapture B.V.;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;R128213;;;;'
+'ACE Money Transfer IE Limited;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;C500488;;;;'
+'Acquiom Financial EU B.V. ;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;92128246; R196629;;;;'
+'American Express Europe S.A.;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;A82628041;;;;'
+'AEON Payment Technologies Limited;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;12320939L; 115.1.2.39;;;;'
+'Aether Financial Services;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;;811 475 383 ; 17688;;;;'
+
+url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv
+bytes: 61610  starts: b'\xef\xbb\xbfTitle'
+error: None
+columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': None, 'status': None}
+headers: ['Title', 'Type', 'Business form', 'Company code', 'Registration code', 'Licence type/kind', 'Authorization code', 'valid from', 'valid till']
+data rows: 283  kept: 280
+type values: [('Electronic money institution', 211), ('Electronic money institution, Currency exchange operator', 62), ('Payment institution, Electronic money institution', 3), ('Electronic money institution, Currency exchange operator, Consumer credit provider', 2), ('Electronic money institution, Currency exchange operator, Peer-to-peer lending platform operator, Consumer credit provider', 2), ('Electronic money institution, Real-estate related credit provider, Peer-to-peer lending platform operator, operating in accordance with the Republic of Lithuania Law on Credit Related to Real Estate, Peer-to-peer lending platform operator, Consumer credit provider, Crowdfunding service provider', 1), ('Electronic money institution, Currency exchange operator, Electronic money institution intermediary', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
+first lines:
+'Title;Type;Business form;Company code;Registration code;Licence type/kind;Authorization code;valid from;valid till'
+' Merge Money;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;911 403 079;;;;'
+' Sabiedrība ar ierobežotu atbildību “Mobilly” ;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;LV40003654405;;;;'
+'Accomplish (D) ApS;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;43351206; FT 40516;;;;'
+'Andaria Financial Services Ltd;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;C97170;;;;'
+'AFT EU BV;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;93225407; R197650;;;;'
+'AIEU Services Limited S.A. ;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;B188095;;;;'
+'Aircash d.o.o.;Electronic money institution;Electronic money institutions of EU Member States providing services in the Republic of Lithuania without a branch;;99833713101;;;;'
