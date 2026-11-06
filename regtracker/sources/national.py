@@ -149,9 +149,9 @@ def _col(headers: list, names: list, override=None):
 def _iso(s: str) -> str:
     """Dates like 2026-10-31, 31.10.2026 or 31/10/2026 -> 2026-10-31 ('' if none)."""
     s = (s or "").strip()
-    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
+    m = re.match(r"(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", s)
     if m:
-        return m.group(0)
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
     m = re.match(r"(\d{1,2})[./](\d{1,2})[./](\d{4})", s)
     if m:
         return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
@@ -405,7 +405,7 @@ LEGAL_FORMS = re.compile(
     r"\b(uzdaroji akcine bendrove|akcine bendrove|joint stock company|private limited company|"
     r"public limited company|limited liability company|closed joint stock company|restricted activity|"
     r"sabiedriba ar ierobezotu atbildibu|akciju sabiedriba|spolocnost s rucenim obmedzenym|"
-    r"akciova spolocnost|uab|ab|ad|as|a\s?s|bv|b\s?v|nv|n\s?v|ltd|limited|plc|llc|inc|sa|s\s?a|sas|sarl|srl|s\s?r\s?l|spa|"
+    r"akciova spolocnost|incorporated|corporation|corp|ltee|ulc|llp|uab|ab|ad|as|a\s?s|bv|b\s?v|nv|n\s?v|ltd|limited|plc|llc|inc|sa|s\s?a|sas|sarl|srl|s\s?r\s?l|spa|"
     r"gmbh|ag|kg|eg|oy|oyj|sro|s\s?r\s?o|zrt|kft|doo|d\s?o\s?o|sp\s?z\s?o\s?o|ehf|asa|aps|a\s?s|"
     r"ou|oü|as|sia|ead|eood|ltd\.?|company|co|the|branch|filiaal|filialas|bijkantoor)\b", re.I)
 

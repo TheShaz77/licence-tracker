@@ -1,0 +1,11 @@
+<html><body><h1>Registry of payment service providers</h1>
+<table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>Violations</th></tr></thead>
+<tbody><tr><td>List is loading</td></tr></tbody></table>
+<script>
+fetch('/data/registry.json').then(r => r.json()).then(d => {
+  const tb = document.querySelector('#t tbody'); tb.innerHTML = '';
+  d.items.forEach(x => { const tr = document.createElement('tr');
+    tr.innerHTML = `<td><a href="/detail.html?id=${x.psp_id}">${x.legalName}</a></td><td>${x.tradeName}</td><td>${x.headOfficeCountry}</td><td>${x.violations}</td>`;
+    tb.appendChild(tr); });
+});
+</script></body></html>

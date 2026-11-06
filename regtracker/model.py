@@ -17,6 +17,8 @@ SHEET_COLUMNS = [
     ("lei", "LEI"),
     ("city", "City"),
     ("website", "Website"),
+    ("email", "Email"),
+    ("psp_status", "PSP status (Canada)"),
     ("services", "Services"),
     ("passports", "Passported to"),
     ("register_url", "Register link"),
@@ -41,6 +43,7 @@ class Record:
     lei: str = ""
     city: str = ""
     website: str = ""
+    email: str = ""
     services: str = ""
     passports: str = ""
     register_url: str = ""

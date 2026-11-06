@@ -1,0 +1,8 @@
+<html><body><div id="d">Loading</div>
+<a href="https://www.bankofcanada.ca/">Bank of Canada</a> <a href="https://www.facebook.com/bankofcanada">fb</a>
+<script>
+const id = new URLSearchParams(location.search).get('id');
+fetch('/data/detail-' + id + '.json').then(r => r.json()).then(x => {
+  document.getElementById('d').innerHTML = `<p>Email: <a href="mailto:${x.email}">${x.email}</a></p><p>Website: <a href="${x.site}">${x.site}</a></p>`;
+});
+</script></body></html>

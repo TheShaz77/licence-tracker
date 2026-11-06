@@ -18,7 +18,7 @@ from pathlib import Path
 
 import yaml
 
-from . import compare, notify, sheets
+from . import canada, compare, notify, sheets
 from .diff import SuspiciousDrop, check_drop, diff
 from .http import make_session
 from .sources import ALL_SOURCES
@@ -148,6 +148,8 @@ def cmd_run(args, cfg, data_dir) -> int:
         if preview:
             log.info("FCA: showing %d UK firms found so far (scan still running)", len(preview))
             records.extend(preview)
+    if any(r.get("source") in ("fintrac", "boc") for r in records):
+        log.info("Canada MSB/PSP linking: %s", canada.link(records))
     write_licences_csv(data_dir, records)
 
     if covered:  # keep a CSV copy of the comparison in the repo too

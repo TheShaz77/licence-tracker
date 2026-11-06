@@ -212,3 +212,23 @@ file to `data/debug/` so the reader can be checked against the real layout.
 
 If a national source fails, that country falls back to the EU copy on the sheet
 until it works again.
+
+---
+
+## Canada: MSBs and payment service providers
+
+- **FINTRAC MSB registry** (`fintrac`): every money services business, Canadian
+  and foreign, with status Registered / Expired / Ceased / Revoked. FINTRAC
+  updates its registry monthly.
+- **Bank of Canada RPAA lists** (`boc`): registered payment service providers,
+  applicants (with application date) and refusals/revocations. The Bank's pages
+  have no download, so the run opens them in a headless browser, reads the data
+  the page loads, and opens each firm's detail page to collect its **email and
+  website** (up to `details_per_run` new firms per run, cached in
+  `data/state/boc_details.json`, so the full set fills in over a day or two).
+- Each MSB on the sheet gets a **PSP status (Canada)**: *PSP registered*,
+  *PSP applied*, *PSP refused/revoked*, or *No PSP registration or application*.
+  There is no shared ID between FINTRAC and the Bank of Canada, so this is matched
+  on legal and operating/trade names; filter the Canada tab on this column.
+- Each run saves what it saw to `data/debug/boc_sample.txt` and
+  `data/debug/fintrac_sample.txt`.

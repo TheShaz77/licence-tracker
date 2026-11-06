@@ -733,3 +733,87 @@ def test_lb_require_company_code_and_aisp_override():
     recs, _ = national.parse_file(text.encode(), spec, "LT", "LB")
     assert {(r.name, r.licence_type) for r in recs} == {("UAB Cygnus", "Account information service provider"),
                                                        ("UAB Pay", "Payment institution")}
+
+
+# ------------------------------------------------------------- Canada ---
+
+from regtracker.sources import boc, fintrac
+from regtracker import canada
+
+FINTRAC_CSV = ("Organization Names (Legal and Operating),Business Address,Services Offered,MSB Registration Status,"
+               "MSB Registration Number,MSB Initial Registration Date (YYYY/MM/DD),MSB Registration Expiry Date (YYYY/MM/DD),"
+               "MSB Registration Cessation Date (YYYY/MM/DD),MSB Registration Revocation Date (YYYY/MM/DD),"
+               "Jurisdiction of Incorporation,Incorporation Number,Incorporation Date (YYYY/MM/DD),Foreign MSB Indicator\n"
+               '"Paymentco Inc.; PayCo","1 King St W, Toronto, ON, M5H 1A1",Money transferring,Registered,M12345678,2019/05/01,2027/05/01,,,ON,1,2018/01/01,No\n'
+               '"Wise Payments Canada Inc.","99 Bay St, Toronto, ON, M5J 2X2",Money transferring; Foreign exchange dealing,Registered,M22222222,2016/01/01,2028/01/01,,,BC,2,2015/01/01,No\n'
+               '"Corner FX Ltd.","5 Main St, Vancouver, BC, V6B 1A1",Foreign exchange dealing,Registered,M33333333,2020/01/01,2028/01/01,,,BC,3,2019/01/01,No\n'
+               '"Gone Remit Ltd.","2 Rue X, Montréal, QC, H2X 1A1",Money transferring,Revoked,M44444444,2017/01/01,,,2025/03/03,QC,4,2016/01/01,No\n'
+               '"Foreign Pay GmbH","Berlin, Germany",Money transferring,Registered,M55555555,2021/01/01,2027/01/01,,,DE,5,2020/01/01,Yes\n')
+
+
+def test_fintrac_parse():
+    recs, info = fintrac.parse_fintrac(FINTRAC_CSV.encode("utf-8"))
+    by = {r.reference: r for r in recs}
+    assert len(recs) == 5 and info["columns"]["number"] == "MSB Registration Number"
+    assert by["M12345678"].name == "Paymentco Inc." and by["M12345678"].extra["other_names"] == "PayCo"
+    assert by["M12345678"].city == "Toronto" and by["M12345678"].status_date == "2019-05-01"
+    assert by["M44444444"].active is False and "2025-03-03" in by["M44444444"].status_detail
+    assert by["M55555555"].licence_type == "Foreign MSB"
+
+
+def test_boc_helpers():
+    e = boc.normalise_entry({"legalName": "Paymentco Inc.", "tradeName": "PayCo", "headOfficeCountry": "Canada",
+                             "dateOfApplication": "2025-01-02", "psp_id": 7})
+    assert (e["legal"], e["trade"], e["country"], e["date"], e["id"]) == ("Paymentco Inc.", "PayCo", "Canada", "2025-01-02", "7")
+    email, site = boc.contacts_from_page(
+        "Contact: info@paymentco.ca  Website: www.paymentco.ca  Bank of Canada media@bankofcanada.ca",
+        ["https://www.bankofcanada.ca/x", "mailto:info@paymentco.ca", "https://www.linkedin.com/company/x"])
+    assert email == "info@paymentco.ca" and site == "https://www.paymentco.ca"
+
+
+@pytest.fixture
+def mock_boc_server():
+    import functools, http.server, threading
+    root = Path(__file__).parent / "mock_boc"
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root))
+    handler.log_message = lambda *a, **k: None
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    t = threading.Thread(target=srv.serve_forever, daemon=True); t.start()
+    yield f"http://127.0.0.1:{srv.server_address[1]}"
+    srv.shutdown()
+
+
+def test_boc_end_to_end_with_browser_and_linking(tmp_path, monkeypatch, mock_boc_server):
+    pytest.importorskip("playwright")
+    base = mock_boc_server
+    monkeypatch.setattr(boc, "PAGES", {"registered": base + "/registry.html", "applicant": base + "/applicants.html"})
+    monkeypatch.setattr(boc, "ENFORCEMENT_PAGE", base + "/enforcement.html")
+    cfg = {"sources": {"boc": {"details_per_run": 10, "detail_delay_seconds": 0}}}
+    ctx = cli.make_context(cfg, tmp_path)
+    recs = boc.BoCSource().fetch(ctx)
+    by = {r.name: r for r in recs}
+    assert set(by) == {"Paymentco Inc.", "Wise Payments Canada Inc.", "Applicant One Ltd."}
+    assert by["Wise Payments Canada Inc."].licence_type == "PSP (RPAA registered)"   # registered beats applicant
+    assert by["Paymentco Inc."].email == "info@paymentco.ca" and by["Paymentco Inc."].website == "https://paymentco.ca"
+    assert by["Applicant One Ltd."].licence_type == "PSP applicant (RPAA)"
+    assert by["Applicant One Ltd."].email == "hello@appone.com" and by["Applicant One Ltd."].status_date == "2025-09-01"
+    assert "violations: 1" in by["Wise Payments Canada Inc."].status_detail
+    sample = (tmp_path / "debug" / "boc_sample.txt").read_text()
+    assert "from data" in sample and "json" in sample
+    cache = json.loads((tmp_path / "state" / "boc_details.json").read_text())
+    assert len(cache) == 4
+
+    # second run uses the cache: no detail pages opened
+    recs2 = boc.BoCSource().fetch(ctx)
+    assert "0 fetched this run" in (tmp_path / "debug" / "boc_sample.txt").read_text()
+    assert {r.email for r in recs2} == {r.email for r in recs}
+
+    # linking MSBs to PSP lists
+    msbs, _ = fintrac.parse_fintrac(FINTRAC_CSV.encode())
+    rows = [r.to_dict() for r in msbs] + [r.to_dict() for r in recs]
+    counts = canada.link(rows)
+    st = {r["name"]: r for r in rows if r["source"] == "fintrac"}
+    assert st["Paymentco Inc."]["psp_status"] == "PSP registered" and st["Paymentco Inc."]["email"] == "info@paymentco.ca"
+    assert st["Wise Payments Canada Inc."]["psp_status"] == "PSP registered"
+    assert st["Corner FX Ltd."]["psp_status"] == canada.NONE
+    assert counts["PSP registered"] == 2
