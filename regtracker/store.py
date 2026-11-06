@@ -40,6 +40,10 @@ def sort_records(records: list) -> list:
 def record_row(r: dict) -> list:
     r = dict(r)
     r["status"] = "Active" if r.get("active") else "Inactive"
+    extra = r.get("extra") or {}
+    for k in ("phone", "email"):  # some sources keep these in extra
+        if not r.get(k) and extra.get(k):
+            r[k] = extra[k]
     return [str(r.get(k, "") or "") for k, _ in SHEET_COLUMNS]
 
 

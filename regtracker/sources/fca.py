@@ -86,6 +86,7 @@ class FCAClient:
         self.rl = RateLimiter(per_second)
         self.log = ctx.log
         self.errors = 0
+        self.data_dir = ctx.data_dir
 
     def get(self, path: str):
         """GET an API path. Returns the 'Data' payload, None when the firm
@@ -149,6 +150,14 @@ class FCAClient:
             data = self.get(f"/Firm/{frn}/Address") or []
         except Exception:
             return {}
+        if not getattr(self, "_sampled", False) and data:
+            self._sampled = True
+            try:
+                p = self.data_dir / "debug" / "fca_address_sample.json"
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_text(json.dumps({"frn": frn, "address_response": data}, indent=1, ensure_ascii=False))
+            except Exception:
+                pass
         if isinstance(data, dict):
             data = [data]
         best = {}
@@ -157,6 +166,19 @@ class FCAClient:
             if not best or "principal" in t:
                 best = a
         return best
+
+
+ENRICH_VERSION = 2   # bump to re-read every tracked firm's address/contact details once
+
+
+def _email_from(d: dict) -> str:
+    """Any email-looking field the API returns (field name not documented)."""
+    if not isinstance(d, dict):
+        return ""
+    for k, v in d.items():
+        if "mail" in str(k).lower() and isinstance(v, str) and "@" in v:
+            return v.strip()
+    return ""
 
 
 def record_from_firm(frn: int, firm: dict, address: dict | None = None):
@@ -179,7 +201,8 @@ def record_from_firm(frn: int, firm: dict, address: dict | None = None):
         status_date=str(tolerant_get(firm, "PSD / EMD Effective Date", "Status Effective Date"))[:10],
         reference=str(frn),
         city=str(tolerant_get(address, "Town")),
-        website=str(tolerant_get(address, "Website Address")),
+        website=str(tolerant_get(address, "Website Address", "Website")),
+        email=_email_from(address) or _email_from(firm),
         register_url=SEARCH_URL.format(frn=frn),
         extra={
             "companies_house": str(tolerant_get(firm, "Companies House Number")),
@@ -229,7 +252,7 @@ def _check_frn(client: FCAClient, st: dict, frn: int, enrich: bool, firm=_MISSIN
     st["max_frn_seen"] = max(st.get("max_frn_seen", 0), frn)
     prev = st["tracked"].get(str(frn))
     addr = None
-    if enrich and (not prev or not prev.get("_enriched")):
+    if enrich and (not prev or prev.get("_enriched") != ENRICH_VERSION):
         rec0 = record_from_firm(frn, firm)
         if rec0:
             addr = client.address(frn)
@@ -238,12 +261,12 @@ def _check_frn(client: FCAClient, st: dict, frn: int, enrich: bool, firm=_MISSIN
         return "other"
     d = rec.to_dict()
     if addr is None and prev:  # keep earlier enrichment
-        for k in ("city", "website"):
+        for k in ("city", "website", "email"):
             d[k] = prev.get(k, "")
         d["extra"] = {**prev.get("extra", {}), "companies_house": d["extra"].get("companies_house", "")}
         d["_enriched"] = prev.get("_enriched", False)
     else:
-        d["_enriched"] = bool(enrich)
+        d["_enriched"] = ENRICH_VERSION if enrich else False
     st["tracked"][str(frn)] = d
     return "tracked"
 
@@ -262,6 +285,12 @@ def seed(ctx: Context, hours: float) -> dict:
     extra = _watchlist(ctx)
     deadline = time.monotonic() + hours * 3600
     since_save = 0
+    # firms found earlier whose contact details were read by an older version
+    stale = [int(f) for f, r in st["tracked"].items() if enrich and r.get("_enriched") != ENRICH_VERSION]
+    if stale:
+        ctx.log.info("FCA: re-reading contact details for %d firms found earlier", len(stale))
+        check_many(client, st, stale, enrich, ctx, int(cfg.get("parallel_requests", 8)))
+        save_state(ctx, st)
     # FRNs listed by hand are checked first
     for frn in extra:
         if str(frn) not in st["tracked"]:

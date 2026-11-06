@@ -865,3 +865,16 @@ def test_canada_link_operating_names():
              "website": "", "extra": {"trade_name": "ARCA Pay"}}]
     canada.link(rows)
     assert rows[0]["psp_status"] == "PSP registered" and rows[0]["email"] == "a@arca.ca"
+
+
+def test_fca_email_and_phone_on_sheet():
+    firm = {"Organisation Name": "Clear Junction Ltd", "Status": "Registered",
+            "PSD / EMD Status": "Authorised Electronic Money Institution", "PSD / EMD Effective Date": "19/04/2018"}
+    addr = {"Address Type": "Principal Place of Business", "Town": "London", "Phone Number": "+442038654565",
+            "Website Address": "www.clearjunction.com", "Email Address": "info@clearjunction.com", "Postcode": "W1G 0PW"}
+    r = fca.record_from_firm(900684, firm, addr).to_dict()
+    assert r["email"] == "info@clearjunction.com" and r["website"] == "www.clearjunction.com"
+    from regtracker.store import record_row
+    from regtracker.model import SHEET_COLUMNS
+    row = dict(zip([k for k, _ in SHEET_COLUMNS], record_row(r)))
+    assert row["phone"] == "+442038654565" and row["email"] == "info@clearjunction.com"

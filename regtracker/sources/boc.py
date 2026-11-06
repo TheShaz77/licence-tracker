@@ -398,7 +398,9 @@ class BoCSource(Source):
                 c = cache.get(ident)
                 if (c is None or c.get("v") != 2) and e["link"]:
                     todo.append((e["_kind"], ident, e))
-            order = {"registered": 0, "applicant": 1}
+            # applicants first (fewer, and the ones you're most likely to contact), then registered
+            first = cfg.get("details_first", "applicant")
+            order = {first: 0, "registered" if first != "registered" else "applicant": 1}
             todo.sort(key=lambda t: order.get(t[0], 2))
             done = 0
             for _, ident, e in todo[:per_run]:
