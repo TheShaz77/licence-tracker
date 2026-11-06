@@ -807,7 +807,7 @@ def test_boc_end_to_end_with_browser_and_linking(tmp_path, monkeypatch, mock_boc
     assert set(by) == {"Paymentco Inc.", "Wise Payments Canada Inc.", "Applicant One Ltd.", "Bad Pay Corp"}
     assert by["Wise Payments Canada Inc."].licence_type == "PSP (RPAA registered)"     # French-only legal name used
     assert by["Applicant One Ltd."].licence_type == "PSP applicant (RPAA)"             # status from the feed
-    assert by["Bad Pay Corp"].licence_type == "PSP refused (RPAA)" and not by["Bad Pay Corp"].active
+    assert by["Bad Pay Corp"].licence_type == "PSP applicant (RPAA)"                  # listed as an applicant
     p = by["Paymentco Inc."]
     assert (p.email, p.website, p.city, p.extra["phone"]) == ("info@paymentco.ca", "https://www.paymentco.ca",
                                                              "Toronto", "1-416-555-0100")
@@ -815,7 +815,8 @@ def test_boc_end_to_end_with_browser_and_linking(tmp_path, monkeypatch, mock_boc
     assert by["Applicant One Ltd."].status_date == "2025-09-01" and by["Applicant One Ltd."].email == "hello@appone.com"
     assert "violations: 1" in by["Wise Payments Canada Inc."].status_detail
     sample = (tmp_path / "debug" / "boc_sample.txt").read_text()
-    assert "from data" in sample and "firms by status" in sample
+    assert "from matching data" in sample and "firms by status" in sample
+    assert by["Applicant One Ltd."].reference == "aaaaaaaa-0010"                       # id from the detail link
     # second run uses the cache: no detail pages opened
     recs2 = boc.BoCSource().fetch(ctx)
     assert "0 fetched this run" in (tmp_path / "debug" / "boc_sample.txt").read_text()

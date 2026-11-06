@@ -1,11 +1,13 @@
-<html><body><table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>X</th></tr></thead>
+<html><body><table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>Date of application</th></tr></thead>
 <tbody><tr><td>List is loading</td></tr></tbody></table>
 <script>
-const GROUP = "applicant";
-fetch('/data/accounts.json').then(r => r.json()).then(d => {
+fetch('/data/accounts.json').then(r => r.json()).then(() => {});   // loads the big registered list too, like the real page
+setTimeout(() => {
+  const rows = [["Applicant One Ltd.", "AppOne", "Canada", "September 1, 2025", "aaaaaaaa-0010"],
+                ["Bad Pay Corp", "", "Canada", "November 5, 2024", "aaaaaaaa-0099"]];
   const tb = document.querySelector('#t tbody'); tb.innerHTML = '';
-  d.filter(x => x.group_label === GROUP).forEach(x => { const tr = document.createElement('tr');
-    tr.innerHTML = `<td><a href="/detail.html?account_id=${x.id}">${x.en_legal_name || x.fr_legal_name}</a></td><td>${x.main_trade_name}</td><td>${x.head_office_country}</td><td></td>`;
+  rows.forEach(x => { const tr = document.createElement('tr');
+    tr.innerHTML = `<td><a href="/applicant-details.html?account_id=${x[4]}">${x[0]}</a></td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td>`;
     tb.appendChild(tr); });
-});
+}, 300);
 </script></body></html>

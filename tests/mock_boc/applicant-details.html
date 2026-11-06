@@ -1,0 +1,13 @@
+<html><body><div id="d">Loading</div>
+<footer><a href="https://www.bankofcanadamuseum.ca">Museum</a> <a href="https://www.facebook.com/bankofcanada">fb</a></footer>
+<script>
+const id = new URLSearchParams(location.search).get('account_id');
+fetch('/data/detail-' + id + '.json').then(r => r.json()).then(x => {
+  document.getElementById('d').innerHTML = `<h2>Registration information</h2><dl>
+  <dt>Registration status</dt><dd>${x.status}</dd>
+  <dt>Legal name</dt><dd>${x.legal}</dd><dt>Trade names</dt><dd>${x.trade}</dd>
+  <dt>Head office city</dt><dd>${x.city}</dd><dt>Head office country</dt><dd>Canada</dd>
+  <dt>Phone number</dt><dd>${x.phone}</dd><dt>Email address</dt><dd>${x.email}</dd>
+  ${x.site ? `<dt>Website</dt><dd><a href="${x.site}">${x.site}</a></dd>` : ''}</dl>`;
+});
+</script></body></html>

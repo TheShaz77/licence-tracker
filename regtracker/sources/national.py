@@ -160,6 +160,14 @@ def _iso(s: str) -> str:
     m = re.match(r"(\d{1,2})[./](\d{1,2})[./](\d{4})", s)
     if m:
         return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    months = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct",
+                                          "nov", "dec"], 1)}
+    m = re.match(r"([A-Za-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})", s)            # June 23, 2026
+    if m and m.group(1).lower() in months:
+        return f"{m.group(3)}-{months[m.group(1).lower()]:02d}-{int(m.group(2)):02d}"
+    m = re.match(r"(\d{1,2})\s+([A-Za-z]{3})[a-z]*\.?,?\s+(\d{4})", s)            # 23 June 2026
+    if m and m.group(2).lower() in months:
+        return f"{m.group(3)}-{months[m.group(2).lower()]:02d}-{int(m.group(1)):02d}"
     return ""
 
 

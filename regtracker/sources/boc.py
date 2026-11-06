@@ -69,6 +69,29 @@ def entries_from_json(bodies: list) -> list:
     return best
 
 
+def best_json_for_table(bodies: list, dom_entries: list) -> list:
+    """Among the JSON lists a page loaded, the one whose firms are the ones its
+    table shows (both Bank pages load the big registered list; the applicants
+    page shows other firms)."""
+    dom_names = {match_name(next(iter(e.values()), "")) for e in dom_entries} - {""}
+    best, best_score = [], 0
+    for body in bodies:
+        recs = entries_from_json([body])
+        if not recs:
+            continue
+        names = set()
+        for r in recs:
+            n = normalise_entry(r)
+            names.add(match_name(n["legal"]))
+            names.add(match_name(n["trade"]))
+        score = len(dom_names & names) if dom_names else len(recs)
+        if score > best_score:
+            best, best_score = recs, score
+    if dom_names and best_score < max(1, len(dom_names) // 2):
+        return []  # nothing loaded matches the table: read the table instead
+    return best
+
+
 def normalise_entry(e: dict) -> dict:
     """Map an entry's key names to ours. The Bank's feed uses en_legal_name /
     fr_legal_name (often only one is filled), main_trade_name,
@@ -86,7 +109,8 @@ def normalise_entry(e: dict) -> dict:
     k_trade = pick_key(keys, "trade") or pick_key(keys, "operat")
     k_date = (pick_key(keys, "registration_date") or pick_key(keys, "date", "regist")
               or pick_key(keys, "date", "appl") or pick_key(keys, "date"))
-    k_applied = pick_key(keys, "created") or pick_key(keys, "date", "appl") or pick_key(keys, "submitted")
+    k_applied = (pick_key(keys, "created") or pick_key(keys, "date", "appl") or pick_key(keys, "submitted")
+                 or pick_key(keys, "date", "of"))
     k_link = pick_key(keys, "link") or pick_key(keys, "detail") or pick_key(keys, "permalink") or pick_key(keys, "href")
     k_id = pick_key(keys, "account_id") or pick_key(keys, "id", exclude=("valid", "provid", "width")) \
         or pick_key(keys, "number")
@@ -276,7 +300,7 @@ def _entries_from_rows(rows: list, header_guess: list) -> list:
 class BoCSource(Source):
     name = "boc"
     label = "Canada Bank of Canada PSP lists (RPAA)"
-    fingerprint = "boc-v2"   # bump when keys or parsing change, so the next run re-baselines quietly
+    fingerprint = "boc-v3"   # bump when keys or parsing change, so the next run re-baselines quietly
 
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("boc")
@@ -322,10 +346,11 @@ class BoCSource(Source):
                     if page_kind in ("registered", "applicant"):
                         raise
                     continue
-                from_json = entries_from_json(bodies)
                 from_dom = _entries_from_rows(rows, heads.get(page_kind, []))
-                use = from_json if len(from_json) >= len(from_dom) else from_dom
-                notes.append(f"  entries: {len(from_json)} from data, {len(from_dom)} in the table -> using "
+                from_json = best_json_for_table(bodies, from_dom)
+                # the page's own table decides: use the data only if it is what the table shows
+                use = from_json if from_json and len(from_json) >= len(from_dom) else from_dom
+                notes.append(f"  entries: {len(from_json)} from matching data, {len(from_dom)} in the table -> using "
                              f"{'data' if use is from_json else 'table'}")
                 # detail-page address pattern for this page, from its own links
                 for h in hrefs:
@@ -336,6 +361,10 @@ class BoCSource(Source):
                 link_by_name = {match_name(c[0]): l[0] for c, l in rows if c and l}
                 for raw in use:
                     e = normalise_entry(raw)
+                    if not e["id"] and e["link"]:
+                        m = re.search(r"[?&](?:account_id|id)=([0-9a-f-]{8,})", e["link"], re.I)
+                        if m:
+                            e["id"] = m.group(1)
                     k = kind_of(e, page_kind)
                     sk = f"{e['group'] or '-'} / {e['status'] or '-'}"
                     status_counts[sk] = status_counts.get(sk, 0) + 1
