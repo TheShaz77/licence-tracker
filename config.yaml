@@ -88,13 +88,22 @@ national:
         # keep firms licensed in Lithuania; drop EU firms passporting in, and branches
         exclude_column: Business form
         exclude_pattern: "Member State|branch|third countr"
+        require_column: Company code     # Lithuanian firms always have one
+        type_overrides:
+          "^(Currency exchange operators, )?Account information service provider$": Account information service provider
       - url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv
         register_url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7
         licence_type: E-money institution
         exclude_column: Business form
         exclude_pattern: "Member State|branch|third countr"
+        require_column: Company code     # Lithuanian firms always have one
+        type_overrides:
+          "^(Currency exchange operators, )?Account information service provider$": Account information service provider
   SK:
-    enabled: true
+    # The NBS feed turned out to be the open-banking (PSD2 access) list, not the
+    # full licence register: it misses Slovak EMIs and several PIs the EU register
+    # has. Slovakia stays on the EU copy.
+    enabled: false
     regulator: NBS
     files:
       # official PSD2 register feed: refreshed daily by 05:00, regenerated hourly

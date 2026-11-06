@@ -712,3 +712,24 @@ def test_settings_change_starts_fresh_baseline(tmp_path, monkeypatch):
     assert cli.main(args) == 0                                       # not a 'drop', no false removals
     assert not (data / "changes.csv").exists()
     assert len(load_snapshot(data, "nat_lt")) == 1
+
+
+def test_match_name_lithuanian_forms():
+    m = national.match_name
+    assert m("Akcinė bendrovė Lietuvos paštas") == m("Joint stock company Lietuvos paštas") == m("AB Lietuvos paštas")
+    assert m('UAB „Lux International Payment System“ (Restricted activity)') == m("Lux International Payment System, UAB")
+    assert m("Uždaroji akcinė bendrovė „Foxpay“") == m("Foxpay, UAB")
+
+
+def test_lb_require_company_code_and_aisp_override():
+    text = ("Title;Type;Business form;Company code\n"
+            "CRIF Realtime Ireland Limited;Payment institution;Account information service provider;\n"
+            "UAB Cygnus;Payment institution;Account information service provider;305999999\n"
+            "UAB Pay;Payment institution;Payment institutions holding a payment institution licence;305111111\n")
+    spec = {"url": "u", "licence_type": "Payment institution", "exclude_column": "Business form",
+            "exclude_pattern": "Member State", "require_column": "Company code",
+            "type_overrides": {"^(Currency exchange operators, )?Account information service provider$":
+                               "Account information service provider"}}
+    recs, _ = national.parse_file(text.encode(), spec, "LT", "LB")
+    assert {(r.name, r.licence_type) for r in recs} == {("UAB Cygnus", "Account information service provider"),
+                                                       ("UAB Pay", "Payment institution")}

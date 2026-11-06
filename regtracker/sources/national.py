@@ -234,6 +234,7 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         "status": _col(headers, STATUS_COLS),
         "end": _col(headers, END_COLS),
         "exclude": _col(headers, [], spec.get("exclude_column")) if spec.get("exclude_column") else None,
+        "require": _col(headers, [], spec.get("require_column")) if spec.get("require_column") else None,
     }
     info = {"headers": headers, "columns": {k: (headers[v] if v is not None else None) for k, v in c.items()},
             "rows": len(rows)}
@@ -267,8 +268,14 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         if patterns:
             hay = raw_type or " ".join(row)
             ltype = next((t for p, t in patterns if p.search(hay)), None) if not fixed_type else fixed_type
+        for pat, otype in (spec.get("type_overrides") or {}).items():
+            if re.search(pat, get(row, "exclude") or raw_type, re.I):
+                ltype = otype
+                break
         if not ltype:
             continue
+        if c["require"] is not None and not get(row, "require"):
+            continue  # e.g. no Lithuanian company code = foreign firm passporting in
         ref = get(row, "id")
         key = f"nat_{country.lower()}:{ref or norm_key(name)}"
         status = get(row, "status")
@@ -395,7 +402,10 @@ def national_sources(cfg: dict) -> dict:
 # ------------------------------------------------------ name matching ---
 
 LEGAL_FORMS = re.compile(
-    r"\b(uab|ab|ad|as|a\s?s|bv|b\s?v|nv|n\s?v|ltd|limited|plc|llc|inc|sa|s\s?a|sas|sarl|srl|s\s?r\s?l|spa|"
+    r"\b(uzdaroji akcine bendrove|akcine bendrove|joint stock company|private limited company|"
+    r"public limited company|limited liability company|closed joint stock company|restricted activity|"
+    r"sabiedriba ar ierobezotu atbildibu|akciju sabiedriba|spolocnost s rucenim obmedzenym|"
+    r"akciova spolocnost|uab|ab|ad|as|a\s?s|bv|b\s?v|nv|n\s?v|ltd|limited|plc|llc|inc|sa|s\s?a|sas|sarl|srl|s\s?r\s?l|spa|"
     r"gmbh|ag|kg|eg|oy|oyj|sro|s\s?r\s?o|zrt|kft|doo|d\s?o\s?o|sp\s?z\s?o\s?o|ehf|asa|aps|a\s?s|"
     r"ou|oü|as|sia|ead|eood|ltd\.?|company|co|the|branch|filiaal|filialas|bijkantoor)\b", re.I)
 
