@@ -232,3 +232,25 @@ until it works again.
   on legal and operating/trade names; filter the Canada tab on this column.
 - Each run saves what it saw to `data/debug/boc_sample.txt` and
   `data/debug/fintrac_sample.txt`.
+
+## Contact details (website, email, phone)
+
+Registers rarely publish all three, so the tracker fills the gaps from other
+free sources. It only fills blanks: anything the register itself shows is never
+overwritten. The **Contact found via** column says where each value came from.
+
+| Step | Where it runs | What it adds |
+|---|---|---|
+| FCA register, by FRN | every 2-hourly check (cached) | website and phone (and email if the FCA gives one) for UK banks from the PRA list |
+| Bank of Lithuania firm pages | every 2-hourly check (cached) | email for Lithuanian firms |
+| Wikidata, by LEI | every 2-hourly check (cached) | official website, mostly for banks (ECB / PRA lists) |
+| The firm's own website | the **Contact details (firm websites)** workflow, every 6 hours | a general email (info@, contact@… preferred) and phone from the homepage and its contact / imprint pages |
+
+The website job reads at most four pages per firm, obeys each site's
+robots.txt, and re-checks a site after 180 days. Its first pass over ~10,000
+websites takes a day or two. Results are stored in `data/state/contacts_web.json`
+and appear in the sheet on the next 2-hourly check.
+
+Firms with no known website (most EU payment and e-money firms on the EBA
+register, Swiss firms) can't be filled this way; that would need a paid search
+API.

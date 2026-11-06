@@ -4,6 +4,7 @@
   python -m regtracker run --sources eba   # just one source
   python -m regtracker fca-seed --hours 5.5
   python -m regtracker doctor              # fetch everything, print a sample, save nothing
+  python -m regtracker contacts --hours 5 # read firm websites for email/phone
   python -m regtracker status              # FCA seed progress and snapshot sizes
 """
 from __future__ import annotations
@@ -18,7 +19,7 @@ from pathlib import Path
 
 import yaml
 
-from . import canada, compare, notify, sheets
+from . import canada, compare, contacts, notify, sheets
 from .diff import SuspiciousDrop, check_drop, diff
 from .http import make_session
 from .sources import ALL_SOURCES
@@ -71,6 +72,38 @@ def enabled_sources(cfg: dict, only: str | None) -> list:
     if unknown:
         sys.exit(f"Unknown source(s): {', '.join(unknown)}. Known: {', '.join(known)}")
     return [known[n] for n in names]
+
+
+def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = None) -> list:
+    """Master list = every source's latest snapshot (failed sources keep the last good one)."""
+    covered = covered_countries(cfg, data_dir) if covered is None else covered
+    records = []
+    for name in all_sources(cfg):
+        snap = load_snapshot(data_dir, name).values()
+        if name == "eba":  # national register replaces the EU copy where we have one
+            snap = [r for r in snap if r.get("jurisdiction") not in covered]
+        records.extend(snap)
+    # While the one-off FCA scan is running, show the UK firms found so far.
+    # They are not diffed (no alerts) until the scan completes.
+    if not load_snapshot(data_dir, "fca"):
+        preview = fca_mod.preview_records(ctx)
+        if preview:
+            log.info("FCA: showing %d UK firms found so far (scan still running)", len(preview))
+            records.extend(preview)
+    if any(r.get("source") in ("fintrac", "boc") for r in records):
+        log.info("Canada MSB/PSP linking: %s", canada.link(records))
+    return records
+
+
+def cmd_contacts(args, cfg, data_dir) -> int:
+    """Background job: read firms' own websites for email and phone."""
+    ctx = make_context(cfg, data_dir)
+    records = assemble(cfg, data_dir, ctx)
+    contacts.apply(records, contacts.load(data_dir))  # websites found via registers/Wikidata
+    c = cfg.get("contacts") or {}
+    contacts.crawl(ctx, records, args.hours, log, workers=int(c.get("parallel_sites", 8)),
+                   recheck_days=int(c.get("recheck_days", 180)))
+    return 0
 
 
 def cmd_run(args, cfg, data_dir) -> int:
@@ -133,23 +166,15 @@ def cmd_run(args, cfg, data_dir) -> int:
     if all_events:
         append_changes_csv(data_dir, all_events)
 
-    # master list = every source's latest snapshot (failed sources keep yesterday's)
     covered = covered_countries(cfg, data_dir)
-    records = []
-    for name in all_sources(cfg):
-        snap = load_snapshot(data_dir, name).values()
-        if name == "eba":  # national register replaces the EU copy where we have one
-            snap = [r for r in snap if r.get("jurisdiction") not in covered]
-        records.extend(snap)
-    # While the one-off FCA scan is running, show the UK firms found so far.
-    # They are not diffed (no alerts) until the scan completes.
-    if not load_snapshot(data_dir, "fca"):
-        preview = fca_mod.preview_records(ctx)
-        if preview:
-            log.info("FCA: showing %d UK firms found so far (scan still running)", len(preview))
-            records.extend(preview)
-    if any(r.get("source") in ("fintrac", "boc") for r in records):
-        log.info("Canada MSB/PSP linking: %s", canada.link(records))
+    records = assemble(cfg, data_dir, ctx, covered)
+    if (cfg.get("contacts") or {}).get("enabled", True) and not args.sources \
+            and not args.no_contacts:
+        try:
+            log.info("Contacts from registers/Wikidata: %s", contacts.enrich_registers(ctx, records, log))
+        except Exception:
+            log.exception("Contact lookup failed (list still published)")
+    log.info("Contact details filled in: %s", contacts.apply(records, contacts.load_all(data_dir)))
     write_licences_csv(data_dir, records)
 
     if covered:  # keep a CSV copy of the comparison in the repo too
@@ -242,11 +267,14 @@ def main(argv=None) -> int:
     r.add_argument("--sources")
     r.add_argument("--no-sheets", action="store_true")
     r.add_argument("--no-email", action="store_true")
+    r.add_argument("--no-contacts", action="store_true", help="skip register/Wikidata contact lookups")
     s = sub.add_parser("fca-seed")
     s.add_argument("--hours", type=float, default=5.5)
     d = sub.add_parser("doctor")
     d.add_argument("--sources")
     sub.add_parser("status")
+    c = sub.add_parser("contacts")
+    c.add_argument("--hours", type=float, default=5.0)
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO,
                         format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
@@ -254,4 +282,4 @@ def main(argv=None) -> int:
     data_dir = Path(args.data)
     data_dir.mkdir(parents=True, exist_ok=True)
     return {"run": cmd_run, "fca-seed": cmd_seed, "doctor": cmd_doctor,
-            "status": cmd_status}[args.cmd](args, cfg, data_dir)
+            "status": cmd_status, "contacts": cmd_contacts}[args.cmd](args, cfg, data_dir)

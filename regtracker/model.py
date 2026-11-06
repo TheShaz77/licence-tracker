@@ -19,6 +19,7 @@ SHEET_COLUMNS = [
     ("website", "Website"),
     ("email", "Email"),
     ("phone", "Phone"),
+    ("contact_source", "Contact found via"),
     ("psp_status", "PSP status (Canada)"),
     ("services", "Services"),
     ("passports", "Passported to"),

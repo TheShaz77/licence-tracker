@@ -324,7 +324,7 @@ def test_cli_run_baseline_then_changes(tmp_path, monkeypatch):
     monkeypatch.setitem(ALL_SOURCES, "test", T())
     cfgp = tmp_path / "c.yaml"
     cfgp.write_text("excluded_countries: [RU]\nsources:\n  test: {enabled: true}\n")
-    args = ["--config", str(cfgp), "--data", str(tmp_path / "data"), "run", "--no-sheets", "--no-email"]
+    args = ["--config", str(cfgp), "--data", str(tmp_path / "data"), "run", "--no-sheets", "--no-email", "--no-contacts"]
     assert cli.main(args) == 0
     assert not (tmp_path / "data" / "changes.csv").exists()          # baseline: no alerts
     state["recs"] = [Record("t:1", "test", "IE", "IE_CBI", "A", "Payment institution", True),
@@ -445,7 +445,7 @@ def test_fca_preview_shown_before_seed_completes(tmp_path):
     cfgp.write_text("sources:\n  pra: {enabled: false}\n")
     # no sources enabled except fca (which isn't ready): master list = preview only
     cfgp.write_text("sources:\n  fca: {enabled: true}\n")
-    rc = cli.main(["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"])
+    rc = cli.main(["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email", "--no-contacts"])
     lic = (data / "licences.csv").read_text()
     assert "Pay One" in lic and "Small EMI" in lic
     assert not (data / "changes.csv").exists()
@@ -592,7 +592,7 @@ def test_cli_national_replaces_eba_and_measures_lag(tmp_path, monkeypatch):
     cfgp = tmp_path / "c.yaml"
     cfgp.write_text("sources:\n  eba: {enabled: true}\nnational:\n  NL:\n    regulator: DNB\n    files: [{url: u}]\n")
     data = tmp_path / "data"
-    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"]
+    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email", "--no-contacts"]
     times = iter(["2026-11-06 08:17", "2026-11-06 10:17", "2026-11-06 14:17", "2026-11-06 16:17"])
     real = cli.make_context
     def ctx_at(cfg, d):
@@ -704,7 +704,7 @@ def test_settings_change_starts_fresh_baseline(tmp_path, monkeypatch):
     monkeypatch.setattr(national.NationalSource, "fetch", fetch)
     cfgp = tmp_path / "c.yaml"
     data = tmp_path / "data"
-    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"]
+    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email", "--no-contacts"]
     cfgp.write_text("sources: {}\nnational:\n  LT:\n    regulator: LB\n    files: [{url: u}]\n")
     assert cli.main(args) == 0                                       # baseline incl. foreign firms
     cfgp.write_text("sources: {}\nnational:\n  LT:\n    regulator: LB\n    files: [{url: u, exclude_column: Business form, "
@@ -851,7 +851,7 @@ def test_builtin_source_fingerprint_rebaselines(tmp_path, monkeypatch):
 
     monkeypatch.setitem(ALL_SOURCES, "test", T())
     cfgp = tmp_path / "c.yaml"; cfgp.write_text("sources:\n  test: {enabled: true}\n")
-    args = ["--config", str(cfgp), "--data", str(tmp_path / "d"), "run", "--no-sheets", "--no-email"]
+    args = ["--config", str(cfgp), "--data", str(tmp_path / "d"), "run", "--no-sheets", "--no-email", "--no-contacts"]
     assert cli.main(args) == 0
     state["v"] = "b"
     state["recs"] = [Record(f"new{i}", "test", "CA", "X", f"N{i}", "MSB", True) for i in range(100)]  # new keys
@@ -878,3 +878,108 @@ def test_fca_email_and_phone_on_sheet():
     from regtracker.model import SHEET_COLUMNS
     row = dict(zip([k for k, _ in SHEET_COLUMNS], record_row(r)))
     assert row["phone"] == "+442038654565" and row["email"] == "info@clearjunction.com"
+
+
+# ---------------------------------------------------------------- contacts
+
+def _serve(directory):
+    import functools, http.server, threading
+    h = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(directory))
+    h.log_message = lambda *a, **k: None
+    srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), h)
+    threading.Thread(target=srv.serve_forever, daemon=True).start()
+    return srv
+
+
+def test_contact_helpers():
+    from regtracker import contacts as c
+    assert c.norm_site("www.acme.com/") == "https://www.acme.com"
+    assert c.domain("https://www.Acme.com/x") == "acme.com"
+    assert c.best_email(["jane@gmail.com", "sales@acme.com", "info@acme.com"], "acme.com") == "info@acme.com"
+    html = 'Call <a href="tel:+44%2020%201234%205678">us</a> Fax: 1 Tel.: 0049 30 1234567 date 20240101'
+    ph = c.phones_in(html)
+    assert ph[0] == "+442012345678" and "0049 30 1234567" in ph
+    assert c.emails_in('x <img src="a@2x.png"> info [at] firm.de') == ["info@firm.de"]
+
+
+def test_crawl_site_reads_contact_page_and_respects_robots():
+    from regtracker import contacts as c
+    from regtracker.http import make_session
+    srv = _serve(Path(__file__).parent / "mock_site")
+    try:
+        base = f"http://127.0.0.1:{srv.server_address[1]}"
+        f = c.Fetcher(make_session())
+        assert not f.allowed(base + "/private/impressum")
+        res = c.crawl_site(f, base, pause=0)
+        assert res["email"] == "info@acmepay.com"
+        assert res["phone"].replace(" ", "") == "+442079460958"
+        assert res["pages"] == 2   # homepage + /contact/ ; /private/ blocked, partner link off-site
+    finally:
+        srv.shutdown()
+
+
+def test_contacts_apply_fills_blanks_only(tmp_path):
+    from regtracker import contacts as c
+    recs = [{"key": "pra:1", "website": "", "email": "", "active": True},
+            {"key": "eba:2", "website": "firm.eu", "email": "own@firm.eu", "active": True},
+            {"key": "ecb:3", "website": "", "active": True}]
+    c.save(tmp_path, {"pra:1": {"website": "https://bank.co.uk", "website_from": "FCA register",
+                                "phone": "0207", "phone_from": "FCA register"},
+                      "ecb:3": {"website": "https://bigbank.de", "website_from": "Wikidata"}})
+    c.save(tmp_path, {"site:bank.co.uk": {"email": "info@bank.co.uk", "email_from": "firm website"},
+                      "site:firm.eu": {"email": "x@firm.eu", "phone": "+33 1 23 45 67 89",
+                                       "email_from": "firm website", "phone_from": "firm website"},
+                      "site:bigbank.de": {"phone": "+49 69 1", "phone_from": "firm website"}}, c.WEB_STATE)
+    n = c.apply(recs, c.load_all(tmp_path))
+    assert recs[0]["website"] == "https://bank.co.uk" and recs[0]["email"] == "info@bank.co.uk"
+    assert recs[0]["contact_source"] == "FCA register, firm website"
+    assert recs[1]["email"] == "own@firm.eu" and recs[1]["phone"] == "+33 1 23 45 67 89"
+    assert recs[2]["phone"] == "+49 69 1" and recs[2]["contact_source"] == "Wikidata, firm website"
+    assert n == {"website": 2, "email": 1, "phone": 3}
+
+
+def test_crawl_budget_and_cache(tmp_path):
+    import logging
+    from regtracker import contacts as c
+    from regtracker.http import make_session
+    from regtracker.sources.base import Context
+    srv = _serve(Path(__file__).parent / "mock_site")
+    try:
+        base = f"http://127.0.0.1:{srv.server_address[1]}"
+        ctx = Context({}, make_session(), "2026-11-06", tmp_path, set(), logging.getLogger("t"))
+        recs = [{"key": "a:1", "website": base, "active": True},
+                {"key": "a:2", "website": base + "/", "active": True},       # same domain: read once
+                {"key": "a:3", "website": base, "active": False},
+                {"key": "a:4", "website": "", "active": True}]
+        out = c.crawl(ctx, recs, 1, logging.getLogger("t"), workers=2)
+        assert out["read"] == 1 and out["email"] == 1
+        assert c.crawl(ctx, recs, 1, logging.getLogger("t"))["read"] == 0   # cached
+        c.apply(recs, c.load_all(tmp_path))
+        assert recs[1]["email"] == "info@acmepay.com"
+    finally:
+        srv.shutdown()
+
+
+def test_lb_slugs_and_wikidata(tmp_path):
+    import logging
+    from regtracker import contacts as c
+    from regtracker.sources.base import Context
+    assert c.lb_slugs("UAB Stanhope Financial")[0] == "uab-stanhope-financial"
+    assert "curve-europe-uab" in c.lb_slugs("UAB „Curve Europe“")
+
+    class Resp:
+        def __init__(self, data): self.data = data; self.status_code = 200
+        def raise_for_status(self): pass
+        def json(self): return self.data
+    class S:
+        calls = []
+        def get(self, url, params=None, **kw):
+            self.calls.append(params["query"])
+            return Resp({"results": {"bindings": [
+                {"lei": {"value": "A" * 20}, "site": {"value": "http://www.bigbank.de/"}}]}})
+    ctx = Context({}, S(), "2026-11-06", tmp_path, set(), logging.getLogger("t"))
+    recs = [{"key": "ecb:1", "lei": "A" * 20}, {"key": "ecb:2", "lei": "B" * 20}, {"key": "x", "lei": ""}]
+    cache = {}
+    assert c.from_wikidata(ctx, recs, cache, logging.getLogger("t")) == 1
+    assert cache["ecb:1"]["website"] == "http://www.bigbank.de" and cache["lei:" + "B" * 20]["website"] == ""
+    assert c.from_wikidata(ctx, recs, cache, logging.getLogger("t")) == 0 and len(S.calls) == 1

@@ -125,3 +125,11 @@ national:
           PI: Payment institution
           EM: E-money institution
           AISP: Account information service provider
+
+# Contact details (website / email / phone). Only fills blanks; a value the
+# register itself gives is never overwritten. The "Contact found via" column
+# says where each one came from.
+contacts:
+  enabled: true        # registers + Wikidata lookups in the 2-hourly run
+  parallel_sites: 8    # firm websites read at once by the contacts job
+  recheck_days: 180
