@@ -115,7 +115,8 @@ def cmd_run(args, cfg, data_dir) -> int:
         log.info("Skipping Google Sheets (--no-sheets)")
     elif sheets.enabled():
         try:
-            sheets.publish(records, recent_changes(data_dir, int(cfg.get("sheet_change_rows", 5000))), run_info, log)
+            sheets.publish(records, recent_changes(data_dir, int(cfg.get("sheet_change_rows", 5000))), run_info, log,
+                           per_country=bool(cfg.get("sheet_country_tabs", True)))
         except Exception as e:
             log.exception("Google Sheets update failed")
             problems.append(f"Google Sheets: {e}")
