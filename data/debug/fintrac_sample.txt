@@ -1,0 +1,16 @@
+url: https://fintrac-canafe.canada.ca/msb-esm/reg-eng.csv
+bytes: 2889458  starts: b'Organiza'
+error: None
+columns used: {'name': 'Organization Names (Legal and Operating)', 'number': 'MSB Registration Number', 'status': 'MSB Registration Status', 'initial': None, 'expiry': 'MSB Registration Expiry Date', 'ceased': 'MSB Registration Cessation Date', 'revoked': 'MSB Registration Revocation Date', 'services': 'Services Offered', 'address': 'Business Address', 'foreign': 'Foreign MSB Indicator', 'website': 'Website', 'inc_juris': None}
+headers: ['Organization Names (Legal and Operating)', 'Business Address', 'Website', 'Services Offered', 'MSB Registration Status', 'MSB Registration Number', 'Date Initial MSB Registration Approval', 'MSB Registration Expiry Date', 'MSB Registration Cessation Date', 'MSB Registration Revocation Date', 'Jurisdication of Incorporation', 'Incorporation Number', 'Incorporation Date', 'Foreign MSB Indicator']
+data rows: 10212  kept: 9071
+type values: [('Registered', 4860), ('Expired', 2654), ('Ceased', 1642), ('Revoked', 411), ('Not available', 2), ('Foreign Exchange, Money Transferring, PSP', 2), ('Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP, Cheque Cashing', 2), ('Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders', 1), ('V5P3V6"', 1), ('Foreign Exchange, Money Transferring', 1), ('CANADA', 1), ('Money Transferring, Virtual Currency', 1), ('www.dailypay.ca', 1), ('Money Transferring, PSP', 1), ('913 WALNUT COURT,OSHAWA,ONTARIO,CANADA,L1H 2H8', 1), ('Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, Crowdfunding', 1), ('Foreign Exchange, PSP, Cheque Cashing', 1), ('Foreign Exchange, Money Transferring, Virtual Currency', 1), ('NEWFOUNDLAND', 1), ('Foreign Exchange, Virtual Currency', 1)]
+first lines:
+'Organization Names (Legal and Operating),Business Address,"Website'
+'",Services Offered,MSB Registration Status,MSB Registration Number,Date Initial MSB Registration Approval,MSB Registration Expiry Date,MSB Registration Cessation Date,MSB Registration Revocation Date,"Jurisdication of Incorporation '
+'",Incorporation Number,"Incorporation Date'
+'",Foreign MSB Indicator'
+'"Legal Name: FINAX SERVICES INC., '
+'Operating Name: FINAX SERVICES INC.","7920 HURONTARIO ST - UNIT 41,BRAMPTON,ONTARIO,CANADA,L6Y0P7",,Foreign Exchange,Expired,M08993699,6/23/2008,5/4/2021,,,Provincial or territorial (Canada): Ontario,2138287,6/5/2007,No'
+'"Legal Name: DAHABSHIIL FINANCIAL TRANSFERS INC., '
+'Operating Name: DAHABSHIIL FINANCIAL TRANSFERS","228 BERING AVE UNIT 2,TORONTO,ONTARIO,CANADA,M8Z3A3",www.dahabshiil.ca,"Foreign Exchange, Money Transferring",Registered,M08992367,6/23/2008,11/17/2027,,,Provincial or territorial (Canada): Ontario,1284510,3/5/1998,No'
