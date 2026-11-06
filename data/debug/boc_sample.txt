@@ -1,17 +1,17 @@
   json 200    24906 bytes  https://www.bankofcanada.ca/rps-api/cif2/registry-decisions/enforcement/list/
 registered: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/
   json 200  1175911 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
-  entries: 1825 from data, 1825 in the table -> using data
+  entries: 1825 from matching data, 1825 in the table -> using data
   first entry raw: {"main_trade_name": "Khiza Financial", "en_legal_name": "", "fr_legal_name": "Villard Kiza", "head_office_country": "Canada", "status": "Registered", "created_on": "2024-11-01 14:19:44", "registration_date": "2026-04-13", "has_violations": 0, "id": "e72fdf53-5c98-ef11-8a69-6045bd5e516b", "group_label": "registered"}
 applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/
   json 200  1175911 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
-  entries: 1825 from data, 414 in the table -> using data
-  first entry raw: {"main_trade_name": "Khiza Financial", "en_legal_name": "", "fr_legal_name": "Villard Kiza", "head_office_country": "Canada", "status": "Registered", "created_on": "2024-11-01 14:19:44", "registration_date": "2026-04-13", "has_violations": 0, "id": "e72fdf53-5c98-ef11-8a69-6045bd5e516b", "group_label": "registered"}
-status / group values (counted per page): {'registered / Registered': 3650}
+  entries: 0 from matching data, 414 in the table -> using table
+  first entry raw: {"Legal name": "100 Exchange Inc.", "Main trade name": "100 Exchange", "Head office country": "Canada", "Date of application": "2026-08-07", "detail_link": "https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=79c0381b-9192-f111-b8dc-70a8a50df491"}
+status / group values (counted per page): {'registered / Registered': 1825, '- / -': 414}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
-firms by status: {'registered': 1825}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=e72fdf53-5c98-ef11-8a69-6045bd5e516b: {"v": 2, "email": "kizavillard@gmail.com", "website": "", "seen": "2026-11-06", "phone": "6137152267", "city": "OTTAWA", "address": "204-1604 MICHAEL ST", "legal": "Villard Kiza", "trade": "Khiza Financial", "status": "Registered"}
-  json 200     2119 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/e72fdf53-5c98-ef11-8a69-6045bd5e516b
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=ebc4d0e8-1c9d-ef11-8a69-6045bd60b625: {"v": 2, "email": "smpigeon@pirel.com", "website": "https://www.pirel.com", "seen": "2026-11-06", "phone": "1-450-449-5199", "city": "BOUCHERVILLE", "address": "1315 RUE GAY-LUSSAC", "legal": "PIREL INC.", "trade": "", "status": "Registered"}
-  json 200     2137 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/ebc4d0e8-1c9d-ef11-8a69-6045bd60b625
-detail pages: 250 fetched this run, 1575 still to do, 250 done in total
+firms by status: {'registered': 1825, 'applicant': 414}
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=362c8fa8-b99a-ef11-8a69-002248adaada: {"v": 2, "email": "compliance@berkeleypayment.com", "website": "https://www.berkeleypayment.com", "seen": "2026-11-06", "phone": "1-888-642-2881", "city": "Oakville", "address": "221 Lakeshore Road East", "legal": "Berkeley Payment Solutions Inc.", "trade": "Berkeley Payment Solutions", "status": "Registered"}
+  json 200     1823 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/362c8fa8-b99a-ef11-8a69-002248adaada
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=dc34ba89-0170-f111-ab0f-7ced8ddf42ee: {"v": 2, "email": "cgouglas@bestbuycanada.ca", "website": "https://www.bestbuy.ca", "seen": "2026-11-06", "phone": "1-604-435-8223", "city": "Vancouver", "address": "Suite #102, 425 West 6th Avenue", "legal": "Best Buy Canada Ltd.", "trade": "Best Buy", "status": "Registered"}
+  json 200     1890 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/dc34ba89-0170-f111-ab0f-7ced8ddf42ee
+detail pages: 250 fetched this run, 1739 still to do, 500 done in total
