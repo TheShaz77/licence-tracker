@@ -1,10 +1,10 @@
 url: https://subjekty.nbs.sk/api/psd2
 bytes: 826132  starts: b'{\n  "iat'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': 'national_id', 'lei': None, 'city': None, 'date': None, 'status': None}
-headers: ['address', 'country', 'id', 'licenses', 'name', 'founder.country', 'founder.name', 'national_id']
-data rows: 1058  kept: 4
-type values: [('', 1058)]
+columns used: {'type': 'licence code'}
+headers: ['institutions[].licenses[]']
+data rows: 1058  kept: 10
+type values: [('EUB', 357), ('EUEM', 293), ('EUPI', 289), ('APS', 55), ('EUAISP', 36), ('PZB', 16), ('B', 13), ('PI', 9), ('PZPI', 2), ('AISP', 1)]
 first lines:
 '{'
 '  "iat": 1793964629,'

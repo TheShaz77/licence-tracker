@@ -1,8 +1,6 @@
 {
-  "finished": "2026-11-06 14:07",
-  "sources_status": "fca: waiting (FCA seed scan still running: 4.8% scanned; 634 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); finma: ok (0 changes); nat_nl: FAILED; nat_lt: baseline 693; nat_sk: baseline 4",
+  "finished": "2026-11-06 14:12",
+  "sources_status": "fca: waiting (FCA seed scan still running: 4.8% scanned; 634 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); finma: ok (0 changes); nat_lt: baseline 117; nat_sk: baseline 10",
   "changes": 0,
-  "problems": [
-    "NL national register (DNB): 403 Client Error: Forbidden for url: https://www.dnb.nl/en-GB/registerdownloadcomplete/TheNetherlands/csv"
-  ]
+  "problems": []
 }
