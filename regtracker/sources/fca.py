@@ -216,9 +216,14 @@ def save_state(ctx: Context, st: dict):
     tmp.replace(p)
 
 
-def _check_frn(client: FCAClient, st: dict, frn: int, enrich: bool) -> str:
-    """Look up one FRN and update state. Returns 'tracked', 'other' or 'none'."""
-    firm = client.firm(frn)
+_MISSING = object()
+
+
+def _check_frn(client: FCAClient, st: dict, frn: int, enrich: bool, firm=_MISSING) -> str:
+    """Look up one FRN (or use a prefetched result) and update state.
+    Returns 'tracked', 'other' or 'none'."""
+    if firm is _MISSING:
+        firm = client.firm(frn)
     if not firm:
         return "none"
     st["max_frn_seen"] = max(st.get("max_frn_seen", 0), frn)
@@ -261,27 +266,29 @@ def seed(ctx: Context, hours: float) -> dict:
     for frn in extra:
         if str(frn) not in st["tracked"]:
             _safe_check(client, st, frn, enrich, ctx)
+    workers = int(cfg.get("parallel_requests", 8))
     while time.monotonic() < deadline:
         ri = sd["range_index"]
         if ri >= len(sd["ranges"]):
             sd["done"] = True
             break
         lo, hi = sd["ranges"][ri]
-        frn = max(sd["cursor"], lo)
-        if frn > hi:
+        start = max(sd["cursor"], lo)
+        if start > hi:
             sd["range_index"] = ri + 1
             if sd["range_index"] < len(sd["ranges"]):
                 sd["cursor"] = sd["ranges"][sd["range_index"]][0]
             continue
-        _safe_check(client, st, frn, enrich, ctx)
-        sd["cursor"] = frn + 1
-        sd["checked"] = sd.get("checked", 0) + 1
-        since_save += 1
+        batch = list(range(start, min(hi, start + BATCH - 1) + 1))
+        check_many(client, st, batch, enrich, ctx, workers)
+        sd["cursor"] = batch[-1] + 1
+        sd["checked"] = sd.get("checked", 0) + len(batch)
+        since_save += len(batch)
         if since_save >= 2000:
             save_state(ctx, st)
             since_save = 0
             ctx.log.info("FCA seed: at FRN %d, %d payment firms found so far",
-                         frn, len(st["tracked"]))
+                         batch[-1], len(st["tracked"]))
     save_state(ctx, st)
     ctx.log.info("FCA seed progress: %s", seed_progress(st))
     return st
@@ -299,6 +306,41 @@ def seed_progress(st: dict) -> str:
     pct = 100.0 * done / total if total else 100.0
     return (f"{'complete' if sd.get('done') else f'{pct:.1f}% scanned'}; "
             f"{len(st['tracked'])} payment/e-money firms found")
+
+
+BATCH = 200
+
+
+def check_many(client, st, frns, enrich, ctx, workers: int = 8) -> dict:
+    """Look up many FRNs with several requests in flight (each lookup takes
+    ~0.8 s, so one at a time can't reach the FCA's rate limit). The shared
+    rate limiter still caps the total. State is only touched here, in the
+    main thread. Returns {frn: result}."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    def fetch(frn):
+        try:
+            return frn, client.firm(frn), None
+        except SourceNotReady:
+            raise
+        except Exception as e:
+            return frn, None, e
+
+    results = {}
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        for frn, firm, err in pool.map(fetch, [int(f) for f in frns]):
+            if err is not None:
+                ctx.log.warning("FCA FRN %s skipped: %s", frn, err)
+                results[frn] = "error"
+                continue
+            try:
+                results[frn] = _check_frn(client, st, frn, enrich, firm=firm)
+            except SourceNotReady:
+                raise
+            except Exception as e:
+                ctx.log.warning("FCA FRN %s skipped: %s", frn, e)
+                results[frn] = "error"
+    return results
 
 
 def _safe_check(client, st, frn, enrich, ctx) -> str:
@@ -347,10 +389,10 @@ class FCASource(Source):
             if str(frn) not in st["tracked"]:
                 frns.append(frn)
         ctx.log.info("FCA: re-checking %d firms (%s)", len(frns), "full" if full else "active only")
-        for i, frn in enumerate(frns, 1):
-            _safe_check(client, st, frn, enrich, ctx)
-            if i % 1000 == 0:
-                save_state(ctx, st)
+        workers = int(cfg.get("parallel_requests", 8))
+        for i in range(0, len(frns), 1000):
+            check_many(client, st, frns[i:i + 1000], enrich, ctx, workers)
+            save_state(ctx, st)
         if full:
             st["last_full_recheck"] = ctx.today
 
@@ -365,12 +407,15 @@ class FCASource(Source):
         misses = 0
         frn = lo
         while frn <= hi or misses < 500:
-            res = _safe_check(client, st, frn, enrich, ctx)
-            if frn > top:
-                misses = 0 if res in ("tracked", "other") else misses + 1
-                if res in ("tracked", "other"):
-                    hi = max(hi, frn + ahead)
-            frn += 1
+            batch = list(range(frn, frn + BATCH))
+            res = check_many(client, st, batch, enrich, ctx, workers)
+            for f in batch:  # in FRN order
+                if f > top:
+                    found = res.get(f) in ("tracked", "other")
+                    misses = 0 if found else misses + 1
+                    if found:
+                        hi = max(hi, f + ahead)
+            frn = batch[-1] + 1
             if frn > hi and misses >= 500:
                 break
         save_state(ctx, st)
