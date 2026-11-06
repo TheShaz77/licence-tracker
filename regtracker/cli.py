@@ -91,6 +91,14 @@ def cmd_run(args, cfg, data_dir) -> int:
             continue
         curr = {r.key: r.to_dict() for r in recs if r.jurisdiction not in ctx.excluded_countries}
         prev = load_snapshot(data_dir, src.name)
+        fp = getattr(src, "fingerprint", None)
+        fp_file = data_dir / "snapshots" / f"{src.name}.settings"
+        if fp and prev and (not fp_file.exists() or fp_file.read_text() != fp):
+            log.info("%s: settings changed since the last snapshot; starting a fresh baseline", src.name)
+            prev = {}
+        if fp:
+            fp_file.parent.mkdir(parents=True, exist_ok=True)
+            fp_file.write_text(fp)
         if not prev:
             _, merged = diff({}, curr, ctx.now, src.removal_is_event)
             save_snapshot(data_dir, src.name, merged)

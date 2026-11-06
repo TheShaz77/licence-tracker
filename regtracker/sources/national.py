@@ -47,7 +47,8 @@ ID_COLS = ["relation number", "relatienummer", "registration number", "register 
 LEI_COLS = ["lei", "lei code", "lei-code", "ENT_COD_LEI", "ENT_LEI"]
 CITY_COLS = ["city", "town", "place", "plaats", "vestigingsplaats", "miestas", "municipality",
              "ENT_TOW_CIT_RES", "obec", "mesto"]
-DATE_COLS = ["start date", "registration date", "date of registration", "licence date",
+END_COLS = ["valid till", "valid to", "valid until", "end date", "expiry date", "withdrawn", "date of withdrawal"]
+DATE_COLS = ["valid from", "start date", "registration date", "date of registration", "licence date",
              "date", "ingangsdatum", "datum", "effective date", "ENT_AUT", "datumVzniku"]
 STATUS_COLS = ["status", "state", "stav", "ENT_WDR", "ENT_DAT_WDR"]
 INACTIVE_RE = re.compile(r"withdrawn|revoked|cancel|expired|terminated|lapsed|inactive|ingetrokken|"
@@ -145,8 +146,83 @@ def _col(headers: list, names: list, override=None):
     return None
 
 
+def _iso(s: str) -> str:
+    """Dates like 2026-10-31, 31.10.2026 or 31/10/2026 -> 2026-10-31 ('' if none)."""
+    s = (s or "").strip()
+    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
+    if m:
+        return m.group(0)
+    m = re.match(r"(\d{1,2})[./](\d{1,2})[./](\d{4})", s)
+    if m:
+        return f"{m.group(3)}-{int(m.group(2)):02d}-{int(m.group(1)):02d}"
+    return ""
+
+
+def parse_nbs_psd2(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
+    """Slovakia (NBS) PSD2 feed: {"institutions": [{name, id, national_id, address,
+    licenses: [{<type code>, <valid from>, <valid to>, scopes...}]}]}.
+    Keeps licences whose type code is in spec['licence_codes']."""
+    import datetime as dt
+    import json
+    today = spec.get("_today") or dt.date.today().isoformat()
+    wanted = spec.get("licence_codes") or {"PI": "Payment institution", "EM": "E-money institution",
+                                           "AISP": "Account information service provider"}
+    doc = json.loads(decode_bytes(raw))
+    insts = doc.get("institutions") if isinstance(doc, dict) else None
+    if not isinstance(insts, list):
+        insts = _records_in_json(doc)
+    out, code_counts = [], {}
+    for inst in insts:
+        if not isinstance(inst, dict):
+            continue
+        name = str(inst.get("name") or "").strip()
+        lic = inst.get("licenses") or inst.get("licences") or []
+        types, actives, froms, ends = [], [], [], []
+        for l in lic if isinstance(lic, list) else []:
+            if not isinstance(l, dict):
+                continue
+            code = next((str(v) for k, v in l.items() if isinstance(v, str) and v in CODES_ALL), None)
+            if code is None:  # fall back to the usual key names
+                code = str(l.get("type") or l.get("license") or l.get("code") or "")
+            code_counts[code] = code_counts.get(code, 0) + 1
+            if code not in wanted:
+                continue
+            vf = next((_iso(str(v)) for k, v in l.items() if "from" in k.lower() or k.lower().endswith("od")), "")
+            vt = next((_iso(str(v)) for k, v in l.items() if re.search(r"(^|_)to$|until|till|valid_?to|do$", k.lower())), "")
+            types.append(wanted[code])
+            froms.append(vf)
+            ends.append(vt)
+            actives.append(not vt or vt >= today)
+        if not types or not name:
+            continue
+        active = any(actives)
+        ref = str(inst.get("national_id") or inst.get("id") or "")
+        addr = str(inst.get("address") or "")
+        city = re.sub(r"^\d{3}\s?\d{2}\s*", "", addr.rsplit(",", 1)[-1].strip()) if "," in addr else ""
+        out.append(Record(
+            key=f"nat_{country.lower()}:{ref or norm_key(name)}", source=f"nat_{country.lower()}",
+            jurisdiction=country, regulator=regulator, name=name,
+            licence_type=" + ".join(sorted(set(types))), active=active,
+            status_detail="NBS licence" + ("" if active else f" ended {max(e for e in ends if e)}"),
+            status_date=min((f for f in froms if f), default=""), reference=ref,
+            city=city, register_url=spec.get("register_url") or spec["url"],
+            extra={"address": addr},
+        ))
+    info = {"headers": ["institutions[].licenses[]"], "columns": {"type": "licence code"},
+            "rows": len(insts), "kept": len(out),
+            "type_values": sorted(code_counts.items(), key=lambda kv: -kv[1])}
+    return out, info
+
+
+CODES_ALL = {"AISP", "APS", "B", "EM", "EUAISP", "EUB", "EUEM", "EUPI", "PI", "PZB", "PZPI"}
+
+
 def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     """Return (records, info) for one downloaded file."""
+    if spec.get("format") == "nbs_psd2":
+        return parse_nbs_psd2(raw, spec, country, regulator)
+    import datetime as dt
+    today = spec.get("_today") or dt.date.today().isoformat()
     headers, rows = read_table(raw)
     c = {
         "name": _col(headers, NAME_COLS, spec.get("name_column")),
@@ -156,6 +232,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         "city": _col(headers, CITY_COLS),
         "date": _col(headers, DATE_COLS),
         "status": _col(headers, STATUS_COLS),
+        "end": _col(headers, END_COLS),
+        "exclude": _col(headers, [], spec.get("exclude_column")) if spec.get("exclude_column") else None,
     }
     info = {"headers": headers, "columns": {k: (headers[v] if v is not None else None) for k, v in c.items()},
             "rows": len(rows)}
@@ -180,8 +258,11 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         if codes and raw_type in codes:
             raw_type = f"{raw_type} {codes[raw_type]}"
         type_values[raw_type] = type_values.get(raw_type, 0) + 1
-        if exclude and exclude.search(raw_type if c["type"] is not None else " ".join(row)):
-            continue
+        if exclude:
+            hay = get(row, "exclude") if c["exclude"] is not None else (
+                raw_type if c["type"] is not None else " ".join(row))
+            if exclude.search(hay):
+                continue
         ltype = fixed_type
         if patterns:
             hay = raw_type or " ".join(row)
@@ -192,6 +273,10 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         key = f"nat_{country.lower()}:{ref or norm_key(name)}"
         status = get(row, "status")
         active = not (status and INACTIVE_RE.search(status))
+        end = _iso(get(row, "end"))
+        if end and end < today:
+            active = False
+            status = status or f"valid till {end}"
         if key in out:  # same firm on several registers
             r = out[key]
             types = sorted(set(r.licence_type.split(" + ")) | {ltype})
@@ -200,8 +285,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         out[key] = Record(
             key=key, source=f"nat_{country.lower()}", jurisdiction=country, regulator=regulator,
             name=name, licence_type=ltype, active=active,
-            status_detail=" / ".join(x for x in (raw_type, status) if x) or f"{regulator} register",
-            status_date=get(row, "date")[:10], reference=ref, lei=get(row, "lei"),
+            status_detail=" / ".join(x for x in (raw_type, get(row, "exclude"), status) if x) or f"{regulator} register",
+            status_date=_iso(get(row, "date")) or get(row, "date")[:10], reference=ref, lei=get(row, "lei"),
             city=get(row, "city"), register_url=spec.get("register_url") or spec["url"],
         )
     info["type_values"] = sorted(type_values.items(), key=lambda kv: -kv[1])[:40]
@@ -218,10 +303,14 @@ class NationalSource(Source):
         self.regulator = cfg.get("regulator", self.country)
         self.name = f"nat_{self.country.lower()}"
         self.label = f"{self.country} national register ({self.regulator})"
+        import hashlib
+        import json
+        self.fingerprint = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()[:16]
 
     def fetch(self, ctx: Context) -> list:
         recs, notes = {}, []
         for spec in self.cfg.get("files") or []:
+            spec = {**spec, "_today": ctx.today}
             if spec.get("codes_url"):
                 spec = {**spec, "_codes": fetch_codes(ctx, spec["codes_url"])}
             r = ctx.session.get(spec["url"], timeout=120, headers={

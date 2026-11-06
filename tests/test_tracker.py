@@ -644,3 +644,71 @@ def test_national_json_with_code_list():
     recs, _ = national.parse_file(doc.encode(), spec, "SK", "NBS")
     assert {(r.name, r.licence_type) for r in recs} == {("Firma A", "Payment institution"),
                                                        ("Firma B", "E-money institution")}
+
+
+def _sk_doc(style):
+    vf, vt = ("valid_from", "valid_to") if style == "snake" else ("validFrom", "validTo")
+    def lic(code, frm, to=None, issuer="NBS"):
+        return {"issuer": issuer, "type": code, vf: frm, vt: to, "scopes": ["AISP", "PISP"]}
+    return json.dumps({"iat": 1, "institutions": [
+        {"id": "31340890", "name": "365.bank, a. s.", "address": "Dvořákovo nábrežie 4, 81102 Bratislava",
+         "country": "SK", "licenses": [lic("B", "1993-01-01", "2026-10-31")]},
+        {"id": "1", "national_id": "50000001", "name": "Pay SK s.r.o.", "address": "Ulica 1, 82105 Bratislava",
+         "country": "SK", "licenses": [lic("PI", "2019-05-01")]},
+        {"id": "2", "name": "Old EMI a.s.", "address": "x, 04001 Košice", "country": "SK",
+         "licenses": [lic("EM", "2015-01-01", "2026-09-30")]},
+        {"id": "3", "name": "Foreign PI", "country": "DE", "licenses": [lic("EUPI", "2020-01-01", issuer="BaFin")]},
+        {"id": "4", "name": "Agent s.r.o.", "country": "SK", "licenses": [lic("APS", "2020-01-01")]},
+    ]})
+
+
+@pytest.mark.parametrize("style", ["snake", "camel"])
+def test_nbs_psd2_feed(style):
+    spec = {"url": "https://subjekty.nbs.sk/api/psd2", "format": "nbs_psd2", "_today": "2026-11-06"}
+    recs, info = national.parse_file(_sk_doc(style).encode(), spec, "SK", "NBS")
+    by = {r.name: r for r in recs}
+    assert set(by) == {"Pay SK s.r.o.", "Old EMI a.s."}            # bank, passported, agent left out
+    assert by["Pay SK s.r.o."].licence_type == "Payment institution" and by["Pay SK s.r.o."].active
+    assert by["Pay SK s.r.o."].reference == "50000001" and by["Pay SK s.r.o."].city == "Bratislava"
+    assert by["Pay SK s.r.o."].status_date == "2019-05-01"
+    assert by["Old EMI a.s."].active is False and "2026-09-30" in by["Old EMI a.s."].status_detail
+    assert dict(info["type_values"])["EUPI"] == 1
+
+
+LB_REAL = ("﻿Title;Type;Business form;Company code;Registration code;Licence type/kind;Authorization code;valid from;valid till\n"
+           " Unzer Luxembourg S.A.;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;; B 144133;;;;\n"
+           "UAB Lt Pay;Payment institution;Payment institution licensed in the Republic of Lithuania;305000001;;Payment institution licence;LIC-1;2019-02-01;\n"
+           "UAB Gone Pay;Payment institution;Payment institution licensed in the Republic of Lithuania;305000002;;Payment institution licence;LIC-2;2018-01-01;2026-05-31\n"
+           "X branch;Payment institution;Branch of a payment institution of an EU Member State;;;;;;\n")
+
+
+def test_lb_filters_passported_and_uses_validity():
+    spec = {"url": "u", "licence_type": "Payment institution", "exclude_column": "Business form",
+            "exclude_pattern": "Member State|branch|third countr", "_today": "2026-11-06"}
+    recs, info = national.parse_file(LB_REAL.encode("utf-8"), spec, "LT", "LB")
+    by = {r.name: r for r in recs}
+    assert set(by) == {"UAB Lt Pay", "UAB Gone Pay"}
+    assert by["UAB Lt Pay"].active and by["UAB Lt Pay"].status_date == "2019-02-01"
+    assert by["UAB Gone Pay"].active is False and by["UAB Lt Pay"].reference == "305000001"
+
+
+def test_settings_change_starts_fresh_baseline(tmp_path, monkeypatch):
+    world = {"rows": [("UAB A", "Payment institution licensed in the Republic of Lithuania")] * 1 +
+                     [(f"Foreign {i}", "EU Member States without a branch") for i in range(60)]}
+
+    def fetch(self, ctx):
+        text = "Title;Type;Business form\n" + "".join(f"{n};Payment institution;{f}\n" for n, f in world["rows"])
+        spec = {"url": "u", "licence_type": "Payment institution", **(self.cfg["files"][0])}
+        return national.parse_file(text.encode(), {**spec, "_today": ctx.today}, "LT", "LB")[0]
+
+    monkeypatch.setattr(national.NationalSource, "fetch", fetch)
+    cfgp = tmp_path / "c.yaml"
+    data = tmp_path / "data"
+    args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email"]
+    cfgp.write_text("sources: {}\nnational:\n  LT:\n    regulator: LB\n    files: [{url: u}]\n")
+    assert cli.main(args) == 0                                       # baseline incl. foreign firms
+    cfgp.write_text("sources: {}\nnational:\n  LT:\n    regulator: LB\n    files: [{url: u, exclude_column: Business form, "
+                    "exclude_pattern: Member State}]\n")
+    assert cli.main(args) == 0                                       # not a 'drop', no false removals
+    assert not (data / "changes.csv").exists()
+    assert len(load_snapshot(data, "nat_lt")) == 1
