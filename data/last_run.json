@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-05 23:44",
-  "sources_status": "ecb: baseline 4604",
+  "finished": "2026-11-06 13:32",
+  "sources_status": "fca: waiting (FCA seed scan still running: 4.2% scanned; 607 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); finma: ok (0 changes)",
   "changes": 0,
   "problems": []
 }
