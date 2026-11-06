@@ -294,6 +294,23 @@ def seed(ctx: Context, hours: float) -> dict:
     return st
 
 
+def preview_records(ctx: Context) -> list:
+    """UK firms found so far by an unfinished seed scan, as record dicts."""
+    p = state_path(ctx)
+    if not p.exists():
+        return []
+    st = json.loads(p.read_text())
+    if st["seed"].get("done"):
+        return []
+    out = []
+    for d in st["tracked"].values():
+        d = {k: v for k, v in d.items() if not k.startswith("_")}
+        d["first_seen"] = d.get("first_seen") or ""
+        d["last_changed"] = d.get("last_changed") or ""
+        out.append(d)
+    return out
+
+
 def seed_progress(st: dict) -> str:
     sd = st["seed"]
     total = sum(hi - lo + 1 for lo, hi in sd["ranges"])
