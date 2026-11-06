@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-06 15:40",
-  "sources_status": "fca: waiting (FCA seed scan still running: 4.8% scanned; 634 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: baseline 2239; finma: ok (0 changes); nat_lt: ok (0 changes)",
-  "changes": 0,
+  "finished": "2026-11-06 17:01",
+  "sources_status": "fca: waiting (FCA seed scan still running: 8.4% scanned; 677 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (5 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); nat_lt: ok (0 changes)",
+  "changes": 5,
   "problems": []
 }

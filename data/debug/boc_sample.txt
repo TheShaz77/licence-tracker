@@ -10,8 +10,8 @@ applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list
 status / group values (counted per page): {'registered / Registered': 1825, '- / -': 414}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
 firms by status: {'registered': 1825, 'applicant': 414}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=362c8fa8-b99a-ef11-8a69-002248adaada: {"v": 2, "email": "compliance@berkeleypayment.com", "website": "https://www.berkeleypayment.com", "seen": "2026-11-06", "phone": "1-888-642-2881", "city": "Oakville", "address": "221 Lakeshore Road East", "legal": "Berkeley Payment Solutions Inc.", "trade": "Berkeley Payment Solutions", "status": "Registered"}
-  json 200     1823 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/362c8fa8-b99a-ef11-8a69-002248adaada
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=dc34ba89-0170-f111-ab0f-7ced8ddf42ee: {"v": 2, "email": "cgouglas@bestbuycanada.ca", "website": "https://www.bestbuy.ca", "seen": "2026-11-06", "phone": "1-604-435-8223", "city": "Vancouver", "address": "Suite #102, 425 West 6th Avenue", "legal": "Best Buy Canada Ltd.", "trade": "Best Buy", "status": "Registered"}
-  json 200     1890 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/dc34ba89-0170-f111-ab0f-7ced8ddf42ee
-detail pages: 250 fetched this run, 1739 still to do, 500 done in total
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=79c0381b-9192-f111-b8dc-70a8a50df491: {"v": 2, "email": "", "website": "https://www.100exchange.ca", "seen": "2026-11-06", "phone": "", "city": "North Yprk", "address": "", "legal": "100 Exchange Inc.", "trade": "100 Exchange", "status": ""}
+  json 200      796 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/79c0381b-9192-f111-b8dc-70a8a50df491
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=076277a6-2e99-ef11-8a69-0022483dbf39: {"v": 2, "email": "", "website": "", "seen": "2026-11-06", "phone": "", "city": "Markham", "address": "", "legal": "1000496921 ONTARIO INC.", "trade": "NIAVARAN", "status": ""}
+  json 200      761 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/076277a6-2e99-ef11-8a69-0022483dbf39
+detail pages: 400 fetched this run, 1339 still to do, 900 done in total

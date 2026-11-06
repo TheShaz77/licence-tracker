@@ -1,21 +1,21 @@
-url: https://www.ecb.europa.eu/stats/money/mfi/general/html/dla/mfi_MID/mfi_csv_261105.csv.gz
-bytes: 2004490  lines: 5321  records parsed: 4604
+url: https://www.ecb.europa.eu/stats/money/mfi/general/html/dla/mfi_MID/mfi_csv_261106.csv.gz
+bytes: 2004918  lines: 5322  records parsed: 4605
 error: None
 delimiter: '\t'
 headers: ['RIAD_CODE', 'LEI', 'COUNTRY_OF_REGISTRATION', 'NAME', 'BOX', 'ADDRESS', 'POSTAL', 'CITY', 'CATEGORY', 'HEAD_COUNTRY_OF_REGISTRATION', 'HEAD_NAME', 'HEAD_RIAD_CODE', 'HEAD_LEI', 'REPORT']
-line-break counts: CRLF=5320 CR=5320 LF=5320
-category values: [('Credit Institution', 4604), ('Money Market Fund', 396), ('Other Institution', 290), ('Central Bank', 29)]
+line-break counts: CRLF=5321 CR=5321 LF=5321
+category values: [('Credit Institution', 4605), ('Money Market Fund', 396), ('Other Institution', 290), ('Central Bank', 29)]
 
 first 12 lines:
 'RIAD_CODE\tLEI\tCOUNTRY_OF_REGISTRATION\tNAME\tBOX\tADDRESS\tPOSTAL\tCITY\tCATEGORY\tHEAD_COUNTRY_OF_REGISTRATION\tHEAD_NAME\tHEAD_RIAD_CODE\tHEAD_LEI\tREPORT'
-'NL6649922\t724500AAT1DK36059L16\tNL\tCommonwealth Bank of Australia (Europe) N.V.\t\tGustav Mahlerlaan\xa0352\t1082 ME\tAMSTERDAM\tCredit Institution\t\t\t\t\tEuro Area BSI Statistics tail reporter'
-'IT0005111761411\t\tIT\tSOCIÉTÉ GÉNÉRALE LUXEMBOURG\t\tVIA OLONA, 2\t20123\tMILANO\tCredit Institution\tLU\tSociété Générale Luxembourg\tLUB00019\tTPS0Q8GFSZF45ZZFL873\tEuro Area BSI Statistics full (non-tail) reporter'
-'DE05922\t529900XTUA1TP4PL1M16\tDE\tPEAC (Germany) GmbH\t\tGertrudenstraße 2\t20095\tHamburg\tCredit Institution\t\t\t\t\tEuro Area BSI Statistics full (non-tail) reporter'
-'BE0763791559\t5493000CH0ECGFCE1261\tBE\tOpen Bank, S.A.\t\tGuldensporenpark, 81\t9820\tMerelbeke-Melle\tCredit Institution\tES\tOPENBANK, S.A.\tES0224\t5493000LM0MZ4JPMGM90\tEuro Area BSI Statistics full (non-tail) reporter'
-'BG206302580\t\tBG\tBigbank AS - Branch Bulgaria\t\tTriaditsa Dist., 49B, Balgariya Blvd., ent. A, floor 7\t1404\tSofia\tCredit Institution\tEE\tBigbank AS\tEE10183757\t5493007SWCCN9S3J2748\tEuro Area BSI Statistics full (non-tail) reporter'
-'GR014N\t213800DBQIB6VBNU5C64\tGR\tAlpha Bank S.A.\t\tStadiou, 40\t10252\tAthens\tCredit Institution\t\t\t\t\tEuro Area BSI Statistics full (non-tail) reporter'
-'FR27733\t98450051BB6F4DEK0337\tFR\tCA Auto Bank S.p.A. Succursale en France\t\t6 RUE NICOLAS COPERNIC\t78190\tTRAPPES\tCredit Institution\tIT\tCRÉDIT AGRICOLE AUTO BANK S.P.A.\tIT0001863196870\t549300V1VN70Q7PQ7234\tEuro Area BSI Statistics full (non-tail) reporter'
-'FR15883\t969500FX8K40ZDW4F377\tFR\tSociété Générale - Forge\t\t17 CRS VALMY\t92800\tPUTEAUX\tOther Institution\t\t\t\t\tEuro Area BSI Statistics tail reporter'
-"IT0004428110632\t\tIT\tHYUNDAI CAPITAL BANK EUROPE GMBH\t\tCORSO MASSIMO D'AZEGLIO, 33/E\t10126\tTORINO\tCredit Institution\tDE\tHyundai Capital Bank Europe GmbH\tDE05890\t391200UZL84G59FD0D11\tEuro Area BSI Statistics full (non-tail) reporter"
-'FR30833\t391200BND4JWMLS2BU43\tFR\tFinom Payments B.V.\t\t4 RUE JULES LEFEBVRE\t75009\tPARIS\tOther Institution\tNL\tFINOM Payments B.V.\tNL8898714\t7245008GWLPQCA1S1726\tEuro Area BSI Statistics tail reporter'
-'LUB00427\t959800ELNWQDZ1M50C82\tLU\tBanco Inversis S.A., Luxembourg branch\t\t35a, avenue J.F. Kennedy\tL-1855\tLuxembourg\tCredit Institution\tES\tBanco Inversis, S.A.\tES0232\t95980020140005184148\tEuro Area BSI Statistics full (non-tail) reporter'
+'SE5164061276\t\tSE\tPareto Bank ASA Filial Sverige\t\tBox 7415\t103 91\tStockholm\tCredit Institution\tNO\tPARETO BANK ASA\tNO0ECBM00515\t5967007LIEEXZX75J484\tEuro Area BSI Statistics tail reporter'
+'ESB16992182\t894500MZFU10TLAC8M34\tES\tSILBO MONEY EDE SL\t\tHOCES DE HERMIDA, 140\t28023\tMADRID\tOther Institution\t\t\t\t\tEuro Area BSI Statistics tail reporter'
+'FR17888\t25490016I4JBKH9S9T87\tFR\tMERGE MONEY\t\t229 RUE SAINT HONORE\t75001\tPARIS\tOther Institution\t\t\t\t\tEuro Area BSI Statistics tail reporter'
+'ES1585\t\tES\tAVARDA BANK AB SUCURSAL EN ESPAÑA\t\tCL MARQUÉS DE LARIOS, 7\t29016\tMALAGA\tCredit Institution\tSE\tAvarda Bank AB\tSE5561581041\t529900BGZZZTLLBR1X49\tEuro Area BSI Statistics tail reporter'
+'FR31333\t8945007OZPAXKLJP1M70\tFR\tBanque Internationale à Luxembourg S.A.\t\t5 AVENUE BERTIE ALBRECHT\t75008\tPARIS\tCredit Institution\tLU\tBanque Internationale à Luxembourg\tLUB00002\t9CZ7TVMR36CYD5TZBS50\tEuro Area BSI Statistics tail reporter'
+'LUB00431\t636700P49XC3J16QRZ14\tLU\tIRACE Digital Bank (Europe) S.A.\t\t11-13, rue Jean Fischbach\tL-3372\tLEUDELANGE\tCredit Institution\t\t\t\t\tEuro Area BSI Statistics full (non-tail) reporter'
+'FR17918\t969500F9KZBT6US5BD73\tFR\t1POINT6\t\t10 RUE DE LA PAIX\t75002\tPARIS 02 EME\tOther Institution\t\t\t\t\tEuro Area BSI Statistics tail reporter'
+'LUW00017\t\tLU\tAlpha FX Europe Limited, Luxembourg Branch\t\t17 Boulevard F.W. Raiffeisen\tL-2411\tLUXEMBOURG\tOther Institution\t\t\t\t\tEuro Area BSI Statistics full (non-tail) reporter'
+'FR102495\t\tFR\tBRED MONETAIRE\t\t\t00000\tFR\tMoney Market Fund\t\t\t\t\tEuro Area BSI Statistics tail reporter'
+'IECBI00565695\t635400LYKCXZCPI8GI71\tIE\tAlpha Omni USD Money Market Fund\t\t\t\t\tMoney Market Fund\t\t\t\t\tEuro Area BSI Statistics full (non-tail) reporter'
+'NL3484446\t9845007CA6AEB032FE96\tNL\tLandesbank Baden-Württemberg (Dutch branch)\t\tSchiphol Boulevard 263\t1118 BH\tSchiphol\tCredit Institution\tDE\tLandesbank Baden-Württemberg\tDE00316\tB81CK4ESI35472RHJ606\tEuro Area BSI Statistics tail reporter'
