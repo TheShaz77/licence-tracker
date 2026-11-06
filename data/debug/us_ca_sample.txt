@@ -1,0 +1,16 @@
+url: https://dfpi.ca.gov/regulated-industries/money-transmitters/directory-of-money-transmitters/
+bytes: 204304  starts: b'<!DOCTYP'
+error: None
+columns used: {}
+headers: ['(CA directory blocks)']
+data rows: 109  kept: 108
+type values: None
+first lines:
+'<!DOCTYPE html> <html lang="en-US"> <head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){let e=document.location.href;if(!e.match(/[?&]nonitro/)){if(e.indexOf("?")==-1){if(e.indexOf("#")==-1){document.location.href=e+"?nonitro=1"}'
+"  document.documentElement.className = 'js';"
+' </script>    <link rel="canonical" href="https://dfpi.ca.gov/regulated-industries/money-transmitters/directory-of-money-transmitters/" />            <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://dfpi.ca.gov/#/schema/WebSite","url":"h'
+'   let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(win'
+''
+'img.wp-smiley, img.emoji {'
+'\tdisplay: inline !important;'
+'\tborder: none !important;'

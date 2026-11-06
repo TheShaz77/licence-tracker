@@ -1,6 +1,10 @@
 {
-  "finished": "2026-11-06 18:27",
-  "sources_status": "fca: waiting (FCA seed scan still running: 8.4% scanned; 677 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); nat_lt: ok (0 changes)",
+  "finished": "2026-11-06 18:49",
+  "sources_status": "fca: waiting (FCA seed scan still running: 8.4% scanned; 677 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: baseline 1425; us_ca: baseline 108; us_ma: FAILED; us_ct: FAILED; us_la: baseline 170; us_in: baseline 141; us_de: baseline 1; us_ak: FAILED",
   "changes": 0,
-  "problems": []
+  "problems": [
+    "US MA money transmitter licensees (MA DOB): 403 Client Error: Forbidden for url: https://www.mass.gov/doc/money-transmitter-licensee-list/download",
+    "US CT money transmitter licensees (CT DOB): CT: download link not found on https://portal.ct.gov/dob/consumer-credit-licenses/consumer-credit-licenses/money-transmitters-licensed-in-connecticut",
+    "US AK money transmitter licensees (AK DBS): 403 Client Error: Forbidden for url: https://www.commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses"
+  ]
 }

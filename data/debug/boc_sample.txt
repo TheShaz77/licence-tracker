@@ -10,8 +10,8 @@ applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list
 status / group values (counted per page): {'registered / Registered': 1825, '- / -': 414}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
 firms by status: {'registered': 1825, 'applicant': 414}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=3c9b3bcd-5098-ef11-8a68-0022483dbf39: {"v": 2, "email": "omie@ldvexpress.com", "website": "https://www.ldvexpress.com", "seen": "2026-11-06", "phone": "4167360969", "city": "North York", "address": "161B-6464 Yonge Street", "legal": "LDV Express Inc.", "trade": "", "status": "Registered"}
-  json 200     2141 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/3c9b3bcd-5098-ef11-8a68-0022483dbf39
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=becfcc14-dfa0-ef11-a72d-6045bd5de666: {"v": 2, "email": "info@leatherback.co", "website": "https://leatherback.co", "seen": "2026-11-06", "phone": "9059661824", "city": "Toronto", "address": "60 ATLANTIC AVE", "legal": "Leatherback Limited", "trade": "", "status": "Registered"}
-  json 200     2170 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/becfcc14-dfa0-ef11-a72d-6045bd5de666
-detail pages: 400 fetched this run, 539 still to do, 1700 done in total
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=736bb9ca-33d5-f011-8544-7ced8d360bbd: {"v": 2, "email": "PLUSFI_SOLUTIONS@proton.me", "website": "", "seen": "2026-11-06", "phone": "+15144028688", "city": "VANCOUVER", "address": "170 - 422 RICHARDS STREET", "legal": "PLUSFI SOLUTIONS INC.", "trade": "", "status": "Registered"}
+  json 200     1698 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/736bb9ca-33d5-f011-8544-7ced8d360bbd
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=dc201dd3-5ba2-ef11-a72d-002248b00a0f: {"v": 2, "email": "support@pluspay.one", "website": "https://pluspay.one", "seen": "2026-11-06", "phone": "+37126284029", "city": "Vancouver", "address": "1500 West Georgia, Suite 1300", "legal": "PLUSPAY LTD", "trade": "", "status": "Registered"}
+  json 200     2484 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/dc201dd3-5ba2-ef11-a72d-002248b00a0f
+detail pages: 400 fetched this run, 139 still to do, 2100 done in total

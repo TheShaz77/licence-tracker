@@ -1,0 +1,16 @@
+url: https://extranet.dfi.in.gov/ConsumerCredit/CompanyListing/5?handler=CompaniesInLicenseType
+bytes: 105461  starts: b'<html cl'
+error: None
+columns used: {'name': 'Name', 'dba': 'Doing Business As', 'lic': None, 'nmls': None, 'status': None, 'type': None, 'addr': 'Address', 'city': None, 'csz': 'City, State, Zip', 'state': None, 'phone': 'Phone', 'area': None, 'prefix': None, 'number': None, 'date': None}
+headers: ['Name', 'Doing Business As', 'Address', 'City, State, Zip', 'Phone']
+data rows: 141  kept: 141
+type values: [('', 141)]
+first lines:
+'<html class="no-js" lang="en">'
+'<head>'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'    <meta http-equiv="x-ua-compatible" content="ie=edge" />'
+'    <meta name="google-site-verification" content="YrKD0zYfSfGpTqiRwpp82e531Eqzp8zMR0IkxUWtiq0" />'
+''
+''

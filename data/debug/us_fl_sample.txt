@@ -1,0 +1,9 @@
+url: https://real.flofr.com/Public/MT/Money_Transmitters_monthly.zip
+bytes: 345777  starts: b'PK\x03\x04\x14\x00\x00\x00'
+error: None
+columns used: {'name': 'FIRM NAME', 'dba': 'DBA NAME', 'lic': 'LICENSE NUMBER', 'nmls': None, 'status': 'STATUS', 'type': 'LICENSE TYPE', 'addr': 'PRIM ADDRESS 1', 'city': 'PRIM CITY', 'csz': None, 'state': 'PRIM STATE', 'phone': 'PHONE', 'area': None, 'prefix': None, 'number': None, 'date': 'STATUS EFFECTIVE DATE'}
+headers: ['LICENSE NUMBER', 'LICENSE TYPE', 'INTIAL APPROVAL', 'EXPIRATION DATE', 'FIRM NAME', 'DBA NAME', 'PRIM ADDRESS 1', 'PRIM ADDRESS 2', 'PRIM CITY', 'COUNTY', 'PRIM STATE', 'PRIM ZIP', 'MAIL ADDRESS 1', 'MAIL ADDRESS 2', 'MAIL CITY', 'MAIL STATE', 'MAIL ZIP', 'PHONE', 'STATUS', 'STATUS EFFECTIVE DATE', 'DPP', 'PRIME_LI', 'PRIME CC']
+data rows: 6158  kept: 1425
+type values: [('FT3', 4699), ('FT2', 1459)]
+first lines:
+'(xlsx)'

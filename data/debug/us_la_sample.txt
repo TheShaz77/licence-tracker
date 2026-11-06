@@ -1,0 +1,16 @@
+url: https://ofi.la.gov/non-depository/money-orders-transmitters/licensees/
+bytes: 150960  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'EntityName', 'dba': None, 'lic': None, 'nmls': None, 'status': None, 'type': None, 'addr': 'AddressLine1', 'city': 'City', 'csz': None, 'state': 'StateCode', 'phone': None, 'area': 'AreaCode', 'prefix': 'Prefix', 'number': 'Number', 'date': None}
+headers: ['EntityName', 'AddressLine1', 'AddressLine2', 'City', 'StateCode', 'PostalCode', 'CountryCode', 'AreaCode', 'Prefix', 'Number']
+data rows: 174  kept: 170
+type values: [('', 174)]
+first lines:
+'<!doctype html>'
+'<html class="no-js" lang="en-US" >'
+'\t<head>'
+'\t\t<meta charset="UTF-8" />'
+'\t\t<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'\t\t<link rel="stylesheet" href="https://use.typekit.net/iul4xsx.css">'
+'\t\t<script defer src="https://kit.fontawesome.com/68f344b285.js" crossorigin="anonymous"></script>'
+"\t\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
