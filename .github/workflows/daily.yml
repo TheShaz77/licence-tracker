@@ -32,6 +32,9 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      - name: Install headless browser (for the Bank of Canada pages)
+        run: python -m playwright install --with-deps chromium
+
       - name: Fetch registers, detect changes, update the sheet
         env:
           FCA_API_EMAIL: ${{ secrets.FCA_API_EMAIL }}
