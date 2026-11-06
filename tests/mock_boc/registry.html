@@ -1,11 +1,11 @@
-<html><body><h1>Registry of payment service providers</h1>
-<table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>Violations</th></tr></thead>
+<html><body><table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>X</th></tr></thead>
 <tbody><tr><td>List is loading</td></tr></tbody></table>
 <script>
-fetch('/data/registry.json').then(r => r.json()).then(d => {
+const GROUP = "registered";
+fetch('/data/accounts.json').then(r => r.json()).then(d => {
   const tb = document.querySelector('#t tbody'); tb.innerHTML = '';
-  d.items.forEach(x => { const tr = document.createElement('tr');
-    tr.innerHTML = `<td><a href="/detail.html?id=${x.psp_id}">${x.legalName}</a></td><td>${x.tradeName}</td><td>${x.headOfficeCountry}</td><td>${x.violations}</td>`;
+  d.filter(x => x.group_label === GROUP).forEach(x => { const tr = document.createElement('tr');
+    tr.innerHTML = `<td><a href="/detail.html?account_id=${x.id}">${x.en_legal_name || x.fr_legal_name}</a></td><td>${x.main_trade_name}</td><td>${x.head_office_country}</td><td></td>`;
     tb.appendChild(tr); });
 });
 </script></body></html>

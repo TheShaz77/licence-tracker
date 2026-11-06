@@ -741,13 +741,13 @@ from regtracker.sources import boc, fintrac
 from regtracker import canada
 
 FINTRAC_CSV = ("Organization Names (Legal and Operating),Business Address,Services Offered,MSB Registration Status,"
-               "MSB Registration Number,MSB Initial Registration Date (YYYY/MM/DD),MSB Registration Expiry Date (YYYY/MM/DD),"
+               "MSB Registration Number,Date Initial MSB Registration Approval,MSB Registration Expiry Date,"
                "MSB Registration Cessation Date (YYYY/MM/DD),MSB Registration Revocation Date (YYYY/MM/DD),"
                "Jurisdiction of Incorporation,Incorporation Number,Incorporation Date (YYYY/MM/DD),Foreign MSB Indicator\n"
-               '"Paymentco Inc.; PayCo","1 King St W, Toronto, ON, M5H 1A1",Money transferring,Registered,M12345678,2019/05/01,2027/05/01,,,ON,1,2018/01/01,No\n'
+               '"Paymentco Inc.; PayCo","1 King St W, Toronto, ON, M5H 1A1",Money transferring,Registered,M12345678,2019-15-05,2027-15-05,,,ON,1,2018/01/01,No\n'
                '"Wise Payments Canada Inc.","99 Bay St, Toronto, ON, M5J 2X2",Money transferring; Foreign exchange dealing,Registered,M22222222,2016/01/01,2028/01/01,,,BC,2,2015/01/01,No\n'
                '"Corner FX Ltd.","5 Main St, Vancouver, BC, V6B 1A1",Foreign exchange dealing,Registered,M33333333,2020/01/01,2028/01/01,,,BC,3,2019/01/01,No\n'
-               '"Gone Remit Ltd.","2 Rue X, Montréal, QC, H2X 1A1",Money transferring,Revoked,M44444444,2017/01/01,,,2025/03/03,QC,4,2016/01/01,No\n'
+               '"Gone Remit Ltd.","2 Rue X, Montréal, QC, H2X 1A1",Money transferring,Revoked,M44444444,2017-01-01,,,2025-31-03,QC,4,2016/01/01,No\n'
                '"Foreign Pay GmbH","Berlin, Germany",Money transferring,Registered,M55555555,2021/01/01,2027/01/01,,,DE,5,2020/01/01,Yes\n')
 
 
@@ -756,19 +756,31 @@ def test_fintrac_parse():
     by = {r.reference: r for r in recs}
     assert len(recs) == 5 and info["columns"]["number"] == "MSB Registration Number"
     assert by["M12345678"].name == "Paymentco Inc." and by["M12345678"].extra["other_names"] == "PayCo"
-    assert by["M12345678"].city == "Toronto" and by["M12345678"].status_date == "2019-05-01"
-    assert by["M44444444"].active is False and "2025-03-03" in by["M44444444"].status_detail
+    assert by["M12345678"].city == "Toronto" and by["M12345678"].status_date == "2019-05-15"
+    assert by["M44444444"].active is False and "2025-03-31" in by["M44444444"].status_detail
     assert by["M55555555"].licence_type == "Foreign MSB"
 
 
 def test_boc_helpers():
-    e = boc.normalise_entry({"legalName": "Paymentco Inc.", "tradeName": "PayCo", "headOfficeCountry": "Canada",
-                             "dateOfApplication": "2025-01-02", "psp_id": 7})
-    assert (e["legal"], e["trade"], e["country"], e["date"], e["id"]) == ("Paymentco Inc.", "PayCo", "Canada", "2025-01-02", "7")
-    email, site = boc.contacts_from_page(
-        "Contact: info@paymentco.ca  Website: www.paymentco.ca  Bank of Canada media@bankofcanada.ca",
-        ["https://www.bankofcanada.ca/x", "mailto:info@paymentco.ca", "https://www.linkedin.com/company/x"])
-    assert email == "info@paymentco.ca" and site == "https://www.paymentco.ca"
+    e = boc.normalise_entry({"main_trade_name": "PayCo", "en_legal_name": "", "fr_legal_name": "Paiementco Inc.",
+                             "head_office_country": "Canada", "status": "Under review", "created_on": "2025-01-02 10:00:00",
+                             "registration_date": None, "has_violations": 0, "id": "e72f-1", "group_label": "applicant"})
+    assert (e["legal"], e["trade"], e["country"], e["id"]) == ("Paiementco Inc.", "PayCo", "Canada", "e72f-1")
+    assert boc.kind_of(e, "registered") == "applicant"
+    assert boc.kind_of({"group": "registered", "status": "Registered"}, "applicant") == "registered"
+    assert boc.kind_of({"group": "", "status": "Registration revoked"}, "registered") == "revoked"
+    assert boc.kind_of({"group": "", "status": "Unregistered"}, "applicant") == "applicant"
+    # real detail-page text (collapsed, as captured on the first live run)
+    real = ("Registry: Payment service provider account details 1000042609 Ontario Inc. / Pay Away Registration "
+            "information Registration status Registered Registration date June 23, 2026 Contact information Legal name "
+            "1000042609 Ontario Inc. Trade names Pay Away, Pay Away Mailing address 247 Queen Street East Unit 108 Brampton "
+            "Ontario L6W 0B8 Canada Head office address 247 Queen Street East Unit 108 Brampton Ontario L6W 0B8 Canada "
+            "Head office city Brampton Head office country Canada Phone number +16472940512 Email address "
+            "freedomfinanceontario@gmail.com")
+    f = boc.parse_detail_text(real)
+    assert f["Head office city"] == "Brampton" and f["Phone number"] == "+16472940512"
+    email, site = boc.contacts_from_page(real, ["https://www.bankofcanadamuseum.ca", "https://www.facebook.com/x"])
+    assert email == "freedomfinanceontario@gmail.com" and site == ""          # no museum link
 
 
 @pytest.fixture
@@ -792,17 +804,18 @@ def test_boc_end_to_end_with_browser_and_linking(tmp_path, monkeypatch, mock_boc
     ctx = cli.make_context(cfg, tmp_path)
     recs = boc.BoCSource().fetch(ctx)
     by = {r.name: r for r in recs}
-    assert set(by) == {"Paymentco Inc.", "Wise Payments Canada Inc.", "Applicant One Ltd."}
-    assert by["Wise Payments Canada Inc."].licence_type == "PSP (RPAA registered)"   # registered beats applicant
-    assert by["Paymentco Inc."].email == "info@paymentco.ca" and by["Paymentco Inc."].website == "https://paymentco.ca"
-    assert by["Applicant One Ltd."].licence_type == "PSP applicant (RPAA)"
-    assert by["Applicant One Ltd."].email == "hello@appone.com" and by["Applicant One Ltd."].status_date == "2025-09-01"
+    assert set(by) == {"Paymentco Inc.", "Wise Payments Canada Inc.", "Applicant One Ltd.", "Bad Pay Corp"}
+    assert by["Wise Payments Canada Inc."].licence_type == "PSP (RPAA registered)"     # French-only legal name used
+    assert by["Applicant One Ltd."].licence_type == "PSP applicant (RPAA)"             # status from the feed
+    assert by["Bad Pay Corp"].licence_type == "PSP refused (RPAA)" and not by["Bad Pay Corp"].active
+    p = by["Paymentco Inc."]
+    assert (p.email, p.website, p.city, p.extra["phone"]) == ("info@paymentco.ca", "https://www.paymentco.ca",
+                                                             "Toronto", "1-416-555-0100")
+    assert by["Wise Payments Canada Inc."].website == ""                              # not the museum link
+    assert by["Applicant One Ltd."].status_date == "2025-09-01" and by["Applicant One Ltd."].email == "hello@appone.com"
     assert "violations: 1" in by["Wise Payments Canada Inc."].status_detail
     sample = (tmp_path / "debug" / "boc_sample.txt").read_text()
-    assert "from data" in sample and "json" in sample
-    cache = json.loads((tmp_path / "state" / "boc_details.json").read_text())
-    assert len(cache) == 4
-
+    assert "from data" in sample and "firms by status" in sample
     # second run uses the cache: no detail pages opened
     recs2 = boc.BoCSource().fetch(ctx)
     assert "0 fetched this run" in (tmp_path / "debug" / "boc_sample.txt").read_text()
@@ -817,3 +830,37 @@ def test_boc_end_to_end_with_browser_and_linking(tmp_path, monkeypatch, mock_boc
     assert st["Wise Payments Canada Inc."]["psp_status"] == "PSP registered"
     assert st["Corner FX Ltd."]["psp_status"] == canada.NONE
     assert counts["PSP registered"] == 2
+    # an MSB that only applied
+    rows2 = [{"source": "fintrac", "name": "Applicant One Ltd", "extra": {}}] + [r.to_dict() for r in recs]
+    canada.link(rows2)
+    assert rows2[0]["psp_status"] == "PSP applied" and rows2[0]["email"] == "hello@appone.com"
+
+
+def test_builtin_source_fingerprint_rebaselines(tmp_path, monkeypatch):
+    from regtracker.model import Record
+    from regtracker.sources import ALL_SOURCES
+    from regtracker.sources.base import Source
+    state = {"v": "a", "recs": [Record(f"k{i}", "test", "CA", "X", f"N{i}", "MSB", True) for i in range(100)]}
+
+    class T(Source):
+        name, label = "test", "T"
+        @property
+        def fingerprint(self): return state["v"]
+        def fetch(self, ctx): return state["recs"]
+
+    monkeypatch.setitem(ALL_SOURCES, "test", T())
+    cfgp = tmp_path / "c.yaml"; cfgp.write_text("sources:\n  test: {enabled: true}\n")
+    args = ["--config", str(cfgp), "--data", str(tmp_path / "d"), "run", "--no-sheets", "--no-email"]
+    assert cli.main(args) == 0
+    state["v"] = "b"
+    state["recs"] = [Record(f"new{i}", "test", "CA", "X", f"N{i}", "MSB", True) for i in range(100)]  # new keys
+    assert cli.main(args) == 0
+    assert not (tmp_path / "d" / "changes.csv").exists()          # quiet re-baseline, no 200 false alerts
+
+
+def test_canada_link_operating_names():
+    rows = [{"source": "fintrac", "name": "ARCA Logistics Solutions Inc.", "extra": {"other_names": "ARCA Group, ARCA Pay, Inc., ARCA Armoured"}},
+            {"source": "boc", "name": "Something Else Ltd", "licence_type": "PSP (RPAA registered)", "email": "a@arca.ca",
+             "website": "", "extra": {"trade_name": "ARCA Pay"}}]
+    canada.link(rows)
+    assert rows[0]["psp_status"] == "PSP registered" and rows[0]["email"] == "a@arca.ca"

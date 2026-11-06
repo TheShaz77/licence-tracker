@@ -6,6 +6,8 @@ as Inc., Ltd., Corp. removed).
 """
 from __future__ import annotations
 
+import re
+
 from .sources.national import match_name
 
 STATUS = {
@@ -13,9 +15,10 @@ STATUS = {
     "PSP applicant (RPAA)": "PSP applied",
     "PSP refused (RPAA)": "PSP refused",
     "PSP registration revoked (RPAA)": "PSP revoked",
+    "PSP application withdrawn (RPAA)": "PSP application withdrawn",
 }
 NONE = "No PSP registration or application"
-RANK = {"PSP registered": 0, "PSP applied": 1, "PSP revoked": 2, "PSP refused": 3}
+RANK = {"PSP registered": 0, "PSP applied": 1, "PSP revoked": 2, "PSP refused": 3, "PSP application withdrawn": 4}
 
 
 def link(records: list) -> dict:
@@ -41,7 +44,9 @@ def link(records: list) -> dict:
     for r in records:
         if r.get("source") != "fintrac":
             continue
-        names = [r.get("name", "")] + [n for n in ((r.get("extra") or {}).get("other_names", "")).split("; ") if n]
+        other = (r.get("extra") or {}).get("other_names", "")
+        names = [r.get("name", "")] + [n.strip() for n in re.split(r";|,(?!\s*(?:inc|ltd|llc|corp|limited|ltée|ltee)\b)", other,
+                                                                     flags=re.I) if n.strip()]
         hit = None
         for n in names:
             m = match_name(n)

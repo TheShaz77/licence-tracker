@@ -29,10 +29,12 @@ PAGES = {
 # where the refusal / revocation lists are linked from
 ENFORCEMENT_PAGE = "https://www.bankofcanada.ca/regulatory-oversight/retail-payments/enforcement-decisions/"
 TYPE = {"registered": "PSP (RPAA registered)", "applicant": "PSP applicant (RPAA)",
-        "refused": "PSP refused (RPAA)", "revoked": "PSP registration revoked (RPAA)"}
+        "refused": "PSP refused (RPAA)", "revoked": "PSP registration revoked (RPAA)",
+        "withdrawn": "PSP application withdrawn (RPAA)"}
+DETAIL_URL = PAGES["registered"] + "psp-registry-details/?account_id={id}"
 
 EMAIL_RE = re.compile(r"[A-Za-z0-9._%+'-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
-SKIP_HOSTS = ("bankofcanada.ca", "banqueducanada.ca", "canada.ca", "gc.ca", "facebook.", "twitter.", "x.com",
+SKIP_HOSTS = ("bankofcanada", "banqueducanada", "museedelabanque", "museum", "canada.ca", "gc.ca", "facebook.", "twitter.", "x.com",
               "linkedin.", "youtube.", "instagram.", "google.", "apple.com", "microsoft.", "adobe.",
               "cloudflare", "jsdelivr", "w3.org", "schema.org", "wordpress", "gravatar")
 URL_RE = re.compile(r"\b((?:https?://|www\.)[^\s<>\"')]+)", re.I)
@@ -68,30 +70,100 @@ def entries_from_json(bodies: list) -> list:
 
 
 def normalise_entry(e: dict) -> dict:
-    """Map an entry's unknown key names to ours."""
+    """Map an entry's key names to ours. The Bank's feed uses en_legal_name /
+    fr_legal_name (often only one is filled), main_trade_name,
+    head_office_country, status, group_label, registration_date, created_on,
+    has_violations and id."""
     keys = list(e.keys())
-    k_legal = (pick_key(keys, "legal") or pick_key(keys, "name", exclude=("trade", "operat", "contact"))
-               or pick_key(keys, "title"))
-    k_trade = pick_key(keys, "trade") or pick_key(keys, "operat")
-    k_country = pick_key(keys, "country")
-    k_date = (pick_key(keys, "date", "appl") or pick_key(keys, "date", "regist") or pick_key(keys, "date"))
-    k_viol = pick_key(keys, "violation")
-    k_email = pick_key(keys, "email") or pick_key(keys, "courriel")
-    k_web = pick_key(keys, "website") or pick_key(keys, "web") or pick_key(keys, "url", exclude=("detail", "link"))
-    k_id = pick_key(keys, "id", exclude=("valid", "provid", "width")) or pick_key(keys, "number")
-    k_link = pick_key(keys, "link") or pick_key(keys, "detail") or pick_key(keys, "permalink") or pick_key(keys, "href")
 
     def g(k):
         v = e.get(k) if k else ""
-        return re.sub(r"<[^>]+>", " ", str(v or "")).strip()
+        return re.sub(r"<[^>]+>", " ", str(v if v is not None else "")).strip()
 
-    return {"legal": g(k_legal), "trade": g(k_trade), "country": g(k_country), "date": g(k_date),
-            "violations": g(k_viol), "email": g(k_email), "website": g(k_web), "id": g(k_id),
-            "link": g(k_link)}
+    legal = next((g(k) for k in keys if "legal" in k.lower() and g(k)), "")
+    if not legal:
+        legal = g(pick_key(keys, "name", exclude=("trade", "operat", "contact")) or pick_key(keys, "title"))
+    k_trade = pick_key(keys, "trade") or pick_key(keys, "operat")
+    k_date = (pick_key(keys, "registration_date") or pick_key(keys, "date", "regist")
+              or pick_key(keys, "date", "appl") or pick_key(keys, "date"))
+    k_applied = pick_key(keys, "created") or pick_key(keys, "date", "appl") or pick_key(keys, "submitted")
+    k_link = pick_key(keys, "link") or pick_key(keys, "detail") or pick_key(keys, "permalink") or pick_key(keys, "href")
+    k_id = pick_key(keys, "account_id") or pick_key(keys, "id", exclude=("valid", "provid", "width")) \
+        or pick_key(keys, "number")
+    return {"legal": legal, "trade": g(k_trade), "country": g(pick_key(keys, "country")),
+            "date": g(k_date), "applied": g(k_applied), "violations": g(pick_key(keys, "violation")),
+            "email": g(pick_key(keys, "email") or pick_key(keys, "courriel")),
+            "website": g(pick_key(keys, "website") or pick_key(keys, "url", exclude=("detail", "link"))),
+            "id": g(k_id), "link": g(k_link), "status": g(pick_key(keys, "status")),
+            "group": g(pick_key(keys, "group"))}
+
+
+def kind_of(e: dict, page_kind: str) -> str:
+    """registered / applicant / refused / revoked / withdrawn, from the entry's
+    own status fields; the page it came from only as a last resort."""
+    s = f"{e.get('group', '')} {e.get('status', '')}".lower()
+    if re.search(r"revok|cancel|terminat", s):
+        return "revoked"
+    if re.search(r"refus|denied|reject|declin", s):
+        return "refused"
+    if re.search(r"withdr|abandon", s):
+        return "withdrawn"
+    if re.search(r"(?<!un)(?<!not )regist", s):
+        return "registered"
+    if re.search(r"appl|review|pending|submit|progress|assess", s):
+        return "applicant"
+    return page_kind
+
+
+DETAIL_LABELS = ["Registration status", "Registration date", "Application status", "Date of application",
+                 "Application date", "Contact information", "Legal name", "Trade names", "Trade name",
+                 "Mailing address", "Head office address", "Head office city", "Head office province",
+                 "Head office province/territory", "Head office country", "Phone number", "Email address",
+                 "Website", "Websites", "Retail payment activities", "Payment functions", "Agents",
+                 "Mandataries", "Agents and mandataries", "Violations", "Registration information",
+                 "Applicant information"]
+
+
+def parse_detail_text(text: str) -> dict:
+    """Labelled fields from a detail page ('Email address' -> value, ...)."""
+    labels = sorted(DETAIL_LABELS, key=len, reverse=True)
+    lines = [l.strip() for l in (text or "").splitlines() if l.strip()]
+    out, cur = {}, None
+    for line in lines:
+        hit = next((lab for lab in labels if line.lower() == lab.lower()), None)
+        if hit is None:  # "Label value" on one line
+            hit = next((lab for lab in labels if line.lower().startswith(lab.lower() + " ")), None)
+            if hit:
+                out.setdefault(hit, line[len(hit):].strip())
+                cur = None
+                continue
+        if hit:
+            cur = hit
+            continue
+        if cur and cur not in out:
+            out[cur] = line
+    if not out:  # all on one line (collapsed text)
+        flat = re.sub(r"\s+", " ", text or "")
+        pat = "|".join(re.escape(l) for l in labels)
+        parts = re.split(f"({pat})", flat)
+        for i in range(1, len(parts) - 1, 2):
+            out.setdefault(parts[i], parts[i + 1].strip())
+    return out
 
 
 def contacts_from_page(text: str, hrefs: list, json_bodies: list = ()) -> tuple:
-    """(email, website) from a detail page's text, links and loaded JSON."""
+    """(email, website) from a detail page: labelled fields first, then links."""
+    f = parse_detail_text(text)
+    email = (f.get("Email address") or "").split()[0] if f.get("Email address") else ""
+    site = (f.get("Website") or f.get("Websites") or "").split()[0] if (f.get("Website") or f.get("Websites")) else ""
+    if email and not EMAIL_RE.fullmatch(email):
+        email = ""
+    if site and not re.match(r"(https?://|www\.|[a-z0-9-]+\.[a-z]{2,})", site, re.I):
+        site = ""
+    if site and not site.lower().startswith("http"):
+        site = "https://" + site
+    if email and site:
+        return email, site.rstrip("/.,;")
     emails = [h[7:].split("?")[0] for h in hrefs if h.lower().startswith("mailto:")]
     blob = " ".join([text or ""] + list(json_bodies))
     emails += [m for m in EMAIL_RE.findall(blob)]
@@ -106,32 +178,36 @@ def contacts_from_page(text: str, hrefs: list, json_bodies: list = ()) -> tuple:
         if not host or any(s in host for s in SKIP_HOSTS):
             continue
         sites.append(u.rstrip("/.,;"))
-    # prefer a site on the same domain as the email
-    email = emails[0] if emails else ""
-    site = ""
-    if email:
+    email = email or (emails[0] if emails else "")
+    if not site and email:
         dom = email.split("@")[-1].lower()
         site = next((s for s in sites if dom in urlparse(s).netloc.lower()), "")
-    site = site or (sites[0] if sites else "")
-    return email, site
+    # a site only when it matches the email's domain or the page gave one explicitly:
+    # other links on the page are usually the Bank's own
+    return email, site.rstrip("/.,;")
 
 
 def to_record(kind: str, e: dict, detail: dict, page_url: str) -> Record | None:
-    name = e["legal"] or e["trade"]
+    name = e["legal"] or detail.get("legal") or e["trade"]
     if not name:
         return None
-    key = f"boc:{match_name(name) or norm_key(name)}"
+    key = f"boc:{e['id']}" if e.get("id") else f"boc:{match_name(name) or norm_key(name)}"
     viol = e.get("violations", "")
+    date = e["date"] if kind == "registered" else (e.get("applied") or e["date"])
+    trade = e["trade"] or detail.get("trade", "")
     return Record(
         key=key, source="boc", jurisdiction="CA", regulator="Bank of Canada",
         name=name, licence_type=TYPE[kind], active=kind in ("registered", "applicant"),
-        status_detail=TYPE[kind] + (f"; trade name {e['trade']}" if e["trade"] and e["trade"] != name else "")
+        status_detail=TYPE[kind] + (f" ({e['status']})" if e.get("status") and e["status"].lower() not in TYPE[kind].lower() else "")
+        + (f"; trade name {trade}" if trade and trade != name else "")
         + (f"; head office {e['country']}" if e["country"] else "")
-        + (f"; violations: {viol}" if viol and viol.lower() not in ("0", "no", "none", "-") else ""),
-        status_date=_iso(e["date"]) or e["date"][:10], reference=e.get("id", ""),
+        + (f"; violations: {viol}" if viol and viol.lower() not in ("0", "no", "none", "-", "false") else ""),
+        status_date=_iso(date) or date[:10], reference=e.get("id", ""),
+        city=detail.get("city", ""),
         website=detail.get("website") or e.get("website", ""), email=detail.get("email") or e.get("email", ""),
         register_url=e.get("link") or page_url,
-        extra={"trade_name": e["trade"], "head_office_country": e["country"]},
+        extra={"trade_name": trade, "head_office_country": e["country"], "phone": detail.get("phone", ""),
+               "address": detail.get("address", "")},
     )
 
 
@@ -200,6 +276,7 @@ def _entries_from_rows(rows: list, header_guess: list) -> list:
 class BoCSource(Source):
     name = "boc"
     label = "Canada Bank of Canada PSP lists (RPAA)"
+    fingerprint = "boc-v2"   # bump when keys or parsing change, so the next run re-baselines quietly
 
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("boc")
@@ -216,7 +293,8 @@ class BoCSource(Source):
         heads = {"registered": ["Legal name", "Main trade name", "Head office country", "Violations"],
                  "applicant": ["Legal name", "Main trade name", "Head office country", "Date of application"],
                  "refused": ["Legal name", "Main trade name", "Head office country", "Date"],
-                 "revoked": ["Legal name", "Main trade name", "Head office country", "Date"]}
+                 "revoked": ["Legal name", "Main trade name", "Head office country", "Date"],
+                 "withdrawn": ["Legal name", "Main trade name", "Head office country", "Date"]}
         with _browser() as p:
             browser = p.chromium.launch()
             page = browser.new_page(user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
@@ -234,77 +312,102 @@ class BoCSource(Source):
             except Exception as e:
                 notes.append(f"enforcement page: {e!r}")
 
-            entries_by_kind = {}
-            for kind, url in pages.items():
-                notes.append(f"{kind}: {url}")
+            entries, templates, status_counts = {}, {}, {}
+            for page_kind, url in pages.items():
+                notes.append(f"{page_kind}: {url}")
                 try:
-                    bodies, text, rows, _ = _load(page, url, notes)
-                except Exception as e:
-                    notes.append(f"  FAILED {e!r}")
-                    if kind in ("registered", "applicant"):
+                    bodies, text, rows, hrefs = _load(page, url, notes)
+                except Exception as ex:
+                    notes.append(f"  FAILED {ex!r}")
+                    if page_kind in ("registered", "applicant"):
                         raise
                     continue
                 from_json = entries_from_json(bodies)
-                from_dom = _entries_from_rows(rows, heads.get(kind, []))
+                from_dom = _entries_from_rows(rows, heads.get(page_kind, []))
                 use = from_json if len(from_json) >= len(from_dom) else from_dom
-                notes.append(f"  entries: {len(from_json)} from data, {len(from_dom)} from table -> using "
+                notes.append(f"  entries: {len(from_json)} from data, {len(from_dom)} in the table -> using "
                              f"{'data' if use is from_json else 'table'}")
-                # detail links from the table, by name
-                link_by_name = {}
-                for cells, links in rows:
-                    if cells and links:
-                        link_by_name[match_name(cells[0])] = links[0]
-                ents = []
+                # detail-page address pattern for this page, from its own links
+                for h in hrefs:
+                    m = re.search(r"([?&](?:account_id|id)=)([0-9a-f-]{8,})", h, re.I)
+                    if m:
+                        templates[page_kind] = h.replace(m.group(2), "{id}")
+                        break
+                link_by_name = {match_name(c[0]): l[0] for c, l in rows if c and l}
                 for raw in use:
                     e = normalise_entry(raw)
+                    k = kind_of(e, page_kind)
+                    sk = f"{e['group'] or '-'} / {e['status'] or '-'}"
+                    status_counts[sk] = status_counts.get(sk, 0) + 1
+                    ident = e["id"] or match_name(e["legal"] or e["trade"])
+                    if not ident:
+                        continue
+                    if ident in entries:  # same firm on both pages (the Bank serves one list)
+                        continue
                     if not e["link"]:
                         e["link"] = link_by_name.get(match_name(e["legal"]), "")
-                    if e["link"] and not e["link"].startswith("http"):
-                        e["link"] = urljoin(url, e["link"])
-                    ents.append(e)
+                    e["_kind"] = k
+                    entries[ident] = e
                 if use:
                     notes.append(f"  first entry raw: {json.dumps(use[0], ensure_ascii=False)[:600]}")
-                    notes.append(f"  first entry mapped: {json.dumps(ents[0], ensure_ascii=False)[:400]}")
-                entries_by_kind[kind] = ents
+            notes.append(f"status / group values (counted per page): {status_counts}")
+            notes.append(f"detail page patterns: {templates}")
+            for e in entries.values():
+                if not e["link"] and e["id"]:
+                    tpl = templates.get(e["_kind"]) or templates.get("registered") or DETAIL_URL
+                    e["link"] = tpl.replace("{id}", e["id"])
+                elif e["link"] and not e["link"].startswith("http"):
+                    e["link"] = urljoin(PAGES["registered"], e["link"])
+            kinds = {}
+            for e in entries.values():
+                kinds[e["_kind"]] = kinds.get(e["_kind"], 0) + 1
+            notes.append(f"firms by status: {kinds}")
 
-            # 2. detail pages for email / website (new firms first, capped per run)
+            # 2. detail pages for email / website (registered first, then applicants; capped per run)
             todo = []
-            for kind, ents in entries_by_kind.items():
-                for e in ents:
-                    ck = e["link"] or e["legal"]
-                    if e["email"] or e["website"]:
-                        cache.setdefault(ck, {"email": e["email"], "website": e["website"]})
-                    elif ck not in cache and e["link"]:
-                        todo.append((kind, e, ck))
-            todo.sort(key=lambda t: t[0] != "registered")  # registered PSPs first
+            for ident, e in entries.items():
+                c = cache.get(ident)
+                if (c is None or c.get("v") != 2) and e["link"]:
+                    todo.append((e["_kind"], ident, e))
+            order = {"registered": 0, "applicant": 1}
+            todo.sort(key=lambda t: order.get(t[0], 2))
             done = 0
-            for kind, e, ck in todo[:per_run]:
+            for _, ident, e in todo[:per_run]:
                 dnotes = []
                 try:
-                    bodies, text, _, hrefs = _load(page, e["link"], dnotes, wait_rows=False)
-                    page.wait_for_timeout(800)
+                    bodies, _, _, hrefs = _load(page, e["link"], dnotes, wait_rows=False)
+                    try:
+                        page.wait_for_function("() => /Email address|Legal name|Phone number/i.test(document.body.innerText)",
+                                               timeout=15000)
+                    except Exception:
+                        pass
                     text = page.inner_text("body")
+                    hrefs = page.evaluate("() => [...document.querySelectorAll('a[href]')].map(a => a.href)")
+                    f = parse_detail_text(text)
                     email, site = contacts_from_page(text, hrefs, bodies)
-                    cache[ck] = {"email": email, "website": site, "seen": ctx.today}
+                    cache[ident] = {"v": 2, "email": email, "website": site, "seen": ctx.today,
+                                    "phone": f.get("Phone number", ""), "city": f.get("Head office city", ""),
+                                    "address": f.get("Head office address", ""), "legal": f.get("Legal name", ""),
+                                    "trade": (f.get("Trade names") or f.get("Trade name") or "").split(",")[0].strip(),
+                                    "status": f.get("Registration status") or f.get("Application status", "")}
                     if done < 2:
-                        notes.append(f"detail sample {e['link']}: email={email!r} website={site!r}")
-                        notes.append("  text: " + re.sub(r"\s+", " ", text)[:800])
+                        notes.append(f"detail sample {e['link']}: {json.dumps(cache[ident], ensure_ascii=False)}")
+                        notes.extend(dnotes[:5])
                     done += 1
                 except Exception as ex:
                     notes.append(f"detail {e['link']}: {ex!r}")
                 time.sleep(float(cfg.get("detail_delay_seconds", 1.0)))
-            notes.append(f"detail pages: {done} fetched this run, {max(0, len(todo) - done)} still to do, "
-                         f"{len(cache)} cached")
+            left = max(0, len(todo) - done)
+            notes.append(f"detail pages: {done} fetched this run, {left} still to do, "
+                         f"{sum(1 for v in cache.values() if v.get('v') == 2)} done in total")
             browser.close()
 
         state_p.parent.mkdir(parents=True, exist_ok=True)
         state_p.write_text(json.dumps(cache, indent=0, sort_keys=True))
-        rank = {"registered": 0, "revoked": 1, "refused": 2, "applicant": 3}
-        for kind in sorted(entries_by_kind, key=lambda k: rank.get(k, 9)):
-            for e in entries_by_kind[kind]:
-                r = to_record(kind, e, cache.get(e["link"] or e["legal"], {}), PAGES.get(kind, ""))
-                if r and r.key not in recs:  # one row per firm, strongest status wins
-                    recs[r.key] = r
+        for ident, e in entries.items():
+            r = to_record(e["_kind"], e, cache.get(ident, {}), PAGES.get(e["_kind"], PAGES["registered"]))
+            if r:
+                recs[r.key] = r
         if not any(r.licence_type == TYPE["registered"] for r in recs.values()):
             raise RuntimeError("Bank of Canada: no registered PSPs read; see data/debug/boc_sample.txt")
         return list(recs.values())

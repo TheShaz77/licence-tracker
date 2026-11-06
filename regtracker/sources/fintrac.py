@@ -25,6 +25,22 @@ def _find(headers: list, *needles, exclude: tuple = ()) -> int | None:
     return None
 
 
+KNOWN_STATUSES = {"registered", "expired", "ceased", "revoked", "not available", "unknown"}
+
+
+def fdate(s: str) -> str:
+    """FINTRAC dates are mostly year-day-month (2028-31-08) with some
+    year-month-day; read each by its own form, defaulting to year-day-month."""
+    m = re.match(r"(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", (s or "").strip())
+    if not m:
+        return _iso(s) or (s or "").strip()
+    y, a, b = m.group(1), int(m.group(2)), int(m.group(3))
+    day, month = (a, b) if (a > 12 or b <= 12) and not (b > 12) else (b, a)
+    if month > 12:
+        return s.strip()
+    return f"{y}-{month:02d}-{day:02d}"
+
+
 def split_names(cell: str) -> list:
     """'Legal Name Inc. (Operating: Brand A; Brand B)' style cells -> names."""
     parts = re.split(r"[;\n|]+|\s{2,}", cell or "")
@@ -42,7 +58,7 @@ def parse_fintrac(raw: bytes) -> tuple:
         "name": _find(headers, "name"),
         "number": _find(headers, "registration number") or _find(headers, "msb", "number"),
         "status": _find(headers, "registration status") or _find(headers, "status"),
-        "initial": _find(headers, "initial registration"),
+        "initial": _find(headers, "initial"),
         "expiry": _find(headers, "expiry"),
         "ceased": _find(headers, "cessation") or _find(headers, "ceased"),
         "revoked": _find(headers, "revocation") or _find(headers, "revoked", exclude=("status",)),
@@ -50,7 +66,7 @@ def parse_fintrac(raw: bytes) -> tuple:
         "address": _find(headers, "address"),
         "foreign": _find(headers, "foreign"),
         "website": _find(headers, "website") or _find(headers, "web site"),
-        "inc_juris": _find(headers, "jurisdiction"),
+        "inc_juris": _find(headers, "jurisdi"),
     }
     info = {"headers": headers, "rows": len(rows),
             "columns": {k: (headers[v] if v is not None else None) for k, v in c.items()}}
@@ -61,7 +77,7 @@ def parse_fintrac(raw: bytes) -> tuple:
         i = c[k]
         return row[i].strip() if i is not None and i < len(row) else ""
 
-    out, statuses = {}, {}
+    out, statuses, skipped = {}, {}, 0
     for row in rows:
         num = get(row, "number")
         names = split_names(get(row, "name"))
@@ -69,6 +85,9 @@ def parse_fintrac(raw: bytes) -> tuple:
             continue
         status = get(row, "status") or "Unknown"
         statuses[status] = statuses.get(status, 0) + 1
+        if status.lower() not in KNOWN_STATUSES or not re.match(r"^[A-Z]?\d{6,}$", num):
+            skipped += 1  # row whose columns are shifted (stray quote in the source file)
+            continue
         foreign = get(row, "foreign").lower() in ("y", "yes", "true", "1", "oui", "foreign")
         addr = get(row, "address")
         city = ""
@@ -76,19 +95,20 @@ def parse_fintrac(raw: bytes) -> tuple:
         if m:
             city = m.group(1).strip()
         ended = get(row, "revoked") or get(row, "ceased") or get(row, "expiry")
-        detail = status + (f" ({_iso(ended) or ended})" if ended and status.lower() != "registered" else "")
+        detail = status + (f" ({fdate(ended)})" if ended and status.lower() != "registered" else "")
         out[num] = Record(
             key=f"fintrac:{num}", source="fintrac", jurisdiction="CA", regulator="FINTRAC",
             name=names[0], licence_type="Foreign MSB" if foreign else "MSB",
             active=status.lower().startswith("registered"), status_detail=detail,
-            status_date=_iso(get(row, "initial")) or get(row, "initial"), reference=num,
+            status_date=fdate(get(row, "initial")), reference=num,
             city=city, website=get(row, "website"), services=get(row, "services"),
             register_url=SEARCH_URL,
             extra={"other_names": "; ".join(names[1:]), "address": addr,
-                   "expiry": _iso(get(row, "expiry")), "incorporated_in": get(row, "inc_juris")},
+                   "expiry": fdate(get(row, "expiry")), "incorporated_in": get(row, "inc_juris")},
         )
-    info["type_values"] = sorted(statuses.items(), key=lambda kv: -kv[1])
+    info["type_values"] = sorted(statuses.items(), key=lambda kv: -kv[1])[:12]
     info["kept"] = len(out)
+    info["skipped_misaligned_rows"] = skipped
     return list(out.values()), info
 
 
@@ -107,6 +127,7 @@ def read_table_with_header(raw: bytes) -> tuple:
 class FINTRACSource(Source):
     name = "fintrac"
     label = "Canada FINTRAC MSB registry"
+    fingerprint = "fintrac-v2"
 
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("fintrac")

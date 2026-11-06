@@ -65,7 +65,12 @@ def decode_bytes(raw: bytes) -> str:
     try:
         return raw.decode("utf-8-sig")
     except UnicodeDecodeError:
-        return raw.decode("cp1252", errors="replace")
+        pass
+    # mostly UTF-8 with a few bad bytes: keep UTF-8 rather than mangling every accent
+    utf = raw.decode("utf-8-sig", errors="replace")
+    if utf.count("\ufffd") <= max(20, len(raw) // 20000):
+        return utf
+    return raw.decode("cp1252", errors="replace")
 
 
 def _flatten(d: dict, prefix: str = "") -> dict:

@@ -58,7 +58,7 @@ sources:
 
   boc:            # Canada: payment service providers under the RPAA (Bank of Canada)
     enabled: true
-    details_per_run: 200          # detail pages (email, website) opened per run; cached after that
+    details_per_run: 250          # detail pages (email, website) opened per run; cached after that
     detail_delay_seconds: 1.0     # pause between detail pages, to be polite to the site
 
   finma:          # Switzerland: banks and FinTech licence holders

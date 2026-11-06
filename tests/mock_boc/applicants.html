@@ -1,10 +1,11 @@
-<html><body><table id="t"><tbody><tr><td>List is loading</td></tr></tbody></table>
+<html><body><table id="t"><thead><tr><th>Legal name</th><th>Main trade name</th><th>Head office country</th><th>X</th></tr></thead>
+<tbody><tr><td>List is loading</td></tr></tbody></table>
 <script>
-setTimeout(() => {
-  const rows = [["Applicant One Ltd.", "AppOne", "Canada", "2025-09-01", 10], ["Wise Payments Canada Inc.", "Wise", "Canada", "2024-11-10", 11]];
+const GROUP = "applicant";
+fetch('/data/accounts.json').then(r => r.json()).then(d => {
   const tb = document.querySelector('#t tbody'); tb.innerHTML = '';
-  rows.forEach(x => { const tr = document.createElement('tr');
-    tr.innerHTML = `<td><a href="/detail.html?id=${x[4]}">${x[0]}</a></td><td>${x[1]}</td><td>${x[2]}</td><td>${x[3]}</td>`;
+  d.filter(x => x.group_label === GROUP).forEach(x => { const tr = document.createElement('tr');
+    tr.innerHTML = `<td><a href="/detail.html?account_id=${x.id}">${x.en_legal_name || x.fr_legal_name}</a></td><td>${x.main_trade_name}</td><td>${x.head_office_country}</td><td></td>`;
     tb.appendChild(tr); });
-}, 300);
+});
 </script></body></html>
