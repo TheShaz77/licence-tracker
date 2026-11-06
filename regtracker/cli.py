@@ -97,6 +97,13 @@ def cmd_run(args, cfg, data_dir) -> int:
     records = []
     for name in ALL_SOURCES:
         records.extend(load_snapshot(data_dir, name).values())
+    # While the one-off FCA scan is running, show the UK firms found so far.
+    # They are not diffed (no alerts) until the scan completes.
+    if not load_snapshot(data_dir, "fca"):
+        preview = fca_mod.preview_records(ctx)
+        if preview:
+            log.info("FCA: showing %d UK firms found so far (scan still running)", len(preview))
+            records.extend(preview)
     write_licences_csv(data_dir, records)
 
     run_info = {"finished": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
