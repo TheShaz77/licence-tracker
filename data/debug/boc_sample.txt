@@ -10,8 +10,8 @@ applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list
 status / group values (counted per page): {'registered / Registered': 1825, '- / -': 414}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
 firms by status: {'registered': 1825, 'applicant': 414}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=f627476d-718a-f111-8077-002248b21bdf: {"v": 2, "email": "", "website": "https://wocpay.com", "seen": "2026-11-06", "phone": "", "city": "Beijing", "address": "", "legal": "WOCPAY CANADA INC.", "trade": "", "status": ""}
-  json 200      760 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/f627476d-718a-f111-8077-002248b21bdf
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=85afc5cc-8f0b-f111-8407-7ced8da586db: {"v": 2, "email": "", "website": "", "seen": "2026-11-06", "phone": "", "city": "Richmond Hill", "address": "", "legal": "Worldhaven Financial Inc.", "trade": "", "status": ""}
-  json 200      756 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/85afc5cc-8f0b-f111-8407-7ced8da586db
-detail pages: 400 fetched this run, 939 still to do, 1300 done in total
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=3c9b3bcd-5098-ef11-8a68-0022483dbf39: {"v": 2, "email": "omie@ldvexpress.com", "website": "https://www.ldvexpress.com", "seen": "2026-11-06", "phone": "4167360969", "city": "North York", "address": "161B-6464 Yonge Street", "legal": "LDV Express Inc.", "trade": "", "status": "Registered"}
+  json 200     2141 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/3c9b3bcd-5098-ef11-8a68-0022483dbf39
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id=becfcc14-dfa0-ef11-a72d-6045bd5de666: {"v": 2, "email": "info@leatherback.co", "website": "https://leatherback.co", "seen": "2026-11-06", "phone": "9059661824", "city": "Toronto", "address": "60 ATLANTIC AVE", "legal": "Leatherback Limited", "trade": "", "status": "Registered"}
+  json 200     2170 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/becfcc14-dfa0-ef11-a72d-6045bd5de666
+detail pages: 400 fetched this run, 539 still to do, 1700 done in total

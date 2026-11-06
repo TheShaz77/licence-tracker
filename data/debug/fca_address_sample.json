@@ -1,0 +1,34 @@
+{
+ "frn": 100014,
+ "address_response": [
+  {
+   "URL": "https://register.fca.org.uk/services/V0.1/Firm/100014/Address?Type=PPOB",
+   "Website Address": "www.leekbs.co.uk",
+   "Phone Number": "+441538384151",
+   "Country": "UNITED KINGDOM",
+   "Postcode": "ST13 5DL",
+   "County": "Staffordshire",
+   "Town": "Leek",
+   "Address Line 4": "",
+   "Address LIne 3": "",
+   "Address Line 2": "",
+   "Address Line 1": "50 St Edward Street",
+   "Address Type": "Principal Place of Business"
+  },
+  {
+   "URL": "https://register.fca.org.uk/services/V0.1/Firm/100014/Address?Type=Complaint",
+   "Website Address": "",
+   "Phone Number": "+441538384151",
+   "Country": "UNITED KINGDOM",
+   "Postcode": "ST13 5DL",
+   "County": "Staffordshire",
+   "Town": "Leek",
+   "Address Line 4": "",
+   "Address LIne 3": "",
+   "Address Line 2": "",
+   "Address Line 1": "50 St Edward Street",
+   "Individual": "Laura Bradshaw",
+   "Address Type": "Complaints Contact"
+  }
+ ]
+}
