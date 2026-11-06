@@ -15,7 +15,7 @@ permissions:
   issues: write        # change alerts are posted as issues; GitHub emails you about them
 
 concurrency:
-  group: licence-tracker      # never overlaps with the FCA seed job
+  group: licence-tracker-daily   # its own queue, so the seed scan can't cancel it
   cancel-in-progress: false
 
 jobs:
@@ -59,5 +59,8 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data
           git diff --cached --quiet || git commit -m "Register snapshot $(date -u +%F)"
-          git pull --rebase --autostash || true
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash && git push && exit 0
+            echo "Push failed (attempt $i), retrying"; sleep $((i * 10))
+          done
+          exit 1
