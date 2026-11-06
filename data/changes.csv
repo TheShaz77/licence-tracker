@@ -4,3 +4,224 @@ Detected (UTC),Event,Jurisdiction,Regulator,Firm name,Licence type,Before,After,
 2026-11-06 16:45,New licence,SE,SE NCA / ECB,"Natixis SA, Bankfilial Sverige",Credit institution (branch),,Credit institution (branch),SE5164061342,https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/daily_list-MID.en.html,ecb
 2026-11-06 16:45,Licence type changed,LU,LU NCA / ECB,SwissLife Banque Privée Luxembourg,Credit institution (branch),Credit institution,Credit institution (branch),LUB00437,https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/daily_list-MID.en.html,ecb
 2026-11-06 16:45,Removed from register,DE,DE NCA / ECB,Raiffeisenbank Uehlfeld-Dachsbach eG,Credit institution,Credit Institution,No longer listed,DE04523,https://www.ecb.europa.eu/stats/financial_corporations/list_of_financial_institutions/html/daily_list-MID.en.html,ecb
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,ABLE EXPRESS INTERNATIONAL INC.,MSB,Money Transferring,"Foreign Exchange, Money Transferring",C10001423,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,INFOSETGROUP INVESTMENT INC.,MSB,"INFOSET""",INFOSETGROUP INVESTMENT INC.,C10001413,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,SHORECREST GROUP LTD.,MSB,Money Transferring,"Foreign Exchange, Money Transferring",C10001438,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FINZURE PAYMENTS LIMITED,MSB,"FINZURE PAYMENTS""",FINZURE PAYMENTS LIMITED,C10001414,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AMIRI ASCENSION INC.,MSB,"AMIRI""",AMIRI ASCENSION INC.,C10001261,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,AMIRI ASCENSION INC.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring",C10001261,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,WINDSOR-DETROIT TUNNEL DUTY FREE SHOP INC,MSB,"TUNNEL DUTY FREE SHOP""",WINDSOR-DETROIT TUNNEL DUTY FREE SHOP INC,M08225376,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,PAYWORKS INC.,MSB,"Money Transferring, PSP","Foreign Exchange, Money Transferring, PSP",C10001289,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,UNYX AI CA LTD,MSB,FALAH VIRTUAL ASSETS LTD.,UNYX AI CA LTD,C10001322,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,UNYX AI CA LTD,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP","Foreign Exchange, Issuing and Redeeming Money Orders, Virtual Currency, PSP",C10001322,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,WAKANADU PAYMENTS CORP.,MSB,"XENTIS""",WAKANADU PAYMENTS CORP.,C10001205,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MONEYGRAM PAYMENT SYSTEMS CANADA INC.,MSB,"MONEYGRAM""",MONEYGRAM PAYMENT SYSTEMS CANADA INC.,M08923802,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,YORK FOREIGN EXCHANGE INC,MSB,Registered,Ceased (2026-02-11),M09351691,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,YORK FOREIGN EXCHANGE INC,MSB,"YORK FX""",YORK FOREIGN EXCHANGE INC,M09351691,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MSBG INTERNATIONAL HOLDINGS LTD,MSB,"MTT CENTRE""",MSBG INTERNATIONAL HOLDINGS LTD,M09546184,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AGRINATURAL CANADA INC.,MSB,"MESGHAL EXCHANGE""",AGRINATURAL CANADA INC.,M11041057,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,JUBA EXPRESS INC,MSB,Registered,Expired (2026-07-15),M12664272,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,2303257 ONTARIO LTD.,MSB,"WORLD HALABGA CURRENCY EXCHANGE""",2303257 ONTARIO LTD.,M11617608,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MERCURY MERCANTILE TECHNOLOGIES INC.,MSB,"QICSEND""",MERCURY MERCANTILE TECHNOLOGIES INC.,M14283725,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"AKINREMI, OLALEKAN OLUWOLE",MSB,"AKIN$$SEND MONEY TRANSFER""","AKINREMI, OLALEKAN OLUWOLE",M14360869,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NETCOINS INC.,MSB,"NETCOINS""",NETCOINS INC.,M15560893,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,VANGOLD TRADING INC.,MSB,"ATTAR CURRENCY EXCHANGE""",VANGOLD TRADING INC.,M15714741,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CAN-AM BULLION INC.,MSB,"CANAM BULLION AND CURRENCY EXCHANGE""",CAN-AM BULLION INC.,M15487609,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MOBILE EXCHANGE PAYMENT INC.,MSB,"MXPAY""",MOBILE EXCHANGE PAYMENT INC.,M17482146,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,2051302 ONTARIO INC.,MSB,"CASH-A-CHEQUE""",2051302 ONTARIO INC.,M10322296,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CHENGQI FINANCIAL INC.,MSB,"CHENGQI FINANCIAL""",CHENGQI FINANCIAL INC.,M17726740,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,INTERPAY LTD.,MSB,"TRANSFERMATE""",INTERPAY LTD.,M18765769,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,DIVERSE TRADE INC,MSB,"MILLION EXCHANGE""",DIVERSE TRADE INC,M19315656,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,DIVERSE TRADE INC,MSB,"Foreign Exchange, Money Transferring","Foreign Exchange, Money Transferring, Virtual Currency",M19315656,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"CHIAZOR, BLESSING",MSB,"ENOK WORLD ENTERPRISE""","CHIAZOR, BLESSING",M19744442,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,BITCOIN WELL CANADA LTD.,MSB,"BITCOIN WELL""",BITCOIN WELL CANADA LTD.,M19811620,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"ABAD, MELLIECENT",MSB,"I-FLY XPRESS""","ABAD, MELLIECENT",M19533948,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,11639064 CANADA INC.,MSB,11636094 CANADA INC.,11639064 CANADA INC.,M19600702,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,SAFWA CURRENCY EXCHANGE SERVICES INC,MSB,"AL MAGID GROUP""",SAFWA CURRENCY EXCHANGE SERVICES INC,M20170001,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,11861395 CANADA LTD,MSB,"SUPERSONICZ""",11861395 CANADA LTD,M20951537,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AZIZI LTD.,MSB,"AZIZI EXCHANGE""",AZIZI LTD.,M20626440,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CLTS TECHNOLOGIES LTD.,MSB,"AQUANOW""",CLTS TECHNOLOGIES LTD.,M20467037,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"KING, ADEPEJU",MSB,"DEWLAKE SERVICES""","KING, ADEPEJU",M20267345,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AZIZI IMPORT AND EXPORT INC.,MSB,"AZIZI CURRENCY EXCHANGE""",AZIZI IMPORT AND EXPORT INC.,M20620370,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"KHAN, FAKHAR",MSB,"COLUMBIA CURRENCY EXCHANGE""","KHAN, FAKHAR",M20362435,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NIKO TECHNOLOGIES OU INC.,MSB,"ELEGRO""",NIKO TECHNOLOGIES OU INC.,M21394159,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,NIA NATIONS CURRENCY LTD.,MSB,Foreign Exchange,"Foreign Exchange, Virtual Currency",M21153461,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TAXPAY INC.,MSB,"REMITIAN""",TAXPAY INC.,M21413083,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"PROVENANCE TECHNOLOGIES, INC",Foreign MSB,"P.T.I.""","PROVENANCE TECHNOLOGIES, INC",M21926333,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,2237667 ALBERTA LTD,MSB,"CASH2CRYPTO""",2237667 ALBERTA LTD,M21011327,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ZABOCA INC.,MSB,"TMRW""",ZABOCA INC.,M21708315,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TRANSVERSE PAY LTD.,MSB,PAYOLI FINANCE LTD,TRANSVERSE PAY LTD.,M21080399,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TAMSEY FINANCE INC.,MSB,"13301869 CANADA INC.""",TAMSEY FINANCE INC.,N300000337,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CHAINME CANADA INC.,MSB,"COINME""",CHAINME CANADA INC.,M21970639,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,SOLARAPAY INC.,MSB,"PAYCHIP""",SOLARAPAY INC.,M21801799,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,HONGDOU GROUP LTD.,MSB,"CLOKOA""",HONGDOU GROUP LTD.,M22738641,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LOLLICASH,Foreign MSB,"LOLLICASH LLC""",LOLLICASH,M22570803,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AQATIN CANADA PROCESSING LIMITED,MSB,OCTOCHAIN FINTECH LIMITED,AQATIN CANADA PROCESSING LIMITED,M22849435,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PREMIUMREAL TECHNOLOGIES INC.,MSB,"WITHREMIT""",PREMIUMREAL TECHNOLOGIES INC.,M22977610,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ENOVE TECHNOLOGIES LIMITED,MSB,"ENOVEPAY""",ENOVE TECHNOLOGIES LIMITED,M22009019,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CHENGFENG INTERNATIONAL BUSINESS LTD.,MSB,"CHENGFENG FINANCIAL SERVICE""",CHENGFENG INTERNATIONAL BUSINESS LTD.,M22454168,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AF GLOBAL PAYMENT TECHNOLOGIES INC.,MSB,"ZOOBER PAY""",AF GLOBAL PAYMENT TECHNOLOGIES INC.,M22727680,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,VENN SOFTWARE INC.,MSB,"VENN""",VENN SOFTWARE INC.,M22941967,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,9JA SETTLEMENT IN CANADA INC,MSB,"USE NEFER REMITTANCE SERVICES""",9JA SETTLEMENT IN CANADA INC,M22539421,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ALENDE PAYMENTS (CANADA ASSETS NETWORK) LTD,MSB,"DURIANX PAYMENTS CANADA LTD.""",ALENDE PAYMENTS (CANADA ASSETS NETWORK) LTD,M22629904,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MONEY TRUST INC,MSB,"MONEY TRUST CURRENCY EXCHANGE""",MONEY TRUST INC,M22937706,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,12599236 CANADA INC.,MSB,"KUDEE EXPRESS""",12599236 CANADA INC.,M23120006,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1000042609 ONTARIO INC.,MSB,"FREEDOM FINANCE""",1000042609 ONTARIO INC.,M23841649,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,REMITTANCES HUB ENTERPRISES CANADA LTD.,MSB,"REMITTANCES HUB""",REMITTANCES HUB ENTERPRISES CANADA LTD.,M23799972,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,TOONIE HOLDING INC.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, Crowdfunding","Foreign Exchange, Money Transferring, Virtual Currency",M23290672,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,JUNO PAY LTD.,MSB,"JUNO MONEY""",JUNO PAY LTD.,M23335654,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MONITARY CORP.,MSB,"MONITARY""",MONITARY CORP.,M23976737,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,SAN FIN PAYMENTS LTD,MSB,SAMNA FINANCE LTD,SAN FIN PAYMENTS LTD,M23973728,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CASSIOPAY LIMITED,MSB,"CASSIOPAY""",CASSIOPAY LIMITED,M23680203,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,KIRINO SOLUTIONS LTD.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring",M23076309,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ONE.IO CANADA MSB LIMITED,MSB,"ONE.IO""",ONE.IO CANADA MSB LIMITED,M23217875,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,TINBOX TRANSFERS LTD.,MSB,Registered,Ceased (2026-10-29),M23484249,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"ADEYINKA, TOLUWALASE",MSB,"FABULOUS MOTIVATIONS""","ADEYINKA, TOLUWALASE",M23238298,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LIGHTNING PAYMENT SOLUTIONS LIMITED,MSB,"VIA PAY""",LIGHTNING PAYMENT SOLUTIONS LIMITED,M23031136,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,CASHPARK INC,MSB,"Foreign Exchange, Money Transferring, Virtual Currency","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000408,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,REVO PAY INC.,MSB,"RALIOPAY""",REVO PAY INC.,M23861627,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"BRIGHT FINTECH (CANADA), INC.",MSB,"BRIGHT SEND""","BRIGHT FINTECH (CANADA), INC.",M23371438,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,PAYROLL CENTRE CANADA INC.,MSB,Money Transferring,"Foreign Exchange, Virtual Currency, Cheque Cashing",M23120389,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PAYWRX CONNECT LTD.,MSB,"PAYWORX""",PAYWRX CONNECT LTD.,M23492595,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1484217 ALBERTA LTD.,MSB,"CNA FINANCIAL""",1484217 ALBERTA LTD.,M23719589,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,VANIRAN FINANCIAL SERVICES INC.,MSB,"VANIRAN EXCHANGE CURRENCY""",VANIRAN FINANCIAL SERVICES INC.,M23625263,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LITEST SOLUTION CORP.,MSB,"INXY CANADA""",LITEST SOLUTION CORP.,M23375535,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,MAXPAY FINANCE CORP,MSB,"Foreign Exchange, Money Transferring","Foreign Exchange, Money Transferring, Virtual Currency",M23245136,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,SETTL FINANCIAL CORPORATION,MSB,"SETTL""",SETTL FINANCIAL CORPORATION,M23793449,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,SETTL FINANCIAL CORPORATION,MSB,Money Transferring,"Foreign Exchange, Issuing and Redeeming Money Orders, Virtual Currency, PSP",M23793449,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,GILLIBRANDS LTD.,MSB,Registered,Ceased (2026-09-23),M23838994,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GIG FIN CORP.,MSB,"GIGBANC""",GIG FIN CORP.,M23987208,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,GIG FIN CORP.,MSB,"Foreign Exchange, Money Transferring, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",M23987208,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,OPTISWIFT TECHNOLOGIES LTD.,MSB,"OPTICASH""",OPTISWIFT TECHNOLOGIES LTD.,M23299534,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,DEONE LTD.,MSB,WEFI PAYMENTS LIMITED,DEONE LTD.,M23563590,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AURORA PAYMENTS LIMITED,MSB,"AURORA PAY""",AURORA PAYMENTS LIMITED,M23105407,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LINEARSEND INC.,MSB,"REVVE""",LINEARSEND INC.,C100000083,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence reinstated,CA,FINTRAC,MUVA NETWORKS LIMITED,MSB,Expired (2026-30-09),Registered,M24709988,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MUVA NETWORKS LIMITED,MSB,"Muva Networks""",MUVA NETWORKS LIMITED,M24709988,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,R7 DYNAMIC SDN. BHD.,Foreign MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Virtual Currency, Crowdfunding, PSP, Cheque Cashing",M24368941,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"TITILAWO, JOSEPH",MSB,"MONEY MAGIC EXCHANGE""","TITILAWO, JOSEPH",M24259134,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,XACE SOLUTIONS LTD.,MSB,ARTICWAVE FINANCIAL LIMITED,XACE SOLUTIONS LTD.,M24025061,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,XACE SOLUTIONS LTD.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Money Transferring, PSP",M24025061,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MASSIVE COMMERCE LTD.,MSB,"MASSPAY""",MASSIVE COMMERCE LTD.,M24519132,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,12490633 CANADA INC.,MSB,"ARMHALL""",12490633 CANADA INC.,C100000008,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,DEV STUDIOS CANADA INC.,MSB,"Send Chap""",DEV STUDIOS CANADA INC.,C100000009,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,Wafee Finance Inc.,MSB,"Wafee Finance""",Wafee Finance Inc.,C100000036,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,PARADECH GROUP INC,MSB,"Foreign Exchange, Money Transferring, Virtual Currency","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000040,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1000749547 ONTARIO INC.,MSB,"Tiffany Currency Exchange""",1000749547 ONTARIO INC.,C100000038,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"NWAGBO, IRENE",MSB,"Pengo Exchange""","NWAGBO, IRENE",C100000055,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,Axillium Inc.,MSB,Registered,Expired (2026-10-09),C100000068,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,Axillium Inc.,MSB,"Axillium """,Axillium Inc.,C100000068,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,2568041 Alberta Corporation,MSB,"Money Express""",2568041 Alberta Corporation,C100000076,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,Deltaplan Payments Ltd.,MSB,"Deltaplan""",Deltaplan Payments Ltd.,C100000087,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,Paypulse International Ltd.,MSB,"Cardiful""",Paypulse International Ltd.,C100000117,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,Paypulse International Ltd.,MSB,"Foreign Exchange, Money Transferring","Foreign Exchange, Money Transferring, Virtual Currency",C100000117,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FX WALLET INC.,MSB,"FX WALLET""",FX WALLET INC.,C100000126,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,TRANSFER GALAXY LTD,MSB,Registered,Expired (2026-04-10),C100000124,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1000824434 ONTARIO INC.,MSB,"VIP EXCHANGE""",1000824434 ONTARIO INC.,C100000135,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FASTREMS MONEY TRANSFER LIMITED,MSB,"MONYMITE""",FASTREMS MONEY TRANSFER LIMITED,C100000142,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,UNICORN CURRENCIES LIMITED,MSB,"UNICORN CURRENCIES""",UNICORN CURRENCIES LIMITED,C100000159,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,INTERPOLITAN MONEY CANADA INC,MSB,"INTERPOLITAN MONEY""",INTERPOLITAN MONEY CANADA INC,C100000165,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,KAGAN PAY CORP.,MSB,"KAGAN PAY""",KAGAN PAY CORP.,C100000205,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,INTERPAY TECH LTD.,MSB,"INTERPAY""",INTERPAY TECH LTD.,C100000199,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,BITOPERA TECHNOLOGIES INC.,MSB,RED HORIZON TECHNOLOGIES INC.,BITOPERA TECHNOLOGIES INC.,C10001350,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"NODU CANADA, INC.",MSB,WALLETVIBE LTD.,"NODU CANADA, INC.",C100001091,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,OBATEL AFREX SERVICES LIMITED,MSB,"OBAFREX""",OBATEL AFREX SERVICES LIMITED,C100001162,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CHAMELEON CAPITAL CANADA INC.,MSB,PAYGLE PAY INC,CHAMELEON CAPITAL CANADA INC.,C100001157,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,MELON DIGITAL INC.,MSB,"Foreign Exchange, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000959,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FLOWA PAY INC.,MSB,"FLOWA PAY""",FLOWA PAY INC.,C100000902,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,FLOWA PAY INC.,MSB,"Foreign Exchange, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000902,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,DGW GROUP FINANCE INC.,MSB,"MONEYTSAR""",DGW GROUP FINANCE INC.,C100000979,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TRUSTWAY TECHNOLOGIES LIMITED,MSB,ANKUSH GUPTA GLOBAL INC.,TRUSTWAY TECHNOLOGIES LIMITED,C100000945,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,"AZAM, MUHAMMAD",MSB,Registered,Ceased (2026-10-22),C100000875,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,"AZAM, MUHAMMAD",MSB,"STARTLINK SEND MONEY HUB""","AZAM, MUHAMMAD",C100000875,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CABLE EXCHANGE GROUP LTD,Foreign MSB,"CABEX-FX""",CABLE EXCHANGE GROUP LTD,C100000870,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LEVL FINANCE LIMITED,MSB,"LEVL""",LEVL FINANCE LIMITED,C100000584,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NYMO PAY LTD,MSB,"NYMO PAY""",NYMO PAY LTD,C100000656,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1001278199 ONTARIO INC.,MSB,"Valourguard Protection Services""",1001278199 ONTARIO INC.,C100000710,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,A REMIT LTD.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency, Crowdfunding, PSP",C100000745,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,EXCHANGE UP LTD.,MSB,"Money Transferring, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000597,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,uSecure Escrow Solutions Inc.,MSB,"DoBusiness.com""",uSecure Escrow Solutions Inc.,C100000682,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,WALCY INC.,MSB,"REMIT123""",WALCY INC.,N300000294,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Licence cancelled / revoked,CA,FINTRAC,SKYDEV SOLUTIONS INC.,MSB,Registered,Ceased (2026-10-22),C100000536,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ARVIN INVESTS INC.,MSB,"ARVIN MONEY SERVICE""",ARVIN INVESTS INC.,C100000454,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PROSPER MARKETS INC.,MSB,APEX MARKETS INC.,PROSPER MARKETS INC.,C100000431,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,VAULLTIX EXCHANGE INC.,MSB,AKIRIX EXCHANGE INC.,VAULLTIX EXCHANGE INC.,C100000392,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FINMOTECH CANADA INC.,MSB,"FINMO""",FINMOTECH CANADA INC.,C100000380,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,FINMOTECH CANADA INC.,MSB,"Foreign Exchange, Money Transferring, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000380,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,GOLDEN RAIN FINANCE LIMITED,MSB,"Money Transferring, PSP","Money Transferring, Virtual Currency, PSP",C100000353,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,REMOTE PAYMENTS SERVICES CANADA INC.,MSB,"REMOTE""",REMOTE PAYMENTS SERVICES CANADA INC.,C100000301,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,DREAM FINANCE PROCESSING INC,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency",N300000209,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,MAPLEWAVE PAYMENTS INC.,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, Crowdfunding, PSP","Foreign Exchange, Issuing and Redeeming Money Orders, Virtual Currency, Crowdfunding, PSP",C100000268,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,AFT CA LTD,MSB,"Foreign Exchange, Money Transferring, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C100000241,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PASSTHROUGH PAY INC,MSB,"SWING""",PASSTHROUGH PAY INC,C100000239,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PNB REMITTANCE COMPANY (CANADA),MSB,"PNB GLOBAL REMIT""",PNB REMITTANCE COMPANY (CANADA),M08808928,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,WILLIAM R. COTE,MSB,"BILL COTE""",WILLIAM R. COTE,C10001601,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GOAT FINANCE LTD.,MSB,GOAT FINANCE,GOAT FINANCE LTD.,C10001600,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,GOAT FINANCE LTD.,MSB,Virtual Currency,"Foreign Exchange, Money Transferring, Virtual Currency, PSP",C10001600,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,TEDDOH INC.,MSB,"Foreign Exchange, Money Transferring, PSP",Money Transferring,C10001644,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GLACIERPAY INC.,MSB,"GLACIERPAY""",GLACIERPAY INC.,C10001598,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ESG PAY CORP.,MSB,YOUR FINTECH CORP,ESG PAY CORP.,C10001599,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ADEFISAYO TAIWO,MSB,"QUICK & EASY FUNDS TRANSFER""",ADEFISAYO TAIWO,C10001613,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,COINRABBIT ONTARIO INC.,MSB,1001285225 ONTARIO INC.,COINRABBIT ONTARIO INC.,C10001612,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ZOTH PAYMENTS LTD.,MSB,"ZOTH PAYMENTS""",ZOTH PAYMENTS LTD.,C10001622,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TESO PAY INC,MSB,"BULLRING FINANCE""",TESO PAY INC,N300000030,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NOVA PAY INC,MSB,1001452143 ONTARIO INC.,NOVA PAY INC,N300000118,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GRNTECH SOLUTION INC.,MSB,"GUARDARIAN""",GRNTECH SOLUTION INC.,C10001703,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,AES PAY LIMITED,MSB,"AES PAY""",AES PAY LIMITED,N300000157,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NOLENA FINANCE LTD.,MSB,"NOLENA PAY""",NOLENA FINANCE LTD.,N300000161,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PAYCORX FINANCIAL SERVICES INC.,MSB,GREEN WALLET TECHNOLOGIES LTD,PAYCORX FINANCIAL SERVICES INC.,N300000160,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,BW TECH LIMITED,MSB,CEDARSTREAM PAYMENT SYSTEMS LTD.,BW TECH LIMITED,C10001714,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,BW TECH LIMITED,MSB,"Foreign Exchange, Money Transferring","Foreign Exchange, Money Transferring, Virtual Currency, PSP",C10001714,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,RENDA FINANCIAL TECHNOLOGIES INC.,MSB,"RENDA""",RENDA FINANCIAL TECHNOLOGIES INC.,N300000198,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FLEUR PAY LTD,MSB,NOVA PAY INC,FLEUR PAY LTD,N300000197,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,DIGIBY WALLET INC,MSB,"DIGIBY""",DIGIBY WALLET INC,N300000232,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,DIGIBY WALLET INC,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Virtual Currency",N300000232,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,GIGA WIRE INTERNATIONAL INC.,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP, Cheque Cashing","Foreign Exchange, Money Transferring, Virtual Currency, PSP",N300000249,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PAYFACTO PAYMENTS INC.,MSB,"PAYFACTO""",PAYFACTO PAYMENTS INC.,N300000246,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,INTEGRITY FINANCIAL SERVICES CORP.,MSB,Cheque Cashing,"Foreign Exchange, Money Transferring, Virtual Currency, PSP, Cheque Cashing",N300000594,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CRABSI PAYMENTS CORP,MSB,"CRABSI""",CRABSI PAYMENTS CORP,N300000824,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LENDORA TRANSFER LTD,MSB,"LENDORA""",LENDORA TRANSFER LTD,N300000821,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,1001371959 ONTARIO INC.,MSB,"SIX LEDGER""",1001371959 ONTARIO INC.,N300000870,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MUZODEV NETWORK LIMITED,MSB,MUSETECH DEVELOPMENT LIMITED,MUZODEV NETWORK LIMITED,N300000871,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,CCC INC.,MSB,"CCURRENCY EXCHANGE""",CCC INC.,N300000785,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,CCC INC.,MSB,Foreign Exchange,"Foreign Exchange, Virtual Currency",N300000785,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,ARCUS FINTECH INC.,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP",Virtual Currency,N300000911,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MARINEX PAY LIMITED,MSB,"MARINEX PAY""",MARINEX PAY LIMITED,N300000921,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,AUREVON PAY LTD.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, Crowdfunding, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",N300000920,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,BISO PARTNERS INC.,MSB,"BISO PARTNERS""",BISO PARTNERS INC.,N300000926,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,BISO PARTNERS INC.,MSB,"Virtual Currency, PSP","Money Transferring, Virtual Currency, PSP",N300000926,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,SALEO FINANCE LTD.,MSB,"SALEO FINANCE""",SALEO FINANCE LTD.,N300000957,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MIRAGE PAY LTD.,MSB,"MIRAGE PAY""",MIRAGE PAY LTD.,N300000963,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LUMA PAY INC.,MSB,STRAVOS TRANSFERS LTD.,LUMA PAY INC.,N300000964,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MERCANTO PAYMENTS INC.,MSB,"MERCANTO""",MERCANTO PAYMENTS INC.,N300001012,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,JAMILURAHMAN MUJAHID,MSB,"MR GENEROUS CRYPTO""",JAMILURAHMAN MUJAHID,N300001065,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ANCHOR PAYMENTS SERVICES LTD.,MSB,"PRIME FINANCIALS""",ANCHOR PAYMENTS SERVICES LTD.,N300001077,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,EBS PAYMENTS LTD,MSB,"EBS""",EBS PAYMENTS LTD,N300001084,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FINVORA DIGITAL TECHNOLOGY PAYMENT LTD.,MSB,1537288 BC LTD,FINVORA DIGITAL TECHNOLOGY PAYMENT LTD.,N300001087,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,FINVORA DIGITAL TECHNOLOGY PAYMENT LTD.,MSB,Virtual Currency,"Foreign Exchange, Money Transferring, Virtual Currency",N300001087,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,CROHOPAY GLOBAL CORP.,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, Crowdfunding, PSP",Virtual Currency,N300001091,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ARGENTAVANTIS INC.,MSB,"ARGENTAVANTIS""",ARGENTAVANTIS INC.,N300001110,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,GATE FINTECH INC.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency",N300001116,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MOJA SWITCH LIMITED,MSB,"MOJA SWITCH""",MOJA SWITCH LIMITED,N300001168,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,MANIGONA FINANCE INC.,MSB,"MANIGONA""",MANIGONA FINANCE INC.,N300001246,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,YOURPAY MENTS CORP,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",N300001263,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,INTEVERO PAY LIMITED,MSB,"INTEVERO PAY""",INTEVERO PAY LIMITED,C10001767,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GRIDCHAIN TECHNOLOGY INC.,MSB,"BATUAY""",GRIDCHAIN TECHNOLOGY INC.,N300001304,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PRIMEVAULT CAPITAL INC,MSB,"PRIMEVAULT PAY""",PRIMEVAULT CAPITAL INC,N300001314,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,PAYMENT BLOCS SOLUTIONS LTD.,MSB,MIRAVA TRADER INC.,PAYMENT BLOCS SOLUTIONS LTD.,N300001315,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NIMBUS PAY LTD.,MSB,"NIMBUS PAY""",NIMBUS PAY LTD.,N300001332,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,NIMBUS PAY LTD.,MSB,"Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP, Cheque Cashing",N300001332,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,17409052 CANADA INC.,MSB,"Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, Crowdfunding, PSP","Foreign Exchange, Money Transferring, Virtual Currency, PSP",N300001340,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ROUX PAY LTD.,MSB,"ROUX PAY""",ROUX PAY LTD.,N300001408,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,ZAYDEL MONEY LTD.,MSB,"ZAYDEL""",ZAYDEL MONEY LTD.,N300001655,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,FIRST ANSWER CANADA INC.,MSB,SPIDER PAY INC.,FIRST ANSWER CANADA INC.,N300001764,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,FIRST ANSWER CANADA INC.,MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP",Virtual Currency,N300001764,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,VECTRA FINANCIAL LTD,Foreign MSB,"Foreign Exchange, Money Transferring, Virtual Currency, PSP","Foreign Exchange, Money Transferring, Virtual Currency, Crowdfunding, PSP",N300001844,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,GRANITE ADMINISTRATION INC.,MSB,"ADMINISTRATION GRANITE""",GRANITE ADMINISTRATION INC.,N300001842,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,NOFISAT BAKARE,MSB,"BAKARE, NOFISAT",NOFISAT BAKARE,N300001921,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,LIQUIDCHAIN FINANCE LTD.,MSB,"LIQUIDCHAIN""",LIQUIDCHAIN FINANCE LTD.,N300001509,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Name changed,CA,FINTRAC,TWINKLE PAY LTD.,MSB,"TWINKLE PAY""",TWINKLE PAY LTD.,N300002145,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,Permissions changed,CA,FINTRAC,TWINKLE PAY LTD.,MSB,"Foreign Exchange, Money Transferring, PSP","Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP",N300002145,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,New licence,CA,FINTRAC,FYXORIA INC,MSB,,MSB,N300002415,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,New licence,CA,FINTRAC,VALENTIS EXCHANGE INC.,MSB,,MSB,N300002451,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac
+2026-11-06 19:07,New licence,CA,FINTRAC,PERFECTPAYMENTS SERVICES LTD,MSB,,MSB,N300002472,https://fintrac-canafe.canada.ca/msb-esm/reg-eng,fintrac

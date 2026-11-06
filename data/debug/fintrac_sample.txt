@@ -1,16 +1,16 @@
 url: https://fintrac-canafe.canada.ca/msb-esm/reg-eng.csv
-bytes: 2889458  starts: b'Organiza'
+bytes: 2857864  starts: b'Organiza'
 error: None
 columns used: {'name': 'Organization Names (Legal and Operating)', 'number': 'MSB Registration Number', 'status': 'MSB Registration Status', 'initial': 'Date Initial MSB Registration Approval', 'expiry': 'MSB Registration Expiry Date', 'ceased': 'MSB Registration Cessation Date', 'revoked': 'MSB Registration Revocation Date', 'services': 'Services Offered', 'address': 'Business Address', 'foreign': 'Foreign MSB Indicator', 'website': 'Website', 'inc_juris': 'Jurisdication of Incorporation'}
-headers: ['Organization Names (Legal and Operating)', 'Business Address', 'Website', 'Services Offered', 'MSB Registration Status', 'MSB Registration Number', 'Date Initial MSB Registration Approval', 'MSB Registration Expiry Date', 'MSB Registration Cessation Date', 'MSB Registration Revocation Date', 'Jurisdication of Incorporation', 'Incorporation Number', 'Incorporation Date', 'Foreign MSB Indicator']
-data rows: 10212  kept: 9059
-type values: [('Registered', 4860), ('Expired', 2654), ('Ceased', 1642), ('Revoked', 411), ('Not available', 2), ('Foreign Exchange, Money Transferring, PSP', 2), ('Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders, Virtual Currency, PSP, Cheque Cashing', 2), ('Foreign Exchange, Money Transferring, Issuing and Redeeming Money Orders', 1), ('V5P3V6"', 1), ('Foreign Exchange, Money Transferring', 1), ('CANADA', 1), ('Money Transferring, Virtual Currency', 1)]
+headers: ['Organization Names (Legal and Operating)', 'Business Address', 'Main Office Address Phone Number', 'Website', 'Services Offered', 'MSB Registration Status', 'MSB Registration Number', 'Date Initial MSB Registration Approval', 'MSB Registration Expiry Date', 'MSB Registration Cessation Date', 'MSB Registration Revocation Date', 'Jurisdication of Incorporation', 'Incorporation Number', 'Incorporation Date', 'Foreign MSB Indicator', '']
+data rows: 9065  kept: 9062
+type values: [('Registered', 4407), ('Expired', 2613), ('Ceased', 1637), ('Revoked', 408)]
 first lines:
-'Organization Names (Legal and Operating),Business Address,"Website'
+'Organization Names (Legal and Operating),Business Address,Main Office Address Phone Number,"Website'
 '",Services Offered,MSB Registration Status,MSB Registration Number,Date Initial MSB Registration Approval,MSB Registration Expiry Date,MSB Registration Cessation Date,MSB Registration Revocation Date,"Jurisdication of Incorporation '
 '",Incorporation Number,"Incorporation Date'
-'",Foreign MSB Indicator'
+'",Foreign MSB Indicator,'
 '"Legal Name: FINAX SERVICES INC., '
-'Operating Name: FINAX SERVICES INC.","7920 HURONTARIO ST - UNIT 41,BRAMPTON,ONTARIO,CANADA,L6Y0P7",,Foreign Exchange,Expired,M08993699,6/23/2008,5/4/2021,,,Provincial or territorial (Canada): Ontario,2138287,6/5/2007,No'
+'Operating Name: FINAX SERVICES INC.","7920 HURONTARIO ST - UNIT 41,BRAMPTON,ONTARIO,CANADA,L6Y0P7",9054552535,,Foreign Exchange,Expired,M08993699,2008-06-23,2021-05-04,,,Provincial or territorial (Canada): Ontario,2138287,2007-06-05,No,'
 '"Legal Name: DAHABSHIIL FINANCIAL TRANSFERS INC., '
-'Operating Name: DAHABSHIIL FINANCIAL TRANSFERS","228 BERING AVE UNIT 2,TORONTO,ONTARIO,CANADA,M8Z3A3",www.dahabshiil.ca,"Foreign Exchange, Money Transferring",Registered,M08992367,6/23/2008,11/17/2027,,,Provincial or territorial (Canada): Ontario,1284510,3/5/1998,No'
+'Operating Name: DAHABSHIIL FINANCIAL TRANSFERS","228 BERING AVE UNIT 2,TORONTO,ONTARIO,CANADA,M8Z3A3",4165403841,www.dahabshiil.ca,"Foreign Exchange, Money Transferring",Registered,M08992367,2008-06-23,2027-11-17,,,Provincial or territorial (Canada): Ontario,1284510,1998-03-05,No,'

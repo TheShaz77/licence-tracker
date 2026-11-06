@@ -71,6 +71,18 @@
 "v": 2,
 "website": ""
 },
+"00fbe26b-7979-f111-ab0f-3833c5f8cbe0": {
+"address": "1940 Argentia Road",
+"city": "Mississauga",
+"email": "ryleigh.evans@walmart.com",
+"legal": "WM Billing Settlement Nav CA ULC",
+"phone": "+14793521491",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "011b9ca5-4b98-ef11-8a68-002248adaada": {
 "address": "",
 "city": "CANNINGTON",
@@ -130,6 +142,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.frontstream.com"
+},
+"0164a63a-b49a-ef11-8a6a-6045bd6034d0": {
+"address": "21 King Street West",
+"city": "Hamilton",
+"email": "anooplal@vooo.uk",
+"legal": "Vooo Inc",
+"phone": "+12898191117",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Vooo Connect",
+"v": 2,
+"website": "https://www.voooconnect.com"
 },
 "01829e78-6e98-ef11-8a68-0022483dbf39": {
 "address": "1955 Broadway",
@@ -383,6 +407,30 @@
 "v": 2,
 "website": "https://www.payana.com"
 },
+"03a1644c-494d-f111-bec7-6045bd6095bf": {
+"address": "2121 160 St 2ND FLOOR, STE 203",
+"city": "Surrey",
+"email": "neo@payvianta.com",
+"legal": "Vianta Payments Ltd.",
+"phone": "+971502352630",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.payvianta.com"
+},
+"03db6792-0e9e-ef11-8a69-002248ae368e": {
+"address": "298 WALKER RD",
+"city": "Windsor",
+"email": "info@wsce.ca",
+"legal": "Windsor Station Currency Exchange Inc.",
+"phone": "1-519-258-7994",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.windsorstationcurrencyexchange.com"
+},
 "03df003b-c29a-ef11-8a6a-6045bd5e516b": {
 "address": "7700 Hurontario Street, Unit 503.",
 "city": "Brampton",
@@ -418,6 +466,18 @@
 "trade": "1443173 B.C. LTD",
 "v": 2,
 "website": "https://swetche.com"
+},
+"03fdef1d-47a8-f011-bbd3-6045bd5c6d95": {
+"address": "130 Spadina Ave",
+"city": "Toronto",
+"email": "info@swichnow.io",
+"legal": "VERITO REMITTANCE LTD.",
+"phone": "+923191234567",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Swich Remit",
+"v": 2,
+"website": "https://www.swichnow.io"
 },
 "040336ce-0dc6-f111-a05c-002248b2cfb3": {
 "address": "2482 Yonge St, Suite 185",
@@ -1091,6 +1151,18 @@
 "v": 2,
 "website": "https://wiremi.ca"
 },
+"09918ec1-2dbb-f111-aaaf-70a8a50dbc30": {
+"address": "1ST FLOOR, STE 115 1868 GLEN DR",
+"city": "VANCOUVER",
+"email": "dimitris@bpd.it.com",
+"legal": "VOM PAY LTD.",
+"phone": "12368011493",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "099ca841-b2a2-ef11-a72d-002248af402a": {
 "address": "4055-122#",
 "city": "Westmount",
@@ -1379,6 +1451,18 @@
 "v": 2,
 "website": "https://www.kuda.com/en-ca"
 },
+"0c85c964-a990-f111-8077-002248b21bdf": {
+"address": "7 Seed Court",
+"city": "Brampton",
+"email": "legal@joinvelvet.io",
+"legal": "VELVET LABS INC.",
+"phone": "+16472835026",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.joinvelvet.io"
+},
 "0c93f751-fcad-f111-aaac-002248b2cfb3": {
 "address": "#18, 3434 34 Ave NE",
 "city": "CALGARY",
@@ -1450,6 +1534,18 @@
 "trade": "",
 "v": 2,
 "website": "https://cardata.co"
+},
+"0cf909d1-5598-ef11-8a68-000d3a84a24c": {
+"address": "319 W Hastings St #400",
+"city": "Vancouver",
+"email": "support@vivispayments.com",
+"legal": "Vivis Payments Limited",
+"phone": "+1 (778) 652-9820",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vivispayments.ca"
 },
 "0d25eaba-639c-ef11-8a69-6045bd612cac": {
 "address": "212 King Street West 6th Floor",
@@ -1955,6 +2051,18 @@
 "v": 2,
 "website": "https://www.koynpay.com"
 },
+"12c0e310-3efd-ef11-bae3-0022483d8225": {
+"address": "155 EDWARD STREET",
+"city": "AURORA",
+"email": "matt.moore@xeppt.com",
+"legal": "Xeppt Inc.",
+"phone": "647-794-4610",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Xeppt",
+"v": 2,
+"website": "https://xeppt.com"
+},
 "130b9db5-f8a0-ef11-a72d-002248b00a0f": {
 "address": "2600-1066 West Hastings Street",
 "city": "Vancouver",
@@ -2026,6 +2134,18 @@
 "trade": "Nikan Exchange",
 "v": 2,
 "website": "https://nikanexchange.ca"
+},
+"139d765c-489a-ef11-8a6a-6045bd6034d0": {
+"address": "170-422 RICHARDS ST",
+"city": "VANCOUVER",
+"email": "compliance@xpaholdings.com",
+"legal": "XPA Holdings Limited",
+"phone": "+60 11-3788 2615",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.xpaholdings.com"
 },
 "13bcf223-eff7-f011-8407-7ced8da58bcb": {
 "address": "530 8 Ave SW, Suite 1110",
@@ -2134,6 +2254,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.bearlapay.com"
+},
+"14dcbda9-019d-ef11-8a69-0022483dbf39": {
+"address": "The Carter, 11 Pilgrim Street",
+"city": "London",
+"email": "burkwoods@vitessepsp.com",
+"legal": "Vitesse Canada Technology Services Inc.",
+"phone": "442030515612",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.vitesse.io"
 },
 "14ea3b59-be9a-ef11-8a69-0022483dbf39": {
 "address": "3430, rue Fleury Est",
@@ -2435,6 +2567,18 @@
 "v": 2,
 "website": "https://www.goat.com/en-ca"
 },
+"17dad318-a99b-ef11-8a6a-6045bd5e516b": {
+"address": "222 Bay Street, Suite 2200",
+"city": "Toronto",
+"email": "bocwest@zepz.io",
+"legal": "WORLDREMIT WEST INC",
+"phone": "647-7053176",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WORLDREMIT",
+"v": 2,
+"website": "https://www.worldremit.com"
+},
 "17fc40fa-65a3-ef11-a72d-6045bd5d7b21": {
 "address": "320 S. Canal St",
 "city": "Chicago",
@@ -2518,6 +2662,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.studentify.ca"
+},
+"18697592-3da0-ef11-a72d-002248b15c65": {
+"address": "2015 Main St.,",
+"city": "VANCOUVER",
+"email": "info@wewire.com",
+"legal": "Wewire Technologies Inc.",
+"phone": "+1(978)9614143",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wewire.com"
 },
 "18b0b22c-841c-f011-998a-6045bd5d5fb7": {
 "address": "2290, 205- 50 Lonsdale Ave",
@@ -2782,6 +2938,18 @@
 "trade": "",
 "v": 2,
 "website": "https://rackantech.com"
+},
+"1bde1d14-b19a-ef11-8a6a-6045bd5e516b": {
+"address": "701 WEST GEORGIA STREET",
+"city": "VANCOUVER",
+"email": "info@vintros.com",
+"legal": "VINTROS PAYMENTS LTD",
+"phone": "+16134163023",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vintros.com"
 },
 "1be55408-7f98-ef11-8a68-002248adaada": {
 "address": "",
@@ -3071,6 +3239,18 @@
 "v": 2,
 "website": "https://www.staxbill.com"
 },
+"1ddea440-cfd9-f011-8543-7ced8da58c5a": {
+"address": "3550 Victoria Park Avenue\uff0c Suite 451",
+"city": "North York",
+"email": "info@hongxincpa.ca",
+"legal": "Y & Z CPA PROFESSIONAL CORPORATION",
+"phone": "16479798981",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://hongxincpa.ca"
+},
 "1e1907ff-e658-f111-a825-7ced8da65ab5": {
 "address": "69 ALEXANDROU MAVROKORDATOU",
 "city": "LIMASSOL",
@@ -3142,6 +3322,18 @@
 "trade": "",
 "v": 2,
 "website": "https://metaxpayments.com"
+},
+"1ee2b446-eef0-f011-8407-7ced8da586db": {
+"address": "6-8 W 18th St.",
+"city": "New York",
+"email": "support@wingspan.app",
+"legal": "Wingspan Networks, Inc.",
+"phone": "+1.855.888.8241",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Wingspan",
+"v": 2,
+"website": "https://www.wingspan.app"
 },
 "1f19d85b-6ca3-ef11-a72d-6045bd5d7b21": {
 "address": "1021 West Hastings Street (Office 815)",
@@ -3359,6 +3551,18 @@
 "v": 2,
 "website": ""
 },
+"20e58569-15a2-ef11-a72d-000d3af39d00": {
+"address": "1055 Dunsmuir St",
+"city": "Vancouver",
+"email": "vii.boc@vopay.com",
+"legal": "VoPay International Inc.",
+"phone": "7788972202",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vopay.com"
+},
 "20ea4f0b-6993-f111-b8dc-70a8a5ac03f5": {
 "address": "781 SHANKS HEIGHTS",
 "city": "MILTON",
@@ -3382,6 +3586,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.kredete.io"
+},
+"21450f62-0cc7-f111-a05a-70a8a50e75a1": {
+"address": "PEDRO I PONS 9-11",
+"city": "BARCELONA",
+"email": "compliance@virtuabroker.com",
+"legal": "VIRTUABROKER CORP.",
+"phone": "+18883944214",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.virtuabroker.ca"
 },
 "2158d6c0-76a3-ef11-a72d-6045bd5ed05c": {
 "address": "28 19628 55A AVENUE",
@@ -3539,6 +3755,18 @@
 "v": 2,
 "website": ""
 },
+"22910aa4-5e98-ef11-8a68-0022483dbf39": {
+"address": "7300 N. Kendall Drive, Suite#200",
+"city": "Miami",
+"email": "support@versapay.com",
+"legal": "Versapay ULC",
+"phone": "+18669998729",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.versapay.com"
+},
 "22957da3-ad9b-ef11-8a69-002248adaada": {
 "address": "",
 "city": "Vaughan",
@@ -3586,6 +3814,18 @@
 "trade": "Pay Away",
 "v": 2,
 "website": ""
+},
+"22e1b5e2-5498-ef11-8a68-002248adaada": {
+"address": "2100 Ponce de Leon Blvd.",
+"city": "Coral Gables",
+"email": "compliance@viamericas.ca",
+"legal": "Viamericas Canada Corporation",
+"phone": "(800) 401-7626",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Viamericas",
+"v": 2,
+"website": "https://viamericas.ca"
 },
 "22e56225-ce87-f011-b4cc-6045bd5d5fb7": {
 "address": "300 Supertest Rd",
@@ -3803,6 +4043,18 @@
 "v": 2,
 "website": "https://www.kairo.finance"
 },
+"24d67d43-7fa3-ef11-a72d-0022483e9aac": {
+"address": "5577 153A Street, Suite 207",
+"city": "Surrey",
+"email": "evros.evripidou@xprowire.com",
+"legal": "Xprowire Holdings Ltd",
+"phone": "16478480250",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.xprowire.com"
+},
 "24f9543b-38a0-ef11-a72d-0022483bf164": {
 "address": "901 3RD STREET WEST UNIT 352",
 "city": "NORTH VANCOUVER",
@@ -3838,6 +4090,18 @@
 "trade": "PayPal",
 "v": 2,
 "website": "https://www.paypal.sg"
+},
+"251b221d-5b98-ef11-8a68-000d3a84a24c": {
+"address": "99 Bank Street",
+"city": "Ottawa",
+"email": "reg-compliance-northam@wise.com",
+"legal": "Wise Payments Canada Inc.",
+"phone": "7374207421",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Wise",
+"v": 2,
+"website": "https://wise.com/ca"
 },
 "251c2c27-8698-ef11-8a68-0022483dbf39": {
 "address": "3250 Bloor St W, East Tower, 16th Floor",
@@ -3898,6 +4162,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"262ab08d-49a0-ef11-a72d-6045bd61fa0b": {
+"address": "155 Queens Quay E",
+"city": "Toronto",
+"email": "kcichon@waveapps.com",
+"legal": "Wave Financial Inc",
+"phone": "720-797-8522",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.waveapps.com"
 },
 "267f09d0-7183-f011-b4cc-6045bd618b82": {
 "address": "11610 Ash Street, Suite 200",
@@ -4030,6 +4306,18 @@
 "trade": "Banktech",
 "v": 2,
 "website": "https://www.pddirect.com"
+},
+"28284f39-b12e-f111-88b4-7ced8da65a7f": {
+"address": "222 Somerset Street West",
+"city": "Ottawa",
+"email": "westxpinc@gmail.com",
+"legal": "WESTXP SOLUTIONS INC.",
+"phone": "+393347012121",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
 },
 "2836ef2f-98a2-ef11-a72d-6045bd6211cf": {
 "address": "304",
@@ -4270,6 +4558,18 @@
 "trade": "Pay CrossBorder",
 "v": 2,
 "website": ""
+},
+"2a51cd53-8198-ef11-8a68-002248adaada": {
+"address": "700-2 BLOOR STREET WEST",
+"city": "Toronto",
+"email": "aroychowdhury@zepz.io",
+"legal": "WORLDREMIT CENTRAL INC.",
+"phone": "6477053176",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WORLDREMIT CENTRAL INC.",
+"v": 2,
+"website": "https://www.worldremit.com"
 },
 "2a610487-c79a-ef11-8a6a-6045bd6034d0": {
 "address": "2-228 Bering Ave",
@@ -5063,6 +5363,18 @@
 "v": 2,
 "website": "https://www.moneygram.com"
 },
+"32840e84-0487-f011-b4cb-0022483dff4b": {
+"address": "231 Oak Park Blvd, suite 301, , ON",
+"city": "Oakville",
+"email": "hassan@zashx.com",
+"legal": "ZASHX",
+"phone": "+19423887000",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "3295e8fb-ebcd-ef11-a72e-6045bd5de666": {
 "address": "",
 "city": "Mississauga",
@@ -5663,6 +5975,18 @@
 "v": 2,
 "website": ""
 },
+"38edf23a-269d-ef11-8a69-000d3af343b4": {
+"address": "205-15240 56 Ave",
+"city": "Surrey",
+"email": "compliance@windcave.com",
+"legal": "Windcave Canada Limited",
+"phone": "+18442212700",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Windcave",
+"v": 2,
+"website": "https://www.windcave.com"
+},
 "3906a3ed-5298-ef11-8a68-0022483dbf39": {
 "address": "Suite 100 55 Superior Boulevard",
 "city": "Mississauga",
@@ -5770,6 +6094,18 @@
 "trade": "Honk Mobile Inc",
 "v": 2,
 "website": "https://www.honkmobile.com"
+},
+"3a6732e2-588b-f111-8077-7c1e5253ef7a": {
+"address": "2300-2850 SHAUGHNESSY ST",
+"city": "Port Coquitlam",
+"email": "ivchenko@wale.finance",
+"legal": "WALE FINANCE LTD.",
+"phone": "+1 (403) 354-2417",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WALE FINANCE LTD.",
+"v": 2,
+"website": "https://www.wale.finance"
 },
 "3a8db503-0f9a-f011-b41c-0022483e3429": {
 "address": "700-838 W Hastings Street",
@@ -5999,6 +6335,18 @@
 "v": 2,
 "website": ""
 },
+"3cf0d419-f468-f011-bec2-000d3a842d72": {
+"address": "440 Stalwart Crescent",
+"city": "Ottawa",
+"email": "riquiel@wespare.com",
+"legal": "Wespare Finance Inc.",
+"phone": "+1-613-295-3447",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wespare.com"
+},
 "3d23c369-d900-f111-8407-7ced8da586db": {
 "address": "165 Rue de la Belle Fontaine",
 "city": "Qu\u00e9bec",
@@ -6191,6 +6539,18 @@
 "v": 2,
 "website": "https://www.chargebee.com"
 },
+"3ec97f82-6c9c-ef11-8a69-000d3a84a24c": {
+"address": "56 Temperance Street",
+"city": "Toronto",
+"email": "patrick.ho@xe.com",
+"legal": "Xe Corporation",
+"phone": "1-877-932-6640",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Xe Corp.",
+"v": 2,
+"website": "https://Xe.com"
+},
 "3ed39eba-1714-f111-8342-7ced8d351d6b": {
 "address": "3301 Bonita Beach Road",
 "city": "Bonita Springs",
@@ -6214,6 +6574,18 @@
 "trade": "",
 "v": 2,
 "website": "https://otcx.io"
+},
+"3ee3c669-669c-ef11-8a6a-6045bd6034d0": {
+"address": "151 Teheran-ro",
+"city": "Seoul",
+"email": "wb_compliance@wirebarley.com",
+"legal": "WireBarley Corporation",
+"phone": "+827051183777",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wirebarley.com"
 },
 "3ee9c78a-f3ed-f011-8407-7ced8da586db": {
 "address": "3171 Lenworth Drive",
@@ -6359,6 +6731,18 @@
 "v": 2,
 "website": "https://www.connect.financial.com"
 },
+"40be05d0-72f7-f011-8407-002248ade06f": {
+"address": "5307 VICTORIA DRIVE",
+"city": "VANCOUVER",
+"email": "louis@paytec.global",
+"legal": "ZEAM PAYMENTS NW LIMITED",
+"phone": "+27828865254",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Zeam",
+"v": 2,
+"website": "https://www.zeam.money"
+},
 "40ce8ef3-902e-f111-88b4-6045bd609487": {
 "address": "2166 FOURTH LINE OAKVILLE ON L6M 3T2",
 "city": "OAKVILLE",
@@ -6491,6 +6875,18 @@
 "v": 2,
 "website": "https://sokin.com"
 },
+"426197d5-7a98-ef11-8a68-000d3a84a24c": {
+"address": "69 Yorkville Ave Unit 102",
+"city": "Toronto",
+"email": "masoud@yorkfx.com",
+"legal": "York Foreign Exchange Inc.",
+"phone": "647-349-0980",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "York Foreign Exchange Inc.",
+"v": 2,
+"website": "https://www.yorkfx.com"
+},
 "42e4db3d-f9a2-ef11-a72d-0022483bf164": {
 "address": "",
 "city": "Royersford",
@@ -6574,6 +6970,18 @@
 "trade": "Fiserv",
 "v": 2,
 "website": "https://www.fiserv.com"
+},
+"445369b6-6c8a-f011-b4cb-6045bd5c94c0": {
+"address": "#200-1001 1 Street SE, Calgary AB T3G 3G5",
+"city": "Calgary",
+"email": "info@vidiacorp.com",
+"legal": "Vidia Corporation Inc",
+"phone": "+1 587 853-4737",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vidiacorp.com"
 },
 "44537a90-c3fd-ef11-bae3-000d3a842d72": {
 "address": "",
@@ -6706,6 +7114,18 @@
 "trade": "PSI-Pay Ltd",
 "v": 2,
 "website": "https://psi-pay.co.uk"
+},
+"45451bf7-9ea2-ef11-a72d-000d3af39cf4": {
+"address": "1853-1771 Robson St, Vancouver BC V6G 3B7",
+"city": "Vancouver",
+"email": "admin@pay.agency",
+"legal": "Xorapay Ltd",
+"phone": "+1 604 670 8715",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Pay Agency",
+"v": 2,
+"website": "https://Xorapay.com"
 },
 "456805eb-f614-f111-8342-7ced8da584ff": {
 "address": "1121 - 235 BLOOR ST E",
@@ -6941,6 +7361,18 @@
 "email": "bo@velox-solutions.com",
 "legal": "PAYVIA PAYMENTS CORP.",
 "phone": "+447498187418",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
+"4858388f-b9d8-f011-8543-7ced8da584ff": {
+"address": "15 London Green Crt",
+"city": "North York",
+"email": "mainaton25@gmail.com",
+"legal": "Zoompay Systems and Technology Limited",
+"phone": "+12896248036",
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "",
@@ -7403,6 +7835,18 @@
 "v": 2,
 "website": "https://junigo.co"
 },
+"4dac796b-7c9c-ef11-8a6a-6045bd6034d0": {
+"address": "900 Metro Center Blvd",
+"city": "Foster City",
+"email": "vgsilicensing@visa.com",
+"legal": "Visa Global Services Inc.",
+"phone": "888-733-0041",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "4dbf5785-5098-ef11-8a69-6045bd6034d0": {
 "address": "5255 Yonge St. Fourth Floor",
 "city": "Toronto",
@@ -7487,6 +7931,18 @@
 "v": 2,
 "website": "https://domuspay.io"
 },
+"4e52abcb-e5db-f011-8543-7ced8da584ff": {
+"address": "903 8th Ave SW",
+"city": "Calgary",
+"email": "founder@verikros.com",
+"legal": "VERIKROS PAYMENTS INC.",
+"phone": "+233 20 265 8384",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "VERIKROS",
+"v": 2,
+"website": "https://verikros.com"
+},
 "4e532beb-d49a-ef11-8a69-0022483dbf39": {
 "address": "440 2 Ave SW",
 "city": "Calgary",
@@ -7522,6 +7978,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"4e8dc30c-13a3-ef11-a72d-6045bd5de666": {
+"address": "Akibu Akinsanya Street alvation Estate. Building Number or Building Name: 40",
+"city": "Ajah,",
+"email": "info@wittytech.io",
+"legal": "WITTY Technology Limited",
+"phone": "+2348034347039",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://wittytech.io"
 },
 "4efba7a8-6599-ef11-8a6a-6045bd6034d0": {
 "address": "",
@@ -7943,6 +8411,18 @@
 "v": 2,
 "website": "https://mintpayltd.com"
 },
+"528c9347-a1ad-ef11-a72d-000d3ae8a4a4": {
+"address": "250 Water Street",
+"city": "Summerside",
+"email": "chawlaa@worklinks.ca",
+"legal": "Worklinks Inc.",
+"phone": "1-866-202-0414 ext. 707",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.worklinks.ca"
+},
 "529f44b2-b59b-ef11-8a69-0022483dbf39": {
 "address": "",
 "city": "Mississauga",
@@ -7978,6 +8458,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.fullsteam.com"
+},
+"53287e00-6198-ef11-8a68-000d3a84a24c": {
+"address": "#1110, 240-70 Shawville Blvd SE",
+"city": "Calgary",
+"email": "accounting@wagepoint.com",
+"legal": "Wagepoint Holdings Inc",
+"phone": "877-757-2243",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Wagepoint",
+"v": 2,
+"website": "https://www.wagepoint.com"
 },
 "5344f9cf-4f9a-ef11-8a69-000d3a84a24c": {
 "address": "",
@@ -8038,6 +8530,18 @@
 "trade": "Vell",
 "v": 2,
 "website": "https://vell.net"
+},
+"5436a476-aeab-f111-aaab-7ced8de0cc12": {
+"address": "21-401 Alden Road",
+"city": "Markham",
+"email": "jack@yolkpay.com",
+"legal": "YolkPay Inc.",
+"phone": "+16478479666",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://yolkpay.com"
 },
 "548ec0ff-8c4b-f011-877b-000d3a842d72": {
 "address": "341 Parkhurst Square, Unit # 1",
@@ -8195,6 +8699,18 @@
 "v": 2,
 "website": "https://www.rcgforex.ca"
 },
+"55672e0c-aa72-f011-bec2-0022483d8225": {
+"address": "Mappin House",
+"city": "London",
+"email": "davita.morgan@yavr.io",
+"legal": "Yavrio Ltd",
+"phone": "+447963869811",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Yavrio Ltd",
+"v": 2,
+"website": "https://www.yavr.io"
+},
 "558fce7c-5998-ef11-8a69-6045bd6034d0": {
 "address": "412 Delaney Dr",
 "city": "Ajax",
@@ -8231,6 +8747,18 @@
 "v": 2,
 "website": "https://payean.com"
 },
+"55ae6533-a29b-ef11-8a6a-6045bd6034d0": {
+"address": "67 Mowat Ave.",
+"city": "Toronto",
+"email": "rpaa@xtminc.com",
+"legal": "XTM INC.",
+"phone": "4162601641",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "AnyDay Payments",
+"v": 2,
+"website": "https://www.xtminc.com"
+},
 "55b5b73d-6148-f111-bec7-7ced8da6563c": {
 "address": "1907 Baseline Road",
 "city": "Ottawa",
@@ -8242,6 +8770,18 @@
 "trade": "",
 "v": 2,
 "website": "https://pay-point.net"
+},
+"55ee9ed6-4798-ef11-8a68-000d3a84a24c": {
+"address": "140 Yonge Street",
+"city": "Toronto",
+"email": "canada@vfxplc.com",
+"legal": "VFX Global Payments Inc.",
+"phone": "442079596900",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.vfxfinancial.ca"
 },
 "55fe69ad-7dcf-ef11-a72e-002248af513b": {
 "address": "7070e Farrell Rd SE #1054",
@@ -8278,6 +8818,18 @@
 "trade": "Money Mart",
 "v": 2,
 "website": "https://www.moneymart.ca"
+},
+"5663ea75-1d30-f011-8c4d-002248b28b66": {
+"address": "807-130 Spadina Ave",
+"city": "Toronto",
+"email": "contact@walapay.io",
+"legal": "Walapay Inc.",
+"phone": "+19145397185",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://walapay.io"
 },
 "566c42c6-3963-f111-a826-7ced8de0b360": {
 "address": "155 East Beaver Creek Road, Suite 24-147",
@@ -8471,6 +9023,18 @@
 "v": 2,
 "website": "https://deltha.finance"
 },
+"590e178e-bdbd-ef11-a72e-6045bd614e02": {
+"address": "6 Gram Street",
+"city": "Maple",
+"email": "j.v@xlentpay.com",
+"legal": "XLENTPAY CORPORATION",
+"phone": "416 568 3909",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Xlentpay",
+"v": 2,
+"website": ""
+},
 "594358ee-86ed-f011-8406-7ced8da58bcb": {
 "address": "13353 Commerce Parkway, Unit 2353 (3rd Floor)",
 "city": "Richmond",
@@ -8663,6 +9227,18 @@
 "v": 2,
 "website": "https://topconnectltd.com"
 },
+"5b0c9b75-3dc3-f111-a05c-000d3a0c9521": {
+"address": "22420 Dewdney Trunk Road, Suite 300",
+"city": "Maple Ridge",
+"email": "compliance@obolum.com",
+"legal": "ZYPAY LTD.",
+"phone": "16475317639",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "5b5aeb66-1c9c-ef11-8a69-000d3a84a24c": {
 "address": "SUITE #229, 6030 88ST NW, EDMONTON, Alberta, Canada, T6E6G4",
 "city": "Edmonton",
@@ -8710,6 +9286,18 @@
 "trade": "",
 "v": 2,
 "website": "https://tevau.io"
+},
+"5b995287-e59a-ef11-8a6a-002248afafd4": {
+"address": "1615 Platte Street",
+"city": "Denver",
+"email": "compliance@xero.com",
+"legal": "Xero, Inc.",
+"phone": "1-720-408-0350",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.xero.com"
 },
 "5b9caf7d-a94e-f111-bec7-6045bd6095bf": {
 "address": "",
@@ -9035,6 +9623,18 @@
 "v": 2,
 "website": "https://bleyt.com"
 },
+"5eb25cf3-51a0-ef11-a72d-000d3af39d00": {
+"address": "33 Booker Dr, Ajax",
+"city": "Ontario",
+"email": "compliance@veloxpayments.com",
+"legal": "Velox Payments Limited",
+"phone": "16479097294",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://veloxpayments.com"
+},
 "5ec4efed-aaa2-ef11-a72d-6045bd5ed05c": {
 "address": "6032 YONGE STREET",
 "city": "NORTH YORK",
@@ -9071,6 +9671,18 @@
 "v": 2,
 "website": "https://eazzytranzact.com"
 },
+"5ee59a59-f6a0-ef11-a72d-002248b15c65": {
+"address": "1134 HOUSTON DRIVE,",
+"city": "MILTON",
+"email": "operations@workerappz.com",
+"legal": "Workers World Applications corp.",
+"phone": "00971507844161",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "5f37c35e-5798-ef11-8a69-6045bd6034d0": {
 "address": "125 Commerce Valley Dr W #100",
 "city": "Thornhill",
@@ -9094,6 +9706,18 @@
 "trade": "Choice Digital",
 "v": 2,
 "website": "https://www.choicedigital.com"
+},
+"5f8414d6-7f92-f111-b8dc-002248b21bdf": {
+"address": "22420 Dewdney Trunk Road, suite 300",
+"city": "Maple Ridge",
+"email": "ronald.chan@zorapay.io",
+"legal": "ZORAPAY INC.",
+"phone": "+1 (000) 000-0000",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Zorapay",
+"v": 2,
+"website": "https://zorapay.io"
 },
 "5f9182af-dfd1-ef11-a72e-000d3af328f6": {
 "address": "300 Supertest Road, Unit 1",
@@ -10319,6 +10943,18 @@
 "v": 2,
 "website": "https://www.lillio.com"
 },
+"6af3355d-3ea1-ef11-a72d-6045bd5d4e16": {
+"address": "33 Frederick Todd Way",
+"city": "Toronto",
+"email": "Joshua@zuniq.io",
+"legal": "ZuniQ Inc.",
+"phone": "4168260983",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "ZuniQ",
+"v": 2,
+"website": "https://www.zuniq.io"
+},
 "6b131ba6-c78c-f011-b4cb-6045bd611738": {
 "address": "",
 "city": "Guelph",
@@ -10775,6 +11411,18 @@
 "v": 2,
 "website": "https://www.skipthedishes.com"
 },
+"6e03e188-579d-ef11-8a69-002248ae368e": {
+"address": "1 Hancock Street",
+"city": "Portland",
+"email": "lars.madsen@wexinc.com",
+"legal": "WEX, Inc.",
+"phone": "2077738171",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wexinc.com"
+},
 "6e3704cb-5b9d-ef11-8a69-002248b2a157": {
 "address": "121 YONGE STREET",
 "city": "Toronto",
@@ -11135,6 +11783,18 @@
 "v": 2,
 "website": "https://www.carmaf.com"
 },
+"7111fae3-5fa2-ef11-a72d-0022483bf164": {
+"address": "Suite 2700, 225 - 6th Avenue SW",
+"city": "Calgary",
+"email": "rpaa@wefi.info",
+"legal": "WEFI PAYMENTS LIMITED",
+"phone": "+1 343 554 0839",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://wefi.info"
+},
 "713419d3-3dc1-f011-bbd3-6045bd5c6786": {
 "address": "525 W 8th Avenue",
 "city": "Vancouver",
@@ -11216,6 +11876,18 @@
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "",
+"v": 2,
+"website": ""
+},
+"71c8439a-4898-ef11-8a68-000d3a84a24c": {
+"address": "212 King Street West, 6th Floor",
+"city": "Toronto",
+"email": "compliance@kandontech.com",
+"legal": "Velfi Trade Group Ltd",
+"phone": "+1 (437) 286-8273",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Velfi Trade Group",
 "v": 2,
 "website": ""
 },
@@ -11302,6 +11974,18 @@
 "trade": "WIREMONEY",
 "v": 2,
 "website": "https://www.wiremoney.com.au"
+},
+"726d5fb0-81e8-ef11-be21-0022483cd08c": {
+"address": "3916 64 Ave S.E.",
+"city": "Calgary",
+"email": "legal@wfopay.com",
+"legal": "We Form Pay Inc",
+"phone": "1 (800) 917-8013",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WeForm Pay",
+"v": 2,
+"website": "https://wfopay.com"
 },
 "727256a6-039f-ef11-a72d-0022483bf164": {
 "address": "1910 - 666 Ontario Street",
@@ -11435,6 +12119,18 @@
 "v": 2,
 "website": "https://ezerfinance.com"
 },
+"73ddc241-b79d-ef11-8a69-6045bd5ed71e": {
+"address": "201 - 5240 1A STREET S.E.",
+"city": "CALGARY",
+"email": "kg@vera-finance.com",
+"legal": "Vera Finance Ltd.",
+"phone": "+1 (347) 715-0901",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Vera Finance Ltd.",
+"v": 2,
+"website": "https://www.vera-finance.com"
+},
 "73f21104-589b-ef11-8a6a-6045bd5e516b": {
 "address": "1248-13351 Commerce Pkwy",
 "city": "Richmond",
@@ -11446,6 +12142,18 @@
 "trade": "Unlimited Remit",
 "v": 2,
 "website": "https://UnlimitedRemit.com"
+},
+"7409d724-6198-ef11-8a68-0022483dbf39": {
+"address": "5852 rue david lewis",
+"city": "Montreal",
+"email": "risk@zumrails.com",
+"legal": "Zum Rails Inc",
+"phone": "438-802-1314",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.zumrails.com"
 },
 "740d9dd8-6ce5-ef11-be21-6045bd5f9344": {
 "address": "481 Taunton Road West, Suite 407",
@@ -11567,6 +12275,18 @@
 "v": 2,
 "website": "https://www.avestaexchange.com"
 },
+"753806c0-5598-ef11-8a68-002248adaada": {
+"address": "80 Spadina Avenue, 4th Floor",
+"city": "Toronto",
+"email": "payments.compliance@wealthsimple.com",
+"legal": "Wealthsimple Payments Inc.",
+"phone": "647-699-6494",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wealthsimple.com"
+},
 "754362aa-5a98-ef11-8a69-6045bd5e516b": {
 "address": "3001 - 1 Place Ville Marie",
 "city": "Montr\u00e9al QC",
@@ -11687,6 +12407,18 @@
 "v": 2,
 "website": "https://trovepayment.com"
 },
+"765278ad-6a98-ef11-8a69-6045bd5e516b": {
+"address": "24 E. Washington St.",
+"city": "Chicago",
+"email": "austin.arnett@vividseats.com",
+"legal": "Vivid Seats LLC",
+"phone": "13122919966",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.vividseats.com"
+},
 "76748170-16a1-ef11-a72d-000d3af39d00": {
 "address": "208 14993 101 A AVE",
 "city": "Surrey",
@@ -11710,6 +12442,18 @@
 "trade": "",
 "v": 2,
 "website": "https://coinspaid.com"
+},
+"768ee4d5-6e9b-ef11-8a69-0022483dbf39": {
+"address": "203 Midland Place",
+"city": "Welland",
+"email": "paymentoperations@vgplatform.com",
+"legal": "Venture Garden Platform Inc.",
+"phone": "4162587764",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Venture Garden Platform",
+"v": 2,
+"website": "https://fleap.finance"
 },
 "76adbbba-09a2-ef11-a72d-002248b00a0f": {
 "address": "4611 Canada Way",
@@ -11879,6 +12623,18 @@
 "v": 2,
 "website": "https://www.choicepay.ca"
 },
+"78313476-4898-ef11-8a68-000d3a84a24c": {
+"address": "18 KING STREET",
+"city": "TORONTO",
+"email": "REGULATORY@WYRR.APP",
+"legal": "WYRR INC",
+"phone": "+12817440716",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WYRR",
+"v": 2,
+"website": "https://WWW.WYRR.APP"
+},
 "78330f11-5916-f011-9989-000d3aff2e3e": {
 "address": "308 Taunton Road East",
 "city": "Whitby",
@@ -11950,6 +12706,18 @@
 "trade": "KASE Technologies",
 "v": 2,
 "website": ""
+},
+"794247fe-be9a-ef11-8a69-0022483dbf39": {
+"address": "4261 Hwy 7 East",
+"city": "Markham",
+"email": "john.lee@xpventurelabs.com",
+"legal": "XP VENTURE LABS INC",
+"phone": "1(647) 828-7773",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.xpventurelabs.com"
 },
 "7950cb94-1dd1-f111-a05d-002248b2cfb3": {
 "address": "",
@@ -12023,6 +12791,18 @@
 "v": 2,
 "website": "https://www.100exchange.ca"
 },
+"79f3d77c-809c-ef11-8a69-000d3a84a24c": {
+"address": "8133 Warden Ave",
+"city": "Markham",
+"email": "tblyth@membersolutions.com",
+"legal": "Youbill Canada Inc",
+"phone": "14164341273",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Member Solutions",
+"v": 2,
+"website": "https://www.membersolutions.com"
+},
 "7a0f131b-5307-f111-8407-7ced8da58bcb": {
 "address": "400-5025 Orbitor Drive",
 "city": "Mississauga",
@@ -12034,6 +12814,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.cardnpay.com"
+},
+"7a169501-509f-ef11-a72d-6045bd5de666": {
+"address": "170-6660 Graybar Road, Office #20",
+"city": "Richmond",
+"email": "finance@xforta.io",
+"legal": "XFORTA FINANCIAL TECHNOLOGIES LTD",
+"phone": "+16478466288",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://xforta.io"
 },
 "7a1f379e-0dbc-ef11-a72e-002248ae2453": {
 "address": "Unit 807",
@@ -12203,6 +12995,18 @@
 "v": 2,
 "website": "https://www.moonpay.com"
 },
+"7b593f7f-e39d-ef11-8a69-000d3af343b4": {
+"address": "301-852 Fort Street, Victoria, BC, V8W 1H8",
+"city": "Victoria",
+"email": "hc@xpayfx.com",
+"legal": "XPAYFX PAYMENTS LTD",
+"phone": "+447545570306",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XPayFX Payments Limited",
+"v": 2,
+"website": "https://xpayfx.com"
+},
 "7b67ae94-cafe-ef11-bae2-002248b037b4": {
 "address": "500 EDENWYLDE DRIVE",
 "city": "STITTSVILLE",
@@ -12214,6 +13018,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.afriexapp.com"
+},
+"7bd0e217-569a-f111-b8dc-7ced8ddf42ee": {
+"address": "7 B Pleasant Boulevard, Suite 1000",
+"city": "Toronto",
+"email": "info@veloxglobal.net",
+"legal": "VELOX GLOBAL INC.",
+"phone": "+16472585589",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://veloxglobal.net"
 },
 "7c00db18-ad58-f011-bec2-0022483d8225": {
 "address": "22420 DEWDNEY TRUNK ROAD",
@@ -12323,6 +13139,18 @@
 "v": 2,
 "website": "https://pype.africa"
 },
+"7d064424-af9a-ef11-8a6a-6045bd6034d0": {
+"address": "956 N 200 E",
+"city": "Spanish Fork",
+"email": "marc@zift.io",
+"legal": "Zift LLC",
+"phone": "8018450524",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://zift.io"
+},
 "7d17635d-7fe5-ef11-be1f-002248b001fe": {
 "address": "1801 North Lamar Boulevard",
 "city": "Austin",
@@ -12334,6 +13162,18 @@
 "trade": "DBD Ventures",
 "v": 2,
 "website": "https://www.getfwd.com"
+},
+"7d32905b-16a2-ef11-a72d-000d3a0c6813": {
+"address": "516 Wellman Cres.",
+"city": "Saskatoon",
+"email": "ComplianceAndAudit@Yardi.Com",
+"legal": "Yardi Canada Ltd.",
+"phone": "306.955.1855",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Yardi Canada Ltd.",
+"v": 2,
+"website": "https://www.yardi.com"
 },
 "7d42d1c9-e39c-ef11-8a69-0022483dbf39": {
 "address": "120 ADELAIDE STREET WEST",
@@ -12863,6 +13703,18 @@
 "v": 2,
 "website": ""
 },
+"823c5359-ab43-f111-bec7-7ced8da658d0": {
+"address": "94 Lakeshore Road East",
+"city": "Mississauga",
+"email": "ceo@veritas-commerce.com",
+"legal": "VERITAS COMMERCE LTD.",
+"phone": "+393520080281",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "823e76ee-129b-ef11-8a6a-6045bd5e516b": {
 "address": "",
 "city": "West Vancouver",
@@ -13018,6 +13870,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"83b65617-4dd4-f011-8544-7ced8d3679db": {
+"address": "300-3665 KINGSWAY",
+"city": "VANCOUVER",
+"email": "VCPAYMENTS@proton.me",
+"legal": "VICTORY CONQUEST PAYMENTS (CANADA) LIMITED",
+"phone": "+66892132289",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "VICTORY CONQUEST GROUP",
+"v": 2,
+"website": "https://victoryconquest.com"
 },
 "83d467d6-63a0-ef11-a72d-6045bd5ed05c": {
 "address": "",
@@ -13295,6 +14159,18 @@
 "v": 2,
 "website": "https://www.payzio.com"
 },
+"87995dfb-ad82-f011-b4cb-6045bd611386": {
+"address": "292, Sapling Grove",
+"city": "Ottawa",
+"email": "info@yousewire.com",
+"legal": "YOUSEWIRE CANADA INC",
+"phone": "+1 705 606 8450",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://yousewire.com"
+},
 "87c4b79d-f721-f111-88b3-7ced8da58bcb": {
 "address": "",
 "city": "HAMILTON",
@@ -13535,6 +14411,18 @@
 "v": 2,
 "website": "https://atinito.ca"
 },
+"897f49b8-a19b-ef11-8a69-002248adaada": {
+"address": "700 - 2 Bloor Street West",
+"city": "Toronto",
+"email": "bocwr@zepz.io",
+"legal": "WorldRemit Inc",
+"phone": "6477053176",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WorldRemit",
+"v": 2,
+"website": "https://www.worldremit.com"
+},
 "89908292-b4a6-f111-aaac-002248b2cfb3": {
 "address": "",
 "city": "Toronto",
@@ -13727,6 +14615,18 @@
 "v": 2,
 "website": "https://www.ourzonefinancial.com"
 },
+"8b9a0413-e39d-ef11-8a69-6045bd60b625": {
+"address": "Second floor office #c",
+"city": "Richmond",
+"email": "ceo@zemoon.pro",
+"legal": "ZEMOON FINTECH LTD.",
+"phone": "14313030912",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "8bbf0fbe-e1a2-ef11-a72d-002248af402a": {
 "address": "1700 Marine Dr",
 "city": "North Vancouver",
@@ -13846,6 +14746,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.remitanywhere.com"
+},
+"8c799b76-6798-ef11-8a69-6045bd6034d0": {
+"address": "306-7368 YONGE ST",
+"city": "THORNHILL",
+"email": "setarehsb@yahoo.com",
+"legal": "woodland trading inc.",
+"phone": "16478658648",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Izadi Exchange",
+"v": 2,
+"website": "https://www.izadiexchange.ca"
 },
 "8c81385b-a469-f111-ab0c-7ced8ddf42ee": {
 "address": "402 4655 54 Ave NE",
@@ -13967,6 +14879,18 @@
 "v": 2,
 "website": ""
 },
+"8dd60ad3-e39a-f011-b41c-0022483e3429": {
+"address": "1270 Central Parkway West, Suite 102",
+"city": "Mississauga",
+"email": "mamdani.azim@gmail.com",
+"legal": "XENDORA INC.",
+"phone": "+351933710373",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "8de50a6a-adb5-f011-bbd3-000d3ae8da11": {
 "address": "",
 "city": "VANCOUVER",
@@ -13978,6 +14902,18 @@
 "trade": "XBO TRADING (CANADA) LIMITED",
 "v": 2,
 "website": "https://www.xbo.com"
+},
+"8df9ad25-b905-f011-bae1-002248b2fab2": {
+"address": "300 Supertest Rd",
+"city": "North York",
+"email": "info@velafx.com",
+"legal": "VMint Corp.",
+"phone": "+14378873290",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.velafx.com"
 },
 "8dfad18d-c1a0-ef11-a72d-002248b00a0f": {
 "address": "42 Ellesmere Road",
@@ -14026,6 +14962,18 @@
 "trade": "",
 "v": 2,
 "website": "https://lithic.com"
+},
+"8e5b91aa-f29a-ef11-8a6a-6045bd6034d0": {
+"address": "300-3665 Kingsway",
+"city": "Vancouver",
+"email": "msb@willmartfacilitator.com",
+"legal": "WILLMART FACILITATOR LIMITED",
+"phone": "778-373-9271",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WILLMART FACILITATOR",
+"v": 2,
+"website": "https://willmartfacilitator.com"
 },
 "8e8e7404-559c-ef11-8a69-000d3a84a24c": {
 "address": "",
@@ -14135,6 +15083,18 @@
 "v": 2,
 "website": "http://montelux.com"
 },
+"90968b0b-8a7b-f111-ab0f-70a8a50df491": {
+"address": "39 Queen Street, Suite 3",
+"city": "St Catharines,",
+"email": "wiseremit89@gmail.com",
+"legal": "WISEREMIT LTD.",
+"phone": "+447738256677",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "90d4dc0e-4bb1-ef11-a72d-6045bd614e02": {
 "address": "3080 Yonge Street",
 "city": "Toronto",
@@ -14219,6 +15179,18 @@
 "v": 2,
 "website": "https://Stellari.io"
 },
+"92598096-b09b-ef11-8a69-002248adaada": {
+"address": "685 Centre St S",
+"city": "Calgary",
+"email": "legal@zayzoon.com",
+"legal": "ZayZoon Inc.",
+"phone": "800-495-9713",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "ZayZoon",
+"v": 2,
+"website": "https://www.zayzoon.com"
+},
 "92670789-e8b0-ef11-a72d-000d3af39d00": {
 "address": "1896 Haiku Street",
 "city": "Nepean",
@@ -14230,6 +15202,18 @@
 "trade": "Withremit",
 "v": 2,
 "website": "https://withremit.com"
+},
+"926e3597-03a1-ef11-a72d-6045bd61fa0b": {
+"address": "59 Rockledge Drive",
+"city": "Hannon",
+"email": "hello@yousend.co",
+"legal": "Yousend Inc.",
+"phone": "+2348175961317",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Yousend",
+"v": 2,
+"website": "https://yousend.co"
 },
 "9291a1cf-0ba0-ef11-a72d-6045bd5de666": {
 "address": "Unit 208, 2074 Lawrence Ave. West, Toronto",
@@ -14470,6 +15454,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"957f8826-d69a-ef11-8a69-000d3a84a24c": {
+"address": "111 Richmond Street West, Suite 501",
+"city": "Toronto",
+"email": "compliance@xero.com",
+"legal": "Xero Software (Canada) Ltd.",
+"phone": "1-416-639-2219",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.xero.com"
 },
 "958590d0-5fa3-ef11-a72d-0022483bf164": {
 "address": "6833 MAPLE VISTA DRIVE",
@@ -14819,6 +15815,18 @@
 "v": 2,
 "website": ""
 },
+"9899fbe0-2178-f011-b4cb-002248b32df8": {
+"address": "1025 King Street East Unit 107 #4026",
+"city": "Cambridge",
+"email": "compliance@wirpaid.com",
+"legal": "Wirpaid Ltd",
+"phone": "1 (647) 265-0972",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "VukaPay",
+"v": 2,
+"website": "https://www.vukapay.com"
+},
 "98e24824-fd83-f111-ab0f-70a8a5ac03f5": {
 "address": "44 Afton Avenue",
 "city": "Toronto",
@@ -15011,6 +16019,18 @@
 "v": 2,
 "website": "https://www.touchnet.com"
 },
+"9a44a8b1-23ab-f011-bbd3-7ced8d360bbd": {
+"address": "1270 Central Parkway West",
+"city": "Mississauga",
+"email": "xellarpaymentsolutions@legalaes.com",
+"legal": "XELLAR PAYMENT SOLUTIONS INC",
+"phone": "+49173 5870896",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XELLAR PAYMENT SOLUTIONS INC.",
+"v": 2,
+"website": "https://uptex.com"
+},
 "9a7e973c-cc9b-ef11-8a69-002248adaada": {
 "address": "275 Battery St.",
 "city": "San Francisco",
@@ -15179,6 +16199,18 @@
 "v": 2,
 "website": "https://eficyent.com"
 },
+"9cb6894d-78a3-ef11-a72d-6045bd5d7b21": {
+"address": "1 Hancock Street",
+"city": "Portland",
+"email": "licensing@wexhealth.com",
+"legal": "WEX Health, Inc.",
+"phone": "1(207)773-8171",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wexinc.com"
+},
 "9ce40a89-5698-ef11-8a69-6045bd6034d0": {
 "address": "67 Yonge Street, Suite 701",
 "city": "Toronto",
@@ -15322,6 +16354,18 @@
 "trade": "Instaflow Trading",
 "v": 2,
 "website": "https://instaflow.ca"
+},
+"9eab885d-13a2-ef11-a72d-0022483bf164": {
+"address": "Unit 807, 130 Spadina Ave",
+"city": "Toronto",
+"email": "wafeeteam@protonmail.com",
+"legal": "WAFEE FINANCE INC",
+"phone": "+16476375814",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Lumarix",
+"v": 2,
+"website": ""
 },
 "9eeca4d2-2e9c-ef11-8a6a-6045bd6034d0": {
 "address": "Everdongenlaan 31",
@@ -15767,6 +16811,18 @@
 "v": 2,
 "website": "https://www.ramp.com"
 },
+"a36016d2-b8b2-ef11-a72f-0022483e82bd": {
+"address": "1281 West Georgia St",
+"city": "Vancouver",
+"email": "stanleym@visiblecommerce.net",
+"legal": "Visible Commerce Connection Inc.",
+"phone": "6048809998",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Visible Commerce Connection Integrated Inc.",
+"v": 2,
+"website": "https://www.visiblecommerce.net"
+},
 "a36ac28b-4db7-f111-aaad-70a8a50dbdd9": {
 "address": "",
 "city": "Richmond Hill",
@@ -16126,6 +17182,18 @@
 "trade": "",
 "v": 2,
 "website": "https://unifin.finance"
+},
+"a5a19370-5698-ef11-8a69-6045bd6034d0": {
+"address": "1834 Oak Bay Ave, suite 126",
+"city": "Victoria",
+"email": "compliance@risely.pro",
+"legal": "Vixi Pay Inc",
+"phone": "18887150002",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Vixi Pay Inc",
+"v": 2,
+"website": "https://risely.pro"
 },
 "a5a45ce3-ffdf-ef11-a730-0022483e82bd": {
 "address": "",
@@ -16535,6 +17603,18 @@
 "v": 2,
 "website": "https://www.orcapay.io"
 },
+"a91e726e-86ab-f111-aaab-000d3a0c9521": {
+"address": "55 Village Centre Place , Unit 200,",
+"city": "Mississauga",
+"email": "vvb@falahmail.com",
+"legal": "Virtual Vault Bank Ltd",
+"phone": "16474907869",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "VVB",
+"v": 2,
+"website": "https://www.vvb.digital"
+},
 "a924c466-7b98-ef11-8a68-000d3a84a24c": {
 "address": "9TH FLOOR - 1021 WEST HASTINGS STREET",
 "city": "VANCOUVER",
@@ -16558,6 +17638,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.cendmate.com"
+},
+"a92fdf0f-9a71-f111-ab0f-70a8a5ac03f5": {
+"address": "1 Customer Dr",
+"city": "Bentonville",
+"email": "Elizabeth.bozo@walmart.com",
+"legal": "WM Billing Settlement Nav US LLC",
+"phone": "+14793521491",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
 },
 "a946f0f5-79cc-ef11-a72e-6045bd5de666": {
 "address": "179 John St.",
@@ -16787,6 +17879,18 @@
 "v": 2,
 "website": "https://www.evertree.io"
 },
+"aba9d8d8-179a-f111-b8dc-7c1e5253ef7a": {
+"address": "94 Lakeshore Road East",
+"city": "Mississauga",
+"email": "info@xeena.io",
+"legal": "XEENA FINTECH LTD",
+"phone": "+393936036095",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XEENA PAY",
+"v": 2,
+"website": "https://www.xeena.io"
+},
 "abd5125b-079d-ef11-8a69-6045bd60b625": {
 "address": "9189-2785 COMMERCIAL DRIVE",
 "city": "VANCOUVER",
@@ -16883,6 +17987,18 @@
 "v": 2,
 "website": "https://sqril.io"
 },
+"ace40cd0-829c-ef11-8a6a-0022483c5fb0": {
+"address": "Unit 397 - 8148 - 128 Street",
+"city": "Surrey",
+"email": "zcexchanger@yahoo.com",
+"legal": "Zira Currency Exchanger Ltd.",
+"phone": "6045627000",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "ad6467af-839b-ef11-8a6a-6045bd6034d0": {
 "address": "786 King St",
 "city": "Toronto",
@@ -16907,6 +18023,18 @@
 "v": 2,
 "website": ""
 },
+"ad889f42-1b9b-ef11-8a6a-6045bd5e516b": {
+"address": "PO BOX 8767",
+"city": "Canmore",
+"email": "support@zone4.ca",
+"legal": "Zone4 Systems Inc",
+"phone": "1-888-444-0199",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://zone4.ca"
+},
 "add3ccda-9a9a-ef11-8a69-002248adaada": {
 "address": "Lana Furman - 422 RICHARDS ST, SUITE 170 VANCOUVER BC V6B 2Z4 CANADA",
 "city": "VANCOUVER",
@@ -16918,6 +18046,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.hochelagapay.ca"
+},
+"ae0aaea7-fca1-ef11-a72d-000d3af39d00": {
+"address": "30 Duncan St.",
+"city": "Toronto",
+"email": "austin.arnett@vividseats.com",
+"legal": "Vivid Seats Canada Ltd.",
+"phone": "13122919966",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.vividseats.com"
 },
 "ae0b051a-0758-f111-a825-7ced8da65ab5": {
 "address": "2595 CAVENDISH AVENUE",
@@ -17027,6 +18167,18 @@
 "v": 2,
 "website": "https://dolphinze.com"
 },
+"ae8c1283-7523-f111-8343-7ced8da58bcb": {
+"address": "700-225 EAST BEAVER CREEK ROAD",
+"city": "RICHMOND HILL",
+"email": "info@wepayfintech.money",
+"legal": "WEPAY FINTECH LTD",
+"phone": "+1 4376008291",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WEPAY PAYMENTS",
+"v": 2,
+"website": "https://wepayfintech.money"
+},
 "aed37e62-b69a-ef11-8a6a-6045bd6034d0": {
 "address": "20 Erb Street West",
 "city": "Waterloo",
@@ -17074,6 +18226,18 @@
 "trade": "Bakaal",
 "v": 2,
 "website": ""
+},
+"af566c72-bfed-ef11-be21-002248afebd2": {
+"address": "1591-329 HOWE ST VANCOUVER BC V6C 3N2 CANADA",
+"city": "Vancouver",
+"email": "lana@wiregatesystems.com",
+"legal": "Wiregate Payments LTD",
+"phone": "38163453585",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.wiregatesystems.com"
 },
 "af5f7222-82a2-ef11-a72d-6045bd5d4e16": {
 "address": "Office 2, 603-1450 Meyerside Drive",
@@ -17146,6 +18310,18 @@
 "trade": "",
 "v": 2,
 "website": "https://dreidel.ca"
+},
+"b07bcca4-f1ad-f111-aaac-3833c5fa6ddd": {
+"address": "39 Queen Street,",
+"city": "St Catharines",
+"email": "mahela@xprexpay.com",
+"legal": "XPREXPAY LTD.",
+"phone": "+447575862762",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
 },
 "b086acd8-839c-ef11-8a69-000d3a84a24c": {
 "address": "",
@@ -17759,6 +18935,18 @@
 "v": 2,
 "website": "https://www.cube-pay.co"
 },
+"b68dfd6f-f09a-ef11-8a6a-0022483c5fb0": {
+"address": "3001 Bishop Dr, Suite 300",
+"city": "San Ramon",
+"email": "roman@wotransfer.com",
+"legal": "WO TRANSFER CANADA LTD.",
+"phone": "4085977127",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Panda Remit",
+"v": 2,
+"website": "https://www.pandaremit.com"
+},
 "b6c53821-bba7-f111-aaab-3833c5fa6ddd": {
 "address": "",
 "city": "Halifax",
@@ -17866,6 +19054,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"b779a123-27b9-ef11-a72f-002248ae2453": {
+"address": "126 - 2471 Heritage Square, Unit #4, West Bay Rd",
+"city": "West Bay",
+"email": "support@wiseupsolution.com",
+"legal": "WISEUP SOLUTION INC.",
+"phone": "+13459362557",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://wiseupsolution.com"
 },
 "b79c0329-7007-f111-8407-7ced8da584ff": {
 "address": "",
@@ -17987,6 +19187,18 @@
 "v": 2,
 "website": "https://www.transferboss.com"
 },
+"b907e789-72ee-ef11-be21-002248b001fe": {
+"address": "807-130 Spadina Ave",
+"city": "Toronto",
+"email": "xchng@advapay.eu",
+"legal": "Xchng Ltd.",
+"phone": "+1 310 507 3124",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "b91cc8c7-ce18-f111-8342-7ced8da586db": {
 "address": "1100 Ren\u00e9-L\u00e9vesque Blvd W, Suite 900",
 "city": "Montreal",
@@ -17998,6 +19210,18 @@
 "trade": "Till",
 "v": 2,
 "website": "https://tillpayments.com/ca"
+},
+"b92d8abd-6498-ef11-8a68-0022483dbf39": {
+"address": "7404 KING GEORGE BLVD",
+"city": "SURREY",
+"email": "partners@wirectpay.com",
+"legal": "WIRECT PAY LTD.",
+"phone": "17787761507",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WIRECT PAY",
+"v": 2,
+"website": "https://wirectpay.com"
 },
 "b9dd20c0-961a-f011-9989-000d3a0c4069": {
 "address": "155 EDWARD STREET",
@@ -19019,6 +20243,18 @@
 "v": 2,
 "website": "https://www.nilos.io"
 },
+"c2f149e3-06a3-f011-bbd2-6045bd5c6d95": {
+"address": "410 West Georgia Street, 5th Floor",
+"city": "Vancouver",
+"email": "info@veloremit.ca",
+"legal": "VELOREMIT LIMITED",
+"phone": "+12508792317",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.veloremit.com"
+},
 "c361cbcf-5498-ef11-8a68-002248adaada": {
 "address": "1201-700 W Pender Street",
 "city": "Vancouver",
@@ -19114,6 +20350,18 @@
 "trade": "TANDIZA AFRICONNET CORP",
 "v": 2,
 "website": ""
+},
+"c44f79bd-43a9-ef11-a72d-6045bd614e02": {
+"address": "300-1303 Greene Avenue",
+"city": "Westmount",
+"email": "james.april@vensure.ca",
+"legal": "VensureHR Canada, Inc.",
+"phone": "514.300.1068",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "VensureHR",
+"v": 2,
+"website": "https://vensure.ca"
 },
 "c45d3fb4-7b92-f011-b4cc-002248b08a8e": {
 "address": "1 Sheldon Square",
@@ -19391,6 +20639,18 @@
 "v": 2,
 "website": "https://billions.works"
 },
+"c7072262-4413-f111-8342-7ced8da58c5a": {
+"address": "1450 Page Mill Rd.",
+"city": "Palo Alto",
+"email": "xpl.notices@x.ai",
+"legal": "X Payments Canada Inc.",
+"phone": "1-303-642-6884",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://x.com"
+},
 "c75d2c13-929b-ef11-8a6a-002248afafd4": {
 "address": "4388 Rue Saint-Denis Suite 200-237",
 "city": "Montreal",
@@ -19474,6 +20734,18 @@
 "trade": "OHENTPAY",
 "v": 2,
 "website": "https://www.ohentpay.com"
+},
+"c7a8811e-7bf5-f011-8407-7ced8da58212": {
+"address": "347 College St",
+"city": "Toronto",
+"email": "office@walcy.ca",
+"legal": "Walcy Inc.",
+"phone": "+16477057914",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Walcy",
+"v": 2,
+"website": "https://remit123.ca"
 },
 "c7c4ea20-944e-f111-bec6-7ced8da65ab5": {
 "address": "Unit 201, 5240 1A Street SE",
@@ -19655,6 +20927,30 @@
 "v": 2,
 "website": "https://connectionpoint.com"
 },
+"c937d8ac-271c-f011-998a-002248b21bff": {
+"address": "SUITE 408-55, WATER STREET",
+"city": "VANCOUVER",
+"email": "ZenFunds.INC@protonmail.com",
+"legal": "ZEN PAYMENT INC.",
+"phone": "+37126544551",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
+"c9732846-a2ad-ef11-a72d-002248ae6a98": {
+"address": "15 THE BROADWAY",
+"city": "LONDON",
+"email": "compliance@xace.io",
+"legal": "XACE LIMITED",
+"phone": "\u202a+44\u00a07772\u00a0042625\u202c",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://xace.co.uk"
+},
 "c9807d39-eca1-ef11-a72d-6045bd5de666": {
 "address": "",
 "city": "Granada",
@@ -19775,6 +21071,18 @@
 "v": 2,
 "website": "https://abcfitness.com"
 },
+"cac82a84-cb17-f111-8342-7ced8da584ff": {
+"address": "2436 Saddleback Way",
+"city": "West Kelowna",
+"email": "alafleche@yimmit.com",
+"legal": "YIMMIT FINANCIAL LTD.",
+"phone": "+12508645830",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "cad95ca4-5fab-f111-aaab-3833c5fa6ddd": {
 "address": "11 Marshall Crescent",
 "city": "Ajax",
@@ -19834,6 +21142,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.iberbancoltd.com"
+},
+"cbf44b88-34a6-f111-aaac-7ced8de0cde7": {
+"address": "6415 Rue des \u00c9cores bureau 2",
+"city": "Montr\u00e9al",
+"email": "simonbedard@yapla.com",
+"legal": "Yapla Finance inc.",
+"phone": "1-514-513-5303",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://yapla.com"
 },
 "cbfed6b1-3997-f111-b8dc-70a8a5ac03f5": {
 "address": "220-1110 Finch Avenue West",
@@ -20002,6 +21322,18 @@
 "trade": "Bit Gate Fintech Technologie",
 "v": 2,
 "website": "https://Gatexbank.com"
+},
+"cdcb4d68-8098-ef11-8a68-002248adaada": {
+"address": "3550 LENOX ROAD NE",
+"city": "ATLANTA",
+"email": "katarzyna.czekanska@worldpay.com",
+"legal": "Worldpay Canada Corporation",
+"phone": "1 (236) 638 6438",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Worldpay",
+"v": 2,
+"website": "https://www.worldpay.com"
 },
 "cde2f411-e19e-f111-b8de-7ced8ddf42ee": {
 "address": "Office 8, 602\u20131450 Meyerside Drive",
@@ -20267,6 +21599,18 @@
 "v": 2,
 "website": "https://en.aminexchange.ca"
 },
+"d0a8b5f0-4e98-ef11-8a68-000d3a84a24c": {
+"address": "525 West 8th Avenue, office 509",
+"city": "Vancouver",
+"email": "ceo@verserpay.com",
+"legal": "VERSER PAY LTD",
+"phone": "001 (604) 757-5249",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.verserpay.com"
+},
 "d0b37441-fe87-f011-b4cc-002248b21bff": {
 "address": "300-22420 DEWDNEY TRUNK ROAD",
 "city": "Maple Ridge",
@@ -20471,12 +21815,36 @@
 "v": 2,
 "website": "https://winnerpay.com"
 },
+"d2a6e728-295d-f111-a826-7ced8da6563c": {
+"address": "207 Queens Quay West",
+"city": "Toronto",
+"email": "admin@zowncapital.com",
+"legal": "Zown Capital Inc.",
+"phone": "+1-226-505-6517",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "d2a866c4-11dc-f011-8543-7ced8da584ff": {
 "address": "300 Supertest Road, Unit 1",
 "city": "North York",
 "email": "edik2501@hotmail.com",
 "legal": "NEXUS TRANSFER CORP.",
 "phone": "+374965162800",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
+"d2f59617-b9b3-ef11-a72f-002248b00a0f": {
+"address": "116-2223A Oak Bay Ave., Mailbox #102",
+"city": "VICTORIA",
+"email": "Yassersq@hotmail.com",
+"legal": "ZWART FINANCIAL LTD.",
+"phone": "0060176901969",
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "",
@@ -20770,6 +22138,18 @@
 "trade": "Bisti Bureau De Change",
 "v": 2,
 "website": "https://bisti.ca"
+},
+"d5e7aecb-6ea2-ef11-a72d-6045bd5de666": {
+"address": "2500 Park Place \u2013 666 Burrard Street",
+"city": "Vancouver",
+"email": "fr@wirezee.io",
+"legal": "Wirezee Pay Inc",
+"phone": "+447790666111",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://wirezee.io"
 },
 "d61930c4-b8a2-ef11-a72d-000d3af39d00": {
 "address": "49 Weybridge Trail",
@@ -21275,6 +22655,18 @@
 "v": 2,
 "website": ""
 },
+"da3da6af-125a-f111-a825-7ced8da65a7f": {
+"address": "3 Wimpole Street",
+"city": "London",
+"email": "compliance@zuba.com",
+"legal": "Zuba Technologies Ltd",
+"phone": "+447360329757",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.zuba.com"
+},
 "da5ccd1a-1935-f011-8c4e-000d3a0c0da6": {
 "address": "200-4909 50th Street",
 "city": "Red Deer",
@@ -21335,6 +22727,18 @@
 "v": 2,
 "website": ""
 },
+"da8847f7-4235-f111-88b4-7ced8da65ce6": {
+"address": "201-5240 1A ST SE",
+"city": "Calgary",
+"email": "inquiries@wts.co",
+"legal": "WORLD TRADE SOLUTIONS INC.",
+"phone": "19-99912-5100",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "WTS",
+"v": 2,
+"website": "https://wts.co"
+},
 "da95d4a7-0e4f-f111-bec7-7ced8da658d0": {
 "address": "100 King Street West Suite 3400",
 "city": "TORONTO",
@@ -21389,6 +22793,18 @@
 "email": "info@quandero.com",
 "legal": "Quandero Pay Ltd",
 "phone": "+15817818434",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
+"db5dd454-3c4a-f011-877b-0022483d8225": {
+"address": "5240-1a Street SE",
+"city": "Calgary",
+"email": "INFO@WHISH.MONEY",
+"legal": "WHISH MONEY CANADA, INC.",
+"phone": "4384493911",
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "",
@@ -21728,6 +23144,18 @@
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "punjab forex",
+"v": 2,
+"website": ""
+},
+"df0a5793-b0bc-f011-bbd3-6045bd5c6d95": {
+"address": "2 Paper Birch Road",
+"city": "Brampton",
+"email": "achille.mekontchou@zeneygroup.com",
+"legal": "Zeney Pay Canada Inc.",
+"phone": "+14164343807",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
 "v": 2,
 "website": ""
 },
@@ -22127,6 +23555,18 @@
 "v": 2,
 "website": "https://grembispay.com"
 },
+"e30ff436-c498-ef11-8a6a-6045bd6034d0": {
+"address": "1055 Dunsmuir St",
+"city": "Vancouver",
+"email": "VFCI.BOC@vopay.com",
+"legal": "VoPay Financial Canada Inc.",
+"phone": "7788972202",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vopay.com"
+},
 "e313daea-6e9b-ef11-8a69-000d3a84a24c": {
 "address": "",
 "city": "KELOWNA",
@@ -22138,6 +23578,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.calypsopay.io"
+},
+"e32c4eb0-7563-f011-bec1-002248b21bff": {
+"address": "100 University Ave, office 06-148",
+"city": "Toronto",
+"email": "compliance@vibanx.ca",
+"legal": "VIBANX (CANADA) LTD.",
+"phone": "016473721863",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.Vibanx.com"
 },
 "e34c3c64-21a1-ef11-a72d-6045bd5d4e16": {
 "address": "",
@@ -22198,6 +23650,18 @@
 "trade": "SKYEE",
 "v": 2,
 "website": "https://www.skyee360.com"
+},
+"e42ec72f-7320-f111-88b3-7ced8da586db": {
+"address": "704, 7/F., Jubilee Centre",
+"city": "Hong Kong",
+"email": "calvin.chau@fopayglobal.com",
+"legal": "WELLCELL DIGITAL CO. LIMITED",
+"phone": "1-800-604-1312",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "FOPAY",
+"v": 2,
+"website": ""
 },
 "e4420605-e251-f011-877b-000d3a0c0da6": {
 "address": "70 University Avenue Suite 1440",
@@ -22283,6 +23747,18 @@
 "v": 2,
 "website": ""
 },
+"e556c717-fd9a-ef11-8a6a-6045bd5e516b": {
+"address": "1025 King St E",
+"city": "Cambridge",
+"email": "info@pruexpay.com",
+"legal": "Zepra Payments Inc.",
+"phone": "+12404224195",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Zepra Payments Inc.",
+"v": 2,
+"website": ""
+},
 "e565b0b3-a5a6-ef11-a72d-6045bd5de666": {
 "address": "",
 "city": "PORT COQUITLAM",
@@ -22294,6 +23770,18 @@
 "trade": "",
 "v": 2,
 "website": "https://bcwallstreet.com"
+},
+"e5c4cf74-5134-f111-88b4-7ced8da6563c": {
+"address": "111 Peter Street, Suite 600",
+"city": "Toronto",
+"email": "accounting@verticalscope.com",
+"legal": "VerticalScope Inc.",
+"phone": "14163417179",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Ritual",
+"v": 2,
+"website": "https://ritual.co/ca"
 },
 "e5d512fa-28cd-f111-a05c-000d3a0c9521": {
 "address": "",
@@ -22439,6 +23927,18 @@
 "v": 2,
 "website": "https://www.shoplazza.com"
 },
+"e67b4ae9-5998-ef11-8a69-6045bd6034d0": {
+"address": "7001 E Belleview Ave",
+"city": "Denver",
+"email": "wu-licensing@westernunion.com",
+"legal": "Western Union Financial Services (Canada), Inc./Services Financiers Western Union (Canada), Inc.",
+"phone": "7203321000",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.westernunion.com"
+},
 "e68bd043-60a1-ef11-a72d-6045bd5ed05c": {
 "address": "1823 Capilano Rd,",
 "city": "North Vancouver",
@@ -22486,6 +23986,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.currenciesdirect.com"
+},
+"e6f4adbd-239d-ef11-8a69-000d3a84a24c": {
+"address": "1 Sheldon Square",
+"city": "London",
+"email": "LAKING@VISA.COM",
+"legal": "Visa Payments Limited",
+"phone": "+442031442356",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
 },
 "e72fdf53-5c98-ef11-8a69-6045bd5e516b": {
 "address": "204-1604 MICHAEL ST",
@@ -22907,6 +24419,18 @@
 "v": 2,
 "website": "https://amalexpress.ca"
 },
+"ea1b14aa-d790-f111-8077-7c1e5253ef7a": {
+"address": "21 King Street West",
+"city": "Hamilton",
+"email": "hello@xpayor.com",
+"legal": "XPAYOR FINANCIAL SERVICES LIMITED",
+"phone": "254 207 640 108",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XPAYOR",
+"v": 2,
+"website": "https://www.xpayor.com"
+},
 "ea53c1e4-a19f-ef11-a72d-002248b15c65": {
 "address": "445-6388 No 3 Road",
 "city": "Richmond",
@@ -22966,6 +24490,18 @@
 "trade": "Privat 3 Money Limited",
 "v": 2,
 "website": "https://www.privat3money.com"
+},
+"eb03f8c2-2810-f111-8342-7ced8da584ff": {
+"address": "19 Stradbrooke Way SW",
+"city": "Calgary",
+"email": "pavel@zanemoney.com",
+"legal": "Zane Inc.",
+"phone": "+15877073020",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Zane",
+"v": 2,
+"website": "https://zanemoney.com"
 },
 "eb078786-8dd9-f011-8543-7ced8da58bcb": {
 "address": "Attention of NUANSPRO, 1270 Central Parkway West, Suite 102",
@@ -23081,6 +24617,18 @@
 "email": "coinfypay25@gmail.com",
 "legal": "Coinfy Pay Ltd",
 "phone": "+16042838997",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
+"ec0b9ae4-83d0-f011-8543-6045bd5d8a7e": {
+"address": "807 - 130 Spadina Ave",
+"city": "Toronto",
+"email": "aliacan@gmail.com",
+"legal": "Wirely Transfers Ltd.",
+"phone": "+97156850 2929",
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "",
@@ -23387,6 +24935,18 @@
 "v": 2,
 "website": "https://www.blackstripe.io"
 },
+"ee3cb3a1-59a3-ef11-a72d-002248b0c0b9": {
+"address": "2nd Floor, 325 Front Street West",
+"city": "Toronto",
+"email": "support@venn.ca",
+"legal": "Venn Software Inc.",
+"phone": "1-888-568-858",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.venn.ca"
+},
 "ee3faaa5-e5a1-ef11-a72d-6045bd5ed05c": {
 "address": "555 E. North Lane, Suite 5040",
 "city": "Conshohocken",
@@ -23507,6 +25067,18 @@
 "v": 2,
 "website": "https://mybeacon.ca"
 },
+"efd8f6b8-e6d3-f011-8544-7ced8d360bbd": {
+"address": "333 Bay Street",
+"city": "Toronto",
+"email": "mor@zota.com",
+"legal": "Zota Technology (CA) Inc.",
+"phone": "+972543550118",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": ""
+},
 "efdfaa40-8e7e-f111-ab0f-002248b21bdf": {
 "address": "",
 "city": "Mississauga",
@@ -23602,6 +25174,18 @@
 "trade": "",
 "v": 2,
 "website": "https://nolenfinance.com"
+},
+"f13f357e-47a3-ef11-a72d-6045bd5de666": {
+"address": "145 Viewpointe Terrace",
+"city": "Chestermere",
+"email": "info@xpresschoice.com",
+"legal": "Xpresschoice Services Ltd.",
+"phone": "+14034524109",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Instntmny Transfer",
+"v": 2,
+"website": ""
 },
 "f14960a5-25a2-ef11-a72d-002248af402a": {
 "address": "1851 Rue Albert",
@@ -23758,6 +25342,18 @@
 "trade": "Bitcoin Well",
 "v": 2,
 "website": "https://bitcoinwell.com"
+},
+"f281a7fd-5f98-ef11-8a69-6045bd5e516b": {
+"address": "409 Cook Road",
+"city": "North York",
+"email": "toyosi@yolat.com",
+"legal": "Yolat Inc.",
+"phone": "+1 647 679 2051",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://www.yolat.com"
 },
 "f29b1073-92a3-ef11-a72d-6045bd5cc9f7": {
 "address": "4621 ALWOOD WAY SOUTHWEST",
@@ -24191,6 +25787,18 @@
 "v": 2,
 "website": "https://www.gillibrands.net"
 },
+"f5a620c8-e6a1-ef11-a72d-000d3a0c6813": {
+"address": "5577 153A STREET SUITE 207",
+"city": "Surrey",
+"email": "shirazcc14@gmail.com",
+"legal": "XE DIGITAL SOLUTIONS LIMITED",
+"phone": "00447718277546",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XE DIGITAL SOLUTIONS LIMITED",
+"v": 2,
+"website": ""
+},
 "f5baf4d7-2458-f111-a825-7ced8de0b360": {
 "address": "2300 - 2850 Shaughnessy Street",
 "city": "Port Coquitlam",
@@ -24418,6 +26026,18 @@
 "trade": "",
 "v": 2,
 "website": "https://www.lancelotpay.io"
+},
+"f81acf5d-e8c9-f011-8544-6045bd5c6786": {
+"address": "1500 WEST GEORGIA",
+"city": "VANCOUVER",
+"email": "madhu@arthatech.net",
+"legal": "XEBT PAYINC.",
+"phone": "+1 8259045838",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://artha.money"
 },
 "f8288466-dbc7-f111-a05c-3833c5f9532d": {
 "address": "",
@@ -24971,6 +26591,18 @@
 "v": 2,
 "website": ""
 },
+"fe43515d-b12a-f011-8c4e-000d3a842d72": {
+"address": "7181 Woodbine Avenue",
+"city": "Markham",
+"email": "arslan@vertofx.com",
+"legal": "Verto Canada Ltd.",
+"phone": "402033180261",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Verto",
+"v": 2,
+"website": "https://www.vertofx.com"
+},
 "fe724570-e1a5-ef11-a72d-6045bd614e02": {
 "address": "600 Chemin de Saint-Jean",
 "city": "La Prairie",
@@ -24995,6 +26627,18 @@
 "v": 2,
 "website": ""
 },
+"fea6cf56-e193-f011-b4cc-002248b08a8e": {
+"address": "14993 101 A Ave #208",
+"city": "Surrey",
+"email": "kb@vonban.com",
+"legal": "VONBAN LTD",
+"phone": "14378863150",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "",
+"v": 2,
+"website": "https://vonban.com"
+},
 "febd4544-dc98-ef11-8a69-002248adaada": {
 "address": "",
 "city": "Edmonton",
@@ -25016,6 +26660,18 @@
 "seen": "2026-11-06",
 "status": "Registered",
 "trade": "Selina Pay",
+"v": 2,
+"website": ""
+},
+"fec69e8b-6fa1-ef11-a72d-6045bd61fa0b": {
+"address": "22420 Dewdney Trunk Road, Suite 300",
+"city": "Maple Ridge",
+"email": "nene@xbase.digital",
+"legal": "XBASE DIGITAL INC.",
+"phone": "+447852143186",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "XBase Digital",
 "v": 2,
 "website": ""
 },
@@ -25150,6 +26806,18 @@
 "trade": "",
 "v": 2,
 "website": ""
+},
+"ff940917-7676-f111-ab0f-6045bd5f3fde": {
+"address": "40 Wall Street",
+"city": "NY",
+"email": "compliance@pockyt.io",
+"legal": "Yuansfer Inc",
+"phone": "1(647)989-0399",
+"seen": "2026-11-06",
+"status": "Registered",
+"trade": "Pockyt",
+"v": 2,
+"website": "https://pockyt.io"
 },
 "ff9a7506-f19e-ef11-a72d-002248b15c65": {
 "address": "1 Rideau Street",
