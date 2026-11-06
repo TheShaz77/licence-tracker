@@ -1,50 +1,49 @@
-name: FCA seed scan (one-off)
+"""Shared HTTP session with retries and a polite rate limiter."""
+from __future__ import annotations
 
-on:
-  schedule:
-    - cron: "41 */6 * * *"
-  workflow_dispatch:
+import logging
+import threading
+import time
 
-permissions:
-  contents: write
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-concurrency:
-  group: licence-tracker
-  cancel-in-progress: false
+log = logging.getLogger(__name__)
 
-jobs:
-  seed:
-    runs-on: ubuntu-latest
-    timeout-minutes: 350
-    steps:
-      - uses: actions/checkout@v4
+USER_AGENT = "licence-tracker/1.0 (regulatory register monitor; github actions)"
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
 
-      - run: pip install -r requirements.txt
+def make_session() -> requests.Session:
+    s = requests.Session()
+    retry = Retry(
+        total=4,
+        backoff_factor=2,
+        status_forcelist=(500, 502, 503, 504),
+        allowed_methods=("GET", "HEAD"),
+        respect_retry_after_header=True,
+    )
+    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=16)
+    s.mount("https://", adapter)
+    s.mount("http://", adapter)
+    s.headers["User-Agent"] = USER_AGENT
+    return s
 
-      - name: Check whether the seed is already finished
-        id: check
-        run: |
-          python -m regtracker status | tee status.txt
-          if grep -q "FCA seed: complete" status.txt; then echo "done=true" >> "$GITHUB_OUTPUT"; fi
 
-      - name: Scan the next chunk of FRNs
-        if: steps.check.outputs.done != 'true'
-        env:
-          FCA_API_EMAIL: ${{ secrets.FCA_API_EMAIL }}
-          FCA_API_KEY: ${{ secrets.FCA_API_KEY }}
-        run: python -m regtracker fca-seed --hours 5.4
+class RateLimiter:
+    """Keeps requests at or below `per_second`."""
 
-      - name: Save progress
-        if: always() && steps.check.outputs.done != 'true'
-        run: |
-          git config user.name "licence-tracker"
-          git config user.email "actions@users.noreply.github.com"
-          git add data
-          git diff --cached --quiet || git commit -m "FCA seed progress $(date -u +%FT%H%MZ)"
-          git pull --rebase --autostash || true
-          git push
+    def __init__(self, per_second: float):
+        self.interval = 1.0 / per_second
+        self._next = 0.0
+        self._lock = threading.Lock()
+
+    def wait(self):
+        """Thread-safe: each caller reserves the next free slot."""
+        with self._lock:
+            now = time.monotonic()
+            slot = max(now, self._next)
+            self._next = slot + self.interval
+        delay = slot - time.monotonic()
+        if delay > 0:
+            time.sleep(delay)
