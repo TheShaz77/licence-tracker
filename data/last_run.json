@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-07 16:52",
-  "sources_status": "fca: waiting (FCA seed scan still running: 29.2% scanned; 2733 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: FAILED; us_ca: ok (0 changes); us_ma: FAILED; us_ct: FAILED; us_la: ok (0 changes); us_in: ok (0 changes); us_de: ok (0 changes); us_ak: FAILED",
+  "finished": "2026-11-07 18:58",
+  "sources_status": "fca: waiting (FCA seed scan still running: 37.9% scanned; 3038 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: FAILED; us_ca: not due; us_ma: FAILED; us_ct: FAILED; us_la: not due; us_in: not due; us_de: not due; us_ak: FAILED",
   "changes": 0,
   "problems": [
     "US FL money transmitter licensees (FL OFR): 404 Client Error: Not Found for url: https://real.flofr.gov/Public/MT/Money_Transmitters_monthly.zip",
