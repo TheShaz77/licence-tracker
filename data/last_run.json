@@ -1,5 +1,5 @@
 {
-  "finished": "2026-11-07 13:07",
+  "finished": "2026-11-07 14:53",
   "sources_status": "fca: waiting (FCA seed scan still running: 29.2% scanned; 2733 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: not due; us_ca: not due; us_ma: FAILED; us_ct: FAILED; us_la: not due; us_in: not due; us_de: not due; us_ak: FAILED",
   "changes": 0,
   "problems": [
