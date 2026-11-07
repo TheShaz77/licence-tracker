@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-07 20:51",
-  "sources_status": "fca: waiting (FCA seed scan still running: 37.9% scanned; 3038 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: ok (0 changes); us_ca: not due; us_ma: FAILED; us_ct: FAILED; us_la: not due; us_in: not due; us_de: not due; us_ak: FAILED",
+  "finished": "2026-11-07 22:50",
+  "sources_status": "fca: waiting (FCA seed scan still running: 37.9% scanned; 3038 payment/e-money firms found); pra: ok (0 changes); eba: ok (0 changes); ecb: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (https://msb.fincen.gov/retrieve.msb.list.php is disallowed by the site's robots.txt, so it is not downloaded); nat_lt: ok (0 changes); us_fl: not due; us_ca: not due; us_ma: FAILED; us_ct: FAILED; us_la: not due; us_in: not due; us_de: not due; us_ak: FAILED",
   "changes": 0,
   "problems": [
     "US MA money transmitter licensees (MA DOB): 403 Client Error: Forbidden for url: https://www.mass.gov/doc/money-transmitter-licensee-list/download",
