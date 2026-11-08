@@ -1429,3 +1429,31 @@ def test_za_banks_wiki_parse():
     names = [n for n, _ in parse_wikitext(text)]
     assert names == ["Absa Bank", "Capitec Bank", "Standard Bank", "FirstRand Bank", "TymeBank",
                      "Albaraka Bank", "GBS Mutual Bank", "Ditsobotla Primary Savings and Credit Co-operative Bank"]
+
+
+def test_robots_rules_and_adla():
+    from regtracker.http import rules_allow
+    from regtracker.sources.southafrica import parse_adla
+    sarb = ("# Group 1\nUser-agent: *\nDisallow: /content/dam/\nAllow: /content/dam/sarb/*.pdf\n"
+            "Allow: /content/dam/sarb/*.xls*\nSitemap: https://www.resbank.co.za/en.sitemap.xml\n")
+    base = "https://www.resbank.co.za"
+    assert rules_allow(sarb, base + "/content/dam/sarb/what-we-do/x/public-list-tppp-13-10-2026.pdf")
+    assert rules_allow(sarb, base + "/content/dam/sarb/a/List%20(1).xlsx")
+    assert not rules_allow(sarb, base + "/content/dam/sarb/a/page.html")
+    assert not rules_allow(sarb, base + "/content/dam/other/x.pdf")
+    assert rules_allow(sarb, base + "/en/home/what-we-do")
+    assert not rules_allow("User-agent: *\nDisallow: /", "https://msb.fincen.gov/retrieve.msb.list.php")
+    assert rules_allow("User-agent: googlebot\nDisallow: /\n\nUser-agent: *\nAllow: /", "https://x.com/a")
+    assert not rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf")
+    assert rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf?x=1")
+
+    lines = ["Contents", "A.2 Authorised Dealers in foreign exchange with limited authority 3",
+             "A.3 Bureaux de change 7", "A.2 Authorised Dealers in foreign exchange with limited authority",
+             "(A) Category one: Independent Bureaux de change", "(i) Bidvest Bank Limited", "(ii) Master Currency (Pty) Ltd",
+             "(B) Category two: Travel and tourism", "1. Tourvest Financial Services (Pty) Ltd",
+             "(C) Category three: Money transfer operators", "Mukuru Financial Services (Pty) Ltd",
+             "Hello Paisa (Pty) Ltd", "A.3 Bureaux de change", "Something Else (Pty) Ltd"]
+    recs = {r.name: r for r in parse_adla(lines, "u")}
+    assert set(recs) == {"Bidvest Bank Limited", "Master Currency (Pty) Ltd", "Tourvest Financial Services (Pty) Ltd",
+                         "Mukuru Financial Services (Pty) Ltd", "Hello Paisa (Pty) Ltd"}
+    assert recs["Mukuru Financial Services (Pty) Ltd"].licence_type == "ADLA – Category three: Money transfer operators"

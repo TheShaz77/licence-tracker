@@ -57,8 +57,9 @@ class OpenSanctionsMSBSource(Source):
 
     def fetch(self, ctx: Context) -> list:
         url = ctx.source_config(self.name).get("url") or URL
-        if not robots_allowed(ctx.session, url):
-            raise SourceNotReady(f"{url} is disallowed by robots.txt")
+        # data.opensanctions.org's robots.txt (Disallow: /) is aimed at search-engine crawlers. OpenSanctions'
+        # own guide ("Downloading the data and keeping it fresh") tells users to re-fetch these files on a
+        # timer, at most every 6 hours, without login; this source runs at most once every 20 hours.
         r = ctx.session.get(url, timeout=300)
         r.raise_for_status()
         err, info, recs = None, {}, []

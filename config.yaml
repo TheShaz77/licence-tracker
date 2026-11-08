@@ -102,7 +102,10 @@ sources:
   za_banks:       # South Africa: banks, branches of foreign banks, mutual banks (Prudential Authority)
     enabled: true
     min_hours: 12
-  za_banks_wiki:  # South Africa: banks from Wikipedia's list (kept up from the SARB lists; unofficial)
+  za_banks_wiki:  # South Africa: banks from Wikipedia's list (unofficial backup; off now the official SARB lists load)
+    enabled: false
+    min_hours: 20
+  za_adla:        # South Africa: authorised dealers in foreign exchange with limited authority (SARB ADLA manual)
     enabled: true
     min_hours: 20
   za_casp:        # South Africa: licensed crypto asset service providers (FSCA)

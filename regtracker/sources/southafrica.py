@@ -333,7 +333,8 @@ class ZAPCHSOSource(_ZASource):
         return lambda lines, u: parse_operators(lines, u, "za_pchso", "clearing house system operator")
 
     def fetch_web(self, ctx):
-        links = self._page_links(ctx, NPS_PAGE, r"PCH")
+        links = [l for l in self._page_links(ctx, NPS_PAGE, r"PCH")
+                 if re.search(r"list|register", l, re.I) and not re.search(r"notice|transition|directive", l, re.I)]
         if not links:
             raise RuntimeError("SARB: PCH SO public register link not found on " + NPS_PAGE)
         return self._run(ctx, [(latest(links), lambda lines, u: parse_operators(lines, u, "za_pchso",
@@ -401,4 +402,68 @@ class ZACASPSource(_ZASource):
         return self._run(ctx, [(url, parse_casps)])
 
 
-ZA_SOURCES = [ZATPPPSource(), ZASOSource(), ZAPCHSOSource(), ZABanksSource(), ZACASPSource()]
+# ---------------------------------------------------------------- ADLAs
+
+ADLA_MANUAL = ("https://www.resbank.co.za/content/dam/sarb/what-we-do/financial-surveillance/"
+               "financial-surveillance-documents/{year}/Currency%20and%20Exchanges%20Manual%20for%20ADLAs.pdf")
+LEGAL = re.compile(r"(?:^|\s)(\(Pty\)\s*Ltd|\(Proprietary\)\s*Limited|Limited|Ltd|CC|Inc\.?|\(RF\))\.?\s*$", re.I)
+
+
+def parse_adla(lines: list, url: str = "") -> list:
+    """Section A.2 of the Currency and Exchanges Manual for ADLAs lists every
+    ADLA, grouped by category (independent bureaux de change, travel and
+    tourism, money transfer operators / value transfer providers...)."""
+    starts = [i for i, l in enumerate(lines) if re.match(r"^A\.2\b", l)]
+    best, best_n = None, 0
+    for i in starts:  # the table of contents also says "A.2": take the occurrence followed by firm names
+        n = 0
+        for l in lines[i + 1:i + 400]:
+            if re.match(r"^A\.3\b|^B\.\d", l):
+                break
+            n += bool(LEGAL.search(l))
+        if n > best_n:
+            best, best_n = i, n
+    if best is None:
+        return []
+    out, category = {}, ""
+    for l in lines[best + 1:]:
+        if re.match(r"^A\.3\b|^B\.\d", l):
+            break
+        if re.search(r"categor|bureaux? de change|travel|money transfer|value transfer|remittance", l, re.I) \
+                and not LEGAL.search(l) and len(l) < 120:
+            category = re.sub(r"^\(?[a-z0-9ivx]+[.)]\s*", "", l, flags=re.I).strip(" :")
+            continue
+        if not LEGAL.search(l) or len(l) > 120:
+            continue
+        name = re.sub(r"^\(?[a-z0-9ivx]{1,4}[.)]\s+", "", l, flags=re.I).strip(" ;,.")
+        name = re.sub(r"\s+", " ", name)
+        if len(name) < 4:
+            continue
+        key = "za_adla:" + match_name(name)
+        out[key] = Record(key=key, source="za_adla", jurisdiction="ZA", regulator="SARB FinSurv", name=name,
+                          licence_type="ADLA – " + category if category else "Authorised dealer with limited authority (ADLA)",
+                          active=True, status_detail="Listed in section A.2 of the Currency and Exchanges Manual for ADLAs",
+                          register_url=url, extra={"adla_category": category})
+    return list(out.values())
+
+
+class ZAADLASource(_ZASource):
+    name, label, fingerprint = "za_adla", "South Africa ADLAs (SARB Financial Surveillance)", "za-adla-v1"
+
+    def parse_for_file(self, path):
+        return parse_adla
+
+    def fetch_web(self, ctx):
+        import datetime as dt
+        year = dt.date.fromisoformat(ctx.today).year
+        for y in range(year, year - 6, -1):  # the manual is re-published under the year of its latest edition
+            url = ADLA_MANUAL.format(year=y)
+            if not robots_allowed(ctx.session, url):
+                raise SourceNotReady(f"{url} is disallowed by robots.txt")
+            r = ctx.session.get(url, timeout=120, headers=UA)
+            if r.status_code == 200 and r.content[:4] == b"%PDF":
+                return self._run(ctx, [(url, parse_adla)])
+        raise RuntimeError("Currency and Exchanges Manual for ADLAs not found on the SARB website")
+
+
+ZA_SOURCES = [ZATPPPSource(), ZASOSource(), ZAPCHSOSource(), ZABanksSource(), ZACASPSource(), ZAADLASource()]

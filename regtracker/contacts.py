@@ -318,18 +318,18 @@ class Fetcher:
         self.robots = {}
 
     def allowed(self, url: str) -> bool:
+        from .http import rules_allow
         p = urlparse(url)
         root = f"{p.scheme}://{p.netloc}"
-        rp = self.robots.get(root)
-        if rp is None:
-            rp = urllib.robotparser.RobotFileParser()
+        text = self.robots.get(root)
+        if text is None:
             try:
                 r = self.s.get(root + "/robots.txt", timeout=self.timeout, headers={"User-Agent": UA})
-                rp.parse(r.text.splitlines() if r.status_code == 200 else [])
+                text = r.text if r.status_code == 200 else ""
             except Exception:
-                rp.parse([])
-            self.robots[root] = rp
-        return rp.can_fetch(UA, url)
+                text = ""
+            self.robots[root] = text
+        return rules_allow(text, url, UA)
 
     def get(self, url: str):
         if not self.allowed(url):
