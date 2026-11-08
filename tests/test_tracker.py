@@ -1571,3 +1571,11 @@ def test_telegram_connect_confirms_once(monkeypatch, tmp_path):
     assert "connected" in sent[0]["text"]
     updates["result"] = []                         # a day later Telegram has forgotten the "hi"
     assert notify.telegram_connect(logging.getLogger("t")) == "77" and len(sent) == 1
+
+
+def test_telegram_token_cleanup(monkeypatch):
+    from regtracker import notify
+    tok = "1234567890:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw"
+    for raw in (tok, f" {tok}\n", f'"{tok}"', f"bot{tok}", f"https://api.telegram.org/bot{tok}/getMe"):
+        monkeypatch.setenv("TELEGRAM_BOT_TOKEN", raw)
+        assert notify.telegram_token() == tok

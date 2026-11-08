@@ -11,6 +11,7 @@ Two channels, used independently:
 from __future__ import annotations
 
 import html
+import re
 import os
 import smtplib
 from collections import Counter
@@ -30,6 +31,14 @@ def smtp_enabled() -> bool:
 def github_enabled() -> bool:
     return (os.environ.get("ALERTS_VIA_GITHUB", "true").lower() != "false"
             and bool(os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY")))
+
+
+def telegram_token() -> str:
+    """The bot token, tolerating what tends to get pasted with it: quotes, spaces,
+    line breaks, a 'bot' prefix or the whole api.telegram.org URL."""
+    raw = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    m = re.search(r"(\d{6,12}:[A-Za-z0-9_-]{30,})", raw)
+    return m.group(1) if m else raw.strip().strip("'\"")
 
 
 def telegram_enabled() -> bool:
@@ -268,7 +277,7 @@ def telegram_chat_id(token: str, log) -> str:
 
 
 def send_telegram(events: list, sheet_url: str, log, cfg: dict | None = None):
-    token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+    token = telegram_token()
     chat = telegram_chat_id(token, log)
     wanted = telegram_filter(events, cfg)
     if not chat or not wanted:
@@ -284,8 +293,14 @@ def send_telegram(events: list, sheet_url: str, log, cfg: dict | None = None):
 
 def telegram_connect(log) -> str:
     """Run every time: picks up your 'hi' to the bot before Telegram forgets it (24 hours)."""
+    token = telegram_token()
     try:
-        return telegram_chat_id(os.environ["TELEGRAM_BOT_TOKEN"].strip(), log)
+        r = requests.get(TELEGRAM_API.format(token=token, method="getMe"), timeout=30)
+        if r.status_code == 401:
+            log.warning("Telegram: the bot token was rejected. Copy it again from @BotFather (send /mybots, pick "
+                        "your bot, 'API Token') and paste it, on its own, into the TELEGRAM_BOT_TOKEN secret.")
+            return ""
+        return telegram_chat_id(token, log)
     except Exception as e:
-        log.warning("Telegram: could not connect (%s)", e)
+        log.warning("Telegram: could not connect (%s)", str(e).replace(token, "***"))
         return ""

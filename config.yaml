@@ -71,8 +71,8 @@ sources:
     include_types: "article 1b|fintech"   # FinTech licence holders ("Persons under Article 1b of the Banking Act")
     exclude_types: "representati"         # not the representations of foreign FinTech firms
 
-  fincen:         # US: every money services business registered with FinCEN (updated weekly)
-    enabled: true
+  fincen:         # US: FinCEN's own site. Off: its robots.txt blocks automated downloads; the same
+    enabled: false # list comes in through fincen_os (OpenSanctions copy) below
     min_hours: 12 # FinCEN updates weekly; no need to download the 5 MB file every 2 hours
 
   fincen_os:      # US: FinCEN's MSB list via OpenSanctions' daily copy (FinCEN blocks automated downloads)
@@ -114,7 +114,7 @@ sources:
 
   us_states:      # US: money transmitter licensees, from the states that publish their own list
     enabled: true # FL, CA, MA, CT, LA, IN, DE, AK (others only publish via NMLS, which can't be used)
-    skip: []      # e.g. [de, ak] to switch a state off
+    skip: [ak]    # Alaska's site refuses downloads from GitHub's servers (Alaska MSBs still come via FinCEN)
     min_hours: 6  # states update monthly/quarterly; checked four times a day
 
 # ---------------------------------------------------------------------------
