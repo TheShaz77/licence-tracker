@@ -237,6 +237,8 @@ def cmd_run(args, cfg, data_dir) -> int:
     else:
         log.info("Google Sheets not configured (GOOGLE_SERVICE_ACCOUNT_JSON / SHEET_ID); CSV written to data/")
 
+    if notify.telegram_enabled() and not args.no_email:
+        notify.telegram_connect(log)
     if notify.enabled() and (all_events or problems) and not args.no_email:
         try:
             notify.send(all_events, problems, log, ctx.today, telegram_config=cfg.get("telegram") or {})

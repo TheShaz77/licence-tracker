@@ -1549,3 +1549,25 @@ def test_telegram_filter_and_messages(monkeypatch, tmp_path):
     notify.send_telegram(ev, "", logging.getLogger("t"), {})
     assert sent and sent[0]["chat_id"] == "4242" and sent[0]["parse_mode"] == "HTML"
     assert (tmp_path / "state" / "telegram.json").exists()
+
+
+def test_telegram_connect_confirms_once(monkeypatch, tmp_path):
+    import logging
+    from regtracker import notify
+    sent = []
+
+    class R:
+        status_code = 200
+        def __init__(self, data=None): self.data = data or {}
+        def json(self): return self.data
+        def raise_for_status(self): pass
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    monkeypatch.delenv("TELEGRAM_CHAT_ID", raising=False)
+    monkeypatch.setenv("REGTRACKER_DATA", str(tmp_path))
+    updates = {"result": [{"message": {"chat": {"id": 77, "type": "private"}, "text": "hi"}}]}
+    monkeypatch.setattr(notify.requests, "get", lambda url, timeout=0: R(updates))
+    monkeypatch.setattr(notify.requests, "post", lambda url, json=None, timeout=0: sent.append(json) or R())
+    assert notify.telegram_connect(logging.getLogger("t")) == "77" and len(sent) == 1
+    assert "connected" in sent[0]["text"]
+    updates["result"] = []                         # a day later Telegram has forgotten the "hi"
+    assert notify.telegram_connect(logging.getLogger("t")) == "77" and len(sent) == 1

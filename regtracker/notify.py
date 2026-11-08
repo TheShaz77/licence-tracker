@@ -257,6 +257,11 @@ def telegram_chat_id(token: str, log) -> str:
     if chat and chat != saved:
         store.parent.mkdir(parents=True, exist_ok=True)
         store.write_text(json.dumps({"chat_id": chat}))
+        requests.post(TELEGRAM_API.format(token=token, method="sendMessage"), timeout=30, json={
+            "chat_id": chat, "parse_mode": "HTML",
+            "text": "✅ <b>Licence tracker connected.</b>\nYou'll get a message here whenever a check finds new "
+                    "licences or registrations."})
+        log.info("Telegram: connected to your chat and sent a confirmation message")
     if not chat:
         log.warning("Telegram: no chat yet. Open your bot in Telegram and send it any message (e.g. 'hi').")
     return chat
@@ -275,3 +280,12 @@ def send_telegram(events: list, sheet_url: str, log, cfg: dict | None = None):
         if r.status_code != 200:
             raise RuntimeError(f"Telegram: {r.status_code} {r.text[:200]}")
     log.info("Telegram: sent %d new licence(s)/registration(s)", len(wanted))
+
+
+def telegram_connect(log) -> str:
+    """Run every time: picks up your 'hi' to the bot before Telegram forgets it (24 hours)."""
+    try:
+        return telegram_chat_id(os.environ["TELEGRAM_BOT_TOKEN"].strip(), log)
+    except Exception as e:
+        log.warning("Telegram: could not connect (%s)", e)
+        return ""
