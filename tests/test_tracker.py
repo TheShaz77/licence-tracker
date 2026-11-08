@@ -1480,16 +1480,22 @@ def test_robots_rules_and_adla():
     assert not rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf")
     assert rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf?x=1")
 
-    lines = ["Contents", "A.2 Authorised Dealers in foreign exchange with limited authority 3",
-             "A.3 Bureaux de change 7", "A.2 Authorised Dealers in foreign exchange with limited authority",
-             "(A) Category one: Independent Bureaux de change", "(i) Bidvest Bank Limited", "(ii) Master Currency (Pty) Ltd",
-             "(B) Category two: Travel and tourism", "1. Tourvest Financial Services (Pty) Ltd",
-             "(C) Category three: Money transfer operators", "Mukuru Financial Services (Pty) Ltd",
-             "Hello Paisa (Pty) Ltd", "A.3 Bureaux de change", "Something Else (Pty) Ltd"]
+    lines = ["A.2 Authorised entities", "(A) Authorised Dealers in foreign exchange with limited authority",
+             "The offices in South Africa of the under-mentioned entities are authorised to",
+             "Name of entity - Authorised Dealer in foreign Category of", "exchange with limited authority appointment",
+             "Border Forex (Pty) Limited Two", "Imali Express (Pty) Limited trading as Finex", "Two", "Exchange",
+             "Access Forex (Pty) Limited Three (MTO)", "Kawena Exchange (Pty) Limited Three (VTSP)",
+             "Terra Payment Services South Africa (RF) (Pty)", "Three (MTO)", "Limited", "13 of 94 20/2026",
+             "Currency and Exchanges Manual for ADLAs Introduction", "Hello Paisa (Pty) Limited Four",
+             "Southeast Exchange Company (South Africa) (Pty) Four", "Limited", "(B) Authorised Dealers",
+             "ABSA Bank Limited"]
     recs = {r.name: r for r in parse_adla(lines, "u")}
-    assert set(recs) == {"Bidvest Bank Limited", "Master Currency (Pty) Ltd", "Tourvest Financial Services (Pty) Ltd",
-                         "Mukuru Financial Services (Pty) Ltd", "Hello Paisa (Pty) Ltd"}
-    assert recs["Mukuru Financial Services (Pty) Ltd"].licence_type == "ADLA – Category 3 (Money transfer operators)"
+    assert set(recs) == {"Border Forex (Pty) Limited", "Imali Express (Pty) Limited", "Access Forex (Pty) Limited",
+                         "Kawena Exchange (Pty) Limited", "Terra Payment Services South Africa (RF) (Pty) Limited",
+                         "Hello Paisa (Pty) Limited", "Southeast Exchange Company (South Africa) (Pty) Limited"}
+    assert recs["Imali Express (Pty) Limited"].extra["trading_name"] == "Finex Exchange"
+    assert recs["Kawena Exchange (Pty) Limited"].licence_type == "ADLA – Category 3 (value transfer service provider)"
+    assert recs["Terra Payment Services South Africa (RF) (Pty) Limited"].licence_type == "ADLA – Category 3 (money transfer operator)"
 
 
 def test_tppp_three_digit_rows():

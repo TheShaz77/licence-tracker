@@ -199,10 +199,12 @@ def parse_banks(lines: list, url: str, kind: str) -> list:
         nxt = lines[i + 1] if i + 1 < len(lines) else ""
         if re.match(r"^(Limited|Ltd)\b", nxt) and not re.search(r"\b(Limited|Ltd)$", name):
             name += " " + re.match(r"^(Limited|Ltd)", nxt).group(1)
-        if len(re.findall(r"[A-Za-z]{3,}", name)) <= 1 or name.startswith(("Co.", "Corporation")):
+        if city.startswith(("of ", "Of ")):                  # "State Bank" + "of India"
+            name, city = name + " " + city, ""
+        if len(re.findall(r"[A-Za-z]{3,}", name)) <= 1 or name.startswith(("Co.", "Corporation", "N.A.")):
             # the start of the name is on one of the lines above, e.g. "China Construction Bank" / "Corporation"
             for back in lines[max(0, i - 3):i][::-1]:
-                mb = re.match(r"^((?:[A-Z][\w&'.-]*\s+){0,4}Bank(?:\s+[Oo]f\s+[A-Z]\w+)?)\b", back.strip())
+                mb = re.match(r"^((?:[A-Z][\w&'.-]*\s+){0,4}\w*[Bb]ank(?:\s+[Oo]f\s+[A-Z]\w+)?,?)(?=\s|$)", back.strip())
                 if mb:
                     name = mb.group(1) + " " + name
                     break
@@ -432,7 +434,7 @@ BANK_LISTS = [(r"Locally%20Controlled|Locally Controlled", "Bank (locally contro
 
 
 class ZABanksSource(_ZASource):
-    name, label, fingerprint = "za_banks", "South Africa registered banks (SARB Prudential Authority)", "za-banks-v2"
+    name, label, fingerprint = "za_banks", "South Africa registered banks (SARB Prudential Authority)", "za-banks-v3"
     manual_hint = ("za_banks_locally.pdf, za_banks_foreign.pdf, za_banks_branches.pdf and za_banks_mutual.pdf "
                    "(SARB > Prudential Authority > SA registered banks)")
 
@@ -498,52 +500,64 @@ AD_BANKS = re.compile(r"\bbank\b|nedbank|firstrand|investec|absa|capitec|sasfin|
 CATEGORY = re.compile(r"categor(?:y|ies)\s+(one|two|three|four|five|1|2|3|4|5)\b[^A-Za-z]*(.*)$", re.I)
 
 
+ADLA_CATS = {"one": "Category 1 (bureau de change)",
+             "two": "Category 2 (bureau de change + remittances with partner MTOs)",
+             "three (mto)": "Category 3 (money transfer operator)",
+             "three (vtsp)": "Category 3 (value transfer service provider)",
+             "three": "Category 3 (money transfer operator / value transfer provider)",
+             "four": "Category 4 (bureau de change, MTO and value transfer)"}
+ADLA_ROW = re.compile(r"^(.*?)\s*\b(One|Two|Three(?:\s*\((?:MTO|VTSP)\))?|Four)$")
+
+
 def parse_adla(lines: list, url: str = "") -> list:
-    """Section A.2 of the Currency and Exchanges Manual for ADLAs lists the
-    authorised dealers (banks) and then the ADLAs by category: independent
-    bureaux de change, travel and tourism, money transfer operators (MTOs) and
-    others. Banks are left out here: they are not ADLAs."""
-    starts = [i for i, l in enumerate(lines) if re.match(r"^A\.2\b", l)]
-    best, best_n = None, 0
-    for i in starts:
-        n = 0
-        for l in lines[i + 1:i + 600]:
-            if re.match(r"^A\.3\b", l) and len(l) < 100:
-                break
-            n += bool(LEGAL.search(l))
-        if n > best_n:
-            best, best_n = i, n
-    parse_adla.last = lines[best:best + 250] if best is not None else lines[:120]
-    if best is None:
+    """Section A.2(A) of the Currency and Exchanges Manual for ADLAs: one row per
+    ADLA, 'name ... category' (One/Two/Three (MTO)/Three (VTSP)/Four). Long
+    names wrap, e.g. 'Imali Express (Pty) Limited trading as Finex' / 'Two' /
+    'Exchange'. Section (B), the authorised dealers, are banks and not ADLAs."""
+    start = next((i for i, l in enumerate(lines)
+                  if re.match(r"^\(A\)\s+Authorised Dealers in foreign exchange with limited authority", l)), None)
+    parse_adla.last = lines[start:start + 120] if start is not None else lines[:120]
+    if start is None:
         return []
-    out, category = {}, ""
-    for l in lines[best + 1:]:
-        if re.match(r"^A\.3\b", l) and len(l) < 100:
+    entries = []
+    for l in lines[start + 1:]:
+        l = l.strip()
+        if re.match(r"^\(B\)\s+Authorised Dealers|^A\.3\b", l):
             break
-        cm = CATEGORY.search(l)
-        if cm:
-            label = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5"}.get(cm.group(1).lower(), cm.group(1))
-            tail = cm.group(2).strip(" :-–()")
-            category = f"Category {label}" + (f" ({tail})" if tail and len(tail) < 60 else "")
-            l = l[:cm.start()].strip()          # a firm name sometimes shares the line with the heading
-            if not l:
-                continue
-        if not category or not LEGAL.search(l) or len(l) > 120:
+        if (not l or re.match(r"^\d+ of \d+\b", l) or l.startswith("Currency and Exchanges Manual")
+                or re.match(r"^(The offices|act, for the purposes|Name of entity|exchange with limited authority)", l)):
             continue
-        name = re.sub(r"^\(?[a-z0-9ivx]{1,4}[.)]\s+", "", l, flags=re.I).strip(" ;,.")
-        name = re.sub(r"\s+", " ", name)
-        if len(name) < 6 or re.match(r"^(Limited|Ltd|\(Pty\))", name) or (AD_BANKS.search(name) and not category):
+        m = ADLA_ROW.match(l)
+        if m:
+            name, cat = m.group(1).strip(), m.group(2).lower().replace("  ", " ")
+            if name:
+                entries.append({"name": name, "cat": cat})
+            elif entries and not entries[-1]["cat"]:
+                entries[-1]["cat"] = cat          # the category line of a wrapped name
             continue
-        key = "za_adla:" + match_name(name)
-        out[key] = Record(key=key, source="za_adla", jurisdiction="ZA", regulator="SARB FinSurv", name=name,
-                          licence_type="ADLA – " + category, active=True,
-                          status_detail="Listed in section A.2 of the Currency and Exchanges Manual for ADLAs",
-                          register_url=url, extra={"adla_category": category})
+        # no category on the line: a new firm (has a legal form or several words) or the rest of a wrapped name
+        if entries and (len(l.split()) <= 2 and "(Pty)" not in l):
+            entries[-1]["name"] += " " + l
+        else:
+            entries.append({"name": l, "cat": ""})
+    out = {}
+    for e in entries:
+        name = re.sub(r"\s+", " ", e["name"]).strip(" ,;")
+        if len(name) < 4 or not e["cat"]:
+            continue
+        cat = ADLA_CATS.get(re.sub(r"\s+", " ", e["cat"]), "Category " + e["cat"])
+        trading = (re.search(r"\btrading as\s+(.+)$", name, re.I) or [None, ""])[1]
+        legal = re.sub(r"\s+trading as\s+.+$", "", name, flags=re.I)
+        key = "za_adla:" + match_name(legal)
+        out[key] = Record(key=key, source="za_adla", jurisdiction="ZA", regulator="SARB FinSurv", name=legal,
+                          licence_type="ADLA – " + cat, active=True,
+                          status_detail="Listed in section A.2(A) of the Currency and Exchanges Manual for ADLAs",
+                          register_url=url, extra={"adla_category": cat, "trading_name": trading})
     return list(out.values())
 
 
 class ZAADLASource(_ZASource):
-    name, label, fingerprint = "za_adla", "South Africa ADLAs (SARB Financial Surveillance)", "za-adla-v2"
+    name, label, fingerprint = "za_adla", "South Africa ADLAs (SARB Financial Surveillance)", "za-adla-v3"
 
     def parse_for_file(self, path):
         return parse_adla
