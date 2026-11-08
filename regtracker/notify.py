@@ -191,7 +191,9 @@ def is_new_registration(e: dict) -> bool:
     applicant to registered (the Bank of Canada keeps the same record)."""
     if e.get("event") == "NEW_LICENCE":
         return True
-    return e.get("event") == "TYPE_CHANGED" and "registered" in (e.get("event_label") or "").lower()
+    label = (e.get("event_label") or "").lower()
+    return e.get("event") == "TYPE_CHANGED" and ("registered" in label or "joined pix" in label
+                                                 or "authorised by" in label)
 
 
 def telegram_filter(events: list, cfg: dict | None) -> list:

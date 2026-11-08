@@ -1678,3 +1678,89 @@ def test_missing_regulator_file_is_quiet_for_a_week(tmp_path, monkeypatch):
             assert False
         except SourceNotReady as e:
             assert getattr(e, "quiet", False) is quiet and "since 2026-11-08" in str(e)
+
+
+# ---------------------------------------------------------------- Brazil
+PIX_LINES = [
+    "Lista de participantes ativos do Pix. Publicado em: 13/05/2026",
+    "Nome Reduzido ISPB CNPJ Tipo de Instituição Autorizada pelo",
+    "BCB Tipo de Participação no SPI",
+    "1 7TRUST FINANCE IP S.A. 33930368 33.930.368/0001-08 Instituição de Pagamento Não Indireta Facultativa",
+    "Provedor de Conta Transacional Não N/A",
+    "2 99PAY IP S.A. 24313102 24.313.102/0001-25 Instituição de Pagamento Sim Direta Facultativa Provedor de",
+    "Conta Transacional Sim Não",
+    "3 A55 SCD S.A. 48756121 48.756.121/0001-94 Sociedade de Crédito Direto Sim Direta Facultativa Provedor de Conta Transacional Não Não",
+    "4 PEQUENA PAGAMENTOS LTDA 12.345.678/0001-90 Instituição de Pagamento não sujeita à",
+    "autorização pelo BCB Não Facultativa Iniciador Sim N/A",
+    "5 BANCO 1 PAGAMENTOS S.A. 11111111 11.111.111/0001-11 Banco Múltiplo Sim Direta Obrigatória Provedor de Conta Transacional Não Não",
+    "Lista de instituições em processo de adesão ao Pix. Publicado em: 13/05/2026",
+    "1 BULLLA IP S.A. 08422119 08.422.119/0001-64 Instituição de Pagamento Sim Indireta Obrigatória Provedor de Conta Transacional Etapa Homologatória",
+    "2 GALACTICO INSTITUICAO DE PAGAM 23.558.980/0001-48 Instituição de Pagamento não sujeita à autorização pelo BCB Não Facultativa Provedor de Conta Transacional Aguardando Início da Etapa de Operação Restrita",
+]
+
+
+def test_brazil_pix_parse():
+    from regtracker.sources.brazil import parse_pix, keep_type
+    rows = parse_pix(PIX_LINES)
+    names = [r["name"] for r in rows]
+    assert names == ["7TRUST FINANCE IP S.A.", "99PAY IP S.A.", "A55 SCD S.A.", "PEQUENA PAGAMENTOS LTDA",
+                     "BANCO 1 PAGAMENTOS S.A.", "BULLLA IP S.A.", "GALACTICO INSTITUICAO DE PAGAM"]
+    by = {r["name"]: r for r in rows}
+    assert by["7TRUST FINANCE IP S.A."]["authorised"] is False
+    assert by["99PAY IP S.A."]["authorised"] is True and by["99PAY IP S.A."]["cnpj"] == "24313102000125"
+    assert "não sujeita" in by["PEQUENA PAGAMENTOS LTDA"]["type"]
+    assert by["PEQUENA PAGAMENTOS LTDA"]["roles"] == ["Pix payment initiation (ITP)"]
+    assert by["BULLLA IP S.A."]["joining"] and by["BULLLA IP S.A."]["status"] == "Etapa Homologatória"
+    assert by["GALACTICO INSTITUICAO DE PAGAM"]["status"].startswith("Aguardando")
+    kept = [r["name"] for r in rows if keep_type(r["type"], r["name"])]
+    assert "A55 SCD S.A." not in kept and "BANCO 1 PAGAMENTOS S.A." not in kept and len(kept) == 5
+
+
+def test_brazil_register_and_merge(tmp_path):
+    import logging
+    from regtracker.sources import brazil
+    from regtracker.sources.base import Context
+    reg = {"value": [
+        {"CNPJ": "24313102", "NOME_INSTITUICAO": "99PAY INSTITUICAO DE PAGAMENTO S.A.",
+         "SEGMENTO": "Instituição de Pagamento", "MUNICIPIO": "SAO PAULO", "UF": "SP", "DDD": "11",
+         "TELEFONE": "30000000", "E_MAIL": "Contato@99pay.com.br", "SITIO_NA_INTERNET": "www.99pay.com.br"},
+        {"CNPJ": "99999999", "NOME_INSTITUICAO": "CAMBIO BOM CORRETORA DE CAMBIO LTDA",
+         "SEGMENTO": "Sociedades Corretoras de TVM e Câmbio"},
+        {"CNPJ": "88888888", "NOME_INSTITUICAO": "XYZ CORRETORA DE TITULOS E VALORES",
+         "SEGMENTO": "Sociedades Corretoras de TVM e Câmbio"},
+    ]}
+    rows = brazil.parse_register(reg)
+    assert rows[0]["website"] == "https://www.99pay.com.br" and rows[0]["phone"] == "+55 11 30000000"
+    assert rows[0]["email"] == "contato@99pay.com.br"
+
+    src = brazil.BrazilSource()
+    src._pix = lambda ctx, cfg: (brazil.parse_pix(PIX_LINES), "13/05/2026")
+    src._register = lambda ctx, cfg: rows
+    ctx = Context(config={}, session=None, today="2026-11-08", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+    import pytest
+    with pytest.raises(RuntimeError):          # fewer than 50 firms is treated as a broken download
+        src.fetch(ctx)
+    ctx.config = {"sources": {"br_bcb": {"min_firms": 1}}}
+    out = src.fetch(ctx)
+    recs = {r.name: r for r in out}
+    assert "XYZ CORRETORA DE TITULOS E VALORES" not in recs
+    assert recs["CAMBIO BOM CORRETORA DE CAMBIO LTDA"].licence_type == "FX broker (corretora de câmbio)"
+    r = recs["99PAY INSTITUICAO DE PAGAMENTO S.A."]
+    assert r.licence_type == "Payment institution (BCB authorised)" and r.city == "Sao Paulo"
+    assert r.extra["pix_status"] == "Pix participant: Pix accounts"
+    assert recs["7TRUST FINANCE IP S.A."].licence_type == "Payment institution (BCB authorisation pending)"
+    assert recs["BULLLA IP S.A."].licence_type.endswith("joining Pix")
+    assert recs["PEQUENA PAGAMENTOS LTDA"].licence_type.startswith("Payment institution (not subject")
+
+
+def test_brazil_labels():
+    from regtracker.diff import friendly_labels
+    from regtracker.notify import is_new_registration
+    e = [{"source": "br_bcb", "event": "TYPE_CHANGED", "event_label": "x",
+          "old": "Payment institution (BCB authorised) – joining Pix", "new": "Payment institution (BCB authorised)"},
+         {"source": "br_bcb", "event": "NEW_LICENCE", "event_label": "x",
+          "licence_type": "Payment institution (BCB authorised) – joining Pix"}]
+    friendly_labels(e)
+    assert e[0]["event_label"] == "Joined Pix (Brazil)" and is_new_registration(e[0])
+    assert e[1]["event_label"] == "Applied to join Pix (Brazil)"

@@ -1,4 +1,5 @@
 from .boc import BoCSource
+from .brazil import BrazilSource
 from .eba import EBASource
 from .ecb import ECBSource
 from .fca import FCASource
@@ -14,4 +15,4 @@ from .pra import PRASource
 
 ALL_SOURCES = {s.name: s for s in (FCASource(), PRASource(), EBASource(), ECBSource(), FINMASource(),
                                      FINTRACSource(), BoCSource(), FinCENSource(), OpenSanctionsMSBSource(), MiCASource(), CHSROSource(), ZABanksWikiSource(),
-                                     *ZA_SOURCES)}
+                                     *ZA_SOURCES, BrazilSource())}

@@ -158,6 +158,18 @@ def friendly_labels(events: list) -> list:
                 "REMOVED": "MSB registration lapsed (FinCEN, US)",
                 "SERVICES_CHANGED": "MSB activities changed (FinCEN, US)",
             }.get(kind, e["event_label"])
+        elif src == "br_bcb":
+            lt = (e.get("new") if kind == "TYPE_CHANGED" else e.get("licence_type")) or ""
+            old = (e.get("old") or "") if kind == "TYPE_CHANGED" else ""
+            if kind == "TYPE_CHANGED" and "joining pix" in old.lower() and "joining pix" not in lt.lower():
+                e["event_label"] = "Joined Pix (Brazil)"
+            elif kind == "TYPE_CHANGED" and "pending" in old.lower() and "authorised" in lt.lower():
+                e["event_label"] = "Payment institution authorised by BCB (Brazil)"
+            elif kind == "NEW_LICENCE":
+                e["event_label"] = ("Applied to join Pix (Brazil)" if "joining pix" in lt.lower()
+                                    else f"New {lt.split(' (')[0].lower()} (Brazil)")
+            elif kind == "REMOVED":
+                e["event_label"] = "Left the BCB / Pix lists (Brazil)"
         elif src == "fintrac":
             e["event_label"] = {
                 "NEW_LICENCE": "MSB registered with FINTRAC (Canada)",
