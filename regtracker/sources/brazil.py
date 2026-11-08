@@ -95,48 +95,124 @@ def licence_label(kind: str) -> str:
 
 
 # ---------------------------------------------------------------- Pix PDF
+#
+# pdfplumber reads the table one text line per printed line. A cell that wraps
+# (a long name, "Provedor de Conta / Transacional", "Instituição de Pagamento /
+# não sujeita à autorização / pelo BCB") is centred on its row, so its other
+# pieces sit on the lines just above and below the row's main line, mixed with
+# pieces of the other columns. Each row is read from its main line (row number
+# + CNPJ) plus those neighbouring pieces.
 
-def _section_rows(text: str) -> list:
-    """Rows of one table, found by their running row numbers 1, 2, 3 ..."""
-    rows, pos, n = [], 0, 1
-    while True:
-        m = re.compile(r"(?:^|\s)%d\s+(?=\S)" % n).search(text, pos)
-        if not m:
-            break
-        c = CNPJ.search(text, m.end())
-        if not c:
-            break
-        nxt = re.compile(r"(?:^|\s)%d\s+(?=\S)" % (n + 1)).search(text, c.end())
-        end = nxt.start() if nxt else len(text)
-        rows.append((text[m.end():c.start()], c.group(1), text[c.end():end]))
-        pos, n = end, n + 1
-    return rows
+# pieces of the other columns, removed (case-sensitive) to leave only name pieces
+COLUMN_BITS = sorted([
+    "Provedor de Conta", "Transacional", "Instituição de Pagamento", "não sujeita à autorização",
+    "pelo BCB", "Sociedade de Crédito Direto", "Sociedade de Crédito,", "Sociedade de Crédito", "Financiamento e",
+    "Investimento", "Associação de Poupança e", "Empréstimo", "Liquidante Especial", "Cooperativa de Crédito",
+    "Banco Múltiplo", "Cooperativo", "Banco Comercial", "Microempreendedor", "Sociedade Distribuidora de",
+    "Sociedade Corretora de", "TVM", "Aguardando Início da", "Aguardando Início", "Aguardando", "Etapa de Operação",
+    "Etapa Homologatória", "Homologatória", "Operação Restrita", "Restrita", "Etapa", "Início da", "de Operação", "Caixa Econômica", "Federal", "Iniciador",
+], key=len, reverse=True)
+HEADER = re.compile(r"Nome Reduzido|Tipo de|Autorizada|Participa[cç][aã]o|Inicia[cç][aã]o de|Facilitador|"
+                    r"^pelo BCB de|^no SPI|Pagamento Troco|Publicado em|^Lista de|download|clique aqui|"
+                    r"Status da|Modalidade|^P[aá]gina \d", re.I)
+ROW = re.compile(r"^(\d{1,4})\s+(.*)$")
+
+
+def _name_bits(line: str) -> str:
+    if HEADER.search(line):
+        return ""
+    for bit in COLUMN_BITS:
+        line = line.replace(bit, " ")
+    return re.sub(r"\s+", " ", line).strip()
+
+
+def _gap_parts(gap: list) -> tuple:
+    """Lines between two rows -> (half-line piece of the row above, full lines in order,
+    half-line piece of the row below). A 2-line cell sits half a line above and below its
+    row ("Provedor de Conta" / "Transacional"); a 3-line cell a full line above and below."""
+    half_below = next((l for l in gap if "Transacional" in l and "Provedor de Conta" not in l), None)
+    half_above = next((l for l in reversed(gap) if "Provedor de Conta" in l), None)
+    full = [l for l in gap if l is not half_below and l is not half_above]
+    return half_below, full, half_above
+
+
+def _rows(lines: list) -> list:
+    """[(main line, name pieces above, name pieces below, all nearby lines)] for one table."""
+    idx, n = [], 1
+    for i, l in enumerate(lines):
+        m = ROW.match(l)
+        if m and int(m.group(1)) == n and CNPJ.search(l):
+            idx.append(i)
+            n += 1
+    gaps = [lines[(idx[k - 1] + 1 if k else 0):i] for k, i in enumerate(idx)]
+    gaps.append(lines[idx[-1] + 1:idx[-1] + 4] if idx else [])
+    above = [[] for _ in idx]
+    below = [[] for _ in idx]
+    for k in range(len(idx)):
+        hb, full, ha = _gap_parts(gaps[k])
+        named = [b for b in (_name_bits(l) for l in full) if b]
+        if k:   # the row above takes as many full lines below as it had above (cells are centred)
+            take = min(len(above[k - 1]) - (1 if above[k - 1] and above[k - 1][-1] == "\x00half" else 0), len(named))
+            below[k - 1] += ([_name_bits(hb)] if hb and _name_bits(hb) else []) + named[:take]
+            named = named[take:]
+        above[k] = named + ([_name_bits(ha), "\x00half"] if ha and _name_bits(ha) else [])
+    if idx:
+        hb, full, _ = _gap_parts(gaps[-1])
+        n_full = len([x for x in above[-1] if x != "\x00half"]) - (1 if "\x00half" in above[-1] else 0)
+        below[-1] += ([_name_bits(hb)] if hb and _name_bits(hb) else []) + \
+            [b for b in (_name_bits(l) for l in full) if b][:max(n_full, 0)]
+    out = []
+    for k, i in enumerate(idx):
+        out.append((lines[i], [x for x in above[k] if x != "\x00half"], below[k], lines[max(i - 1, 0):i + 2]))
+    return out
+
+
+def _status(text: str) -> str:
+    t = plain(text)
+    if "homolog" in t:
+        return "Etapa Homologatória"
+    if "restrita" in t:
+        return ("Aguardando Início da Etapa de Operação Restrita" if "aguardando" in t
+                else "Etapa de Operação Restrita")
+    m = re.search(r"Aguardando[\wÀ-ú ]*", text)
+    return m.group(0).strip() if m else "Joining Pix"
+
+
+def _applicants_head(lines: list) -> list:
+    cut = next((i for i, l in enumerate(lines) if re.search(r"processo de ades", l, re.I)), None)
+    return lines[cut:cut + 60] if cut is not None else ["(no applicants table found)"]
 
 
 def parse_pix(lines: list) -> list:
     """[{name, cnpj, type, authorised, roles, status, joining}] from the Pix participant PDF."""
-    text = " ".join(lines)
-    parts = re.split(r"lista de institui\S+ em processo de ades\S+", text, flags=re.I)
+    cut = next((i for i, l in enumerate(lines) if re.search(r"processo de ades", l, re.I)), len(lines))
     out = []
-    for joining, part in ((False, parts[0]), (True, " ".join(parts[1:]))):
-        if not part.strip():
-            continue
-        for head, cnpj, tail in _section_rows(part):
-            name = re.sub(r"\s+\d{8}\s*$", "", head).strip()   # drop the ISPB code
-            name = re.sub(r"\s+", " ", name)
-            pt = plain(tail)
-            kind = next((t for t in PIX_TYPES if plain(t) in pt), "")
-            after = pt.split(plain(kind), 1)[1] if kind else pt
-            auth = re.search(r"\b(sim|nao)\b", after)
-            roles = [v for k, v in ROLES.items() if k in pt]
-            status = ""
-            if joining:
-                ms = re.search(r"((?:etapa|aguardando)\b.*)$", tail, re.I)
-                status = re.sub(r"\s+", " ", ms.group(1)).strip() if ms else "Joining Pix"
+    for joining, part in ((False, lines[:cut]), (True, lines[cut:])):
+        for main, above, below, near in _rows(part):
+            m = ROW.match(main)
+            c = CNPJ.search(main)
+            own_name = re.sub(r"(?:^|\s)\d{8}\s*$", "", main[m.start(2):c.start()]).strip()
+            rest = main[c.end():]
+            name = " ".join(x for x in [*above, own_name, *below] if x)
+            name = re.sub(r"\s+", " ", name).strip(" -")
+            pr = plain(rest)
+            if "nao sujeita" in pr:
+                kind, auth = "Instituição de Pagamento não sujeita à autorização pelo BCB", False
+            else:
+                kind = next((t for t in PIX_TYPES if plain(t) in pr), "")
+                after = pr.split(plain(kind), 1)[1] if kind else pr
+                a = re.search(r"\b(sim|nao)\b", after)
+                auth = bool(a and a.group(1) == "sim")
+            window = " ".join([main, *near])
+            if "Iniciador" in rest:
+                roles = [ROLES["iniciador"]]
+            elif "Liquidante" in rest:
+                roles = [ROLES["liquidante especial"]]
+            else:
+                roles = [ROLES["provedor de conta transacional"]]
             if name and kind:
-                out.append({"name": name, "cnpj": cnpj_digits(cnpj), "type": kind,
-                            "authorised": bool(auth and auth.group(1) == "sim"), "roles": roles,
-                            "status": status, "joining": joining})
+                out.append({"name": name, "cnpj": cnpj_digits(c.group(1)), "type": kind, "authorised": auth,
+                            "roles": roles, "status": _status(window) if joining else "", "joining": joining})
     return out
 
 
@@ -180,7 +256,7 @@ def parse_register(data: dict) -> list:
 class BrazilSource(Source):
     name = "br_bcb"
     label = "Brazil payment institutions, FX brokers & Pix participants (BCB)"
-    fingerprint = "br-bcb-v1"
+    fingerprint = "br-bcb-v2"
 
     def _allowed(self, ctx, url) -> bool:
         if robots_allowed(ctx.session, url):
@@ -228,7 +304,8 @@ class BrazilSource(Source):
         except Exception as e:
             err = e
         write_diagnostics(ctx, self.name + "_pix", [(url, r.content, {
-            "rows": len(lines), "kept": len(rows), "columns": {}, "first_text_lines": lines[:60]}, err)])
+            "rows": len(lines), "kept": len(rows), "columns": {},
+            "first_text_lines": lines[:60] + ["...", "(applicants table)"] + _applicants_head(lines)}, err)])
         if err:
             raise err
         ctx.log.info("%s: Pix list edition %s, %d participants", self.name, found, len(rows))

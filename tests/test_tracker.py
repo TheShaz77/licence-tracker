@@ -1681,39 +1681,95 @@ def test_missing_regulator_file_is_quiet_for_a_week(tmp_path, monkeypatch):
 
 
 # ---------------------------------------------------------------- Brazil
-PIX_LINES = [
-    "Lista de participantes ativos do Pix. Publicado em: 13/05/2026",
-    "Nome Reduzido ISPB CNPJ Tipo de Instituição Autorizada pelo",
-    "BCB Tipo de Participação no SPI",
-    "1 7TRUST FINANCE IP S.A. 33930368 33.930.368/0001-08 Instituição de Pagamento Não Indireta Facultativa",
-    "Provedor de Conta Transacional Não N/A",
-    "2 99PAY IP S.A. 24313102 24.313.102/0001-25 Instituição de Pagamento Sim Direta Facultativa Provedor de",
-    "Conta Transacional Sim Não",
-    "3 A55 SCD S.A. 48756121 48.756.121/0001-94 Sociedade de Crédito Direto Sim Direta Facultativa Provedor de Conta Transacional Não Não",
-    "4 PEQUENA PAGAMENTOS LTDA 12.345.678/0001-90 Instituição de Pagamento não sujeita à",
-    "autorização pelo BCB Não Facultativa Iniciador Sim N/A",
-    "5 BANCO 1 PAGAMENTOS S.A. 11111111 11.111.111/0001-11 Banco Múltiplo Sim Direta Obrigatória Provedor de Conta Transacional Não Não",
-    "Lista de instituições em processo de adesão ao Pix. Publicado em: 13/05/2026",
-    "1 BULLLA IP S.A. 08422119 08.422.119/0001-64 Instituição de Pagamento Sim Indireta Obrigatória Provedor de Conta Transacional Etapa Homologatória",
-    "2 GALACTICO INSTITUICAO DE PAGAM 23.558.980/0001-48 Instituição de Pagamento não sujeita à autorização pelo BCB Não Facultativa Provedor de Conta Transacional Aguardando Início da Etapa de Operação Restrita",
+PIX_LINES = [  # real pdfplumber lines from the 6 Nov 2026 edition, then an applicants table
+    'Lista de participantes ativos do Pix.',
+    'Publicado em: 06/11/2026',
+    'Para fazer o download do arquivo no formato CSV, clique aqui.',
+    'Iniciação de Facilitador',
+    'Tipo de Tipo de Modalidade de',
+    'Autorizada Transação de serviço',
+    'Nome Reduzido ISPB CNPJ Tipo de Instituição Participação Participação Participação no',
+    'pelo BCB de de Saque e',
+    'no SPI no Pix Pix',
+    'Pagamento Troco (FSS)',
+    'Provedor de Conta',
+    '1 99PAY IP S.A. 24313102 24.313.102/0001-25 Instituição de Pagamento Sim Direta Facultativa Sim Não',
+    'Transacional',
+    'Provedor de Conta',
+    '2 A27 IP S/A 35534511 35.534.511/0001-78 Instituição de Pagamento Sim Indireta Facultativa Não Não',
+    'Transacional',
+    'Provedor de Conta',
+    '3 A55 SCD S.A. 48756121 48.756.121/0001-94 Sociedade de Crédito Direto Sim Direta Facultativa Não Não',
+    'Transacional',
+    '4 ACCESSTAGE IP LTDA. 46.410.407/0001-98 Instituição de Pagamento Sim Facultativa Iniciador Sim N/A',
+    'Provedor de Conta',
+    '5 ACCREDITO SCD S.A. 37715993 37.715.993/0001-98 Sociedade de Crédito Direto Sim Direta Facultativa Não Não',
+    'Transacional',
+    'ACESSO SOLUÇÕES DE',
+    'Provedor de Conta',
+    '6 PAGAMENTO S.A. - 13140088 13.140.088/0001-99 Instituição de Pagamento Sim Direta Obrigatória Não Não',
+    'Transacional',
+    'INSTITUIÇÃO DE PAGAMENTO',
+    'Provedor de Conta',
+    '7 ACG IP S.A. 10868663 10.868.663/0001-86 Instituição de Pagamento Sim Indireta Facultativa Não Não',
+    'Transacional',
+    'Instituição de Pagamento',
+    'ADOPAY INSTITUICAO DE Provedor de Conta',
+    '8 31841474 31.841.474/0001-90 não sujeita à autorização Não Indireta Facultativa Não N/A',
+    'PAGAMENT Transacional',
+    'pelo BCB',
+    'Provedor de Conta',
+    '9 ADYEN DO BRASIL IP LTDA. 14796606 14.796.606/0001-90 Instituição de Pagamento Sim Direta Facultativa Sim Não',
+    'Transacional',
+    'Provedor de Conta',
+    '10 AIBR IP LTDA. 32246162 32.246.162/0001-09 Instituição de Pagamento Sim Indireta Facultativa Não N/A',
+    'Transacional',
+    'Sociedade de Crédito,',
+    'Provedor de Conta',
+    '11 AL5 S.A. SCFI 27214112 27.214.112/0001-00 Financiamento e Sim Indireta Facultativa Não Não',
+    'Transacional',
+    'Investimento',
+    'Provedor de Conta',
+    '12 ALL IN CRED SCD S.A. 51414521 51.414.521/0001-26 Sociedade de Crédito Direto Sim Direta Facultativa Não Não',
+    'Transacional',
+    'Associação de Poupança e Provedor de Conta',
+    '13 APE POUPEX 00655522 00.655.522/0001-21 Sim Indireta Obrigatória Não Não',
+    'Empréstimo Transacional',
+    'Provedor de Conta',
+    '14 APROMS NET IP LTDA. 37168145 37.168.145/0001-06 Instituição de Pagamento Sim Indireta Facultativa Não Não',
+    'Transacional',
+    'Provedor de Conta',
+    '15 APTARE IP 16876258 16.876.258/0001-96 Instituição de Pagamento Não Indireta Facultativa Não N/A',
+    'Transacional',
+    'Provedor de Conta',
+    "Lista de instituições em processo de adesão ao Pix.",
+    "Publicado em: 06/11/2026",
+    "Provedor de Conta Etapa",
+    "1 BULLLA IP S.A. 08422119 08.422.119/0001-64 Instituição de Pagamento Sim Indireta Obrigatória",
+    "Transacional Homologatória",
+    "GALACTICO INSTITUICAO DE Instituição de Pagamento Aguardando Início da",
+    "2 23.558.980/0001-48 não sujeita à autorização Não Facultativa Provedor de Conta Etapa de Operação",
+    "PAGAM pelo BCB Transacional Restrita",
 ]
 
 
 def test_brazil_pix_parse():
     from regtracker.sources.brazil import parse_pix, keep_type
     rows = parse_pix(PIX_LINES)
-    names = [r["name"] for r in rows]
-    assert names == ["7TRUST FINANCE IP S.A.", "99PAY IP S.A.", "A55 SCD S.A.", "PEQUENA PAGAMENTOS LTDA",
-                     "BANCO 1 PAGAMENTOS S.A.", "BULLLA IP S.A.", "GALACTICO INSTITUICAO DE PAGAM"]
     by = {r["name"]: r for r in rows}
-    assert by["7TRUST FINANCE IP S.A."]["authorised"] is False
-    assert by["99PAY IP S.A."]["authorised"] is True and by["99PAY IP S.A."]["cnpj"] == "24313102000125"
-    assert "não sujeita" in by["PEQUENA PAGAMENTOS LTDA"]["type"]
-    assert by["PEQUENA PAGAMENTOS LTDA"]["roles"] == ["Pix payment initiation (ITP)"]
+    assert "ACESSO SOLUÇÕES DE PAGAMENTO S.A. - INSTITUIÇÃO DE PAGAMENTO" in by
+    assert "ACG IP S.A." in by and "ADOPAY INSTITUICAO DE PAGAMENT" in by
+    assert "não sujeita" in by["ADOPAY INSTITUICAO DE PAGAMENT"]["type"]
+    assert by["APTARE IP"]["authorised"] is False and by["99PAY IP S.A."]["authorised"] is True
+    assert by["99PAY IP S.A."]["cnpj"] == "24313102000125"
+    assert by["ACCESSTAGE IP LTDA."]["roles"] == ["Pix payment initiation (ITP)"]
+    assert not any(r["name"].isdigit() for r in rows)
+    kept = {r["name"] for r in rows if keep_type(r["type"], r["name"])}
+    assert not {"A55 SCD S.A.", "ALL IN CRED SCD S.A."} & kept
+    assert not any("AL5" in n or "POUPEX" in n for n in kept)   # credit firms whose type wraps
     assert by["BULLLA IP S.A."]["joining"] and by["BULLLA IP S.A."]["status"] == "Etapa Homologatória"
-    assert by["GALACTICO INSTITUICAO DE PAGAM"]["status"].startswith("Aguardando")
-    kept = [r["name"] for r in rows if keep_type(r["type"], r["name"])]
-    assert "A55 SCD S.A." not in kept and "BANCO 1 PAGAMENTOS S.A." not in kept and len(kept) == 5
+    g = by["GALACTICO INSTITUICAO DE PAGAM"]
+    assert g["joining"] and g["status"].startswith("Aguardando") and "não sujeita" in g["type"]
 
 
 def test_brazil_register_and_merge(tmp_path):
@@ -1749,9 +1805,9 @@ def test_brazil_register_and_merge(tmp_path):
     r = recs["99PAY INSTITUICAO DE PAGAMENTO S.A."]
     assert r.licence_type == "Payment institution (BCB authorised)" and r.city == "Sao Paulo"
     assert r.extra["pix_status"] == "Pix participant: Pix accounts"
-    assert recs["7TRUST FINANCE IP S.A."].licence_type == "Payment institution (BCB authorisation pending)"
+    assert recs["APTARE IP"].licence_type == "Payment institution (BCB authorisation pending)"
     assert recs["BULLLA IP S.A."].licence_type.endswith("joining Pix")
-    assert recs["PEQUENA PAGAMENTOS LTDA"].licence_type.startswith("Payment institution (not subject")
+    assert recs["ADOPAY INSTITUICAO DE PAGAMENT"].licence_type.startswith("Payment institution (not subject")
 
 
 def test_brazil_labels():
