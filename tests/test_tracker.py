@@ -1508,3 +1508,44 @@ def test_tppp_three_digit_rows():
                           "512FirstRand Bank Limited 2015/201375/07 African Payments Solutions (Pty) Ltd X"], "u")
     assert len(recs) == 3
     assert {r.extra["sponsoring_banks"] for r in recs} == {"Absa Bank Limited", "FirstRand Bank Limited"}
+
+
+def test_telegram_filter_and_messages(monkeypatch, tmp_path):
+    import logging
+    from regtracker import notify
+    ev = [
+        {"event": "NEW_LICENCE", "event_label": "New licence", "jurisdiction": "GB", "name": "Acme <EMI> Ltd",
+         "licence_type": "Authorised EMI", "regulator": "FCA", "register_url": "https://register.fca.org.uk/x"},
+        {"event": "NEW_LICENCE", "event_label": "PSP application filed (Canada)", "jurisdiction": "CA", "name": "Pay Co",
+         "licence_type": "PSP applicant (RPAA)", "regulator": "BoC", "register_url": ""},
+        {"event": "TYPE_CHANGED", "event_label": "PSP registered (Canada)", "jurisdiction": "CA", "name": "Old PSP"},
+        {"event": "NAME_CHANGED", "event_label": "Name changed", "jurisdiction": "GB", "name": "Renamed"},
+        {"event": "LICENCE_LOST", "event_label": "Licence cancelled / revoked", "jurisdiction": "GB", "name": "Gone"},
+    ]
+    assert [e["name"] for e in notify.telegram_filter(ev, {})] == ["Acme <EMI> Ltd", "Pay Co", "Old PSP"]
+    assert [e["name"] for e in notify.telegram_filter(ev, {"countries": ["gb"]})] == ["Acme <EMI> Ltd"]
+    assert [e["name"] for e in notify.telegram_filter(ev, {"events": ["LICENCE_LOST"]})] == ["Gone"]
+    msgs = notify.telegram_messages(notify.telegram_filter(ev, {}), "https://docs.google.com/x")
+    assert len(msgs) == 1 and "🆕 3 new licences" in msgs[0] and "🇨🇦 <b>CA</b> (2)" in msgs[0]
+    assert "Acme &lt;EMI&gt; Ltd</a> — Authorised EMI · FCA" in msgs[0] and "PSP application filed (Canada)" in msgs[0]
+    many = [dict(ev[0], name=f"Firm {i}") for i in range(400)]
+    msgs = notify.telegram_messages(many, "")
+    assert all(len(m) <= 4096 for m in msgs) and "and 250 more" in msgs[-1]
+
+    sent = []
+
+    class R:
+        status_code = 200
+        text = ""
+        def __init__(self, data=None): self.data = data or {}
+        def json(self): return self.data
+        def raise_for_status(self): pass
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    monkeypatch.delenv("TELEGRAM_CHAT_ID", raising=False)
+    monkeypatch.setenv("REGTRACKER_DATA", str(tmp_path))
+    monkeypatch.setattr(notify.requests, "get", lambda url, timeout=0: R(
+        {"result": [{"message": {"chat": {"id": 4242, "type": "private"}, "text": "hi"}}]}))
+    monkeypatch.setattr(notify.requests, "post", lambda url, json=None, timeout=0: sent.append(json) or R())
+    notify.send_telegram(ev, "", logging.getLogger("t"), {})
+    assert sent and sent[0]["chat_id"] == "4242" and sent[0]["parse_mode"] == "HTML"
+    assert (tmp_path / "state" / "telegram.json").exists()

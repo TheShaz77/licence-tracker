@@ -183,3 +183,9 @@ contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
   parallel_sites: 24   # firm websites read at once by the contacts job (each is a different site)
   recheck_days: 180
+
+# Telegram notifications (needs the TELEGRAM_BOT_TOKEN secret; see README).
+# By default: every new licence, registration or application, all countries.
+telegram:
+  countries: []    # e.g. [GB, IE, LT, ZA, US, CA] to limit to these; empty = all
+  events: []       # e.g. [NEW_LICENCE, LICENCE_LOST, TYPE_CHANGED]; empty = new licences / registrations

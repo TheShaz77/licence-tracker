@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import logging
 import sys
 from collections import Counter
@@ -238,7 +239,7 @@ def cmd_run(args, cfg, data_dir) -> int:
 
     if notify.enabled() and (all_events or problems) and not args.no_email:
         try:
-            notify.send(all_events, problems, log, ctx.today)
+            notify.send(all_events, problems, log, ctx.today, telegram_config=cfg.get("telegram") or {})
         except Exception:
             log.exception("Alert failed")
     log.info("Done: %s", run_info["sources_status"])
@@ -313,6 +314,7 @@ def main(argv=None) -> int:
                         format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
     cfg = load_config(Path(args.config))
     data_dir = Path(args.data)
+    os.environ.setdefault("REGTRACKER_DATA", str(data_dir))
     data_dir.mkdir(parents=True, exist_ok=True)
     return {"run": cmd_run, "fca-seed": cmd_seed, "doctor": cmd_doctor,
             "status": cmd_status, "contacts": cmd_contacts}[args.cmd](args, cfg, data_dir)

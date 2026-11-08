@@ -309,3 +309,16 @@ download. The tracker looks firms up one at a time (40 per day, each re-checked
 every 60 days): Swiss firms already in the sheet from other registers get a
 **Swiss SRO** value, and names you add to `data/ch_sro_watch.txt` (one per line)
 appear as rows on the Switzerland tab once FINMA shows them as SRO members.
+
+## Telegram notifications
+
+Every run that finds new licences, registrations or applications (new EMIs,
+PIs, PSP applications and registrations, MSBs, MiCA CASPs, TPPPs, ADLAs...)
+sends them to you on Telegram, grouped by country, with a link to each firm's
+register entry and to the sheet. Limit it to certain countries, or change which
+events are sent, under `telegram:` in config.yaml.
+
+Setup: create a bot with @BotFather (/newbot) and copy its token; add it as the
+repository secret TELEGRAM_BOT_TOKEN; send your new bot any message (e.g. "hi")
+so the tracker knows where to reach you; make sure daily.yml passes
+TELEGRAM_BOT_TOKEN to the run step.

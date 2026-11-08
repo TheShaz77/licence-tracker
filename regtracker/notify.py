@@ -5,6 +5,8 @@ Two channels, used independently:
   repo, and GitHub emails the repo owner about it. Needs only the workflow's
   built-in GITHUB_TOKEN with `issues: write` permission.
 - SMTP email (optional): if SMTP_* secrets are set.
+- Telegram (optional): if the TELEGRAM_BOT_TOKEN secret is set. Sends new
+  licences / registrations only (configurable in config.yaml, `telegram:`).
 """
 from __future__ import annotations
 
@@ -30,8 +32,12 @@ def github_enabled() -> bool:
             and bool(os.environ.get("GITHUB_TOKEN") and os.environ.get("GITHUB_REPOSITORY")))
 
 
+def telegram_enabled() -> bool:
+    return bool(os.environ.get("TELEGRAM_BOT_TOKEN"))
+
+
 def enabled() -> bool:
-    return smtp_enabled() or github_enabled()
+    return smtp_enabled() or github_enabled() or telegram_enabled()
 
 
 def _subject(events: list, problems: list) -> str:
@@ -117,7 +123,7 @@ def build(events: list, problems: list, sheet_url: str) -> tuple:
     return subject, body
 
 
-def send(events: list, problems: list, log, today: str = ""):
+def send(events: list, problems: list, log, today: str = "", telegram_config: dict | None = None):
     sheet_url = f"https://docs.google.com/spreadsheets/d/{os.environ['SHEET_ID']}" if os.environ.get("SHEET_ID") else ""
     if not today:
         import datetime as dt
@@ -131,6 +137,11 @@ def send(events: list, problems: list, log, today: str = ""):
     if smtp_enabled():
         try:
             send_email(events, problems, sheet_url, log)
+        except Exception as e:
+            errors.append(e)
+    if telegram_enabled():
+        try:
+            send_telegram(events, sheet_url, log, telegram_config)
         except Exception as e:
             errors.append(e)
     if errors:
@@ -150,3 +161,117 @@ def send_email(events: list, problems: list, sheet_url: str, log):
         s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASSWORD"])
         s.sendmail(msg["From"], [a.strip() for a in os.environ["EMAIL_TO"].split(",")], msg.as_string())
     log.info("Email digest sent to %s", os.environ["EMAIL_TO"])
+
+
+# ---------------------------------------------------------------- Telegram
+
+TELEGRAM_API = "https://api.telegram.org/bot{token}/{method}"
+TG_LIMIT = 3900          # Telegram allows 4096 characters per message
+TG_MAX_LINES = 150       # beyond this, point to the sheet instead
+
+
+def flag(cc: str) -> str:
+    cc = (cc or "").upper()
+    if len(cc) != 2 or not cc.isalpha():
+        return "🌐"
+    return "".join(chr(0x1F1E6 + ord(c) - 65) for c in cc)
+
+
+def is_new_registration(e: dict) -> bool:
+    """New licences, registrations and applications, plus a PSP moving from
+    applicant to registered (the Bank of Canada keeps the same record)."""
+    if e.get("event") == "NEW_LICENCE":
+        return True
+    return e.get("event") == "TYPE_CHANGED" and "registered" in (e.get("event_label") or "").lower()
+
+
+def telegram_filter(events: list, cfg: dict | None) -> list:
+    cfg = cfg or {}
+    kinds = set(cfg.get("events") or [])
+    countries = {c.upper() for c in (cfg.get("countries") or [])}
+    out = []
+    for e in events:
+        if kinds:
+            if e.get("event") not in kinds:
+                continue
+        elif not is_new_registration(e):
+            continue
+        if countries and (e.get("jurisdiction") or "").upper() not in countries:
+            continue
+        out.append(e)
+    return out
+
+
+def telegram_messages(events: list, sheet_url: str) -> list:
+    """HTML messages, grouped by country, each under Telegram's size limit."""
+    esc = html.escape
+    by_cc = {}
+    for e in events:
+        by_cc.setdefault(e.get("jurisdiction") or "", []).append(e)
+    head = f"<b>🆕 {len(events)} new licence{'s' if len(events) != 1 else ''} / registration{'s' if len(events) != 1 else ''}</b>"
+    lines, shown = [], 0
+    for cc in sorted(by_cc, key=lambda c: (-len(by_cc[c]), c)):
+        if shown >= TG_MAX_LINES:
+            break
+        lines.append(f"\n{flag(cc)} <b>{esc(cc or 'Other')}</b> ({len(by_cc[cc])})")
+        for e in by_cc[cc]:
+            if shown >= TG_MAX_LINES:
+                break
+            what = e.get("event_label") if e.get("event_label") not in ("New licence", "") else e.get("licence_type")
+            name = esc(e.get("name") or "")
+            link = e.get("register_url") or ""
+            name = f'<a href="{esc(link)}">{name}</a>' if link.startswith("http") else name
+            reg = esc(e.get("regulator") or "")
+            lines.append(f"• {name} — {esc(what or '')}" + (f" · {reg}" if reg else ""))
+            shown += 1
+    tail = []
+    if shown < len(events):
+        tail.append(f"\n…and {len(events) - shown} more.")
+    if sheet_url:
+        tail.append(f'<a href="{esc(sheet_url)}">Open the sheet</a> (Changes tab)')
+    msgs, cur = [], head
+    for l in lines + tail:
+        if len(cur) + len(l) + 1 > TG_LIMIT:
+            msgs.append(cur)
+            cur = ""
+        cur += ("\n" if cur else "") + l
+    if cur:
+        msgs.append(cur)
+    return msgs
+
+
+def telegram_chat_id(token: str, log) -> str:
+    """TELEGRAM_CHAT_ID if set; otherwise the chat that last messaged the bot
+    (send your bot any message once), remembered in data/state/telegram.json."""
+    import json
+    from pathlib import Path
+    if os.environ.get("TELEGRAM_CHAT_ID"):
+        return os.environ["TELEGRAM_CHAT_ID"].strip()
+    store = Path(os.environ.get("REGTRACKER_DATA", "data")) / "state" / "telegram.json"
+    saved = json.loads(store.read_text()).get("chat_id", "") if store.exists() else ""
+    r = requests.get(TELEGRAM_API.format(token=token, method="getUpdates"), timeout=30)
+    r.raise_for_status()
+    chats = [u.get("message", {}).get("chat", {}).get("id") for u in r.json().get("result", [])
+             if u.get("message", {}).get("chat", {}).get("type") == "private"]
+    chat = str(chats[-1]) if chats else saved
+    if chat and chat != saved:
+        store.parent.mkdir(parents=True, exist_ok=True)
+        store.write_text(json.dumps({"chat_id": chat}))
+    if not chat:
+        log.warning("Telegram: no chat yet. Open your bot in Telegram and send it any message (e.g. 'hi').")
+    return chat
+
+
+def send_telegram(events: list, sheet_url: str, log, cfg: dict | None = None):
+    token = os.environ["TELEGRAM_BOT_TOKEN"].strip()
+    chat = telegram_chat_id(token, log)
+    wanted = telegram_filter(events, cfg)
+    if not chat or not wanted:
+        log.info("Telegram: %d new licence(s)/registration(s) to send", len(wanted))
+        return
+    for text in telegram_messages(wanted, sheet_url):
+        r = requests.post(TELEGRAM_API.format(token=token, method="sendMessage"), timeout=30,
+                          json={"chat_id": chat, "text": text, "parse_mode": "HTML", "disable_web_page_preview": True})
+        if r.status_code != 200:
+            raise RuntimeError(f"Telegram: {r.status_code} {r.text[:200]}")
+    log.info("Telegram: sent %d new licence(s)/registration(s)", len(wanted))
