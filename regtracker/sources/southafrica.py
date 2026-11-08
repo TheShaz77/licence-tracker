@@ -514,8 +514,11 @@ def parse_adla(lines: list, url: str = "") -> list:
     ADLA, 'name ... category' (One/Two/Three (MTO)/Three (VTSP)/Four). Long
     names wrap, e.g. 'Imali Express (Pty) Limited trading as Finex' / 'Two' /
     'Exchange'. Section (B), the authorised dealers, are banks and not ADLAs."""
-    start = next((i for i, l in enumerate(lines)
-                  if re.match(r"^\(A\)\s+Authorised Dealers in foreign exchange with limited authority", l)), None)
+    # the heading also appears in the table of contents ("... ....... 13"): use the one with firms under it
+    heads = [i for i, l in enumerate(lines)
+             if re.match(r"^\(A\)\s+Authorised Dealers in foreign exchange with limited authority\s*$", l.strip())]
+    start = next((i for i in heads if sum(1 for l in lines[i + 1:i + 25] if ADLA_ROW.match(l.strip())) >= 3),
+                 heads[0] if heads else None)
     parse_adla.last = lines[start:start + 120] if start is not None else lines[:120]
     if start is None:
         return []

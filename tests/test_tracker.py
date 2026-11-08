@@ -1480,7 +1480,10 @@ def test_robots_rules_and_adla():
     assert not rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf")
     assert rules_allow("User-agent: *\nDisallow: /*.pdf$", "https://x.com/a/b.pdf?x=1")
 
-    lines = ["A.2 Authorised entities", "(A) Authorised Dealers in foreign exchange with limited authority",
+    lines = ["(A) Authorised Dealers in foreign exchange with limited authority ........................... 13",
+             "(B) Authorised Dealers ............................................................ 14",
+             "(A) Categories of Authorised Dealers in foreign exchange with limited authority ..... 16",
+             "A.2 Authorised entities", "(A) Authorised Dealers in foreign exchange with limited authority",
              "The offices in South Africa of the under-mentioned entities are authorised to",
              "Name of entity - Authorised Dealer in foreign Category of", "exchange with limited authority appointment",
              "Border Forex (Pty) Limited Two", "Imali Express (Pty) Limited trading as Finex", "Two", "Exchange",
