@@ -86,7 +86,7 @@ def _links(page: str, base: str, pattern: str) -> list:
 def parse_tppp(lines: list, url: str = "") -> list:
     out = {}
     for line in lines:
-        m = re.match(r"^\d+\s+(.+)$", line)
+        m = re.match(r"^\d{1,4}\s*(?=[A-Za-z])(.+)$", line)     # "1 Absa Bank ..." and "100Absa Bank ..."
         reg = SA_REG.search(line) if m else None
         if not reg:
             continue
@@ -350,7 +350,7 @@ class _ZASource(Source):
 
 
 class ZATPPPSource(_ZASource):
-    name, label, fingerprint = "za_tppp", "South Africa third-party payment providers (SARB)", "za-tppp-v1"
+    name, label, fingerprint = "za_tppp", "South Africa third-party payment providers (SARB)", "za-tppp-v2"
     manual_hint = "za_tppp.pdf (SARB > Payments > Regulation > public register of TPPPs)"
 
     def parse_for_file(self, path):
@@ -432,7 +432,7 @@ BANK_LISTS = [(r"Locally%20Controlled|Locally Controlled", "Bank (locally contro
 
 
 class ZABanksSource(_ZASource):
-    name, label, fingerprint = "za_banks", "South Africa registered banks (SARB Prudential Authority)", "za-banks-v1"
+    name, label, fingerprint = "za_banks", "South Africa registered banks (SARB Prudential Authority)", "za-banks-v2"
     manual_hint = ("za_banks_locally.pdf, za_banks_foreign.pdf, za_banks_branches.pdf and za_banks_mutual.pdf "
                    "(SARB > Prudential Authority > SA registered banks)")
 
@@ -543,7 +543,7 @@ def parse_adla(lines: list, url: str = "") -> list:
 
 
 class ZAADLASource(_ZASource):
-    name, label, fingerprint = "za_adla", "South Africa ADLAs (SARB Financial Surveillance)", "za-adla-v1"
+    name, label, fingerprint = "za_adla", "South Africa ADLAs (SARB Financial Surveillance)", "za-adla-v2"
 
     def parse_for_file(self, path):
         return parse_adla

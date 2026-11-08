@@ -1490,3 +1490,12 @@ def test_robots_rules_and_adla():
     assert set(recs) == {"Bidvest Bank Limited", "Master Currency (Pty) Ltd", "Tourvest Financial Services (Pty) Ltd",
                          "Mukuru Financial Services (Pty) Ltd", "Hello Paisa (Pty) Ltd"}
     assert recs["Mukuru Financial Services (Pty) Ltd"].licence_type == "ADLA – Category 3 (Money transfer operators)"
+
+
+def test_tppp_three_digit_rows():
+    from regtracker.sources import southafrica as za
+    recs = za.parse_tppp(["99 Absa Bank Limited 2008/019068/07 Abellard Software Services (Pty) Ltd X X X",
+                          "100Absa Bank Limited 2012/010479/07 African Independent Brokers (Pty) Ltd X X",
+                          "512FirstRand Bank Limited 2015/201375/07 African Payments Solutions (Pty) Ltd X"], "u")
+    assert len(recs) == 3
+    assert {r.extra["sponsoring_banks"] for r in recs} == {"Absa Bank Limited", "FirstRand Bank Limited"}

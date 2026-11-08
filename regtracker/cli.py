@@ -124,7 +124,10 @@ def cmd_run(args, cfg, data_dir) -> int:
         log.info("── %s", src.label)
         conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
         min_hours = float(conf.get("min_hours", 0) or 0)
-        if min_hours and not args.sources and load_snapshot(data_dir, src.name):
+        fp_now = getattr(src, "fingerprint", None)
+        fp_saved = data_dir / "snapshots" / f"{src.name}.settings"
+        reader_changed = bool(fp_now) and fp_saved.exists() and fp_saved.read_text() != fp_now
+        if min_hours and not args.sources and not reader_changed and load_snapshot(data_dir, src.name):
             last = last_fetch.get(src.name, "")
             if last and (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(last)).total_seconds() < min_hours * 3600:
                 log.info("%s: checked at %s; next check after %g hours", src.name, last[:16], min_hours)
