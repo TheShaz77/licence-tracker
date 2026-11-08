@@ -203,11 +203,34 @@ def parse_casps(lines: list, url: str = "") -> list:
         out[m.group(2)] = Record(key="za_casp:" + m.group(2), source="za_casp", jurisdiction="ZA", regulator="FSCA",
                                  name=name, licence_type="Crypto asset service provider (FSP licence)", active=True,
                                  status_detail="Approved CASP (FSCA list)", reference=m.group(2),
-                                 register_url=url or FSCA_CASP, extra={"fsp_number": m.group(2)})
+                                 register_url=url or FSCA_HOME, extra={"fsp_number": m.group(2)})
     return list(out.values())
 
 
 # ---------------------------------------------------------------- sources
+
+def sheet_lines(raw: bytes) -> list:
+    """A spreadsheet as text lines (cells joined by spaces), so the PDF parsers can read it too."""
+    from .national import read_table
+    if raw[:2] == b"PK":
+        h, rows = read_table(raw)
+        rows = [h] + rows
+    else:
+        import xlrd
+        sh = xlrd.open_workbook(file_contents=raw).sheet_by_index(0)
+        rows = [sh.row_values(r) for r in range(sh.nrows)]
+    out = []
+    for r in rows:
+        cells = []
+        for c in r:
+            if c is None or str(c).strip() == "":
+                continue
+            c = str(int(c)) if isinstance(c, float) and c.is_integer() else str(c).strip()
+            cells.append(c)
+        if cells:
+            out.append(" ".join(cells))
+    return out
+
 
 class _ZASource(Source):
     def _get(self, ctx, url):
@@ -217,14 +240,40 @@ class _ZASource(Source):
         r.raise_for_status()
         return r
 
+    manual_hint = ""
+
+    def _manual(self, ctx) -> list:
+        """Files you downloaded yourself into data/manual/ (za_tppp.pdf, za_banks_mutual.pdf, ...)."""
+        d = ctx.data_dir / "manual"
+        if not d.exists():
+            return []
+        return sorted(p for p in d.iterdir() if p.is_file() and p.suffix.lower() in (".pdf", ".xlsx", ".xls")
+                      and (p.stem.lower() == self.name or p.stem.lower().startswith(self.name + "_")))
+
+    def fetch(self, ctx):
+        manual = self._manual(ctx)
+        try:
+            return self.fetch_web(ctx)
+        except SourceNotReady as e:
+            if not manual:
+                raise SourceNotReady(f"{e}. Download it in your browser and upload it to data/manual/ as "
+                                     f"{self.manual_hint or self.name + '.pdf'}") from None
+        return self._run(ctx, [(p, self.parse_for_file(p)) for p in manual])
+
+    def parse_for_file(self, path):
+        raise NotImplementedError
+
     def _run(self, ctx, jobs: list) -> list:
-        """jobs: [(pdf url, parse function taking (lines, url))]."""
+        """jobs: [(pdf url or local file, parse function taking (lines, url))]."""
         notes, recs = [], []
         for url, parse in jobs:
-            raw = self._get(ctx, url).content
+            if hasattr(url, "read_bytes"):
+                raw, url = url.read_bytes(), str(url)
+            else:
+                raw = self._get(ctx, url).content
             err, got, lines = None, [], []
             try:
-                lines = pdf_lines(raw)
+                lines = sheet_lines(raw) if raw[:2] in (b"PK", b"\xd0\xcf") else pdf_lines(raw)
                 got = parse(lines, url)
             except Exception as e:
                 err = e
@@ -245,8 +294,12 @@ class _ZASource(Source):
 
 class ZATPPPSource(_ZASource):
     name, label, fingerprint = "za_tppp", "South Africa third-party payment providers (SARB)", "za-tppp-v1"
+    manual_hint = "za_tppp.pdf (SARB > Payments > Regulation > public register of TPPPs)"
 
-    def fetch(self, ctx):
+    def parse_for_file(self, path):
+        return parse_tppp
+
+    def fetch_web(self, ctx):
         url = latest(self._page_links(ctx, NPS_PAGE, r"tppp"))
         if not url:
             raise RuntimeError("SARB: TPPP public register link not found on " + NPS_PAGE)
@@ -255,8 +308,12 @@ class ZATPPPSource(_ZASource):
 
 class ZASOSource(_ZASource):
     name, label, fingerprint = "za_so", "South Africa payment system operators (SARB)", "za-so-v1"
+    manual_hint = "za_so.pdf (SARB > Payments > Regulation > public register of system operators)"
 
-    def fetch(self, ctx):
+    def parse_for_file(self, path):
+        return lambda lines, u: parse_operators(lines, u, "za_so", "SO")
+
+    def fetch_web(self, ctx):
         links = [l for l in self._page_links(ctx, NPS_PAGE, r"(public-list-so|SO%20Public|SO Public)") if "pch" not in l.lower()]
         if not links:
             raise RuntimeError("SARB: SO public register link not found on " + NPS_PAGE)
@@ -265,8 +322,12 @@ class ZASOSource(_ZASource):
 
 class ZAPCHSOSource(_ZASource):
     name, label, fingerprint = "za_pchso", "South Africa payment clearing house system operators (SARB)", "za-pchso-v1"
+    manual_hint = "za_pchso.pdf (SARB > Payments > Regulation > public register of PCH system operators)"
 
-    def fetch(self, ctx):
+    def parse_for_file(self, path):
+        return lambda lines, u: parse_operators(lines, u, "za_pchso", "clearing house system operator")
+
+    def fetch_web(self, ctx):
         links = self._page_links(ctx, NPS_PAGE, r"PCH")
         if not links:
             raise RuntimeError("SARB: PCH SO public register link not found on " + NPS_PAGE)
@@ -282,8 +343,16 @@ BANK_LISTS = [(r"Locally%20Controlled|Locally Controlled", "Bank (locally contro
 
 class ZABanksSource(_ZASource):
     name, label, fingerprint = "za_banks", "South Africa registered banks (SARB Prudential Authority)", "za-banks-v1"
+    manual_hint = ("za_banks_locally.pdf, za_banks_foreign.pdf, za_banks_branches.pdf and za_banks_mutual.pdf "
+                   "(SARB > Prudential Authority > SA registered banks)")
 
-    def fetch(self, ctx):
+    def parse_for_file(self, path):
+        stem = path.stem.lower()
+        kind = ("Branch of a foreign bank" if "branch" in stem else "Mutual bank" if "mutual" in stem
+                else "Bank (foreign controlled)" if "foreign" in stem else "Bank (locally controlled)")
+        return lambda lines, u, k=kind: parse_banks(lines, u, k)
+
+    def fetch_web(self, ctx):
         page = self._get(ctx, PA_PAGE).text
         jobs = []
         for pat, kind in BANK_LISTS:
@@ -295,11 +364,35 @@ class ZABanksSource(_ZASource):
         return self._run(ctx, jobs)
 
 
+FSCA_HOME = "https://www.fsca.co.za/"
+
+
+def fsca_list_link(page: str) -> str:
+    """The FSCA site links its current CASP list from a news item; the address
+    (an _api/... document link) changes with each update."""
+    for m in re.finditer(r"""<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""", page, re.I | re.S):
+        before = re.sub(r"<[^>]+>", " ", page[max(0, m.start() - 600):m.start()])
+        label = re.sub(r"<[^>]+>", " ", m.group(2))
+        ctxt = (before + " " + label).lower()
+        if ("crypto asset service provider" in ctxt and re.search(r"approved|licensed|list", ctxt)
+                and re.search(r"_api/|\.pdf|\.xlsx", m.group(1), re.I)
+                and "news" not in m.group(1).lower() and "press" not in label.lower()):
+            return urljoin(FSCA_HOME, htmlmod.unescape(m.group(1)))
+    return ""
+
+
 class ZACASPSource(_ZASource):
     name, label, fingerprint = "za_casp", "South Africa crypto asset service providers (FSCA)", "za-casp-v1"
+    manual_hint = "za_casp.pdf or za_casp.xlsx (FSCA website > list of approved crypto asset service providers)"
 
-    def fetch(self, ctx):
-        url = ctx.source_config(self.name).get("url") or FSCA_CASP
+    def parse_for_file(self, path):
+        return parse_casps
+
+    def fetch_web(self, ctx):
+        url = ctx.source_config(self.name).get("url") or fsca_list_link(self._get(ctx, FSCA_HOME).text)
+        if not url:
+            raise SourceNotReady("the FSCA's list of approved crypto asset service providers isn't linked from "
+                                 "its homepage right now")
         return self._run(ctx, [(url, parse_casps)])
 
 

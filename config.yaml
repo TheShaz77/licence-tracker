@@ -68,8 +68,8 @@ sources:
 
   finma:          # Switzerland: banks and FinTech licence holders
     enabled: true
-    include_types: "fintech"      # FinTech licence holders only (banks no longer tracked)
-    exclude_types: "representative office"
+    include_types: "article 1b|fintech"   # FinTech licence holders ("Persons under Article 1b of the Banking Act")
+    exclude_types: "representati"         # not the representations of foreign FinTech firms
 
   fincen:         # US: every money services business registered with FinCEN (updated weekly)
     enabled: true

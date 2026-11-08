@@ -1323,3 +1323,43 @@ def test_fincen_manual_spreadsheet():
     wb.save(buf)
     recs, _ = parse_fincen(buf.getvalue())
     assert len(recs) == 3
+
+
+def test_za_fsca_link_manual_files_and_finma_fintech(tmp_path, monkeypatch):
+    import logging
+    from regtracker.sources import southafrica as za
+    from regtracker.sources.base import Context, SourceNotReady
+    from regtracker.sources.finma import parse_finma
+    page = ('<div><h3>FSCA confirms list of currently approved crypto asset service providers</h3>'
+            '<p>The list is <a href="/_api/cr3ad_regulatoryframes%28f928%29/cr3ad_document/$value">here</a>'
+            ' and the <a href="/_api/cr3ad_newses%28ac3e%29/cr3ad_document/$value">press release</a></p></div>')
+    assert za.fsca_list_link(page) == "https://www.fsca.co.za/_api/cr3ad_regulatoryframes%28f928%29/cr3ad_document/$value"
+    assert za.fsca_list_link("<a href='/x.pdf'>Annual report</a>") == ""
+
+    ctx = Context({}, None, "2026-11-08", tmp_path, set(), logging.getLogger("t"))
+    src = za.ZABanksSource()
+    monkeypatch.setattr(src, "fetch_web", lambda c: (_ for _ in ()).throw(SourceNotReady("x.pdf is disallowed by robots.txt")))
+    try:
+        src.fetch(ctx)
+        assert False
+    except SourceNotReady as e:
+        assert "data/manual/" in str(e) and "za_banks_mutual.pdf" in str(e)
+    (tmp_path / "manual").mkdir()
+    (tmp_path / "manual" / "za_banks_mutual.pdf").write_bytes(b"%PDF fake")
+    monkeypatch.setattr(za, "pdf_lines", lambda raw: ["Mutual Banks", "GBS Mutual Bank", "18 Hill Street",
+                                                       "Mr X", "Chief Executive Officer 046 622 7109 www.gbsbank.co.za"])
+    recs = src.fetch(ctx)
+    assert [(r.name, r.licence_type) for r in recs] == [("GBS Mutual Bank", "Mutual bank")]
+
+    import openpyxl, io
+    wb = openpyxl.Workbook()
+    wb.active.append(["No", "FSP Name", "FSP Number"])
+    wb.active.append([1, "Luno South Africa (Pty) Ltd", 53279])
+    buf = io.BytesIO(); wb.save(buf)
+    assert [r.reference for r in za.parse_casps(za.sheet_lines(buf.getvalue()), "u")] == ["53279"]
+
+    csv_text = ("Name;City;UID;AuthorisationTypeEN\nSygnum Bank AG;Zürich;CHE-1;Bank\n"
+                "Fintech AG;Zug;CHE-2;Persons under Article 1b of the Banking Act\n"
+                "Foreign Fintech;Zug;CHE-3;Representation of foreign persons under Article 1b of the Banking Act\n")
+    got = parse_finma(csv_text, "article 1b|fintech", "representati")
+    assert [r.name for r in got] == ["Fintech AG"]
