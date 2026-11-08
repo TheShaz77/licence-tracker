@@ -1,0 +1,10 @@
+# Group 1
+User-agent: *
+Disallow: /content/dam/
+Allow: /content/dam/sarb/*.pdf
+Allow: /content/dam/sarb/*.doc*
+Allow: /content/dam/sarb/*.xls*
+Allow: /content/dam/sarb/*.csv
+Allow: /content/dam/sarb/*.txt
+Allow: /content/dam/sarb/*.zip
+Sitemap: https://www.resbank.co.za/en.sitemap.xml

@@ -6,4 +6,4 @@ headers: ['LICENSE NUMBER', 'LICENSE TYPE', 'INTIAL APPROVAL', 'EXPIRATION DATE'
 data rows: 6158  kept: 1425
 type values: [('FT3', 4699), ('FT2', 1459)]
 first lines:
-'(xlsx)'
+'(binary)'
