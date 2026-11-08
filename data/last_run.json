@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-08 09:00",
-  "sources_status": "fca: waiting (FCA seed scan still running: 55.1% scanned; 3470 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: not due; mica: ok (0 changes); ch_sro: baseline 0; za_tppp: not due; za_so: not due; za_pchso: not due; za_banks: not due; za_adla: not due; za_casp: not due; nat_lt: ok (0 changes); us_fl: not due; us_ca: ok (0 changes); us_ct: ok (0 changes); us_la: ok (0 changes); us_in: ok (0 changes); us_de: ok (222 changes); us_ak: not due",
-  "changes": 222,
+  "finished": "2026-11-08 10:55",
+  "sources_status": "fca: waiting (FCA seed scan still running: 55.1% scanned; 3470 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: not due; mica: not due; ch_sro: baseline 0; za_tppp: not due; za_so: not due; za_pchso: not due; za_banks: not due; za_adla: not due; za_casp: not due; nat_lt: ok (0 changes); us_fl: ok (0 changes); us_ca: not due; us_ct: not due; us_la: not due; us_in: not due; us_de: not due; us_ak: ok (0 changes)",
+  "changes": 0,
   "problems": []
 }
