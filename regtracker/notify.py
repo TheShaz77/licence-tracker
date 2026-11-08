@@ -249,7 +249,7 @@ def telegram_messages(events: list, sheet_url: str) -> list:
     return msgs
 
 
-def telegram_chat_id(token: str, log) -> str:
+def telegram_chat_id(token: str, log, bot: str = "") -> str:
     """TELEGRAM_CHAT_ID if set; otherwise the chat that last messaged the bot
     (send your bot any message once), remembered in data/state/telegram.json."""
     import json
@@ -259,9 +259,19 @@ def telegram_chat_id(token: str, log) -> str:
     store = Path(os.environ.get("REGTRACKER_DATA", "data")) / "state" / "telegram.json"
     saved = json.loads(store.read_text()).get("chat_id", "") if store.exists() else ""
     r = requests.get(TELEGRAM_API.format(token=token, method="getUpdates"), timeout=30)
+    if getattr(r, "status_code", 200) == 409:
+        # a webhook is set on this bot, so Telegram holds messages for it instead: switch it off
+        requests.post(TELEGRAM_API.format(token=token, method="deleteWebhook"), timeout=30, json={})
+        log.info("Telegram: removed a webhook that was stopping the bot from receiving your messages")
+        r = requests.get(TELEGRAM_API.format(token=token, method="getUpdates"), timeout=30)
     r.raise_for_status()
-    chats = [u.get("message", {}).get("chat", {}).get("id") for u in r.json().get("result", [])
-             if u.get("message", {}).get("chat", {}).get("type") == "private"]
+    updates = r.json().get("result", [])
+    chats = []
+    for u in updates:  # a "hi", "/start", an edited message or pressing Start all count
+        msg = u.get("message") or u.get("edited_message") or u.get("my_chat_member") or {}
+        chat_obj = msg.get("chat") or {}
+        if chat_obj.get("type") == "private" and chat_obj.get("id"):
+            chats.append(chat_obj["id"])
     chat = str(chats[-1]) if chats else saved
     if chat and chat != saved:
         store.parent.mkdir(parents=True, exist_ok=True)
@@ -272,7 +282,11 @@ def telegram_chat_id(token: str, log) -> str:
                     "licences or registrations."})
         log.info("Telegram: connected to your chat and sent a confirmation message")
     if not chat:
-        log.warning("Telegram: no chat yet. Open your bot in Telegram and send it any message (e.g. 'hi').")
+        who = f"@{bot}" if bot else "your bot"
+        log.warning("Telegram: no chat yet. This token belongs to %s and it has received %d message(s). Search "
+                    "Telegram for %s, open that exact bot, press Start or send 'hi', then run again. If you have been "
+                    "messaging a different bot, either message %s or put that bot's token in TELEGRAM_BOT_TOKEN.",
+                    who, len(updates), who, who)
     return chat
 
 
@@ -300,7 +314,12 @@ def telegram_connect(log) -> str:
             log.warning("Telegram: the bot token was rejected. Copy it again from @BotFather (send /mybots, pick "
                         "your bot, 'API Token') and paste it, on its own, into the TELEGRAM_BOT_TOKEN secret.")
             return ""
-        return telegram_chat_id(token, log)
+        res = (r.json() or {}).get("result")
+        bot = res.get("username", "") if isinstance(res, dict) else ""
+        if bot:
+            log.info("Telegram: token belongs to @%s", bot)
+        chat = telegram_chat_id(token, log, bot)
+        return chat
     except Exception as e:
         log.warning("Telegram: could not connect (%s)", str(e).replace(token, "***"))
         return ""
