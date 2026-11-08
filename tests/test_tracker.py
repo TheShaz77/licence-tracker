@@ -1144,3 +1144,182 @@ def test_us_end_to_end(tmp_path, monkeypatch):
     assert acme["States of operation (FinCEN, US)"] == "CA, FL, NY, TX"
     assert by[("us_ca", "Acme Pay LLC")]["FinCEN MSB (US)"] == "Registered – money transmitter"
     assert rc == 0
+
+
+def test_fca_replan_keeps_progress_and_crypto(tmp_path):
+    from regtracker.sources import fca
+    st = {"seed": {"ranges": [[900000, 999999], [500000, 899999], [1000000, 1100000], [100000, 499999]],
+                   "range_index": 0, "cursor": 984154, "done": False, "checked": 84154},
+          "tracked": {}, "max_frn_seen": 984153}
+    cfg = {"seed_ranges": [[900000, 999999], [1000000, 1100000], [500000, 899999]]}
+    assert fca.replan(st, cfg)
+    sd = st["seed"]
+    # the part scanned before agents were kept is re-scanned at the end
+    assert sd["ranges"] == [[984154, 999999], [1000000, 1100000], [500000, 899999], [900000, 984153]]
+    assert sd["cursor"] == 984154 and sd["classify_version"] == fca.CLASSIFY_VERSION
+    assert fca.seed_progress(st).startswith("0.0% scanned")
+    sd["ranges"], sd["scanned"] = [[984154, 999999], [1000000, 1100000], [500000, 899999]], [[900000, 984153]]
+    assert fca.seed_progress(st).startswith("14.0% scanned")      # 84,154 of 600,001
+    assert not fca.replan(st, cfg)                                  # unchanged config: no-op
+    sd["range_index"], sd["cursor"] = 1, 1000500                    # later: move on, then reorder again
+    fca.replan(st, {"seed_ranges": [[500000, 899999], [1000000, 1100000], [900000, 999999]]})
+    assert st["seed"]["ranges"] == [[500000, 899999], [1000500, 1100000]]
+
+    # crypto: by firm type, or on the FCA crypto list; RAISPs excluded
+    crypto_only = {"Organisation Name": "Coin Ltd", "Status": "Registered", "Business Type": "MLD cryptoassets",
+                   "MLRs Status": "MLRs Registered", "MLRs Status Effective Date": "18/08/2020"}
+    r = fca.record_from_firm(838656, crypto_only)
+    assert r.licence_type == fca.CRYPTO_TYPE and r.active and r.status_date == "18/08/2020"
+    former = dict(crypto_only, **{"MLRs Status": "Formerly MLRs Registered"})
+    assert not fca.record_from_firm(928607, former).active
+    emi = {"Organisation Name": "Revolut Ltd", "Status": "Authorised", "Business Type": "Regulated",
+           "PSD / EMD Status": "Authorised Electronic Money Institution", "MLRs Status": "MLRs Registered"}
+    assert fca.record_from_firm(900562, emi).licence_type == "Authorised EMI"
+    assert fca.record_from_firm(900562, emi, crypto_frns={900562}).licence_type == "Authorised EMI + cryptoasset firm"
+    raisp = {"Organisation Name": "Open Data Ltd", "Status": "Registered",
+             "PSD / EMD Status": "Registered Account Information Service Provider"}
+    assert fca.record_from_firm(1, raisp) is None
+    annex1 = {"Organisation Name": "Lender Ltd", "Status": "Registered", "Business Type": "Regulated",
+              "MLRs Status": "MLRs Registered"}
+    assert fca.record_from_firm(2, annex1) is None                  # MLR-registered but not crypto
+    emd = {"Organisation Name": "Corner Shop Ltd", "Status": "Registered", "E-Money Agent Status": "Current",
+           "E-Money Agent Effective Date": "2021-03-04T00:00:00"}
+    r = fca.record_from_firm(3, emd)
+    assert r.licence_type == "E-money agent" and r.active and r.status_date == "2021-03-04"
+    psd = {"Organisation Name": "Remit Agent Ltd", "PSD Agent Status": "No Longer Registered"}
+    r = fca.record_from_firm(4, psd)
+    assert r.licence_type == "Payment agent (PSD)" and not r.active
+    assert fca.record_from_firm(4, psd, agents=("emd",)) is None
+
+
+# ---------------------------------------------------------------- MiCA, South Africa, Swiss SRO
+
+def test_mica_parse_real_esma_files():
+    from regtracker.sources.mica import parse_casps, parse_emts
+    fx = Path(__file__).parent / "fixtures"
+    casps = parse_casps((fx / "CASPS.csv").read_bytes())
+    assert len(casps) == 394                                       # same as casptracker.eu's merged count
+    art60 = [r for r in casps if "Art. 60" in r.licence_type]
+    assert len(art60) == 150 and sum(not r.active for r in casps) == 3
+    bp = next(r for r in casps if r.name == "Bitpanda GmbH")
+    assert bp.jurisdiction == "AT" and bp.regulator == "FMA" and bp.status_date == "2025-04-09"
+    assert "DE" in bp.passports and bp.website == "https://www.bitpanda.com"
+    emts = parse_emts((fx / "EMTWP.csv").read_bytes())
+    assert len(emts) == 25 and all(r.licence_type == "MiCA e-money token issuer" for r in emts)
+
+
+def test_south_africa_parsers():
+    from regtracker.sources import southafrica as za
+    tppp = ["Sponsoring Bank Entity Registration Registered Entity Name ATM Services Credit Card Debit Card",
+            "1 Absa Bank Limited 2008/019068/07 Abellard Software Services (Pty) Ltd X XX",
+            "2 Absa Bank Limited 1958/003362/07 Ackermans a division of pepkor trading (pty) ltdXXXX",
+            "3 Absa Bank Limited 2019/463070/07 Addpay (Pty) LtdX XXXX",
+            "40 Nedbank Limited 2019/463070/07 Addpay (Pty) Ltd X"]
+    recs = {r.reference: r for r in za.parse_tppp(tppp, "u")}
+    assert recs["1958/003362/07"].name == "Ackermans a division of pepkor trading (pty) ltd"
+    assert recs["2019/463070/07"].name == "Addpay (Pty) Ltd"
+    assert recs["2019/463070/07"].extra["sponsoring_banks"] == "Absa Bank Limited; Nedbank Limited"
+    so = ["1 ACI Worldwide HRB 227459 ACI Worldwide (Germany) GMBH x x Visa Mastercard x x",
+          "2 AddPay 2019/463070/07 AddPay (Pty) Ltd x x x x x Visa Mastercard x x x x",
+          "3 Adumo Technologies 2000/029811/07 Lesaka Merchant Technologies (Pty) Ltd x x x x"]
+    ops = {r.reference: r for r in za.parse_operators(so, "u", "za_so", "SO")}
+    assert ops["HRB227459"].name == "ACI Worldwide (Germany) GMBH"
+    assert ops["2000/029811/07"].extra["trading_name"] == "Adumo Technologies"
+    banks = ["Locally Controlled Banks", "Name Address CEO Telephone Web Address", "Absa Bank Limited",
+             "Absa Group Limited", "P O Box 7735", "Johannesbu", "rg 2000", "Mr Kenny Fihla",
+             "Chief Executive Officer 011 350 5347 https://www.absa.africa/", "Capitec Bank Limited",
+             "5 Neutron Road", "Stellenbosch", "7600", "Mr Graham Lee",
+             "Chief Executive Officer 021 809 5900 www.capitecbank.co.za", "Ubank Limited (under curatorship)"]
+    b = {r.name: r for r in za.parse_banks(banks, "u", "Bank (locally controlled)")}
+    assert b["Absa Bank Limited"].website == "https://www.absa.africa/" and b["Absa Bank Limited"].extra["phone"] == "011 350 5347"
+    assert b["Capitec Bank Limited"].website == "https://www.capitecbank.co.za"
+    assert b["Capitec Bank Limited"].extra["ceo"] == "Mr Graham Lee" and not b["Ubank Limited"].active
+    casp = za.parse_casps(["No. FSP Name FSP Number", "1 Luno South Africa (Pty) Ltd 53279", "2 VALR (Pty) Ltd 53308"], "u")
+    assert {r.reference: r.name for r in casp} == {"53279": "Luno South Africa (Pty) Ltd", "53308": "VALR (Pty) Ltd"}
+    links = ["https://x/public-list-tppp-13-10-2026.pdf", "https://x/Public-list-TPPP-May-2026.pdf"]
+    assert za.latest(links).endswith("13-10-2026.pdf")
+
+
+def test_swiss_sro_matching_and_apply(tmp_path):
+    from regtracker.sources import swiss_sro as s
+    page = "Résultats\nBitcoin Suisse AG\nZug\nVQF Verein zur Qualitätssicherung\nOther Firm SA\nGenève\nARIF"
+    assert s.match_results("Bitcoin Suisse AG", page, [])["sro"] == "VQF"
+    assert s.match_results("Other Firm SA", page, [])["sro"] == "ARIF"
+    payload = [{"results": [{"name": "Crypto Finance AG", "sro": "PolyReg", "city": "Zürich"}]}]
+    assert s.match_results("Crypto Finance AG", "", payload)["sro"] == "PolyReg"
+    assert s.match_results("Unknown AG", page, payload)["sro"] == ""
+    recs = [{"name": "Bitcoin Suisse AG", "jurisdiction": "US", "extra": {"foreign_location": "SWITZERLAND"}},
+            {"name": "Bitcoin Suisse AG", "jurisdiction": "US", "extra": {"foreign_location": "GERMANY"}}]
+    assert s.apply(recs, {"bitcoinsuisse": {"sro": "VQF"}}) == 1
+    assert recs[0]["ch_sro"] == "VQF" and "ch_sro" not in recs[1]
+
+
+def test_disabled_sources_hidden(tmp_path):
+    import logging
+    from regtracker import cli
+    from regtracker.store import save_snapshot
+    data = tmp_path / "d"
+    save_snapshot(data, "pra", {"pra:1": {"key": "pra:1", "source": "pra", "name": "Bank", "jurisdiction": "GB"}})
+    save_snapshot(data, "eba", {"eba:1": {"key": "eba:1", "source": "eba", "name": "EMI", "jurisdiction": "FR"}})
+    cfg = {"sources": {"pra": {"enabled": False}, "eba": {}}}
+    recs = cli.assemble(cfg, data, cli.make_context(cfg, data))
+    assert [r["key"] for r in recs] == ["eba:1"]
+
+
+def test_us_fixes_de_layout_ct_link_and_manual_files(tmp_path, monkeypatch):
+    import logging
+    from regtracker.sources import usstates as u
+    from regtracker.sources.base import Context, SourceNotReady
+    # Delaware as it really extracts: status glued onto the address line, no Contact line
+    lines = ["State of Delaware", "Licensees and Existing Branches PDT: 10/28/2026 11:43AM",
+             "037280 Acme Remit LLC", "2828 JOHN F KENNEDY BOULEVARD SUITE 203 Jersey City, NJ 07306 Filing Status: "
+             "Current - Licensed Expires Date: 12/31/2026",
+             "042465 1Money USA, Inc.", "575 5th Avenue New York, NY 10017", "Contact: K H - (845) 999-0474",
+             "Filing Status: Current - Licensed Expires Date: 12/31/2026", "Branches / Locations",
+             "123456 1 Branch Road Dover, DE 19901"]
+    monkeypatch.setattr(u, "pdf_lines", lambda raw: lines)
+    de, _ = u.parse_de_pdf("de", b"", u.STATES["de"])
+    by = {r.reference: r for r in de}
+    assert set(by) == {"037280", "042465"} and by["037280"].city == "Jersey City"
+    assert by["042465"].extra["phone"] == "(845) 999-0474"
+
+    class Resp:
+        def __init__(self, text="", code=200):
+            self.text, self.status_code, self.content = text, code, text.encode()
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise RuntimeError(f"{self.status_code} Client Error: Forbidden")
+    page = '<a href="/-/media/dob/money_transmitters.xlsx?rev=ae0&amp;hash=1D">List</a>'
+    ctx = Context({}, None, "2026-11-06", tmp_path, set(), logging.getLogger("t"))
+    monkeypatch.setattr(u, "robots_allowed", lambda s, url: True)
+    src = u.USStateSource("ct", u.STATES["ct"])
+    monkeypatch.setattr(src, "_get", lambda c, url: Resp(page))
+    assert src.resolve_url(ctx) == "https://portal.ct.gov/-/media/dob/money_transmitters.xlsx?rev=ae0&hash=1D"
+    ma = u.USStateSource("ma", u.STATES["ma"])
+    monkeypatch.setattr(ma, "_get", lambda c, url: (_ for _ in ()).throw(RuntimeError("403 Client Error: Forbidden")))
+    try:
+        ma.fetch(ctx)
+        assert False, "should wait for a manual file"
+    except SourceNotReady as e:
+        assert "data/manual/" in str(e) and "us_ma.xlsx" in str(e)
+    import openpyxl
+    wb = openpyxl.Workbook()
+    wb.active.append(["Licensee Name", "License Number", "City"])
+    wb.active.append(["Acme Remit LLC", "MT1", "Boston"])
+    (tmp_path / "manual").mkdir()
+    wb.save(tmp_path / "manual" / "us_ma.xlsx")
+    recs = ma.fetch(ctx)
+    assert [r.name for r in recs] == ["Acme Remit LLC"] and recs[0].city == "Boston"
+
+
+def test_fincen_manual_spreadsheet():
+    import io
+    import openpyxl
+    from regtracker.sources.fincen import parse_fincen
+    wb = openpyxl.Workbook()
+    for line in FINCEN_TSV.splitlines():
+        wb.active.append(line.split("\t"))
+    buf = io.BytesIO()
+    wb.save(buf)
+    recs, _ = parse_fincen(buf.getvalue())
+    assert len(recs) == 3

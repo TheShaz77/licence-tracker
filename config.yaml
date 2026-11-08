@@ -20,17 +20,21 @@ sheet_change_rows: 5000
 sheet_country_tabs: true
 
 sources:
-  fca:            # UK: EMIs, small EMIs, APIs, SPIs, RAISPs (FCA Register API)
+  fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money & payment agents (FCA API)
     enabled: true
     requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
     enrich_address: true          # one extra call per firm, once: town, website, phone
-    # One-off seed scan, in this order (highest-yield FRN ranges first).
+    exclude_types: [RAISP]        # licence types not tracked (account-information-only firms)
+    agents: [emd, psd]            # also track e-money agents (emd) and payment agents (psd)
+    # One-off seed scan, in this order. Editing this list is safe: ranges
+    # already scanned are kept, and the rest is re-planned in the new order.
     seed_ranges:
-      - [900000, 999999]          # most EMIs and RAISPs
+      - [900000, 999999]          # most EMIs (and cryptoasset firms registered since 2020)
+      - [1000000, 1100000]        # 7-digit FRNs issued since 2023 (the newest firms)
       - [500000, 899999]          # most APIs / SPIs
-      - [1000000, 1100000]        # 7-digit FRNs issued since 2023
-      - [100000, 499999]          # older FSMA firms that also hold PSD status
+    # 100000-499999 (pre-2009 firms, mostly banks/insurers) is not scanned; the
+    # few cryptoasset firms there are tracked via data/fca_crypto_frns.txt.
     frontier_back: 3000           # daily: re-scan this many FRNs below the newest
     frontier_ahead: 2000          # ...and this many above it
     frontier_back_weekly: 25000   # weekly wider re-scan
@@ -38,7 +42,7 @@ sources:
     track_services: false
 
   pra:            # UK: banks and building societies (PRA monthly lists)
-    enabled: true
+    enabled: false   # banks no longer tracked
     # urls:                       # uncomment to pin the CSVs if the page changes
     #   banks: https://www.bankofengland.co.uk/-/media/...csv
     #   building_societies: https://www.bankofengland.co.uk/-/media/...csv
@@ -50,7 +54,7 @@ sources:
     track_services: true          # also flag changes to authorised services
 
   ecb:            # EU: credit institutions (banks), ECB daily MFI list
-    enabled: true
+    enabled: false   # credit institutions no longer tracked
     exclude_jurisdictions: [GB]
 
   fintrac:        # Canada: money services businesses (FINTRAC publishes monthly)
@@ -64,12 +68,38 @@ sources:
 
   finma:          # Switzerland: banks and FinTech licence holders
     enabled: true
-    include_types: "bank|fintech"
+    include_types: "fintech"      # FinTech licence holders only (banks no longer tracked)
     exclude_types: "representative office"
 
   fincen:         # US: every money services business registered with FinCEN (updated weekly)
     enabled: true
     min_hours: 12 # FinCEN updates weekly; no need to download the 5 MB file every 2 hours
+
+  mica:           # EU/EEA: MiCA crypto-asset service providers and e-money token issuers (ESMA register)
+    enabled: true
+    min_hours: 6
+
+  ch_sro:         # Switzerland: AML SRO membership, looked up firm by firm on FINMA's member search
+    enabled: true
+    min_hours: 20                 # once a day
+    lookups_per_run: 40
+    recheck_days: 60
+
+  za_tppp:        # South Africa: third-party payment providers (SARB public register)
+    enabled: true
+    min_hours: 12
+  za_so:          # South Africa: payment system operators (SARB)
+    enabled: true
+    min_hours: 12
+  za_pchso:       # South Africa: payment clearing house system operators (SARB)
+    enabled: true
+    min_hours: 12
+  za_banks:       # South Africa: banks, branches of foreign banks, mutual banks (Prudential Authority)
+    enabled: true
+    min_hours: 12
+  za_casp:        # South Africa: licensed crypto asset service providers (FSCA)
+    enabled: true
+    min_hours: 12
 
   us_states:      # US: money transmitter licensees, from the states that publish their own list
     enabled: true # FL, CA, MA, CT, LA, IN, DE, AK (others only publish via NMLS, which can't be used)
@@ -140,5 +170,5 @@ national:
 # says where each one came from.
 contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
-  parallel_sites: 8    # firm websites read at once by the contacts job
+  parallel_sites: 24   # firm websites read at once by the contacts job (each is a different site)
   recheck_days: 180

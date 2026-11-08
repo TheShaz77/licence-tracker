@@ -1,4 +1,4 @@
-"""UK FCA Financial Services Register API: EMIs, small EMIs, APIs, SPIs, RAISPs.
+"""UK FCA Financial Services Register API: EMIs, small EMIs, APIs, SPIs and cryptoasset firms.
 
 The free API only looks firms up one FRN at a time (50 requests / 10 s), with
 no "list every EMI" call. So this adapter keeps its own index:
@@ -87,6 +87,9 @@ class FCAClient:
         self.log = ctx.log
         self.errors = 0
         self.data_dir = ctx.data_dir
+        self.crypto = set(crypto_frns(ctx))
+        self.exclude = tuple((ctx.source_config("fca").get("exclude_types")) or ("RAISP",))
+        self.agents = tuple(ctx.source_config("fca").get("agents", ["emd", "psd"]) or ())
 
     def get(self, path: str):
         """GET an API path. Returns the 'Data' payload, None when the firm
@@ -143,7 +146,16 @@ class FCAClient:
         data = self.get(f"/Firm/{frn}")
         if isinstance(data, list):
             data = data[0] if data else None
-        return data if isinstance(data, dict) else None
+        data = data if isinstance(data, dict) else None
+        if data and not getattr(self, "_mlr_sampled", False) and tolerant_get(data, "MLRs Status"):
+            self._mlr_sampled = True  # one raw example, to confirm how crypto firms are marked
+            try:
+                p = self.data_dir / "debug" / "fca_mlr_sample.json"
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_text(json.dumps({"frn": frn, "firm": data}, indent=1, ensure_ascii=False))
+            except Exception:
+                pass
+        return data
 
     def address(self, frn: int) -> dict:
         try:
@@ -181,13 +193,68 @@ def _email_from(d: dict) -> str:
     return ""
 
 
-def record_from_firm(frn: int, firm: dict, address: dict | None = None):
+CRYPTO_TYPE = "Cryptoasset firm (MLR registered)"
+CLASSIFY_VERSION = 2   # 2 = also keeps e-money/payment agents and crypto firms: re-scan what was scanned before
+AGENT_INACTIVE = ("cancel", "revok", "no longer", "former", "lapsed", "ceased", "removed", "withdrawn")
+AGENT_FIELDS = (("emd", ("E-Money Agent Status", "EMoney Agent Status"), "E-money agent",
+                 ("E-Money Agent Effective Date",)),
+                ("psd", ("PSD Agent Status",), "Payment agent (PSD)", ("PSD Agent Effective date", "PSD Agent Effective Date")))
+
+
+def agent_status(firm: dict, kinds=("emd", "psd")):
+    """(licence type, active, status text, date) for firms registered as an
+    e-money (EMD) or payment (PSD) agent, else None."""
+    for kind, fields, ltype, dates in AGENT_FIELDS:
+        if kind not in kinds:
+            continue
+        val = str(tolerant_get(firm, *fields)).strip()
+        if val and val.lower() not in ("n/a", "none", "not applicable"):
+            active = not any(w in val.lower() for w in AGENT_INACTIVE)
+            return ltype, active, val, str(tolerant_get(firm, *dates))[:10]
+    return None
+
+
+def crypto_status(frn: int, firm: dict, crypto_frns=()) -> tuple:
+    """(is a cryptoasset firm?, registration active?). The FCA marks crypto
+    firms with Firm type "MLD cryptoassets"; firms that are also EMIs, PIs or
+    banks keep their main type, so those come from the FCA's list of
+    registered cryptoasset firms (data/fca_crypto_frns.txt)."""
+    mlr = str(tolerant_get(firm, "MLRs Status", "MLR Status")).strip().lower()
+    btype = str(tolerant_get(firm, "Business Type", "Firm Type")).lower()
+    is_crypto = "crypto" in btype or int(frn) in crypto_frns
+    if not is_crypto:
+        return False, False
+    active = mlr.startswith("mlrs registered") or mlr == "registered" or (
+        not mlr and str(tolerant_get(firm, "Status")).strip().lower() not in INACTIVE_FIRM_STATUSES)
+    return True, active
+
+
+def record_from_firm(frn: int, firm: dict, address: dict | None = None, crypto_frns=(), exclude=("RAISP",),
+                     agents=("emd", "psd")):
     psd = tolerant_get(firm, "PSD / EMD Status", "PSD/EMD Status")
     status = tolerant_get(firm, "Status")
     cls = classify(psd, status)
-    if not cls:
-        return None
-    ltype, active = cls
+    if cls and cls[0] in exclude:
+        cls = None
+    is_crypto, crypto_active = crypto_status(frn, firm, crypto_frns)
+    agent_date = ""
+    if not cls and not is_crypto:
+        ag = agent_status(firm, agents)
+        if not ag:
+            return None
+        cls = (ag[0], ag[1])
+        psd, agent_date = ag[2], ag[3]
+    if cls and is_crypto:
+        ltype, active = f"{cls[0]} + cryptoasset firm", cls[1] or crypto_active
+    elif cls:
+        ltype, active = cls
+    else:
+        ltype, active = CRYPTO_TYPE, crypto_active
+    mlr = str(tolerant_get(firm, "MLRs Status", "MLR Status")).strip()
+    if mlr and not psd:
+        psd = mlr
+    elif mlr and is_crypto:
+        psd = f"{psd}; {mlr}"
     address = address or {}
     return Record(
         key=f"fca:{frn}",
@@ -198,7 +265,8 @@ def record_from_firm(frn: int, firm: dict, address: dict | None = None):
         licence_type=ltype,
         active=active,
         status_detail=f"{psd}" + (f" (firm status: {status})" if status else ""),
-        status_date=str(tolerant_get(firm, "PSD / EMD Effective Date", "Status Effective Date"))[:10],
+        status_date=agent_date or str(tolerant_get(firm, "PSD / EMD Effective Date", "MLRs Status Effective Date",
+                                                   "Status Effective Date"))[:10],
         reference=str(frn),
         city=str(tolerant_get(address, "Town")),
         website=str(tolerant_get(address, "Website Address", "Website")),
@@ -226,7 +294,7 @@ def load_state(ctx: Context) -> dict:
     ranges = cfg.get("seed_ranges") or [[900000, 999999], [500000, 899999],
                                          [1000000, 1100000], [100000, 499999]]
     return {"seed": {"ranges": ranges, "range_index": 0, "cursor": ranges[0][0],
-                     "done": False, "checked": 0},
+                     "done": False, "checked": 0, "classify_version": CLASSIFY_VERSION},
             "tracked": {}, "max_frn_seen": 0, "last_full_recheck": "",
             "last_wide_frontier": ""}
 
@@ -252,12 +320,16 @@ def _check_frn(client: FCAClient, st: dict, frn: int, enrich: bool, firm=_MISSIN
     st["max_frn_seen"] = max(st.get("max_frn_seen", 0), frn)
     prev = st["tracked"].get(str(frn))
     addr = None
+    kw = {"crypto_frns": getattr(client, "crypto", ()), "exclude": getattr(client, "exclude", ("RAISP",)),
+          "agents": getattr(client, "agents", ("emd", "psd"))}
     if enrich and (not prev or prev.get("_enriched") != ENRICH_VERSION):
-        rec0 = record_from_firm(frn, firm)
+        rec0 = record_from_firm(frn, firm, **kw)
         if rec0:
             addr = client.address(frn)
-    rec = record_from_firm(frn, firm, addr)
+    rec = record_from_firm(frn, firm, addr, **kw)
     if not rec:
+        if prev:  # no longer a type we track (e.g. RAISPs now excluded)
+            st["tracked"].pop(str(frn), None)
         return "other"
     d = rec.to_dict()
     if addr is None and prev:  # keep earlier enrichment
@@ -276,12 +348,20 @@ def seed(ctx: Context, hours: float) -> dict:
     cfg = ctx.source_config("fca")
     st = load_state(ctx)
     sd = st["seed"]
+    if replan(st, cfg, ctx.log):
+        save_state(ctx, st)
     if sd.get("done"):
         ctx.log.info("FCA seed already complete (%d firms tracked)", len(st["tracked"]))
         return st
     client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
     client.verify()
     enrich = bool(cfg.get("enrich_address", True))
+    dropped = [f for f, r in st["tracked"].items()
+               if r.get("licence_type") in client.exclude]
+    for f in dropped:
+        st["tracked"].pop(f)
+    if dropped:
+        ctx.log.info("FCA: %d firms of excluded types (%s) removed", len(dropped), ", ".join(client.exclude))
     extra = _watchlist(ctx)
     deadline = time.monotonic() + hours * 3600
     since_save = 0
@@ -291,10 +371,12 @@ def seed(ctx: Context, hours: float) -> dict:
         ctx.log.info("FCA: re-reading contact details for %d firms found earlier", len(stale))
         check_many(client, st, stale, enrich, ctx, int(cfg.get("parallel_requests", 8)))
         save_state(ctx, st)
-    # FRNs listed by hand are checked first
-    for frn in extra:
-        if str(frn) not in st["tracked"]:
-            _safe_check(client, st, frn, enrich, ctx)
+    # FRNs listed by hand and the FCA's cryptoasset firms are checked first
+    # (crypto ones every chunk, so firms already tracked as EMIs pick up the label)
+    todo = [f for f in extra if str(f) not in st["tracked"] or f in client.crypto]
+    if todo:
+        check_many(client, st, todo, enrich, ctx, int(cfg.get("parallel_requests", 8)))
+        save_state(ctx, st)
     workers = int(cfg.get("parallel_requests", 8))
     while time.monotonic() < deadline:
         ri = sd["range_index"]
@@ -323,6 +405,16 @@ def seed(ctx: Context, hours: float) -> dict:
     return st
 
 
+def _intersect(a: list, b: list) -> list:
+    out = []
+    for lo, hi in a:
+        for blo, bhi in b:
+            l, h = max(lo, blo), min(hi, bhi)
+            if l <= h:
+                out.append([l, h])
+    return out
+
+
 def preview_records(ctx: Context) -> list:
     """UK firms found so far by an unfinished seed scan, as record dicts."""
     p = state_path(ctx)
@@ -340,10 +432,70 @@ def preview_records(ctx: Context) -> list:
     return out
 
 
+def _scanned(sd: dict) -> list:
+    """FRN intervals already scanned, from the saved progress."""
+    out = list(sd.get("scanned", []))
+    for i, (lo, hi) in enumerate(sd["ranges"]):
+        if i < sd["range_index"]:
+            out.append([lo, hi])
+        elif i == sd["range_index"] and sd["cursor"] > lo:
+            out.append([lo, min(sd["cursor"] - 1, hi)])
+    return out
+
+
+def _subtract(ranges: list, done: list) -> list:
+    out = []
+    for lo, hi in ranges:
+        parts = [[lo, hi]]
+        for dlo, dhi in done:
+            nxt = []
+            for a, b in parts:
+                if dhi < a or dlo > b:
+                    nxt.append([a, b])
+                    continue
+                if a < dlo:
+                    nxt.append([a, dlo - 1])
+                if b > dhi:
+                    nxt.append([dhi + 1, b])
+            parts = nxt
+        out += parts
+    return out
+
+
+def replan(st: dict, cfg: dict, log=None) -> bool:
+    """If seed_ranges in config.yaml changed (order, added or removed ranges),
+    rebuild the remaining plan in the new order, keeping everything scanned."""
+    sd = st["seed"]
+    want = [list(map(int, r)) for r in (cfg.get("seed_ranges") or [])] or sd.get("config_ranges") or sd["ranges"]
+    outdated = sd.get("classify_version", 1) < CLASSIFY_VERSION
+    if not outdated and (sd.get("done") or want == sd.get("config_ranges", sd["ranges"])):
+        return False
+    scanned = _scanned(sd)
+    remaining = _subtract(want, scanned)
+    if outdated:
+        # numbers scanned before agents/crypto were kept are scanned again, after the rest
+        remaining += _intersect(scanned, want)
+        scanned = []
+        sd["classify_version"] = CLASSIFY_VERSION
+        sd["done"] = False
+    sd.update({"config_ranges": want, "scanned": scanned, "ranges": remaining or [[0, -1]],
+               "range_index": 0, "cursor": (remaining or [[0]])[0][0]})
+    if not remaining:
+        sd["done"] = True
+    if log:
+        log.info("FCA seed: new range plan %s (already scanned: %d FRNs)", remaining,
+                 sum(b - a + 1 for a, b in scanned))
+    return True
+
+
 def seed_progress(st: dict) -> str:
     sd = st["seed"]
-    total = sum(hi - lo + 1 for lo, hi in sd["ranges"])
-    done = 0
+    within = sd.get("config_ranges")
+    scanned_before = 0
+    if within:
+        scanned_before = sum(b - a + 1 for a, b in _intersect(sd.get("scanned", []), within))
+    total = sum(max(0, hi - lo + 1) for lo, hi in sd["ranges"]) + scanned_before
+    done = scanned_before
     for i, (lo, hi) in enumerate(sd["ranges"]):
         if i < sd["range_index"]:
             done += hi - lo + 1
@@ -399,16 +551,24 @@ def _safe_check(client, st, frn, enrich, ctx) -> str:
         return "error"
 
 
-def _watchlist(ctx: Context) -> list:
-    p = ctx.data_dir / "fca_watch_frns.txt"
+def _read_frns(p: Path) -> list:
     if not p.exists():
         return []
     out = []
     for line in p.read_text().splitlines():
         line = line.split("#")[0].strip()
-        if line.isdigit():
+        if line.isdigit() and int(line) not in out:
             out.append(int(line))
     return out
+
+
+def crypto_frns(ctx: Context) -> list:
+    return _read_frns(ctx.data_dir / "fca_crypto_frns.txt")
+
+
+def _watchlist(ctx: Context) -> list:
+    out = _read_frns(ctx.data_dir / "fca_watch_frns.txt")
+    return out + [f for f in crypto_frns(ctx) if f not in out]
 
 
 class FCASource(Source):

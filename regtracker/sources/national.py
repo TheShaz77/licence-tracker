@@ -390,8 +390,12 @@ def write_diagnostics(ctx: Context, name: str, notes: list):
                     f"error: {err!r}", f"columns used: {info.get('columns')}",
                     f"headers: {info.get('headers')}", f"data rows: {info.get('rows')}  kept: {info.get('kept')}",
                     f"type values: {info.get('type_values')}", "first lines:"]
+            if info.get("first_text_lines"):  # PDFs: the extracted text, not the raw bytes
+                out += [repr(str(l)[:300]) for l in info["first_text_lines"]]
+                out.append("")
+                continue
             try:
-                text = decode_bytes(raw) if raw[:2] != b"PK" else "(xlsx)"
+                text = decode_bytes(raw) if raw[:2] not in (b"PK", b"%P") else "(binary)"
             except Exception:
                 text = "(undecodable)"
             out += [repr(l[:300]) for l in text.replace("\r\n", "\n").split("\n")[:8]]

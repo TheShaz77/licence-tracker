@@ -67,8 +67,33 @@ def describe_states(states: list) -> str:
     return ", ".join(states)
 
 
+def _sheet_to_tsv(raw: bytes) -> str:
+    """A downloaded spreadsheet (.xlsx, or the old .xls format) as tab-separated text."""
+    if raw[:2] == b"PK":
+        import io
+        import openpyxl
+        ws = openpyxl.load_workbook(io.BytesIO(raw), read_only=True, data_only=True).active
+        rows = ws.iter_rows(values_only=True)
+    else:
+        import xlrd
+        sh = xlrd.open_workbook(file_contents=raw).sheet_by_index(0)
+        rows = (sh.row_values(r) for r in range(sh.nrows))
+    def cell(v):
+        if hasattr(v, "strftime"):
+            return f"{v.month}/{v.day}/{v.year}"
+        return "" if v is None else str(v).replace("\t", " ").replace("\n", " ")
+    return "\n".join("\t".join(cell(v) for v in r) for r in rows)
+
+
 def parse_fincen(raw: bytes) -> tuple:
-    text = decode_bytes(raw)
+    if raw[:2] == b"PK" or raw[:2] == b"\xd0\xcf":
+        text = _sheet_to_tsv(raw)
+    else:
+        text = decode_bytes(raw)
+    if "<table" in text[:5000].lower():  # some "Excel" exports are really HTML tables
+        from .usstates import html_tables
+        t = max(html_tables(text), key=len)
+        text = "\n".join("\t".join(c for c in r) for r in t)
     lines = text.splitlines()
     head_i = next((i for i, l in enumerate(lines[:30]) if "LEGAL NAME" in l.upper()), None)
     if head_i is None:
@@ -143,24 +168,51 @@ def parse_fincen(raw: bytes) -> tuple:
     return out, info
 
 
+def to_text_table(raw: bytes) -> bytes:
+    """A hand-downloaded file may be the TSV/CSV export or an Excel file."""
+    if raw[:2] == b"PK" or raw[:2] == b"\xd0\xcf":
+        if raw[:2] == b"PK":
+            from .national import read_table
+            h, rows = read_table(raw)
+            every = [h] + rows
+        else:
+            import xlrd
+            sh = xlrd.open_workbook(file_contents=raw).sheet_by_index(0)
+            every = [[str(sh.cell_value(r, c)) for c in range(sh.ncols)] for r in range(sh.nrows)]
+        return "\n".join("\t".join(str(c or "").replace("\t", " ") for c in r) for r in every).encode()
+    return raw
+
+
 class FinCENSource(Source):
     name = "fincen"
     label = "US FinCEN MSB registrant list"
     fingerprint = "fincen-v1"
 
+    def manual_file(self, ctx):
+        folder = ctx.data_dir / "manual"
+        files = sorted(folder.glob("fincen*"), key=lambda p: p.stat().st_mtime, reverse=True) if folder.exists() else []
+        return files[0] if files else None
+
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("fincen")
         url = cfg.get("url") or URL
-        if not robots_allowed(ctx.session, url):
-            raise SourceNotReady(f"{url} is disallowed by the site's robots.txt, so it is not downloaded")
-        r = ctx.session.post(url, data={"site": "AA"}, timeout=300)
-        r.raise_for_status()
+        manual = self.manual_file(ctx)
+        if manual is not None:
+            # downloaded by hand from msb.fincen.gov (the site's robots.txt rules out automatic downloads)
+            raw, url = to_text_table(manual.read_bytes()), f"data/manual/{manual.name}"
+        elif not robots_allowed(ctx.session, url):
+            raise SourceNotReady("msb.fincen.gov's robots.txt doesn't allow automatic downloads; "
+                                 "download the MSB list by hand and upload it to data/manual/ (see README)")
+        else:
+            r = ctx.session.post(url, data={"site": "AA"}, timeout=300)
+            r.raise_for_status()
+            raw = r.content
         err, info, recs = None, {}, []
         try:
-            recs, info = parse_fincen(r.content)
+            recs, info = parse_fincen(raw)
         except Exception as e:
             err = e
-        write_diagnostics(ctx, self.name, [(url, r.content, info, err)])
+        write_diagnostics(ctx, self.name, [(url, raw, info, err)])
         if err:
             raise err
         if len(recs) < int(cfg.get("min_records", 5000)):

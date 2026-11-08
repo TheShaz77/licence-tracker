@@ -1,0 +1,73 @@
+# FCA-registered cryptoasset firms (Money Laundering Regulations), from the FCA
+# Register's "Registered and Formerly Registered Cryptoasset firms" list as at
+# 12 October 2026. The tracker looks each one up in the FCA API, so a firm's
+# current status always comes from the FCA itself. Add a firm's FRN on its own
+# line to track it; new crypto-only firms are also found automatically.
+933825   # ABEX Capital UK Limited
+1037671  # AGANT FINANCE LIMITED
+838656   # Archax Ltd
+1022133  # ASSET REALITY LTD
+1035519  # AVIAN LABS LTD
+119179   # Baillie Gifford & Co Limited
+928840   # BCP TECHNOLOGIES LTD
+925234   # BITPANDA BROKER UK LTD
+928556   # Bitpanda Custody Ltd
+978690   # Bitstamp UK Limited
+178638   # BlackRock International Limited
+1036678  # BLOCKCHAIN.COM OPERATIONS (UK) LIMITED
+999863   # BNXA UK VASP Limited
+928607   # Bottlepay Ltd (formerly registered)
+1012912  # BPX Markets Limited
+900635   # CB Payments Ltd
+1007192  # CEX.IO Markets UK LTD
+900696   # Clear Junction Digital Limited
+1016940  # Cleartoken Depository Limited
+928767   # CoinJar UK Limited
+1015150  # ComplyCrypto Depository Limited (formerly registered)
+757895   # Crypto Facilities Ltd
+927958   # Digivault Limited (formerly registered)
+746273   # DRW GLOBAL MARKETS LTD
+930442   # Enigma Securities Ltd
+583263   # ETORO (UK) LIMITED
+928786   # Fibermode Limited (formerly registered)
+928554   # FIDELITY DIGITAL ASSETS, LTD
+941745   # FORIS DAX UK LIMITED
+928891   # Galaxy Digital UK Limited
+921817   # GEMINI INTERGALACTIC UK, LTD
+900988   # Gemini Payments UK, LTD
+931277   # Genesis Custody Limited (formerly registered)
+1018980  # GSR Markets UK Limited
+828692   # Hidden Road Partners CIV UK Ltd
+927859   # ICONOMI LTD
+1035380  # IG Digital Assets Limited
+208159   # Interactive Brokers (U.K.) Limited
+1021141  # Keyrock UK Limited
+985974   # Komainu UK Limited
+927401   # MONAVATE ONCHAIN LTD
+944716   # MoonPay (UK) Limited
+921481   # OANDA Coinpass Limited
+1000741  # Paypal UK Ltd
+900015   # Paysafe Financial Services Limited
+928768   # PAYWARD LTD.
+990940   # Portofino Technologies UK Ltd
+1031720  # Push Labs Limited
+1031721  # Push Virtual Assets Limited
+928783   # Ramp Swaps Limited
+849446   # Regulated Decentralised Finance Ltd
+900562   # Revolut Ltd
+1028021  # RIPPLE MARKETS UK LTD
+823590   # Robinhood U.K. Ltd
+900001   # Skrill Limited
+928852   # Solidi Ltd
+114276   # Standard Chartered Bank
+563834   # Strata Global Limited
+183100   # The Bank of New York Mellon (International) Limited
+146880   # TP ICAP E&C Limited
+928910   # Transak Limited
+938277   # Uphold Europe Limited
+928764   # Wintermute Trading LTD
+929098   # X Capital Group Limited (formerly registered)
+900977   # Ziglu Limited
+928347   # Zodia Custody Limited
+954558   # Zodia Markets (UK) Limited
+901033   # Zumo Financial Services Limited

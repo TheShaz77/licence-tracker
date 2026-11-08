@@ -21,6 +21,7 @@ SHEET_COLUMNS = [
     ("phone", "Phone"),
     ("contact_source", "Contact found via"),
     ("psp_status", "PSP status (Canada)"),
+    ("ch_sro", "Swiss SRO"),
     ("fincen_status", "FinCEN MSB (US)"),
     ("us_states", "States of operation (FinCEN, US)"),
     ("us_licences", "State MT licences (US published lists)"),

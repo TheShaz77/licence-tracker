@@ -53,6 +53,8 @@ class FINMASource(Source):
 
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("finma")
+        # a change of included types re-baselines quietly instead of alerting on every dropped firm
+        self.fingerprint = "finma:" + str(cfg.get("include_types", DEFAULT_INCLUDE)) + "|" + str(cfg.get("exclude_types", DEFAULT_EXCLUDE))
         r = ctx.session.get(cfg.get("url") or URL, timeout=60)
         r.raise_for_status()
         return parse_finma(r.content.decode("utf-8-sig", errors="replace"),

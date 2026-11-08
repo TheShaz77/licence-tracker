@@ -79,7 +79,10 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
     """Master list = every source's latest snapshot (failed sources keep the last good one)."""
     covered = covered_countries(cfg, data_dir) if covered is None else covered
     records = []
+    switched_off = {n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) is False}
     for name in all_sources(cfg):
+        if name in switched_off:
+            continue  # source turned off in config.yaml: its old snapshot is not shown
         snap = load_snapshot(data_dir, name).values()
         if name == "eba":  # national register replaces the EU copy where we have one
             snap = [r for r in snap if r.get("jurisdiction") not in covered]
@@ -93,6 +96,8 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
             records.extend(preview)
     if any(r.get("source") in ("fintrac", "boc") for r in records):
         log.info("Canada MSB/PSP linking: %s", canada.link(records))
+    from .sources import swiss_sro
+    swiss_sro.apply(records, swiss_sro.load_cache(data_dir))
     if any(r.get("source") == "fincen" or str(r.get("source", "")).startswith("us_") for r in records):
         log.info("US MSB/state licence linking: %s",
                  usa.link(records, contacts.load(data_dir, contacts.WEB_STATE)))

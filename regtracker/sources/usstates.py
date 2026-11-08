@@ -34,7 +34,7 @@ STATES = {
            "register_url": "https://flofr.gov/education/public-information/registration-data-download"},
     "ca": {"state": "CA", "regulator": "CA DFPI", "format": "ca_html",
            "url": "https://dfpi.ca.gov/regulated-industries/money-transmitters/directory-of-money-transmitters/"},
-    "ma": {"state": "MA", "regulator": "MA DOB", "format": "table",
+    "ma": {"state": "MA", "regulator": "MA DOB", "format": "table", "manual_ext": "xlsx",
            "url": "https://www.mass.gov/doc/money-transmitter-licensee-list/download",
            "register_url": "https://www.mass.gov/lists/download-a-list-of-approved-licensees"},
     "ct": {"state": "CT", "regulator": "CT DOB", "format": "table", "find_link": r"money_transmitters?[^\"']*\.xlsx",
@@ -46,7 +46,7 @@ STATES = {
     "de": {"state": "DE", "regulator": "DE OSBC", "format": "de_pdf",
            "url": "https://banking.delaware.gov/wp-json/wp/v2/media?search=Check-Seller-and-Money-Transmitter&orderby=date&order=desc&per_page=5",
            "register_url": "https://banking.delaware.gov/"},
-    "ak": {"state": "AK", "regulator": "AK DBS", "format": "ak_pdf", "find_link": r"MSB[^\"']*Roster[^\"']*\.pdf[^\"']*",
+    "ak": {"state": "AK", "regulator": "AK DBS", "format": "ak_pdf", "manual_ext": "pdf", "find_link": r"MSB[^\"']*Roster[^\"']*\.pdf[^\"']*",
            "url": "https://commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses"},
 }
 UA = {"User-Agent": "Mozilla/5.0 (compatible; licence-tracker/1.0)"}
@@ -297,32 +297,35 @@ def pdf_lines(raw: bytes) -> list:
     return out
 
 
+DE_SKIP = re.compile(r"^(State of Delaware|OFFICE OF THE STATE BANK|Licensees and Existing|Check Seller|Page \d|"
+                     r"Filing Count|Branches|Locations|License|Report)", re.I)
+
+
 def parse_de_pdf(code, raw: bytes, spec) -> tuple:
     lines = pdf_lines(raw)
-    out, info = {}, {"headers": lines[:3], "rows": 0, "columns": {}}
-    for i, line in enumerate(lines):
-        m = re.match(r"^(\d{4,7})\s+(\S.*)$", line)
-        if not m or re.match(r"^\d{4,7}\s+(Branches|Locations)", line, re.I):
-            continue
-        nxt = lines[i + 1:i + 6]
-        if CITY_ST_ZIP.search(line) or not any(l.startswith(("Contact:", "Filing Status:")) for l in nxt[:2]):
-            continue  # an address, a branch line or page furniture
+    out, info = {}, {"headers": lines[:3], "rows": 0, "columns": {}, "first_text_lines": lines[:40]}
+    starts = [i for i, l in enumerate(lines)
+              if re.match(r"^\d{4,7}\s+\S", l) and not CITY_ST_ZIP.search(l)
+              and not re.match(r"^\d{4,7}\s+(Branches|Locations|Filing|Contact)", l, re.I)]
+    for n, i in enumerate(starts):
+        end = starts[n + 1] if n + 1 < len(starts) else len(lines)
+        chunk = lines[i:end]
+        text = " ".join(chunk)
+        ms = re.search(r"Filing Status:\s*(.*?)\s*(?:Expires Date:\s*(\S+)|$)", text)
+        if not ms:
+            continue  # a branch line or page furniture
         info["rows"] += 1
-        addr = nxt[0] if nxt and not nxt[0].startswith(("Contact:", "Filing")) else ""
-        phone = status = expires = ""
-        for l in nxt:
-            mc = re.match(r"Contact:\s*(.*?)\s*-\s*(\(?\d{3}\)?[\s.-]*\d{3}[\s.-]*\d{4})", l)
-            if mc:
-                phone = mc.group(2)
-            ms = re.match(r"Filing Status:\s*(.*?)\s*(?:Expires Date:\s*(\S+))?$", l)
-            if ms:
-                status, expires = ms.group(1), ms.group(2) or ""
-                break
+        m = re.match(r"^(\d{4,7})\s+(.*)$", chunk[0])
+        head = m.group(2)
+        head = re.split(r"\s+(?=\d+\s+\w)", head, maxsplit=1)[0] if CITY_ST_ZIP.search(head) else head
+        name = re.sub(r"\s+D/B/A\s+.*$", "", head, flags=re.I).strip()
+        dba = (re.search(r"D/B/A\s+(.*)$", head, re.I) or [None, ""])[1]
+        rest = text[len(chunk[0]):]
+        addr = re.split(r"Contact:|Filing Status:", rest)[0].strip()
+        mc = re.search(r"Contact:\s*(.*?)\s*-\s*(\(?\d{3}\)?[\s.-]*\d{3}[\s.-]*\d{4})", text)
         city, st = city_of(addr)
-        name = re.sub(r"\s+D/B/A\s+.*$", "", m.group(2), flags=re.I)
-        rec = make_record(code, spec, name, m.group(1), status, city, phone,
-                          {"address": addr, "hq_state": st, "expires": expires,
-                           "dba": (re.search(r"D/B/A\s+(.*)$", m.group(2), re.I) or [None, ""])[1]})
+        rec = make_record(code, spec, name, m.group(1), ms.group(1).strip(), city, mc.group(2) if mc else "",
+                          {"address": addr, "hq_state": st, "expires": ms.group(2) or "", "dba": dba})
         rec.licence_type = "Check seller / money transmitter licence (DE)"
         out[rec.key] = rec
     info["kept"] = len(out)
@@ -331,7 +334,7 @@ def parse_de_pdf(code, raw: bytes, spec) -> tuple:
 
 def parse_ak_pdf(code, raw: bytes, spec) -> tuple:
     lines = pdf_lines(raw)
-    out, info = {}, {"headers": lines[:4], "rows": 0, "columns": {}}
+    out, info = {}, {"headers": lines[:4], "rows": 0, "columns": {}, "first_text_lines": lines[:40]}
     pat = re.compile(r"^(?P<rest>.+?)\s+(?P<status>Approved(?:[- ][A-Za-z]+)*|Suspended|Revoked|Inactive|Expired|"
                      r"Surrendered|Terminated|Pending\S*)\s+(?P<lic>\d{3,8})$")
     for line in lines:
@@ -354,11 +357,57 @@ def parse_ak_pdf(code, raw: bytes, spec) -> tuple:
     return list(out.values()), info
 
 
+class _Resp:
+    def __init__(self, url, content, ctype):
+        self.url, self.content, self.status_code = url, content, 200
+        self.headers = {"content-type": ctype}
+        self.text = content.decode("utf-8", "replace")
+
+    def json(self):
+        import json
+        return json.loads(self.text)
+
+    def raise_for_status(self):
+        pass
+
+
+def browser_get(url: str) -> _Resp:
+    """Fetch a page or file with headless Chromium (Playwright). Pages are
+    returned after JavaScript has run, so links added by scripts are present."""
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        try:
+            ctx = browser.new_context(accept_downloads=True)
+            page = ctx.new_page()
+            if re.search(r"\.(xlsx?|pdf|zip|csv)(\?|$)|/download$", url, re.I):
+                resp = ctx.request.get(url, timeout=120000)
+                if resp.status >= 400:
+                    raise RuntimeError(f"{resp.status} from {url} (also refused to a browser)")
+                return _Resp(url, resp.body(), resp.headers.get("content-type", ""))
+            resp = page.goto(url, wait_until="networkidle", timeout=120000)
+            if resp is not None and resp.status >= 400:
+                raise RuntimeError(f"{resp.status} from {url} (also refused to a browser)")
+            return _Resp(url, page.content().encode("utf-8"), "text/html")
+        finally:
+            browser.close()
+
+
 PARSERS = {"fl_zip": parse_fl_zip, "ca_html": parse_ca_html, "table": parse_table_file,
            "html_table": parse_html_table, "de_pdf": parse_de_pdf, "ak_pdf": parse_ak_pdf}
 
 
 # ---------------------------------------------------------------- source
+
+def manual_file(ctx, name: str):
+    """A file you downloaded yourself into data/manual/ (newest one for this source)."""
+    d = ctx.data_dir / "manual"
+    if not d.exists():
+        return None
+    files = sorted((p for p in d.iterdir() if p.is_file() and p.stem.lower() == name.lower()),
+                   key=lambda p: p.stat().st_mtime, reverse=True)
+    return files[0] if files else None
+
 
 class USStateSource(Source):
     def __init__(self, code: str, spec: dict):
@@ -372,8 +421,16 @@ class USStateSource(Source):
         if not robots_allowed(ctx.session, url):
             raise SourceNotReady(f"{url} is disallowed by robots.txt")
         r = ctx.session.get(url, timeout=120, headers=UA)
+        if r.status_code == 403 or (r.ok and self._challenge(r)):
+            # some state sites refuse plain scripts; a real (headless) browser usually gets through
+            return browser_get(url)
         r.raise_for_status()
         return r
+
+    @staticmethod
+    def _challenge(r) -> bool:
+        ct = (r.headers.get("content-type") or "").lower()
+        return "html" in ct and len(r.content) < 20000 and re.search(rb"captcha|challenge|access denied|cf-chl", r.content[:20000], re.I)
 
     def resolve_url(self, ctx) -> str:
         spec = self.spec
@@ -386,7 +443,7 @@ class USStateSource(Source):
             return pdfs[0]["source_url"]
         if spec.get("find_link"):
             page = self._get(ctx, spec["url"]).text
-            m = re.search(r"""href=["']([^"']*?""" + spec["find_link"] + r""")["']""", page, re.I)
+            m = re.search(r"""href=["']([^"']*?""" + spec["find_link"] + r"""[^"']*)["']""", page, re.I)
             if not m:
                 raise RuntimeError(f"{spec['state']}: download link not found on {spec['url']}")
             return urljoin(spec["url"], htmlmod.unescape(m.group(1)))
@@ -396,8 +453,23 @@ class USStateSource(Source):
         overrides = ((ctx.source_config("us_states") or {}).get("overrides") or {}).get(self.code) or {}
         spec = {**self.spec, **overrides}
         self.spec = spec
-        url = self.resolve_url(ctx)
-        raw = self._get(ctx, url).content
+        manual = manual_file(ctx, self.name)
+        if manual and spec.get("manual_only"):
+            url, raw = str(manual), manual.read_bytes()
+        else:
+            try:
+                url = self.resolve_url(ctx)
+                raw = self._get(ctx, url).content
+            except Exception as e:
+                blocked = "403" in str(e) or isinstance(e, SourceNotReady)
+                if not blocked:
+                    raise
+                if not manual:
+                    raise SourceNotReady(
+                        f"the {spec['state']} site blocks automated downloads; download the list yourself from "
+                        f"{spec.get('register_url') or spec['url']} and upload it to data/manual/ as {self.name}"
+                        f".{spec.get('manual_ext', 'xlsx')}")
+                url, raw = str(manual), manual.read_bytes()
         err, info, recs = None, {}, []
         try:
             recs, info = PARSERS[spec["format"]](self.code, raw, spec)

@@ -23,11 +23,17 @@ by email (through a GitHub issue) whenever something changes.
 
 | Source | Jurisdictions | Licence types | How changes are detected | Refresh |
 |---|---|---|---|---|
-| **FCA Register API** | UK | Authorised EMI, Small EMI, Authorised PI (API), Small PI (SPI), RAISP | Each firm's status re-checked daily; new FRNs scanned daily | Live |
-| **PRA lists** (Bank of England) | UK | Banks (UK-incorporated and branches), building societies | Additions and removals between lists | Monthly |
+| **FCA Register API** | UK | EMIs, small EMIs, APIs, SPIs, e-money agents, payment (PSD) agents, cryptoasset firms (MLR registered) | Each firm's status re-checked daily; new FRNs scanned daily | Live |
 | **EBA PSD2 register** | All EU/EEA countries (about 30) | PIs, EMIs, AISPs, small/exempt PIs and EMIs | Additions, removals, withdrawal dates, type and service changes | Daily |
-| **ECB list of MFIs** | All EU countries | Credit institutions (banks), incl. branches | Additions and removals | Daily |
-| **FINMA** | Switzerland | Banks, FinTech licence holders | Additions and removals | Daily |
+| **ESMA MiCA register** | EU/EEA | MiCA CASPs (authorised), financial firms notified for crypto services (Art. 60), e-money token issuers | Additions, removals, end dates | Daily |
+| **FINMA** | Switzerland | FinTech licence holders | Additions and removals | Daily |
+| **FINMA SRO member search** | Switzerland | Which AML self-regulatory organisation a Swiss firm belongs to (one firm at a time) | Re-checked every 60 days | Daily |
+| **FINTRAC, Bank of Canada** | Canada | MSBs; PSPs registered / applied under the RPAA | Additions, removals, status changes | Daily |
+| **FinCEN + 8 state lists** | US | MSBs; state money transmitter licences | Additions, removals, status changes | Daily / weekly |
+| **SARB, Prudential Authority, FSCA** | South Africa | Third-party payment providers, payment system operators, PCH system operators, banks, crypto asset service providers | Additions and removals | Daily |
+
+Banks (credit institutions) are not tracked, except in South Africa and where a
+bank appears on the MiCA register for its crypto services.
 
 Sanctioned countries are excluded through `excluded_countries` in `config.yaml`
 (default: RU, BY, IR, KP, CU, SY). None of the current sources license firms in
@@ -280,3 +286,26 @@ Columns on the **United States (US)** tab:
 Firms are matched across lists by name, so a firm registered under a different
 name in one place can be missed. No state publishes pending applications, so
 there is no "applied" group for the US.
+
+**Registers that block automated downloads** (FinCEN, Massachusetts, Alaska):
+download the file in your browser and upload it to `data/manual/` under the
+name given in `data/manual/README.md`. The run summary says "waiting" for these
+until a file is there.
+
+## South Africa
+
+| Source | What | Where it comes from |
+|---|---|---|
+| za_tppp | Third-party payment providers, with their sponsoring bank(s) | SARB public register (PDF; the link changes with each edition and is found automatically) |
+| za_so, za_pchso | Payment system operators and payment clearing house system operators | SARB public registers |
+| za_banks | Locally and foreign controlled banks, branches of foreign banks, mutual banks, with CEO, phone and website | Prudential Authority lists |
+| za_casp | Licensed crypto asset service providers, with FSP number | FSCA list |
+
+## Switzerland: SRO members
+
+No Swiss self-regulatory organisation publishes its member list, and FINMA's
+SRO member search shows at most 20 results per search, so there is no list to
+download. The tracker looks firms up one at a time (40 per day, each re-checked
+every 60 days): Swiss firms already in the sheet from other registers get a
+**Swiss SRO** value, and names you add to `data/ch_sro_watch.txt` (one per line)
+appear as rows on the Switzerland tab once FINMA shows them as SRO members.
