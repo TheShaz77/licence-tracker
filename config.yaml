@@ -76,9 +76,8 @@ sources:
     min_hours: 12 # FinCEN updates weekly; no need to download the 5 MB file every 2 hours
 
   fincen_os:      # US: FinCEN's MSB list via OpenSanctions' daily copy (FinCEN blocks automated downloads)
-    enabled: false # OpenSanctions data is free for NON-COMMERCIAL use only; use inside a for-profit
-                   # business (e.g. prospecting for an employer) needs their data licence. Set to true
-                   # only if your use qualifies or you have a licence.
+    enabled: true  # OpenSanctions data is free for NON-COMMERCIAL use only; use inside a for-profit
+                   # business (e.g. prospecting for an employer) needs their data licence.
     min_hours: 20
 
   mica:           # EU/EEA: MiCA crypto-asset service providers and e-money token issuers (ESMA register)
@@ -103,6 +102,9 @@ sources:
   za_banks:       # South Africa: banks, branches of foreign banks, mutual banks (Prudential Authority)
     enabled: true
     min_hours: 12
+  za_banks_wiki:  # South Africa: banks from Wikipedia's list (kept up from the SARB lists; unofficial)
+    enabled: true
+    min_hours: 20
   za_casp:        # South Africa: licensed crypto asset service providers (FSCA)
     enabled: true
     min_hours: 12

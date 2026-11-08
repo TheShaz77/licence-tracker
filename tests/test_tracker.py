@@ -1407,3 +1407,25 @@ def test_opensanctions_msb_parse():
                 "us-msb-2,Person,JOHN DOE,,,us,\"5 ELM, AUSTIN, TX 73301\",,,,,FinCEN MSB,2025-01-01,2026-11-07,2025-01-01\n")
     recs, info = parse(csv_text.encode())
     assert [(r.name, r.city, r.status_date) for r in recs] == [("ACME PAY LLC", "Miami", "2022-01-03")]
+
+
+def test_za_banks_wiki_parse():
+    from regtracker.sources.za_wiki import parse_wikitext
+    text = """This is a list of commercial banks in South Africa<ref>{{cite web|title=SARB}}</ref>
+[[Absa Group Limited|Absa Bank]]
+[[Capitec Bank]]
+* [[Standard Bank]]
+* [[FirstRand|FirstRand Bank]] ([[First National Bank (South Africa)|FNB]])
+* [[TymeBank]]
+* [[Albaraka Bank]]
+* [[South African Reserve Bank]]
+* [[Johannesburg]]
+* [[GBS Mutual Bank]]
+* Ditsobotla Primary Savings and Credit Co-operative Bank
+[[File:Logo.png]]
+== See also ==
+* [[Banking in South Africa]]
+"""
+    names = [n for n, _ in parse_wikitext(text)]
+    assert names == ["Absa Bank", "Capitec Bank", "Standard Bank", "FirstRand Bank", "TymeBank",
+                     "Albaraka Bank", "GBS Mutual Bank", "Ditsobotla Primary Savings and Credit Co-operative Bank"]
