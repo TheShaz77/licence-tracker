@@ -5629,6 +5629,16 @@
 "phone_from": "firm website",
 "website": "https://bleyt.com"
 },
+"site:blightsmotors.co.uk": {
+"checked": "2026-11-08",
+"email": "complaints@automotivecompliance.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01237472282",
+"phone_from": "firm website",
+"website": "https://www.blightsmotors.co.uk"
+},
 "site:blinkpay.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -12858,6 +12868,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://emanitaglobal.com"
+},
+"site:embstravels.com": {
+"checked": "2026-11-08",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://embstravels.com"
 },
 "site:emea.cib.natixis.com": {
 "checked": "2026-11-07",
@@ -20609,6 +20629,16 @@
 "phone_from": "firm website",
 "website": "https://WWW.JIUYUPAYMENTSOLUTIONS.COM"
 },
+"site:jjfsltd.com": {
+"checked": "2026-11-08",
+"email": "justask@jjfsltd.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01789 263257",
+"phone_from": "firm website",
+"website": "https://www.jjfsltd.com"
+},
 "site:jnmoneyonline.com": {
 "checked": "2026-11-06",
 "email": "jnmtonline@jngroup.com",
@@ -22548,6 +22578,16 @@
 "phone": "+496925510200",
 "phone_from": "firm website",
 "website": "http://www.kt-bank.de"
+},
+"site:kuberawealth.co.uk": {
+"checked": "2026-11-08",
+"email": "info@kuberawealth.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+44 (0)20 8868 8886",
+"phone_from": "firm website",
+"website": "https://www.kuberawealth.co.uk"
 },
 "site:kucoin.eu": {
 "checked": "2026-11-08",
@@ -31689,6 +31729,16 @@
 "phone_from": "firm website",
 "website": "https://www.pfandbriefbank.com"
 },
+"site:pfpadviser.co.uk": {
+"checked": "2026-11-08",
+"email": "enquiries@pfpadviser.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01562510510",
+"phone_from": "firm website",
+"website": "https://www.pfpadviser.co.uk"
+},
 "site:pfs.ltd": {
 "checked": "2026-11-08",
 "email": "queries@pfs.ltd",
@@ -32208,6 +32258,16 @@
 "phone": "+420 224 174 500",
 "phone_from": "firm website",
 "website": "https://www.ppfbanka.cz"
+},
+"site:ppmfinancialplanning.com": {
+"checked": "2026-11-08",
+"email": "admin@ppmfinancialplanning.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01214455694",
+"phone_from": "firm website",
+"website": "https://www.ppmfinancialplanning.com"
 },
 "site:ppro.com": {
 "checked": "2026-11-06",
@@ -46108,6 +46168,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://WWW.VELOREMIT.CA"
+},
+"site:veloremit.com": {
+"checked": "2026-11-08",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.veloremit.com"
 },
 "site:velorium.info": {
 "checked": "2026-11-06",
