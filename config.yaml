@@ -22,6 +22,7 @@ sheet_country_tabs: true
 sources:
   fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money & payment agents (FCA API)
     enabled: true
+    min_hours: 20
     requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
     enrich_address: true          # one extra call per firm, once: town, website, phone
