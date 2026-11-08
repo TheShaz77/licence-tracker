@@ -367,13 +367,15 @@ def ak_rows(pages: list) -> list:
         for key in sorted(lines):
             ws = sorted(lines[key], key=lambda w: w["x0"])
             text = " ".join(w["text"] for w in ws)
-            if re.match(r"^Page \d+ of \d+$", text):
+            if re.match(r"^Page \d+ of \d+$", text) or text.strip() == "End of Listing":
                 continue
+            ws = [w for w in ws if not re.match(r"^(End|of|Listing)$", w["text"]) or "End of Listing" not in text]
             cols = {"name": [], "dba": [], "addr": [], "status": [], "lic": []}
             for w in ws:
                 x = w["x0"]
-                col = ("lic" if x >= hdr["lic"] - 2 else "status" if x >= status_x - 2 else
-                       "addr" if x >= hdr["addr"] - 2 else "dba" if x >= hdr["dba"] - 2 else "name")
+                # values sit a little left of their column headings: allow a margin
+                col = ("lic" if x >= hdr["lic"] - 12 else "status" if x >= status_x - 12 else
+                       "addr" if x >= hdr["addr"] - 12 else "dba" if x >= hdr["dba"] - 12 else "name")
                 cols[col].append(w["text"])
             c = {k: " ".join(v) for k, v in cols.items()}
             if re.fullmatch(r"\d{3,8}", c["lic"]):
@@ -439,7 +441,7 @@ class USStateSource(Source):
         self.spec = spec
         self.name = f"us_{code}"
         self.label = f"US {spec['state']} money transmitter licensees ({spec['regulator']})"
-        self.fingerprint = f"usstate-v1:{spec['format']}" + ("-v2" if spec["format"] == "ak_pdf" else "")
+        self.fingerprint = f"usstate-v1:{spec['format']}" + ("-v3" if spec["format"] == "ak_pdf" else "")
 
     def _get(self, ctx, url):
         if not robots_allowed(ctx.session, url):

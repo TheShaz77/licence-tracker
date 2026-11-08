@@ -1592,9 +1592,15 @@ def test_alaska_roster_columns_and_editions(tmp_path, monkeypatch):
         w("American", 10, 160), w("Express", 60, 160), w("Prepaid", 100, 160), w("Card", 140, 160), w("18850", 385, 160),
         w("North", 415, 160), w("Approved", 570, 160), w("10048", 690, 160),
         w("Management", 10, 170), w("Corporation", 70, 170), w("Phoenix,", 385, 170), w("AZ", 430, 170), w("85054", 450, 170),
+        w("MSB", 10, 190), w("USA", 35, 190), w("Inc", 60, 190), w("Ozan", 183, 190), w("1", 380, 190), w("Main", 392, 190),
+        w("Approved", 566, 190), w("011130", 686, 190), w("Foster", 379, 200), w("City,", 410, 200), w("CA", 440, 200),
+        w("94404", 460, 200), w("Zero", 10, 215), w("Hash", 40, 215), w("LLC", 70, 215), w("9", 385, 215),
+        w("Approved", 570, 215), w("011078", 690, 215), w("End", 10, 230), w("of", 30, 230), w("Listing", 45, 230),
         w("Page", 690, 300), w("1", 715, 300), w("of", 725, 300), w("12", 735, 300)]
     rows = u.ak_rows([page])
-    assert [r["lic"] for r in rows] == ["018134", "012824", "10048"]
+    assert [r["lic"] for r in rows] == ["018134", "012824", "10048", "011130", "011078"]
+    assert rows[3]["name"] == "MSB USA Inc" and rows[3]["dba"] == "Ozan" and rows[3]["addr"][-1] == "Foster City, CA 94404"
+    assert rows[4]["name"] == "Zero Hash LLC"
     assert rows[2]["name"] == "American Express Prepaid Card Management Corporation"
     assert rows[2]["addr"] == ["18850 North", "Phoenix, AZ 85054"] and rows[1]["dba"] == "GovPayNet"
 
