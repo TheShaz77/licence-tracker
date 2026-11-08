@@ -191,10 +191,15 @@ def parse_banks(lines: list, url: str, kind: str) -> list:
 
 def parse_casps(lines: list, url: str = "") -> list:
     out = {}
+    head = " ".join(lines[:6])
+    when = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})\b",
+                     head, re.I)
+    edition = f", {when.group(1).title()} {when.group(2)} edition" if when else ""
     for line in lines:
-        if re.search(r"\b(FSP Number|FSP No|Name of)\b", line, re.I):
+        if re.search(r"\b(FSP Number|FSP No|Name of|List of|Act, No\.|Page \d+ of)\b", line, re.I):
             continue
-        m = re.match(r"^(?:\d{1,4}\.?\s+)?(.+?)\s+(?:FSP\s*(?:No\.?)?\s*)?(\d{4,6})(?:\s+.*)?$", line)
+        # each firm row starts with its row number: "12 Luno (Pty) Ltd 53314 CAT I & II ..."
+        m = re.match(r"^\d{1,4}\.?\s+(.+?)\s+(?:FSP\s*(?:No\.?)?\s*)?(\d{3,6})(?:\s+.*)?$", line)
         if not m:
             continue
         name = m.group(1).strip(" -|")
@@ -202,7 +207,7 @@ def parse_casps(lines: list, url: str = "") -> list:
             continue
         out[m.group(2)] = Record(key="za_casp:" + m.group(2), source="za_casp", jurisdiction="ZA", regulator="FSCA",
                                  name=name, licence_type="Crypto asset service provider (FSP licence)", active=True,
-                                 status_detail="Approved CASP (FSCA list)", reference=m.group(2),
+                                 status_detail="Approved CASP (FSCA list" + edition + ")", reference=m.group(2),
                                  register_url=url or FSCA_HOME, extra={"fsp_number": m.group(2)})
     return list(out.values())
 
