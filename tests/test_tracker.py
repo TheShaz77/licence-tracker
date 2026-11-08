@@ -1658,3 +1658,23 @@ def test_florida_link_from_download_page(tmp_path, monkeypatch):
     assert src.resolve_url(ctx) == "https://real.flofr.gov/Public/MSB/Money%20Transmitters%20Monthly.zip"
     monkeypatch.setattr(src, "_get", lambda c, url: R("<p>no links</p>"))
     assert src.resolve_url(ctx) == u.STATES["fl"]["url"]
+
+
+def test_missing_regulator_file_is_quiet_for_a_week(tmp_path, monkeypatch):
+    import logging
+    import requests
+    from regtracker.sources import usstates as u
+    from regtracker.sources.base import Context, SourceNotReady
+    src = u.USStateSource("fl", u.STATES["fl"])
+    monkeypatch.setattr(src, "resolve_url", lambda c: "https://real.flofr.gov/Public/MT/x.zip")
+
+    def gone(c, url):
+        raise requests.HTTPError("404 Client Error: Not Found for url: " + url)
+    monkeypatch.setattr(src, "_get", gone)
+    for day, quiet in (("2026-11-08", True), ("2026-11-14", True), ("2026-11-15", False)):
+        ctx = Context({}, None, day, tmp_path, set(), logging.getLogger("t"))
+        try:
+            src.fetch(ctx)
+            assert False
+        except SourceNotReady as e:
+            assert getattr(e, "quiet", False) is quiet and "since 2026-11-08" in str(e)

@@ -487,6 +487,27 @@ class USStateSource(Source):
             return urljoin(spec["url"], htmlmod.unescape(m.group(1)))
         return spec["url"]
 
+    def _missing(self, ctx, url: str = "", clear: bool = False):
+        """The regulator's own link points at a file that isn't there (404). Usually temporary (a file
+        being regenerated), so the last list is kept and the run isn't failed; after 7 days it becomes a
+        warning so a permanent move doesn't go unnoticed."""
+        import datetime as dt
+        import json
+        p = ctx.data_dir / "state" / f"{self.name}_missing.json"
+        if clear:
+            if p.exists():
+                p.unlink()
+            return None
+        st = json.loads(p.read_text()) if p.exists() else {}
+        since = st.get("since") or ctx.today
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(json.dumps({"since": since, "url": url}))
+        days = (dt.date.fromisoformat(ctx.today) - dt.date.fromisoformat(since)).days
+        err = SourceNotReady(f"the {self.spec['state']} regulator's download link is broken on their side "
+                             f"(file not found since {since}: {url}); keeping the last list")
+        err.quiet = days < 7
+        return err
+
     def _dated_pdf(self, ctx, spec) -> tuple:
         """Alaska: the roster PDF is named after its edition date ("MSB Roster 20260319.pdf") and its
         list page refuses GitHub's servers. Fetch the newest known edition directly; once a day, also
@@ -547,7 +568,10 @@ class USStateSource(Source):
             try:
                 url = self.resolve_url(ctx)
                 raw = self._get(ctx, url).content
+                self._missing(ctx, clear=True)
             except Exception as e:
+                if "404" in str(e) or "410" in str(e):
+                    raise self._missing(ctx, url=locals().get("url", spec.get("url")))
                 blocked = "403" in str(e) or isinstance(e, SourceNotReady)
                 if not blocked:
                     raise
