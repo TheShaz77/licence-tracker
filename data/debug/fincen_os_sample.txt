@@ -1,10 +1,16 @@
-url: https://data.opensanctions.org/datasets/latest/us_fincen_msb/targets.simple.csv
-bytes: 175  starts: b'"id","sc'
+url: https://data.opensanctions.org/datasets/latest/us_fincen_msb/entities.ftm.json
+bytes: 200000  starts: b'{"id":"a'
 error: None
 columns used: {}
-headers: []
-data rows: 0  kept: 0
-type values: None
+headers: ['Address', 'LegalEntity']
+data rows: 61532  kept: 32448
+type values: [('LegalEntity', 34057), ('Address', 27475)]
 first lines:
-'"id","schema","name","aliases","birth_date","countries","addresses","identifiers","sanctions","phones","emails","program_ids","dataset","first_seen","last_seen","last_change"'
-''
+'{"id":"addr-0002162a233620459014d2e40b4fb720d548b4f6","caption":"478 MAIN ST, CORNELIA, GA 30531, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-19T08:08:06","last_seen":"2026-11-02T08:08:05","last_change":"2025-05-19T08:08:06","proper'
+'{"id":"addr-00053e3235674a44b8150ce6757e700244e2f3de","caption":"1052 E. LINCOLN AVE, MADISON HEIGHTS, MI 48224, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-19T08:08:06","last_seen":"2026-11-02T08:08:05","last_change":"2025-05-19T08'
+'{"id":"addr-0006021a047f1f1fda0990034097683167231b08","caption":"4561 W ATLANTIC AVE, DELRAY BEACH, FL 33445, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-19T08:08:06","last_seen":"2026-11-02T08:08:05","last_change":"2025-05-19T08:08'
+'{"id":"addr-000f6e2327d55990a1abf7be5e03ad36a32c5ed9","caption":"17909 S. Derrick, Cantua Creek, CA 93608, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-19T08:08:06","last_seen":"2026-11-02T08:08:05","last_change":"2025-05-19T08:08:06'
+'{"id":"addr-0010dff8b5d5dd4cde52df5e1e35bdeb32a26848","caption":"5805 WATT AVE, NORTH HIGHALNDS, CA 95660, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2026-08-31T08:08:01","last_seen":"2026-11-02T08:08:05","last_change":"2026-08-31T08:08:01'
+'{"id":"addr-00166b9e9e8111d71d3ecaefe3140f128fd69c89","caption":"1000 RUCKER BLVD, ENTERPRISE, AL 36330, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-26T08:08:05","last_seen":"2026-11-02T08:08:05","last_change":"2026-07-20T08:08:01",'
+'{"id":"addr-001d930d285b0cc390af426ef853425205cd3eb1","caption":"1500 N Grant St. # 7365, Denver, CO 80203, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2026-06-08T08:08:03","last_seen":"2026-11-02T08:08:05","last_change":"2026-06-08T08:08:0'
+'{"id":"addr-0020471f0b44535492ddb663a8f1ee1a0e4131c5","caption":"4120 CLEVELAND AVE B2, FORT MYERS, FL 33901, USA","schema":"Address","referents":[],"datasets":["us_fincen_msb"],"origin":["inferred"],"first_seen":"2025-05-19T08:08:06","last_seen":"2026-11-02T08:08:05","last_change":"2025-05-19T08:08'
