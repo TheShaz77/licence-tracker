@@ -1,6 +1,8 @@
 {
-  "finished": "2026-11-08 03:26",
-  "sources_status": "fca: waiting (FCA seed scan still running: 46.5% scanned; 3386 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (msb.fincen.gov's robots.txt doesn't allow automatic downloads; download the MSB list by hand and upload it to data/manual/ (see README)); fincen_os: baseline 32448; mica: not due; ch_sro: baseline 0; za_tppp: not due; za_so: baseline 105; za_pchso: baseline 4; za_banks: not due; za_adla: not due; za_casp: not due; nat_lt: ok (0 changes); us_fl: not due; us_ca: not due; us_ma: not due; us_ct: not due; us_la: not due; us_in: not due; us_de: not due; us_ak: waiting (the AK site blocks automated downloads; download the list yourself from https://commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses and upload it to data/manual/ as us_ak.pdf)",
+  "finished": "2026-11-08 03:40",
+  "sources_status": "fca: waiting (FCA seed scan still running: 46.5% scanned; 3386 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen: waiting (msb.fincen.gov's robots.txt doesn't allow automatic downloads; download the MSB list by hand and upload it to data/manual/ (see README)); fincen_os: not due; mica: not due; ch_sro: baseline 0; za_tppp: baseline 386; za_so: not due; za_pchso: not due; za_banks: baseline 20; za_adla: FAILED; za_casp: not due; nat_lt: ok (0 changes); us_fl: not due; us_ca: not due; us_ma: not due; us_ct: not due; us_la: not due; us_in: not due; us_de: not due; us_ak: waiting (the AK site blocks automated downloads; download the list yourself from https://commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses and upload it to data/manual/ as us_ak.pdf)",
   "changes": 0,
-  "problems": []
+  "problems": [
+    "South Africa ADLAs (SARB Financial Surveillance): South Africa ADLAs (SARB Financial Surveillance): nothing found; see data/debug/za_adla_sample.txt"
+  ]
 }

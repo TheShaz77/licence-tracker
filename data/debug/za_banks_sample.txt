@@ -3,7 +3,7 @@ bytes: 247345  starts: b'%PDF-1.7'
 error: None
 columns used: {}
 headers: None
-data rows: 60  kept: 1
+data rows: 60  kept: 8
 type values: None
 first lines:
 'Locally Controlled Banks'
@@ -52,7 +52,7 @@ bytes: 119134  starts: b'%PDF-1.7'
 error: None
 columns used: {}
 headers: None
-data rows: 15  kept: 1
+data rows: 15  kept: 3
 type values: None
 first lines:
 'Foreign Controlled Banks'
@@ -76,7 +76,7 @@ bytes: 230142  starts: b'%PDF-1.7'
 error: None
 columns used: {}
 headers: None
-data rows: 54  kept: 2
+data rows: 54  kept: 5
 type values: None
 first lines:
 'Branches of Foreign Banks'
@@ -125,7 +125,7 @@ bytes: 226817  starts: b'%PDF-1.7'
 error: None
 columns used: {}
 headers: None
-data rows: 19  kept: 0
+data rows: 19  kept: 4
 type values: None
 first lines:
 'Mutual Banks'
