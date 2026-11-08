@@ -2619,6 +2619,16 @@
 "phone_from": "firm website",
 "website": "https://www.aspireapp.com"
 },
+"site:aspirellp.co.uk": {
+"checked": "2026-11-08",
+"email": "helpme@aspirellp.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01179303510",
+"phone_from": "firm website",
+"website": "https://www.aspirellp.co.uk"
+},
 "site:aspora.com": {
 "checked": "2026-11-06",
 "email": "help@aspora.com",
@@ -2708,6 +2718,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.atapay.com"
+},
+"site:atastravel.co.uk": {
+"checked": "2026-11-08",
+"email": "web@atastravel.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+44 (0)20 8840 8883",
+"phone_from": "firm website",
+"website": "http://atastravel.co.uk"
 },
 "site:atinito.ca": {
 "checked": "2026-11-06",
@@ -8848,6 +8868,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.claricorecapital.com,"
+},
+"site:clarionwealth.co.uk": {
+"checked": "2026-11-08",
+"email": "enquiries@clarionwealth.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.clarionwealth.co.uk"
 },
 "site:clarityglobalinc.com": {
 "checked": "2026-11-06",
@@ -24679,6 +24709,16 @@
 "phone_from": "firm website",
 "website": "https://www.mcknightfinancial.co.uk"
 },
+"site:mclarencapital.co.uk": {
+"checked": "2026-11-08",
+"email": "enquiries@mclarencapital.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.mclarencapital.co.uk"
+},
 "site:mcpay.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -26108,6 +26148,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "HTTPS://MOOSEPAY.ONLINE"
+},
+"site:morgan-lloyd.co.uk": {
+"checked": "2026-11-08",
+"email": "enquiries@morgan-lloyd.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+441275379200",
+"phone_from": "firm website",
+"website": "https://www.morgan-lloyd.co.uk"
 },
 "site:morganstanley.com": {
 "checked": "2026-11-07",
@@ -40759,6 +40809,16 @@
 "phone_from": "firm website",
 "website": "https://www.srsacquiom.com"
 },
+"site:ssfs.co.uk": {
+"checked": "2026-11-08",
+"email": "info@ssfs.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "08001601800",
+"phone_from": "firm website",
+"website": "https://www.ssfs.co.uk"
+},
 "site:ssk-bad-pyrmont.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -42408,6 +42468,16 @@
 "phone": "+44 (0)203 697 0300",
 "phone_from": "firm website",
 "website": "https://www.tenora.com"
+},
+"site:tenwealth.co.uk": {
+"checked": "2026-11-08",
+"email": "info@tenwealth.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.tenwealth.co.uk"
 },
 "site:teralex.com": {
 "checked": "2026-11-06",
@@ -46439,6 +46509,16 @@
 "phone_from": "firm website",
 "website": "https://verserpay.com"
 },
+"site:versoim.com": {
+"checked": "2026-11-08",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.versoim.com"
+},
 "site:verto.co": {
 "checked": "2026-11-06",
 "email": "support@verto.co",
@@ -47088,6 +47168,16 @@
 "phone": "04421 406-0",
 "phone_from": "firm website",
 "website": "https://www.vobawhv.de"
+},
+"site:voice-kink.co.uk": {
+"checked": "2026-11-08",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.voice-kink.co.uk"
 },
 "site:volksbank-allgaeu-oberschwaben.de": {
 "checked": "2026-11-07",
@@ -48688,6 +48778,16 @@
 "phone": "+447466722443",
 "phone_from": "firm website",
 "website": "https://vyropay.com"
+},
+"site:w1m.com": {
+"checked": "2026-11-08",
+"email": "invest@w1m.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+442046172000",
+"phone_from": "firm website",
+"website": "https://www.W1M.com"
 },
 "site:w8m8.net": {
 "checked": "2026-11-06",
