@@ -113,3 +113,55 @@ def diff(prev: dict, curr: dict, today: str, removal_is_event: bool = True,
             p["last_changed"] = today
         merged[key] = p
     return events, merged
+
+
+def _psp_label(ltype: str) -> str:
+    t = (ltype or "").lower()
+    if "applicant" in t:
+        return "PSP application filed (Canada)"
+    if "refused" in t:
+        return "PSP application refused (Canada)"
+    if "withdrawn" in t:
+        return "PSP application withdrawn (Canada)"
+    if "revoked" in t:
+        return "PSP registration revoked (Canada)"
+    if "registered" in t:
+        return "PSP registered (Canada)"
+    return ""
+
+
+def friendly_labels(events: list) -> list:
+    """Spell out what a change means for the registration-type registers, so the
+    Changes tab can be filtered for PSP and money transmitter events directly."""
+    for e in events:
+        src, kind = e.get("source", ""), e.get("event")
+        if src == "boc":
+            if kind in ("NEW_LICENCE", "TYPE_CHANGED", "LICENCE_LOST", "REINSTATED"):
+                label = _psp_label(e.get("new") if kind == "TYPE_CHANGED" else e.get("licence_type"))
+                if kind == "LICENCE_LOST" and not label:
+                    label = "PSP registration ended (Canada)"
+                e["event_label"] = label or e["event_label"]
+            elif kind == "REMOVED":
+                e["event_label"] = ("PSP applicant left the list (Canada)" if "applicant" in (e.get("licence_type") or "").lower()
+                                    else "PSP removed from the registry (Canada)")
+        elif src.startswith("us_"):
+            st = src[3:].upper()
+            e["event_label"] = {
+                "NEW_LICENCE": f"Money transmitter licence granted ({st})",
+                "LICENCE_LOST": f"Money transmitter licence ended ({st})",
+                "REMOVED": f"Money transmitter licence removed from list ({st})",
+                "REINSTATED": f"Money transmitter licence reinstated ({st})",
+            }.get(kind, e["event_label"])
+        elif src in ("fincen", "fincen_os"):
+            e["event_label"] = {
+                "NEW_LICENCE": "MSB registered with FinCEN (US)",
+                "REMOVED": "MSB registration lapsed (FinCEN, US)",
+                "SERVICES_CHANGED": "MSB activities changed (FinCEN, US)",
+            }.get(kind, e["event_label"])
+        elif src == "fintrac":
+            e["event_label"] = {
+                "NEW_LICENCE": "MSB registered with FINTRAC (Canada)",
+                "LICENCE_LOST": "MSB registration ended (FINTRAC, Canada)",
+                "REMOVED": "MSB removed from FINTRAC list (Canada)",
+            }.get(kind, e["event_label"])
+    return events

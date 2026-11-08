@@ -75,6 +75,12 @@ sources:
     enabled: true
     min_hours: 12 # FinCEN updates weekly; no need to download the 5 MB file every 2 hours
 
+  fincen_os:      # US: FinCEN's MSB list via OpenSanctions' daily copy (FinCEN blocks automated downloads)
+    enabled: false # OpenSanctions data is free for NON-COMMERCIAL use only; use inside a for-profit
+                   # business (e.g. prospecting for an employer) needs their data licence. Set to true
+                   # only if your use qualifies or you have a licence.
+    min_hours: 20
+
   mica:           # EU/EEA: MiCA crypto-asset service providers and e-money token issuers (ESMA register)
     enabled: true
     min_hours: 6

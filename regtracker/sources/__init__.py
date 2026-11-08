@@ -6,10 +6,11 @@ from .finma import FINMASource
 from .fincen import FinCENSource
 from .fintrac import FINTRACSource
 from .mica import MiCASource
+from .opensanctions_msb import OpenSanctionsMSBSource
 from .southafrica import ZA_SOURCES
 from .swiss_sro import CHSROSource
 from .pra import PRASource
 
 ALL_SOURCES = {s.name: s for s in (FCASource(), PRASource(), EBASource(), ECBSource(), FINMASource(),
-                                     FINTRACSource(), BoCSource(), FinCENSource(), MiCASource(), CHSROSource(),
+                                     FINTRACSource(), BoCSource(), FinCENSource(), OpenSanctionsMSBSource(), MiCASource(), CHSROSource(),
                                      *ZA_SOURCES)}

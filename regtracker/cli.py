@@ -20,7 +20,7 @@ from pathlib import Path
 import yaml
 
 from . import canada, compare, contacts, notify, sheets, usa
-from .diff import SuspiciousDrop, check_drop, diff
+from .diff import SuspiciousDrop, check_drop, diff, friendly_labels
 from .http import make_session
 from .sources import ALL_SOURCES
 from .sources.base import Context, SourceNotReady
@@ -98,7 +98,7 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
         log.info("Canada MSB/PSP linking: %s", canada.link(records))
     from .sources import swiss_sro
     swiss_sro.apply(records, swiss_sro.load_cache(data_dir))
-    if any(r.get("source") == "fincen" or str(r.get("source", "")).startswith("us_") for r in records):
+    if any(r.get("source") in ("fincen", "fincen_os") or str(r.get("source", "")).startswith("us_") for r in records):
         log.info("US MSB/state licence linking: %s",
                  usa.link(records, contacts.load(data_dir, contacts.WEB_STATE)))
     return records
@@ -169,6 +169,7 @@ def cmd_run(args, cfg, data_dir) -> int:
             continue
         track_services = bool((cfg.get("sources", {}).get(src.name) or {}).get("track_services", True))
         events, merged = diff(prev, curr, ctx.now, src.removal_is_event, track_services)
+        friendly_labels(events)
         save_snapshot(data_dir, src.name, merged)
         if src.name.startswith("nat_"):
             compare.log_events(data_dir, events, "national")

@@ -31,7 +31,7 @@ def _names(r: dict) -> list:
 def link(records: list, web_cache: dict | None = None) -> dict:
     """In place. Returns counts for the log."""
     state_rows = [r for r in records if str(r.get("source", "")).startswith("us_")]
-    fincen = [r for r in records if r.get("source") == "fincen"]
+    fincen = [r for r in records if r.get("source") in ("fincen", "fincen_os")]
     if not state_rows and not fincen:
         return {}
     published = sorted({(r.get("extra") or {}).get("licence_state", "") for r in state_rows} - {""})

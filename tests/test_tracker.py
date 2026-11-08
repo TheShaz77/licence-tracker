@@ -1380,3 +1380,30 @@ def test_mica_tab():
     tabs = build_tabs(recs, [], {"finished": "", "sources_status": "", "changes": 0, "problems": []},
                       extra_tabs={"MiCA CASPs (EU-EEA)": rows})
     assert list(tabs)[:4] == ["Summary", "Changes", "MiCA CASPs (EU-EEA)", "Licences"]
+
+
+def test_friendly_change_labels():
+    from regtracker.diff import diff, friendly_labels
+    prev = {"boc:1": {"key": "boc:1", "source": "boc", "name": "Pay Co", "licence_type": "PSP applicant (RPAA)", "active": True},
+            "us_fl:9": {"key": "us_fl:9", "source": "us_fl", "name": "Remit", "licence_type": "Money transmitter licence (FL)",
+                        "active": True}}
+    curr = {"boc:1": dict(prev["boc:1"], licence_type="PSP (RPAA registered)"),
+            "boc:2": {"key": "boc:2", "source": "boc", "name": "New PSP", "licence_type": "PSP applicant (RPAA)", "active": True},
+            "us_fl:9": dict(prev["us_fl:9"], active=False),
+            "us_fl:10": {"key": "us_fl:10", "source": "us_fl", "name": "Newco", "licence_type": "Money transmitter licence (FL)",
+                         "active": True}}
+    events, _ = diff(prev, curr, "2026-11-08 03:00")
+    labels = sorted(e["event_label"] for e in friendly_labels(events))
+    assert labels == ["Money transmitter licence ended (FL)", "Money transmitter licence granted (FL)",
+                      "PSP application filed (Canada)", "PSP registered (Canada)"]
+
+
+def test_opensanctions_msb_parse():
+    from regtracker.sources.opensanctions_msb import parse
+    csv_text = ("id,schema,name,aliases,birth_date,countries,addresses,identifiers,sanctions,phones,emails,dataset,"
+                "first_seen,last_seen,last_change\n"
+                "us-msb-1,Company,ACME PAY LLC,ACME,,us,\"1 MAIN ST, MIAMI, FL 33101\",,,,,FinCEN MSB,"
+                "2022-01-03T00:00:00,2026-11-07T00:00:00,2024-11-04T00:00:00\n"
+                "us-msb-2,Person,JOHN DOE,,,us,\"5 ELM, AUSTIN, TX 73301\",,,,,FinCEN MSB,2025-01-01,2026-11-07,2025-01-01\n")
+    recs, info = parse(csv_text.encode())
+    assert [(r.name, r.city, r.status_date) for r in recs] == [("ACME PAY LLC", "Miami", "2022-01-03")]
