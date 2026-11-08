@@ -1,4 +1,16 @@
 {
+"audaxsolutions": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "Audax Solutions AG",
+"sro": ""
+},
+"bivial": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "Bivial AG",
+"sro": ""
+},
 "blockriver": {
 "checked": "2026-11-08",
 "kind": "sheet",
@@ -29,6 +41,30 @@
 "checked": "2026-11-08",
 "kind": "sheet",
 "name": "PIPAY SOLUTIONS INC.",
+"sro": ""
+},
+"relio": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "Relio AG",
+"sro": ""
+},
+"sequence": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "Sequence SA",
+"sro": ""
+},
+"srsaphirstein": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "SR Saphirstein AG",
+"sro": ""
+},
+"yapeal": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "Yapeal AG",
 "sro": ""
 }
 }
