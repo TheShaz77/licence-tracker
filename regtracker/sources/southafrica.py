@@ -112,7 +112,7 @@ def parse_operators(lines: list, url: str, source: str, label: str) -> list:
     """SO and PCH SO public registers: trading name, registration no., registered name, service marks."""
     out = {}
     for line in lines:
-        m = re.match(r"^\d+\s+(.+)$", line)
+        m = re.match(r"^\d{1,4}\s*(?=[A-Za-z(])(.+)$", line)   # "1ACI Worldwide ..." or "1 ACI Worldwide ..."
         if not m:
             continue
         rest = m.group(1)
@@ -132,60 +132,111 @@ def parse_operators(lines: list, url: str, source: str, label: str) -> list:
     return list(out.values())
 
 
-PHONE = re.compile(r"(\+?27[\s\d]{8,12}|0\d{2}[\s-]?\d{3}[\s-]?\d{4})")
+PHONE = re.compile(r"(\+?27[\s\d]{8,12}|0\d{2}\s*-?\s*\d{3}[\s-]?\d{4})")
 WEB = re.compile(r"((?:https?://)?www\.[^\s]+|https?://[^\s]+)", re.I)
 BANK_END = re.compile(r"\b(Limited|Ltd|Bank|Branch|Banking Corporation|N\.A\.|AG|plc|PLC|Co-operative)\b\.?"
                       r"(\s*\([^)]*\))?\s*$")
 
 
-def parse_banks(lines: list, url: str, kind: str) -> list:
-    """Prudential Authority lists: blocks of name / address lines / CEO / title + phone + website."""
-    out = {}
+TITLE = re.compile(r"^(Mr|Ms|Mrs|Dr|Prof|Adv)\.?\s")
+BANK_LEGAL = re.compile(r"^(.*?\b(?:Limited|Ltd|N\.A\.|AG|PLC|plc|Berhad|S\.A\.))(?:\s*\([^)]*\))?(?=\s|$)")
+BANK_WORD = re.compile(r"^((?:\S+\s+){0,5}?\S*(?:Bank|Branch|Corporation|Co-operative))(?:\s*\([^)]*\))?(?=\s|$)")
 
-    def flush(block):
-        if not block:
-            return
-        name = block[0]
-        if re.match(r"^(name\b|page \d|locally|foreign controlled banks|branches of|mutual banks|registered)", name, re.I):
-            return
-        text = " ".join(block)
-        curator = "curatorship" in text.lower()
+
+CEO_RE = r"\b(Mr|Ms|Mrs|Dr|Prof|Adv)\.?\s+[A-Z][\w'-]*(?:\s+(?:van|de|du|der|le)?\s*[A-Z][\w'-]+){0,1}"
+ROLE_WORDS = re.compile(r"\b(Chief|Executive|Officer|Group|Interim|Managing|Director|Country|Head|General|Acting|"
+                        r"Principal|Officer|CEO|First)\b", re.I)
+
+
+def _bank_name(before: str):
+    """Longest sensible name at the start of the line: up to a legal suffix, else up to the last
+    'Bank'/'Branch' within the first few words."""
+    m = BANK_LEGAL.match(before)
+    if m and len(m.group(1).split()) <= 9:
+        return m
+    best = None
+    for m in re.finditer(r"\b(Bank|Branch|Corporation|Co-operative)\b(?:\s*\([^)]*\))?", before):
+        if len(before[:m.end()].split()) <= 6:
+            best = m
+    if best:
+        class _M:
+            def __init__(self, end): self._end = end
+            def group(self, i): return before[:self._end]
+            def end(self): return self._end
+        return _M(best.end())
+    return None
+
+
+def parse_banks(lines: list, url: str, kind: str) -> list:
+    """Prudential Authority bank lists. The PDF's columns (name, address, CEO,
+    phone, website) come out of text extraction interleaved; the one stable
+    thing is that each bank's name sits on the same line as its phone number."""
+    lines = [re.sub(r"[\u2010-\u2015]", "-", l).strip() for l in lines]
+    out = {}
+    for i, l in enumerate(lines):
+        ph = PHONE.search(l)
+        if not ph or re.match(r"^(Name\s+Address|Page \d)", l, re.I):
+            continue
+        before = l[:ph.start()].strip()
+        ceo = ""
+        mc = re.search(CEO_RE, before)
+        if mc:
+            ceo = mc.group(0)
+            before = (before[:mc.start()] + " " + before[mc.end():]).strip()
+        m = _bank_name(before)
+        if not m:
+            # name wrapped onto the next line: "Access Bank (South Africa) Sandton ..." / "Limited 2196 ..."
+            nxt = lines[i + 1] if i + 1 < len(lines) else ""
+            if re.match(r"^(Limited|Ltd)\b", nxt):
+                words = before.split()
+                name = " ".join(words[:-1] if len(words) > 2 else words) + " Limited"
+                city = words[-1] if len(words) > 2 else ""
+            else:
+                continue
+        else:
+            name = m.group(1).strip()
+            city = before[m.end():].strip()
+        nxt = lines[i + 1] if i + 1 < len(lines) else ""
+        if re.match(r"^(Limited|Ltd)\b", nxt) and not re.search(r"\b(Limited|Ltd)$", name):
+            name += " " + re.match(r"^(Limited|Ltd)", nxt).group(1)
+        if len(re.findall(r"[A-Za-z]{3,}", name)) <= 1 or name.startswith(("Co.", "Corporation")):
+            # the start of the name is on one of the lines above, e.g. "China Construction Bank" / "Corporation"
+            for back in lines[max(0, i - 3):i][::-1]:
+                mb = re.match(r"^((?:[A-Z][\w&'.-]*\s+){0,4}Bank(?:\s+[Oo]f\s+[A-Z]\w+)?)\b", back.strip())
+                if mb:
+                    name = mb.group(1) + " " + name
+                    break
+            if any("Branch" in x for x in lines[i + 1:i + 3]) and "Branch" not in name:
+                name += " (Johannesburg Branch)" if any("Johannesburg Branch" in x for x in lines[i + 1:i + 3]) else ""
+        if re.search(r"\d|,", city) or len(city) > 25:
+            city = ""
+        if re.match(r"^(P\s*O\s*Box|\d)", name, re.I) or len(name) < 4:
+            continue
+        curator = "curatorship" in l.lower()
         name = re.sub(r"\s*\((under )?curatorship\)", "", name, flags=re.I).strip()
-        ceo = next((l for l in block if re.match(r"^(Mr|Ms|Mrs|Dr|Prof|Adv)\.?\s", l)), "")
-        ph = PHONE.search(" ".join(l for l in block[1:] if l != ceo))
-        wm = WEB.search(text)
-        web = wm.group(1) if wm else ""
+        window = " ".join(lines[max(0, i - 1):i + 3])
+        wm = WEB.search(l) or WEB.search(window)
+        web = wm.group(1).rstrip(".,;") if wm else ""
         if web and not web.lower().startswith("http"):
             web = "https://" + web
-        addr = [l for l in block[1:] if l != ceo and not PHONE.search(l) and not WEB.search(l)]
-        city = ""
-        for l in reversed(addr):
-            l2 = re.sub(r"\s*\d{4}\s*$", "", l).strip()
-            if re.search(r"[A-Za-z]{3,}", l2) and not re.search(r"P\s*O\s*Box|Private Bag|Limited|Ltd", l2, re.I):
-                city = l2
-                break
+        if not ceo:
+            for near in lines[max(0, i - 2):i + 2]:
+                mc = re.search(CEO_RE, near)
+                if mc:
+                    ceo = mc.group(0)
+                    break
+        if not city:
+            nxt = lines[i + 1] if i + 1 < len(lines) else ""
+            city = re.sub(r"\s+", " ", ROLE_WORDS.sub(" ", re.sub(r"^(Limited|Ltd)\b", "", nxt))).strip()
+            city = " ".join(w for w in city.split("/")[0].split() if w[:1].isupper())
+            city = "" if re.search(r"\d|Limited|Ltd", city) else city
+        city = re.sub(r"\s*\d{4}$", "", re.sub(WEB, "", city)).strip(" ,")
         key = "za_banks:" + match_name(name)
         out[key] = Record(key=key, source="za_banks", jurisdiction="ZA", regulator="SARB PA", name=name,
                           licence_type=kind, active=not curator,
                           status_detail="Registered bank" + (" (under curatorship)" if curator else ""),
-                          city=city, website=web, register_url=url or PA_PAGE,
-                          extra={"phone": ph.group(1) if ph else "", "ceo": re.sub(r"\s+", " ", ceo),
-                                 "address": ", ".join(addr)})
-
-    block = []
-    for line in lines:
-        l = line.strip()
-        if not l or re.match(r"^(Name\s+Address|Page \d+ of \d+|(Locally|Foreign) Controlled Banks|"
-                             r"Branches of Foreign Banks|Mutual Banks|Registered Banks)\b", l, re.I):
-            continue
-        if BANK_END.search(l) and not PHONE.search(l) and (not block or any(PHONE.search(b) or WEB.search(b) for b in block)):
-            last = max((i for i, b in enumerate(block) if PHONE.search(b) or WEB.search(b)), default=len(block) - 1)
-            carry = block[last + 1:]           # first half of a name wrapped over two lines
-            flush(block[:last + 1])
-            block = [" ".join(carry + [l])]
-        else:
-            block.append(l)
-    flush(block)
+                          city=city[:40], website=web, register_url=url or PA_PAGE,
+                          extra={"phone": ph.group(1).strip(), "ceo": ceo})
     return list(out.values())
 
 
@@ -282,8 +333,9 @@ class _ZASource(Source):
                 got = parse(lines, url)
             except Exception as e:
                 err = e
+            dbg = getattr(parse, "last", None) or lines[:40]
             notes.append((url, raw, {"rows": len(lines), "kept": len(got), "columns": {},
-                                     "first_text_lines": lines[:40]}, err))
+                                     "first_text_lines": dbg}, err))
             if err:
                 write_diagnostics(ctx, self.name, notes)
                 raise err
@@ -325,20 +377,52 @@ class ZASOSource(_ZASource):
         return self._run(ctx, [(latest(links), lambda lines, u: parse_operators(lines, u, "za_so", "SO"))])
 
 
+def parse_pchso(lines: list, url: str = "") -> list:
+    """PCH system operators: '2011/006482/07 Mastercard Southern Africa Mastercard Southern Africa (Pty) Ltd 1. ATM & SSD PCH',
+    followed by further numbered PCH lines for the same operator."""
+    out, cur = {}, None
+    for line in lines:
+        reg = SA_REG.match(line.strip())
+        if reg:
+            rest = line.strip()[reg.end():]
+            rest, _, first_pch = rest.partition(" 1. ")
+            m = re.search(r"(.+?)\s+((?:\S+\s+){0,8}?\S*\(Pty\)\s*Ltd|.+?Limited)\s*$", rest)
+            if m and m.group(2).strip() != rest.strip():
+                trading, name = m.group(1).strip(), m.group(2).strip()
+                # registered name usually repeats the trading name: start it where the repeat begins
+                words = rest.split()
+                for k in range(1, len(words)):
+                    if " ".join(words[k:]).lower().startswith(" ".join(words[:min(2, k)]).lower()):
+                        trading, name = " ".join(words[:k]), " ".join(words[k:])
+                        break
+            else:
+                trading, name = "", rest.strip()
+            cur = Record(key="za_pchso:" + reg.group(1), source="za_pchso", jurisdiction="ZA", regulator="SARB",
+                         name=name, licence_type="Payment clearing house system operator (SARB)", active=True,
+                         status_detail="Authorised PCH system operator", reference=reg.group(1),
+                         register_url=url or NPS_PAGE,
+                         extra={"trading_name": trading if trading.lower() != name.lower() else "",
+                                "company_reg_no": reg.group(1)})
+            cur.services = first_pch.strip()
+            out[cur.key] = cur
+        elif cur and re.match(r"^\d{1,2}\.\s+\S", line.strip()):
+            cur.services = "; ".join(x for x in (cur.services, re.sub(r"^\d{1,2}\.\s+", "", line.strip())) if x)
+    return list(out.values())
+
+
 class ZAPCHSOSource(_ZASource):
     name, label, fingerprint = "za_pchso", "South Africa payment clearing house system operators (SARB)", "za-pchso-v1"
     manual_hint = "za_pchso.pdf (SARB > Payments > Regulation > public register of PCH system operators)"
 
     def parse_for_file(self, path):
-        return lambda lines, u: parse_operators(lines, u, "za_pchso", "clearing house system operator")
+        return parse_pchso
 
     def fetch_web(self, ctx):
         links = [l for l in self._page_links(ctx, NPS_PAGE, r"PCH")
                  if re.search(r"list|register", l, re.I) and not re.search(r"notice|transition|directive", l, re.I)]
         if not links:
             raise RuntimeError("SARB: PCH SO public register link not found on " + NPS_PAGE)
-        return self._run(ctx, [(latest(links), lambda lines, u: parse_operators(lines, u, "za_pchso",
-                                                                                 "clearing house system operator"))])
+        return self._run(ctx, [(latest(links), parse_pchso)])
 
 
 BANK_LISTS = [(r"Locally%20Controlled|Locally Controlled", "Bank (locally controlled)"),
@@ -409,40 +493,51 @@ ADLA_MANUAL = ("https://www.resbank.co.za/content/dam/sarb/what-we-do/financial-
 LEGAL = re.compile(r"(?:^|\s)(\(Pty\)\s*Ltd|\(Proprietary\)\s*Limited|Limited|Ltd|CC|Inc\.?|\(RF\))\.?\s*$", re.I)
 
 
+AD_BANKS = re.compile(r"\bbank\b|nedbank|firstrand|investec|absa|capitec|sasfin|ubank|standard chartered|"
+                      r"citibank|jpmorgan|j\.p\. morgan|hsbc|bnp|société|societe|deutsche|china construction", re.I)
+CATEGORY = re.compile(r"categor(?:y|ies)\s+(one|two|three|four|five|1|2|3|4|5)\b[^A-Za-z]*(.*)$", re.I)
+
+
 def parse_adla(lines: list, url: str = "") -> list:
-    """Section A.2 of the Currency and Exchanges Manual for ADLAs lists every
-    ADLA, grouped by category (independent bureaux de change, travel and
-    tourism, money transfer operators / value transfer providers...)."""
+    """Section A.2 of the Currency and Exchanges Manual for ADLAs lists the
+    authorised dealers (banks) and then the ADLAs by category: independent
+    bureaux de change, travel and tourism, money transfer operators (MTOs) and
+    others. Banks are left out here: they are not ADLAs."""
     starts = [i for i, l in enumerate(lines) if re.match(r"^A\.2\b", l)]
     best, best_n = None, 0
-    for i in starts:  # the table of contents also says "A.2": take the occurrence followed by firm names
+    for i in starts:
         n = 0
-        for l in lines[i + 1:i + 400]:
-            if re.match(r"^A\.3\b|^B\.\d", l):
+        for l in lines[i + 1:i + 600]:
+            if re.match(r"^A\.3\b", l) and len(l) < 100:
                 break
             n += bool(LEGAL.search(l))
         if n > best_n:
             best, best_n = i, n
+    parse_adla.last = lines[best:best + 250] if best is not None else lines[:120]
     if best is None:
         return []
     out, category = {}, ""
     for l in lines[best + 1:]:
-        if re.match(r"^A\.3\b|^B\.\d", l):
+        if re.match(r"^A\.3\b", l) and len(l) < 100:
             break
-        if re.search(r"categor|bureaux? de change|travel|money transfer|value transfer|remittance", l, re.I) \
-                and not LEGAL.search(l) and len(l) < 120:
-            category = re.sub(r"^\(?[a-z0-9ivx]+[.)]\s*", "", l, flags=re.I).strip(" :")
-            continue
-        if not LEGAL.search(l) or len(l) > 120:
+        cm = CATEGORY.search(l)
+        if cm:
+            label = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5"}.get(cm.group(1).lower(), cm.group(1))
+            tail = cm.group(2).strip(" :-–()")
+            category = f"Category {label}" + (f" ({tail})" if tail and len(tail) < 60 else "")
+            l = l[:cm.start()].strip()          # a firm name sometimes shares the line with the heading
+            if not l:
+                continue
+        if not category or not LEGAL.search(l) or len(l) > 120:
             continue
         name = re.sub(r"^\(?[a-z0-9ivx]{1,4}[.)]\s+", "", l, flags=re.I).strip(" ;,.")
         name = re.sub(r"\s+", " ", name)
-        if len(name) < 4:
+        if len(name) < 6 or re.match(r"^(Limited|Ltd|\(Pty\))", name) or (AD_BANKS.search(name) and not category):
             continue
         key = "za_adla:" + match_name(name)
         out[key] = Record(key=key, source="za_adla", jurisdiction="ZA", regulator="SARB FinSurv", name=name,
-                          licence_type="ADLA – " + category if category else "Authorised dealer with limited authority (ADLA)",
-                          active=True, status_detail="Listed in section A.2 of the Currency and Exchanges Manual for ADLAs",
+                          licence_type="ADLA – " + category, active=True,
+                          status_detail="Listed in section A.2 of the Currency and Exchanges Manual for ADLAs",
                           register_url=url, extra={"adla_category": category})
     return list(out.values())
 

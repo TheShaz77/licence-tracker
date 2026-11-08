@@ -1225,15 +1225,34 @@ def test_south_africa_parsers():
     ops = {r.reference: r for r in za.parse_operators(so, "u", "za_so", "SO")}
     assert ops["HRB227459"].name == "ACI Worldwide (Germany) GMBH"
     assert ops["2000/029811/07"].extra["trading_name"] == "Adumo Technologies"
-    banks = ["Locally Controlled Banks", "Name Address CEO Telephone Web Address", "Absa Bank Limited",
-             "Absa Group Limited", "P O Box 7735", "Johannesbu", "rg 2000", "Mr Kenny Fihla",
-             "Chief Executive Officer 011 350 5347 https://www.absa.africa/", "Capitec Bank Limited",
-             "5 Neutron Road", "Stellenbosch", "7600", "Mr Graham Lee",
-             "Chief Executive Officer 021 809 5900 www.capitecbank.co.za", "Ubank Limited (under curatorship)"]
+    banks = ["Locally Controlled Banks", "Name Address CEO Telephone Web Address", "Absa Group Limited",
+             "P O Box 7735 Mr Kenny Fihla", "Absa Bank Limited 011 350 5347 https://www.absa.africa/",
+             "Johannesburg Chief Executive Officer", "2000", "5 Neutron Road", "Techno Park Mr Graham Lee",
+             "Capitec Bank Limited 021 809 5900 www.capitecbank.co.za", "Stellenbosch Chief Executive Officer", "7600",
+             "P O Box 784921",
+             "Access Bank (South Africa) Sandton Mr Sandile Shabalala 011 634 4300 www.southafrica.accessbankplc.com",
+             "Limited 2196 Chief Executive Officer",
+             "Albaraka Bank Limited Office Park Stalwart Simelane Street Mr Shabir Chohan 031 \u2010 364 9002 www.albaraka.co.za",
+             "Durban Chief Executive Officer 082 490 5673", "4001",
+             "Ubank Limited (under curatorship) 011 518 5000 www.ubank.co.za", "Carletonville"]
     b = {r.name: r for r in za.parse_banks(banks, "u", "Bank (locally controlled)")}
+    assert set(b) == {"Absa Bank Limited", "Capitec Bank Limited", "Access Bank (South Africa) Limited",
+                      "Albaraka Bank Limited", "Ubank Limited"}
     assert b["Absa Bank Limited"].website == "https://www.absa.africa/" and b["Absa Bank Limited"].extra["phone"] == "011 350 5347"
-    assert b["Capitec Bank Limited"].website == "https://www.capitecbank.co.za"
-    assert b["Capitec Bank Limited"].extra["ceo"] == "Mr Graham Lee" and not b["Ubank Limited"].active
+    assert b["Absa Bank Limited"].city == "Johannesburg" and b["Absa Bank Limited"].extra["ceo"] == "Mr Kenny Fihla"
+    assert b["Capitec Bank Limited"].website == "https://www.capitecbank.co.za" and b["Capitec Bank Limited"].city == "Stellenbosch"
+    assert b["Access Bank (South Africa) Limited"].city == "Sandton" and not b["Ubank Limited"].active
+    so = ["SO PUBLIC REGISTER", "1ACI Worldwide HRB 227459 ACI Worldwide (Germany) GMBH x x Visa Mastercard x x",
+          "15Callpay 2017/021680/07 Ahead Start (Pty) Ltd x x x x x Visa Mastercard x x"]
+    ops = {r.reference: r for r in za.parse_operators(so, "u", "za_so", "SO")}
+    assert ops["HRB227459"].name == "ACI Worldwide (Germany) GMBH" and ops["2017/021680/07"].extra["trading_name"] == "Callpay"
+    pch = za.parse_pchso(["Entity Registration Entity Trading Name", "PCHs",
+                          "1993/007766/07 PayInc South African Bankers Services Company (Pty) Ltd 1. Authenticated Collections (AC) PCH",
+                          "2. Registered Mandate (RM) PCH", "1998/022242/07 Strate Strate (Pty) Ltd 1. Bonds PCH"], "u")
+    p = {r.reference: r for r in pch}
+    assert p["1993/007766/07"].name == "South African Bankers Services Company (Pty) Ltd"
+    assert p["1993/007766/07"].extra["trading_name"] == "PayInc" and "Registered Mandate" in p["1993/007766/07"].services
+    assert p["1998/022242/07"].name == "Strate (Pty) Ltd"
     casp = za.parse_casps(["No. FSP Name FSP Number", "1 Luno South Africa (Pty) Ltd 53279", "2 VALR (Pty) Ltd 53308"], "u")
     assert {r.reference: r.name for r in casp} == {"53279": "Luno South Africa (Pty) Ltd", "53308": "VALR (Pty) Ltd"}
     links = ["https://x/public-list-tppp-13-10-2026.pdf", "https://x/Public-list-TPPP-May-2026.pdf"]
@@ -1346,8 +1365,9 @@ def test_za_fsca_link_manual_files_and_finma_fintech(tmp_path, monkeypatch):
         assert "data/manual/" in str(e) and "za_banks_mutual.pdf" in str(e)
     (tmp_path / "manual").mkdir()
     (tmp_path / "manual" / "za_banks_mutual.pdf").write_bytes(b"%PDF fake")
-    monkeypatch.setattr(za, "pdf_lines", lambda raw: ["Mutual Banks", "GBS Mutual Bank", "18 Hill Street",
-                                                       "Mr X", "Chief Executive Officer 046 622 7109 www.gbsbank.co.za"])
+    monkeypatch.setattr(za, "pdf_lines", lambda raw: ["Mutual Banks", "18-20 Hill Street Mr Jonathan Fincham",
+                                                       "GBS Mutual Bank 046 622 7109 https://www.gbsbank.co.za/",
+                                                       "Makhanda Managing Director"])
     recs = src.fetch(ctx)
     assert [(r.name, r.licence_type) for r in recs] == [("GBS Mutual Bank", "Mutual bank")]
 
@@ -1399,14 +1419,27 @@ def test_friendly_change_labels():
 
 
 def test_opensanctions_msb_parse():
+    import json
     from regtracker.sources.opensanctions_msb import parse
-    csv_text = ("id,schema,name,aliases,birth_date,countries,addresses,identifiers,sanctions,phones,emails,dataset,"
-                "first_seen,last_seen,last_change\n"
-                "us-msb-1,Company,ACME PAY LLC,ACME,,us,\"1 MAIN ST, MIAMI, FL 33101\",,,,,FinCEN MSB,"
-                "2022-01-03T00:00:00,2026-11-07T00:00:00,2024-11-04T00:00:00\n"
-                "us-msb-2,Person,JOHN DOE,,,us,\"5 ELM, AUSTIN, TX 73301\",,,,,FinCEN MSB,2025-01-01,2026-11-07,2025-01-01\n")
-    recs, info = parse(csv_text.encode())
-    assert [(r.name, r.city, r.status_date) for r in recs] == [("ACME PAY LLC", "Miami", "2022-01-03")]
+    lines = [
+        {"id": "a1", "schema": "Address", "properties": {"full": ["1 MAIN ST, MIAMI, FL 33101"], "city": ["MIAMI"],
+                                                          "state": ["FL"], "postalCode": ["33101"]}},
+        {"id": "e1", "schema": "LegalEntity", "first_seen": "2024-11-04T00:00:00",
+         "properties": {"name": ["ACME PAY LLC"], "alias": ["ACME"], "sector": ["409", "415"], "country": ["us"],
+                        "addressEntity": ["a1"]}},
+        {"id": "e2", "schema": "LegalEntity", "first_seen": "2022-01-03T00:00:00",
+         "properties": {"name": ["ACME PAY LLC"], "sector": ["409"], "addressEntity": ["a1"]}},
+        {"id": "e3", "schema": "LegalEntity", "first_seen": "2025-01-01T00:00:00",
+         "properties": {"name": ["CORNER CHECKS INC"], "sector": ["408"], "address": ["5 ELM, AUSTIN, TX 73301"]}},
+    ]
+    recs, info = parse("\n".join(json.dumps(l) for l in lines).encode())
+    by = {r.name: r for r in recs}
+    assert len(recs) == 2
+    a = by["ACME PAY LLC"]
+    assert a.licence_type == "MSB – money transmitter" and a.city == "Miami" and a.status_date == "2022-01-03"
+    assert "Dealer in foreign exchange" in a.services and a.extra["hq_state"] == "FL"
+    assert by["CORNER CHECKS INC"].licence_type == "MSB – other activities"
+
 
 
 def test_za_banks_wiki_parse():
@@ -1456,4 +1489,4 @@ def test_robots_rules_and_adla():
     recs = {r.name: r for r in parse_adla(lines, "u")}
     assert set(recs) == {"Bidvest Bank Limited", "Master Currency (Pty) Ltd", "Tourvest Financial Services (Pty) Ltd",
                          "Mukuru Financial Services (Pty) Ltd", "Hello Paisa (Pty) Ltd"}
-    assert recs["Mukuru Financial Services (Pty) Ltd"].licence_type == "ADLA – Category three: Money transfer operators"
+    assert recs["Mukuru Financial Services (Pty) Ltd"].licence_type == "ADLA – Category 3 (Money transfer operators)"
