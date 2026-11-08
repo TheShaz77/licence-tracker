@@ -65,6 +65,34 @@ def summary_values(records: list, change_rows: list, run_info: dict) -> list:
     return out
 
 
+MICA_HEADER = ["Firm name", "Trading name", "Home country", "Regulator", "MiCA status", "Status",
+               "Authorised / notified on", "Crypto-asset services", "Passported to", "LEI", "Website", "Email",
+               "Phone", "Swiss SRO / notes", "Register link", "First seen", "Last changed"]
+
+
+def mica_tab(records: list) -> list:
+    """Every crypto-asset service provider on ESMA's MiCA register, one row each:
+    CASPs authorised under MiCA and financial firms (banks, investment firms,
+    EMIs) that notified crypto services under Article 60. E-money token issuers
+    are not CASPs and stay on the country tabs only."""
+    rows = []
+    for r in records:
+        if r.get("source") != "mica" or "token issuer" in (r.get("licence_type") or ""):
+            continue
+        ex = r.get("extra") or {}
+        lt = r.get("licence_type") or ""
+        rows.append([r.get("name", ""), ex.get("trading_name", ""), country_tab(r.get("jurisdiction", "")),
+                     r.get("regulator", ""),
+                     "Notified financial firm (Art. 60)" if "Art. 60" in lt else "Authorised CASP (Art. 63)",
+                     "Active" if r.get("active") else "Inactive", r.get("status_date", ""), r.get("services", ""),
+                     r.get("passports", ""), r.get("lei", ""), r.get("website", ""),
+                     r.get("email") or ex.get("email", ""), r.get("phone") or ex.get("phone", ""),
+                     ex.get("comments", ""), r.get("register_url", ""), r.get("first_seen", ""),
+                     r.get("last_changed", "")])
+    rows.sort(key=lambda x: (x[5] != "Active", x[2], x[4], x[0].lower()))
+    return [MICA_HEADER] + rows
+
+
 def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bool = True,
                extra_tabs: dict | None = None) -> dict:
     """Return {tab title: rows (list of lists, header first)} in display order."""

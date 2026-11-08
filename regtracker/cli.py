@@ -205,6 +205,13 @@ def cmd_run(args, cfg, data_dir) -> int:
         with open(data_dir / "source_check.csv", "w", newline="", encoding="utf-8") as f:
             _csv.writer(f).writerows(rows)
 
+    from .http import BLOCKED
+    for host, text in BLOCKED.items():  # what each site's robots.txt actually says, for checking other routes
+        try:
+            (data_dir / "debug").mkdir(parents=True, exist_ok=True)
+            (data_dir / "debug" / f"robots_{host}.txt").write_text(text[:20000])
+        except Exception:
+            pass
     run_info = {"finished": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
                 "sources_status": "; ".join(status), "changes": len(all_events),
                 "problems": problems}
@@ -214,7 +221,7 @@ def cmd_run(args, cfg, data_dir) -> int:
         log.info("Skipping Google Sheets (--no-sheets)")
     elif sheets.enabled():
         try:
-            extra = {}
+            extra = {"MiCA CASPs (EU-EEA)": sheets.mica_tab(records)}
             if covered:
                 extra["Source check"] = compare.report(data_dir, covered, load_snapshot(data_dir, "eba"), ctx.now)
             sheets.publish(records, recent_changes(data_dir, int(cfg.get("sheet_change_rows", 5000))), run_info, log,

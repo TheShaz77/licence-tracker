@@ -1363,3 +1363,20 @@ def test_za_fsca_link_manual_files_and_finma_fintech(tmp_path, monkeypatch):
                 "Foreign Fintech;Zug;CHE-3;Representation of foreign persons under Article 1b of the Banking Act\n")
     got = parse_finma(csv_text, "article 1b|fintech", "representati")
     assert [r.name for r in got] == ["Fintech AG"]
+
+
+def test_mica_tab():
+    from regtracker.sheets import mica_tab, build_tabs
+    from regtracker.sources.mica import parse_casps, parse_emts
+    fx = Path(__file__).parent / "fixtures"
+    recs = [r.to_dict() for r in parse_casps((fx / "CASPS.csv").read_bytes()) + parse_emts((fx / "EMTWP.csv").read_bytes())]
+    for r in recs:
+        r["source"] = "mica"
+    rows = mica_tab(recs)
+    assert rows[0][0] == "Firm name" and len(rows) == 1 + 394            # CASPs only, EMT issuers left out
+    bp = next(x for x in rows if x[0] == "Bitpanda GmbH")
+    assert bp[2] == "Austria (AT)" and bp[4] == "Authorised CASP (Art. 63)" and bp[5] == "Active"
+    assert sum(1 for x in rows[1:] if x[4].startswith("Notified")) == 150
+    tabs = build_tabs(recs, [], {"finished": "", "sources_status": "", "changes": 0, "problems": []},
+                      extra_tabs={"MiCA CASPs (EU-EEA)": rows})
+    assert list(tabs)[:4] == ["Summary", "Changes", "MiCA CASPs (EU-EEA)", "Licences"]

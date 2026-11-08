@@ -31,6 +31,8 @@ def make_session() -> requests.Session:
 
 
 _ROBOTS = {}
+BLOCKED = {}   # host -> robots.txt text, for sites whose robots.txt refused a download (saved to data/debug)
+_TEXT = {}
 
 
 def robots_allowed(session: requests.Session, url: str, agent: str = USER_AGENT) -> bool:
@@ -45,11 +47,15 @@ def robots_allowed(session: requests.Session, url: str, agent: str = USER_AGENT)
         rp = urllib.robotparser.RobotFileParser()
         try:
             r = session.get(root + "/robots.txt", timeout=30)
+            _TEXT[root] = r.text if r.status_code == 200 else ""
             rp.parse(r.text.splitlines() if r.status_code == 200 else [])
         except Exception:
             rp.parse([])
         _ROBOTS[root] = rp
-    return rp.can_fetch(agent, url)
+    ok = rp.can_fetch(agent, url)
+    if not ok:
+        BLOCKED[p.netloc] = _TEXT.get(root, "")
+    return ok
 
 
 class RateLimiter:
