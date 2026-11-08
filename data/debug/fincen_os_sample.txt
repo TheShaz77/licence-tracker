@@ -1,0 +1,10 @@
+url: https://data.opensanctions.org/datasets/latest/us_fincen_msb/targets.simple.csv
+bytes: 175  starts: b'"id","sc'
+error: None
+columns used: {}
+headers: []
+data rows: 0  kept: 0
+type values: None
+first lines:
+'"id","schema","name","aliases","birth_date","countries","addresses","identifiers","sanctions","phones","emails","program_ids","dataset","first_seen","last_seen","last_change"'
+''
