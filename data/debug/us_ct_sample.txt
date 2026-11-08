@@ -1,0 +1,9 @@
+url: https://portal.ct.gov/-/media/dob/consumer-credit-licenses/money_transmitters.xlsx?rev=ae0e28fce4164a139770916af61055f5&hash=1D5423436826A175893EFDA04F0291BD
+bytes: 27422  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: None
+columns used: {'name': 'Company Name', 'dba': None, 'lic': 'License Number', 'nmls': None, 'status': None, 'type': None, 'addr': 'Street', 'city': 'City', 'csz': None, 'state': 'State', 'phone': None, 'area': None, 'prefix': None, 'number': None, 'date': None}
+headers: ['Company Name', 'Street', 'City', 'State', 'Postal Code', 'License Number', 'License Name', 'Report Current As Of']
+data rows: 221  kept: 221
+type values: [('', 221)]
+first lines:
+'(binary)'

@@ -1,0 +1,33 @@
+url: https://www.esma.europa.eu/sites/default/files/2024-12/CASPS.csv
+bytes: 196605  starts: b'\xef\xbb\xbfae_co'
+error: None
+columns used: {}
+headers: ['ae_competentAuthority', 'ae_homeMemberState', 'ae_lei_name', 'ae_lei', 'ae_lei_cou_code', 'ae_commercial_name', 'ae_address', 'ae_website', 'ae_website_platform', 'ac_authorisationNotificationDate', 'ac_authorisationEndDate', 'ac_serviceCode', 'ac_serviceCode_cou', 'ac_comments', 'ac_lastupdate', 'ac_legal_basis', '']
+data rows: 397  kept: 394
+type values: [('Article 60 - Notification', 144), ('Article 63 - CASP authorisation', 119), ('', 115), ('Article 63', 10), ('Article 60', 6), ('Both Article 60 & 63', 3)]
+first lines:
+'ae_competentAuthority,ae_homeMemberState,ae_lei_name,ae_lei,ae_lei_cou_code,ae_commercial_name,ae_address,ae_website,ae_website_platform,ac_authorisationNotificationDate,ac_authorisationEndDate,ac_serviceCode,ac_serviceCode_cou,ac_comments,ac_lastupdate,ac_legal_basis,,'
+'Austrian Financial Market Authority (FMA),AT,Bitpanda GmbH,5493007WZ7IFULIL8G21,AT,Bitpanda,"Stella-Klein-Löw-Weg 17, 1020 Vienna, Austria",https://www.bitpanda.com,,09/04/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for funds | d'
+'Austrian Financial Market Authority (FMA),AT,Bybit EU GmbH,5299005V5GBSN2A4C303,AT,Bybit,"Donau-City-Straße 7, 1220 Vienna, Austria",https://www.bybit.eu,,28/05/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for funds | d. exchange '
+'Austrian Financial Market Authority (FMA),AT,Cryptonow GmbH,529900LZM6X3GBFNLG10,AT,Cryptonow,"Marc-Aurel-Straße 10-12/15a, 1010 Vienna, Austria",https://www.cryptonow.at,,15/10/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for fun'
+'Austrian Financial Market Authority (FMA),AT,AMINA (Austria) AG,5299005I4LYIFW7GKB54,AT,AMINA EU,"Seestrasse 6/13, 6900 Bregenz, Austria",https://eu.aminagroup.com ,,29/10/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for funds | d'
+'Austrian Financial Market Authority (FMA),AT,FIOR Digital GmbH,529900HMYYJR2NHVZ124,AT,21bitcoin,"Rottweg 66, 5020 Salzburg, Austria",https://www.21bitcoin.app,,27/11/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for funds | j. pro'
+'Austrian Financial Market Authority (FMA),AT,KuCoin EU Exchange GmbH,529900B4G0EGK7Z9KT45,AT,KuCoin EU,"Am Grünen Prater 2/3. Stock, 1020 Vienna, Austria",https://www.kucoin.eu,,27/11/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets f'
+'Austrian Financial Market Authority (FMA),AT,DADAT Krypto GmbH,529900KTP3Y86BZKY754,AT,DADAT,"Franz-Josef-Straße 22, 5020 Salzburg, Austria",https://www.dad.at,,16/12/2025,,e. execution of orders for crypto-assets on behalf of clients,AT,,19/12/2025,Article 63 - CASP authorisation,,'
+
+url: https://www.esma.europa.eu/sites/default/files/2024-12/EMTWP.csv
+bytes: 17993  starts: b'\xef\xbb\xbfae_co'
+error: None
+columns used: {}
+headers: ['ae_competentAuthority', 'ae_homeMemberState', 'ae_lei_name', 'ae_lei', 'ae_lei_cou_code', 'ae_commercial_name', 'ae_address', 'ae_website', 'ac_authorisationNotificationDate', 'ac_authorisationEndDate', 'ae_exemption48_4', 'ae_exemption48_5', 'ae_authorisation_other_emt', 'ae_DTI_FFG', 'ae_DTI', 'wp_url', 'wp_authorisationNotificationDate', 'wp_comments', 'wp_lastupdate']
+data rows: 50  kept: 25
+type values: None
+first lines:
+'ae_competentAuthority,ae_homeMemberState,ae_lei_name,ae_lei,ae_lei_cou_code,ae_commercial_name,ae_address,ae_website,ac_authorisationNotificationDate,ac_authorisationEndDate,ae_exemption48_4,ae_exemption48_5,ae_authorisation_other_emt,ae_DTI_FFG,ae_DTI,wp_url,wp_authorisationNotificationDate,wp_comm'
+'Czech National Bank (CNB),CZ,Payment Corporation SE,315700IJDQF91J9C8B68,CZ,Stable Labs,"Krizikova 710/30, Karlin, 18600 Prague 8, Czech Republic",https://stablelabs.co/,26/04/2017,,YES,YES,Electronic money institution,,,https://stablelabs.co/whitepaper0.pdf,17/05/2025,"EMT is issued under the limit'
+'Czech National Bank (CNB),CZ,Payment Corporation SE,315700IJDQF91J9C8B68,CZ,Stable Labs,"Krizikova 710/30, Karlin, 18600 Prague 8, Czech Republic",https://stablelabs.co/,26/04/2017,,YES,YES,Electronic money institution,,,https://stablelabs.co/whitepaper.pdf,20/09/2025,"EMT is issued under the limite'
+'Czech National Bank (CNB),CZ,Payment Corporation SE,315700IJDQF91J9C8B68,CZ,Stable Labs,"Krizikova 710/30, Karlin, 18600 Prague 8, Czech Republic",https://stablelabs.co/,26/04/2017,,YES,YES,Electronic money institution,,,https://stablelabs.co/whitepaper1.pdf,16/10/2025,"EMT is issued under the limit'
+'Federal Financial Supervisory Authority (BaFin),DE,AllUnity GmbH,3912007G8L8CD3HFIV26,DE,AllUnity GmbH,"Sandweg 94, 60316 Frankfurt am Main",https://allunity.com/,20/06/2026,,No,No,Electronic money institution,,8F9FV1RW0 | 4T8Q7PXDR | 72FFN7360 | R21VFQH41 | DP8LJM6WW,https://allunity.com/whitepaper'
+'Federal Financial Supervisory Authority (BaFin),DE,AllUnity GmbH,3912007G8L8CD3HFIV26,DE,AllUnity GmbH,"Sandweg 94, 60316 Frankfurt am Main",https://allunity.com/,20/06/2026,,No,No,Electronic money institution,,VP84J2JSS | D1PFLVZDZ ,https://allunity.com/whitepaper,19/01/2026,CHFAU,23/02/2026'
+'Federal Financial Supervisory Authority (BaFin),DE,AllUnity GmbH,3912007G8L8CD3HFIV26,DE,AllUnity GmbH,"Sandweg 94, 60316 Frankfurt am Main",https://allunity.com/,20/06/2026,,No,No,Electronic money institution,,HTKFL04WZ | 6TR5F3KKF | X10CDHLZQ | 7BN8BLGZH | VTFCC12GK ,https://allunity.com/whitepape'
+'Federal Financial Supervisory Authority (BaFin),DE,AllUnity GmbH,3912007G8L8CD3HFIV26,DE,AllUnity GmbH,"Sandweg 94, 60316 Frankfurt am Main",https://allunity.com/,20/06/2026,,No,No,Electronic money institution,,VP84J2JSS | D1PFLVZDZ | 35PTC5Z63 | GCN4ZMN5R | PGBKBZRH2 | 5Z0LL4J7S,https://allunity.co'

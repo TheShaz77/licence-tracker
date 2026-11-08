@@ -6723,6 +6723,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:254900MVWQXMF77YZP65": {
+"checked": "2026-11-08",
+"website": ""
+},
 "lei:254900NDJ1BKALEH1E49": {
 "checked": "2026-11-06",
 "website": ""
@@ -9405,6 +9409,10 @@
 },
 "lei:4851004TFKBBI18AFY82": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:48510062OP64BYKPNO22": {
+"checked": "2026-11-08",
 "website": ""
 },
 "lei:485100CNU7I70EAPX984": {
@@ -19791,8 +19799,16 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:8945001XWFMRUTCAK575": {
+"checked": "2026-11-08",
+"website": ""
+},
 "lei:8945003MK2S9JTSOS633": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:8945004PZEJSSPTTVB16": {
+"checked": "2026-11-08",
 "website": ""
 },
 "lei:8945005BDKOIPH508L33": {
@@ -21507,6 +21523,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:984500F14CA4571AAC11": {
+"checked": "2026-11-08",
+"website": "https://www.coinbase.com"
+},
 "lei:984500F43D959EBC4A50": {
 "checked": "2026-11-06",
 "website": ""
@@ -21970,6 +21990,11 @@
 "lei:ZMHGNT7ZPKZ3UFZ8EO46": {
 "checked": "2026-11-06",
 "website": ""
+},
+"mica:984500F14CA4571AAC11": {
+"checked": "2026-11-08",
+"website": "https://www.coinbase.com",
+"website_from": "Wikidata"
 },
 "nat_lt:110688998": {
 "checked": "2026-11-06",

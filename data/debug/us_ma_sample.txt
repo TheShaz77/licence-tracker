@@ -1,0 +1,9 @@
+url: https://www.mass.gov/doc/money-transmitter-licensee-list/download
+bytes: 27134  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: None
+columns used: {'name': 'Company Name', 'dba': None, 'lic': 'License Number', 'nmls': None, 'status': None, 'type': None, 'addr': 'Street Address', 'city': 'City', 'csz': None, 'state': 'State', 'phone': None, 'area': None, 'prefix': None, 'number': None, 'date': None}
+headers: ['Company ID', 'Company Name', 'Branch ID', 'Street Address', 'City', 'State', 'Postal Code', 'License Number', 'License Name']
+data rows: 116  kept: 98
+type values: [('', 116)]
+first lines:
+'(binary)'

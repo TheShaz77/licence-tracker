@@ -1,0 +1,34 @@
+{
+"blockriver": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"matched_name": "BlockRiver AG",
+"name": "BLOCKRIVER INC.",
+"sro": "VQF"
+},
+"mdf": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"matched_name": "MDF AG",
+"name": "MDF AG",
+"sro": "SO-FIT"
+},
+"monecocanada": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "MONECO CANADA INC.",
+"sro": ""
+},
+"paysafecardcomschweiz": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "PAYSAFECARD.COM SCHWEIZ GMBH",
+"sro": ""
+},
+"pipaysolutions": {
+"checked": "2026-11-08",
+"kind": "sheet",
+"name": "PIPAY SOLUTIONS INC.",
+"sro": ""
+}
+}
