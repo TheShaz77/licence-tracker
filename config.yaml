@@ -114,7 +114,8 @@ sources:
 
   us_states:      # US: money transmitter licensees, from the states that publish their own list
     enabled: true # FL, CA, MA, CT, LA, IN, DE, AK (others only publish via NMLS, which can't be used)
-    skip: [ak]    # Alaska's site refuses downloads from GitHub's servers (Alaska MSBs still come via FinCEN)
+    skip: [ma]    # Massachusetts refuses downloads from GitHub's servers (HTTP 403); its firms still come via FinCEN.
+                  # Alaska is tried once via its roster PDF; if that is refused too, it switches itself off.
     min_hours: 6  # states update monthly/quarterly; checked four times a day
 
 # ---------------------------------------------------------------------------

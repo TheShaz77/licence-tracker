@@ -137,7 +137,7 @@ def cmd_run(args, cfg, data_dir) -> int:
         try:
             recs = src.fetch(ctx)
         except SourceNotReady as e:
-            log.warning("%s skipped: %s", src.name, e)
+            (log.info if getattr(e, "quiet", False) else log.warning)("%s skipped: %s", src.name, e)
             status.append(f"{src.name}: waiting ({e})")
             continue
         except Exception as e:

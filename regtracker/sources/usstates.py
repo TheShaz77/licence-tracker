@@ -47,7 +47,9 @@ STATES = {
            "url": "https://banking.delaware.gov/wp-json/wp/v2/media?search=Check-Seller-and-Money-Transmitter&orderby=date&order=desc&per_page=5",
            "register_url": "https://banking.delaware.gov/"},
     "ak": {"state": "AK", "regulator": "AK DBS", "format": "ak_pdf", "manual_ext": "pdf", "find_link": r"MSB[^\"']*Roster[^\"']*\.pdf[^\"']*",
-           "url": "https://commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses"},
+           "url": "https://commerce.alaska.gov/web/dbs/ConsumerFinance/MoneyServiceBusinesses",
+           "dated_pdf": "https://www.commerce.alaska.gov/web/Portals/3/pub/MSB%20Roster%20{date}.pdf",
+           "known_edition": "20260319"},
 }
 UA = {"User-Agent": "Mozilla/5.0 (compatible; licence-tracker/1.0)"}
 INACTIVE = re.compile(r"expired|surrender|revok|terminat|cancel|withdraw|inactive|closed|denied|suspend|null|void", re.I)
@@ -332,65 +334,87 @@ def parse_de_pdf(code, raw: bytes, spec) -> tuple:
     return list(out.values()), info
 
 
-def parse_ak_pdf(code, raw: bytes, spec) -> tuple:
-    lines = pdf_lines(raw)
-    out, info = {}, {"headers": lines[:4], "rows": 0, "columns": {}, "first_text_lines": lines[:40]}
-    pat = re.compile(r"^(?P<rest>.+?)\s+(?P<status>Approved(?:[- ][A-Za-z]+)*|Suspended|Revoked|Inactive|Expired|"
-                     r"Surrendered|Terminated|Pending\S*)\s+(?P<lic>\d{3,8})$")
-    for line in lines:
-        m = pat.match(line)
-        if not m:
+def ak_rows(pages: list) -> list:
+    """pages: [[{text, x0, top}, ...], ...] (pdfplumber words). Columns are found from the header
+    ("Filing Description", "DBA / Trade Name", "Business/Physical Address", "Filing Status",
+    "File/License #"); a row starts where the licence-number column has a number, and the next
+    lines up to the following row continue its name, trade name and address."""
+    rows = []
+    for words in pages:
+        hdr = {}
+        for w in words:
+            t = w["text"]
+            if t.startswith("DBA") and "dba" not in hdr:
+                hdr["dba"], hdr["top"] = w["x0"], w["top"]
+            elif t.startswith("Business/Physical"):
+                hdr["addr"] = w["x0"]
+            elif t.startswith("File/License"):
+                hdr["lic"] = w["x0"]
+            elif t == "Status" and "status" not in hdr:
+                hdr["status_end"] = w["x0"]
+        status_x = None
+        for w in words:
+            if w["text"] == "Filing" and abs(w["top"] - hdr.get("top", -99)) < 4 and w["x0"] > hdr.get("addr", 1e9):
+                status_x = w["x0"]
+        if not all(k in hdr for k in ("dba", "addr", "lic", "top")) or status_x is None:
             continue
-        info["rows"] += 1
-        rest = m.group("rest")
-        lm = LEGAL_END.match(rest)
-        if lm:
-            name, addr = lm.group(1), lm.group(2)
-        else:
-            parts = re.split(r"\s(?=\d+\s)", rest, maxsplit=1)
-            name, addr = parts[0], (parts[1] if len(parts) > 1 else "")
-        city, st = city_of(addr)
-        rec = make_record(code, spec, name, m.group("lic"), m.group("status"), city, "",
-                          {"address": addr, "hq_state": st})
+        lines = {}
+        for w in words:
+            if w["top"] <= hdr["top"] + 4:
+                continue
+            lines.setdefault(round(w["top"] / 3), []).append(w)
+        cur = None
+        for key in sorted(lines):
+            ws = sorted(lines[key], key=lambda w: w["x0"])
+            text = " ".join(w["text"] for w in ws)
+            if re.match(r"^Page \d+ of \d+$", text):
+                continue
+            cols = {"name": [], "dba": [], "addr": [], "status": [], "lic": []}
+            for w in ws:
+                x = w["x0"]
+                col = ("lic" if x >= hdr["lic"] - 2 else "status" if x >= status_x - 2 else
+                       "addr" if x >= hdr["addr"] - 2 else "dba" if x >= hdr["dba"] - 2 else "name")
+                cols[col].append(w["text"])
+            c = {k: " ".join(v) for k, v in cols.items()}
+            if re.fullmatch(r"\d{3,8}", c["lic"]):
+                cur = {"name": c["name"], "dba": c["dba"], "addr": [c["addr"]] if c["addr"] else [],
+                       "status": c["status"], "lic": c["lic"]}
+                rows.append(cur)
+            elif cur is not None:
+                if c["name"]:
+                    cur["name"] += " " + c["name"]
+                if c["dba"]:
+                    cur["dba"] = (cur["dba"] + " " + c["dba"]).strip()
+                if c["addr"]:
+                    cur["addr"].append(c["addr"])
+    return rows
+
+
+def parse_ak_pdf(code, raw: bytes, spec) -> tuple:
+    import io
+    import pdfplumber
+    pages = []
+    with pdfplumber.open(io.BytesIO(raw)) as pdf:
+        for page in pdf.pages:
+            pages.append(page.extract_words(keep_blank_chars=False, use_text_flow=False))
+    rows = ak_rows(pages)
+    out, info = {}, {"headers": [], "rows": len(rows), "columns": {},
+                     "first_text_lines": [" | ".join([r["name"], r["dba"], " / ".join(r["addr"]), r["status"], r["lic"]])
+                                          for r in rows[:40]]}
+    for r in rows:
+        name = re.sub(r"\s+", " ", r["name"]).strip()
+        if not name:
+            continue
+        city, st = city_of(r["addr"][-1] if r["addr"] else "")
+        rec = make_record(code, spec, name, r["lic"], r["status"], city, "",
+                          {"address": ", ".join(r["addr"]), "hq_state": st, "dba": r["dba"]})
+        prev = out.get(rec.key)
+        if prev and r["dba"] and r["dba"] not in (prev.extra.get("dba") or ""):
+            prev.extra["dba"] = "; ".join(x for x in (prev.extra.get("dba"), r["dba"]) if x)
+            continue
         out[rec.key] = rec
     info["kept"] = len(out)
     return list(out.values()), info
-
-
-class _Resp:
-    def __init__(self, url, content, ctype):
-        self.url, self.content, self.status_code = url, content, 200
-        self.headers = {"content-type": ctype}
-        self.text = content.decode("utf-8", "replace")
-
-    def json(self):
-        import json
-        return json.loads(self.text)
-
-    def raise_for_status(self):
-        pass
-
-
-def browser_get(url: str) -> _Resp:
-    """Fetch a page or file with headless Chromium (Playwright). Pages are
-    returned after JavaScript has run, so links added by scripts are present."""
-    from playwright.sync_api import sync_playwright
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        try:
-            ctx = browser.new_context(accept_downloads=True)
-            page = ctx.new_page()
-            if re.search(r"\.(xlsx?|pdf|zip|csv)(\?|$)|/download$", url, re.I):
-                resp = ctx.request.get(url, timeout=120000)
-                if resp.status >= 400:
-                    raise RuntimeError(f"{resp.status} from {url} (also refused to a browser)")
-                return _Resp(url, resp.body(), resp.headers.get("content-type", ""))
-            resp = page.goto(url, wait_until="networkidle", timeout=120000)
-            if resp is not None and resp.status >= 400:
-                raise RuntimeError(f"{resp.status} from {url} (also refused to a browser)")
-            return _Resp(url, page.content().encode("utf-8"), "text/html")
-        finally:
-            browser.close()
 
 
 PARSERS = {"fl_zip": parse_fl_zip, "ca_html": parse_ca_html, "table": parse_table_file,
@@ -415,22 +439,14 @@ class USStateSource(Source):
         self.spec = spec
         self.name = f"us_{code}"
         self.label = f"US {spec['state']} money transmitter licensees ({spec['regulator']})"
-        self.fingerprint = f"usstate-v1:{spec['format']}"
+        self.fingerprint = f"usstate-v1:{spec['format']}" + ("-v2" if spec["format"] == "ak_pdf" else "")
 
     def _get(self, ctx, url):
         if not robots_allowed(ctx.session, url):
             raise SourceNotReady(f"{url} is disallowed by robots.txt")
         r = ctx.session.get(url, timeout=120, headers=UA)
-        if r.status_code == 403 or (r.ok and self._challenge(r)):
-            # some state sites refuse plain scripts; a real (headless) browser usually gets through
-            return browser_get(url)
-        r.raise_for_status()
+        r.raise_for_status()   # a site that refuses the tracker (403) is respected, never worked around
         return r
-
-    @staticmethod
-    def _challenge(r) -> bool:
-        ct = (r.headers.get("content-type") or "").lower()
-        return "html" in ct and len(r.content) < 20000 and re.search(rb"captcha|challenge|access denied|cf-chl", r.content[:20000], re.I)
 
     def resolve_url(self, ctx) -> str:
         spec = self.spec
@@ -449,6 +465,53 @@ class USStateSource(Source):
             return urljoin(spec["url"], htmlmod.unescape(m.group(1)))
         return spec["url"]
 
+    def _dated_pdf(self, ctx, spec) -> tuple:
+        """Alaska: the roster PDF is named after its edition date ("MSB Roster 20260319.pdf") and its
+        list page refuses GitHub's servers. Fetch the newest known edition directly; once a day, also
+        look for a newer edition dated in the last 7 days. If the site refuses the file itself (403),
+        that is recorded and the tracker stops asking."""
+        import datetime as dt
+        import json
+        state_p = ctx.data_dir / "state" / f"{self.name}_editions.json"
+        st = json.loads(state_p.read_text()) if state_p.exists() else {}
+        if st.get("refused"):
+            err = SourceNotReady(f"off: the {spec['state']} site refused the roster PDF on {st['refused']} "
+                                 "(its firms still come through the FinCEN list)")
+            err.quiet = True
+            raise err
+        today = dt.date.fromisoformat(ctx.today)
+        known = st.get("edition") or spec["known_edition"]
+        tries = [known]
+        if st.get("probed") != ctx.today:
+            tries = [(today - dt.timedelta(days=d)).strftime("%Y%m%d") for d in range(0, 8)
+                     if (today - dt.timedelta(days=d)).strftime("%Y%m%d") > known] + tries
+        found, raw = "", b""
+        for date in tries:
+            url = spec["dated_pdf"].format(date=date)
+            if not robots_allowed(ctx.session, url):
+                raise SourceNotReady(f"{url} is disallowed by robots.txt")
+            r = ctx.session.get(url, timeout=120, headers=UA)
+            if r.status_code == 403:
+                st["refused"] = ctx.today
+                state_p.parent.mkdir(parents=True, exist_ok=True)
+                state_p.write_text(json.dumps(st))
+                err = SourceNotReady(f"off: the {spec['state']} site refuses GitHub's servers (HTTP 403); "
+                                     "its firms still come through the FinCEN list")
+                err.quiet = True
+                raise err
+            if r.status_code == 200 and r.content[:4] == b"%PDF":
+                found, raw = date, r.content
+                break
+        st["probed"] = ctx.today
+        if found:
+            st["edition"] = found
+        state_p.parent.mkdir(parents=True, exist_ok=True)
+        state_p.write_text(json.dumps(st))
+        if not found:
+            raise RuntimeError(f"{spec['state']} roster not found (tried editions {', '.join(tries)})")
+        ctx.log.info("%s: roster edition %s", self.name, found)
+        return spec["dated_pdf"].format(date=found), raw
+
     def fetch(self, ctx: Context) -> list:
         overrides = ((ctx.source_config("us_states") or {}).get("overrides") or {}).get(self.code) or {}
         spec = {**self.spec, **overrides}
@@ -456,6 +519,8 @@ class USStateSource(Source):
         manual = manual_file(ctx, self.name)
         if manual and spec.get("manual_only"):
             url, raw = str(manual), manual.read_bytes()
+        elif spec.get("dated_pdf"):
+            url, raw = self._dated_pdf(ctx, spec)
         else:
             try:
                 url = self.resolve_url(ctx)
@@ -465,11 +530,14 @@ class USStateSource(Source):
                 if not blocked:
                     raise
                 if not manual:
-                    raise SourceNotReady(
+                    err = SourceNotReady(
                         f"the {spec['state']} site blocks automated downloads; download the list yourself from "
                         f"{spec.get('register_url') or spec['url']} and upload it to data/manual/ as {self.name}"
                         f".{spec.get('manual_ext', 'xlsx')}")
-                url, raw = str(manual), manual.read_bytes()
+                    err.quiet = True   # an expected, permanent block: logged as information, not a warning
+                    raise err
+                else:
+                    url, raw = str(manual), manual.read_bytes()
         err, info, recs = None, {}, []
         try:
             recs, info = PARSERS[spec["format"]](self.code, raw, spec)

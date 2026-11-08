@@ -1086,15 +1086,6 @@ def test_us_state_parsers_pdf_text(monkeypatch):
     assert set(by) == {"042465", "011221"}
     assert by["011221"].name == "ACI Payments, Inc." and by["011221"].extra["dba"] == "Speedpay"
     assert by["042465"].city == "New York" and by["042465"].extra["phone"] == "(845) 999-0474"
-    ak_lines = ["Money Transmitter", "Filing Description DBA / Trade Name Business/Physical Address Filing Status File/License #",
-                "1Money USA, Inc. 575 5th Avenue Floor 14 Suite 14-107 New York, NY 10017 Approved 018134",
-                "ACI Payments, Inc. 6060 Coventry Dr. Elkhorn, NE 68022-6482 Approved-Deficient 10036",
-                "Gone Remit LLC 1 Rd Juneau, AK 99801 Surrendered 555"]
-    monkeypatch.setattr(u, "pdf_lines", lambda raw: ak_lines)
-    ak, _ = u.parse_ak_pdf("ak", b"", u.STATES["ak"])
-    by = {r.reference: r for r in ak}
-    assert by["018134"].name == "1Money USA, Inc." and by["018134"].city == "New York"
-    assert by["10036"].active and not by["555"].active
 
 
 def test_usa_link_and_licence_page():
@@ -1579,3 +1570,67 @@ def test_telegram_token_cleanup(monkeypatch):
     for raw in (tok, f" {tok}\n", f'"{tok}"', f"bot{tok}", f"https://api.telegram.org/bot{tok}/getMe"):
         monkeypatch.setenv("TELEGRAM_BOT_TOKEN", raw)
         assert notify.telegram_token() == tok
+
+
+def test_alaska_roster_columns_and_editions(tmp_path, monkeypatch):
+    import logging
+    from regtracker.sources import usstates as u
+    from regtracker.sources.base import Context, SourceNotReady
+
+    def w(text, x, top):
+        return {"text": text, "x0": x, "top": top}
+    header = [w("Filing", 10, 100), w("Description", 40, 100), w("DBA", 190, 100), w("/", 210, 100), w("Trade", 215, 100),
+              w("Name", 240, 100), w("Business/Physical", 385, 100), w("Address", 450, 100), w("Filing", 570, 100),
+              w("Status", 600, 100), w("File/License", 690, 100), w("#", 740, 100)]
+    page = header + [
+        w("Money", 10, 90), w("Transmitter", 40, 90),
+        w("1Money", 10, 110), w("USA,", 50, 110), w("Inc.", 80, 110), w("575", 385, 110), w("5th", 405, 110),
+        w("Avenue", 425, 110), w("Approved", 570, 110), w("018134", 690, 110),
+        w("New", 385, 120), w("York,", 410, 120), w("NY", 440, 120), w("10017", 460, 120),
+        w("AllPaid,", 10, 135), w("Inc.", 50, 135), w("GovPayNet", 190, 135), w("7820", 385, 135), w("Innovation", 410, 135),
+        w("Approved", 570, 135), w("012824", 690, 135), w("Indianapolis,", 385, 145), w("IN", 450, 145), w("46278", 470, 145),
+        w("American", 10, 160), w("Express", 60, 160), w("Prepaid", 100, 160), w("Card", 140, 160), w("18850", 385, 160),
+        w("North", 415, 160), w("Approved", 570, 160), w("10048", 690, 160),
+        w("Management", 10, 170), w("Corporation", 70, 170), w("Phoenix,", 385, 170), w("AZ", 430, 170), w("85054", 450, 170),
+        w("Page", 690, 300), w("1", 715, 300), w("of", 725, 300), w("12", 735, 300)]
+    rows = u.ak_rows([page])
+    assert [r["lic"] for r in rows] == ["018134", "012824", "10048"]
+    assert rows[2]["name"] == "American Express Prepaid Card Management Corporation"
+    assert rows[2]["addr"] == ["18850 North", "Phoenix, AZ 85054"] and rows[1]["dba"] == "GovPayNet"
+
+    class R:
+        def __init__(self, code, content=b""):
+            self.status_code, self.content = code, content
+    calls = []
+    monkeypatch.setattr(u, "robots_allowed", lambda s, url: True)
+    src = u.USStateSource("ak", u.STATES["ak"])
+
+    class S:
+        def get(self, url, timeout=0, headers=None):
+            calls.append(url)
+            return R(200, b"%PDF roster") if "20260319" in url else R(404)
+    ctx = Context({}, S(), "2026-11-08", tmp_path, set(), logging.getLogger("t"))
+    url, raw = src._dated_pdf(ctx, u.STATES["ak"])
+    assert url.endswith("MSB%20Roster%2020260319.pdf") and raw.startswith(b"%PDF")
+    assert len(calls) == 9                                     # 8 recent dates looked for, then the known edition
+    calls.clear()
+    src._dated_pdf(ctx, u.STATES["ak"])
+    assert len(calls) == 1                                     # the same day: only the known edition
+
+    class Refused:
+        def get(self, url, timeout=0, headers=None):
+            calls.append(url)
+            return R(403)
+    ctx2 = Context({}, Refused(), "2026-11-09", tmp_path / "b", set(), logging.getLogger("t"))
+    try:
+        src._dated_pdf(ctx2, u.STATES["ak"])
+        assert False
+    except SourceNotReady as e:
+        assert getattr(e, "quiet", False) and "off" in str(e)
+    calls.clear()
+    try:
+        src._dated_pdf(ctx2, u.STATES["ak"])
+        assert False
+    except SourceNotReady as e:
+        assert getattr(e, "quiet", False)
+    assert calls == []                                         # refused once: never asked again
