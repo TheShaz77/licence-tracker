@@ -30,7 +30,10 @@ from .national import match_name, read_table, write_diagnostics
 
 STATES = {
     "fl": {"state": "FL", "regulator": "FL OFR", "format": "fl_zip",
-           "url": "https://real.flofr.com/Public/MT/Money_Transmitters_monthly.zip",
+           # the download page is read each run for the current link (the file moved once already)
+           "page": "https://flofr.gov/education/public-information/registration-data-download",
+           "page_link": r"(?:Money[ _%20-]*Transmitter|/MT/)[^\"']*\.(?:zip|xlsx?|csv)",
+           "url": "https://real.flofr.gov/Public/MT/Money_Transmitters_monthly.zip",
            "register_url": "https://flofr.gov/education/public-information/registration-data-download"},
     "ca": {"state": "CA", "regulator": "CA DFPI", "format": "ca_html",
            "url": "https://dfpi.ca.gov/regulated-industries/money-transmitters/directory-of-money-transmitters/"},
@@ -459,6 +462,23 @@ class USStateSource(Source):
             if not pdfs:
                 raise RuntimeError("Delaware: no licensee PDF found in the site's media list")
             return pdfs[0]["source_url"]
+        if spec.get("page"):
+            try:
+                page = self._get(ctx, spec["page"]).text
+                links = re.findall(r"""href=["']([^"']*?""" + spec["page_link"] + r"""[^"']*)["']""", page, re.I)
+            except Exception as e:
+                ctx.log.info("%s: could not read %s (%s); using the last known file address", self.name, spec["page"], e)
+                links = []
+            if links:
+                monthly = [l for l in links if re.search(r"month", l, re.I)] or links
+                return urljoin(spec["page"], htmlmod.unescape(monthly[0]))
+            try:  # no match: save every download link on the page, so the pattern can be fixed in one go
+                found = re.findall(r"""href=["']([^"']+\.(?:zip|xlsx?|csv|txt)[^"']*)["']""", page, re.I)
+                (ctx.data_dir / "debug").mkdir(parents=True, exist_ok=True)
+                (ctx.data_dir / "debug" / f"{self.name}_page_links.txt").write_text("\n".join(found) or "(no download links)")
+            except Exception:
+                pass
+            return spec["url"]
         if spec.get("find_link"):
             page = self._get(ctx, spec["url"]).text
             m = re.search(r"""href=["']([^"']*?""" + spec["find_link"] + r"""[^"']*)["']""", page, re.I)

@@ -1640,3 +1640,21 @@ def test_alaska_roster_columns_and_editions(tmp_path, monkeypatch):
     except SourceNotReady as e:
         assert getattr(e, "quiet", False)
     assert calls == []                                         # refused once: never asked again
+
+
+def test_florida_link_from_download_page(tmp_path, monkeypatch):
+    import logging
+    from regtracker.sources import usstates as u
+    from regtracker.sources.base import Context
+
+    class R:
+        def __init__(self, text): self.text, self.status_code = text, 200
+    page = ('<a href="https://real.flofr.gov/Public/CC/Check_Cashers_monthly.zip">Check cashers</a>'
+            '<a href="https://real.flofr.gov/Public/MSB/Money%20Transmitters%20Monthly.zip">Money Transmitters</a>'
+            '<a href="https://real.flofr.gov/Public/MSB/Money%20Transmitters%20Weekly.zip">weekly</a>')
+    src = u.USStateSource("fl", u.STATES["fl"])
+    monkeypatch.setattr(src, "_get", lambda c, url: R(page))
+    ctx = Context({}, None, "2026-11-08", tmp_path, set(), logging.getLogger("t"))
+    assert src.resolve_url(ctx) == "https://real.flofr.gov/Public/MSB/Money%20Transmitters%20Monthly.zip"
+    monkeypatch.setattr(src, "_get", lambda c, url: R("<p>no links</p>"))
+    assert src.resolve_url(ctx) == u.STATES["fl"]["url"]
