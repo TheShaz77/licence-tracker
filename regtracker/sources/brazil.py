@@ -7,13 +7,15 @@ Two official BCB publications, merged by CNPJ (the company number):
      tables: active Pix participants, and institutions still joining Pix
      ("em processo de adesão"), which are the applicants. It also lists small
      payment institutions that don't need BCB authorisation but do offer Pix.
-  2. The BCB register of authorised institutions ("Relação de instituições em
+  2. The BCB register of authorised institutions (non-bank and bank lists) ("Relação de instituições em
      funcionamento no país", open data under ODbL) via the BCB's Olinda API,
      which adds address, city, website, email and phone.
 
-Kept: payment institutions (authorised and not subject to authorisation) and
-FX brokers (corretoras de câmbio). Banks, credit societies and securities
-brokers are left out (configurable with include_types).
+Kept: payment institutions (authorised and not subject to authorisation), FX
+brokers (corretoras de câmbio) and banks (commercial, multiple-service,
+co-operative, FX banks and Caixa; include_banks: false turns banks off).
+Credit societies, credit unions, investment/development banks and securities
+brokers are left out.
 
 Both are checked against robots.txt on every run. If one is refused, the other
 still produces the list.
@@ -37,6 +39,8 @@ PIX_KNOWN = "20260513"
 PIX_PAGE = "https://www.bcb.gov.br/estabilidadefinanceira/participantespix"
 OLINDA = ("https://olinda.bcb.gov.br/olinda/servico/Instituicoes_em_funcionamento/versao/v1/odata/"
           "SedesSociedades?$top=100000&$format=json")
+OLINDA_BANKS = ("https://olinda.bcb.gov.br/olinda/servico/Instituicoes_em_funcionamento/versao/v1/odata/"
+                "SedesBancoComMultCE?$top=100000&$format=json")
 REGISTER_PAGE = "https://www.bcb.gov.br/estabilidadefinanceira/relacao_instituicoes_funcionamento"
 UA = {"User-Agent": "Mozilla/5.0 (compatible; licence-tracker/1.0)"}
 
@@ -67,11 +71,18 @@ def cnpj_digits(s: str) -> str:
     return re.sub(r"\D", "", s or "")
 
 
-def keep_type(kind: str, name: str = "", include: str = INCLUDE, exclude: str = EXCLUDE) -> bool:
-    """Payment institutions and FX brokers, decided on the regulator's own type, not banks, credit
-    or securities firms. The register lumps 'Corretoras de TVM e Câmbio' together, so for that
-    segment the firm's name has to say câmbio."""
+BANK = re.compile(r"^(banco (multiplo|comercial|de cambio)|bancos? (comercia|multipl)|caixa economica)")
+
+
+def keep_type(kind: str, name: str = "", include: str = INCLUDE, exclude: str = EXCLUDE,
+              banks: bool = True) -> bool:
+    """Payment institutions, FX brokers and (optionally) banks, decided on the regulator's own type.
+    Credit societies, credit unions, investment/development banks and securities firms are left
+    out. The register lumps 'Corretoras de TVM e Câmbio' together, so for that segment the firm's
+    name has to say câmbio."""
     k = plain(kind)
+    if BANK.match(k):
+        return banks
     if re.search(plain(exclude), k) and "cambio" not in k:
         return False
     if "pagamento" in k:
@@ -85,6 +96,14 @@ def keep_type(kind: str, name: str = "", include: str = INCLUDE, exclude: str = 
 
 def licence_label(kind: str) -> str:
     k = plain(kind)
+    if BANK.match(k):
+        if "cambio" in k:
+            return "Bank (FX bank – banco de câmbio)"
+        if "caixa" in k:
+            return "Bank (Caixa Econômica Federal)"
+        if "cooperativo" in k:
+            return "Bank (co-operative bank)"
+        return "Bank (commercial bank)" if "comercia" in k else "Bank (multiple-service bank)"
     if "nao sujeita" in k:
         return "Payment institution (not subject to BCB authorisation)"
     if "pagamento" in k:
@@ -256,7 +275,7 @@ def parse_register(data: dict) -> list:
 class BrazilSource(Source):
     name = "br_bcb"
     label = "Brazil payment institutions, FX brokers & Pix participants (BCB)"
-    fingerprint = "br-bcb-v2"
+    fingerprint = "br-bcb-v3"
 
     def _allowed(self, ctx, url) -> bool:
         if robots_allowed(ctx.session, url):
@@ -312,29 +331,38 @@ class BrazilSource(Source):
         return rows, f"{found[6:]}/{found[4:6]}/{found[:4]}"
 
     def _register(self, ctx, cfg):
-        url = cfg.get("register_api") or OLINDA
-        if not self._allowed(ctx, url):
-            return None
-        r = ctx.session.get(url, timeout=180, headers={**UA, "Accept": "application/json"})
-        r.raise_for_status()
-        err, rows, data = None, [], {}
-        try:
-            data = r.json()
-            rows = parse_register(data)
-        except Exception as e:
-            err = e
-        first = (data.get("value") or [{}])[0] if isinstance(data, dict) else {}
-        write_diagnostics(ctx, self.name + "_register", [(url, r.content, {
-            "rows": len(rows), "kept": len(rows), "columns": sorted(first),
-            "first_text_lines": [json.dumps(x, ensure_ascii=False) for x in (data.get("value") or [])[:5]]
-            if isinstance(data, dict) else []}, err)])
-        if err:
-            raise err
-        return rows
+        urls = [cfg.get("register_api") or OLINDA]
+        if cfg.get("include_banks", True):
+            urls.append(cfg.get("register_banks_api") or OLINDA_BANKS)
+        rows, notes, got_any = [], [], False
+        for url in urls:
+            if not self._allowed(ctx, url):
+                continue
+            r = ctx.session.get(url, timeout=180, headers={**UA, "Accept": "application/json"})
+            r.raise_for_status()
+            err, got, data = None, [], {}
+            try:
+                data = r.json()
+                got = parse_register(data)
+            except Exception as e:
+                err = e
+            first = (data.get("value") or [{}])[0] if isinstance(data, dict) else {}
+            notes.append((url, r.content, {
+                "rows": len(got), "kept": len(got), "columns": sorted(first),
+                "first_text_lines": [json.dumps(x, ensure_ascii=False) for x in (data.get("value") or [])[:5]]
+                if isinstance(data, dict) else []}, err))
+            if err:
+                write_diagnostics(ctx, self.name + "_register", notes)
+                raise err
+            got_any = True
+            rows += got
+        write_diagnostics(ctx, self.name + "_register", notes)
+        return rows if got_any else None
 
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config(self.name)
         inc, exc = cfg.get("include_types") or INCLUDE, cfg.get("exclude_types") or EXCLUDE
+        banks = bool(cfg.get("include_banks", True))
         problems = []
         try:
             pix, edition = self._pix(ctx, cfg)
@@ -353,7 +381,7 @@ class BrazilSource(Source):
 
         firms = {}   # CNPJ root (first 8 digits) -> merged info
         for r in reg or []:
-            if not keep_type(r["segment"], r["name"], inc, exc):
+            if not keep_type(r["segment"] or "Instituição de Pagamento", r["name"], inc, exc, banks):
                 continue
             k = r["cnpj"][:8] or "n:" + plain(r["name"])
             firms[k] = {"name": r["name"], "kind": r["segment"] or "Instituição de Pagamento", "reg": r,
@@ -362,7 +390,7 @@ class BrazilSource(Source):
             k = p["cnpj"][:8]
             if k in firms:
                 firms[k]["pix"] = p
-            elif keep_type(p["type"], p["name"], inc, exc):
+            elif keep_type(p["type"], p["name"], inc, exc, banks):
                 firms[k] = {"name": p["name"], "kind": p["type"], "reg": None, "pix": p}
 
         recs = []

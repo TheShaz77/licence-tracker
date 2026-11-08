@@ -111,8 +111,9 @@ sources:
   za_casp:        # South Africa: licensed crypto asset service providers (FSCA)
     enabled: true
     min_hours: 12
-  br_bcb:         # Brazil: payment institutions, FX brokers, Pix participants and Pix applicants (Banco Central)
+  br_bcb:         # Brazil: payment institutions, FX brokers, banks, Pix participants and Pix applicants (Banco Central)
     enabled: true
+    include_banks: true
     min_hours: 6
 
   us_states:      # US: money transmitter licensees, from the states that publish their own list

@@ -1820,3 +1820,15 @@ def test_brazil_labels():
     friendly_labels(e)
     assert e[0]["event_label"] == "Joined Pix (Brazil)" and is_new_registration(e[0])
     assert e[1]["event_label"] == "Applied to join Pix (Brazil)"
+
+
+def test_brazil_banks():
+    from regtracker.sources.brazil import keep_type, licence_label
+    assert keep_type("Banco Múltiplo") and keep_type("Banco Comercial") and keep_type("Caixa Econômica Federal")
+    assert keep_type("Banco Múltiplo Cooperativo") and keep_type("Banco de Câmbio")
+    assert not keep_type("Banco Múltiplo", banks=False)
+    assert not keep_type("Banco de Investimento") and not keep_type("Cooperativa de Crédito")
+    assert not keep_type("Sociedade de Crédito Direto")
+    assert licence_label("Banco Múltiplo") == "Bank (multiple-service bank)"
+    assert licence_label("Banco de Câmbio") == "Bank (FX bank – banco de câmbio)"
+    assert licence_label("Banco Múltiplo Cooperativo") == "Bank (co-operative bank)"
