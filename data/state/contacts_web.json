@@ -109,6 +109,16 @@
 "phone_from": "firm website",
 "website": "https://www.21bitcoin.app"
 },
+"site:2c2p.com": {
+"checked": "2026-11-09",
+"email": "support@2c2p.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+85282022280",
+"phone_from": "firm website",
+"website": "http://www.2c2p.com"
+},
 "site:2payapp.com": {
 "checked": "2026-11-06",
 "email": "support@2payapp.com",
@@ -228,6 +238,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://7awel.money"
+},
+"site:8hexa.com": {
+"checked": "2026-11-09",
+"email": "sales@8hexa.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+65 8800 8807",
+"phone_from": "firm website",
+"website": "http://www.8hexa.com"
 },
 "site:8percent.kr": {
 "checked": "2026-11-09",
@@ -629,6 +649,16 @@
 "phone_from": "firm website",
 "website": "https://www.acumatica.com"
 },
+"site:adagecredit.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.adagecredit.co.uk"
+},
 "site:addiko.com": {
 "checked": "2026-11-07",
 "email": "holding@addiko.com",
@@ -648,6 +678,16 @@
 "phone": "+155895548855",
 "phone_from": "firm website",
 "website": "https://www.addmoneytransfer.com"
+},
+"site:adilkatilim.com.tr": {
+"checked": "2026-11-09",
+"email": "adilkatilim@hs03.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.adilkatilim.com.tr"
 },
 "site:adopto.ca": {
 "checked": "2026-11-06",
@@ -1109,6 +1149,16 @@
 "phone_from": "firm website",
 "website": "https://www.akabank.de"
 },
+"site:akbank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.akbank.com"
+},
 "site:akbank.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -1179,6 +1229,16 @@
 "phone_from": "firm website",
 "website": "http://www.aktia.fi"
 },
+"site:aktifbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.aktifbank.com.tr"
+},
 "site:aktivbank-factoring.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -1218,6 +1278,16 @@
 "phone": "0860225786",
 "phone_from": "firm website",
 "website": "https://www.albaraka.co.za"
+},
+"site:albarakaturk.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "08502225666",
+"phone_from": "firm website",
+"website": "http://www.albarakaturk.com.tr"
 },
 "site:albern.com": {
 "checked": "2026-11-06",
@@ -1298,6 +1368,16 @@
 "phone": "+16047240299",
 "phone_from": "firm website",
 "website": "https://alephexchange.ca"
+},
+"site:aletaplanet.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.aletaplanet.com"
 },
 "site:algbra.com": {
 "checked": "2026-11-06",
@@ -1649,6 +1729,16 @@
 "phone_from": "firm website",
 "website": "https://www.alterdomus.com"
 },
+"site:alternatifbank.com.tr": {
+"checked": "2026-11-09",
+"email": "info@alternatifbank.com.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+904440055",
+"phone_from": "firm website",
+"website": "https://www.alternatifbank.com.tr"
+},
 "site:alternitis.com": {
 "checked": "2026-11-06",
 "email": "dragon@alternitis.com",
@@ -1799,6 +1889,16 @@
 "phone_from": "firm website",
 "website": "https://www.ambassadorbridge.com"
 },
+"site:ambr.io": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ambr.io/SGP"
+},
 "site:amdax.com": {
 "checked": "2026-11-08",
 "email": "hello@amdax.com",
@@ -1879,6 +1979,16 @@
 "phone_from": "firm website",
 "website": "http://www.amundi.com"
 },
+"site:anadolubank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.anadolubank.com.tr"
+},
 "site:anb.com.sa": {
 "checked": "2026-11-07",
 "email": "customerservices@anblondon.com",
@@ -1929,6 +2039,16 @@
 "phone_from": "firm website",
 "website": "https://www.anexpress.com"
 },
+"site:anext.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.anext.com.sg"
+},
 "site:anglotransfer.co.uk": {
 "checked": "2026-11-06",
 "email": "",
@@ -1948,6 +2068,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://angrafx.com"
+},
+"site:ant-intl.com": {
+"checked": "2026-11-09",
+"email": "pr@ant-intl.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "2770 6022 (65",
+"phone_from": "firm website",
+"website": "https://www.ant-intl.com/en"
 },
 "site:ant.fun": {
 "checked": "2026-11-06",
@@ -2239,6 +2369,16 @@
 "phone_from": "firm website",
 "website": "https://www.aquillanummus.com"
 },
+"site:arabbank.com": {
+"checked": "2026-11-09",
+"email": "info@arabbank.com.jo",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+96265600000",
+"phone_from": "firm website",
+"website": "http://www.arabbank.com"
+},
 "site:arabbankeurope.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -2469,6 +2609,16 @@
 "phone_from": "firm website",
 "website": "https://www.armouredsecuritycanada.com"
 },
+"site:arohi.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.arohi.com"
+},
 "site:artea.lt": {
 "checked": "2026-11-07",
 "email": "",
@@ -2498,6 +2648,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.arthatech.net"
+},
+"site:artorius.com": {
+"checked": "2026-11-09",
+"email": "enquiries@artorius.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+441617110730",
+"phone_from": "firm website",
+"website": "https://artorius.com"
 },
 "site:arworldwideservices.com": {
 "checked": "2026-11-06",
@@ -2758,6 +2918,16 @@
 "phone": "+44 (0)20 8840 8883",
 "phone_from": "firm website",
 "website": "http://atastravel.co.uk"
+},
+"site:atbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.atbank.com.tr"
 },
 "site:atinito.ca": {
 "checked": "2026-11-06",
@@ -3089,6 +3259,16 @@
 "phone_from": "firm website",
 "website": "HTTPS://AXORAFINTECH.COM"
 },
+"site:axs.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.axs.com.sg"
+},
 "site:ayacare.com": {
 "checked": "2026-11-06",
 "email": "support@ayacare.com",
@@ -3148,6 +3328,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://ayoremit.com"
+},
+"site:aytemizbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "robots.txt",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.aytemizbank.com.tr"
 },
 "site:azanatechnologies.ca": {
 "checked": "2026-11-06",
@@ -3819,6 +4009,26 @@
 "phone_from": "firm website",
 "website": "https://www.bankofafricaunitedkingdom.co.uk"
 },
+"site:bankofamerica.com": {
+"checked": "2026-11-09",
+"email": "wealthmanagement@bankofamerica.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "866-994-1566",
+"phone_from": "firm website",
+"website": "http://www.bankofamerica.com"
+},
+"site:bankofbaroda.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bankofbaroda.com"
+},
 "site:bankofbarodauk.com": {
 "checked": "2026-11-07",
 "email": "uksub@bankofbaroda.com",
@@ -3858,6 +4068,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.bankofchina.com/uk"
+},
+"site:bankofchina.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bankofchina.com.tr"
 },
 "site:bankofcyprus.com": {
 "checked": "2026-11-07",
@@ -3919,6 +4139,16 @@
 "phone_from": "firm website",
 "website": "https://Bankount.com"
 },
+"site:bankpozitif.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bankpozitif.com.tr"
+},
 "site:banksepah.co.uk": {
 "checked": "2026-11-07",
 "email": "",
@@ -3928,6 +4158,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.banksepah.co.uk"
+},
+"site:banksidecap.com": {
+"checked": "2026-11-09",
+"email": "ir@banksidecap.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "+6564202353",
+"phone_from": "firm website",
+"website": "https://www.banksidecap.com"
 },
 "site:banksocial.io": {
 "checked": "2026-11-06",
@@ -4179,6 +4419,16 @@
 "phone_from": "firm website",
 "website": "https://barakatremit.co.uk"
 },
+"site:barclays.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.barclays.co.uk"
+},
 "site:barclays.com": {
 "checked": "2026-11-07",
 "email": "debt.ir@barclays.com",
@@ -4369,6 +4619,16 @@
 "phone_from": "firm website",
 "website": "https://www.bbbank.de"
 },
+"site:bbl.co.th": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bbl.co.th"
+},
 "site:bbots.ca": {
 "checked": "2026-11-06",
 "email": "bebe@bbots.ca",
@@ -4439,6 +4699,26 @@
 "phone_from": "firm website",
 "website": "https://Bcbgroup.io"
 },
+"site:bcbtci.com": {
+"checked": "2026-11-09",
+"email": "info@bcbtci.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "6499415028",
+"phone_from": "firm website",
+"website": "https://www.bcbtci.com"
+},
+"site:bcpayments.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bcpayments.com.sg"
+},
 "site:bcremit.com": {
 "checked": "2026-11-06",
 "email": "info@bcremit.com",
@@ -4469,6 +4749,16 @@
 "phone_from": "firm website",
 "website": "https://www.bdmbanca.it"
 },
+"site:bdo.com.ph": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.bdo.com.ph/singapore"
+},
 "site:be-long.co": {
 "checked": "2026-11-08",
 "email": "hello@be-long.co",
@@ -4478,6 +4768,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.be-long.co"
+},
+"site:beam.behneh.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://beam.behneh.com"
 },
 "site:beammarkets.com": {
 "checked": "2026-11-06",
@@ -5499,6 +5799,16 @@
 "phone_from": "firm website",
 "website": "https://www.bizremit.com"
 },
+"site:bk.mufg.jp": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bk.mufg.jp/global"
+},
 "site:bkc-paderborn.de": {
 "checked": "2026-11-07",
 "email": "info@pax-bkc.de",
@@ -5708,6 +6018,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://blinkpay.com"
+},
+"site:blithehouse.co.uk": {
+"checked": "2026-11-09",
+"email": "info@blithehouse.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+441925918029",
+"phone_from": "firm website",
+"website": "https://www.blithehouse.co.uk"
 },
 "site:blme.com": {
 "checked": "2026-11-07",
@@ -5979,6 +6299,16 @@
 "phone_from": "firm website",
 "website": "http://www.bng.nl"
 },
+"site:bni.co.id": {
+"checked": "2026-11-09",
+"email": "bnicall@bni.co.id",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bni.co.id"
+},
 "site:bnkpro.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -5998,6 +6328,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.bnpparibas.co.uk/en"
+},
+"site:bnpparibas.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bnpparibas.com.sg"
 },
 "site:bnpparibas.pl": {
 "checked": "2026-11-07",
@@ -6029,6 +6369,16 @@
 "phone_from": "firm website",
 "website": "https://www.bny.com"
 },
+"site:bnymellon.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "robots.txt",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bnymellon.com"
+},
 "site:bobopayment.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -6049,6 +6399,16 @@
 "phone_from": "firm website",
 "website": "https://BOEX.CA"
 },
+"site:boi.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.boi.com.sg"
+},
 "site:bokotech.net": {
 "checked": "2026-11-06",
 "email": "info@bokotech.net",
@@ -6058,6 +6418,16 @@
 "phone": "+1 581 895 4884",
 "phone_from": "firm website",
 "website": "https://bokotech.net"
+},
+"site:boku.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.boku.com"
 },
 "site:bollywood-video.co.uk": {
 "checked": "2026-11-09",
@@ -6178,6 +6548,16 @@
 "phone": "043226940",
 "phone_from": "firm website",
 "website": "https://www.bordesholmer-sparkasse.de"
+},
+"site:bordier.com": {
+"checked": "2026-11-09",
+"email": "natalie.choo@bordier.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.bordier.com"
 },
 "site:borga.money": {
 "checked": "2026-11-06",
@@ -6479,6 +6859,16 @@
 "phone_from": "firm website",
 "website": "http://www.brd.ro"
 },
+"site:brdgx.com": {
+"checked": "2026-11-09",
+"email": "enquiry@brdgx.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.brdgx.com"
+},
 "site:breadxpay.com": {
 "checked": "2026-11-06",
 "email": "support@breadxpay.com",
@@ -6508,6 +6898,16 @@
 "phone": "0421 3682-0",
 "phone_from": "firm website",
 "website": "https://www.bremischevb.de"
+},
+"site:bri.co.id": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.bri.co.id"
 },
 "site:bricspay.digital": {
 "checked": "2026-11-06",
@@ -6638,6 +7038,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.broadmoneytransfer.com"
+},
+"site:broadwaypawnbrokers.co.uk": {
+"checked": "2026-11-09",
+"email": "info@broadwaypawnbrokers.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "02084380011",
+"phone_from": "firm website",
+"website": "https://www.broadwaypawnbrokers.co.uk"
 },
 "site:brofintech.com": {
 "checked": "2026-11-06",
@@ -6909,6 +7319,16 @@
 "phone_from": "firm website",
 "website": "http://www.bunq.it"
 },
+"site:burgan.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.burgan.com.tr"
+},
 "site:burinka.cz": {
 "checked": "2026-11-07",
 "email": "burinka@burinka.cz",
@@ -6948,6 +7368,16 @@
 "phone": "+44 (0) 2076281000",
 "phone_from": "firm website",
 "website": "https://business.bofa.com/uk/en/about-us.html"
+},
+"site:business.ebanx.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://business.ebanx.com/en"
 },
 "site:bvcadt.com": {
 "checked": "2026-11-06",
@@ -7739,6 +8169,16 @@
 "phone_from": "firm website",
 "website": "https://www.cardserv.io"
 },
+"site:cardup.co": {
+"checked": "2026-11-09",
+"email": "hello@cardup.co",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6531639289",
+"phone_from": "firm website",
+"website": "https://www.cardup.co"
+},
 "site:carmaf.com": {
 "checked": "2026-11-06",
 "email": "chris@carmaf.com",
@@ -7848,6 +8288,16 @@
 "phone": "9058581924",
 "phone_from": "firm website",
 "website": "HTTPS://CASHCURRENCY.CA/HOME"
+},
+"site:cashexchangeltd.com": {
+"checked": "2026-11-09",
+"email": "clacton@cashexchangeltd.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "01255479079",
+"phone_from": "firm website",
+"website": "https://cashexchangeltd.com"
 },
 "site:cashfac.com": {
 "checked": "2026-11-08",
@@ -7988,6 +8438,16 @@
 "phone": "+4993130831774",
 "phone_from": "firm website",
 "website": "https://www.castell-bank.de"
+},
+"site:castlestech.com": {
+"checked": "2026-11-09",
+"email": "sales.br@castlestech.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "0033609071794",
+"phone_from": "firm website",
+"website": "https://www.castlestech.com"
 },
 "site:castletrust.co.uk": {
 "checked": "2026-11-07",
@@ -8489,6 +8949,16 @@
 "phone_from": "firm website",
 "website": "https://www.chase.co.uk/gb/en"
 },
+"site:chase.com": {
+"checked": "2026-11-09",
+"email": "phishing@chase.com",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.chase.com"
+},
 "site:chattafinance.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -8498,6 +8968,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://chattafinance.com"
+},
+"site:chb.com.tw": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.chb.com.tw"
 },
 "site:checkboard.com": {
 "checked": "2026-11-08",
@@ -8729,6 +9209,26 @@
 "phone_from": "firm website",
 "website": "https://www.cibc.com"
 },
+"site:cibcfcib.com": {
+"checked": "2026-11-09",
+"email": "insure@cibccaribbean.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "246-421-2277",
+"phone_from": "firm website",
+"website": "https://www.cibcfcib.com"
+},
+"site:cic.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "+33 (0)1 45 96 96 96",
+"phone_from": "firm website",
+"website": "http://www.cic.com.sg"
+},
 "site:cic.fr": {
 "checked": "2026-11-07",
 "email": "nom@domaine.com",
@@ -8818,6 +9318,26 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.citibank.com"
+},
+"site:citibank.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "(65) 6225-5225",
+"phone_from": "firm website",
+"website": "http://www.citibank.com.sg"
+},
+"site:citibank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.citibank.com.tr"
 },
 "site:citibank.pl": {
 "checked": "2026-11-07",
@@ -9099,6 +9619,16 @@
 "phone_from": "firm website",
 "website": "https://www.cleartreasury.co.uk"
 },
+"site:clema-rs.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://clema-rs.com"
+},
 "site:cleva.online": {
 "checked": "2026-11-06",
 "email": "info@clevaglobal.com",
@@ -9279,6 +9809,16 @@
 "phone_from": "firm website",
 "website": "https://www.co-operativebank.co.uk"
 },
+"site:coastfields.co.uk": {
+"checked": "2026-11-09",
+"email": "sales@coastfields.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01754872592",
+"phone_from": "firm website",
+"website": "https://www.coastfields.co.uk"
+},
 "site:cobanq.com": {
 "checked": "2026-11-07",
 "email": "support@cobanq.com",
@@ -9288,6 +9828,16 @@
 "phone": "+442081752519",
 "phone_from": "firm website",
 "website": "https://www.cobanq.com"
+},
+"site:codapayments.com": {
+"checked": "2026-11-09",
+"email": "support@coda.co",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.codapayments.com"
 },
 "site:coficine.natixis.com": {
 "checked": "2026-11-07",
@@ -9408,6 +9958,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://coingate.com"
+},
+"site:coinhako.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.coinhako.com"
 },
 "site:coinhouse.com": {
 "checked": "2026-11-08",
@@ -9638,6 +10198,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://colapay.ca"
+},
+"site:colendibank.com": {
+"checked": "2026-11-09",
+"email": "destek@colendibank.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.colendibank.com"
 },
 "site:collectnexchange.cy": {
 "checked": "2026-11-08",
@@ -10018,6 +10588,16 @@
 "phone": "+4402039714865",
 "phone_from": "firm website",
 "website": "https://cornerstonefs.com"
+},
+"site:corp.changegroup.com": {
+"checked": "2026-11-09",
+"email": "info@changegroup.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://corp.changegroup.com"
 },
 "site:corpay.com": {
 "checked": "2026-11-06",
@@ -10428,6 +11008,16 @@
 "phone": "02033255700",
 "phone_from": "firm website",
 "website": "https://www.cremellocurrency.co.uk"
+},
+"site:crescentexchange.com": {
+"checked": "2026-11-09",
+"email": "support@crescentexchange.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6581900464",
+"phone_from": "firm website",
+"website": "https://www.crescentexchange.com"
 },
 "site:crestlineca.org": {
 "checked": "2026-11-06",
@@ -11469,6 +12059,16 @@
 "phone_from": "firm website",
 "website": "https://www.debenhamspayplus.com"
 },
+"site:debia.co": {
+"checked": "2026-11-09",
+"email": "hello@debia.co",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+65 6029 3393 114",
+"phone_from": "firm website",
+"website": "http://www.debia.co"
+},
 "site:debitdirect.co.uk": {
 "checked": "2026-11-08",
 "email": "info@debitdirect.co.uk",
@@ -11659,6 +12259,16 @@
 "phone_from": "firm website",
 "website": "https://www.demoneytransfer.com"
 },
+"site:denizbank.com": {
+"checked": "2026-11-09",
+"email": "denizbank.haberlesme@hs09.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.denizbank.com"
+},
 "site:depa.finance": {
 "checked": "2026-11-06",
 "email": "info@depa.finance",
@@ -11689,6 +12299,16 @@
 "phone_from": "firm website",
 "website": "https://www.deskoin.com"
 },
+"site:destekbank.com": {
+"checked": "2026-11-09",
+"email": "info@destekbank.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+90 212 371 55 55",
+"phone_from": "firm website",
+"website": "https://www.destekbank.com"
+},
 "site:deusxpay.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -11708,6 +12328,16 @@
 "phone": "06991010000",
 "phone_from": "firm website",
 "website": "https://www.deutsche-bank.de"
+},
+"site:deutschebank.com.tr": {
+"checked": "2026-11-09",
+"email": "iletisim.istanbul@db.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+90 212 317 0100",
+"phone_from": "firm website",
+"website": "http://www.deutschebank.com.tr"
 },
 "site:deutschebank.pl": {
 "checked": "2026-11-07",
@@ -11778,6 +12408,16 @@
 "phone": "+443330386208",
 "phone_from": "firm website",
 "website": "https://www.dfcapital.bank"
+},
+"site:dfiretailgroup.com": {
+"checked": "2026-11-09",
+"email": "joinus@dfiretailgroup.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "85222991888",
+"phone_from": "firm website",
+"website": "https://www.dfiretailgroup.com/en"
 },
 "site:die-vrbank.de": {
 "checked": "2026-11-07",
@@ -11918,6 +12558,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.digitwallethub.com"
+},
+"site:dilerbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.dilerbank.com.tr"
 },
 "site:dinarenas.com": {
 "checked": "2026-11-06",
@@ -12459,6 +13109,16 @@
 "phone_from": "firm website",
 "website": "https://www.dudleybuildingsociety.co.uk"
 },
+"site:dunyakatilim.com.tr": {
+"checked": "2026-11-09",
+"email": "dunyakatilim@hs01.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.dunyakatilim.com.tr"
+},
 "site:durian-x.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -12529,6 +13189,16 @@
 "phone_from": "firm website",
 "website": "http://www.dwpbank.de"
 },
+"site:dybank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.dybank.com.tr"
+},
 "site:dz-privatbank.com": {
 "checked": "2026-11-07",
 "email": "info@dz-privatbank.com",
@@ -12579,6 +13249,16 @@
 "phone_from": "firm website",
 "website": "https://www.dzhyp.de"
 },
+"site:e-buy.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.e-buy.com"
+},
 "site:e-doconline.co.uk": {
 "checked": "2026-11-06",
 "email": "",
@@ -12618,6 +13298,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.earnr.co.uk"
+},
+"site:eastwestbank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "8334688356",
+"phone_from": "firm website",
+"website": "http://www.eastwestbank.com"
 },
 "site:eb.de": {
 "checked": "2026-11-07",
@@ -12849,6 +13539,16 @@
 "phone_from": "firm website",
 "website": "https://efin.money"
 },
+"site:eftpos.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6564832373",
+"phone_from": "firm website",
+"website": "https://www.eftpos.com.sg"
+},
 "site:eglintonwireless.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -13028,6 +13728,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.emiratesnbd.co.uk"
+},
+"site:emlakbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.emlakbank.com.tr"
 },
 "site:emlpayments.com": {
 "checked": "2026-11-06",
@@ -13229,6 +13939,16 @@
 "phone_from": "firm website",
 "website": "https://enovipay.com"
 },
+"site:enpara.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.enpara.com"
+},
 "site:enter.global": {
 "checked": "2026-11-06",
 "email": "info@enter.global",
@@ -13429,6 +14149,16 @@
 "phone_from": "firm website",
 "website": "https://www.eratree.io"
 },
+"site:eremit.sg": {
+"checked": "2026-11-09",
+"email": "bizcare_distribution@eremit.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "1234567899",
+"phone_from": "firm website",
+"website": "https://eremit.sg"
+},
 "site:erisfx.co.uk": {
 "checked": "2026-11-07",
 "email": "info@erisfx.co.uk",
@@ -13438,6 +14168,16 @@
 "phone": "0113 826 7886",
 "phone_from": "firm website",
 "website": "https://www.erisfx.co.uk"
+},
+"site:eromnet.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.eromnet.com"
 },
 "site:erste.pl": {
 "checked": "2026-11-07",
@@ -13528,6 +14268,16 @@
 "phone": "+17783814482",
 "phone_from": "firm website",
 "website": "https://estlitservicescorp.com"
+},
+"site:esunbank.com": {
+"checked": "2026-11-09",
+"email": "spokesperson@esunbank.com.tw",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.esunbank.com/en/personal"
 },
 "site:esvalut.com": {
 "checked": "2026-11-06",
@@ -13638,6 +14388,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.eurochange.co.uk"
+},
+"site:euroclear.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.euroclear.com"
 },
 "site:euroexchange.ca": {
 "checked": "2026-11-06",
@@ -13858,6 +14618,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.exerpay.com"
+},
+"site:eximbank.gov.tr": {
+"checked": "2026-11-09",
+"email": "info@eximbank.gov.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+908502005500",
+"phone_from": "firm website",
+"website": "http://www.eximbank.gov.tr"
 },
 "site:eximpay.ca": {
 "checked": "2026-11-06",
@@ -14289,6 +15059,16 @@
 "phone_from": "firm website",
 "website": "https://fazilcrypto.com/es"
 },
+"site:fazz.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 404",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://fazz.com/en/about"
+},
 "site:fbaif.com": {
 "checked": "2026-11-06",
 "email": "support@fbaif.com",
@@ -14488,6 +15268,16 @@
 "phone": "+16478867141",
 "phone_from": "firm website",
 "website": "https://fiax.com"
+},
+"site:fibabanka.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.fibabanka.com.tr"
 },
 "site:fibonatix.com": {
 "checked": "2026-11-07",
@@ -15259,6 +16049,16 @@
 "phone_from": "firm website",
 "website": "https://www.fiupliant.com"
 },
+"site:fiuu.com": {
+"checked": "2026-11-09",
+"email": "sales@fiuu.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+60355218438",
+"phone_from": "firm website",
+"website": "https://fiuu.com"
+},
 "site:fivewest.global": {
 "checked": "2026-11-06",
 "email": "",
@@ -15519,6 +16319,16 @@
 "phone_from": "firm website",
 "website": "https://www.flytask.com"
 },
+"site:flywing.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.flywing.com"
+},
 "site:flywire.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -15629,6 +16439,26 @@
 "phone_from": "firm website",
 "website": "https://followmymoney.de"
 },
+"site:fomopay.com": {
+"checked": "2026-11-09",
+"email": "sales@fomopay.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.fomopay.com"
+},
+"site:fonbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.fonbank.com.tr"
+},
 "site:fonderx.com": {
 "checked": "2026-11-06",
 "email": "info@fonderx.com",
@@ -15658,6 +16488,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.fonmoney.com"
+},
+"site:foodpanda.sg": {
+"checked": "2026-11-09",
+"email": "support@foodpanda.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.foodpanda.sg"
 },
 "site:forapay.ca": {
 "checked": "2026-11-06",
@@ -15859,6 +16699,16 @@
 "phone_from": "firm website",
 "website": "https://www.freebnk.io"
 },
+"site:freedom-bank.com.tr": {
+"checked": "2026-11-09",
+"email": "musteri@freedom-bank.com.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+902123737373",
+"phone_from": "firm website",
+"website": "http://www.freedom-bank.com.tr"
+},
 "site:freedom-finance.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -16049,6 +16899,16 @@
 "phone_from": "firm website",
 "website": "https://www.funtechcom.com"
 },
+"site:fupsbank.com": {
+"checked": "2026-11-09",
+"email": "destek@fups.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+908502273747",
+"phone_from": "firm website",
+"website": "http://www.fupsbank.com"
+},
 "site:furnessbs.co.uk": {
 "checked": "2026-11-07",
 "email": "",
@@ -16058,6 +16918,16 @@
 "phone": "08007814311",
 "phone_from": "firm website",
 "website": "https://www.furnessbs.co.uk"
+},
+"site:furnleyhouse.co.uk": {
+"checked": "2026-11-09",
+"email": "help@furnleyhouse.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "0116 269 6311",
+"phone_from": "firm website",
+"website": "https://www.furnleyhouse.co.uk"
 },
 "site:fuse.me": {
 "checked": "2026-11-06",
@@ -16268,6 +17138,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.galiza.ca"
+},
+"site:garantibbva.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.garantibbva.com.tr"
 },
 "site:garnaz.com": {
 "checked": "2026-11-06",
@@ -17039,6 +17919,16 @@
 "phone_from": "firm website",
 "website": "https://glasial.com"
 },
+"site:glbank.com": {
+"checked": "2026-11-09",
+"email": "fraudreporting@glbank.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6569928989",
+"phone_from": "firm website",
+"website": "https://www.glbank.com"
+},
 "site:gleec.com": {
 "checked": "2026-11-06",
 "email": "info@gleec.com",
@@ -17479,6 +18369,16 @@
 "phone_from": "firm website",
 "website": "https://www.goin.app"
 },
+"site:gold.razer.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://gold.razer.com"
+},
 "site:goldengate.cz": {
 "checked": "2026-11-08",
 "email": "info@goldengate.cz",
@@ -17489,6 +18389,16 @@
 "phone_from": "firm website",
 "website": "https://www.goldengate.cz"
 },
+"site:goldenglobalbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://goldenglobalbank.com.tr"
+},
 "site:goldmansachs.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -17498,6 +18408,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.goldmansachs.com"
+},
+"site:goldmillionxchange.com": {
+"checked": "2026-11-09",
+"email": "info@goldmillionxchange.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.goldmillionxchange.com"
 },
 "site:goldpaynet.ca": {
 "checked": "2026-11-06",
@@ -17589,6 +18509,16 @@
 "phone_from": "firm website",
 "website": "https://gr8.money"
 },
+"site:grab.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.grab.com/sg"
+},
 "site:grafschafter-volksbank.de": {
 "checked": "2026-11-07",
 "email": "info@grafschafter-volksbank.de",
@@ -17658,6 +18588,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.greenpeache.com"
+},
+"site:greenskywealth.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.greenskywealth.co.uk"
 },
 "site:greenzonefin.com": {
 "checked": "2026-11-06",
@@ -17789,6 +18729,16 @@
 "phone_from": "firm website",
 "website": "https://grxchange.co.uk"
 },
+"site:gsdbank.com.tr": {
+"checked": "2026-11-09",
+"email": "sikayet@gsdbank.com.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.gsdbank.com.tr"
+},
 "site:gsr.io": {
 "checked": "2026-11-08",
 "email": "crypto@gsr.com",
@@ -17879,6 +18829,16 @@
 "phone_from": "firm website",
 "website": "https://gwayments.com"
 },
+"site:gxs.com.sg": {
+"checked": "2026-11-09",
+"email": "help@gxs.com.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.gxs.com.sg"
+},
 "site:habibbank.com": {
 "checked": "2026-11-07",
 "email": "infoch@habibbank.com",
@@ -17949,6 +18909,16 @@
 "phone_from": "firm website",
 "website": "https://www.hal-privatbank.com/asset-servicing/digitale-assets/regulierte-kryptoverwahrung"
 },
+"site:halkbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.halkbank.com.tr"
+},
 "site:hamburger-volksbank.de": {
 "checked": "2026-11-07",
 "email": "info@hh-ih.de",
@@ -18018,6 +18988,16 @@
 "phone": "020411212",
 "phone_from": "firm website",
 "website": "https://www.handelsbanken.se"
+},
+"site:handt.co.uk": {
+"checked": "2026-11-09",
+"email": "info@handt.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01615050369",
+"phone_from": "firm website",
+"website": "https://www.handt.co.uk"
 },
 "site:hanleypayments.com": {
 "checked": "2026-11-08",
@@ -18249,6 +19229,16 @@
 "phone_from": "firm website",
 "website": "HTTPS://HAVEGOLDBANK.COM"
 },
+"site:hayatfinans.com.tr": {
+"checked": "2026-11-09",
+"email": "hayatfinanskatilimbankasi@hs03.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.hayatfinans.com.tr"
+},
 "site:hblbankuk.com": {
 "checked": "2026-11-07",
 "email": "cs@hbluk.com",
@@ -18298,6 +19288,16 @@
 "phone": "07321 311-0",
 "phone_from": "firm website",
 "website": "http://www.hdh-voba.de"
+},
+"site:hedefyatirimbankasi.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.hedefyatirimbankasi.com.tr"
 },
 "site:hedgeflows.com": {
 "checked": "2026-11-08",
@@ -18409,6 +19409,16 @@
 "phone_from": "firm website",
 "website": "https://www.helloquickly.com"
 },
+"site:hepsibank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://hepsibank.com.tr"
+},
 "site:hercle.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -18478,6 +19488,16 @@
 "phone": "+33(9) 72 72 01 73",
 "phone_from": "firm website",
 "website": "https://www.hexarq.com"
+},
+"site:hextrust.com": {
+"checked": "2026-11-09",
+"email": "clients@hextrust.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.hextrust.com/singapore"
 },
 "site:hfinance.eu": {
 "checked": "2026-11-08",
@@ -18599,6 +19619,16 @@
 "phone_from": "firm website",
 "website": "https://WWW.HIRSCHCANADA.COM"
 },
+"site:hitpayapp.com": {
+"checked": "2026-11-09",
+"email": "support@hit-pay.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://hitpayapp.com/sg"
+},
 "site:hivelio.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -18629,6 +19659,16 @@
 "phone_from": "firm website",
 "website": "https://www.hkbea.co.uk"
 },
+"site:hkbea.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.hkbea.com.sg"
+},
 "site:hl.co.uk": {
 "checked": "2026-11-06",
 "email": "",
@@ -18638,6 +19678,26 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.hl.co.uk/savings"
+},
+"site:hlbank.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.hlbank.com.sg"
+},
+"site:hlf.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6565796777",
+"phone_from": "firm website",
+"website": "http://www.hlf.com.sg"
 },
 "site:hncb.com.tw": {
 "checked": "2026-11-07",
@@ -18879,6 +19939,26 @@
 "phone_from": "firm website",
 "website": "http://www.hsbc.com"
 },
+"site:hsbc.com.sg": {
+"checked": "2026-11-09",
+"email": "phishing@hsbc.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6564722669",
+"phone_from": "firm website",
+"website": "https://www.hsbc.com.sg"
+},
+"site:hsbc.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.hsbc.com.tr"
+},
 "site:hsbc.fr": {
 "checked": "2026-11-07",
 "email": "contact@hsbc.fr",
@@ -18968,6 +20048,16 @@
 "phone": "05951 202-0",
 "phone_from": "firm website",
 "website": "https://www.huemmlinger-volksbank.de"
+},
+"site:hugohub.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.hugohub.com"
 },
 "site:humb.io": {
 "checked": "2026-11-06",
@@ -19119,6 +20209,16 @@
 "phone_from": "firm website",
 "website": "https://www.i-payout.ca"
 },
+"site:iappsasia.com": {
+"checked": "2026-11-09",
+"email": "hr@iappsasia.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.iappsasia.com"
+},
 "site:ib-sh.de": {
 "checked": "2026-11-07",
 "email": "info@ib-sh.de",
@@ -19249,6 +20349,26 @@
 "phone_from": "firm website",
 "website": "https://www.icbc-uk.com"
 },
+"site:icbc.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.icbc.com.sg"
+},
+"site:icbc.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "SSLError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.icbc.com.tr/tr"
+},
 "site:icbclondon.com": {
 "checked": "2026-11-07",
 "email": "service@ld.icbc.com.cn",
@@ -19308,6 +20428,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "http://www.icicibank.co.uk"
+},
+"site:icicibank.com": {
+"checked": "2026-11-09",
+"email": "marketshelpdesk@icici.bank.in",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "18001080",
+"phone_from": "firm website",
+"website": "http://www.icicibank.com"
 },
 "site:icloser.xyz": {
 "checked": "2026-11-06",
@@ -19579,6 +20709,16 @@
 "phone_from": "firm website",
 "website": "https://www.ilb.de"
 },
+"site:ilbank.gov.tr": {
+"checked": "2026-11-09",
+"email": "bilgiedinme@ilbank.gov.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "03125087000",
+"phone_from": "firm website",
+"website": "http://www.ilbank.gov.tr"
+},
 "site:iledgends.com": {
 "checked": "2026-11-06",
 "email": "info@emoni.io",
@@ -19769,6 +20909,26 @@
 "phone_from": "firm website",
 "website": "https://www.incuto.com"
 },
+"site:independentreserve.com": {
+"checked": "2026-11-09",
+"email": "general@independentreserve.com",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.independentreserve.com/sg"
+},
+"site:indian-bank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.indian-bank.com"
+},
 "site:industra.finance": {
 "checked": "2026-11-07",
 "email": "",
@@ -19869,6 +21029,26 @@
 "phone_from": "firm website",
 "website": "https://ing.pl"
 },
+"site:ingbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ingbank.com.tr"
+},
+"site:ingbank.nl": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ingbank.nl"
+},
 "site:inghipoteczny.pl": {
 "checked": "2026-11-07",
 "email": "info@inghipoteczny.pl",
@@ -19918,6 +21098,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.inpayfintech.digital"
+},
+"site:inremit.co": {
+"checked": "2026-11-09",
+"email": "support@inremit.co",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6583987569",
+"phone_from": "firm website",
+"website": "https://inremit.co"
 },
 "site:insaafpay.co.uk": {
 "checked": "2026-11-07",
@@ -20309,6 +21499,16 @@
 "phone_from": "firm website",
 "website": "https://www.inyoglobal.com"
 },
+"site:iob.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://iob.com"
+},
 "site:iotpay.ca": {
 "checked": "2026-11-06",
 "email": "info@iotpay.ca",
@@ -20358,6 +21558,16 @@
 "phone": "4402080507415",
 "phone_from": "firm website",
 "website": "https://ipaymoneytransfer.co.uk"
+},
+"site:ipaymy.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.ipaymy.com"
 },
 "site:ipayx.ai": {
 "checked": "2026-11-06",
@@ -20769,6 +21979,16 @@
 "phone_from": "firm website",
 "website": "https://www.jjfsltd.com"
 },
+"site:jktravelbradford.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.jktravelbradford.co.uk"
+},
 "site:jnmoneyonline.com": {
 "checked": "2026-11-06",
 "email": "jnmtonline@jngroup.com",
@@ -20788,6 +22008,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "HTTPS://WWW.JOBCHAIN.COM"
+},
+"site:john-darke.co.uk": {
+"checked": "2026-11-09",
+"email": "info@john-darke.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01507603451",
+"phone_from": "firm website",
+"website": "https://www.john-darke.co.uk"
 },
 "site:joinfurther.com": {
 "checked": "2026-11-08",
@@ -20899,6 +22129,26 @@
 "phone_from": "firm website",
 "website": "HTTPS://JPREMIT.CA"
 },
+"site:jsafrasarasin.com": {
+"checked": "2026-11-09",
+"email": "l.@x.eq",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://jsafrasarasin.com/en/company/locations/country-pages/Singapore.html"
+},
+"site:jstdigital.io": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://jstdigital.io"
+},
 "site:jtbank.cz": {
 "checked": "2026-11-07",
 "email": "info@jtbank.cz",
@@ -20918,6 +22168,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://jubaexpress.com"
+},
+"site:jufuremit.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "+65 88064749",
+"phone_from": "firm website",
+"website": "http://www.jufuremit.com"
 },
 "site:juicyway.com": {
 "checked": "2026-11-06",
@@ -21128,6 +22388,16 @@
 "phone": "+4232378080",
 "phone_from": "firm website",
 "website": "https://kaiserpartner.bank"
+},
+"site:kalkinma.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.kalkinma.com.tr"
 },
 "site:kalpixpay.com": {
 "checked": "2026-11-06",
@@ -21589,6 +22859,16 @@
 "phone_from": "firm website",
 "website": "http://www.kieler-volksbank.de"
 },
+"site:kimengresearch.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.kimengresearch.com"
+},
 "site:kimlview.com": {
 "checked": "2026-11-06",
 "email": "info@kimlwallet.com",
@@ -21859,6 +23139,16 @@
 "phone_from": "firm website",
 "website": "https://www.Kobotrade.com"
 },
+"site:koexbank.co.kr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.koexbank.co.kr"
+},
 "site:kogopay.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -21888,6 +23178,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://WWW.KOINARO.COM"
+},
+"site:kol.co.kr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.kol.co.kr/~kdbmst/kdb.html"
 },
 "site:komainu.com": {
 "checked": "2026-11-08",
@@ -21998,6 +23298,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.koyefinance.com"
+},
+"site:kpay-group.com": {
+"checked": "2026-11-09",
+"email": "cs@kpay-group.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6562149234",
+"phone_from": "firm website",
+"website": "https://www.kpay-group.com/en-sg/home"
 },
 "site:kpaycan.com": {
 "checked": "2026-11-06",
@@ -22709,6 +24019,16 @@
 "phone_from": "firm website",
 "website": "http://www.kt-bank.de"
 },
+"site:ktb.co.th": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "SSLError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ktb.co.th"
+},
 "site:kuberawealth.co.uk": {
 "checked": "2026-11-08",
 "email": "info@kuberawealth.co.uk",
@@ -22808,6 +24128,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://kuvarpay.com"
+},
+"site:kuveytturk.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "08502510123",
+"phone_from": "firm website",
+"website": "http://www.kuveytturk.com.tr"
 },
 "site:kvarnx.com": {
 "checked": "2026-11-08",
@@ -23299,6 +24629,16 @@
 "phone_from": "firm website",
 "website": "https://www.lendingmetrics.com"
 },
+"site:lendology.org.uk": {
+"checked": "2026-11-09",
+"email": "loans@lendology.org.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01823461099",
+"phone_from": "firm website",
+"website": "https://www.lendology.org.uk"
+},
 "site:lenvi.com": {
 "checked": "2026-11-08",
 "email": "customerservices@myhelptobuyloan.co.uk",
@@ -23429,6 +24769,26 @@
 "phone_from": "firm website",
 "website": "https://lianlianglobal.com/en"
 },
+"site:lianlianpay.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.lianlianpay.com"
+},
+"site:liberalize.io": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.liberalize.io"
+},
 "site:librabank.ro": {
 "checked": "2026-11-07",
 "email": "info@librabank.ro",
@@ -23478,6 +24838,16 @@
 "phone": "02039678796",
 "phone_from": "firm website",
 "website": "https://www.lighthousefx.co.uk"
+},
+"site:lightnet.io": {
+"checked": "2026-11-09",
+"email": "info@lightnet.io",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://lightnet.io"
 },
 "site:lightning2pay.com": {
 "checked": "2026-11-07",
@@ -23638,6 +25008,26 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://liquidchainca.com"
+},
+"site:liquidgroup.sg": {
+"checked": "2026-11-09",
+"email": "contact@liquidgroup.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.liquidgroup.sg"
+},
+"site:littlelives.com": {
+"checked": "2026-11-09",
+"email": "sales@littlelives.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.littlelives.com"
 },
 "site:live2invest.com": {
 "checked": "2026-11-06",
@@ -24019,6 +25409,16 @@
 "phone_from": "firm website",
 "website": "https://www.luckychan.ca"
 },
+"site:lulumoney.com.sg": {
+"checked": "2026-11-09",
+"email": "contactus@in.luluforex.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "006567324243",
+"phone_from": "firm website",
+"website": "http://www.lulumoney.com.sg"
+},
 "site:lumepay.com": {
 "checked": "2026-11-06",
 "email": "support@lumepay.com",
@@ -24158,6 +25558,16 @@
 "phone": "01406424950",
 "phone_from": "firm website",
 "website": "https://www.lynasvokes.co.uk"
+},
+"site:lyte.co": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.lyte.co"
 },
 "site:lzo.com": {
 "checked": "2026-11-07",
@@ -24549,6 +25959,16 @@
 "phone_from": "firm website",
 "website": "https://www.marex.com"
 },
+"site:maribank.sg": {
+"checked": "2026-11-09",
+"email": "help@maribank.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6569958688",
+"phone_from": "firm website",
+"website": "https://www.maribank.sg"
+},
 "site:marketsense.cloud": {
 "checked": "2026-11-06",
 "email": "",
@@ -24608,6 +26028,16 @@
 "phone": "+447700182130",
 "phone_from": "firm website",
 "website": "https://www.marvli.com"
+},
+"site:mas.gov.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "6225 5577",
+"phone_from": "firm website",
+"website": "https://www.mas.gov.sg"
 },
 "site:mashreq.com": {
 "checked": "2026-11-07",
@@ -24719,6 +26149,16 @@
 "phone_from": "firm website",
 "website": "https://www.maybank.com/en/worldwide/united-kingdom.page"
 },
+"site:maybank2u.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.maybank2u.com.sg"
+},
 "site:mayfairpayments.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -24728,6 +26168,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "HTTPS://MAYFAIRPAYMENTS.CA"
+},
+"site:mb.seb.se": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.mb.seb.se"
 },
 "site:mbank.pl": {
 "checked": "2026-11-07",
@@ -24828,6 +26278,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://mcpay.ca"
+},
+"site:mctpay.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.mctpay.sg"
 },
 "site:medfin.ai": {
 "checked": "2026-11-08",
@@ -25199,6 +26659,16 @@
 "phone_from": "firm website",
 "website": "https://www.miapago.com"
 },
+"site:midaspayment.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.midaspayment.com"
+},
 "site:midasremit.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -25288,6 +26758,16 @@
 "phone": "+12043330899",
 "phone_from": "firm website",
 "website": "https://millennialcurrencyexchange.com"
+},
+"site:millenning.com": {
+"checked": "2026-11-09",
+"email": "support@millenning.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+65-9476 3984",
+"phone_from": "firm website",
+"website": "http://www.millenning.com"
 },
 "site:millenniumbcp.pt": {
 "checked": "2026-11-07",
@@ -25379,6 +26859,26 @@
 "phone_from": "firm website",
 "website": "https://miraclepace.com"
 },
+"site:misyon.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.misyon.com"
+},
+"site:mitsubishi-trust.co.jp": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.mitsubishi-trust.co.jp/english/eng00.html"
+},
 "site:miyatransfert.com": {
 "checked": "2026-11-06",
 "email": "contact@miyatransfert.com",
@@ -25418,6 +26918,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "http://www.mkbag.de"
+},
+"site:ml.com.tr": {
+"checked": "2026-11-09",
+"email": "dg.iletisim-mlyb@bofa.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+902123199500",
+"phone_from": "firm website",
+"website": "http://www.ml.com.tr"
 },
 "site:mlp-se.com": {
 "checked": "2026-11-07",
@@ -25739,6 +27249,16 @@
 "phone_from": "firm website",
 "website": "https://Moneyangel.uk"
 },
+"site:moneyboat.co.uk": {
+"checked": "2026-11-09",
+"email": "thecrew@moneyboat.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+442038187470",
+"phone_from": "firm website",
+"website": "https://www.moneyboat.co.uk"
+},
 "site:moneyboxapp.com": {
 "checked": "2026-11-08",
 "email": "",
@@ -26059,6 +27579,16 @@
 "phone_from": "firm website",
 "website": "https://www.monflo.com"
 },
+"site:monfx.com": {
+"checked": "2026-11-09",
+"email": "john@company.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6569140850",
+"phone_from": "firm website",
+"website": "http://www.monfx.com"
+},
 "site:monieverse.com": {
 "checked": "2026-11-06",
 "email": "hello@monieverse.com",
@@ -26218,6 +27748,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.moola-money.com"
+},
+"site:moomoo.com": {
+"checked": "2026-11-09",
+"email": "career@sg.moomoo.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6563218888",
+"phone_from": "firm website",
+"website": "https://www.moomoo.com/sg"
 },
 "site:moonpay.com": {
 "checked": "2026-11-06",
@@ -26618,6 +28158,16 @@
 "phone": "06478465960",
 "phone_from": "firm website",
 "website": "https://WWW.MUNDAS.CA"
+},
+"site:mustcompare.co.uk": {
+"checked": "2026-11-09",
+"email": "hello@mustcompare.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "08009178047",
+"phone_from": "firm website",
+"website": "https://www.mustcompare.co.uk"
 },
 "site:muthootglobal.co.uk": {
 "checked": "2026-11-07",
@@ -27149,6 +28699,16 @@
 "phone_from": "firm website",
 "website": "https://WWW.N2XPRESS.COM"
 },
+"site:na": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://NA"
+},
 "site:nab.com.au": {
 "checked": "2026-11-07",
 "email": "",
@@ -27239,6 +28799,16 @@
 "phone_from": "firm website",
 "website": "http://www.national-bank.de"
 },
+"site:nationalaustraliabank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "4381332418781",
+"phone_from": "firm website",
+"website": "http://www.nationalaustraliabank.com"
+},
 "site:nationalux.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -27298,6 +28868,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.natwest.com"
+},
+"site:natwestmarkets.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.natwestmarkets.com"
 },
 "site:naudapay.com": {
 "checked": "2026-11-08",
@@ -27628,6 +29208,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.netmoneyexchange.com"
+},
+"site:nets.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.nets.com.sg"
 },
 "site:neurofinancial.ca": {
 "checked": "2026-11-06",
@@ -28679,6 +30269,16 @@
 "phone_from": "firm website",
 "website": "https://WWW.NTRADEX.CA"
 },
+"site:ntrs.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ntrs.com"
+},
 "site:nuage.money": {
 "checked": "2026-11-06",
 "email": "help@nuage.money",
@@ -28738,6 +30338,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.numis-trust.com"
+},
+"site:nurolbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+902122868100",
+"phone_from": "firm website",
+"website": "http://www.nurolbank.com.tr"
 },
 "site:nuvei.com": {
 "checked": "2026-11-06",
@@ -28949,6 +30559,16 @@
 "phone_from": "firm website",
 "website": "https://www.oddo-bhf.com/fr"
 },
+"site:odeabank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.odeabank.com.tr"
+},
 "site:odee.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -29038,6 +30658,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.ohentpay.com"
+},
+"site:oisbizcraft.com": {
+"checked": "2026-11-09",
+"email": "contactus@oisbizcraft.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "6745 5800",
+"phone_from": "firm website",
+"website": "http://www.oisbizcraft.com"
 },
 "site:okapiswap.com": {
 "checked": "2026-11-08",
@@ -29429,6 +31059,16 @@
 "phone_from": "firm website",
 "website": "https://www.online-service-corp.com"
 },
+"site:online.unitedkash.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://online.unitedkash.com"
+},
 "site:onlinepaymentplatform.com": {
 "checked": "2026-11-08",
 "email": "",
@@ -29498,6 +31138,16 @@
 "phone": "+16153589399",
 "phone_from": "firm website",
 "website": "https://onyxprocessing.com"
+},
+"site:opalpayment.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.opalpayment.com"
 },
 "site:opaltransfer.com": {
 "checked": "2026-11-07",
@@ -29879,6 +31529,16 @@
 "phone_from": "firm website",
 "website": "https://www.oxbury.com"
 },
+"site:oxpayfinancial.com": {
+"checked": "2026-11-09",
+"email": "sales.my@oxpayfinancial.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+66021099668",
+"phone_from": "firm website",
+"website": "https://oxpayfinancial.com"
+},
 "site:oyakankerbank.de": {
 "checked": "2026-11-07",
 "email": "info@oyakankerbank.de",
@@ -30109,6 +31769,16 @@
 "phone_from": "firm website",
 "website": "https://www.panafx.io"
 },
+"site:pandaremit.com": {
+"checked": "2026-11-09",
+"email": "service@pandaremit.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.pandaremit.com"
+},
 "site:pangea.builders": {
 "checked": "2026-11-06",
 "email": "",
@@ -30248,6 +31918,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.partnersbanka.cz"
+},
+"site:pashabank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.pashabank.com.tr"
 },
 "site:pateno.com": {
 "checked": "2026-11-06",
@@ -30528,6 +32208,16 @@
 "phone": "+18882507778",
 "phone_from": "firm website",
 "website": "https://www.paycargo.com"
+},
+"site:paycbi.com": {
+"checked": "2026-11-09",
+"email": "support@paycbi.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+65 6246 9466",
+"phone_from": "firm website",
+"website": "http://www.paycbi.com"
 },
 "site:payceler.com": {
 "checked": "2026-11-06",
@@ -31789,6 +33479,16 @@
 "phone_from": "firm website",
 "website": "https://peniwysefinancial.com/#compliance"
 },
+"site:penneyruddywinter.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "SSLError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.penneyruddywinter.co.uk"
+},
 "site:penning.io": {
 "checked": "2026-11-08",
 "email": "listings@penning.io",
@@ -32949,6 +34649,16 @@
 "phone_from": "firm website",
 "website": "https://www.pss.sk"
 },
+"site:ptbankmandiri.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ptbankmandiri.com.sg"
+},
 "site:ptgodpay.com": {
 "checked": "2026-11-06",
 "email": "info@ptgodpay.com",
@@ -33089,6 +34799,16 @@
 "phone_from": "firm website",
 "website": "https://qapupay.com"
 },
+"site:qcpgroup.com": {
+"checked": "2026-11-09",
+"email": "comms@qcpgroup.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://qcpgroup.com"
+},
 "site:qfremit.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -33149,6 +34869,16 @@
 "phone_from": "firm website",
 "website": "https://www.qnb.com"
 },
+"site:qnb.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.qnb.com.tr"
+},
 "site:qoay.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -33188,6 +34918,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.qrios.com"
+},
+"site:qthotels.com": {
+"checked": "2026-11-09",
+"email": "contactus@priorityguestrewards.com.au",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.qthotels.com"
 },
 "site:quailpay.com": {
 "checked": "2026-11-06",
@@ -33468,6 +35208,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://qwix.pro"
+},
+"site:qyatirimbankasi.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+908507236500",
+"phone_from": "firm website",
+"website": "https://www.qyatirimbankasi.com.tr/tr"
 },
 "site:r4.com": {
 "checked": "2026-11-07",
@@ -34489,6 +36239,16 @@
 "phone_from": "firm website",
 "website": "https://www.rb.cz"
 },
+"site:rbc.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.rbc.com"
+},
 "site:rbccm.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -35358,6 +37118,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://reyts.com"
+},
+"site:rhbgroup.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://rhbgroup.com.sg/asset-management/overview"
 },
 "site:rheinhessen-sparkasse.de": {
 "checked": "2026-11-07",
@@ -36459,6 +38229,16 @@
 "phone_from": "firm website",
 "website": "https://scaleup.studio"
 },
+"site:scb.co.th": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.scb.co.th"
+},
 "site:schroederbank.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -36518,6 +38298,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.scoretrust.co.uk"
+},
+"site:scotiabank.ca": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.scotiabank.ca"
 },
 "site:scottishbs.co.uk": {
 "checked": "2026-11-07",
@@ -36749,6 +38539,16 @@
 "phone_from": "firm website",
 "website": "http://www.sek.se"
 },
+"site:sekerbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "08502227878",
+"phone_from": "firm website",
+"website": "http://www.sekerbank.com.tr"
+},
 "site:selkirkadvisory.com": {
 "checked": "2026-11-06",
 "email": "info@selkirkadvisory.com",
@@ -36919,6 +38719,16 @@
 "phone_from": "firm website",
 "website": "https://sendwithpaper.com"
 },
+"site:sentbe.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.sentbe.com"
+},
 "site:sentumworld.eu": {
 "checked": "2026-11-06",
 "email": "",
@@ -36958,6 +38768,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://SEPON-pay.com"
+},
+"site:sequoiacircle.com": {
+"checked": "2026-11-09",
+"email": "contact@sequoiacircle.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.sequoiacircle.com"
 },
 "site:servicesymphony.com": {
 "checked": "2026-11-08",
@@ -37029,6 +38849,46 @@
 "phone_from": "firm website",
 "website": "https://www.sfil.fr"
 },
+"site:sfox.com": {
+"checked": "2026-11-09",
+"email": "clientservices@sfox.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "8778887369",
+"phone_from": "firm website",
+"website": "https://www.sfox.com"
+},
+"site:sg.pyvio.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://sg.pyvio.com"
+},
+"site:sg.skyee360.com": {
+"checked": "2026-11-09",
+"email": "service@skyee360.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://sg.skyee360.com"
+},
+"site:sg.statebank": {
+"checked": "2026-11-09",
+"email": "helpdesk@sbising.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "1800-724 7464",
+"phone_from": "firm website",
+"website": "https://sg.statebank"
+},
 "site:sgb-finance.com": {
 "checked": "2026-11-07",
 "email": "info@sgb-finance.com",
@@ -37038,6 +38898,36 @@
 "phone": "0764761584",
 "phone_from": "firm website",
 "website": "https://www.sgb-finance.com"
+},
+"site:sgcib.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.sgcib.com"
+},
+"site:sgebiz.com": {
+"checked": "2026-11-09",
+"email": "info@sgebiz.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6562008021",
+"phone_from": "firm website",
+"website": "http://www.sgebiz.com"
+},
+"site:sgepay.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.sgepay.com"
 },
 "site:sgforge.com": {
 "checked": "2026-11-08",
@@ -37058,6 +38948,16 @@
 "phone": "02072201740",
 "phone_from": "firm website",
 "website": "https://www.sgm-fx.com"
+},
+"site:sgquickpay.com": {
+"checked": "2026-11-09",
+"email": "sgqpay@gmail.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+6587984750",
+"phone_from": "firm website",
+"website": "http://www.sgquickpay.com"
 },
 "site:shahanexchange.ca": {
 "checked": "2026-11-06",
@@ -37229,6 +39129,26 @@
 "phone_from": "firm website",
 "website": "https://shokran.io"
 },
+"site:shopback.sg": {
+"checked": "2026-11-09",
+"email": "help@shopback.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.shopback.sg"
+},
+"site:shopee.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.shopee.sg"
+},
 "site:shoplazza.com": {
 "checked": "2026-11-06",
 "email": "prinfo@shoplazza.com",
@@ -37238,6 +39158,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "HTTPS://WWW.SHOPLAZZA.COM"
+},
+"site:shopline.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.shopline.sg"
 },
 "site:shorecrestgroup.com": {
 "checked": "2026-11-06",
@@ -37419,6 +39349,16 @@
 "phone_from": "firm website",
 "website": "https://www.simplycollect.co.uk"
 },
+"site:simplygo.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.simplygo.com.sg"
+},
 "site:simplymtd.com": {
 "checked": "2026-11-08",
 "email": "",
@@ -37428,6 +39368,46 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.simplymtd.com"
+},
+"site:singapurafinance.com.sg": {
+"checked": "2026-11-09",
+"email": "dpo@singapurafinance.com.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "68800611",
+"phone_from": "firm website",
+"website": "http://www.singapurafinance.com.sg"
+},
+"site:singfinance.com.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.singfinance.com.sg"
+},
+"site:singlife.com": {
+"checked": "2026-11-09",
+"email": "src@singlife.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "68279933",
+"phone_from": "firm website",
+"website": "https://singlife.com"
+},
+"site:singx.co": {
+"checked": "2026-11-09",
+"email": "help@singx.co",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+65 3158 4669",
+"phone_from": "firm website",
+"website": "https://www.singx.co"
 },
 "site:sino.de": {
 "checked": "2026-11-08",
@@ -37639,6 +39619,16 @@
 "phone_from": "firm website",
 "website": "https://skypaygate.com"
 },
+"site:sleek.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 520",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.sleek.com/sg"
+},
 "site:slimcd.com": {
 "checked": "2026-11-06",
 "email": "support@slimcd.com",
@@ -37809,6 +39799,16 @@
 "phone_from": "firm website",
 "website": "https://smartvalor.com/en"
 },
+"site:smbc.co.jp": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.smbc.co.jp/global"
+},
 "site:smbcgroup.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -37839,6 +39839,16 @@
 "phone_from": "firm website",
 "website": "https://www.smebpayment.com"
 },
+"site:smileswallet.com": {
+"checked": "2026-11-09",
+"email": "remitsupport.sg@digitalwallet.global",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6564291063",
+"phone_from": "firm website",
+"website": "http://www.smileswallet.com/singapore"
+},
 "site:sms-hm.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -37858,6 +39868,16 @@
 "phone": "0120328682",
 "phone_from": "firm website",
 "website": "http://www.smtb.jp"
+},
+"site:smth.jp": {
+"checked": "2026-11-09",
+"email": "ir@smtg.jp",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.smth.jp/en/index.html"
 },
 "site:snappay.ca": {
 "checked": "2026-11-06",
@@ -37969,6 +39989,16 @@
 "phone_from": "firm website",
 "website": "https://www.societegenerale.com"
 },
+"site:societegenerale.com.tr": {
+"checked": "2026-11-09",
+"email": "societegenerale.ist@hs03.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+90 212 319 34 00",
+"phone_from": "firm website",
+"website": "http://www.societegenerale.com.tr"
+},
 "site:socios.com": {
 "checked": "2026-11-08",
 "email": "",
@@ -38038,6 +40068,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.sokin.com"
+},
+"site:sokin.net": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://sokin.net"
 },
 "site:solarapay.io": {
 "checked": "2026-11-06",
@@ -40269,6 +42309,16 @@
 "phone_from": "firm website",
 "website": "https://www.spayz.io"
 },
+"site:spdb.com.cn": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "SSLError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.spdb.com.cn"
+},
 "site:speedfast.co.uk": {
 "checked": "2026-11-07",
 "email": "info@speedfast.co.uk",
@@ -41179,6 +43229,16 @@
 "phone_from": "firm website",
 "website": "http://www.stadtsparkasse-remscheid.de"
 },
+"site:standardchartered.com.tr": {
+"checked": "2026-11-09",
+"email": "tr.info@sc.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+90 212 339 3700",
+"phone_from": "firm website",
+"website": "http://www.standardchartered.com.tr"
+},
 "site:standardexchangeuk.com": {
 "checked": "2026-11-07",
 "email": "info@standardexchangeuk.com",
@@ -41278,6 +43338,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.statestreet.com"
+},
+"site:statrys.com": {
+"checked": "2026-11-09",
+"email": "sales@statrys.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+85258032818",
+"phone_from": "firm website",
+"website": "https://statrys.com"
 },
 "site:statusx.com": {
 "checked": "2026-11-06",
@@ -41379,6 +43449,16 @@
 "phone_from": "firm website",
 "website": "https://www.stillmandigital.com"
 },
+"site:stmichaelsgarageswanage.co.uk": {
+"checked": "2026-11-09",
+"email": "info@stmichaelsgarageswanage.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+441929480221",
+"phone_from": "firm website",
+"website": "https://www.stmichaelsgarageswanage.co.uk"
+},
 "site:stokr.io": {
 "checked": "2026-11-08",
 "email": "",
@@ -41388,6 +43468,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://stokr.io"
+},
+"site:stoneforest.com.sg": {
+"checked": "2026-11-09",
+"email": "businesssolutions@rsmsingapore.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6565337600",
+"phone_from": "firm website",
+"website": "https://www.stoneforest.com.sg/payrollserve"
 },
 "site:stonex.com": {
 "checked": "2026-11-08",
@@ -41438,6 +43528,26 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.straitpay.com"
+},
+"site:straitsfinancial.com": {
+"checked": "2026-11-09",
+"email": "contact@straits-millennium.com",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://straitsfinancial.com/straits-millennium"
+},
+"site:straitsx.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.straitsx.com/en"
 },
 "site:strataglobal.co.uk": {
 "checked": "2026-11-08",
@@ -42209,6 +44319,16 @@
 "phone_from": "firm website",
 "website": "http://www.taimoorshahservices.co.uk"
 },
+"site:takasbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.takasbank.com.tr"
+},
 "site:talinods.ca": {
 "checked": "2026-11-06",
 "email": "corpdev@talino.vc",
@@ -42429,6 +44549,16 @@
 "phone_from": "firm website",
 "website": "https://www.tbpay66.com"
 },
+"site:tc.scotiabank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "(649) 941-7774",
+"phone_from": "firm website",
+"website": "https://tc.scotiabank.com/personal.html"
+},
 "site:tcexchange.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -42458,6 +44588,16 @@
 "phone": "6042981000",
 "phone_from": "firm website",
 "website": "https://www.tcxcanada.ca"
+},
+"site:tdbank.ca": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.tdbank.ca/tdbank/indexjava.html"
 },
 "site:tdmoneytransfer.com": {
 "checked": "2026-11-07",
@@ -42499,6 +44639,16 @@
 "phone_from": "firm website",
 "website": "https://www.teambank.de"
 },
+"site:teb.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.teb.com.tr"
+},
 "site:tech.sofi.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -42528,6 +44678,16 @@
 "phone": "02037907773",
 "phone_from": "firm website",
 "website": "https://www.teeparamexchange.co.uk"
+},
+"site:tejaventures.com": {
+"checked": "2026-11-09",
+"email": "info@tejaventures.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "123.456.7890",
+"phone_from": "firm website",
+"website": "http://www.tejaventures.com"
 },
 "site:telco.in": {
 "checked": "2026-11-06",
@@ -42658,6 +44818,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.tenwealth.co.uk"
+},
+"site:terabank.com.tr": {
+"checked": "2026-11-09",
+"email": "info@terabank.com.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.terabank.com.tr"
 },
 "site:teralex.com": {
 "checked": "2026-11-06",
@@ -43329,6 +45499,16 @@
 "phone_from": "firm website",
 "website": "https://www.tomatopay.co.uk"
 },
+"site:tombank.com.tr": {
+"checked": "2026-11-09",
+"email": "tombank@hs03.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.tombank.com.tr"
+},
 "site:tompayment.com": {
 "checked": "2026-11-06",
 "email": "support@tompayment.com",
@@ -43669,6 +45849,16 @@
 "phone_from": "firm website",
 "website": "https://www.transcashsolution.com"
 },
+"site:transend.com.sg": {
+"checked": "2026-11-09",
+"email": "info@transend.com.sg",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://WWW.TRANSEND.COM.SG"
+},
 "site:transend.finance": {
 "checked": "2026-11-06",
 "email": "info@transend.finance",
@@ -43708,6 +45898,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://transfer.cowrie.services"
+},
+"site:transfer.moneymatch.co": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://transfer.moneymatch.co"
 },
 "site:transferboss.com": {
 "checked": "2026-11-06",
@@ -43989,6 +46189,16 @@
 "phone_from": "firm website",
 "website": "https://www.travelkore.com"
 },
+"site:traxx.asia": {
+"checked": "2026-11-09",
+"email": "contact@traxx.biz",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+65 6459 2338",
+"phone_from": "firm website",
+"website": "https://traxx.asia"
+},
 "site:treasury-technologies.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -44269,6 +46479,16 @@
 "phone_from": "firm website",
 "website": "https://TrulyFinancial.com"
 },
+"site:trustbank.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "+6531387878",
+"phone_from": "firm website",
+"website": "http://www.trustbank.sg"
+},
 "site:trustdag.com": {
 "checked": "2026-11-06",
 "email": "contact@trustdag.com",
@@ -44399,6 +46619,16 @@
 "phone_from": "firm website",
 "website": "https://www.tsb.co.uk"
 },
+"site:tskb.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+902123345050",
+"phone_from": "firm website",
+"website": "http://www.tskb.com.tr"
+},
 "site:ttbpay.ca": {
 "checked": "2026-11-06",
 "email": "",
@@ -44449,6 +46679,16 @@
 "phone_from": "firm website",
 "website": "https://WWW.TTRPAY.NET"
 },
+"site:tu.bk.mufg.jp": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.tu.bk.mufg.jp/index-tr.html"
+},
 "site:tuma.com": {
 "checked": "2026-11-08",
 "email": "support@tuma.com",
@@ -44498,6 +46738,46 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.turkishbank.co.uk"
+},
+"site:turkiyefinans.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.turkiyefinans.com.tr"
+},
+"site:turklandbank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "RetryError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.turklandbank.com"
+},
+"site:turksandcaicos-banking.com": {
+"checked": "2026-11-09",
+"email": "services@tcbc.tc",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "+1 (649) 941.4994",
+"phone_from": "firm website",
+"website": "https://www.turksandcaicos-banking.com"
+},
+"site:turkticaretbankasi.com.tr": {
+"checked": "2026-11-09",
+"email": "turkticaretbankasi@hs01.kep.tr",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+904446882",
+"phone_from": "firm website",
+"website": "https://www.turkticaretbankasi.com.tr"
 },
 "site:turnkey-ips.com": {
 "checked": "2026-11-08",
@@ -44718,6 +46998,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.ubupay.ca"
+},
+"site:ucobank.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ucobank.com"
 },
 "site:ucpay.com": {
 "checked": "2026-11-06",
@@ -45219,6 +47509,16 @@
 "phone_from": "firm website",
 "website": "HTTPS://UPPERBEE.COM"
 },
+"site:uqpay.com": {
+"checked": "2026-11-09",
+"email": "support@uqpay.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.uqpay.com/en-SG"
+},
 "site:urbned.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -45458,6 +47758,26 @@
 "phone": "0527260071000",
 "phone_from": "firm website",
 "website": "http://www.v-vb.de"
+},
+"site:vakifbank.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.vakifbank.com.tr"
+},
+"site:vakifkatilim.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.vakifkatilim.com.tr"
 },
 "site:valenspay.com": {
 "checked": "2026-11-06",
@@ -49079,6 +51399,16 @@
 "phone_from": "firm website",
 "website": "https://www.wallety.digital"
 },
+"site:wallex.asia": {
+"checked": "2026-11-09",
+"email": "contact-sg@m-daq.com",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.wallex.asia"
+},
 "site:wallex.global": {
 "checked": "2026-11-06",
 "email": "",
@@ -50259,6 +52589,16 @@
 "phone_from": "firm website",
 "website": "https://www.xe.com"
 },
+"site:xendit.co": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://xendit.co"
+},
 "site:xeniosblockchaingroup.com": {
 "checked": "2026-11-08",
 "email": "info@xeniosproject.com",
@@ -50359,6 +52699,16 @@
 "phone_from": "firm website",
 "website": "https://www.xpayments.co"
 },
+"site:xrex.io": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://xrex.io/sg"
+},
 "site:xtb.com": {
 "checked": "2026-11-08",
 "email": "cs@xtb.com",
@@ -50428,6 +52778,16 @@
 "phone": "+15144993677",
 "phone_from": "firm website",
 "website": "http://yap.cx"
+},
+"site:yapikredi.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.yapikredi.com.tr"
 },
 "site:yapily.com": {
 "checked": "2026-11-08",
@@ -50528,6 +52888,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.ydpay.io"
+},
+"site:yeahka.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.yeahka.com"
 },
 "site:yexc.ca": {
 "checked": "2026-11-06",
@@ -51029,6 +53399,16 @@
 "phone_from": "firm website",
 "website": "https://zillawire.com"
 },
+"site:ziraat.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.ziraat.com.tr"
+},
 "site:ziraatbank.co.uk": {
 "checked": "2026-11-07",
 "email": "",
@@ -51048,6 +53428,36 @@
 "phone": "+49-69-29805-0",
 "phone_from": "firm website",
 "website": "https://www.ziraatbank.de"
+},
+"site:ziraatdinamik.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.ziraatdinamik.com.tr"
+},
+"site:ziraatkatilim.com.tr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "08502205000",
+"phone_from": "firm website",
+"website": "http://www.ziraatkatilim.com.tr"
+},
+"site:zkb.ch.": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectTimeout",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.zkb.ch."
 },
 "site:zobo.money": {
 "checked": "2026-11-06",
@@ -51128,6 +53538,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://ZOTA.COM"
+},
+"site:zota.sg": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 520",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.zota.sg"
 },
 "site:zotapay.co.uk": {
 "checked": "2026-11-06",
