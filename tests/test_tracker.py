@@ -1948,3 +1948,42 @@ def test_html_all_tables_with_sections():
     by = {r.name: r.licence_type for r in recs}
     assert by == {"Alex Bank Pty Ltd": "Bank / ADI", "AMP Bank Ltd": "Bank / ADI",
                   "ABN Amro Bank NV": "Bank (foreign bank branch)", "PPF Co Ltd": "Purchased payment facility provider"}
+
+
+def test_national_probe_follow_and_status(tmp_path):
+    import json, logging
+    from regtracker.sources.national import NationalSource
+    from regtracker.sources.base import Context, SourceNotReady
+    from regtracker import http
+
+    class Resp:
+        def __init__(self, code, body=b""):
+            self.status_code, self.content, self.text = code, body, body.decode()
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise RuntimeError(f"{self.status_code} Client Error: x")
+
+    class Sess:
+        def get(self, url, **k):
+            if url.endswith("robots.txt"):
+                return Resp(404)
+            if "menu" in url:
+                return Resp(200, b'<html><a href="/list-of-payment-institutions">Payment institutions</a>'
+                                 b'<a href="/about">About us</a></html>')
+            if "list-of" in url:
+                return Resp(200, b"<html><table><tr><th>Name</th></tr><tr><td>A</td></tr></table></html>")
+            return Resp(404)
+    http._TEXT.clear()
+    src = NationalSource("ZZ", {"regulator": "X", "files": [
+        {"label": "menu", "url": "https://x.example/menu", "probe": True, "follow": "payment"},
+        {"label": "gone", "url": "https://x.example/gone", "licence_type": "PI"}]})
+    ctx = Context(config={}, session=Sess(), today="2026-11-09", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+    try:
+        src.fetch(ctx)
+    except SourceNotReady:
+        pass
+    st = json.loads((tmp_path / "debug" / "national_status.json").read_text())["ZZ"]
+    assert st["gone"] == "HTTP 404" and st["menu"].startswith("probe saved") and "1 linked" in st["menu"]
+    saved = sorted(p.name for p in (tmp_path / "debug" / "raw").iterdir())
+    assert len(saved) == 2 and any("payment_institutions" in n for n in saved)

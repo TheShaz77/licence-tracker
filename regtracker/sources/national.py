@@ -38,7 +38,14 @@ NAME_COLS = ["name", "title", "statutory name", "statutaire naam", "organisation
              "ENT_NAM", "entityName", "nazov", "obchodne meno", "obchodné meno", "nazovSubjektu",
              "trade name", "name of licensee", "licensee name", "licensee", "operator", "company",
              "name of company", "name of institution", "institution name", "firm name", "legal name",
-             "商号", "名称", "商号又は名称", "商号等", "業者名", "登録業者名", "氏名又は名称", "商号・名称"]
+             "nombre", "razon social", "razón social", "denominacion", "denominación", "entidad", "nombre de la entidad",
+             "denominación social", "dénomination", "denomination", "raison sociale", "nom", "nom de l'établissement",
+             "établissement", "etablissement", "nome", "razão social", "instituição", "naziv", "emri", "emri i subjektit",
+             "unvan", "kuruluş unvanı", "kurulus unvani", "kuruluş adı", "kurulus adi", "ünvanı", "nama", "nama perusahaan", "nama penyelenggara",
+             "name of entity", "entity", "name of the entity", "name of bank", "bank name", "bank", "provider",
+             "service provider", "name of provider", "company name", "name of licensee (english)", "vasp name",
+             "name of the company", "name of institution", "registered name", "licensed entity", "licence holder",
+             "license holder", "名称及其他", "机构名称", "公司名称", "商号", "名称", "商号又は名称", "商号等", "業者名", "登録業者名", "氏名又は名称", "商号・名称"]
 TYPE_COLS = ["register", "register name", "type", "licence type", "license type", "category",
              "authorisation", "authorization", "vergunning", "registertype", "activity",
              "business form", "rūšis", "EntityType", "entity type", "typ", "typSubjektu", "kodTypu",
@@ -60,7 +67,9 @@ END_COLS = ["valid till", "valid to", "valid until", "end date", "expiry date", 
 DATE_COLS = ["valid from", "start date", "registration date", "date of registration", "licence date",
              "date", "ingangsdatum", "datum", "effective date", "ENT_AUT", "datumVzniku", "effective_date",
            "date of licence", "date of registration", "registration date", "登録年月日",
-           "date of submission of licence application"]
+           "date of submission of licence application", "licence issued", "license issued", "issuance date",
+           "date of issue", "date of authorisation", "date of authorization", "fecha de autorización",
+           "fecha de inscripción", "fecha de registro", "date d'agrément", "date d'agrement", "data de autorização"]
 STATUS_COLS = ["status", "state", "stav", "ENT_WDR", "ENT_DAT_WDR"]
 INACTIVE_RE = re.compile(r"withdrawn|revoked|cancel|expired|terminated|lapsed|inactive|ingetrokken|"
                          r"panaikint|atšaukt|beëindigd", re.I)
@@ -263,7 +272,39 @@ def _col(headers: list, names: list, override=None):
     for n in ([override] if override else []) + names:
         if n and hkey(n) in idx:
             return idx[hkey(n)]
+    if override and hkey(override):   # an override may give just the start of a long column title
+        for i, h in enumerate(headers):
+            if hkey(h).startswith(hkey(override)):
+                return i
     return None
+
+
+NON_TARGET = re.compile(r"insur|seguro|assur|réassur|reinsur|pension|AFP\b|fondo|fund\b|funds|mutual fund|sociedades? de inversi|"
+                        r"securit|valores|bolsa|stock|broker|corretaje|leasing|arrendamiento|factoring|cooperativ|"
+                        r"credit union|microfinan|microcr|mutuelle|caisse populaire|pawn|empeño|asegurad", re.I)
+
+
+def guess_name_column(headers: list, rows: list):
+    """The column that most looks like firm names, for tables whose name column has an unusual title."""
+    skip = re.compile(r"addr|adres|direcc|endere|date|fecha|data|tel|phone|mail|web|site|url|no\.?$|n°|nº|"
+                      r"number|num|code|cod|status|estado|type|tipo|city|ciudad|country|pa[ií]s|^#$|^s/?n$|sl\.?no", re.I)
+    best, score = None, 0.0
+    sample = [r for r in rows[:200] if any(r)]
+    if not sample:
+        return None
+    for i, h in enumerate(headers):
+        if skip.search(str(h).strip()):
+            continue
+        vals = [r[i] for r in sample if i < len(r) and r[i]]
+        if len(vals) < max(2, len(sample) // 3):
+            continue
+        good = sum(1 for v in vals if re.search(r"[^\W\d_]{3}", v) and not re.fullmatch(r"[\d\W]+", v)
+                   and len(v) < 160 and not re.search(r"^https?://|@", v))
+        uniq = len(set(vals)) / len(vals)
+        sc = good / len(sample) * (0.5 + 0.5 * uniq)
+        if sc > score:
+            best, score = i, sc
+    return best if score >= 0.5 else None
 
 
 class _Tables(__import__("html.parser", fromlist=["HTMLParser"]).HTMLParser):
@@ -437,6 +478,19 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         headers, rows = read_text_regex(raw, spec)
     else:
         headers, rows = read_table(raw, spec.get("sheets", "first"))
+    if spec.get("columns"):            # a table without a header row: name the columns here
+        rows = [headers] + rows
+        headers = list(spec["columns"]) + [""] * max(0, len(headers) - len(spec["columns"]))
+    elif spec.get("name_column") and _col(headers, [], spec["name_column"]) is None:
+        # the real header row is further down (title lines above it)
+        allrows = [headers] + rows
+        for i, r in enumerate(allrows[:40]):
+            if _col(r, [], spec["name_column"]) is not None:
+                headers, rows = r, allrows[i + 1:]
+                break
+    if spec.get("squeeze"):            # PDFs with merged cells: drop the empty cells and line up by position
+        headers = [h for h in headers if h.strip()]
+        rows = [[x for x in r if x.strip()] for r in rows]
     c = {
         "name": _col(headers, NAME_COLS, spec.get("name_column")),
         "type": _col(headers, TYPE_COLS, spec.get("type_column")),
@@ -456,6 +510,9 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     info = {"headers": headers, "columns": {k: (headers[v] if v is not None else None) for k, v in c.items()},
             "rows": len(rows)}
     if c["name"] is None:
+        c["name"] = guess_name_column(headers, rows)
+        info["columns"]["name"] = f"(guessed) {headers[c['name']]}" if c["name"] is not None else None
+    if c["name"] is None:
         raise RuntimeError(f"{country}: no name column found; headers are {headers}")
 
     def get(row, k):
@@ -470,8 +527,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     type_values = {}
     for row in rows:
         name = get(row, "name")
-        if not name:
-            continue
+        if not name or len(name) < 3 or not re.search(r"[^\W\d_]{2}", name) or re.fullmatch(r"\(?[a-zçğışöü]\)?", name):
+            continue                      # blank, sub-header rows such as "(a)", or numbers only
         raw_type = get(row, "type")
         if codes and raw_type in codes:
             raw_type = f"{raw_type} {codes[raw_type]}"
@@ -485,6 +542,12 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         if patterns:
             hay = raw_type or " ".join(row)
             ltype = next((t for p, t in patterns if p.search(hay)), None) if not fixed_type else fixed_type
+        if not fixed_type and not patterns:
+            # a mixed list with no mapping given: keep the regulator's own type, minus clearly
+            # out-of-scope sectors (insurance, pensions, funds, securities, leasing, credit unions)
+            if NON_TARGET.search(raw_type or "") and not spec.get("keep_all"):
+                continue
+            ltype = raw_type or spec.get("default_type") or "Licensed financial institution"
         for pat, otype in (spec.get("type_overrides") or {}).items():
             if re.search(pat, get(row, "exclude") or raw_type, re.I):
                 ltype = otype
@@ -494,7 +557,7 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         if c["require"] is not None and not get(row, "require"):
             continue  # e.g. no Lithuanian company code = foreign firm passporting in
         ref = get(row, "id")
-        name = re.sub(r"\s*[\^#*]+$", "", name).strip()   # footnote marks, e.g. SFC "^" / "#"
+        name = re.sub(r"(\s*([\^#*]+|※\d*|\(\d\)|\[\d+\]))+$", "", name).strip()   # footnote marks: "^", "#", "※1"
         key = f"nat_{country.lower()}:{ref or norm_key(name) or hkey(name)}"
         status = get(row, "status")
         active = not (status and INACTIVE_RE.search(status))
@@ -539,6 +602,7 @@ class NationalSource(Source):
         from ..http import robots_allowed
         from .base import SourceNotReady
         recs, notes, problems, failed = {}, [], [], set()
+        status = {}
         session = quick_session(ctx.session)
         ctx = Context(**{**ctx.__dict__, "session": session})
         for spec in self.cfg.get("files") or []:
@@ -548,7 +612,13 @@ class NationalSource(Source):
             if spec.get("codes_url"):
                 spec = {**spec, "_codes": fetch_codes(ctx, spec["codes_url"])}
             label = spec.get("label") or spec.get("url") or spec.get("page")
-            if spec.get("page"):
+            if spec.get("probe") and probed_recently(ctx, self.name, label):
+                status[label] = "probe saved earlier this week"
+                continue
+            if spec.get("probe") and spec.get("follow") and FOLLOW_BUDGET["left"] <= 0:
+                status[label] = "probe waiting for the next run (page budget used up)"
+                continue
+            if spec.get("page") and not spec.get("probe"):
                 try:
                     spec = {**spec, "url": find_link(ctx, spec)}
                 except Exception as e:
@@ -557,6 +627,7 @@ class NationalSource(Source):
                     continue
             if not robots_allowed(ctx.session, spec["url"]):
                 problems.append(f"{label}: disallowed by the site's robots.txt")
+                status[label] = "blocked by robots.txt"
                 failed.add(label)
                 continue
             try:
@@ -567,14 +638,18 @@ class NationalSource(Source):
                 r.raise_for_status()
             except Exception as e:
                 problems.append(f"{label}: {e}")
+                status[label] = _short_error(e)
                 failed.add(label)
                 continue
             raw = r.content
             err, info, got = None, {}, []
             if spec.get("probe"):
-                # not read yet: just keep a copy of the page so a reader can be written for it
+                # not read yet: just keep a copy of the page (and of the pages it links to that look like
+                # registers) so a reader can be written for it
                 save_raw(ctx, self.name, label, raw)
-                ctx.log.info("%s: %s saved for inspection (probe)", self.name, label)
+                n = follow_links(ctx, self.name, label, spec, raw) if spec.get("follow") else 0
+                status[label] = f"probe saved ({len(raw)} bytes, {n} linked pages)"
+                ctx.log.info("%s: %s saved for inspection (probe, %d linked pages)", self.name, label, n)
                 continue
             try:
                 got, info = parse_file(raw, spec, self.country, self.regulator)
@@ -585,7 +660,10 @@ class NationalSource(Source):
                 problems.append(f"{label}: {e}")
                 failed.add(label)
                 save_raw(ctx, self.name, label, raw)
+                status[label] = "read failed: " + str(e)[:200]
             notes.append((spec["url"], raw, info, err))
+            if got:
+                status[label] = f"ok: {len(got)} firms"
             for rec in got:
                 rec.extra["file"] = label
                 if rec.key in recs:
@@ -597,6 +675,7 @@ class NationalSource(Source):
                 else:
                     recs[rec.key] = rec
         write_diagnostics(ctx, self.name, notes)
+        write_status(ctx, self.country, status)
         for p in problems:
             ctx.log.warning("%s: %s", self.name, p)
         if not recs and not problems:
@@ -715,6 +794,82 @@ def quick_session(base):
         return orig(method, url, **kw)
     s.request = request
     return s
+
+
+def _short_error(e) -> str:
+    t = str(e)
+    m = re.search(r"(\d{3}) (?:Client|Server) Error", t)
+    if m:
+        return f"HTTP {m.group(1)}"
+    for k, v in (("Read timed out", "timeout"), ("ConnectTimeout", "timeout (connect)"), ("NameResolution", "DNS: no such site"),
+                 ("SSLError", "SSL error"), ("ConnectionRefused", "connection refused"), ("RemoteDisconnected", "disconnected"),
+                 ("Max retries exceeded", "connection failed")):
+        if k in t:
+            return v
+    return t[:160]
+
+
+def write_status(ctx: Context, country: str, status: dict):
+    """data/debug/national_status.json: what happened to each country's files on the last read."""
+    import json
+    p = ctx.data_dir / "debug" / "national_status.json"
+    try:
+        d = json.loads(p.read_text()) if p.exists() else {}
+    except Exception:
+        d = {}
+    d[country] = {"date": ctx.today, **status}
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(d, indent=1, sort_keys=True, ensure_ascii=False))
+
+
+FOLLOW_BUDGET = {"left": 400}   # linked pages fetched per run across all probes (the rest wait for the next run)
+
+
+def probed_recently(ctx: Context, name: str, label: str, days: int = 6) -> bool:
+    import json
+    import datetime as dt
+    p = ctx.data_dir / "state" / "raw_saved.json"
+    try:
+        st = json.loads(p.read_text()) if p.exists() else {}
+        last = st.get(f"{name}__{re.sub(r'[^a-z0-9]+', '_', label.lower()).strip('_')[:60]}")
+        return bool(last) and (dt.date.fromisoformat(ctx.today) - dt.date.fromisoformat(last)).days < days
+    except Exception:
+        return False
+
+
+def follow_links(ctx: Context, name: str, label: str, spec: dict, raw: bytes) -> int:
+    """Save the pages/files linked from a probed page whose address or link text matches spec['follow']."""
+    import time
+    import html as htmlmod
+    from urllib.parse import urljoin, urlparse
+    from ..http import robots_allowed
+    rx = re.compile(spec["follow"], re.I)
+    page = spec["url"]
+    seen, n = set(), 0
+    for href, text in re.findall(r"""<a\b[^>]*?href\s*=\s*["']([^"'#]+)["'][^>]*>(.*?)</a>""", decode_bytes(raw), re.I | re.S):
+        href = htmlmod.unescape(href.strip())
+        text = re.sub(r"<[^>]+>|\s+", " ", htmlmod.unescape(text)).strip()
+        if not (rx.search(href) or rx.search(text)) or href.lower().startswith(("mailto:", "javascript:")):
+            continue
+        u = urljoin(page, href)
+        if u in seen or urlparse(u).netloc.split(":")[0].removeprefix("www.") != \
+                urlparse(page).netloc.split(":")[0].removeprefix("www.") and not spec.get("follow_offsite"):
+            continue
+        seen.add(u)
+        if len(seen) > int(spec.get("follow_max", 10)) or FOLLOW_BUDGET["left"] <= 0:
+            break
+        FOLLOW_BUDGET["left"] -= 1
+        time.sleep(0.5)
+        try:
+            if not robots_allowed(ctx.session, u):
+                continue
+            r = ctx.session.get(u, timeout=(15, 90))
+            if r.status_code == 200:
+                save_raw(ctx, name, f"{label} > {text[:40] or href[-40:]}", r.content)
+                n += 1
+        except Exception as e:
+            ctx.log.info("%s: follow %s failed: %s", name, u, e)
+    return n
 
 
 def save_raw(ctx: Context, name: str, label: str, raw: bytes):
