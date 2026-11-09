@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-09 05:22",
-  "sources_status": "fca: waiting (FCA seed scan still running: 30.9% scanned; 27869 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: not due; mica: not due; ch_sro: baseline 0; za_tppp: ok (0 changes); za_so: ok (0 changes); za_pchso: ok (0 changes); za_banks: ok (0 changes); za_adla: not due; za_casp: not due; br_bcb: ok (0 changes); nat_lt: ok (0 changes); us_fl: waiting (the FL regulator's download link is broken on their side (file not found since 2026-11-09: https://real.flofr.com/Public/MT/Money_Transmitters_monthly.zip); keeping the last list); us_ca: not due; us_ct: not due; us_la: not due; us_in: not due; us_de: not due; us_ak: not due",
+  "finished": "2026-11-09 07:42",
+  "sources_status": "fca: waiting (FCA seed scan still running: 38.2% scanned; 45186 payment/e-money firms found); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: not due; mica: ok (0 changes); ch_sro: baseline 0; za_tppp: not due; za_so: not due; za_pchso: not due; za_banks: not due; za_adla: not due; za_casp: not due; br_bcb: not due; nat_lt: ok (0 changes); us_fl: ok (0 changes); us_ca: ok (0 changes); us_ct: ok (0 changes); us_la: ok (0 changes); us_in: ok (0 changes); us_de: ok (0 changes); us_ak: ok (0 changes)",
   "changes": 0,
   "problems": []
 }
