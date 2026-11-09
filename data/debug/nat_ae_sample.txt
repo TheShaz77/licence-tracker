@@ -1,0 +1,9 @@
+url: https://www.vara.ae/page-data/en/licenses-and-register/public-register/page-data.json
+bytes: 15180  starts: b'{"compon'
+error: RuntimeError("AE: no name column found; headers are ['content.key', 'content.value']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'{"componentChunkName":"component---src-templates-page-jsx","path":"/en/licenses-and-register/public-register/","result":{"data":{"umbraco":{"newVaraPage":{"contentTypeAlias":"newVaraPage","id":"74c46468-5556-4080-a8e1-1ab91e188d03","name":"Public Register","url":"/vara-en/licenses-and-register/publi'

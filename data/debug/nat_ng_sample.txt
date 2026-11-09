@@ -1,0 +1,16 @@
+url: https://www.cbn.gov.ng/PaymentsSystem/InternationalMoneyTransferOperators.html
+bytes: 77702  starts: b'\xef\xbb\xbf<!DOC'
+error: RuntimeError("no matching table on the page; table headers were: ['1 | ACHA GLOBAL HUB LIMITED | 51/52 Kings Way Building, Marina, Lagos']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!DOCTYPE html>'
+'<html dir="ltr" lang="en-US">'
+'\t<script>'
+'\t\tfunction includeHTML() {'
+'\t\t  var z, i, elmnt, file, xhttp;'
+'\t\t  /*loop through a collection of all HTML elements:*/'
+'\t\t  z = document.getElementsByTagName("*");'
+'\t\t  for (i = 0; i < z.length; i++) {'

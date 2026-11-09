@@ -1,0 +1,21 @@
+# www.bsp.gov.ph robots.txt
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: MSNBOT-Media
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: *
+Disallow: /
+
+ 

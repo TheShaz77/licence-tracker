@@ -1,0 +1,69 @@
+url: https://www.fsa.go.jp/en/regulated/licensed/en_kasoutuka.xlsx
+bytes: 37536  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['List of Registered Crypto-asset Exchange Service Providers in Japan', '', '', '', '', '', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/en/regulated/licensed/denshikessaisyudan.xlsx
+bytes: 32637  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['List of Registered Electronic Payment Instrument Exchange Service Providers in Japan', '', '', '', '', '', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/menkyo/menkyoj/shikin_idou.xlsx
+bytes: 36214  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['資金移動業者登録一覧', '', '', '', '', '', '', '', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/menkyo/menkyoj/daisan.xlsx
+bytes: 112818  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['前払式支払手段（第三者型）発行者登録一覧', '', '', '', '', '', '', '', '', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/menkyo/menkyoj/dendai.xlsx
+bytes: 81355  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['電子決済等代行業者登録一覧', '', '', '', '', '', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/en/regulated/licensed/city.xlsx
+bytes: 22871  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['City Banks and Trust Banks Total 36 banks', '', '', 'As of September 24, 2026', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'
+
+url: https://www.fsa.go.jp/en/regulated/licensed/reg.xlsx
+bytes: 21300  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: RuntimeError("JP: no name column found; headers are ['The list of licensed institutions (Regional Banks) Total 61 banks', '', '', '']")
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'

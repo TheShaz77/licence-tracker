@@ -1,0 +1,19 @@
+url: https://www.bnm.gov.my/documents/20124/1326831/Microsite_Digital.pdf/
+bytes: 308746  starts: b'%PDF-1.7'
+error: RuntimeError('no firms matched')
+columns used: {'name': 'Licensee', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['', 'No', '', '', 'Licensee', '', '', 'Channel', '', '', 'Types of money services', '', '', 'Allow for eKYC', '', '', 'HQ Address', '']
+data rows: 37  kept: 0
+type values: []
+first lines:
+'(binary)'
+
+url: https://www.bnm.gov.my/documents/20124/1326831/Microsite-B2B.pdf
+bytes: 391333  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'Licensee', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No', 'Licensee', 'HQ Address']
+data rows: 27  kept: 27
+type values: [('', 27)]
+first lines:
+'(binary)'

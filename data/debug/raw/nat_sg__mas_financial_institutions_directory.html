@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- html head -->
+<head>
+    <!-- meta -->
+    <title>Financial Institutions Directory</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="#{title}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="google-site-verification" content="ks_sYmAxAVQEGjGnv1KQXm5chWBEJxBNHeeMoUi9tD0" />
+    <!-- icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/fid/Content/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/fid/Content/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/fid/Content/favicon-16x16.png" sizes="16x16">
+    <link rel="mask-icon" href="/fid/Content/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    <!-- stylesheets -->
+    <link rel="stylesheet" media="screen" href="/fid/Content/js/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" media="screen" href="/fid/Content/js/vendor/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" media="screen" href="/fid/Content/css/main.min.css">
+    <link rel="stylesheet" media="print" href="/fid/Content/css/print.min.css">
+    <link rel="stylesheet" type="text/css" href="/fid/Content/css/fid-custom.css" />
+    <!-- scripts -->
+	<script src="/fid/Content/js/fid-custom.js" defer></script>
+    <script src="https://assets.wogaa.sg/scripts/wogaa.js"></script>
+</head>
+<!-- body-->
+<body>
+    
+
+
+<!-- page header-->
+<header>
+    <div class="sgds-masthead" id="sgds-masthead" aria-label="A Singapore Government Agency Website">
+        <div class="masthead-padding-container">
+            <div class="masthead-max-width-container">
+                <div class="masthead-layout">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" class="sg-crest">
+                        <title>sg-crest</title>
+                        <path d="M5.896 11.185c0 0-0.949 1.341 0.294 3.075 0 0 0.196-0.883 2.159-0.883h2.356c2.225 0 3.893-2.126 2.846-4.319 0 0 1.57 0.164 2.095-0.818 0.523-0.981-0.033-1.374-0.818-1.374h-3.959c0 0.704-1.341 0.802-1.341 0h-2.225c0 0-1.669 0-1.701 1.407 0 0 0.377-0.229 0.752-0.261v0.375c0 0-0.458 0.082-0.671 0.197-0.212 0.114-0.523 0.425-0.228 1.227 0.294 0.801 0.409 1.079 0.409 1.079s0.475-0.41 1.244-0.41h0.9c1.602 0 1.308 1.554-0.295 1.554s-1.815-0.85-1.815-0.85z"></path>
+                        <path d="M14.255 9.566c0 0 0.54 0.033 0.932-0.31 0 0 3.55 2.765-1.717 8.326-5.268 5.562-1.195 9.162-1.195 9.162s-0.948 0.915-0.409 2.699c0 0-2.191-1.237-3.867-3.338-2.422-3.036-3.902-7.681 2.749-11.386 0 0 4.389-2.208 3.506-5.153z"></path>
+                        <path d="M8.829 6.343c0 0 0.709-1.265 2.355-1.265 1.298 0 1.594-0.666 1.594-0.666s0.566-1.079 3.424-1.079c2.619 0 4.384 0.873 5.812 2.039 0 0-3.85-2.388-7.645 0.971h-5.54z"></path>
+                        <path d="M24.839 14.348c-0.109-3.948-3.163-8.179-9.728-7.939 6.413-5.431 17.537 6.695 8.375 13.066 0 0 1.533-2.186 1.353-5.126z"></path>
+                        <path d="M16.093 6.845c8.005-0.24 10.863 9.357 5.693 13.676l-5.191 2.509c0 0-0.676-2.181 1.833-4.734 2.509-2.551 4.929-7.328-2.006-10.469 0 0 0.131-0.654-0.327-0.981z"></path>
+                        <path d="M15.678 9.004c0 0 0.393-0.371 0.524-0.676 5.954 2.486 5.017 6.697 1.461 10.23-2.181 2.246-1.505 4.668-1.505 4.668s-2.66 1.657-3.577 3.097c0 0-3.852-3.28 1.483-8.724 5.235-5.344 1.614-8.594 1.614-8.594z"></path>
+                    </svg><span>A Singapore Government Agency Website</span>
+                    <div class="sgds-masthead-button" id="sgds-masthead-identify" role="button">
+                        <span class="sgds-masthead-button-text">How to identify</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" class="sgds-masthead-identify-icon">
+                            <path d="M8.65188 6.85L8.64813 6.84625L10.0031 5.49125L17.0744 12.5625L15.7194 13.9175L10.0075 8.20562L4.2875 13.9256L2.9325 12.5706L8.6525 6.85062L8.65188 6.85Z" fill="#2F60CE"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="masthead-padding-container">
+            <div class="masthead-max-width-container">
+                <div class="sgds-masthead-content">
+                    <div class="content-grid">
+                        <div class="wrapper">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none" class="banner-icon">
+                                    <path d="M0.166016 5.6665V9.00067H0.999349V13.9998H0.166016V16.4998H0.999349H3.49935H5.16602H7.66601H9.33268H11.8327H13.4993L15.9993 16.5007V16.4998H16.8327V13.9998H15.9993V9.00067H16.8327V5.6665L8.49935 0.666504L0.166016 5.6665ZM3.49935 13.9998V9.00067H5.16602V13.9998H3.49935ZM7.66601 13.9998V9.00067H9.33268V13.9998H7.66601ZM13.4993 13.9998H11.8327V9.00067H13.4993V13.9998ZM10.166 5.6665C10.166 6.58651 9.41935 7.33317 8.49935 7.33317C7.57935 7.33317 6.83268 6.58651 6.83268 5.6665C6.83268 4.7465 7.57935 3.99984 8.49935 3.99984C9.41935 3.99984 10.166 4.7465 10.166 5.6665Z" fill="#242425"></path>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <div class="title">Official website links end with .gov.sg</div>
+                                <article>
+                                    Government agencies communicate via .gov.sg websites (e.g. go.gov.sg/open).<a class="trusted-websites-link" href="https://www.gov.sg/trusted-sites#govsites" rel="noreferrer" target="_blank">
+                                        Trusted websites<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 32 32" class="trusted-websites-icon">
+                                            <title>Trusted websites</title>
+                                            <path d="M18.667 4v2.667h4c0.186-0.020 0.374-0.020 0.56 0l-2.667 2.667-6.973 6.987 1.88 1.88 9.733-9.667c0.092 0.257 0.137 0.528 0.133 0.8v4h2.667v-9.333h-9.333z"></path>
+                                            <path d="M22.667 25.333h-16v-16h8v-2.667h-8c-1.473 0-2.667 1.194-2.667 2.667v16c0 1.473 1.194 2.667 2.667 2.667h16c1.473 0 2.667-1.194 2.667-2.667v-8h-2.667v8z"></path>
+                                        </svg>
+                                    </a>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="wrapper">
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 15 18" fill="none" class="banner-icon">
+                                    <path d="M14.1663 9.00008C14.1663 8.08091 13.4188 7.33342 12.4997 7.33342H11.6663V4.83342C11.6663 2.53591 9.79717 0.666748 7.49967 0.666748C5.20217 0.666748 3.33301 2.53591 3.33301 4.83342V7.33342H2.49967C1.58051 7.33342 0.833008 8.08091 0.833008 9.00008V15.6667C0.833008 16.5859 1.58051 17.3334 2.49967 17.3334H12.4997C13.4188 17.3334 14.1663 16.5859 14.1663 15.6667V9.00008ZM4.99967 4.83342C4.99967 3.45508 6.12134 2.33341 7.49967 2.33341C8.87801 2.33341 9.99967 3.45508 9.99967 4.83342V7.33342H4.99967V4.83342Z" fill="#242425"></path>
+                                </svg>
+                            </div>
+                            <div class="content">
+                                <div class="title">Secure websites use HTTPS</div>
+                                <article>
+                                    Look for a <b>lock </b>(<svg xmlns="http://www.w3.org/2000/svg" width="15" height="18" viewBox="0 0 15 18" fill="none" class="banner-icon-inline">
+                                        <path d="M14.1663 9.00008C14.1663 8.08091 13.4188 7.33342 12.4997 7.33342H11.6663V4.83342C11.6663 2.53591 9.79717 0.666748 7.49967 0.666748C5.20217 0.666748 3.33301 2.53591 3.33301 4.83342V7.33342H2.49967C1.58051 7.33342 0.833008 8.08091 0.833008 9.00008V15.6667C0.833008 16.5859 1.58051 17.3334 2.49967 17.3334H12.4997C13.4188 17.3334 14.1663 16.5859 14.1663 15.6667V9.00008ZM4.99967 4.83342C4.99967 3.45508 6.12134 2.33341 7.49967 2.33341C8.87801 2.33341 9.99967 3.45508 9.99967 4.83342V7.33342H4.99967V4.83342Z" fill="#242425"></path>
+                                    </svg>) or https:// as an added precaution. Share sensitive
+                                    information only on official, secure websites.
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-header">
+        <div class="container">
+            <a class="logo" href="https://www.mas.gov.sg"><img src="/fid/Content/img/logo.gif" alt="MAS Logo"></a>
+            <div class="mobile-trigger">
+                <div class="strip"></div>
+            </div>
+            <div class="utility">
+                <ul class="semi-nav">
+                    <li><a href="https://www.mas.gov.sg/subscription-services">EMAIL-SUBSCRIPTION</a></li>
+                    <li><a href="https://www.mas.gov.sg/contact-us/faqs">FAQs</a></li>
+                    <li><a href="https://www.mas.gov.sg/contact-us">CONTACT INFORMATION</a></li>
+                    <li><a href="https://www.mas.gov.sg/contact-us">FEEDBACK</a></li>
+                </ul>
+                <div class="search-wrap">
+                    <input id="txtSearchExternal" type="search" placeholder="Enter Keyword Here">
+                    <button class="ic-search" type="submit" aria-label="Search"></button>
+                </div>
+                <div class="tools"><a class="print-link" href="#"><img class="print" src="/fid/Content/img/ic-print.png" alt="Print Logo"></a><a class="rvfs-decrease" href="#"><img class="minus" src="/fid/Content/img/ic-a-minus.png" alt="Minus Icon"></a><a class="rvfs-increase" href="#"><img class="plus" src="/fid/Content/img/ic-a-plus.png" alt="Plus Icon"></a></div>
+            </div>
+            <nav class="header">
+                <div class="menu"><a href="https://www.mas.gov.sg">HOME</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/who-we-are/about-us">ABOUT MAS</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/regulation">REGULATIONS AND FINANCIAL STABILITY</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/Monetary-Policy-and-Economics.aspx">MONETARY POLICY AND ECONOMICS</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/Singapore-Financial-Centre.aspx">SINGAPORE FINANCIAL CENTER</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/Currency.aspx">CURRENCY</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/Statistics.aspx">STATISTICS</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/news">NEWS</a></div>
+                <div class="menu"><a href="https://www.mas.gov.sg/Careers.aspx">CAREERS</a></div>
+            </nav>
+        </div>
+    </div>
+</header>
+<main role="main">
+    <div class="container">
+        <div class="cover fid-result-cover"></div>
+        <div class="outter-wrapper search-result">
+            <div class="search-bar">
+                <div>
+<b>Warning:</b> Scammers may impersonate MAS-regulated financial institutions to promote investments or solicit funds, often with unsolicited offers of high returns and little or no risk. <u>Verify the institution's identity</u> and <u>deal only through official channels</u> before transferring money. If in doubt, check its official contact details on its website or the MAS Financial Institutions Directory.
+<br><br>
+</div>
+<div class="input-wrap">
+<form action="/fid/institution" autocomplete="off" enctype="application/x-www-form-urlencoded" method="get">        <button id="btnSearch" type="submit" aria-label="Search"></button>
+        <input id="txtSearch" name="term" type="text" value="" placeholder="Find a financial institution, licence type or activity in Singapore.">
+        <!-- dropdown component-->
+        <div class="dropdown-wrap"
+             data-path="/fid/custom/autocomplete">
+        </div>
+</form></div>
+
+                <p class="placeholder">Find a financial institution, licence type or activity in Singapore.</p><a class="all" href="/fid/institution">See All Financial Institutions</a>
+            </div>
+            <div id="divContent" class="content">
+                <div class="navigation"><span><img src="/fid/Content/img/ic-directory-home.png" alt="Home Icon"><a href="/fid/">Directory Home</a></span></div>
+            </div>
+            <div class="search-result-nav">
+                <div id="divResultHit" class="result">
+                    <p><b>3656</b> result(s)</p>
+                </div>
+                    <div class="navigation"><span id="spanResultPrint"><a target="_blank" rel="noopener noreferrer" href="/fid/institution/print?count=0"><img src="/fid/Content/img/ic-print-list.png" alt="Home Icon"><span>Print/Download List</span></a></span></div>
+                <div class="view-option">
+                    <label for="ddlResultCount">View</label>
+
+                    <select aria-label="Results per page" id="ddlResultCount" name="ddlResultCount"><option value="100">100</option>
+<option value="50">50</option>
+<option selected="selected" value="10">10</option>
+</select>
+                </div>
+            </div>
+            <div>
+                <span class="fid-result-span-red">*</span> <i>Please note that a financial institution may hold multiple licences. Therefore, the results count on the licences may be higher than the number of financial institutions returned.</i>
+            </div>
+            <div id="divResultContent" class="content">
+                
+<div class="box-wrapper"
+     data-path="/fid/custom/resultpartial"
+     data-print="/fid/institution/print"
+     data-term=""
+     data-sector=""
+     data-category=""
+     data-activity=""
+     data-subactivity=""
+     data-page="1"
+     data-total="281"
+     data-hit="3656"
+     data-count="10"
+     data-url="/fid/institution">
+    <div class="filter-result">
+        <div class="selection">
+            <h2 class="header dropdown">Filter Result</h2>
+        </div>
+        <div class="resize filter-options">
+                    <div class="inner">
+                        <h3 class="header-list">Sector</h3>
+                        <div class="list-collections">
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterSector" href="#">Banking</a>
+
+                                    </p>
+                                    <div class="quantity">196</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterSector" href="#">Capital Markets</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Capital markets intermediaries are licensed and regulated under the &lt;a href=&#39;https://sso.agc.gov.sg/Act/SFA2001&#39;&gt;Securities and Futures Act&lt;/a&gt; . They may provide the following capital markets services: dealing in securities, trading in futures contracts, leveraged foreign exchange trading, advising on corporate finance, fund management, real estate investment trust management, securities financing, providing custodial services for securities and providing credit rating services." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">1921</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterSector" href="#">Financial Advisory</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Financial advisers are licensed and regulated under the &lt;a href=&#39;https://sso.agc.gov.sg/Act/FAA2001&#39;&gt;Financial Advisers Act&lt;/a&gt; . They are authorised to provide the following financial advisory services: advising on investment products, issuance of research reports covering investment products, and arranging of life policies." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">646</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterSector" href="#">Insurance</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Insurers are licensed and regulated under the &lt;a href=&#39;https://sso.agc.gov.sg/Act/IA1966&#39;&gt;Insurance Act&lt;/a&gt;. Insurers may carry on insurance business in Singapore as licensed insurers or foreign insurers. Licensed insurers can carry on direct life and/or general business, life and/or general reinsurance business or captive insurance. There are two foreign insurer schemes in Singapore: The Lloyd&#39;s Scheme and the Lloyd&#39;s Asia Scheme. Insurance brokers may conduct insurance broking activities in Singapore as registered insurance brokers or approved insurance brokers." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">389</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterSector" href="#">Payments</a>
+
+                                    </p>
+                                    <div class="quantity">504</div>
+                                </div>
+                        </div>
+                    </div>
+                                <div class="inner">
+                        <h3 class="header-list">Licence Type/Status</h3>
+                        <div class="list-collections">
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Approved CIS Trustee</a>
+
+                                    </p>
+                                    <div class="quantity">16</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Approved Clearing House</a>
+
+                                    </p>
+                                    <div class="quantity">5</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Approved Exchange</a>
+
+                                    </p>
+                                    <div class="quantity">4</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Approved Holding Company</a>
+
+                                    </p>
+                                    <div class="quantity">6</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Approved Insurance Broker</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Authorised Reinsurer (Composite)</a>
+
+                                    </p>
+                                    <div class="quantity">3</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Authorised Reinsurer (General) </a>
+
+                                    </p>
+                                    <div class="quantity">4</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Authorised Reinsurer (Life)</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Capital Markets Services Licensee</a>
+
+                                    </p>
+                                    <div class="quantity">1581</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Captive Insurer (Composite)</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Captive insurers are licensed to write insurance business which consists principally of risks of its related corporations." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">7</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Captive Insurer (General)</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Captive insurers are licensed to write insurance business which consists principally of risks of its related corporations." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">78</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Captive Insurer (Life)</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Captive insurers are licensed to write insurance business which consists principally of risks of its related corporations." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Central Depository System</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Credit and Charge Card Licensee</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Under the Banking Act, credit and charge card issuers are licensed to carry on the business of issuing credit cards or charge cards in Singapore." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">4</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Designated Payment System Operator</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Designated payment system operators operate payment systems designated under the Payment Services Act. MAS may designate a payment system if it is considered a systemically important payment system or a system-wide important payment system, or where it is otherwise in the public interest to do so." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">6</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Designated Payment System Settlement Institution</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Designated payment system settlement institutions settle transactions processed by payment systems designated under the Payment Services Act." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">6</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Direct Insurer (Composite)</a>
+
+                                    </p>
+                                    <div class="quantity">9</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Direct Insurer (General)</a>
+
+                                    </p>
+                                    <div class="quantity">51</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Direct Insurer (Life)</a>
+
+                                    </p>
+                                    <div class="quantity">16</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Exempt Capital Markets Services Entity</a>
+
+                                    </p>
+                                    <div class="quantity">125</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Exempt Financial Adviser</a>
+
+                                    </p>
+                                    <div class="quantity">575</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Exempt Insurance Broker</a>
+
+                                    </p>
+                                    <div class="quantity">49</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Exempt Trust Company</a>
+
+                                    </p>
+                                    <div class="quantity">27</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Finance Company</a>
+
+                                    </p>
+                                    <div class="quantity">3</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Financial Holding Company (Banking)</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Financial Holding Company (Insurance)</a>
+
+                                    </p>
+                                    <div class="quantity">2</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Full Bank</a>
+
+                                    </p>
+                                    <div class="quantity">20</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Licensed Credit Bureau</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Licensed Financial Adviser</a>
+
+                                    </p>
+                                    <div class="quantity">71</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Licensed Trade Repository</a>
+
+                                    </p>
+                                    <div class="quantity">1</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Licensed Trust Company</a>
+
+                                    </p>
+                                    <div class="quantity">67</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Lloyd&#39;s Asia Scheme</a>
+
+                                    </p>
+                                    <div class="quantity">20</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Local Bank</a>
+
+                                    </p>
+                                    <div class="quantity">6</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Major Payment Institution</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Major payment institutions provide any combination of regulated payment services, regardless of transactional volume or e-money held. Major payment institutions are subject to more comprehensive regulation than standard payment institutions as the scale of their operations pose greater risks. For example, a major payment institution must comply with requirements to protect customer money." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">246</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Merchant Bank</a>
+
+                                    </p>
+                                    <div class="quantity">21</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Money-changing Licensee</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Money-changing licensees provide only money-changing services." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">228</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Qualifying Full Bank</a>
+
+                                    </p>
+                                    <div class="quantity">10</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Recognised Clearing House</a>
+
+                                    </p>
+                                    <div class="quantity">9</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Recognised Market Operator</a>
+
+                                    </p>
+                                    <div class="quantity">79</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Registered Insurance Broker</a>
+
+                                    </p>
+                                    <div class="quantity">112</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Reinsurer (Composite)</a>
+
+                                    </p>
+                                    <div class="quantity">9</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Reinsurer (General)</a>
+
+                                    </p>
+                                    <div class="quantity">22</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Reinsurer (Life)</a>
+
+                                    </p>
+                                    <div class="quantity">2</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Representative Office (Banking)</a>
+
+                                    </p>
+                                    <div class="quantity">27</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Representative Office (Insurance)</a>
+
+                                    </p>
+                                    <div class="quantity">2</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">SGS Primary Dealer</a>
+
+                                    </p>
+                                    <div class="quantity">12</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Standard Payment Institution</a>
+
+                                            <i class="info-tooltip" data-toggle="tooltip" title="Standard payment institutions provide any combination of regulated payment services, below specified transactional or e-money thresholds." data-placement="top"></i>
+                                    </p>
+                                    <div class="quantity">13</div>
+                                </div>
+                                <div class="list">
+                                    <p class="name">
+                                        <a class="FilterCategory" href="#">Wholesale Bank</a>
+
+                                    </p>
+                                    <div class="quantity">96</div>
+                                </div>
+                        </div>
+                    </div>
+                                </div>
+    </div>
+    <div class="result-list resize">
+                <div class="inner">
+                    <a href="/fid/institution/detail/218382-C-XCHANGE-CENTRE">
+                        <h3 class="header-inner-2">$&amp;C XCHANGE CENTRE</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Money-changing Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 65144960">+65 65144960</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">220 GEYLANG ROAD  389280</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/437547-100X100-PTE-LTD">
+                        <h3 class="header-inner-2">100X100 PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Capital Markets Services Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 86064018">+65 86064018</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">2B JIAK CHUAN ROAD NA 089260</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/2885-12-HRS-MONEY-EXCHANGER">
+                        <h3 class="header-inner-2">12 HRS MONEY EXCHANGER</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Money-changing Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:65 62586526">65 62586526</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">238 THOMSON ROAD #01-70A NOVENA SQUARE 307683</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/228551-1291-ASIA-PTE-LTD">
+                        <h3 class="header-inner-2">1291 ASIA PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Licensed Financial Adviser</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                    <tr class="space-under">
+                                        <td><img src="/fid/Content/img/ic-contact-link.png" alt="Contact Icon"></td>
+                                        <td>
+                                            <a class="font-resize" target="_blank" href="http://www.1291group.com">http://www.1291group.com</a>
+                                        </td>
+                                    </tr>
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 60150780">+65 60150780</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">3 CHURCH STREET #27-01 SAMSUNG HUB 049483</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/2857-19-EXCHANGE-MONEY-CHANGER-TRADING">
+                        <h3 class="header-inner-2">19 EXCHANGE MONEY CHANGER &amp; TRADING</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Money-changing Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:65 63363141">65 63363141</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">200 VICTORIA STREET #01-42A PARCO BUGIS JUNCTION 188021</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/232363-1982-VENTURES-PTE-LTD">
+                        <h3 class="header-inner-2">1982 VENTURES PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Capital Markets Services Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 92201890">+65 92201890</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">3 SHENTON WAY #12-12 SHENTON HOUSE 068805</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/220631-1X-EXCHANGE-PTE-LTD">
+                        <h3 class="header-inner-2">1X EXCHANGE PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Recognised Market Operator</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                    <tr class="space-under">
+                                        <td><img src="/fid/Content/img/ic-contact-link.png" alt="Contact Icon"></td>
+                                        <td>
+                                            <a class="font-resize" target="_blank" href="http://www.1x.exchange">http://www.1x.exchange</a>
+                                        </td>
+                                    </tr>
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 98292062">+65 98292062</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">140 ROBINSON ROAD, #17-04 TAHIR BUILDING 068907</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/435076-22N-PTE-LTD">
+                        <h3 class="header-inner-2">22N PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Capital Markets Services Licensee</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 82282266">+65 82282266</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">175 TELOK AYER STREET #02-01 068623</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/431405-2C2P-Pte-Ltd">
+                        <h3 class="header-inner-2">2C2P Pte. Ltd.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Major Payment Institution</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                    <tr class="space-under">
+                                        <td><img src="/fid/Content/img/ic-contact-link.png" alt="Contact Icon"></td>
+                                        <td>
+                                            <a class="font-resize" target="_blank" href="http://www.2c2p.com">http://www.2c2p.com</a>
+                                        </td>
+                                    </tr>
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 67172333">+65 67172333</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">128 BEACH ROAD GUOCO MIDTOWN OFFICE #21-04  SINGAPORE 189773</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+                <div class="inner">
+                    <a href="/fid/institution/detail/2032-360-ONE-CAPITAL-PTE-LTD">
+                        <h3 class="header-inner-2">360 ONE CAPITAL PTE. LTD.</h3>
+                    </a>
+                    <div class="category">
+                        <ul>
+                                <li><a class="FilterCategory" href="#">Capital Markets Services Licensee</a></li>
+                                <li><a class="FilterCategory" href="#">Exempt Financial Adviser</a></li>
+                        </ul>
+                    </div>
+                                            <div class="info">
+                            <table cellspacing="0" cellpadding="0">
+                                    <tr class="space-under">
+                                        <td><img src="/fid/Content/img/ic-contact-link.png" alt="Contact Icon"></td>
+                                        <td>
+                                            <a class="font-resize" target="_blank" href="https://www.iiflamc.com/reach-us/locations?field_country_target_id=23">https://www.iiflamc.com/reach-us/locations?field_country_target_id=23</a>
+                                        </td>
+                                    </tr>
+                                <tr class="space-under">
+                                    <td><img src="/fid/Content/img/ic-contact-phone.png" alt="Phone Icon"></td>
+                                    <td>
+                                            <a class="font-resize" href="tel:+65 65377487">+65 65377487</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="/fid/Content/img/ic-contact-address.png" alt="Address Icon"></td>
+                                        <td class="font-resize">16 RAFFLES QUAY #35-03 HONG LEONG BUILDING 048581</td>
+                                </tr>
+                            </table>
+                        </div>
+                </div>
+            <nav class="page-nav">
+                <ul class="pagination desktop">
+                    <li class="page-item"><a class="page-link fa fa-chevron-left" href="#" aria-label="prev"></a></li>
+                        <li class="page-item active "><a class="page-link" href="#">1</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">2</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">3</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">4</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">5</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">6</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">7</a></li>
+                        <li class="page-item  three-dots"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">281</a></li>
+                    <li class="page-item"><a class="page-link fa fa-chevron-right" href="#" aria-label="next"></a></li>
+                </ul>
+                <ul class="pagination mobile">
+                    <li class="page-item"><a class="page-link fa fa-chevron-left" href="#" aria-label="prev"></a></li>
+                        <li class="page-item active "><a class="page-link" href="#">1</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">2</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">3</a></li>
+                        <li class="page-item  three-dots"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item  "><a class="page-link" href="#">281</a></li>
+                    <li class="page-item"><a class="page-link fa fa-chevron-right" href="#" aria-label="next"></a></li>
+                </ul>
+                <div class="jump-to-page">
+                    <p>Page</p>
+                    <input type="text" class="PageText" aria-label="Goto Page">
+                    <input type="submit" value="GO" class="PageSubmit">
+                </div>
+            </nav>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- page footer-->
+<footer class="resize">
+    <div class="footer-top">
+        <div class="container">
+            <ul>
+                <li><a href="https://www.mas.gov.sg"><span class="font-resize">Home</span></a></li>
+                <li><a href="https://www.mas.gov.sg/who-we-are/about-us"><span class="font-resize">About MAS</span></a></li>
+                <li><a href="https://www.mas.gov.sg/regulation"><span class="font-resize">Regulations and Financial Stability</span></a></li>
+                <li><a href="https://www.mas.gov.sg/Monetary-Policy-and-Economics.aspx"><span class="font-resize">Monetary Policy and Economics</span></a></li>
+                <li><a href="https://www.mas.gov.sg/Singapore-Financial-Centre.aspx"><span class="font-resize">Singapore Financial Centre</span></a></li>
+                <li><a href="https://www.mas.gov.sg/Currency.aspx"><span class="font-resize">Currency</span></a></li>
+                <li class="break"><a href="https://www.mas.gov.sg/Statistics.aspx"><span class="font-resize">Statistics</span></a></li>
+                <li><a href="https://www.mas.gov.sg/news"><span class="font-resize">News</span></a></li>
+                <li><a href="https://www.mas.gov.sg/Careers.aspx"><span class="font-resize">Careers</span></a></li>
+                <li class="mobile"><a href="https://www.mas.gov.sg/Privacy-Statement.aspx"><span class="font-resize">Privacy Statement</span></a></li>
+                <li class="mobile"><a href="https://www.mas.gov.sg/Terms-of-Use.aspx"><span class="font-resize">Terms of Use</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="copy"><a href="https://www.tech.gov.sg/report_vulnerability" target="_blank" class="mas-link"><span class="mas-link__text">Report Vulnerability</span> <i class="mas-icon mas-glyphs-external--link"></i></a></p><p class="copy">&nbsp;&nbsp;</p>
+            <p class="copy">Copyright &copy; 2026 Monetary Authority of Singapore</p>
+            <p class="last-update">
+                    <span>Last Updated : <b>06 Nov 2026</b></span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+    <!-- page script -->
+    <!-- script -->
+    <script src="/fid/Content/js/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/fid/Content/js/vendor/bootstrap/dist/js/popper.min.js"></script>
+    <script src="/fid/Content/js/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/fid/Content/js/vendor/slick-carousel/slick/slick.min.js"></script>
+    <script src="/fid/Content/js/vendor/store/store.modern.min.js"></script>
+    <script src="/fid/Content/js/vendor/rv-jquery-fontsize/js/rv-jquery-fontsize.min.js"></script>
+    
+    <script src="/fid/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="/fid/Content/js/plugins.min.js" defer></script>
+    <script src="/fid/Content/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1926 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Kuruluş Listesi</title>
+    <link rel="shortcut icon" type="image/png" href="/Content/TemplateAssets/layout_images/favicon.ico" />
+
+    <link href="/Content/TemplateAssets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/TemplateAssets/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/Content/TemplateDefault/defaultLess2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateDefault/navbar2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateDefault/liste2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateDefault/detay2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateDefault/organizasyon2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateDefault/veri2.less" rel="stylesheet/less" type="text/css" />
+    <link href="/Content/TemplateAssets/css/brands.min.css" rel="stylesheet" />
+
+    <script src="/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/fontawesome-all.js"></script>
+    <script src="/Scripts/less.min.js"></script>
+    <script src="/Scripts/brands.js"></script>
+
+    <script>
+
+        function SearchFunction() {
+            var metin = document.getElementById('searchText').value.toLocaleLowerCase('tr-TR');
+            if (metin.length > 3) {
+
+                /* Duyuru, Güncel */
+                $(".kategoriList ul li").hide();
+                $(".kategoriList ul li .text").filter(function (index) {
+                    return $(this).text().toLocaleLowerCase('tr-TR').indexOf(metin) >= 0;
+                }).parent().parent().parent().show();
+
+
+                /* Mevzuat, Kuruluş */
+                if ($("#accordion > div").hasClass("card")) {
+                    $("#accordion div.card").hide(); //hide div.card (hide accordion)
+                    $("#accordion div.card .accordionBody ul li").hide(); //hide li
+                    $("#accordion div.card .accordionBody table tbody tr ").hide(); //hide li
+
+                    var list_baslikContainer = $("#accordion div.card .accordionBody ul li .baslikContainer").filter(function (index) {
+                        return $(this).text().toLowerCase().indexOf(metin) >= 0;
+                    });
+
+                    var list_baslikContainer2 = $("#accordion div.card .accordionBody table tbody tr td .baslikContainer").filter(function (index) {
+                        return $(this).text().toLowerCase().indexOf(metin) >= 0;
+                    });
+
+                    list_baslikContainer.parent().show(); //show li
+                    list_baslikContainer2.parent().parent().show(); //show li
+                    var list_accoridon = list_baslikContainer.parent().parent().parent().parent().parent();
+                    var list_accoridon2 = list_baslikContainer2.parent().parent().parent().parent().parent().parent().parent();
+                    list_accoridon.show();
+                    list_accoridon2.show();
+                    list_accoridon.find("h5 button small").hide();
+                    list_accoridon2.find("h5 button small").hide();
+                }
+                else {
+                    $(".accordionBody ul li").hide();
+                    $(".accordionBody ul li .baslikContainer").filter(function (index) {
+                        return $(this).text().toLowerCase().indexOf(metin) >= 0;
+                    }).parent().show();
+
+                    $(".accordionBody table tbody tr ").hide();
+                    $(".accordionBody table tbody tr td .baslikContainer").filter(function (index) {
+                        return $(this).text().toLowerCase().indexOf(metin) >= 0;
+                    }).parent().parent().show();
+                }
+
+
+                /* Sss */
+                $(".accordionSss div.card").hide();
+                $(".accordionSss div.card h5 button").filter(function (index) {
+                    return $(this).text().toLowerCase().indexOf(metin) >= 0;
+                }).parent().parent().parent().show();
+            }
+            else {
+                /* Duyuru, Güncel */
+                $(".kategoriList ul li").show();
+                /* Mevzuat, Kuruluş (accordion yokken) */
+                $(".accordionBody ul li").show();
+                $(".accordionBody table tbody tr ").show();
+
+                /* Sss (her zaman), Mevzuat, Kuruluş (accordion varken) */
+                $("#accordion div.card").show();
+                $("#accordion div.card h5 button small").show();
+            }
+        }
+
+        $(document).ready(function () {
+
+            //Detay sayfası galeri resimlerini görüntülemek için
+            $("ul.resimList .imgContainer img").click(function () {
+                var srcData = $(this).attr("src");
+                $('#showImgModal img').attr("src", srcData);
+                $('#showImgModal').modal('show')
+            });
+
+
+            //Organizasyon Şeması sayfalarında (IsSema == true) şema resim, ad, ünvan görüntülemek için
+            var listHiyerarsi = [
+                { BagliBirimler: ["Hukuk İşleri Daire Başkanlığı", "Ekonomik Değerlendirmeler Daire Başkanlığı"] },
+                { BagliBirimler: ["Denetim I Daire Başkanlığı", "Denetim II Daire Başkanlığı", "Denetim III Daire Başkanlığı", "Denetim V Daire Başkanlığı"] },
+                { BagliBirimler: ["Uygulama I Daire Başkanlığı", "Uygulama II Daire Başkanlığı", "Uygulama III Daire Başkanlığı", "Uygulama IV Daire Başkanlığı"] },
+                { BagliBirimler: ["Bilgi Sistemleri Uyum Daire Başkanlığı", "Veri ve Sistem Yönetimi Daire Başkanlığı", "Finansal Tüketici İlişkileri Daire Başkanlığı"] },
+                { BagliBirimler: ["Denetim IV Daire Başkanlığı", "Düzenleme Daire Başkanlığı", "Risk Yönetimi Daire Başkanlığı"] },
+                { BagliBirimler: ["Strateji Geliştirme Daire Başkanlığı", "Kurumsal İletişim ve Dış İlişkiler Daire Başkanlığı", "Uygulama V Daire Başkanlığı", "Destek Hizmetleri Daire Başkanlığı"] },
+            ];
+            $("ul.isSema .imgContainer img").click(function () {
+                var srcData = $(this).attr("src");
+                var ad = $(this).attr("data-ad");
+                var unvan = $(this).attr("data-unvan");
+                var hiyerarsiSiraNo = $(this).attr("data-hiyerarsiSiraNo");
+                $('#showIsSemaModal img').attr("src", srcData);
+                $('#showIsSemaModal h4').text(ad);
+                $('#showIsSemaModal p').text(unvan);
+
+                var bagliBirimler = listHiyerarsi[hiyerarsiSiraNo].BagliBirimler;
+                
+                var $ul = $("<ul>");
+                for (var i = 0; i < bagliBirimler.length; i++) {
+                    var $li = $("<li>", { "text": bagliBirimler[i] });
+                    $ul.append($li);
+                }
+                $("#divBagliBirimler").empty();
+                //$("#divBagliBirimler").append($ul);
+                $('#showIsSemaModal').modal('show');
+            });
+
+
+            //Mevzuat Liste sayfasında satırları gezerken default button'ları belirginleştirmek için
+            $("a.mevzuatBaslik").hover(function () {
+                var detayTuru = $(this).attr("data-detayTuru"); //a elementi
+                var oncelikliDetayTuru = $(this).parent().children("div.divMevzuatDetay[data-detayTuru  = '" + detayTuru + "']").children("a");
+                oncelikliDetayTuru.addClass("detayliGorHover");
+            });
+            $("a.mevzuatBaslik").mouseout(function () {
+                $(this).parent().children().children().removeClass("detayliGorHover");
+            });
+
+
+            //Kuruluş liste sayfasında kuruluş detaylarını görüntülemek için
+            $("button.detayliGor").click(function () {
+                var ad = $(this).attr("data-ad");
+                var aciklama = $(this).attr("data-aciklama");
+                var isFaaliyette = $(this).attr("data-isFaaliyette");
+                var eftKodu = $(this).attr("data-eftKodu");
+                var isDijital = $(this).attr("data-isDijital");
+                var telefon = $(this).attr("data-telefon");
+                var faks = $(this).attr("data-faks");
+                var adres = $(this).attr("data-adres");
+                var webAdresi = $(this).attr("data-webAdresi");
+
+                var sektordenCikisTarihi = $(this).attr("data-sektordenCikisTarihi");
+                var kurulKarari = $(this).attr("data-kurulKarari");
+
+                $("#kurulusDetayModal h4").text("");
+                $("#kurulusDetayModal p > span").text("");
+
+                $("#kurulusDetayModal h4").text(ad);
+                $("#kurulusDetayModal p.pAciklama > span").text(aciklama);
+
+                if (isFaaliyette == 1) {
+                    if (eftKodu != null && eftKodu != '') {
+                        $("#kurulusDetayModal p.pEftKodu").show();
+                        $("#kurulusDetayModal p.pEftKodu > span").text(eftKodu);
+                        $("#kurulusDetayModal p.pEftKodu > small").text(isDijital);
+                        //$("#kurulusDetayModal p.pEftKodu > span").text(eftKodu);
+                    }
+                    else {
+                        $("#kurulusDetayModal p.pEftKodu").hide();
+                    }
+                    $("#kurulusDetayModal p.pTelefon").show();
+                    $("#kurulusDetayModal p.pFaks").show();
+                    $("#kurulusDetayModal p.pAdres").show();
+                    $("#kurulusDetayModal p.pWebAdresi").show();
+                    $("#kurulusDetayModal p.pSektordenCikisTarihi").hide();
+                    $("#kurulusDetayModal p.pKurulKarari").hide();
+
+                    $("#kurulusDetayModal p.pTelefon > span").text(telefon);
+                    $("#kurulusDetayModal p.pFaks > span").text(faks);
+                    $("#kurulusDetayModal p.pAdres > span").text(adres);
+                    $("#kurulusDetayModal p.pWebAdresi > span").text(webAdresi);
+                }
+                else {
+                    $("#kurulusDetayModal p.pEftKodu").hide();
+                    $("#kurulusDetayModal p.pTelefon").hide();
+                    $("#kurulusDetayModal p.pFaks").hide();
+                    $("#kurulusDetayModal p.pAdres").hide();
+                    $("#kurulusDetayModal p.pWebAdresi").hide();
+                    $("#kurulusDetayModal p.pSektordenCikisTarihi").show();
+                    $("#kurulusDetayModal p.pKurulKarari").show();
+
+                    $("#kurulusDetayModal p.pSektordenCikisTarihi > span").text(sektordenCikisTarihi);
+                    $("#kurulusDetayModal p.pKurulKarari > span").text(kurulKarari);
+                }
+
+
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="showImgModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="showImg" style="width:100%;" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="showIsSemaModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img />
+                    <h4 class="text-center"></h4>
+                    <p class="text-center"></p>
+                    <!-- divBagliBirimler içinde Organizasyon Şeması içindeki daire başkanlıkları görüntüleniyor. Hiyerarşide değişiklik olursa bu sayfadaki "listHiyerarsi" json list düzenlenmeli. -->
+                    <div id="divBagliBirimler"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+<header class="container-fluid">
+    
+    <div id="bannerBar" class="container-fluid">
+        <div class="container" style="padding:0;">
+            <a href="/">
+                    <img class="float-left" src="/Content/TemplateDefault/layout_images/banner_sol_tr_eski.png" />
+            </a>
+            <img class="float-right" src="/Content/TemplateDefault/layout_images/banner_sag.png" />
+            
+
+
+        </div>
+    </div>
+</header>
+<!-- NOT: sticky-top menüler mobilde scroll edilemiyor. Bu yüzden kaldırdık. -->
+
+<div id="mainBar" class="container-fluid" >
+
+    
+
+<style>
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+</style>
+
+<div class="container navbar-container vertical-menu">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand d-lg-none" href="/">
+            <img src="/Content/TemplateDefault/layout_images/son/bddk_logo.png" style="background:#fff;height:48px;" />
+            
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Hakkımızda
+                            </a>
+                            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                                <div class="row">
+                                    <div class="col-lg-3 d-lg-block d-none">
+                                        <img src="/Content/TemplateDefault/layout_images/icons/kurumHakkinda.jpg" class="img-fluid"  />
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/19">Tarih&#231;e</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/20">Misyon ve Vizyon</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/21">Başkan ve Kurul &#220;yeleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/22">Organizasyon Şeması</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/23">Faaliyet Raporları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/37">Stratejik Planlar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/25">Uluslararası İlişkiler</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/26">BDDK Bankacılık ve Finansal Piyasalar Dergisi</a>
+                                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/195">İnsan Kaynakları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/35">S&#252;rd&#252;r&#252;lebilir Bankacılık</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/24">Etik Komisyonu</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/KurumHakkinda/Detay/198">Kurumsal Kimlik</a>
+                                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Duyurular
+                            </a>
+                            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                                <div class="row">
+                                    <div class="col-lg-3 d-lg-block d-none">
+                                        <img src="/Content/TemplateDefault/layout_images/icons/duyurular.jpg" class="img-fluid"  />
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/39">Basın Duyuruları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/40">Mevzuat Duyuruları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/48">Kuruluş Duyuruları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/42">Veri Yayımlama Duyuruları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/41">İnsan Kaynakları Duyuruları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/197">G&#252;ncel Duyurular</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Duyuru/Liste/43">Duyuru Arşivi</a>
+                                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mevzuat
+                            </a>
+                            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                                <div class="row">
+                                    <div class="col-lg-3 d-lg-block d-none">
+                                        <img src="/Content/TemplateDefault/layout_images/icons/mevzuat.jpg" class="img-fluid"  />
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/49">Kanunlar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/50">Bankacılık Kanununa İlişkin D&#252;zenlemeler</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/51">Banka Kartları ve Kredi Kartları Kanununa İlişkin D&#252;zenlemeler</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/52">Finansal Kiralama, Faktoring, Finansman ve Tasarruf Finansman Şirketleri Kanununa İlişkin D&#252;zenlemeler</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/54">Bankacılık D&#252;zenleme ve Denetleme Kurumuna İlişkin D&#252;zenlemeler</a>
+                                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/55">Resmi Gazetede Yayımlanan Kurul Kararları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/56">Resmi Gazetede Yayımlanmayan Kurul Kararları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/58">D&#252;zenleme Taslakları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Mevzuat/Liste/63">M&#252;lga D&#252;zenlemeler</a>
+                                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Veriler
+                            </a>
+                            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                                <div class="row">
+                                    <div class="col-lg-3 d-lg-block d-none">
+                                        <img src="/Content/TemplateDefault/layout_images/icons/veriler.jpg" class="img-fluid"  />
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Veri/Index/69">Bankacılık Sekt&#246;r&#252; Verileri</a>
+                                                                        <ul>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/157">G&#252;nl&#252;k B&#252;lten</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/158">Haftalık B&#252;lten</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/159">Aylık B&#252;lten</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/160">FinT&#252;rk - İllere G&#246;re</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/161">Kredi Kartı Bilgileri Uygulaması</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/162">&#220;&#231;er Aylık Temel G&#246;stergeler</a></li>
+                                                                        </ul>
+                                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Veri/Index/70">Banka Dışı Mali Kuruluş Verileri</a>
+                                                                        <ul>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/163">Faktoring</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/164">Finansal Kiralama</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/165">Finansman Şirketleri</a></li>
+                                                                                <li><a class="dropdown-item" href="/Veri/Detay/166">Varlık Y&#246;netim</a></li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Veri/Detay/75">Bağımsız Denetim Raporları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Veri/Detay/71">VERİ YAYIMLAMA TAKVİMİ</a>
+                                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kuruluşlar
+                            </a>
+                            <div class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                                <div class="row">
+                                    <div class="col-lg-3 d-lg-block d-none">
+                                        <img src="/Content/TemplateDefault/layout_images/icons/kuruluslar.jpg" class="img-fluid"  />
+                                    </div>
+                                    <div class="col-lg-9 col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/77">Bankalar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/78">Finansal Kiralama Şirketleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/79">Faktoring Şirketleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/80">Finansman Şirketleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/89">Tasarruf Finansman Şirketleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/81">Finansal Holding Şirketleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/82">Varlık Y&#246;netim Şirketleri</a>
+                                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 col-12">
+                                                <ul>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/83">Yabancı Bankaların T&#252;rkiye Temsilcilikleri</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/84">Bankalarda Bağımsız Denetim Yapmaya Yetkili Kuruluşlar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/85">Bankalara Değerleme Hizmeti Vermeye Yetkili Kuruluşlar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/86">Yetkili Derecelendirme Kuruluşları</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/88">5464 sayılı Banka Kartları ve Kredi Kartları Kanunu Kapsamında Faaliyet İzni Verilen Kuruluşlar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                            <a class="dropdown-item" href="/Kurulus/Liste/87">Meslek Birlikleri</a>
+                                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item position-static">
+                            <a class="nav-link" href="/Sss">
+                                SSS
+                            </a>
+                        </li>
+                        <li class="nav-item position-static">
+                            <a class="nav-link" href="/Iletisim">
+                                İletişim
+                            </a>
+                        </li>
+
+            </ul>
+            
+
+            <div id="mainSearch2" class="form-inline col-lg-3 d-lg-block d-none">
+                <form method="get" action="/Home/Ara">
+                    <input type="search" id="tags" placeholder="Ara" name="metin">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+
+            
+                <div id="ustMenu" class="col-lg-1">
+                    <nav class="nav float-right">
+                        <a class="nav-link" style="color:white" href="/Home/DilDegistir">EN</a>
+                    </nav>
+                </div>
+
+            </div>
+    </nav>
+</div>
+
+</div>
+
+
+    <div id="main-container">
+        <div id="upperImage-container">
+            <div id="inner-container" class="container">
+                <div class="row">
+
+                        <div id="content-container" class="col-md-9">
+                            
+
+
+
+<h2>
+    Bankalar
+    <span class="title-under"></span>
+</h2>
+
+
+<div id="inPageSearch" class="">
+    <input type="search" id="searchText" placeholder="Ara" name="metin" oninput="SearchFunction()">
+</div>
+
+<div id="partialContainer">
+    
+
+
+
+
+<ul class="nav nav-tabs" id="kurulusTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="tabFaaliyette" data-toggle="tab" href="#faaliyette" role="tab" aria-controls="faaliyette" aria-selected="true">Yetkili Kuruluşlar (<small>67</small>)</a>
+        </li>
+    </ul>
+<div class="tab-content" id="kurulusTabContent">
+            <div class="tab-pane fade show active" id="faaliyette" role="tabpanel" aria-labelledby="tabFaaliyette">
+                <div class="accordionContainer">
+                    <div id="accordion">
+                                <div class="card">
+                                    <div id="heading_179" class="card-header accordionHeader">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_179" aria-expanded="true" aria-controls="collapse_179">
+                                                Mevduat Bankaları <small class="float-right">(35)</small>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse_179" showCollapse="collapse" class="collapse" aria-labelledby="heading_179" data-parent="#accordion">
+                                        <div class="card-body accordionBody">
+                                            <ul>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">1. </div>AKBANK T.A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.akbank.com" target="_blank">http://www.akbank.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="AKBANK T.A.Ş." data-aciklama="20.09.2005 tarihi itibariyle Ak Uluslararası Bankası A.Ş.&#39;nin Akbank T.A.Ş.&#39;ye devri tamamlanmıştır.(Ak Uluslararası Bankası A.Ş.&#39;nin Akbank T.A.Ş.&#39;ye devrine ilişkin Bankaların Genel Kurul Kararlarının tescil edilmesi, Bankacılık D&#252;zenleme ve Denetleme Kurulu&#39;nun 09.09.2005 tarih ve 1695 sayılı Kararı ile uygun g&#246;r&#252;lm&#252;ş ve Ak Uluslararası Bankası A.Ş.&#39;nin ticaret sicilinden terki 19.09.2005 tarihi itibariyle tescil edilmiştir.) " data-isFaaliyette="1" data-eftKodu="46" data-isDijital="" data-telefon="(212)3855555" data-faks="(212)3195252" data-adres="SABANCI CENTER 34330 4. LEVENT/İSTANBUL" data-webadresi="http://www.akbank.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">2. </div>ALTERNATİFBANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.alternatifbank.com.tr/" target="_blank">https://www.alternatifbank....</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ALTERNATİFBANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="124" data-isDijital="" data-telefon="(212)3156500" data-faks="(212)2257615" data-adres="AYAZAĞA MAH. CENDERE CAD. NO:109/M 2D BLOK SARIYER/İSTANBUL" data-webadresi="https://www.alternatifbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">3. </div>ANADOLUBANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.anadolubank.com.tr" target="_blank">http://www.anadolubank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ANADOLUBANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="135" data-isDijital="" data-telefon="(216)6877000" data-faks="(216)6591020" data-adres="SARAY MAHALLESİ, TOYA SOKAK, NO:3 &#220;MRANİYE/İSTANBUL" data-webadresi="http://www.anadolubank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">4. </div>ARAP T&#220;RK BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.atbank.com.tr" target="_blank">http://www.atbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ARAP T&#220;RK BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="91" data-isDijital="" data-telefon="(212)2250500" data-faks="(212)2250526" data-adres="VALİ KONAĞI CAD. NO:10 80200 NİŞANTAŞI/İSTANBUL" data-webadresi="http://www.atbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">5. </div>BANK OF CHINA TURKEY A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.bankofchina.com.tr/" target="_blank">http://www.bankofchina.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="BANK OF CHINA TURKEY A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun (Kurul) 01.12.2017 tarih ve 7612 sayılı Kararı ile Bank of China Turkey A.Ş.’ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="149" data-isDijital="" data-telefon="(212)2608888" data-faks="(212)2798866" data-adres="B&#220;Y&#220;KDERE CADDESİ NO.209 TEKFEN TOWER KAT:21 4.LEVENT-ŞİŞLİ, İSTANBUL" data-webadresi="http://www.bankofchina.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">6. </div>BURGAN BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.burgan.com.tr" target="_blank">http://www.burgan.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="BURGAN BANK A.Ş." data-aciklama="Tekfen Yatırım ve Finansman Bankası A.Ş., 26.10.2001 tarihinde, t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle Bank Ekspres A.Ş.&#39;ye devredilmiş ve devir tarihi itibariyle, Bank Ekspres A.Ş.&#39;nin &#252;nvanı Tekfenbank A.Ş. olarak değiştirilmiştir. Bankacılık D&#252;zenleme ve Denetleme Kurulunun 23.02.2007 tarihli Kararı ile Tekfenbank A.Ş.’nin Eurobank EFG Holding S.A.’ya satışının onaylanmasının ardından bankanın unvanı Eurobank Tekfen A.Ş. olarak değiştirilmiştir.Bankacılık D&#252;zenleme ve Denetleme Kurulunun 06.12.2012 tarihli Kararı ile Eurobank Tekfen A.Ş.’nin Burgan Bank S.A.K&#39;ye satışının onaylanmasının ardından bankanın unvanı 23 Ocak 2013 tarihi itibariyle Burgan Bank A.Ş. olarak değiştirilmiştir. " data-isFaaliyette="1" data-eftKodu="125" data-isDijital="" data-telefon="(212)3713737" data-faks="(212)3570808-(212)3570809" data-adres="MASLAK MAH. ESKİ B&#220;Y&#220;KDERE CAD.NO:13 34485 SARIYER/İSTANBUL" data-webadresi="http://www.burgan.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">7. </div>CITIBANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.citibank.com.tr" target="_blank">http://www.citibank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="CITIBANK A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 10.03.2004 tarih ve 1222 sayılı Kararı uyarınca Citibank N.A. Merkezi New York N.Y. T&#252;rkiye Şubesi Citibank A.Ş.&#39;ye devdilmiştir." data-isFaaliyette="1" data-eftKodu="92" data-isDijital="" data-telefon="(212)3194500" data-faks="(212)3194550" data-adres="ESKİ B&#220;Y&#220;KDERE CADDESİ TEKFEN TOWER NO:209 34394/İSTANBUL" data-webadresi="http://www.citibank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">8. </div>COLENDİ BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.colendibank.com/" target="_blank">https://www.colendibank.com/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="COLENDİ BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="158" data-isDijital="(Dijital Banka)" data-telefon="02167066300" data-faks="" data-adres="ACIBADEM MAH. DERİN SOKAK NO:8A A BLOK İ&#199; KAPI NO:32 34660 &#220;SK&#220;DAR/İSTANBUL" data-webadresi="https://www.colendibank.com/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">9. </div>DENİZBANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.denizbank.com" target="_blank">http://www.denizbank.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="DENİZBANK A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 23.10.2002 tarih ve 851 sayılı Kararı ile Milli Aydın Bankası T.A.Ş.&#39;nin hisselerinin %99,99&#39;unun Denizbank A.Ş.&#39;ye devredilmesine izin verilmiştir. Milli Aydın Bankası T.A.Ş.&#39; nin Denizbank A.Ş.&#39;ye devrine ilişkin her iki Bankanın Genel Kurul Kararlarının tescil edilebilmesine, Bankacılık D&#252;zenleme ve Denetleme Kurulunun 19.12.2002 tarih ve 929 sayılı Kararı ile, onay verilmiştir. S&#246;z konusu onaya istinaden Denizbank A.Ş. ile Milli Aydın Bankası T.A.Ş.&#39;nin devre dair genel kurul kararları, 27.12.2002 tarihinde tescil edilmiş ve yine aynı tarihte Milli Aydın Bankası T.A.Ş.&#39;nin t&#252;zel kişiliği, ticaret sicilinden silinerek sona ermiştir." data-isFaaliyette="1" data-eftKodu="134" data-isDijital="" data-telefon="(212)3482000-4440800-08502220800" data-faks="(212)3363030" data-adres="B&#220;Y&#220;KDERE CAD.NO:141 34394 ESENTEPE-ŞİŞLİ/İSTANBUL" data-webadresi="http://www.denizbank.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">10. </div>DEUTSCHE BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.deutschebank.com.tr" target="_blank">http://www.deutschebank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="DEUTSCHE BANK A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu&#39;nun 08.09.2004 tarih ve 1381 sayılı Kararı ile Deutsche Bank A.Ş.&#39;ye mevduat kabul etme yetkisi verilmiştir." data-isFaaliyette="1" data-eftKodu="115" data-isDijital="" data-telefon="(212)3170100" data-faks="" data-adres="ESENTEPE MAHALLESİ B&#220;Y&#220;KDERE CADDESİ NO:175/149 34394 ŞİŞLİ/ İSTANBUL" data-webadresi="http://www.deutschebank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">11. </div>ENPARA BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.enpara.com/" target="_blank">https://www.enpara.com/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ENPARA BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="157" data-isDijital="" data-telefon="(212) 363 50 00" data-faks="" data-adres="ESENTEPE MAHALLESİ B&#220;Y&#220;KDERE CAD. NO:215 KRİSTAL KULE BATI B BLOK ŞİŞLİ-İSTANBUL" data-webadresi="https://www.enpara.com/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">12. </div>FİBABANKA A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.fibabanka.com.tr/" target="_blank">http://www.fibabanka.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="FİBABANKA A.Ş." data-aciklama="Eski ticari unvanı Sitebank A.Ş. olan bankanın unvanı; 28.03.2003 tarihinde ticaret siciline tescil ettirilerek Bankeuropa Bankası A.Ş. olarak değişmiştir. BankEuropa Bankası A.Ş.&#39;nin unvanı 04.12.2006 tarihli ve 6696 sayılı T&#252;rkiye Ticaret Sicili Gazetesinde yayımlanan ana s&#246;zleşme değişikliği ile Millennium Bank A.Ş. olarak değiştirilmiştir. Millennium Bank A.Ş.&#39;nin ticaret unvanı, 25.04.2011 tarihinde yapılan olağan&#252;st&#252; genel kurul toplantısı sonucunda Fibabanka Anonim Şirketi olarak değiştirilmiş ve s&#246;z konusu karar 11.05.2011 tarihinde İstanbul Ticaret Sicili M&#252;d&#252;rl&#252;ğ&#252; nezdinde tescil edilmiştir." data-isFaaliyette="1" data-eftKodu="103" data-isDijital="" data-telefon="(212)3818282" data-faks="(212)2583778" data-adres="ESENTEPE MAHALLESİ B&#220;Y&#220;KDERE CADDESİ NO:129 ŞİŞLİ İSTANBUL" data-webadresi="http://www.fibabanka.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">13. </div>FREEDOM BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.freedom-bank.com.tr" target="_blank">http://www.freedom-bank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="FREEDOM BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="" data-isDijital="" data-telefon="02123736373" data-faks="" data-adres="Esentepe Mah. Ali Kaya Sk. Pol Center A Blok No:1a İ&#231; Kapı No: 52 Şişli/İstanbul" data-webadresi="http://www.freedom-bank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">14. </div>FUPS BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href=" http://www.fupsbank.com" target="_blank"> http://www.fupsbank.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="FUPS BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="159" data-isDijital="(Dijital Banka)" data-telefon="90 850 227 37 47" data-faks="" data-adres="Finanskent Mah., Finans Cad. Sarphan Finanspark Sitesi, A Blok No: 5A, İ&#231; Kapı No:221, &#220;mraniye/İstanbul" data-webadresi=" http://www.fupsbank.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">15. </div>HEPSİ BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://hepsibank.com.tr/" target="_blank">https://hepsibank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="HEPSİ BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="" data-isDijital="" data-telefon="(212)7084600" data-faks="(212)7084699" data-adres="ESENTEPE MAH. B&#220;Y&#220;KDERE CAD. BAHAR SOK. NO: 13. ŞİŞLİ İSTANBUL" data-webadresi="https://hepsibank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">16. </div>HSBC BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.hsbc.com.tr" target="_blank">http://www.hsbc.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="HSBC BANK A.Ş." data-aciklama="Demirbank T.A.Ş., 14.12.2001 tarihinde t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle HSBC Bank A.Ş.&#39;ye devredilmiştir." data-isFaaliyette="1" data-eftKodu="123" data-isDijital="" data-telefon="(212)3764000" data-faks="(212)2674794" data-adres="ESENTEPE MAH. B&#220;Y&#220;KDERE CAD. NO:128, ŞİŞLİ/İSTANBUL" data-webadresi="http://www.hsbc.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">17. </div>ICBC TURKEY BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.icbc.com.tr/tr/" target="_blank">https://www.icbc.com.tr/tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ICBC TURKEY BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="109" data-isDijital="" data-telefon="(212)3355335" data-faks="(212)3281328" data-adres="MASLAK MAH. DEREBOYU/2 CADDESİ NO:13 34398 SARIYER/İSTANBUL" data-webadresi="https://www.icbc.com.tr/tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">18. </div>ING BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.ingbank.com.tr" target="_blank">http://www.ingbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ING BANK A.Ş." data-aciklama="Bank Kapital T.A.Ş., Yurt Ticaret ve Kredi Bankası A.Ş., T.T&#252;t&#252;nc&#252;ler Bankası - Yaşarbank A.Ş. ve Egebank A.Ş., 26.01.2001 tarihinden itibaren, Ulusal Bank T.A.Ş. 17.04.2001 tarihinden itibaren S&#252;merbank A.Ş. &#231;atısı altında birleştirilmiştir.   S&#252;merbank A.Ş., 11.01.2002 tarihinde, t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle Oyak Bank A.Ş.&#39;ye devredilmiştir. Kurulun 12.12.2007 tarih ve 2416 sayılı Kararı ile Bankanın % 100 oranındaki payının ING Bank NV&#39;ye devredilmesine izin verilmiştir. Bankanın &quot;Oyak Bank A.Ş.&quot; olan unvanı 07.07.2008 tarihinden itibaren ge&#231;erli olmak &#252;zere &quot;ING Bank A.Ş. olarak değiştirilerek 05.06.2008 tarih ve 7077 sayılı T&#252;rkiye Ticaret Sicili Gazetesi&#39;nde ilan edilmiştir. " data-isFaaliyette="1" data-eftKodu="99" data-isDijital="" data-telefon="(212)3351000" data-faks="(212)2866100" data-adres="REŞİTPAŞA MAHALLESİ ESKİ B&#220;Y&#220;KDERE CD. NO:8 34467 SARIYER/İSTANBUL" data-webadresi="http://www.ingbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">19. </div>INTESA SANPAOLO S.P.A. İTALYA İSTANBUL MERKEZ ŞUBESİ </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.intesasanpaolo.com" target="_blank">http://www.intesasanpaolo.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="INTESA SANPAOLO S.P.A. İTALYA İSTANBUL MERKEZ ŞUBESİ" data-aciklama="" data-isFaaliyette="1" data-eftKodu="148" data-isDijital="" data-telefon="(212)3850600" data-faks="(212)3850049" data-adres="MELTEM SOKAK NO:10 İŞ KULELERİ KULE 2 KAT:21 34330 İSTANBUL" data-webadresi="http://www.intesasanpaolo.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">20. </div>JP MORGAN CHASE BANK, N.A. MERKEZİ COLUMBUS, OHİO-İSTANBUL T&#220;RKİYE ŞUBESİ </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.jpmorganchase.com/pages/jpmorgan/international/turkey" target="_blank">http://www.jpmorganchase.co...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="JP MORGAN CHASE BANK, N.A. MERKEZİ COLUMBUS, OHİO-İSTANBUL T&#220;RKİYE ŞUBESİ" data-aciklama="The Chase Manhattan Bank ile Morgan Guaranty Trust Company of New York&#39;un merkezi ABD&#39;de bulunan holding şirketleri, The Chase Manhattan Corporation ile J.P. Morgan &amp; Co Incorporated, ABD kanunları &#231;er&#231;evesinde 31.12.2000 tarihi itibariyle birleşmiş olup, oluşan yeni t&#252;zel kişilik &quot;JP Morgan Chase &amp; Co&quot; &#252;nvanını almıştır. Bu doğrultuda, T&#252;rkiye&#39;de faaliyette bulunan The Chase Manhattan Bank ile Morgan Guaranty Trust Company of New York&#39;un İstanbul şubeleri 14.12.2001 tarihi itibariyle birleşerek &quot;JP Morgan Chase Bank Merkezi New York İstanbul -T&#252;rkiye Şubesi&quot; &#252;nvanı altında faaliyetlerine devam edecektir. &quot;JPMorgan Chase Bank Merkezi New York- İstanbul T&#252;rkiye Şubesi&quot; &#252;nvanlı Bankanın ticaret &#252;nvanı, &quot;JPMorgan Chase Bank National Association Merkezi Columbus/Ohio İstanbul T&#252;rkiye Şubesi&quot; olarak değiştirilmiş ve s&#246;z konusu değişiklik T&#252;rkiye Ticaret Sicili Gazetesi&#39;nin 28.02.2005 tarih ve 6249 sayılı n&#252;shasında yayımlanmıştır. " data-isFaaliyette="1" data-eftKodu="98" data-isDijital="" data-telefon="(212)3198500" data-faks="(212)3198664" data-adres="B&#220;Y&#220;KDERE CAD. NO:185 KANYON OFİS BİNASI KAT:8 34394 LEVENT/İSTANBUL" data-webadresi="http://www.jpmorganchase.com/pages/jpmorgan/international/turkey" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">21. </div>MUFG BANK TURKEY A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.tu.bk.mufg.jp/index-tr.html " target="_blank">http://www.tu.bk.mufg.jp/in...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="MUFG BANK TURKEY A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 19.09.2013 tarih ve 5520 sayılı Kararı ile Bank Of Tokyo Mitsubishi UFJ Turkey A.Ş.’ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi &#231;er&#231;evesinde faaliyet izni verilmiştir. 02.04.2018 tarihinde Bank of Tokyo -Mitsubishi UFJ Turkey A.Ş. olan &#252;nvanı MUFG Bank Turkey A.Ş. olarak değiştirilmiştir." data-isFaaliyette="1" data-eftKodu="147" data-isDijital="" data-telefon="(216)6000030" data-faks="(216)2906473" data-adres="Fatih Sultan Mehmet Mah. Poligon Cad. Buyaka 2 Sitesi 2 Blok No:8b İ&#231; Kapı No:82 &#220;mraniye/İstanbul" data-webadresi="http://www.tu.bk.mufg.jp/index-tr.html " data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">22. </div>ODEA BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.odeabank.com.tr" target="_blank">http://www.odeabank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ODEA BANK A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun (Kurul) 28.09.2012 tarih ve 4963 sayılı Kararı ile 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında yapılan değerlendirme neticesinde Kurulun 27.10.2011 tarih ve 4432 sayılı Kararı ile kuruluş izni verilen Odea Bank A.Ş.’ye faaliyet izni verilmesine karar verilmiştir." data-isFaaliyette="1" data-eftKodu="146" data-isDijital="" data-telefon="(212)3048444" data-faks="(212)3048445" data-adres="ESENTEPE MAHALLESİ B&#220;Y&#220;KDERE CAD. LEVENT 199 APT. NO:199/119 ŞİŞLİ/İSTANBUL" data-webadresi="http://www.odeabank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">23. </div>QNB BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.qnb.com.tr/" target="_blank">https://www.qnb.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="QNB BANK A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="111" data-isDijital="" data-telefon="(212)3185000" data-faks="(216)5240444" data-adres="ESENTEPE MAHALLESİ B&#220;Y&#220;KDERE CADDESİ KRİSTAL KULE BİNASI NO:215 ŞİŞLİ İSTANBUL" data-webadresi="https://www.qnb.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">24. </div>SOCIETE GENERALE (S.A.) PARİS MERKEZİ FRANSA İSTANBUL T&#220;RKİYE MERKEZ ŞUBESİ </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.societegenerale.com.tr" target="_blank">http://www.societegenerale....</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="SOCIETE GENERALE (S.A.) PARİS MERKEZİ FRANSA İSTANBUL T&#220;RKİYE MERKEZ ŞUBESİ" data-aciklama="" data-isFaaliyette="1" data-eftKodu="122" data-isDijital="" data-telefon="(212)2821942" data-faks="(212)2821848" data-adres="NİSPETİYE CAD.AKMERKEZ E-3 BLOK KAT 10  ETİLER/İSTANBUL" data-webadresi="http://www.societegenerale.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">25. </div>ŞEKERBANK T.A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.sekerbank.com.tr" target="_blank">http://www.sekerbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ŞEKERBANK T.A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="59" data-isDijital="" data-telefon="(212)3197000" data-faks="(212)3197429" data-adres="EMNİYET EVLERİ MAHALLESİ ESKİ B&#220;Y&#220;KDERE CADDESİ NO:1/1A KAĞITHANE İSTANBUL" data-webadresi="http://www.sekerbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">26. </div>T.C. ZİRAAT BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.ziraat.com.tr/" target="_blank">http://www.ziraat.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T.C. ZİRAAT BANKASI A.Ş." data-aciklama="T. Emlak Bankası A.Ş., 03.07.2001 tarih ve 2001/2202 sayılı Bakanlar Kurulu Kararıyla T.C. Ziraat Bankası A.Ş.&#39;ye devredilmiş olup, s&#246;z konusu Bankanın Genel M&#252;d&#252;rl&#252;ğ&#252; ve şubelerinin t&#252;m&#252; 09.07.2001 tarihi itibariyle T.C. Ziraat Bankası A.Ş. b&#252;nyesinde ve T.C. Ziraat Bankası A.Ş. olarak faaliyetlerine devam edecektir." data-isFaaliyette="1" data-eftKodu="10" data-isDijital="" data-telefon="(216)5902000" data-faks="(312)5845938" data-adres="FİNANSKENT MAH. FİNANS CAD. NO:44/A &#220;MRANİYE İSTANBUL" data-webadresi="http://www.ziraat.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">27. </div>TURKLAND BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.turklandbank.com" target="_blank">http://www.turklandbank.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="TURKLAND BANK A.Ş." data-aciklama="MNG Bank A.Ş.’nin &#252;nvanı 03.04.2007 tarihinde tescil edilerek, Turkland Bank A.Ş. olarak değiştirilmiştir." data-isFaaliyette="1" data-eftKodu="108" data-isDijital="" data-telefon="(212)3683434" data-faks="(212)3683535" data-adres="19 MAYIS MAH. 19 MAYIS CAD. ŞİŞLİ PLAZA A BLOK NO:7 ŞİŞLİ 34360 İSTANBUL" data-webadresi="http://www.turklandbank.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">28. </div>T&#220;RK EKONOMİ BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.teb.com.tr" target="_blank">http://www.teb.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RK EKONOMİ BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 10.02.2011 tarihli ve 4048 sayılı Kararı ile Fortis Bank A.Ş.ve T&#252;rk Ekonomi Bankası A.Ş.’nin 25.01.2011 tarihinde yapılan olağan&#252;st&#252; genel kurullarında Bankanın TEB’e devrine dair alınan kararların tescil edilmesine onay verilmesine karar verilmiştir. Mezkur Kararın 12.02.2011 tarihli Resmi Gazetede yayımlanmasını m&#252;teakip, devre dair genel kurul kararları ile ana s&#246;zleşme değişiklikleri, İstanbul Ticaret Sicil Memurluğunca tescil edilmiş, 14.02.2011 tarihi itibariyle Fortis Bank A.Ş.’nin t&#252;zel kişiliği sona ererek kayıtları Ticaret Sicilinden silinmiştir. " data-isFaaliyette="1" data-eftKodu="32" data-isDijital="" data-telefon="(216)6353535" data-faks="(216)6363636" data-adres="İNKILAP MAHALLESİ SOKULLU CADDESİ NO:7/A &#220;MRANİYE/İSTANBUL" data-webadresi="http://www.teb.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">29. </div>T&#220;RK TİCARET BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.turkticaretbankasi.com.tr/" target="_blank">https://www.turkticaretbank...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RK TİCARET BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 04.11.2021 tarih ve 9895 sayılı Kararı ile T&#252;rk Ticaret Bankası A.Ş.’ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="60" data-isDijital="" data-telefon="(216)2286700" data-faks="(216)2286869" data-adres="Barbaros Mahallesi, Mor S&#252;mb&#252;l Sokak, WBC İş Merkezi, No:9, İ&#231; Kapı No:12 Ataşehir/İstanbul" data-webadresi="https://www.turkticaretbankasi.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">30. </div>T&#220;RKİYE GARANTİ BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.garantibbva.com.tr" target="_blank">https://www.garantibbva.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE GARANTİ BANKASI A.Ş." data-aciklama="Birleşik T&#252;rk K&#246;rfez Bankası A.Ş., 31.08.2001 tarihinde, t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle Osmanlı Bankası A.Ş.&#39;ye devredilmiştir. Osmanlı Bankası A.Ş. ise 14.12.2001 tarihinde t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle T. Garanti Bankası A.Ş.&#39;ye devredilmiştir. Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun 14.07.2015 tarih ve 6370 sayılı kararı ile; Banco Bilbao Vizcaya Argentaria S.A.(BBVA)’nın T. Garanti Bankası A.Ş.’deki (Banka) doğrudan paylarının %25,01’den %39,90’a y&#252;kselmesine izin verilmiştir. Bankanın kontrol g&#252;c&#252;n&#252;n BBVA’ya ge&#231;mesi dolayısıyla, Banka &#246;zel mevduat bankaları kategorisinden yabancı mevduat bankaları kategorisinde sınıflandırılmaya başlanmıştır." data-isFaaliyette="1" data-eftKodu="62" data-isDijital="" data-telefon="(212)3181818" data-faks="(212)3181888" data-adres="LEVENT, NİSPETİYE MAH. AYTAR CAD. NO:2 34340 BEŞİKTAŞ/İSTANBUL" data-webadresi="https://www.garantibbva.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">31. </div>T&#220;RKİYE HALK BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.halkbank.com.tr/" target="_blank">http://www.halkbank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE HALK BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="12" data-isDijital="" data-telefon="(216)5037070" data-faks="(212)3409399" data-adres="BARBAROS MAHALLESİ, ŞEBBOY SOKAK NO:4 34746 ATAŞEHİR-İSTANBUL" data-webadresi="http://www.halkbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">32. </div>T&#220;RKİYE İŞ BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.isbank.com.tr" target="_blank">http://www.isbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE İŞ BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="64" data-isDijital="" data-telefon="(212)3160000" data-faks="(212)3160404" data-adres="İŞ KULELERİ 34330 LEVENT/İSTANBUL" data-webadresi="http://www.isbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">33. </div>T&#220;RKİYE VAKIFLAR BANKASI T.A.O. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.vakifbank.com.tr" target="_blank">http://www.vakifbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE VAKIFLAR BANKASI T.A.O." data-aciklama="" data-isFaaliyette="1" data-eftKodu="15" data-isDijital="" data-telefon="(216)7241000" data-faks="(216)7243909" data-adres="Finanskent Mahallesi Finans Caddesi No:40/1 &#220;mraniye/İstanbul" data-webadresi="http://www.vakifbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">34. </div>YAPI VE KREDİ BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.yapikredi.com.tr" target="_blank">https://www.yapikredi.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="YAPI VE KREDİ BANKASI A.Ş." data-aciklama="25.05.2006 tarih ve 1879 sayılı Bankacılık D&#252;zenleme ve Denetleme Kurulu kararı uyarınca; Ko&#231;bank A.Ş.&#39;nin her t&#252;rl&#252; hak alacak bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle Yapı ve Kredi Bankası A.Ş.&#39;ye devredilmesi uygun g&#246;r&#252;lm&#252;şt&#252;r. Devir işlemleri 02.10.2006 tarihi itibariyle tekemm&#252;l etmiş bulunmaktadır. " data-isFaaliyette="1" data-eftKodu="67" data-isDijital="" data-telefon="(212)3397000" data-faks="(212)3396000" data-adres="YAPI KREDİ PLAZA D BLOK B&#220;Y&#220;KDERE CADDESİ 34330 LEVENT/İSTANBUL" data-webadresi="https://www.yapikredi.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">35. </div>ZİRAAT DİNAMİK BANKA A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.ziraatdinamik.com.tr" target="_blank">https://www.ziraatdinamik.c...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ZİRAAT DİNAMİK BANKA A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="160" data-isDijital="(Dijital Banka)" data-telefon="02165913000" data-faks="" data-adres="Finanskent Mah. Finans Cad. No:44/B B Blok İ&#231; Kapı No: 8 34760 &#220;mraniye/İSTANBUL" data-webadresi="https://www.ziraatdinamik.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div id="heading_180" class="card-header accordionHeader">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_180" aria-expanded="true" aria-controls="collapse_180">
+                                                Kalkınma ve Yatırım Bankaları <small class="float-right">(21)</small>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse_180" showCollapse="collapse" class="collapse" aria-labelledby="heading_180" data-parent="#accordion">
+                                        <div class="card-body accordionBody">
+                                            <ul>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">1. </div>AKTİF YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.aktifbank.com.tr/" target="_blank">http://www.aktifbank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="AKTİF YATIRIM BANKASI A.Ş." data-aciklama="&#199;alık Yatırım Bankası A.Ş.&#39;nin unvanının Aktif Yatırım Bankası A.Ş. olarak değiştirilmesi hususu 01.08.2008 tarihinde İstanbul Ticaret Sicili Memurluğunda tescil edilmiştir. " data-isFaaliyette="1" data-eftKodu="143" data-isDijital="" data-telefon="(212)3408000" data-faks="(212)3408865" data-adres="Esentepe Mahallesi Kore Şehitleri Caddesi Aktif Bank Genel M&#252;d&#252;rl&#252;k Apt. No:8/1 Şişli İstanbul" data-webadresi="http://www.aktifbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">2. </div>AYTEMİZ YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.aytemizbank.com.tr/" target="_blank">https://www.aytemizbank.com...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="AYTEMİZ YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="161" data-isDijital="" data-telefon="02162953636" data-faks="02162953637" data-adres="YAMANEVLER MAH. AHMET TEVFİK İLERİ CAD. NO:22-26A &#220;MRANİYE/İSTANBUL" data-webadresi="https://www.aytemizbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">3. </div>BANK OF AMERICA YATIRIM BANK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.ml.com.tr" target="_blank">http://www.ml.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="BANK OF AMERICA YATIRIM BANK A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 30.11.2006 tarih ve 2040 sayılı Kararı ile hisselerinin tamamı Merrill Lynch&amp;Co. Inc.&#39;a ait olan Merrill Lynch Group Inc.&#39;ın sermayesinin tamamına sahip olduğu Merrill Lynch European Asset Holdings Inc.&#39;ın, Tat Yatırım Bankası A.Ş.&#39;nin sermayesinin %99,947 oranında hissesini devralmasına ve Mehmet Salih TATLICI&#39;nın Tat Yatırım Bankası A.Ş.&#39;deki doğrudan payının %94,999&#39;dan %0&#39;a d&#252;şmesine izin verilmesi, 5411 sayılı Bankacılık Kanununun 18 inci maddesine istinaden uygun g&#246;r&#252;lm&#252;şt&#252;r. 
+26.10.2020 tarihli Genel Kurul Kararı ile &quot;Merrill Lynch Yatırım Bank A.Ş.&quot; olan unvanının &quot;Bank of America Yatırım Bank A.Ş.&quot; olarak değiştirilmesine karar verilmiş olup, s&#246;z konusu karar 30.10.2020 tarihinde ticaret sicilinde tescil edilmiştir." data-isFaaliyette="1" data-eftKodu="129" data-isDijital="" data-telefon="(212)3199500" data-faks="(212)3199501" data-adres="B&#220;Y&#220;KDERE CAD. NO:185 KANYON OFİSİ BLOĞU 11.KAT 34394 LEVENT/İSTANBUL" data-webadresi="http://www.ml.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">4. </div>BANKPOZİTİF KREDİ VE KALKINMA BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.bankpozitif.com.tr/" target="_blank">http://www.bankpozitif.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="BANKPOZİTİF KREDİ VE KALKINMA BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurumunun 17.08.2006 tarih ve 1960 sayılı kararı ile 22.11.2006 tarihinde T&#252;rkiye Ticaret Sicili Gazetesinde yayımlanarak kesinleşen sermaye artırımı sonucu Bankpozitif Kredi ve Kalkınma Bankası A.Ş. Yabancı Yatırım Bankaları sınıflandırmasına alınmıştır. C Kredi ve Kalkınma Bankası A.Ş.&#39;nin unvanı 29.12.2005 tarihinde Ticaret Sicili&#39;nde tescil ettirilerek Bankpozitif Kredi ve Kalkınma Bankası Anonim Şirketi olarak değiştirilmiştir. Toprak Yatırım Bankası A.Ş.&#39;nin unvanı, 22.01.2003 tarihinde İstanbul Ticaret Sicil Memurluğuna tescil edilerek C Kredi ve Kalkınma Bankası A.Ş. olarak değişmiştir." data-isFaaliyette="1" data-eftKodu="142" data-isDijital="" data-telefon="0(216)6366360" data-faks="0(216)6366359" data-adres="Kuştepe Mah. Mecidiyek&#246;y Yolu Cad. V Plaza No:14 İ&#231; Kapı No:7 Şişli / İstanbul " data-webadresi="http://www.bankpozitif.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">5. </div>D YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.dybank.com.tr" target="_blank">https://www.dybank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="D YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun 21.05.2021 tarih ve 9568 sayılı Kararı ile D Yatırım Bankası A.Ş.&#39;ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="151" data-isDijital="" data-telefon="(212)9987400" data-faks="(212)9987475" data-adres="KUŞTEPE MAH. MECİDİYEK&#214;Y YOLU CAD. TRUMP TOWER APT. NO:12/32 34387 ŞİŞLİ/İSTANBUL" data-webadresi="https://www.dybank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">6. </div>DESTEK YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.destekbank.com" target="_blank">https://www.destekbank.com</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="DESTEK YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun 06.01.2022 tarih ve 10024 sayılı Kararı ile Destek Yatırım Bankası A.Ş.’ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="152" data-isDijital="" data-telefon="(212) 371 55 55" data-faks="(212) 371 55 90" data-adres="Esentepe Mah. B&#252;y&#252;kdere Cad. Ferko Signature Blok No:175 İ&#231; Kapı No:165 Şişli/İstanbul" data-webadresi="https://www.destekbank.com" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">7. </div>DİLER YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.dilerbank.com.tr/" target="_blank">http://www.dilerbank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="DİLER YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="138" data-isDijital="" data-telefon="(212)2536630" data-faks="(212)2539454" data-adres="ESKİ B&#220;Y&#220;KDERE CAD. NO:1 PLAZA K:3 34485 MASLAK/İSTANBUL" data-webadresi="http://www.dilerbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">8. </div>GOLDEN GLOBAL YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://goldenglobalbank.com.tr" target="_blank">https://goldenglobalbank.co...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="GOLDEN GLOBAL YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun 30.01.2020 tarih ve 8839 sayılı Kararı ile Golden Global Yatırım Bankası A.Ş.&#39;ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="" data-isDijital="" data-telefon="(212)2152641" data-faks="(212)2152644" data-adres="B&#220;Y&#220;KDERE CAD. NO:127 ASTORIA B/17 BLOK KAT:6 ŞİŞLİ/ İSTANBUL" data-webadresi="https://goldenglobalbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">9. </div>GSD YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.gsdbank.com.tr" target="_blank">http://www.gsdbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="GSD YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="139" data-isDijital="" data-telefon="(216)5879000" data-faks="(216)4899774" data-adres=" AYDINEVLER MAH. KAPTAN RIFAT SOK. NO:3 K&#220;&#199;&#220;KYALI 34854 MALTEPE/İSTANBUL" data-webadresi="http://www.gsdbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">10. </div>HEDEF YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.hedefyatirimbankasi.com.tr/" target="_blank">https://www.hedefyatirimban...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="HEDEF YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 03.08.2023 tarihli ve 10641 sayılı Kararı ile faaliyet izni verilen Hedef Yatırım Bankası A.Ş., 02.01.2024 tarihinde faaliyete başlamıştır." data-isFaaliyette="1" data-eftKodu="156" data-isDijital="" data-telefon="02165011100" data-faks="02164817500" data-adres="Saray Mahallesi, Dr. Adnan B&#252;y&#252;kdeniz Cad., No:4/2 Kat:3 Daire:8 Cessas Plaza &#220;mraniye/İstanbul" data-webadresi="https://www.hedefyatirimbankasi.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">11. </div>İLLER BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.ilbank.gov.tr" target="_blank">http://www.ilbank.gov.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="İLLER BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="4" data-isDijital="" data-telefon="(312)5087000" data-faks="(312)5087399" data-adres="Emniyet Mahallesi Hipodrom Caddesi No:9/21 Yenimahalle/ANKARA" data-webadresi="http://www.ilbank.gov.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">12. </div>İSTANBUL TAKAS VE SAKLAMA BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.takasbank.com.tr" target="_blank">http://www.takasbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="İSTANBUL TAKAS VE SAKLAMA BANKASI A.Ş." data-aciklama="İMKB Takas ve Saklama Bankası A.Ş.&#39;nin unvanının İstanbul Takas ve Saklama Bankası A.Ş. olarak değiştirilmesi hususu 11.04.2013 tarihinde İstanbul Ticaret Sicili M&#252;d&#252;rl&#252;ğ&#252;nde tescil edilmiştir." data-isFaaliyette="1" data-eftKodu="132" data-isDijital="" data-telefon="(212)3152525" data-faks="(212)3152526" data-adres="Reşitpaşa Mahallesi, Borsa İstanbul Caddesi, No:4 Sarıyer 34467 İSTANBUL" data-webadresi="http://www.takasbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">13. </div>MİSYON YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.misyon.com/" target="_blank">https://www.misyon.com/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="MİSYON YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulu’nun 15.12.2022 tarih ve 10437 sayılı Kararı ile Misyon Yatırım Bankası A.Ş.’ye 5411 sayılı Bankacılık Kanununun 10 uncu maddesi ile Bankaların İzne Tabi İşlemleri ile Dolaylı Pay Sahipliğine İlişkin Y&#246;netmeliğin 7 nci maddesi kapsamında faaliyet izni verilmiştir." data-isFaaliyette="1" data-eftKodu="153" data-isDijital="" data-telefon="0212 272 54 11" data-faks="" data-adres="Esentepe Mah. Kırg&#252;l&#252; Sok. Dış Kapı No:4 Metrocity İş Merkezi D Blok İ&#231; Kapı No:29 Şişli/İstanbul" data-webadresi="https://www.misyon.com/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">14. </div>NUROL YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.nurolbank.com.tr" target="_blank">http://www.nurolbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="NUROL YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="141" data-isDijital="" data-telefon="(212)2868100" data-faks="(212)2868101" data-adres="MASLAK MAH. B&#220;Y&#220;KDERE CAD. NUROL PLAZA NO. 255 İ&#199; KAPI NO 1502 34485 MASLAK - SARIYER- İSTANBUL" data-webadresi="http://www.nurolbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">15. </div>PASHA YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.pashabank.com.tr/" target="_blank">https://www.pashabank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="PASHA YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="116" data-isDijital="" data-telefon="(212)7058900-(212)3450711" data-faks="(212)3450712" data-adres="Sultan Selim Mahallesi H&#252;meyra Sokak Pasha Plaza Apt. No: 2/7 Kağıthane/İSTANBUL" data-webadresi="https://www.pashabank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">16. </div>Q YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.qyatirimbankasi.com.tr/tr/" target="_blank">https://www.qyatirimbankasi...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="Q YATIRIM BANKASI A.Ş." data-aciklama="Bankacılık D&#252;zenleme ve Denetleme Kurulunun 01.06.2023 tarihli ve 10620 sayılı Kararı ile faaliyet izni verilen Q YATIRIM BANKASI A.Ş., 26.10.2023 tarihinde faaliyetine başlamıştır." data-isFaaliyette="1" data-eftKodu="155" data-isDijital="" data-telefon="908507236500" data-faks="908507236501" data-adres="MANSUROĞLU MAH. ANKARA CAD. NO:81 İ&#199;KAPI NO:021 BAYRAKLI/İZMİR" data-webadresi="https://www.qyatirimbankasi.com.tr/tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">17. </div>STANDARD CHARTERED YATIRIM BANKASI T&#220;RK A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.standardchartered.com.tr" target="_blank">http://www.standardchartere...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="STANDARD CHARTERED YATIRIM BANKASI T&#220;RK A.Ş." data-aciklama="Credit Lyonnais S.A. Merkezi Paris İstanbul T&#252;rkiye Merkez Şubesi 03.03.2004 tarihinde t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve Ticaret Sicilinden terkin edilmek suretiyle Credit Agricole Indosuez T&#252;rk Bank A.Ş.&#39;ne devredilmiştir. Credit Agricole Indosuez Turk Bank A.Ş.&#39;nin unvanı 14.06.2004 tarihinde ticaret sicilinde tescil ettirilerek CALYON BANK T&#220;RK ANONİM ŞİRKETİ olarak değiştirilmiştir.Calyon Yatırım Bankası T&#252;rk A.Ş.’nin unvanının Credit Agricole Yatırım Bankası T&#252;rk A.Ş. olarak değiştirilmesi hususu 02.03.2010 tarihinde İstanbul Ticaret Sicili Memurluğunda tescil edilmiştir. Credit Agricole Yatırım Bankası T&#252;rk A.Ş.&#39;nin unvanının Standard Chartered Yatırım Bankası T&#252;rk A.Ş. olarak değiştirilmesi hususu 26.11.2012 tarihinde İstanbul Ticaret Sicil Memurluğunda tescil edilmiştir." data-isFaaliyette="1" data-eftKodu="121" data-isDijital="" data-telefon="(212)3393700" data-faks="(212)2826301" data-adres="ESENTEPE MAH. B&#220;Y&#220;KDERE CAD. KANYON NO:185 İ&#199; KAPI NO:271 ŞİŞLİ/İSTANBUL" data-webadresi="http://www.standardchartered.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">18. </div>TERA YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.terabank.com.tr" target="_blank">https://www.terabank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="TERA YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="" data-isDijital="" data-telefon="(212)3394200" data-faks="(212)3394299" data-adres="MASLAK MAHALLESİ ESKİ B&#220;Y&#220;KDERE CAD. İZ PLAZA BLOK NO.9 İ&#199; KAPI:10 KAT.4 SARIYER" data-webadresi="https://www.terabank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">19. </div>T&#220;RKİYE İHRACAT KREDİ BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.eximbank.gov.tr" target="_blank">http://www.eximbank.gov.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE İHRACAT KREDİ BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="16" data-isDijital="" data-telefon="(216)6665500" data-faks="(216)6665599" data-adres="İnkılap Mahallesi, Dr. Adnan B&#252;y&#252;kdeniz Caddesi, No:7/B 34768 &#220;mraniye/İstanbul" data-webadresi="http://www.eximbank.gov.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">20. </div>T&#220;RKİYE KALKINMA VE YATIRIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.kalkinma.com.tr" target="_blank">http://www.kalkinma.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE KALKINMA VE YATIRIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="17" data-isDijital="" data-telefon="(216)6368700" data-faks="(312)2313125" data-adres="İnkılap Mah. Esnaf Cad. A Blok Nissan Plaza No:4 İ&#231; Kapı No:1 &#220;mraniye /İstanbul" data-webadresi="http://www.kalkinma.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">21. </div>T&#220;RKİYE SINAİ KALKINMA BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.tskb.com.tr" target="_blank">http://www.tskb.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE SINAİ KALKINMA BANKASI A.Ş." data-aciklama="Sınai Yatırım Bankası A.Ş., 29.03.2002 tarihinde t&#252;m hak, alacak, bor&#231; ve y&#252;k&#252;ml&#252;l&#252;kleriyle ve t&#252;zel kişiliği sona ermek suretiyle T. Sınai Kalkınma Bankası A.Ş.&#39;ye devredilmiştir." data-isFaaliyette="1" data-eftKodu="14" data-isDijital="" data-telefon="(212)3345050" data-faks="(212)2432975" data-adres="MECLİSİ MEBUSAN CADDESİ NO:81 FINDIKLI/İSTANBUL" data-webadresi="http://www.tskb.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div id="heading_181" class="card-header accordionHeader">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_181" aria-expanded="true" aria-controls="collapse_181">
+                                                Katılım Bankaları <small class="float-right">(10)</small>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse_181" showCollapse="collapse" class="collapse" aria-labelledby="heading_181" data-parent="#accordion">
+                                        <div class="card-body accordionBody">
+                                            <ul>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">1. </div>ADİL KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.adilkatilim.com.tr/" target="_blank">https://www.adilkatilim.com...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ADİL KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="" data-isDijital="(Dijital Banka)" data-telefon="0850 235 23 45" data-faks="" data-adres="Finanskent Mah. Finans Cad. No: 46/3 İ&#231; Kapı No: 128 &#220;mraniye, İstanbul" data-webadresi="https://www.adilkatilim.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">2. </div>ALBARAKA T&#220;RK KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.albarakaturk.com.tr/" target="_blank">http://www.albarakaturk.com...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ALBARAKA T&#220;RK KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="203" data-isDijital="" data-telefon="(216)6660101" data-faks="(216)6661600" data-adres="SARAY MAHALLESİ DR.ADNAN B&#220;Y&#220;KDENİZ CADDESİ NO:6 &#220;MRANİYE/İSTANBUL" data-webadresi="http://www.albarakaturk.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">3. </div>D&#220;NYA KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.dunyakatilim.com.tr/ " target="_blank">https://www.dunyakatilim.co...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="D&#220;NYA KATILIM BANKASI A.Ş." data-aciklama="28.11.2023 tarihli ve 32383 sayılı Resmi Gazetede yayınlanan Bankacılık D&#252;zenleme ve Denetleme Kurulunun 23.11.2023 tarihli ve 10729 sayılı kararı ile Adabank A.Ş.’nin niteliği katılım bankası olarak değiştirilmiştir. Bu kapsamda, 25.12.2023 tarihli olağan&#252;st&#252; genel kurul toplantısında Adabank A.Ş.’nin ticaret &#252;nvanı D&#252;nya Katılım Bankası A.Ş. olarak değiştirilmiş, bu husus 26.12.2023 tarihinde tescil edilmiş ve 29.12.2023 tarihli ve 10990 sayılı T&#252;rkiye Ticaret Sicil Gazetesinde ilan edilmiştir." data-isFaaliyette="1" data-eftKodu="214" data-isDijital="" data-telefon="4443166" data-faks="" data-adres="Yamanevler Mahallesi Ahmet Tevfik İleri Caddesi No:22-26 &#220;mraniye/İstanbul" data-webadresi="https://www.dunyakatilim.com.tr/ " data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">4. </div>HAYAT FİNANS KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.hayatfinans.com.tr/" target="_blank">https://www.hayatfinans.com...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="HAYAT FİNANS KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="" data-isDijital="(Dijital Banka)" data-telefon="0216 939 60 00" data-faks="" data-adres="MAHİR İZ CADDESİ, NO:25 34662 ALTUNİZADE, &#220;SK&#220;DAR/İSTANBUL" data-webadresi="https://www.hayatfinans.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">5. </div>KUVEYT T&#220;RK KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.kuveytturk.com.tr" target="_blank">http://www.kuveytturk.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="KUVEYT T&#220;RK KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="205" data-isDijital="" data-telefon="(212)3541111" data-faks="(212)3541212" data-adres="B&#220;Y&#220;KDERE CAD. NO:129/1 34394 ESENTEPE ŞİŞLİ/İSTANBUL" data-webadresi="http://www.kuveytturk.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">6. </div>T.O.M. KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="https://www.tombank.com.tr/" target="_blank">https://www.tombank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center">(Dijital Banka)</div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T.O.M. KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="213" data-isDijital="(Dijital Banka)" data-telefon="(850)3993636" data-faks="(850)2143384" data-adres="Burhaniye Mh. Nagehan Sk. B Blok No:2B İ&#231; Kapı No: 1 &#220;sk&#252;dar / İSTANBUL" data-webadresi="https://www.tombank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">7. </div>T&#220;RKİYE EMLAK KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.emlakbank.com.tr/" target="_blank">http://www.emlakbank.com.tr/</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE EMLAK KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="211" data-isDijital="" data-telefon="(216)2662626" data-faks="" data-adres="Barbaros Mahallesi Begonya Sokak no: 9/A Ataşehir – İSTANBUL" data-webadresi="http://www.emlakbank.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">8. </div>T&#220;RKİYE FİNANS KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.turkiyefinans.com.tr" target="_blank">http://www.turkiyefinans.co...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="T&#220;RKİYE FİNANS KATILIM BANKASI A.Ş." data-aciklama="Family Finans Kurumu A.Ş. 30.12.2005 tarihi itibariyle, t&#252;m aktif ve pasifleri ve bilan&#231;o dışı y&#252;k&#252;ml&#252;l&#252;kleriyle birlikte Anadolu Finans Kurumu A.Ş.&#39;ne devredilmiştir. Aynı tarihte Anadolu Finans Kurumu A.Ş.&#39;nin unvanı T&#252;rkiye Finans Katılım Bankası A.Ş. olarak değiştirilmiştir. 28.02.2008 tarih ve 2489 sayılı Kurul Kararı ile T&#252;rkiye Finans Katılım Bankası A.Ş.&#39;nin %60&#39;ına tekabul eden hisselerinin The National Commercial Bank&#39;a devredilmesi uygun g&#246;r&#252;lm&#252;şt&#252;r." data-isFaaliyette="1" data-eftKodu="206" data-isDijital="" data-telefon="(216)6762000" data-faks="(216)6762905" data-adres="Saray Mahallesi Sokullu Caddesi No:6 &#220;mraniye/İSTANBUL" data-webadresi="http://www.turkiyefinans.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">9. </div>VAKIF KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.vakifkatilim.com.tr/" target="_blank">http://www.vakifkatilim.com...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="VAKIF KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="210" data-isDijital="" data-telefon="(216)8005555" data-faks="(216)8005556" data-adres="Saray Mah. Dr. Adnan B&#252;y&#252;kdeniz Cad. No:10 34768 &#220;mraniye/İstanbul" data-webadresi="http://www.vakifkatilim.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">10. </div>ZİRAAT KATILIM BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.ziraatkatilim.com.tr/" target="_blank">http://www.ziraatkatilim.co...</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="ZİRAAT KATILIM BANKASI A.Ş." data-aciklama="" data-isFaaliyette="1" data-eftKodu="209" data-isDijital="" data-telefon="(212)4041000" data-faks="(212)4041080" data-adres="Finanskent Mah. Finans Cad. B Blok No: 44B İ&#231; Kapı No:29 &#220;mraniye/İstanbul" data-webadresi="http://www.ziraatkatilim.com.tr/" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div id="heading_182" class="card-header accordionHeader">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse_182" aria-expanded="true" aria-controls="collapse_182">
+                                                TMSF B&#252;nyesindeki Bankalar <small class="float-right">(1)</small>
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse_182" showCollapse="collapse" class="collapse" aria-labelledby="heading_182" data-parent="#accordion">
+                                        <div class="card-body accordionBody">
+                                            <ul>
+                                                        <li class="row">
+                                                            <div class="col-md-4 col-sm-12 baslikContainer"><div class="satirNo">1. </div>BİRLEŞİK FON BANKASI A.Ş. </div>
+                                                            <div class="col-md-4 col-sm-12 webAdresiContainer">
+                                                                    <a href="http://www.fonbank.com.tr" target="_blank">http://www.fonbank.com.tr</a>
+                                                            </div>
+                                                            <div class="col-md-2 col-sm-12 text-center"></div>
+                                                            <div class="col-md-2 col-sm-12">
+                                                                <button type="button" class="btn btn-primary form-control detayliGor" data-toggle="modal" data-target="#kurulusDetayModal" data-ad="BİRLEŞİK FON BANKASI A.Ş." data-aciklama="Bayındırbank A.Ş.&#39;nin unvanı 19.12.2005 tarihinden itibaren BİRLEŞİK FON BANKASI A.Ş. olarak değişmiştir. Bayındırbank A.Ş.&#39;nin, temett&#252; hari&#231; ortaklık hakları ile y&#246;netim ve denetimi 4389 sayılı Bankalar Kanununun 14 &#252;nc&#252; maddesinin (3) ve (4) numaralı fıkralarına istinaden Bankacılık D&#252;zenleme Denetleme Kurulunun 09.07.2001 tarih ve 383 sayılı Kararı ile Tasarruf Mevduatı Sigorta Fonuna devredilmiştir. Bankacılık D&#252;zenleme ve Denetleme Kurulunun 26.12.2001 tarih ve 562 sayılı Kararı ile; Ege Giyim Sanayicileri Bankası A.Ş.&#39;nin (EGS Bank), 18.01.2002 tarihi itibariyle, t&#252;m aktif ve pasifleriyle Bayındırbank A.Ş. b&#252;nyesinde devren birleştirilmesine karar verilmiştir. Bankacılık D&#252;zenleme ve Denetleme Kurulunun 527, 552 ve 554 sayılı Kararları ile İktisat Bankası T.A.Ş., Kentbank A.Ş. ve Etibank A.Ş.&#39;nin bankacılık işlemleri yapma ve mevduat kabul etme izinleri kaldırılmıştır. Daha sonra, 05.04.2002 tarihi itibariyle, Tasfiye Halinde Etibank A.Ş., Tasfiye Halinde Kentbank A.Ş. ve Tasfiye Halinde İktisat Bankası T.A.Ş.&#39;nin tasfiyelerinin kaldırılmasına ve s&#246;z konusu bankaların t&#252;m aktif ve pasifleriyle Bayındırbank A.Ş. b&#252;nyesinde devren birleştirilmesine karar verilmiştir. Bankacılık D&#252;zenleme ve Denetleme Kurulunun 26.09.2002 tarih ve 826 sayılı kararıyla Toprakbank A.Ş.&#39;nin aktif ve pasifleriyle, hisselerinin tamamı ile y&#246;netim ve denetimi Tasarruf Mevduatı Sigorta Fonuna ait olan Bayındırbank A.Ş.&#39;ne k&#252;lli halefiyet prensipleri &#231;er&#231;evesinde devredilmesine karar verilmiştir. Bu kapsamda, Toprakbank A.Ş. şubeleri Bayındırbank A.Ş. şubeleri olarak y&#252;k&#252;ml&#252;l&#252;klerini yerine getirmeye devam edecektir." data-isFaaliyette="1" data-eftKodu="29" data-isDijital="" data-telefon="(212)3401000" data-faks="(212)2883161" data-adres="B&#220;Y&#220;KDERE CAD. NO:143 ESENTEPE ŞİŞLİ/İSTANBUL" data-webadresi="http://www.fonbank.com.tr" data-sektordenCikisTarihi="-" data-kurulKarari="">
+                                                                    <i class="fas fa-search"></i><span class="detayliGorText"> Detay</span>
+                                                                </button>
+                                                            </div>
+                                                        </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+
+
+<!-- Modal -->
+    <div class="modal fade" id="kurulusDetayModal" tabindex="-1" role="dialog" aria-labelledby="kurulusDetayModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="kurulusDetayModalLabel"></h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Aktif Kuruluşlar İçin -->
+                    <p class="pEftKodu">
+                        <b>EFT Kodu : </b><span></span> <small></small>
+
+                    </p>
+                    <p class="pTelefon">
+                        <b>Telefon : </b><span></span>
+                    </p>
+                    <p class="pFaks">
+                        <b>Faks : </b><span></span>
+                    </p>
+                    <p class="pAdres">
+                        <b>Adres : </b><span></span>
+                    </p>
+                    <p class="pWebAdresi">
+                        <b>Web Adresi : </b><span></span>
+                    </p>
+
+                    <!-- Faaliyet İzni İptal Edilen Kuruluşlar İçin -->
+                    <p class="pSektordenCikisTarihi">
+                        <b>Sektörden Çıkış Tarihi : </b><span></span>
+                    </p>
+                    <p class="pKurulKarari">
+                        <b>Kurul Kararı : </b><span></span>
+                    </p>
+
+                    <!-- Tüm Kuruluşlar İçin -->
+                    <p class="pAciklama">
+                        <b>Açıklama : </b><span></span>
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+                        </div>
+                        <div id="yanMenuContainer" class="col-md-3">
+                            <ul>
+                                <li class="liUstKategori">
+                                    <a class="aUstKategori" href="/Kurulus/Index/6">Kuruluşlar</a>
+                                    <ul>                                        
+                                            <li>
+                                                    <a href="/Kurulus/Liste/77">Bankalar</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/78">Finansal Kiralama Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/79">Faktoring Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/80">Finansman Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/89">Tasarruf Finansman Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/81">Finansal Holding Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/82">Varlık Y&#246;netim Şirketleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/83">Yabancı Bankaların T&#252;rkiye Temsilcilikleri</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/84">Bankalarda Bağımsız Denetim Yapmaya Yetkili Kuruluşlar</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/85">Bankalara Değerleme Hizmeti Vermeye Yetkili Kuruluşlar</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/86">Yetkili Derecelendirme Kuruluşları</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/88">5464 sayılı Banka Kartları ve Kredi Kartları Kanunu Kapsamında Faaliyet İzni Verilen Kuruluşlar</a>
+                                            </li>
+                                            <li>
+                                                    <a href="/Kurulus/Liste/87">Meslek Birlikleri</a>
+                                            </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<style>
+
+    ul.honk {
+        list-style: none;
+        padding-left: 0;
+    }
+
+        ul.honk > li {
+            float: left;
+            padding: 1em;
+        }
+
+        ul.honk a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        ul.honk > li > ul {
+            list-style: none;
+            padding-left: 0;
+            border-top: 1px solid #fff;
+            font-size: 10pt;
+        }
+
+            ul.honk > li > ul > li {
+                padding-top: 1em;
+            }
+</style>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-md-12">
+                    <ul class="row honk">
+                            <li class="col-lg-3 col-md-6 text-center">
+                                <a href="/KurumHakkinda">
+                                    Hakkımızda
+                                </a>
+
+                            <ul>
+                                            <li class="text-left">
+
+
+                                                <a href="/KurumHakkinda/Detay/21">Başkan ve Kurul &#220;yeleri</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/KurumHakkinda/Detay/22">Organizasyon Şeması</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/KurumHakkinda/Detay/23">Faaliyet Raporları</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/KurumHakkinda/Detay/195">İnsan Kaynakları</a>
+
+                                            </li>
+
+                            </ul>
+
+                            </li>
+                            <li class="col-lg-3 col-md-6 text-center">
+                                <a href="/Duyuru">
+                                    Duyurular
+                                </a>
+
+                            <ul>
+                                            <li class="text-left">
+
+
+                                                <a href="/Duyuru/Liste/39">Basın Duyuruları</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/Duyuru/Liste/42">Veri Yayımlama Duyuruları</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/Duyuru/Liste/41">İnsan Kaynakları Duyuruları</a>
+
+                                            </li>
+
+                            </ul>
+
+                            </li>
+                            <li class="col-lg-3 col-md-6 text-center">
+                                <a href="/Veri">
+                                    Veriler
+                                </a>
+
+                            <ul>
+                                            <li class="text-left">
+
+
+                                                <a href="/Veri/Index/69">Bankacılık Sekt&#246;r&#252; Verileri</a>
+
+                                            </li>
+                                            <li class="text-left">
+
+
+                                                <a href="/Veri/Index/70">Banka Dışı Mali Kuruluş Verileri</a>
+
+                                            </li>
+
+                            </ul>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 iletisimContainer">
+                    <p class="text-right">
+                        <a target="_blank" class="text-white ml-2" href="https://twitter.com/BDDKResmi"><i class="fa-brands fa-square-x-twitter fa-2x " ></i></a>
+                        <a target="_blank" class="text-white ml-2" href="https://www.instagram.com/bddkresmi"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a target="_blank" class="text-white ml-2" href="https://www.linkedin.com/company/bddkresmi"><i class="fab fa-linkedin fa-2x"></i></a>
+                    </p>
+                    <table>
+                        <tr><td colspan="2" class="lead" style="font-size:12pt">Bankacılık Düzenleme ve Denetleme Kurumu</td></tr>
+                        <tr><td class="text-left" style="font-size:10pt"><strong>Telefon:</strong></td><td style="font-size:10pt">(212) 214 50 00</td></tr>
+                        <tr><td class="text-left" style="font-size:10pt"><strong>Çağrı Merkezi:</strong></td><td style="font-size:10pt">0850 222 23 35</td></tr>
+                        <tr>
+                            <td class="text-left" style="font-size:10pt"><strong>Adres:</strong></td>
+                            <td style="font-size:10pt">
+                                Finanskent Mahallesi Finans Caddesi No:42/1
+                                34760 Ümraniye/İSTANBUL
+                            </td>
+                        </tr>
+                    </table>
+                    
+
+                    <!--<p class="text-left">
+                        Kurumumuzun internet adresi "www.bddk.org.tr" ve "www.bddk.gov.tr"dir. Kurumumuzun mobil uygulaması bulunmamaktadır.
+                        Kurumumuz hiçbir şekilde telefon, e-posta, internet sitesi veya başka ortamlarda kişisel bilgi talep etmemektedir!
+                    </p>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target=".modalKullanimSartlari">Kullanım Şartları</button>-->
+                    <!-- Modal Kullanım Şartları (Begin) -->
+                    <!--<div class="modal fade modalKullanimSartlari" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Kullanım Şartları</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center font-weight-bold">
+                                        BDDK web sitesine hoş geldiniz.<br />
+                                        Bu siteyi kullandığınız takdirde aşağıdaki koşulları kabul etmiş sayılacaksınız.
+                                    </p>
+                                    <p class="text-justify">
+                                        BDDK web sitesinin yayınlanması, hiçbir kişi ve/veya kuruluşa herhangi bir konuda herhangi bir taahhüdü içermemektedir.
+                                        Sitede yer alan bilgiler, kişi ve kuruluşlara yönelik talimat verilmesi, hukuken onların herhangi bir doğrultuya yönlendirmesi amaçlarını
+                                        ve tebligat niteliğini taşımamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Web sitemizde yayınlanan çalışmalardan, kaynak gösterilmek suretiyle kısmen alıntı yapılabilir ancak bu bilgilerin ticari amaçlarla kullanımı BDDK'nın yazılı iznine tabidir.
+                                    </p>
+                                    <p class="text-justify">
+                                        BDDK, web sitesinde yayınlanan bilgilerin güncel ve doğru bilgilerle yayınlanmasını temin etmek amacıyla elinden gelen çabayı
+                                        göstermekle birlikte, BDDK'nın bu bilgilerin doğruluğu ve tamlığı konusunda açık veya zımni şekilde kefalet veya garanti verdiği yolunda hiçbir taahhüdü bulunmamaktadır.
+                                        Kullanıcılar sisteme girmeleri ile birlikte; BDDK tarafından yayınlanan bilgilerin kullanımı sonucunda doğrudan veya dolaylı bir kayıp veya zarar doğması halinde,
+                                        bu durumun BDDK'na hiçbir borç, sorumluluk veya mükellefiyet yüklemeyeceğini açık olarak kabul etmiş sayılırlar.
+                                    </p>
+                                    <p class="text-justify">
+                                        Sitede yer alan bütün metinler ve/veya hizmetler, önceden kullanıcılara bildirimde bulunmaksızın BDDK tarafından değiştirilebilir.
+                                        BDDK web sitesi ön bilgi verilmeden kullanım dışı bırakılabilir. BDDK web sitesinde yayınlanmış bilgiler, ya da bilgilere dayanılarak
+                                        yapılan işlemlerden veya siteye ulaşılamamasından doğan veya doğacak zarar ve/veya kayıplardan dolayı sorumluluk kabul etmez.
+                                    </p>
+                                    <p class="text-justify">
+                                        Site özenle hazırlanılmış olmasına rağmen, site ziyaretçileri; sitedeki bilgilerin, konuyla ilgili profesyonel danışmanlığın yerini alacağını düşünmemelidirler.
+                                        Bu nedenle, sitede yer alan bilgileri herhangi bir şekil ve surette kullanmadan önce, konuyla ilgili profesyonel danışmanınızla görüşmenizi tavsiye ederiz.
+                                    </p>
+                                    <p class="text-justify">
+                                        İnsan hataları, teknik veya diğer faktörler nedeniyle hata veya bilgi eksikliği/yanlışlığının veya güncellik yitirmesinin vuku bulabileceği tabiidir.
+                                        BDDK, sistemde yer alan bilgilerdeki hata ve eksikliklerden hiçbir şekilde sorumlu bulunmamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Bu site BDDK'na ait olup site içerisindeki bilgilerin bir kısmı Kurum, bir kısmı da diğer kaynaklardan sağlanarak Kurum tarafından yayınlanmaktadır.
+                                        Sitemizden bağlantı yapılarak ulaşılan diğer sitelerdeki bilgiler, ilgili kuruluşlar tarafından yayınlanmakta olup, BDDK'nu bağlamamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Kurumumuz web sitesi Temmuz 2018 itibarıyla güncellenmiştir. Bu tarihten öncesine ait duyurularda güncel olmayan linkler yer alabilir.
+                                        Bu konuda sorun yaşanması durumunda kullanıcılarımız Kurumumuz ile iletişime geçebilirler.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center">
+                        Kurumumuzun internet adresi "www.bddk.gov.tr"dir. ("www.bddk.org.tr" adresi de kullanılmaya devam etmektedir.)
+                        Kurumumuzun mobil uygulaması bulunmamaktadır.<br />
+                        Kurumumuz hiçbir şekilde telefon, e-posta, internet sitesi veya başka ortamlarda kişisel bilgi talep etmemektedir!
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-2">
+                        <button type="button" class="btn btn-light d-block mr-2" data-toggle="modal" data-target=".modalKullanimSartlari">Kullanım Şartları</button>
+
+                        <a href="/Content/docs/bddkImages/KVKK_Aydinlatma_Metni.pdf" target="_blank" class="btn btn-light d-block">
+                            Kişisel Verilerin İşlenmesi ve Korunması
+                        </a>
+                    </div>
+
+
+
+
+
+                    <!-- Modal Kullanım Şartları (Begin) -->
+                    <div class="modal fade modalKullanimSartlari" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Kullanım Şartları</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="text-center font-weight-bold">
+                                        BDDK web sitesine hoş geldiniz.<br />
+                                        Bu siteyi kullandığınız takdirde aşağıdaki koşulları kabul etmiş sayılacaksınız.
+                                    </p>
+                                    <p class="text-justify">
+                                        BDDK web sitesinin yayınlanması, hiçbir kişi ve/veya kuruluşa herhangi bir konuda herhangi bir taahhüdü içermemektedir.
+                                        Sitede yer alan bilgiler, kişi ve kuruluşlara yönelik talimat verilmesi, hukuken onların herhangi bir doğrultuya yönlendirmesi amaçlarını
+                                        ve tebligat niteliğini taşımamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Web sitemizde yayınlanan çalışmalardan, kaynak gösterilmek suretiyle kısmen alıntı yapılabilir ancak bu bilgilerin ticari amaçlarla kullanımı BDDK'nın yazılı iznine tabidir.
+                                    </p>
+                                    <p class="text-justify">
+                                        BDDK, web sitesinde yayınlanan bilgilerin güncel ve doğru bilgilerle yayınlanmasını temin etmek amacıyla elinden gelen çabayı
+                                        göstermekle birlikte, BDDK'nın bu bilgilerin doğruluğu ve tamlığı konusunda açık veya zımni şekilde kefalet veya garanti verdiği yolunda hiçbir taahhüdü bulunmamaktadır.
+                                        Kullanıcılar sisteme girmeleri ile birlikte; BDDK tarafından yayınlanan bilgilerin kullanımı sonucunda doğrudan veya dolaylı bir kayıp veya zarar doğması halinde,
+                                        bu durumun BDDK'na hiçbir borç, sorumluluk veya mükellefiyet yüklemeyeceğini açık olarak kabul etmiş sayılırlar.
+                                    </p>
+                                    <p class="text-justify">
+                                        Sitede yer alan bütün metinler ve/veya hizmetler, önceden kullanıcılara bildirimde bulunmaksızın BDDK tarafından değiştirilebilir.
+                                        BDDK web sitesi ön bilgi verilmeden kullanım dışı bırakılabilir. BDDK web sitesinde yayınlanmış bilgiler, ya da bilgilere dayanılarak
+                                        yapılan işlemlerden veya siteye ulaşılamamasından doğan veya doğacak zarar ve/veya kayıplardan dolayı sorumluluk kabul etmez.
+                                    </p>
+                                    <p class="text-justify">
+                                        Site özenle hazırlanılmış olmasına rağmen, site ziyaretçileri; sitedeki bilgilerin, konuyla ilgili profesyonel danışmanlığın yerini alacağını düşünmemelidirler.
+                                        Bu nedenle, sitede yer alan bilgileri herhangi bir şekil ve surette kullanmadan önce, konuyla ilgili profesyonel danışmanınızla görüşmenizi tavsiye ederiz.
+                                    </p>
+                                    <p class="text-justify">
+                                        İnsan hataları, teknik veya diğer faktörler nedeniyle hata veya bilgi eksikliği/yanlışlığının veya güncellik yitirmesinin vuku bulabileceği tabiidir.
+                                        BDDK, sistemde yer alan bilgilerdeki hata ve eksikliklerden hiçbir şekilde sorumlu bulunmamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Bu site BDDK'na ait olup site içerisindeki bilgilerin bir kısmı Kurum, bir kısmı da diğer kaynaklardan sağlanarak Kurum tarafından yayınlanmaktadır.
+                                        Sitemizden bağlantı yapılarak ulaşılan diğer sitelerdeki bilgiler, ilgili kuruluşlar tarafından yayınlanmakta olup, BDDK'nu bağlamamaktadır.
+                                    </p>
+                                    <p class="text-justify">
+                                        Kurumumuz web sitesi Temmuz 2018 itibarıyla güncellenmiştir. Bu tarihten öncesine ait duyurularda güncel olmayan linkler yer alabilir.
+                                        Bu konuda sorun yaşanması durumunda kullanıcılarımız Kurumumuz ile iletişime geçebilirler.
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        
+    </footer>
+
+
+
+
+</body>
+</html>

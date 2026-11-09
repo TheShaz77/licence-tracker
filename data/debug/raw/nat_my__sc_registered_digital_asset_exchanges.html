@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>404: Page Not Found - TalentCorp Malaysia</title>
+
+    <script type="text/javascript">
+        var path = window.location.href.replace("/404.htm", "").replace("http://", "").replace("https://", "");
+
+        if (path.indexOf("?") > 0) {
+            path = path.substring(0, path.indexOf("?"));
+        }
+
+        console.log(path);
+
+        switch(path) {
+            case "www.platcomdiscovery.com/denguetech":
+                window.location = "member/404.htm";
+                break;
+
+            case "www.aristal.com":
+                window.location = "clients/aristal/404.htm";
+                break;
+
+            default:
+                //path = path.replace("/", "");
+                //   window.location = "clients/404/" + path + ".aspx";
+                window.location = "clients/404/" + extractDomain(window.location.href) + ".htm";
+		   
+        }
+
+        function extractDomain(url) {
+            var domain;
+            //find & remove protocol (http, ftp, etc.) and get domain
+            if (url.indexOf("://") > -1) {
+                domain = url.split('/')[2];
+            }
+            else {
+                domain = url.split('/')[0];
+            }
+
+            //find & remove port number
+            domain = domain.split(':')[0];
+
+            return domain;
+        }
+    </script>
+</head>
+<body>
+Website Under Maintenance.
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"ea9a9323758e401397d5c11240904730","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+url: https://www.apra.gov.au/register-of-authorised-deposit-taking-institutions
+bytes: 404322  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Entity Name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Entity Name', 'section']
+data rows: 126  kept: 126
+type values: [('Australian-owned authorised deposit-taking institutions', 66), ('Branches of foreign banks', 49), ('Foreign subsidiary banks', 9), ('Providers of purchased payment facilities', 2)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" style="--color--primary-hue:202;--color--primary-saturation:79%;--color--primary-lightness:50">'
+'  <head>'
+'    <meta charset="utf-8" />'
+'<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />'
+'<meta name="MobileOptimized" content="width" />'
+'<meta name="HandheldFriendly" content="true" />'
+'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'

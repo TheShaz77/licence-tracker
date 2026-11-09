@@ -1,0 +1,16 @@
+url: https://website.rbi.org.in/documents/87730/39016390/PSO+PDF.pdf
+bytes: 153651  starts: b'\r\n<!DOCT'
+error: PdfminerException(PDFSyntaxError('No /Root object! - Is this really a PDF?'))
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+''
+'<!DOCTYPE html>'
+''
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
+'<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>'
+'\tHome | Official website of Reserve Bank of India'
+'</title><meta name="description" content="Official website of Reserve Bank of India" /><meta name="author" content="author" /><meta name="viewport" content="width=device-width" /><link href="Styles/960.css?v=3.0" rel="stylesheet" type="text/css" />'
+'    <link href="Includes1/rbi.css?v=7.3" rel="stylesheet" type="text/css" />'

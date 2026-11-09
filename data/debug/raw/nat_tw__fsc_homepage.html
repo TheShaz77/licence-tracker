@@ -1,0 +1,1767 @@
+
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://v3.bootcss.com/examples/carousel/ -->
+
+
+
+
+
+
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Financial Supervisory Commission</title>
+<link href="images/all/favicon.ico" rel="icon" type="image/x-icon">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="DC.Title" content="" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Subject" content="" />
+<meta name="DC.Description" content="" />
+<meta name="DC.Publisher" content="" />
+<meta name="DC.Contributor" content="" />
+<meta name="DC.Date" content="2026-11-09" />
+<meta name="DC.Type" content="" />
+<meta name="DC.Format" content="" />
+<meta name="DC.Identifier" content="" />
+<meta name="DC.Relation" content="" />
+<meta name="DC.Source" content="" />
+<meta name="DC.Language" content="" />
+<meta name="DC.coverage.t.min" content="2026-11-09" />
+<meta name="DC.coverage.t.max" content="2026-11-09" />
+<meta name="DC.Rights" content="" />
+<meta name="Category.Theme" content="" />
+<meta name="Category.Cake" content="" />
+<meta name="Category.Service" content="" />
+<meta name="keywords" content="" />
+
+
+
+
+
+<!--Bootstrap core CSS-->
+<link rel="stylesheet" type="text/css" href="js/bootstrap-4.5.3-dist/css/bootstrap.css">
+<!--CSS-->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/style_rwd.css" rel="stylesheet" type="text/css">
+<!--menu-->
+<link href="js/dropdown-menu/vgnav.css" rel="stylesheet" type="text/css">
+<link href="js/dropdown-menu/vgnav-theme.css" rel="stylesheet" type="text/css">
+
+<script src="js/jquery-3.5.1.min.js"></script>
+
+</head>
+
+<body class="in" id="inbody">
+
+	<!--上方資訊-->
+	<header id="top">
+
+		<div class="topbox">
+			
+
+<div class="bureau">
+
+	<a title="FSC" href="https://www.fsc.gov.tw/en">FSC</a>
+
+	<a title="BB" href="https://www.banking.gov.tw/en">BB</a>
+
+	<a title="SFB" href="https://www.sfb.gov.tw/en">SFB</a>
+
+	<a title="IB" href="https://www.ib.gov.tw/en">IB</a>
+
+	<a title="FEB" href="https://www.feb.gov.tw/en">FEB</a>
+
+</div>
+			
+
+<div class="toplink">
+	<a href="#" accesskey="u" class="accesskey" title="Top menu link area">:::</a>
+	<a href="index.jsp" title="Home">Home</a>
+	|
+	<a href="main.jsp?websitelink=sitemap.jsp&mtitle=Sitemap" title="Sitemap">Sitemap</a>
+	|
+	<a href="/ch" title="中文版">中文版</a>
+	|
+	<a href="home.jsp?id=82&amp;parentpath=0,7" title="FAQ">FAQ</a>
+	|
+	<a href="https://fscmail.fsc.gov.tw/POP30/"
+		title="Contact US(open new window)">Contact US</a>
+	|
+	<a href="home.jsp?id=52&amp;parentpath=0,7" title="Bilingual Glossary">Bilingual Glossary</a>
+</div>
+
+		</div>
+
+        <div class="into">
+            <a href="#accesskey_c" tabindex="1" title="Link to Content Area">Link to Content Area</a>
+        </div>
+        
+		<h1 class="logo">
+			<a href="index.jsp" title="Financial Supervisory Commission">
+				<img src="images/all/logo.png" alt="Financial Supervisory Commission logo">
+			</a>
+		</h1>
+
+		
+
+
+
+
+
+
+
+
+
+
+<script>
+	// 使用者字型大小
+	function createCookie(name, value, days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+			var expires = "; expires=" + date.toGMTString();
+		} else
+			expires = "";
+		document.cookie = name + "=" + value + expires + "; path=/";
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ')
+				c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) == 0)
+				return c.substring(nameEQ.length, c.length);
+		}
+		return null;
+	}
+
+	function SetFont(size) {
+		if (size == '80%') {
+			$("#fonts").css("background-color", "#008284");
+			$("#fontm").css("background-color", "#00a8ab");
+			$("#fontl").css("background-color", "#00a8ab");
+		} else if (size == '100%') {
+			$("#fonts").css("background-color", "#00a8ab");
+			$("#fontm").css("background-color", "#008284");
+			$("#fontl").css("background-color", "#00a8ab");
+		} else if (size == '120%') {
+			$("#fonts").css("background-color", "#00a8ab");
+			$("#fontm").css("background-color", "#00a8ab");
+			$("#fontl").css("background-color", "#008284");
+		}
+
+		document.getElementById("inbody").style.fontSize = size;
+		if(document.getElementById("gsc-i-id1")){
+			document.getElementById("gsc-i-id1").style.fontSize = size;
+		}
+		createCookie('fontsize', size, 30, 'secure');
+	}
+
+	function LoadFont() {
+		var fontsize;
+		if (readCookie('fontsize') == null) {
+			createCookie('fontsize', '1em', 30);
+			fontsize = '100%';
+		} else {
+			fontsize = readCookie('fontsize');
+		}
+
+		SetFont(fontsize);
+	}
+</script>
+<noscript>Your browser does not support JavaScript, but it does not matter, where the JavaScript syntax does not affect the content of the statement, If you need to select Font size, IE6 please use the keyboard, hold down the ALT key + V → X → (G) maximum (L) larger (M) in the (S) smaller (A) is small, to choose the size of your text , While IE7 or Firefox browser can use the keyboard Ctrl + (+) zoom (-) reduce to change the font size.</noscript>
+
+<div class="google_search">
+    <div class="search">
+        <script>
+									(function() {
+										var cx = '010377852726869191246:mh-jqihww-0';
+										var gcse = document
+												.createElement('script');
+										gcse.type = 'text/javascript';
+										gcse.async = true;
+										gcse.src = (document.location.protocol == 'https:' ? 'https:'
+												: 'http:')
+												+ '//cse.google.com/cse.js?cx='
+												+ cx;
+										var s = document
+												.getElementsByTagName('script')[0];
+										s.parentNode.insertBefore(gcse, s);
+									})();
+									document
+											.write("<gcse:searchbox-only></gcse:searchbox-only>");
+								</script>
+        <div class="advanced">
+            <a id="advanced" href="https://www.google.com.tw/advanced_search?hl=en&as_sitesearch=www.fsc.gov.tw" title="Advance(open new windows)" target="_blank">Advance</a>
+        </div>
+        <div class="hotsearch">
+            <div class="hot">
+                
+            </div>
+        </div>
+    </div>
+    <div class="setweb">
+        <div class="share">
+            <ul>
+                <li class="rss">
+                    <a href="https://www.fsc.gov.tw/ch/main.jsp?websitelink=rss.jsp&mtitle=RSS" title="RSS(Chinese Version Only)">rss</a>
+                </li>
+            </ul>
+        </div>
+        <div class="size font-medium">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Font size">Font size</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="javascript:SetFont('80%');" id="fonts">
+                    <img src="images/all/icon_size_s.png" alt="small" />
+                </a>
+                <a class="dropdown-item" href="javascript:SetFont('100%');" id="fontm">
+                    <img src="images/all/icon_size_m.png" alt="medium" />
+                </a>
+                <a class="dropdown-item" href="javascript:SetFont('120%');" id="fontl">
+                    <img src="images/all/icon_size_l.png" alt="large" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+	</header>
+	<!--上方資訊end-->
+
+	<!--選單開始-->
+	
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	//點閱率
+	function read(menuid, menutable, readnumbertable, language) {
+		$.ajax({
+			url : "ap/updatenumber_menu.jsp",
+			type : "POST",
+			data : "menuid=" + menuid + "&menutable=" + menutable
+					+ "&readnumbertable=" + readnumbertable + "&language="
+					+ language
+		});
+	}
+</script>
+
+
+
+<div class="menu">
+    <div class="container">
+        <a href="#" accesskey="M" class="accesskey" title="Main menu">:::</a>
+        <div id="carbon-block" class="mb-5" align="center"></div>
+        <div class="header">
+            <div class="navigation">
+                <nav class="vg-nav vg-nav-lg vg-nav-hover" data-sidebar-open="left">
+                    <ul>
+                        <li class="toplink">
+                            <a href="index.jsp" title="Home">Home</a>
+                            <a href="main.jsp?websitelink=sitemap.jsp&mtitle=Sitemap" title="Sitemap">Sitemap</a>
+                            <a href="/ch" title="中文版">中文版</a>
+                            <a href="home.jsp?id=82&amp;parentpath=0,7" title="FAQ">FAQs</a>
+                            <a href="http://fscmail.fsc.gov.tw/swsfront35/SWSF/SWSF01014.aspx?Cul=854f424bac5f2f34695876de8c4e10ad" title="Contact US(open new window)">Contact US</a>
+                            <a href="home.jsp?id=52&amp;parentpath=0,7" title="Bilingual Glossary">Bilingual Glossary</a>
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=1&parentpath=0" title="About the FSC" onclick="javascript:read('1','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('1','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('0')" onmouseup="">
+                                <p>About the FSC</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=50&parentpath=0,1" title="Organization" onclick="javascript:read('50','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('50','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','0','9','9')" onmouseup="">Organization</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=332&parentpath=0,1" title="Introduction" onclick="javascript:read('332','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('332','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','1','9','9')" onmouseup="">Introduction</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fsc.gov.tw/ch/home.jsp?id=942&parentpath=0%2C1" title="Video(Open New Window)" target="_blank" onclick="javascript:read('269','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('269','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','2','9','9')" onmouseup="">Video</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=11&parentpath=0,1" title="Commissioners" onclick="javascript:read('11','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('11','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','3','9','9')" onmouseup="">Commissioners</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=43&parentpath=0,1" title="Director Generals" onclick="javascript:read('43','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('43','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','4','9','9')" onmouseup="">Director Generals</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://history.fsc.gov.tw/" title="Historical Data Showroom (Open New Window)" target="_blank" onclick="javascript:read('430','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('430','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','5','9','9')" onmouseup="">Historical Data Showroom (Chinese version only)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=25&parentpath=0,1" title="Location & Transportation" onclick="javascript:read('25','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('25','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('0','6','9','9')" onmouseup="">Location & Transportation</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=2&parentpath=0" title="Bulletin Board" onclick="javascript:read('2','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('2','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('1')" onmouseup="">
+                                <p>Bulletin Board</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=76&parentpath=0,2" title="Events" onclick="javascript:read('76','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('76','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','0','9','9')" onmouseup="">Events</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=54&parentpath=0,2" title="Press Release" onclick="javascript:read('54','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('54','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','1','9','9')" onmouseup="">Press Release</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=323&parentpath=0,2&mcustomize=disputearea_list.jsp" title="Instant News Clarification" onclick="javascript:read('323','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('323','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','2','9','9')" onmouseup="">Instant News Clarification</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=344&parentpath=0,2" title="Important Policies" onclick="javascript:read('344','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('344','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','3','9','9')" onmouseup="">Important Policies</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=74&parentpath=0,2" title="Important Measures" onclick="javascript:read('74','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('74','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','4','9','9')" onmouseup="">Important Measures</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=423&parentpath=0,2" title="Chairperson's Schedule" onclick="javascript:read('423','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('423','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','5','9','9')" onmouseup="">Chairperson's Schedule</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=615&parentpath=0,2" title="Enforcement" onclick="javascript:read('615','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('615','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','6','9','9')" onmouseup="">Enforcement</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=309&parentpath=0,2" title="Personal Data Protection" onclick="javascript:read('309','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('309','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','7','9','9')" onmouseup="">Personal Data Protection</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=384&parentpath=0,2" title="Recruitment Information" onclick="javascript:read('384','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('384','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','8','9','9')" onmouseup="">Recruitment Information</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=401&parentpath=0,2" title="Information of Sale by Sealed Tender" onclick="javascript:read('401','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('401','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','9','9','9')" onmouseup="">Information of Sale by Sealed Tender</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fsc.gov.tw/ch/home.jsp?id=132&parentpath=0,2" title="Financial Micropedia(Open New Window)" target="_blank" onclick="javascript:read('436','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('436','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('1','10','9','9')" onmouseup="">Financial Micropedia(Chinese version only)</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=3&parentpath=0" title="Laws and Regulations" onclick="javascript:read('3','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('3','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('2')" onmouseup="">
+                                <p>Laws and Regulations</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=365&parentpath=0,3" title="Explanation of New Regulations" onclick="javascript:read('365','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('365','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','0','9','9')" onmouseup="">Explanation of New Regulations</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=366&parentpath=0,3" title="Preview of Law Draft" onclick="javascript:read('366','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('366','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','1','9','9')" onmouseup="">Preview of Law Draft</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://law.banking.gov.tw/Eng/" title="Banking Bureau(Open New Window)" target="_blank" onclick="javascript:read('130','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('130','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','2','9','9')" onmouseup="">Banking Bureau</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.selaw.com.tw/English/RegulatoryInformation" title="Securities and Futures Bureau(Open New Window)" target="_blank" onclick="javascript:read('131','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('131','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','3','9','9')" onmouseup="">Securities and Futures Bureau</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://law.tii.org.tw/Eng/new.asp?keyword=IB-Laws%20DataBase" title="Insurance Bureau(Open New Window)" target="_blank" onclick="javascript:read('132','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('132','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','4','9','9')" onmouseup="">Insurance Bureau</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://law.fsc.gov.tw/EngLawQuery.aspx" title="Financial Supervisory Commission(Open New Window)" target="_blank" onclick="javascript:read('129','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('129','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('2','5','9','9')" onmouseup="">Financial Supervisory Commission</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=5&parentpath=0" title="Statistics" onclick="javascript:read('5','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('5','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('3')" onmouseup="">
+                                <p>Statistics</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=539&parentpath=0,5" title="Financial Information Disclosure" onclick="javascript:read('539','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('539','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','0','9','9')" onmouseup="">Financial Information Disclosure</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=367&parentpath=0,5" title="Publication of Financial Market Statistical Information" onclick="javascript:read('367','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('367','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','1','9','9')" onmouseup="">Publication of Financial Market Statistical Information</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.sfb.gov.tw/en/home.jsp?id=134&parentpath=0,7,92" title="Major Indicators" onclick="javascript:read('138','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('138','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','2','9','9')" onmouseup="">Major Indicators</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=319&parentpath=0,5" title="Statistics Information" onclick="javascript:read('319','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('319','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','3','9','9')" onmouseup="">Statistics Information</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fsc.gov.tw/en/home.jsp?id=56&parentpath=0,4" title=" FSC Annual Report" onclick="javascript:read('351','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('351','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','4','9','9')" onmouseup="">FSC Annual Report</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fsc.gov.tw/en/home.jsp?id=55&parentpath=0,4" title="Financial Outlook Monthly" onclick="javascript:read('352','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('352','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','5','9','9')" onmouseup="">Financial Outlook Monthly</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=353&parentpath=0,5" title="Cross-strait financial business" onclick="javascript:read('353','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('353','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','6','9','9')" onmouseup="">Cross-strait financial business</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=494&parentpath=0,5" title="Government Publication" onclick="javascript:read('494','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('494','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('3','7','9','9')" onmouseup="">Government Publication</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=261&parentpath=0" title="Consumer Related Info." onclick="javascript:read('261','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('261','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('4')" onmouseup="">
+                                <p>Consumer Related Info.</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=263&parentpath=0,261" title="About Financial Ombudsman Institution (FOI)" onclick="javascript:read('263','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('263','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('4','0','9','9')" onmouseup="">About Financial Ombudsman Institution (FOI)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://moneywise.fsc.gov.tw/" title="The MoneyWise Website(Chinese Version Only)(Open New Window)" target="_blank" onclick="javascript:read('519','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('519','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('4','1','9','9')" onmouseup="">The MoneyWise Website(Chinese Version Only)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.feb.gov.tw/ch/home.jsp?id=333&parentpath=0,4" title="Financial Examination School (Chinese version only(Open New Window)" target="_blank" onclick="javascript:read('431','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('431','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('4','2','9','9')" onmouseup="">Financial Examination School (Chinese version only)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=396&parentpath=0,261" title="Promotion of Financial Knowledge" onclick="javascript:read('396','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('396','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('4','3','9','9')" onmouseup="">Promotion of Financial Knowledge</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=537&parentpath=0,261" title="Consumer Information" onclick="javascript:read('537','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('537','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('4','4','9','9')" onmouseup="">Consumer Information</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=7&parentpath=0" title="Public Service" onclick="javascript:read('7','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('7','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('5')" onmouseup="">
+                                <p>Public Service</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=495&parentpath=0,7" title="Lobbying Act" onclick="javascript:read('495','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('495','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','0','9','9')" onmouseup="">Lobbying Act</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://fscmail.fsc.gov.tw/POP30/" title="Write to FSC(Open New Window)" target="_blank" onclick="javascript:read('48','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('48','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','1','9','9')" onmouseup="">Write to FSC</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=343&parentpath=0,7" title="Employment Information" onclick="javascript:read('343','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('343','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','2','9','9')" onmouseup="">Employment Information</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=310&parentpath=0,7" title="Against Corruption Zone" onclick="javascript:read('310','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('310','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','3','9','9')" onmouseup="">Against Corruption Zone</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=82&parentpath=0,7" title="FAQ" onclick="javascript:read('82','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('82','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','4','9','9')" onmouseup="">FAQ</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=58&parentpath=0,7" title="Applications Process" onclick="javascript:read('58','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('58','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','5','9','9')" onmouseup="">Applications Process</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=239&parentpath=0,7" title="Report False Rumors" onclick="javascript:read('239','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('239','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','6','9','9')" onmouseup="">Report False Rumors</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=193&parentpath=0,7" title="24-hr hotlines for reporting of breaking financial incidents" onclick="javascript:read('193','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('193','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','7','9','9')" onmouseup="">24-hr hotlines for reporting of breaking financial incidents</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=388&parentpath=0,7" title="Guidelines for Accepting Reports of Financial Illegality from the Public" onclick="javascript:read('388','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('388','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','8','9','9')" onmouseup="">Guidelines for Accepting Reports of Financial Illegality from the Public</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=372&parentpath=0,7" title="Application Form Download" onclick="javascript:read('372','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('372','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','9','9','9')" onmouseup="">Application Form Download</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=52&parentpath=0,7" title="Bilingual Glossary" onclick="javascript:read('52','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('52','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','10','9','9')" onmouseup="">Bilingual Glossary</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=428&parentpath=0,7" title="1998 Direct Line for Financial Service" onclick="javascript:read('428','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('428','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','11','9','9')" onmouseup="">1998 Direct Line for Financial Service</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=237&parentpath=0,7" title="Financial Information Sharing and Analysis Center(Chinese version only)" onclick="javascript:read('237','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('237','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','12','9','9')" onmouseup="">Financial Information Sharing and Analysis Center(Chinese version only)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="main.jsp?websitelink=epaper101.jsp&mtitle=Epaper&epaper=Y" title="E-Paper" onclick="javascript:read('88','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('88','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','13','9','9')" onmouseup="">E-Paper</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=260&parentpath=0,7" title="FinTech Taipei Festival Guide" onclick="javascript:read('260','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('260','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','14','9','9')" onmouseup="">FinTech Taipei Festival Guide</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=148&parentpath=0,7" title="New Year Press Conference" onclick="javascript:read('148','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('148','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','15','9','9')" onmouseup="">New Year Press Conference</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=C0000007" title="Anti-Corruption Act(Open New Window)" target="_blank" onclick="javascript:read('192','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('192','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','16','9','9')" onmouseup="">Anti-Corruption Act</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.aac.moj.gov.tw/lp.asp?CtNode=46360&CtUnit=10787&BaseDSD=7&mp=290" title="Laws and Regulations of Against Corruption (Open New Window)" target="_blank" onclick="javascript:read('238','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('238','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','17','9','9')" onmouseup="">Laws and Regulations of Against Corruption </a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.taiwan.gov.tw/" title="GOV.TW(Open New Window)" target="_blank" onclick="javascript:read('241','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('241','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('5','18','9','9')" onmouseup="">My E-Government</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=4&parentpath=0" title="Policies & Publications" onclick="javascript:read('4','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('4','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('6')" onmouseup="">
+                                <p>Policies & Publications</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=329&parentpath=0,4" title="Foreign Relations Documents" onclick="javascript:read('329','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('329','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','0','9','9')" onmouseup="">Foreign Relations Documents</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=331&parentpath=0,4" title="Documents relating to administrative guidance" onclick="javascript:read('331','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('331','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','1','9','9')" onmouseup="">Documents relating to administrative guidance</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=385&parentpath=0,4" title="Administration Plan" onclick="javascript:read('385','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('385','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','2','9','9')" onmouseup="">Administration Plan</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=272&parentpath=0,4" title="Statistics" onclick="javascript:read('272','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('272','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','3','9','9')" onmouseup="">Statistics</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=441&parentpath=0,4" title="Research Report" onclick="javascript:read('441','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('441','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','4','9','9')" onmouseup="">Research Report</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=273&parentpath=0,4" title="Budgets ,Monthly and Annual Financial Reports" onclick="javascript:read('273','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('273','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','5','9','9')" onmouseup="">Budgets ,Monthly and Annual Financial Reports</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=413&parentpath=0,4" title="Decision of Administrative Appeals" onclick="javascript:read('413','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('413','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','6','9','9')" onmouseup="">Decision of Administrative Appeals</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=294&parentpath=0,4" title="Documents related to public works and procurements" onclick="javascript:read('294','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('294','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','7','9','9')" onmouseup="">Documents related to public works and procurements</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=307&parentpath=0,4" title="Government subsidies" onclick="javascript:read('307','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('307','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','8','9','9')" onmouseup="">Government subsidies</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=425&parentpath=0,4" title="Government Information Case Statistics" onclick="javascript:read('425','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('425','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','9','9','9')" onmouseup="">Government Information Case Statistics</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=308&parentpath=0,4" title="Area of Policy Advocacy" onclick="javascript:read('308','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('308','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','10','9','9')" onmouseup="">Area of Policy Advocacy</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=386&parentpath=0,4" title="FSC Administrative Performance" onclick="javascript:read('386','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('386','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','11','9','9')" onmouseup="">FSC Administrative Performance</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=324&parentpath=0,4" title="Gender Mainstreaming" onclick="javascript:read('324','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('324','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','12','9','9')" onmouseup="">Gender Mainstreaming</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=390&parentpath=0,4" title="Financial Opendata" onclick="javascript:read('390','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('390','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','13','9','9')" onmouseup="">Financial Opendata</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=399&parentpath=0,4" title="Development of Aging Product and Service" onclick="javascript:read('399','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('399','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','14','9','9')" onmouseup="">Development of Aging Product and Service</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=446&parentpath=0,4" title="Statement of Internal Control" onclick="javascript:read('446','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('446','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','15','9','9')" onmouseup="">Statement of Internal Control</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=181&parentpath=0,4" title="CPTPP" onclick="javascript:read('181','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('181','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','16','9','9')" onmouseup="">CPTPP</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.aac.moj.gov.tw/5791/" title="Agency Against Corruption (AAC)(Open New Window)" target="_blank" onclick="javascript:read('190','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('190','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','17','9','9')" onmouseup="">Agency Against Corruption (AAC)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=56&parentpath=0,4" title="FSC Annual Report" onclick="javascript:read('56','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('56','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','18','9','9')" onmouseup="">FSC Annual Report</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=55&parentpath=0,4" title="Financial Outlook Monthly" onclick="javascript:read('55','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('55','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','19','9','9')" onmouseup="">Financial Outlook Monthly</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.sfb.gov.tw/en/home.jsp?id=232&parentpath=0,117,228" title="CPA Firms General Inspection Report" onclick="javascript:read('100','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('100','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','20','9','9')" onmouseup="">CPA Firms General Inspection Report</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=244&parentpath=0,4" title="International Investor Alert" onclick="javascript:read('244','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('244','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','21','9','9')" onmouseup="">International Investor Alert</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.cdic.gov.tw/main_en/annualReports.aspx?uid=87&pid=73" title="Central Deposit Insurance Corporation (CDIC) Annua(Open New Window)" target="_blank" onclick="javascript:read('189','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('189','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','22','9','9')" onmouseup="">Central Deposit Insurance Corporation (CDIC) Annual Report</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=187&parentpath=0,4" title="World Trade Organization (WTO)" onclick="javascript:read('187','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('187','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','23','9','9')" onmouseup="">World Trade Organization (WTO)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=188&parentpath=0,4" title="General Data Protection Regulation (GDPR)" onclick="javascript:read('188','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('188','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','24','9','9')" onmouseup="">General Data Protection Regulation (GDPR)</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://zh-tw.facebook.com/fsc.gov.tw/" title="Facebook(Open New Window)" target="_blank" onclick="javascript:read('136','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('136','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','25','9','9')" onmouseup="">Facebook</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.sfb.gov.tw/en/home.jsp?id=15&parentpath=0,4" title="Newsletters" onclick="javascript:read('134','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('134','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('6','26','9','9')" onmouseup="">Newsletters</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=6&parentpath=0" title="Financial Competitiveness" onclick="javascript:read('6','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('6','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('7')" onmouseup="">
+                                <p>Financial Competitiveness</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=142&parentpath=0,6" title="About This Section" onclick="javascript:read('142','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('142','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('7','0','9','9')" onmouseup="">About This Section</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=27&parentpath=0,6" title="Taiwan's International Financial Competitiveness" onclick="javascript:read('27','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('27','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('7','1','9','9')" onmouseup="">Taiwan's International Financial Competitiveness</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                        <li class="dropdown-mega">
+                            
+                            <a href="home.jsp?id=8&parentpath=0" title="Related Links" onclick="javascript:read('8','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('8','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:showtwo('8')" onmouseup="">
+                                <p>Related Links</p>
+                            </a>
+                            
+                            <div class="dropdown-mega-container">
+                                <ul class="equal-height-thumbnail">
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=387&parentpath=0,8" title="Financial Information Websites" onclick="javascript:read('387','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('387','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','0','9','9')" onmouseup="">Financial Information Websites</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=408&parentpath=0,8" title="Related Foreign Websites" onclick="javascript:read('408','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('408','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','1','9','9')" onmouseup="">Related Foreign Websites</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=407&parentpath=0,8" title="Area of Government Websites and Activities" onclick="javascript:read('407','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('407','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','2','9','9')" onmouseup="">Area of Government Websites and Activities</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=164&parentpath=0,8" title="Legitimate Financial Industry" onclick="javascript:read('164','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('164','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','3','9','9')" onmouseup="">Legitimate Financial Industry</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=157&parentpath=0,8" title="Website links of stock exchange market" onclick="javascript:read('157','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('157','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','4','9','9')" onmouseup="">Website links of stock exchange market</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=409&parentpath=0,8" title="Related Links of Government Agencies" onclick="javascript:read('409','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('409','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','5','9','9')" onmouseup="">Related Links of Government Agencies</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fsc.gov.tw/en/main.jsp?websitelink=morebanner.jsp&dataserno=201105310004&mtitle=Advertisement" title="Advertisement" onclick="javascript:read('96','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('96','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','6','9','9')" onmouseup="">Advertisement</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="home.jsp?id=150&parentpath=0,8" title="Banking" onclick="javascript:read('150','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('150','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','7','9','9')" onmouseup="">Banking</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://gazette.nat.gov.tw/egFront/indexEng.do" title="The Executive Yuan Gazette Online(Open New Window)" target="_blank" onclick="javascript:read('169','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('169','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','8','9','9')" onmouseup="">The Executive Yuan Gazette Online</a>
+                                        
+                                    </li>
+                                    
+                                    <li>
+                                        
+                                        <a href="https://www.fintechspace.com.tw/en/" title="FinTechSpace" onclick="javascript:read('170','FscEnglishMenu','FscReadNumber','english')" onkeypress="javascript:read('170','FscEnglishMenu','FscReadNumber','english')" onkeyup="javascript:lasttwo('8','9','9','9')" onmouseup="">FinTechSpace</a>
+                                        
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+	<!--選單結束-->
+
+	<!--形象區-->
+	
+
+
+
+
+
+
+
+
+
+<div class="banner slider">
+
+    
+
+</div>
+	<!--形象區 end-->
+
+	<div class="container" id="container">
+		<div class="row">
+			<a href="#" id="accesskey_c" accesskey="C" class="accesskey" title="Content Area">:::</a>
+
+			<!--相片輪播-->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="leftbox col-lg-6 col-md-12 col-12">
+    <div class="newspic">
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202609030002" title=" The "Financial Sector-Prosecution-Police Join Anti-Fraud Summit：Technology-Driven Fraud Prevention, Comprehensive Protection" was held on August 31, 2026, to present awards recognizing financial institution employees.">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2026090311263900_small.jpg&filedisplay=%E7%85%A7%E7%89%871%EF%BC%9A%E9%A0%92%E7%8D%8E%E8%A1%A8%E6%8F%9A%E8%87%A8%E6%AB%83%E6%94%94%E9%98%BB%E7%B8%BE%E5%84%AA%E4%B9%8B%E9%87%91%E8%9E%8D%E5%BE%9E%E6%A5%AD%E4%BA%BA%E5%93%A11.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt"> The "Financial Sector-Prosecution-Police Join Anti-Fraud Summit：Technology-Driven Fraud Prevention, Comprehensive Protection" was held on August 31, 2026, to present awards recognizing financial institution employees.</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202607080001" title="Marshall Islands Minister of Foreign Affairs and Trade visits the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2026070814150900_small.jpg&filedisplay=Marshall_Islands_Minister.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">Marshall Islands Minister of Foreign Affairs and Trade visits the FSC</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202605180002" title="AmCham Pays a Visit to the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2026051814535300_small.jpg&filedisplay=AmCham+Pays+a+Visit+to+the+FSC.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">AmCham Pays a Visit to the FSC</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202603130002" title="Belize Financial Services Mission Visits the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2026031317215100_small.jpg&filedisplay=115%E5%B9%B43%E6%9C%8811%E6%97%A5%E8%B2%9D%E9%87%8C%E6%96%AF%E9%87%91%E8%9E%8D%E5%85%AC%E5%8F%B8%28Finance+Belize%29%E8%88%87%E8%B2%9D%E9%87%8C%E6%96%AF%E9%87%91%E8%9E%8D%E6%9C%8D%E5%8B%99%E5%A7%94%E5%93%A1%E6%9C%83%E7%AD%89%E4%B8%80%E8%A1%8C%E6%8B%9C%E6%9C%83%E9%87%91%E7%AE%A1%E6%9C%83.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">Belize Financial Services Mission Visits the FSC</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202512120001" title="AmCham Pays a Visit to the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2025121211383900_small.jpg&filedisplay=20251209AmCham-Pays-a-visit-to-the-FSC.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">AmCham Pays a Visit to the FSC</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="https://www.fsc.gov.tw/en/index.jsp" title="The “FinTech Anti-Fraud Summit“ was held on August 13, 2025, to present awards recognizing financial institution employees.">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2025082013552900_small.jpg&filedisplay=114%E5%B9%B48%E6%9C%8813%E6%97%A5%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E6%89%93%E8%A9%90%E9%AB%98%E5%B3%B0%E6%9C%83%E9%A0%92%E7%8D%8E%E8%A1%A8%E6%8F%9A%E9%8A%80%E8%A1%8C%E8%A1%8C%E5%93%A1.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">The "FinTech Anti-Fraud Summit" was held on August 13, 2025, to present awards recognizing financial institution employees.</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202505060001" title="AmCham Pays a visit to the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2025090211394500_small.jpg&filedisplay=%E5%8F%B0%E7%81%A3%E7%BE%8E%E5%9C%8B%E5%95%86%E6%9C%83%E8%91%A3%E4%BA%8B%E9%BB%83%E8%94%9A%E6%96%87%E7%AD%89%E4%B8%80%E8%A1%8C%E6%8B%9C%E6%9C%83%E9%87%91%E7%AE%A1%E6%9C%83v3.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">AmCham Pays a visit to the FSC</div>
+            </a>
+        </div>
+        
+        <div class="list clearfix">
+            <a href="home.jsp?id=54&parentpath=0,2&mcustomize=headnews_view.jsp&dataserno=202410280001" title="European Chamber of Commerce Taiwan (ECCT) pays a visit to the FSC">
+                <div class="pic">
+                    <img src="/uploaddowndoc?file=headnews/2024102811541200_small.jpg&filedisplay=%E6%AD%90%E6%B4%B2%E5%9C%A8%E8%87%BA%E5%95%86%E5%8B%99%E5%8D%94%E6%9C%83%28ECCT%29%E7%AD%89%E4%B8%80%E8%A1%8C%E6%96%BC113%E5%B9%B410%E6%9C%8822%E6%97%A5%E6%8B%9C%E6%9C%83%E9%87%91%E7%AE%A1%E6%9C%83.jpg&flag=pic" alt="" />
+                </div>
+                <div class="tt">European Chamber of Commerce Taiwan (ECCT) pays a visit to the FSC</div>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+			<!--相片輪播 END -->
+
+			<!--Press release-->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rightbox col-lg-6 col-md-12 col-12">
+	<div class="newslist">
+		<div class="title">
+			<h2>Press release</h2>
+			<a href="home.jsp?id=54&parentpath=0,2" class="more" title="more Press release">+ MORE</a>
+		</div>
+		<ul>
+			
+			<li>
+				<a href="/uploaddowndoc?file=news/202611051625010.pdf&filedisplay=Status of Foreign Portfolio Investment 2026-11-5.pdf&flag=doc" title="Status of Foreign Portfolio Investment 2026-11-5">
+					<p class="date">2026-11-05</p>
+					<p class="txt">Status of Foreign Portfolio Investment 2026-11-5</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=54&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610270003&dtable=News" title="Sales statistics of foreign-currency denominated produ......">
+					<p class="date">2026-10-27</p>
+					<p class="txt">Sales statistics of foreign-currency denominated produ......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=54&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610280001&dtable=News" title="The FSC Amends and Issues the “Regulations Governing A......">
+					<p class="date">2026-10-20</p>
+					<p class="txt">The FSC Amends and Issues the “Regulations Governing A......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=54&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610150003&dtable=News" title="Outstanding SME Loans by Domestic Banks as of August 2......">
+					<p class="date">2026-10-15</p>
+					<p class="txt">Outstanding SME Loans by Domestic Banks as of August 2......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=54&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610140001&dtable=News" title="FSC approves the merger of Bank SinoPac and King’s Tow......">
+					<p class="date">2026-10-14</p>
+					<p class="txt">FSC approves the merger of Bank SinoPac and King’s Tow......</p>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+			<!--Press release END-->
+
+			<!--Important Measures-->
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="leftbox col-lg-6 col-md-12 col-12">
+	<div class="newslist g">
+		<div class="title">
+			<h2>Important Measures</h2>
+			<a href="home.jsp?id=74&parentpath=0,2" class="more" title="more important measures">+ MORE</a>
+		</div>
+		<ul>
+			
+			<li>
+				<a href="home.jsp?id=74&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610210004&dtable=Law" title="Adjustments to the Methods, Standards, Formats, and Co......">
+					<p class="date">2026-10-20</p>
+					<p class="txt">Adjustments to the Methods, Standards, Formats, and Co......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=74&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610210003&dtable=Law" title="Adjustments to the Methods, Standards, Formats, and Co......">
+					<p class="date">2026-10-20</p>
+					<p class="txt">Adjustments to the Methods, Standards, Formats, and Co......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=74&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610210002&dtable=Law" title="Adjustments to the Methods, Standards, Formats, and Co......">
+					<p class="date">2026-10-20</p>
+					<p class="txt">Adjustments to the Methods, Standards, Formats, and Co......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="home.jsp?id=74&parentpath=0,2&mcustomize=multimessage_view.jsp&dataserno=202610210001&dtable=Law" title="Adjustments to the Methods, Standards, Formats, and Co......">
+					<p class="date">2026-10-20</p>
+					<p class="txt">Adjustments to the Methods, Standards, Formats, and Co......</p>
+				</a>
+			</li>
+			
+			<li>
+				<a href="/uploaddowndoc?file=bulletin/202610121030150.pdf&filedisplay=115年9月重要事紀-英文版.pdf&flag=doc" title="Important Events In September 2026">
+					<p class="date">2026-10-12</p>
+					<p class="txt">Important Events In September 2026</p>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+</div>
+			<!--Important Measures END-->
+
+			<!--Regulations-->
+			
+
+
+
+
+
+
+
+
+
+
+
+<div class="rightbox col-lg-6 col-md-12 col-12">
+	<div class="law_area">
+		<h4 class="title">Regulations</h4>
+		<ul>
+	<li><a href="http://law.fsc.gov.tw/EngLawQuery.aspx" target="_blank" title="Financial Supervisory Commission(new windows)">Financial Supervisory Commission</a></li>
+	<li><a href="http://law.banking.gov.tw/Eng/" target="_blank" title="Banking Bureau(new windows)">Banking Bureau</a></li>
+	<li><a href="https://www.selaw.com.tw/English/RegulatoryInformation" target="_blank" title="Securities and Futures Bureau(open new window)">Securities and Futures Bureau</a></li>
+	<li><a href="http://law.tii.org.tw/Eng/newlevel.asp" target="_blank" title="Insurance Bureau(new windows)">Insurance Bureau </a></li>
+</ul>
+
+	</div>
+</div>
+			<!--Regulations END -->
+
+		</div>
+	</div>
+
+	<!--相關連結-->
+	
+
+
+
+
+
+
+
+
+
+
+<div class="link_box clearfix">
+    <div class="ad equal-height-thumbnail">
+
+        
+        <div>
+            <a href="https://www.foi.org.tw/index.aspx?lang=2" title="Investor and Consumer(open new window)" target="_blank">
+                <img src="/uploaddowndoc?file=enindexbanner/202107021422030.jpg&filedisplay=photo_b6.jpg&flag=pic" alt="" style="max-width: 280px;">
+                <p>Investor and Consumer</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="https://www.banking.gov.tw/en/home.jsp?id=260&parentpath=0,241" title="Basel III(open new window)" target="_blank">
+                <img src="/uploaddowndoc?file=enindexbanner/202107021425570.jpg&filedisplay=photo_basel.jpg&flag=pic" alt="" style="max-width: 280px;">
+                <p>Basel III</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="https://www.fsc.gov.tw/en/home.jsp?id=99&parentpath=0,3" title="Cross-strait financial business(open new window)" target="_blank">
+                <img src="/uploaddowndoc?file=enindexbanner/202107021426400.jpg&filedisplay=photo_b4.jpg&flag=pic" alt="" style="max-width: 280px;">
+                <p>Cross-strait financial business</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="https://www.sfb.gov.tw/en/home.jsp?id=96&parentpath=0,4" title="IFRS(open new window)" target="_blank">
+                <img src="/uploaddowndoc?file=enindexbanner/202107021424550.jpg&filedisplay=photo_b1.jpg&flag=pic" alt="" style="max-width: 280px;">
+                <p>IFRS</p>
+            </a>
+        </div>
+        
+        <div>
+            <a href="https://www.fsc.gov.tw/en/home.jsp?id=101&parentpath=0,2" title="Anti-Money Laundering(open new window)" target="_blank">
+                <img src="/uploaddowndoc?file=enindexbanner/202107021424030.jpg&filedisplay=photo_b5.jpg&flag=pic" alt="" style="max-width: 280px;">
+                <p>Anti-Money Laundering</p>
+            </a>
+        </div>
+        
+    </div>
+</div>
+	<!--相關連結-end-->
+
+	<!--fatfoot-->
+	
+
+<div class="fat_box clearfix">
+    <a class="btn" data-toggle="collapse" href="#fatfoot" role="button" aria-expanded="false" aria-controls="fatfoot"> Expand/collapse </a>
+    <div class="collapse" id="fatfoot">
+        <div class="card card-body">
+            <div class="equal-height-thumbnail">
+                <ul>
+                    <li class="title">
+                        <a href="#">Bulletin Board</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=76&parentpath=0,2" title="Events">Events</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=54&parentpath=0,2" title="Press Release">Press Release</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=323&parentpath=0,2&mcustomize=disputearea_list.jsp" title=" Instant News Clarification"> Instant News Clarification</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=344&parentpath=0,2" title="Important Policies">Important Policies</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=74&parentpath=0,2" title="Important Measures">Important Measures</a>
+                    </li>
+
+                    <li class="more">
+                        <a href="home.jsp?id=2&parentpath=0" title="Bulletin Board">+ more</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="title">
+                        <a href="#">Laws and Regulations</a>
+                    </li>
+		
+                    <li>
+                        <a href="home.jsp?id=365&parentpath=0,2" title="Explanation of New Regulations">Explanation of New Regulations</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=366&parentpath=0,2" title="EPreview of Law Draft">Preview of Law Draft</a>
+                    </li>					
+
+                    <li>
+                        <a href="https://law.banking.gov.tw/Eng/" title="Banking Bureau(open new windows)" target="_blank">Banking Bureau</a>
+                    </li>
+                    <li>
+                        <a href="https://www.selaw.com.tw/English/RegulatoryInformation" title="Securities and Futures Bureau(open new windows)" target="_blank">Securities and Futures Bureau</a>
+                    </li>
+                    <li>
+                        <a href="https://law.tii.org.tw/Eng/new.asp" title="Insurance Bureau(open new windows)" target="_blank">Insurance Bureau</a>
+                    </li>
+                    <li>
+                        <a href="https://law.fsc.gov.tw/EngNewsList.aspx" title="Financial Supervisory Commission(open new windows)" target="_blank">Financial Supervisory Commission</a>
+                    </li>
+
+                </ul>
+                <ul>
+                    <li class="title">
+                        <a href="#">Statistics</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=539&parentpath=0,2" title="Financial Information Disclosure">Financial Information Disclosure</a>
+                    </li>	
+                    <li>
+                        <a href="home.jsp?id=367&parentpath=0,2" title="Publication of Financial Market Statistical Information">Publication of Financial Market Statistical Information</a>
+                    </li>	
+                    <li>
+                        <a href="https://www.sfb.gov.tw/en/home.jsp?id=134&parentpath=0,7,92"  title="Major Indicators" target="_blank">Major Indicators</a>
+                    </li>	
+                    <li>
+                        <a href="home.jsp?id=319&parentpath=0,2" title="Statistics Information">Statistics Information</a>
+                    </li>	
+                    <li>
+                        <a href="home.jsp?id=56&parentpath=0,2" title="FSC Annual Report">FSC Annual Report</a>
+                    </li>		
+                    <li>
+                        <a href="home.jsp?id=55&parentpath=0,2" title="Financial Outlook Monthly">Financial Outlook Monthly</a>
+                    </li>						
+
+                    <li class="more">
+                        <a href="home.jsp?id=5&parentpath=0" title="Statistics">+ more</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="title">
+                        <a href="#">Consumer Related Info.</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=263&parentpath=0,261" title="About Financial Ombudsman Institution (FOI)">About Financial Ombudsman Institution (FOI)</a>
+                    </li>
+                    <li>
+                        <a href="https://moneywise.fsc.gov.tw/" title="The MoneyWise Website(Chinese Version Only)" target="_blank">The MoneyWise Website(Chinese Version Only)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.feb.gov.tw/ch/home.jsp?id=333&parentpath=0,4" title="Financial Examination School (Chinese version only)" target="_blank">Financial Examination School (Chinese version only)</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=396&parentpath=0,261" title="Promotion of Financial Knowledge">Promotion of Financial Knowledge</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=537&parentpath=0,261" title="Consumer Information">Consumer Information</a>
+                    </li>					
+                </ul>
+                <ul>
+                    <li class="title">
+                        <a href="#">Public Service</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=495&parentpath=0,7" title="Lobbying Act">Lobbying Act</a>
+                    </li>
+                    <li>
+                        <a href="https://fscmail.fsc.gov.tw/" target="_blank" title="Write to FSC(open new windows)">Write to FSC</a>
+                    </li>					
+                    <li>
+                        <a href="home.jsp?id=343&parentpath=0,7" title="Employment Information">Employment Information</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=310&parentpath=0,7" title="Against Corruption Zone">Against Corruption Zone</a>
+                    </li>	
+                    <li>
+                        <a href="home.jsp?id=82&parentpath=0,7" title="FAQ">FAQ</a>
+                    </li>						
+                    <li>
+                        <a href="home.jsp?id=58&parentpath=0,7" title="Applications Process">Applications Process</a>
+                    </li>
+
+                    <li class="more">
+                        <a href="home.jsp?id=7&parentpath=0" title="Public Service">+ more</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="title">
+                        <a href="#">Policies & Publications</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=329&parentpath=0,4" title="GForeign Relations Documents">Foreign Relations Documents</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=331&parentpath=0,4" title="Documents relating to administrative guidance">Documents relating to administrative guidancee</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=385&parentpath=0,4" title="Administration Plan">Administration Plan</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=272&parentpath=0,4" title="Statistics">Statistics</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=441&parentpath=0,4" title="Research Report">Research Report</a>
+                    </li>
+                    <li>
+                        <a href="home.jsp?id=273&parentpath=0,4" title="Budgets ,Monthly and Annual Financial Reports">Budgets ,Monthly and Annual Financial Reports</a>
+                    </li>
+                    <li class="more">
+                        <a href="home.jsp?id=4&parentpath=0" title="Policies & Publications">+ more</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<!--fatfoot end-->
+
+	<!--footer-->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer_box clearfix">
+	<a href="#Z" id="Z" accesskey="Z" class="accesskey" title="Footer site information">:::</a>
+	<div class="bton">
+		<ul>
+			<li>
+				<a href="main.jsp?websitelink=artsublink.jsp&dataserno=201104250001&mtitle=Privacy and Security Policy"
+					title="Privacy and Security Policy">Privacy and Security Policy</a>
+			</li>
+			│
+			<li>
+				<a href="main.jsp?websitelink=artsublink.jsp&dataserno=201605030001&mtitle=Government Website Open Information Announcement"
+					title="Government Website Open Information Announcement">Open Government Declaration</a>
+			</li>
+			<!--
+			│
+			<li>
+				<a href="main.jsp?websitelink=artsublink.jsp&dataserno=201104250003&mtitle=Accesskey Setting" title="Accesskey Setting">Accesskey
+					Setting</a>
+			</li>
+			│
+			<li>
+				<a href="main.jsp?websitelink=artsublink.jsp&dataserno=201203060001&mtitle=Copyright Notice" title="Copyright Notice">Copyright
+					Notice</a>
+			</li>
+			//-->
+		</ul>
+	</div>
+	<div class="foot">
+		<div class="clearfix">
+			<div class="f01 col-lg-9 col-md-8 col-sm-12 col-xs-12">
+				<ul class="add">
+					<li>
+						18F., No.7, Sec. 2, Xianmin Blvd., Banqiao Dist., New Taipei City 220232, Taiwan(R.O.C.)
+						<a
+							href="https://www.google.com.tw/maps/place/Financial+Supervisory+Commission,+Executive+Yuan/@25.0138839,121.4641363,18z/data=!4m7!1m4!3m3!1s0x3442a81969c4379f:0x9475f0ffdb69108!2sBanqiao+Train+Station!3b1!3m1!1s0x0000000000000000:0x6dc434a0ac64efa9?hl=en"
+							target="_blank" title="googleMap(open new window)">
+<!--
+<a href="https://www.google.com.tw/maps/place/220%E6%96%B0%E5%8C%97%E5%B8%82%E6%9D%BF%E6%A9%8B%E5%8D%80%E7%B8%A3%E6%B0%91%E5%A4%A7%E9%81%93%E4%BA%8C%E6%AE%B57%E8%99%9F18F/@25.0140513,121.463815,17z/data=!3m1!4b1!4m2!3m1!1s0x3442a81942288ff1:0x3bbb0b79226f400d?hl=en" target="_blank" title="Map(open new window)">
+	//-->
+<!--
+	<a href="https://www.google.com.tw/maps/place/220%E6%96%B0%E5%8C%97%E5%B8%82%E6%9D%BF%E6%A9%8B%E5%8D%80%E7%B8%A3%E6%B0%91%E5%A4%A7%E9%81%93%E4%BA%8C%E6%AE%B57%E8%99%9F18F/@25.0140513,121.463815,17z/data=!3m1!4b1!4m2!3m1!1s0x3442a81942288ff1:0x3bbb0b79226f400d?hl=en" target="_blank" title="Map(open new window)">
+	//-->
+
+	<img src="images/all/icon_map.png" alt="Google map">
+						</a>
+					</li>
+					
+					<li>Financial Supervisory Commission, R.O.C. Copyright © 2021</li>
+					
+					<li>Representative Office in New York : 1 E.42 Street, 13F, New York, NY 10017, U.S.A. TEL:(1-212) 317-7326</li>
+					<li>Representative Office in London : 46-48 Grosvenor Gardens London SW1W 0EB, UK TEL:(44-20)7628-1501</li>
+					<li>Tel：886-2-8968-0899；Fax：886-2-8969-1215
+					</li>
+				</ul>
+			</div>
+
+			<div class="f02 col-lg-3 col-md-4 col-sm-12 col-xs-12">
+				<ul class="icon">
+					<li>
+						<a href="https://accessibility.moda.gov.tw/Applications/Detail?category=20240913112835" target="_blank" title="conformance level A(open new window)">
+							<img src="images/all/icon_cce.png" alt="Accessibility mark">
+						</a>
+					</li>
+					<li>
+						<a href="https://www.gov.tw/" target="_blank" title="My GOV(open new window)">
+							<img src="images/all/icon_gov.png" alt="My GOV">
+						</a>
+					</li>
+                    <li>
+                        <a href="https://www.facebook.com/fsc.gov.tw" target="_blank" title="facebook(open new window)">
+                            <img src="images/all/icon_fb.png" alt="facebook">
+                        </a>
+                    </li>                    
+				</ul>
+				<ul class="num">
+					<li>
+						Update Date：2026-11-06</li>
+					<li>
+						Visitor：
+						12944697</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+	<!--footer end-->
+
+	<div class="gotop">
+		<a href="#top" title="Top">Top</a>
+	</div>
+
+	
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap-4.5.3-dist/js/bootstrap.min.js"></script>
+<script src="js/slick-1.6.0/slick/slick.js"></script>
+<script src="js/dropdown-menu/vgnav.min.js"></script>
+<!--slick-->
+<link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="js/slick-1.6.0/slick/slick-theme.css">
+<!--圖片自動高度-->
+<link rel="stylesheet" type="text/css" href="css/equal_height.css">
+<script>
+	$(document).ready(function() {
+		$('.vg-nav').vegasMenu({
+			open : 'left',
+		});
+	})
+</script>
+<script>
+	$(function() {
+		$('.collapse').collapse()
+	});
+</script>
+<!--抬頭顯示器-->
+<script src="js/resize-header-on-scroll/js/classie.js"></script>
+<script>
+	function init() {
+		window
+				.addEventListener(
+						'scroll',
+						function(e) {
+							var distanceY = window.pageYOffset
+									|| document.documentElement.scrollTop, shrinkOn = 155, header = document
+									.querySelector(".menu");
+							if (distanceY > shrinkOn) {
+								classie.add(header, "smaller");
+							} else {
+								if (classie.has(header, "smaller")) {
+									classie.remove(header, "smaller");
+								}
+							}
+						});
+	}
+	window.onload = init();
+</script>
+
+<!--廣告輪播-->
+<script>
+	$(function() {
+		/*--banner--*/
+		$('.banner').slick({
+			dots : true,
+			arrows : true,
+			infinite : true,
+			slidesToShow : 1,
+			slidesToScroll : 1,
+			autoplay : true,
+		});
+		/*--相片--*/
+		$('.newspic').slick({
+			dots : true,
+			arrows : false,
+			infinite : true,
+			slidesToShow : 1,
+			slidesToScroll : 1,
+			autoplay : true,
+		});
+
+		/*--廣告連結--*/
+		$(".ad").slick({
+			dots : false,
+			arrows : true,
+			infinite : true,
+			slidesToShow : 5,
+			autoplay : true,
+			responsive : [ {
+				breakpoint : 1480,
+				settings : {
+					slidesToShow : 4,
+				}
+			}, {
+				breakpoint : 1190,
+				settings : {
+					slidesToShow : 3,
+				}
+			}, {
+				breakpoint : 870,
+				settings : {
+					slidesToShow : 2,
+				}
+			}, {
+				breakpoint : 550,
+				settings : {
+					slidesToShow : 1,
+				}
+			}
+			// You can unslick at a given breakpoint now by adding:
+			// settings: "unslick"
+			// instead of a settings object
+			]
+		});
+	});
+</script>
+<script>
+	$(document).ready(function() {
+		$('body').scrollspy({
+			target : ".top",
+			offset : 0
+		});
+		$(".gotop a").on('click', function(event) {
+			if (this.hash !== "") {
+				event.preventDefault();
+				var hash = this.hash;
+				$('html, body').animate({
+					scrollTop : $(hash).offset().top
+				}, 800, function() {
+					window.location.hash = hash;
+				});
+			}
+		});
+
+        setTimeout(function() {
+            $(".gsc-search-button button svg title").text("Search");
+            $("#gsc-i-id1").attr({
+                title: "Search",
+                size: "100%"
+            });
+            $(".gsst_a").attr({
+                title: "Clear"
+            });
+        }, 1000);
+        
+	});
+</script>
+<script src="js/flexslider/jquery.flexslider.js"></script>
+<link href="js/flexslider/flexslider.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+	$(function() {
+		$('.flexslider').flexslider({
+			animation : "slide",
+			start : function(slider) {
+				$('body').removeClass('loading');
+			}
+		});
+	});
+</script>
+
+    <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     ga('create', 'UA-39100353-4', 'auto');
+     ga('send', 'pageview');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZDP1ER49F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QZDP1ER49F');
+    </script>
+        
+</body>
+</html>

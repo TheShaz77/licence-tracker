@@ -1,0 +1,88 @@
+# Block all bots by default
+User-agent: *
+Disallow: /
+
+User-agent: *
+Disallow: /viewPDF/documents/
+
+User-agent: *
+Disallow: /pdfview/
+
+# Allow only specific trusted bots
+User-Agent: Mediapartners-Google
+Disallow:
+
+User-Agent: Googlebot
+Disallow:
+
+User-Agent: Adsbot-Google
+Disallow:
+
+User-Agent: Googlebot-Image
+Disallow:
+
+User-agent: Googlebot-Mobile
+Disallow:
+
+User-agent: YahooSeeker/M1A1-R2D2
+Disallow:
+
+User-agent: MSNBOT-MOBILE
+Disallow:
+
+User-agent: UptimeRobot/2.0
+Disallow:
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: AspiegelBot
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+User-agent: Exabot
+Disallow: /
+
+User-agent: SeznamBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+User-agent: trendictionbot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+# Sitemap declaration
+Sitemap: https://www.bma.bm/sitemap.xml
