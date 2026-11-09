@@ -229,6 +229,16 @@
 "phone_from": "firm website",
 "website": "https://7awel.money"
 },
+"site:8percent.kr": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.8percent.kr"
+},
 "site:911money.info": {
 "checked": "2026-11-06",
 "email": "info@911money.info",
@@ -1888,6 +1898,16 @@
 "phone": "+498341966730",
 "phone_from": "firm website",
 "website": "https://www.anceka.de"
+},
+"site:andamc.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.andamc.com"
 },
 "site:andelskassen.dk": {
 "checked": "2026-11-07",
@@ -20378,6 +20398,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://IQW.CA"
+},
+"site:ir": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://Ir"
 },
 "site:iris.co.uk": {
 "checked": "2026-11-08",
@@ -44608,6 +44638,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://uapay.io"
+},
+"site:ubagroup.com": {
+"checked": "2026-11-09",
+"email": "cfc@ubagroup.com",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "02012807000",
+"phone_from": "firm website",
+"website": "http://www.ubagroup.com"
 },
 "site:ubauk.com": {
 "checked": "2026-11-07",
