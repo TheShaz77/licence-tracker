@@ -51,7 +51,8 @@ jobs:
           git add data
           git diff --cached --quiet || git commit -m "FCA seed progress $(date -u +%FT%H%MZ)"
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash && git push && exit 0
+            git pull --rebase --autostash -X theirs && git push && exit 0
+            git rebase --abort 2>/dev/null || true
             echo "Push failed (attempt $i), retrying"; sleep $((i * 10))
           done
           exit 1
