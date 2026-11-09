@@ -1,0 +1,632 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html dir="ltr" class="ms-isBot" lang="es-MX"> 
+    
+    <head><meta http-equiv="X-UA-Compatible" content="IE=Edge" /><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="Content-Script-Type" content="text/javascript" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta http-equiv="Expires" content="0" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta name="Author" content="Administrador cnbv.gob.mx" /><meta name="description" content="Sitio Oficial de la Comisión Nacional Bancaria y de Valores" /><meta name="keywords" content="gobierno,babatz,bancario,mexico,bursatil,valores,portal gubernamental,mexicano,informacion,bancarios,entidades,datos,administracion" /><meta name="msapplication-TileImage" content="/_layouts/15/images/SharePointMetroAppTile.png" /><meta name="msapplication-TileColor" content="#0072C6" /><title>
+	
+	Padrón de Entidades Supervisadas
+
+</title><link rel="stylesheet" type="text/css" href="/_layouts/15/3082/styles/Themable/oslo.css?rev=ImSt3M4ZU8SelrFNz2m8zA%3D%3DTAG0"/>
+<link rel="stylesheet" type="text/css" href="/Style%20Library/CNBV/css/estilo_m.css"/>
+<link rel="stylesheet" type="text/css" href="/Style%20Library/CNBV/css/estilo.css"/>
+<script type="text/javascript" src="/_layouts/15/3082/initstrings.js?rev=VH27cqV0GG4Tm%2FLXObNlKQ%3D%3DTAG0"></script>
+<script type="text/javascript" src="/_layouts/15/init.js?rev=YPuH2sG56FuG1bnyGzRzFQ%3D%3DTAG0"></script>
+<script src="/_layouts/15/init.js?rev=YPuH2sG56FuG1bnyGzRzFQ%3D%3DTAG0"></script>
+<script type="text/javascript" src="/ScriptResource.axd?d=tM3vW9TCW3N1l0y03xPAox3mkW6G6oRp66guzdh9X5cROWe4GAfKL-KUILUXhdV-cZ7ja5XhM4u3RBnRrUflzRvV9hRM4eQyaviqSgimwatTzyr184PYOxnz69INCM4O5K7s6KGiXEslS6Qh_VyLgEXNmOblArd8ZHrLgaXBYUaDvFhWj35E2B7MHNEmhdtI0&amp;t=fffffffff7f39b88"></script>
+<script type="text/javascript" src="/_layouts/15/blank.js?rev=xLMlyjalEDldDyf8i1bPEg%3D%3DTAG0"></script>
+<script type="text/javascript">RegisterSod("require.js", "\u002f_layouts\u002f15\u002frequire.js?rev=4UhLIF\u00252FezOvmGnh\u00252Fs0LLpA\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("strings.js", "\u002f_layouts\u002f15\u002f3082\u002fstrings.js?rev=L3YO7EIa1vDmCtORuAnTsQ\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("sp.res.resx", "\u002f_layouts\u002f15\u002f3082\u002fsp.res.js?rev=J\u00252BxNHd1ikIXlPBl\u00252FKw\u00252FybQ\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("sp.runtime.js", "\u002f_layouts\u002f15\u002fsp.runtime.js?rev=tWdA2V2hBgic\u00252FT6i\u00252B\u00252FJ2Ew\u00253D\u00253DTAG0");RegisterSodDep("sp.runtime.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("sp.js", "\u002f_layouts\u002f15\u002fsp.js?rev=CqEPe0htc\u00252FnIVFfms\u00252FIxTw\u00253D\u00253DTAG0");RegisterSodDep("sp.js", "sp.runtime.js");RegisterSodDep("sp.js", "sp.ui.dialog.js");RegisterSodDep("sp.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("sp.init.js", "\u002f_layouts\u002f15\u002fsp.init.js?rev=clAHmeKFMzku\u00252BqTFs0HHUw\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("sp.ui.dialog.js", "\u002f_layouts\u002f15\u002fsp.ui.dialog.js?rev=HnfeuKjAJSpaMwixLLIEDA\u00253D\u00253DTAG0");RegisterSodDep("sp.ui.dialog.js", "sp.init.js");RegisterSodDep("sp.ui.dialog.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("core.js", "\u002f_layouts\u002f15\u002fcore.js?rev=oYLuS7oM9VicA6Bp4aBmew\u00253D\u00253DTAG0");RegisterSodDep("core.js", "strings.js");</script>
+<script type="text/javascript">RegisterSod("menu.js", "\u002f_layouts\u002f15\u002fmenu.js?rev=f7Wm9Hx7NnwHn\u00252FjP\u00252FTQp7Q\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("mQuery.js", "\u002f_layouts\u002f15\u002fmquery.js?rev=TfhBhHoCfy1DPEh40\u00252Fp23g\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("callout.js", "\u002f_layouts\u002f15\u002fcallout.js?rev=MljUBny1CFG6spbWcM3lWw\u00253D\u00253DTAG0");RegisterSodDep("callout.js", "strings.js");RegisterSodDep("callout.js", "mQuery.js");RegisterSodDep("callout.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("sp.core.js", "\u002f_layouts\u002f15\u002fsp.core.js?rev=Z44rHB8PffrQPbo6HZC6HQ\u00253D\u00253DTAG0");RegisterSodDep("sp.core.js", "strings.js");RegisterSodDep("sp.core.js", "sp.init.js");RegisterSodDep("sp.core.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("clienttemplates.js", "\u002f_layouts\u002f15\u002fclienttemplates.js?rev=XGrin\u00252BBgSMZ73oisG97QgQ\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("sharing.js", "\u002f_layouts\u002f15\u002fsharing.js?rev=1z7Hb\u00252FJLJPX3Nt\u00252FzWYpfSw\u00253D\u00253DTAG0");RegisterSodDep("sharing.js", "strings.js");RegisterSodDep("sharing.js", "mQuery.js");RegisterSodDep("sharing.js", "clienttemplates.js");RegisterSodDep("sharing.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("suitelinks.js", "\u002f_layouts\u002f15\u002fsuitelinks.js?rev=WaKCIoN7lbKxpgwcaXKJsQ\u00253D\u00253DTAG0");RegisterSodDep("suitelinks.js", "strings.js");RegisterSodDep("suitelinks.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("userprofile", "\u002f_layouts\u002f15\u002fsp.userprofiles.js?rev=cx6U8sP\u00252ByP0OFLjk6ekyIg\u00253D\u00253DTAG0");RegisterSodDep("userprofile", "sp.runtime.js");</script>
+<script type="text/javascript">RegisterSod("followingcommon.js", "\u002f_layouts\u002f15\u002ffollowingcommon.js?rev=KM4oS914egSz2TslqiIzcQ\u00253D\u00253DTAG0");RegisterSodDep("followingcommon.js", "strings.js");RegisterSodDep("followingcommon.js", "sp.js");RegisterSodDep("followingcommon.js", "userprofile");RegisterSodDep("followingcommon.js", "core.js");RegisterSodDep("followingcommon.js", "mQuery.js");</script>
+<script type="text/javascript">RegisterSod("profilebrowserscriptres.resx", "\u002f_layouts\u002f15\u002f3082\u002fprofilebrowserscriptres.js?rev=Q0jeR3lY56raUGvs8iu7RA\u00253D\u00253DTAG0");</script>
+<script type="text/javascript">RegisterSod("sp.ui.mysitecommon.js", "\u002f_layouts\u002f15\u002fsp.ui.mysitecommon.js?rev=FrquuGzUNTjciGnstEuZ6w\u00253D\u00253DTAG0");RegisterSodDep("sp.ui.mysitecommon.js", "sp.init.js");RegisterSodDep("sp.ui.mysitecommon.js", "sp.runtime.js");RegisterSodDep("sp.ui.mysitecommon.js", "userprofile");RegisterSodDep("sp.ui.mysitecommon.js", "profilebrowserscriptres.resx");</script>
+<script type="text/javascript">RegisterSod("browserScript", "\u002f_layouts\u002f15\u002fnon_ie.js?rev=v3ymou3aP9sKV8xFuQ\u00252Bu5Q\u00253D\u00253DTAG0");RegisterSodDep("browserScript", "strings.js");</script>
+<script type="text/javascript">RegisterSod("inplview", "\u002f_layouts\u002f15\u002finplview.js?rev=NftH85thZrEjVQ9PCKWDew\u00253D\u00253DTAG0");RegisterSodDep("inplview", "strings.js");RegisterSodDep("inplview", "core.js");RegisterSodDep("inplview", "clienttemplates.js");RegisterSodDep("inplview", "sp.js");</script>
+<link type="text/xml" rel="alternate" href="/_vti_bin/spsdisco.aspx" />
+        
+        
+        <link rel="canonical" href="https://www.cnbv.gob.mx:443/Paginas/PADR%C3%93N-DE-ENTIDADES-SUPERVISADAS.aspx" />
+        
+		
+<!-- APA GOB.MX 
+	
+
+	
+	-->
+	
+	<!-- APA GOB.MX 
+	
+	<link href="https://framework-gb.cdn.gob.mx/favicon.ico" rel="shortcut icon" /><link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet" />-->
+	
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="/Style%20Library/css/estilo_IE.css" />
+	<![endif]-->		
+	
+	 
+	
+	
+	<script type="text/javascript" src="/Style%20Library/CNBV/js/jquery-1.10.2.min.js"></script>
+
+	<!-- APA GOB.MX  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>-->
+
+			 
+	<script type="text/javascript">//<![CDATA[
+        var g_pageLoadAnimationParams = { elementSlideIn : "sideNavBox", elementSlideInPhase2 : "contentBox" };
+        //]]></script>
+	<script type="text/javascript" src="/Style%20Library/cnbv/js/jquery.bpopup.min.js"></script>    
+	  
+	
+	
+	
+	 
+
+  <script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/modernizr.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700&amp;subset=latin" media="all" />
+  <script type="text/javascript" src="https://framework-gb.cdn.gob.mx/assets/scripts/vendor/pace.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
+	
+	<style type="text/css" dir="ltr">
+	 
+	  .navbar-fixed-topp{
+	  	  top:80px;
+}
+	 
+	</style>
+     
+  <link href="https://framework-gb.cdn.gob.mx/favicon.ico" rel="shortcut icon" /><link href="https://framework-gb.cdn.gob.mx/qa/assets/styles/main.css" rel="stylesheet" /></head>
+
+<body onload="javascript:if (typeof(_spBodyOnLoadWrapper) != 'undefined') _spBodyOnLoadWrapper();" onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
+
+<form method="post" action="./PADRÓN-DE-ENTIDADES-SUPERVISADAS.aspx" id="aspnetForm">
+<input type="hidden" name="_wpcmWpid" id="_wpcmWpid" value="" />
+<input type="hidden" name="wpcmVal" id="wpcmVal" value="" />
+<input type="hidden" name="MSOWebPartPage_PostbackSource" id="MSOWebPartPage_PostbackSource" value="" />
+<input type="hidden" name="MSOTlPn_SelectedWpId" id="MSOTlPn_SelectedWpId" value="" />
+<input type="hidden" name="MSOTlPn_View" id="MSOTlPn_View" value="0" />
+<input type="hidden" name="MSOTlPn_ShowSettings" id="MSOTlPn_ShowSettings" value="False" />
+<input type="hidden" name="MSOGallery_SelectedLibrary" id="MSOGallery_SelectedLibrary" value="" />
+<input type="hidden" name="MSOGallery_FilterString" id="MSOGallery_FilterString" value="" />
+<input type="hidden" name="MSOTlPn_Button" id="MSOTlPn_Button" value="none" />
+<input type="hidden" name="__REQUESTDIGEST" id="__REQUESTDIGEST" value="noDigest" />
+<input type="hidden" name="MSOSPWebPartManager_DisplayModeName" id="MSOSPWebPartManager_DisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_ExitingDesignMode" id="MSOSPWebPartManager_ExitingDesignMode" value="false" />
+<input type="hidden" name="MSOWebPartPage_Shared" id="MSOWebPartPage_Shared" value="" />
+<input type="hidden" name="MSOLayout_LayoutChanges" id="MSOLayout_LayoutChanges" value="" />
+<input type="hidden" name="MSOLayout_InDesignMode" id="MSOLayout_InDesignMode" value="" />
+<input type="hidden" name="_wpSelected" id="_wpSelected" value="" />
+<input type="hidden" name="_wzSelected" id="_wzSelected" value="" />
+<input type="hidden" name="MSOSPWebPartManager_OldDisplayModeName" id="MSOSPWebPartManager_OldDisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_StartWebPartEditingName" id="MSOSPWebPartManager_StartWebPartEditingName" value="false" />
+<input type="hidden" name="MSOSPWebPartManager_EndWebPartEditing" id="MSOSPWebPartManager_EndWebPartEditing" value="false" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMA9kFgJmD2QWAgIBD2QWBAIBD2QWBAIQD2QWAmYPZBYCAgEPFgIeE1ByZXZpb3VzQ29udHJvbE1vZGULKYgBTWljcm9zb2Z0LlNoYXJlUG9pbnQuV2ViQ29udHJvbHMuU1BDb250cm9sTW9kZSwgTWljcm9zb2Z0LlNoYXJlUG9pbnQsIFZlcnNpb249MTYuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49NzFlOWJjZTExMWU5NDI5YwFkAhsPZBYCAgMPZBYCZg9kFgJmDzwrAAYAZAIDD2QWBAIHD2QWBAUmZ184MDIwMjUxM18wNTQ2XzQ2YTNfOGZiM18xMDAzMjI4MmJiODEPZBYCZg9kFgJmDxYCHglpbm5lcmh0bWwFIcOabHRpbWEgbW9kaWZpY2FjacOzbjogMDUvMDkvMjAyNGQFJmdfZTU4MTIzMmFfMmFkZl80ZTA2X2EzOTNfYTRmODI3ODg2ZmQzD2QWBGYPFgIeB1Zpc2libGVoZAIBDxYCHwJoZAIND2QWBAIBD2QWAgICD2QWAgIBD2QWAgIDDxYCHwJoFgJmD2QWBAIDD2QWBgIBDxYCHwJoZAIDDxYCHwJoZAIFDxYCHwJoZAIEDw8WAh4JQWNjZXNzS2V5BQEvZGQCCQ9kFgICAg9kFgQCAw8WAh8ACysEAWQCBw8WAh8ACysEAWRk0SUdqIH4QO2yxXe4QuOvzByCOvL6YHG2W1G3LTjUI5M=" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var MSOWebPartPageFormName = 'aspnetForm';
+var g_presenceEnabled = true;
+var g_wsaEnabled = false;
+
+var g_correlationId = '34384da2-6bc8-d0c0-d6e8-a755ac3c1ee8';
+var g_wsaQoSEnabled = false;
+var g_wsaQoSDataPoints = [];
+var g_wsaRUMEnabled = false;
+var g_wsaLCID = 3082;
+var g_wsaListTemplateId = 850;
+var g_wsaSiteTemplateId = 'BLANKINTERNET#0';
+var _fV4UI=true;var _spPageContextInfo = {webServerRelativeUrl: "\u002f", webAbsoluteUrl: "https:\u002f\u002fwww.cnbv.gob.mx", siteAbsoluteUrl: "https:\u002f\u002fwww.cnbv.gob.mx", serverRequestPath: "\u002fPaginas\u002fPADR\u00D3N-DE-ENTIDADES-SUPERVISADAS.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "Portal Internet", webTemplate: "53", tenantAppVersion: "0", isAppWeb: false, Has2019Era: true, webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 3082, currentLanguage: 3082, currentUICultureName: "es-ES", currentCultureName: "es-MX", clientServerTimeDelta: new Date("2026-11-09T17:23:51.1407337Z") - new Date(), updateFormDigestPageLoaded: new Date("2026-11-09T17:23:51.1407337Z"), siteClientTag: "780$$16.0.5565.1001", crossDomainPhotosEnabled:false, webUIVersion:15, webPermMasks:{High:16,Low:200769},pageListId:"{fbabb97a-cb41-450d-83a1-307292fe2948}",pageItemId:4, pagePersonalizationScope:1, alertsEnabled:true, customMarkupInCalculatedFieldDisabled: true, siteServerRelativeUrl: "\u002f", allowSilverlightPrompt:'True', isSiteAdmin: false};document.onreadystatechange=fnRemoveAllStatus; function fnRemoveAllStatus(){removeAllStatus(true)};Flighting.ExpFeatures = [480215056,1880287568,1561350208,302071836,3212816,69472768,4194310,-2113396707,268502022,-872284160,1049232,-2147421952,65536,65536,2097472,917504,-2147474174,1372324107,67108882,0,0,-2147483648,2097152,0,0,32768,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32768]; (function()
+{
+    if(typeof(window.SP) == "undefined") window.SP = {};
+    if(typeof(window.SP.YammerSwitch) == "undefined") window.SP.YammerSwitch = {};
+
+    var ysObj = window.SP.YammerSwitch;
+    ysObj.IsEnabled = false;
+    ysObj.TargetYammerHostName = "www.yammer.com";
+} )(); var _spWebPartComponents = new Object();//]]>
+</script>
+
+<script src="/_layouts/15/blank.js?rev=xLMlyjalEDldDyf8i1bPEg%3D%3DTAG0" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() {
+            SP.SOD.executeFunc('core.js', 'FollowingDocument', function() { FollowingDocument(); });
+        });
+    })();(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() {
+            SP.SOD.executeFunc('core.js', 'FollowingCallout', function() { FollowingCallout(); });
+        });
+    })();if (typeof(DeferWebFormInitCallback) == 'function') DeferWebFormInitCallback();//]]>
+</script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BAB98CB3" />
+        <div id="imgPrefetch" style="display:none">
+<img src="/_layouts/15/images/spcommon.png?rev=40" />
+</div>
+
+        <noscript><div class='noindex'>Puede estar intentando tener acceso a este sitio desde un explorador protegido en el servidor. Habilite los scripts y vuelva a cargar la página.</div></noscript>
+        
+        
+        
+        <span id="DeltaDelegateControls">
+        
+        
+        </span>
+        <div id="authWrapper" class=""><div class="ms-belltown-anonShow"><div id="ms-designer-ribbon"><div>
+	
+	<div id="s4-ribbonrow" style="visibility:hidden;display:none"></div>
+
+</div>
+
+</div><span>
+		
+	
+			
+			
+                
+<a id="ctl00_ctl64_ExplicitLogin" class="ms-signInLink" href="https://www.cnbv.gob.mx/_layouts/15/Authenticate.aspx?Source=%2FPaginas%2FPADR%C3%93N%2DDE%2DENTIDADES%2DSUPERVISADAS%2Easpx" style="display:inline-block;">Inicio de sesión</a>
+
+            </span></div><div id="s4-workspace"><div id="s4-bodyContainer"><div class="ms-belltown-anonspacer"></div><div id="ms-belltown-table" class="ms-table"><div class="ms-tableRow"><div class="ms-tableCell"><!-- APA gob.mx 
+            <div class="contentwrapper">
+            <div class="ms-table ms-fullWidth"> --><div class="container"><div class="row"><!-- APA gob.mx 
+
+            <div class="ms-tableRow">
+            <div class="ms-tableCell ms-verticalAlignTop">
+            <div id="sideNavBox" class="ms-dialogHidden ms-forceWrap ms-noList">
+            --><div class=""><div class=""><div id="sideNavBox" class=""><a id="startNavigation" name="startNavigation" tabIndex="-1"></a></div></div><!-- APA gob.mx 
+ <div id="contentBox" class="ms-pub-contentLayout" aria-live="polite" aria-relevant="all"> -->
+ <div id="contentBox" class="" aria-live="polite" aria-relevant="all"><a id="mainContent" name="mainContent" tabindex="-1"></a><div id="encabezado"><!-- Barra de Herramientas --><div id="barra_herramientas"><!-- Menú de Herramientas --></div><!-- Fin de la Barra de Herramientas --><!-- Cuerpo del encabezado --><div id="firma_busqueda" style="display:none"><div id="sector"><img alt="Firma Institucional cabeza de sector" src="/Style%20Library/CNBV/imagenes/SHCP-PORTAL.png" /> </div><div id="logo"><a href="/portal/CNBV" title="Inicio"><img alt="Firma Institucional" src="/Style%20Library/CNBV/imagenes/CNBV-PORTAL.png" /> </a></div><!-- Buscador --><div id="buscador" style="display:none"><p><a href="/Paginas/Directorio.aspx" tabindex="3" accesskey="1">DIRECTORIO |</a> <a href="/Paginas/Página-INFO.aspx" tabindex="4" accesskey="2">CONTACTO |</a> <a href="/en" tabindex="8" accesskey="8">ENGLISH</a> </p><div id="searchbox"><div id="gobmx-searchbox-container-cnbv"><script>
+  (function() {
+    var cx = '002640056813620808823:fstz_--dr70';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script><gcse:search></gcse:search></div></div><!-- xxxxx--></div><!-- Fin del Buscador --></div><!-- Fin del Cuerpo del encabezado -->
+<!-- Menu Principal -->
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarMainCollapse"><span class="sr-only">Interruptor de Navegación</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="https://www.gob.mx/"><img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.png" width="128" height="48" alt="Página de inicio, Gobierno de México"></a></div><div class="collapse navbar-collapse" id="navbarMainCollapse"><ul class="nav navbar-nav navbar-right"><li><a href="https://www.gob.mx/tramites">Trámites</a></li><li><a href="https://www.gob.mx/gobierno">Gobierno</a></li><li><a href="https://www.gob.mx/busqueda"><span class="sr-only">Búsqueda</span><i class="icon-search"></i></a></li></ul></div></div></nav>
+<!-- APA gob.mx  -->
+<div id="dvMenu" style="display:none">
+<nav class="navbar navbar-inverse sub-navbar navbar-fixed-mide" role ="navigation">
+
+<div class="container">
+	<div class="collapse navbar-collapse"   id="subenlaces"><ul class="nav navbar-nav navbar-right"><li><a  href="/CNBV/Paginas/default.aspx" class="">CNBV</a><ul class="dropdown-menu"></ul></li><li><a  href="/Paginas/Informacion-Estadistica.aspx" class="class_estadistica"> INFORMACIÓN<br />ESTADÍSTICA</a></li><li><a  href="/Paginas/PADRÓN-DE-ENTIDADES-SUPERVISADAS.aspx" class="class_padron">PADRÓN DE ENTIDADES<br />SUPERVISADAS</a></li><li><a  href="/Paginas/NORMATIVIDAD.aspx" class="">Normatividad</a></li><li class="dropdown" ><a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> SECTORES<br />SUPERVISADOS<span class="caret"></span></a><ul class="dropdown-menu"><li ><a href="/SECTORES-SUPERVISADOS/BANCA-MULTIPLE/Paginas/default.aspx">BANCA MÚLTIPLE</a></li><li ><a href="/SECTORES-SUPERVISADOS/BURSÁTIL/Paginas/default.aspx">BURSÁTIL</a></li><li ><a href="/SECTORES-SUPERVISADOS/SOCIEDADES-DE-INVERSION/Paginas/default.aspx">FONDOS DE INVERSIÓN</a></li><li ><a href="/SECTORES-SUPERVISADOS/ASESORES_EN_INVERSIONES/Paginas/default.aspx">ASESORES EN INVERSIONES</a></li><li ><a href="/SECTORES-SUPERVISADOS/BANCA-DE-DESARROLLO/Paginas/default.aspx">BANCA DE DESARROLLO Y ENTIDADES DE FOMENTO</a></li><li ><a href="/SECTORES-SUPERVISADOS/SECTOR-POPULAR/Paginas/default.aspx">SECTOR POPULAR</a></li><li ><a href="/SECTORES-SUPERVISADOS/UNIONES-DE-CREDITO/Paginas/default.aspx">UNIONES DE CRÉDITO</a></li><li ><a href="/SECTORES-SUPERVISADOS/PARTICIPANTES_EN_REDES_DE_MEDIOS_DE_DISPOSICIÓN/Paginas/default.aspx">PARTICIPANTES EN REDES DE MEDIOS DE DISPOSICIÓN</a></li><li ><a href="/SECTORES-SUPERVISADOS/OTROS-SUPERVISADOS/Paginas/default.aspx">OTROS SUPERVISADOS</a></li><li ><a href="/SECTORES-SUPERVISADOS/Fintech/Paginas/default.aspx">Instituciones de Tecnología Financiera</a></li></ul></li><li><a  href="/PRENSA/Paginas/default.aspx" class="">PRENSA</a><ul class="dropdown-menu"></ul></li><li><a  href="/TRANSPARENCIA/Paginas/Transparencia.aspx" class="">TRANSPARENCIA</a><ul class="dropdown-menu"></ul></li><li><a  href="/Fintech/Paginas/default.aspx" class="">Fintech</a><ul class="dropdown-menu"></ul></li><li><a  href="/ProteccionDatos/Paginas/default.aspx" class="">Protección de Datos Personales</a><ul class="dropdown-menu"></ul></li><li><a  href="/Paginas/PortafolioDeInformacion.aspx" class="">Portafolio de Información</a></li><li><a  href="/Paginas/PortafolioDeInformacionDev.aspx" class="">Portafolio de información</a></li><li><a  href="/Paginas/SITI-PLD.aspx" class="">SITI PLD</a></li><li><a  href="/Paginas/SITI-PLD-QA.aspx" class="">SITI PLD QA</a></li><li><a  href="/Paginas/Mantenimiento.aspx" class="">Mantenimiento</a></li><li><a  href="/Paginas/Prueba.aspx" class="">Prueba Normatividad</a></li><li><a  href="/Paginas/Contacto-Foro-de-Ciberseguridad.aspx" class="">Contacto Foro de Ciberseguridad</a></li><li><a  href="/Paginas/Conta.aspx" class="">Conta</a></li><li><a  href="/Paginas/Contacto_copy(1).aspx" class="">Contacto</a></li><li><a  href="/Paginas/encuesta.aspx" class="">encuesta</a></li><li><a  href="/Paginas/Test.aspx" class="">Test</a></li><li ><a href="/Paginas/PortafolioDeInformacionNew.aspx"  class="">Portafolio de Información</a></li></ul></div>
+</div>
+</nav>
+</div>
+
+<!-- Fin del Menu Principal -->
+
+</div>
+
+<div class="page">
+<div class="container">
+
+<div id="DeltaPlaceHolderMain">
+	
+
+													
+											
+							
+												
+                                            
+
+<script type='text/javascript'>
+		$gmx(document).ready(function() {
+			//$("a").addClass("test");	
+			  document.getElementById("aPageTitle").href = document.URL;
+		    document.getElementById("aPageTitle").innerHTML = document.title;
+		
+		});
+	</script> 
+
+
+<div id="">
+		<!--Renglón tipo 2-->
+		<div class="container">
+		<ul class="breadcrumb">
+		<li><a href="http://www.gob.mx">
+				<i class="icon icon-home"></i>
+			</a>
+		</li>
+		<li>
+			<a href="http://www.gob.mx/cnbv">CNBV</a>
+		</li>
+		<li class="active">
+			<!--<a href="http://cd21fisp1:20501/Paginas/NORMATIVIDAD.aspx">Normatividad</a>-->
+			<a id="aPageTitle"></a>
+		</li>
+	</ul>
+
+		
+			<!-- APA gob.mx
+			<ul class="breadcrumb"><li><a href="#"><i class="icon icon-home"></i></a></li><li><a href="/Paginas/default.aspx">Portal Internet</a></li><li class="active"><a href="/Paginas/PADRÓN-DE-ENTIDADES-SUPERVISADAS.aspx">Padrón de Entidades Supervisadas</a></li></ul>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //APA gob.mx  breadcrumbs
+        var limitWidth = $('.breadcrumb').width();
+        var totalWidth = 0;
+        var breadcrumLi;
+        //APA gob.mx  breadcrumbs
+        $('.breadcrumb li').each(function () {
+            breadcrumLi = $(this);
+            totalWidth += parseInt(breadcrumLi.width());
+        });
+
+        if (totalWidth > (limitWidth - 6)) {
+            breadcrumLi.css("padding-top", "20px");
+        }
+    });
+</script>
+
+
+
+		
+			-->	
+			<div class="">
+				<!--	
+				<div class="addthis_toolbox addthis_default_style herramientas_del_usuario">
+					<a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open (this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()">
+						<img width="125" height="16" src="http://s7.addthis.com/static/btn/lg-share-es.gif" alt="Compartir" style="border: 0pt none;" />
+					</a>
+				</div>
+				-->				
+				<h2 >
+					Padrón de Entidades Supervisadas
+				</h2>
+				
+				<div id="ctl00_PlaceHolderMain_ctl02_label" style='display:none'>Contenido de la página</div><div id="ctl00_PlaceHolderMain_ctl02__ControlWrapper_RichHtmlField" class="ms-rtestate-field" style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl02_label"><p style="text-align&#58;left;">​​​​​​</p><div class="ms-rtestate-read ms-rte-wpbox"><div class="ms-rtestate-notify  ms-rtestate-read e581232a-2adf-4e06-a393-a4f827886fd3" id="div_e581232a-2adf-4e06-a393-a4f827886fd3" unselectable="on"><div id="MSOZoneCell_WebPartWPQ1" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+		<div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+	<div WebPartID="2b244de5-7cff-4fb8-8b73-33e0e8d649be" WebPartID2="e581232a-2adf-4e06-a393-a4f827886fd3" HasPers="false" id="WebPartWPQ1" width="100%" class="ms-WPBody noindex " allowRemove="false" allowDelete="false" style="" ><div class="ms-rtestate-field"><table class="ms-rteTable-0" cellspacing="0" style="width: 100%; height: 501px;">
+   <tbody>
+      <tr class="ms-rteTableEvenRow-0">
+         <th class="ms-rteTableEvenCol-0" rowspan="1" colspan="2" style="width: 20%;">
+            <p>​</p>
+         </th>
+         <td class="ms-rteTableOddCol-0" rowspan="1" style="width: 181px;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1" style="width: 55px;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1" style="width: 181px;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1" style="width: 58px;">
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1" style="width: 181px;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1" style="width: 58px;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1" style="width: 181px;">
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1" style="width: 20%;">
+            <p>​</p>
+         </td>
+      </tr>
+      <tr class="ms-rteTableOddRow-0">
+         <td class="ms-rteTableEvenCol-0" rowspan="1" colspan="2" style="width: 20%;">
+            <p>​​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" style="width: 181px; text-align: center;"> ​<a href="/Paginas/InfoPES.aspx"><img class="ms-rtePosition-4 ms-rteImage-0" alt="QueEs.PNG" src="/SiteCollectionImages/Paginas/PADR%C3%93N-DE-ENTIDADES-SUPERVISADAS/PES.png" style="margin: 0px; width: 120px;"/></a>​ </td>
+         <td class="ms-rteTableEvenCol-0" style="width: 55px;">
+         </td>
+         <td class="ms-rteTableOddCol-0" style="width: 181px;">
+         </td>
+         <td class="ms-rteTableEvenCol-0" style="width: 58px; text-align: center;">
+            <a href="/Paginas/TiposDeConsulta.aspx"><img class="ms-rtePosition-4 ms-rteImage-0" alt="TiposDeConsulta.PNG" src="/SiteCollectionImages/Paginas/PADR%C3%93N-DE-ENTIDADES-SUPERVISADAS/TiposConsulta.png" style="margin: 0px; width: 120px; height: 120px;"/></a> </td>
+         <td class="ms-rteTableOddCol-0" style="width: 181px;">
+         </td>
+         <td class="ms-rteTableEvenCol-0" style="width: 58px;">
+         </td>
+         <td class="ms-rteTableOddCol-0" style="width: 181px; text-align: center;">
+            <a href="/Paginas/ContactoPES.aspx"><img class="ms-rtePosition-4 ms-rteImage-0" alt="Contacto.PNG" src="/SiteCollectionImages/Paginas/PADR%C3%93N-DE-ENTIDADES-SUPERVISADAS/Contacto.png" style="margin: 0px; width: 120px; height: 120px;"/></a> </td>
+         <td class="ms-rteTableEvenCol-0" style="width: 20%;">
+            <p>​​</p>
+         </td>
+      </tr>
+      <tr class="ms-rteTableEvenRow-0">
+         <td class="ms-rteTableEvenCol-0" rowspan="1" colspan="2" style="width: 20%;">
+         </td>
+         <td class="ms-rteTableOddCol-0">
+            <p style="text-align: center;">​¿Qué es?</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0">
+         </td>
+         <td class="ms-rteTableOddCol-0">
+         </td>
+         <td class="ms-rteTableEvenCol-0">
+            <p style="text-align: center;">​​Tipos de Consulta</p>
+         </td>
+         <td class="ms-rteTableOddCol-0">
+         </td>
+         <td class="ms-rteTableEvenCol-0">
+         </td>
+         <td class="ms-rteTableOddCol-0">
+            <p style="text-align: center;">Contacto​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" style="width: 20%;">
+         </td>
+      </tr>
+      <tr class="ms-rteTableOddRow-0">
+         <td class="ms-rteTableEvenCol-0" rowspan="1" colspan="2" style="width: 20%;">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1">
+            <p>​</p>
+         </td>
+         <td class="ms-rteTableEvenCol-0" rowspan="1" style="width: 20%;">
+            <p>​</p>
+         </td>
+      </tr>
+      <tr class="ms-rteTableEvenRow-0">
+         <td class="ms-rteTableEvenCol-0" rowspan="1" colspan="6" style="text-align: right;">
+            <p>​ ​ ​ ​<a href="/Paginas/BusquedaEntidades.aspx"><img src="/SiteCollectionImages/Paginas/PADR%C3%93N-DE-ENTIDADES-SUPERVISADAS/Buscador.png" alt="" style="margin: 5px; width: 200px; height: 200px;"/></a>​ ​</p>
+         </td>
+         <td class="ms-rteTableOddCol-0" rowspan="1" colspan="4">
+            <p>​</p>
+            <p>Iniciar búsqueda</p>
+            <p>de Entidades​​</p>
+         </td>
+      </tr>
+   </tbody>
+</table> </div><div class="ms-clear"></div></div>
+</div>
+	</div></div><div id="vid_e581232a-2adf-4e06-a393-a4f827886fd3" unselectable="on" style="display&#58;none;"></div></div><p style="text-align&#58;left;">​​​​</p><p style="text-align&#58;left;"></p><div>*Los ahorros de los clientes de la banca están protegidos por un seguro de depósito, bajo la administración del IPAB, que cubre un monto de hasta 400,000 UDIs, de conformidad con los artículos 6 y 11 de la Ley de Protección y Ahorro Bancario.</div><div>**Los ahorros de los socios de las Socaps están protegidos por un seguro de depósito, bajo la administración del Focoop, que cubre un monto de hasta 25,000 UDIs, de conformidad con el artículo 54 de la Ley para Regular las Actividades de las Sociedades Cooperativas de Ahorro y Préstamo.</div><div>***Los ahorros de clientes y socios de las Sofipos y Sofincos están protegidos por un seguro de depósito, bajo la administración del Prosofipo, que cubre un monto de hasta 25,000 UDIs, de conformidad con el artículo 105 de la Ley Ahorro y Crédito Popular.</div><div><br>&#160;<div><strong>Nota</strong>&#58; El total de entidades del sector SOFOM E.N.R., supervisadas exclusivamente en materia de PLD/FT por la CNBV, se actualiza a partir de la información proporcionada por la CONDUSEF, relativa a los registros renovados o creados conforme a la Ley General de Organizaciones y Actividades Auxiliares del Crédito.</div><div><br></div><div>Dado que los servicios informáticos que albergan el número de SOFOM E.N.R. están siendo actualizados por la CONDUSEF, las cifras pueden variar. Se recomienda consultar el Sistema de Registro de Prestadores de Servicios Financieros (SIPRES) como fuente principal para obtener la información actualizada.<br></div></div><div><br></div><div><span class="ms-rteThemeFontFace-1" style="font-size&#58;8pt;"><a href="https&#58;//webapps.condusef.gob.mx/SIPRES/jsp/pub/index.jsp" target="_blank"><span class="ms-rteThemeFontFace-1">&#58;<span class="ms-rteFontSize-3 ms-rteThemeFontFace-1">&#58;&#58;&#58; CONDUSEF |
+Sistema de Registro de Prestadores de Servicios Financieros &#58;&#58;&#58;&#58;</span></span></a></span>​<br><br></div><p>​<br></p><div class="ms-rtestate-read ms-rte-wpbox"><div class="ms-rtestate-notify  ms-rtestate-read 80202513-0546-46a3-8fb3-10032282bb81" id="div_80202513-0546-46a3-8fb3-10032282bb81" unselectable="on"><div id="MSOZoneCell_WebPartctl00_ctl58_g_80202513_0546_46a3_8fb3_10032282bb81" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+		<div class="ms-webpart-chrome ms-webpart-chrome-vertical ms-webpart-chrome-fullWidth ">
+	<div WebPartID="0e7a9cfa-9958-4315-958b-189d6505d97d" WebPartID2="80202513-0546-46a3-8fb3-10032282bb81" HasPers="false" id="WebPartctl00_ctl58_g_80202513_0546_46a3_8fb3_10032282bb81" width="100%" class="ms-WPBody noindex " allowRemove="false" allowDelete="false" allowExport="false" style="display:none;" ><div id="ctl00_ctl58_g_80202513_0546_46a3_8fb3_10032282bb81">
+		<div id="ctl00_ctl58_g_80202513_0546_46a3_8fb3_10032282bb81_ctl00_WPFechaCreacion">Última modificación: 05/09/2024</div>
+
+	</div><div class="ms-clear"></div></div>
+</div>
+	</div></div><div id="vid_80202513-0546-46a3-8fb3-10032282bb81" unselectable="on" style="display&#58;none;"></div></div>​​</div>
+			</div>						
+		</div>
+		<!-- fin Renglón tipo 2-->
+	</div>
+<div style='display:none' id='hidZone'><div class="ms-webpart-zone ms-fullWidth">
+		<div id="MSOZoneCell_WebPartWPQ1" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+			<div class="ms-PartSpacingVertical"></div>
+		</div><div id="MSOZoneCell_WebPartctl00_ctl58_g_80202513_0546_46a3_8fb3_10032282bb81" class="s4-wpcell-plain ms-webpartzone-cell ms-webpart-cell-vertical ms-fullWidth ">
+
+		</div>
+	</div></div>
+                                            
+</div>
+                                            </div>
+</div>
+
+                                            
+                                            <div class="Footer" style="display:none">
+                                            	<div class="menu_footer" style="display:none">
+                                            		<ul>
+                                            			<li><a href="/Paginas/avisos.aspx">AVISOS&nbsp;&nbsp;</a> </li>
+                                            			<li><a href="/Paginas/Politicas-de-Privacidad.aspx">POLÍTICAS DE PRIVACIDAD&nbsp;&nbsp;</a> </li>
+                                            			<li class="ultima"><a href="/Paginas/Sitios-de-Interes.aspx">SITIOS DE INTERÉS</a> </li>
+                                            		</ul>
+                                            	</div>
+                                            <div style="clear: both; width: 100%; border-top: 1px solid #dedede; margin-bottom: 1px;">
+                                            </div>
+                                            <div style="clear:both; display: table; margin-bottom: 1em; margin-right: auto; margin-left: auto; max-width: 1492px;padding-left: 1.5%" class="ms-alignCenter">
+                                            	<div style="float: left; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; width: 350px; height:1px; margin-top: 38px;">
+                                            	</div>
+                                            	<img alt="logo shcp horizontal" src="/Style%20Library/CNBV/imagenes/logoSHCP_hoz.png" style="float:left; margin: 0px 24px;" /> 
+                                            	<div style="float: left; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede; width: 350px; height:1px; margin-top: 38px;">
+                                            	</div>
+                                            </div>
+                                            <div class="footerAddress">Insurgentes Sur No. 1971, Col. Guadalupe Inn  C.P. 01020<br>México D.F.  Teléfono:14-54-60-00 <br><a target="_parent" href="mailto:info@cnbv.gob.mx">Comentarios sobre este Sitio de Internet</a> <a target="_parent" href="mailto:info@cnbv.gob.mx"><img width="14" height="10" style="border: 0" alt="Comentarios y Sugerencias sobre éste sitio de Internet" src="/Style%20Library/CNBV/imagenes/contacto_webmaster.png" /> </a>
+                                            </div>
+                                            </div>
+                                            
+                                            
+
+                                            
+                                            </div><div class="ms-tableCell ms-verticalAlignTop"><div class="ms-hide"></div></div></div></div>
+                                            </div></div></div></div>
+                                            
+                                             <!-- Start Footer -->
+<div >
+	<div>
+		<footer class="main-footer">
+	<div class="list-info">
+		<div class="container">
+
+				<div class="col-sm-3">
+						<img src="https://framework-gb.cdn.gob.mx/landing/img/logofooter.svg" href="/" alt="logo gobierno de méxico" class="logo_footer" style="max-width: 100%; margin-left: -20%;   margin-top: 27%;">
+						</div>
+				<div class="col-sm-3">
+					<h2>Enlaces</h2>
+					<ul>
+					<li><a href="http://www.participa.gob.mx">Participa</a></li>
+					<li><a href="https://datos.gob.mx/">Datos</a></li>
+						<li><a href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Publicaciones Oficiales</a></li>
+	                            <li><a class="footer" href="http://portaltransparencia.gob.mx/buscador/search/search.do?method=begin&amp;searchBy=0&amp;idDependenciaZoom=06100" id="Transparencia" target="blank" title="Enlace abre en ventana nueva">Portal de Obligaciones de Transparencia</a></li>
+						<li><a class="footer" id="Infomex" href="https://www.infomex.org.mx/gobiernofederal/home.action" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Sistema Infomex</a></li>
+						<li><a class="footer" id="INAI" href="http://www.inai.org.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">INAI</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-3">
+					<h2>¿Qué es gob.mx?</h2>
+					<p>Es el portal único de trámites, información y participación ciudadana. <a href="/que-es-gobmx">Leer más</a></p>
+					<ul>
+
+						<li><a href="/temas">Temas</a></li>
+							
+						<li><a href="/accesibilidad">Declaración de Accesibilidad</a></li>
+						<li><a href="/privacidadintegral">Aviso de privacidad integral</a></li>
+            			<li><a href="/privacidadsimplificado">Aviso de privacidad simplificado</a></li>
+						<li><a href="/terminos">Términos y Condiciones</a></li>
+						<li><a href="/terminos#medidas-seguridad-informacion">Política de seguridad</a></li>
+						<li><a class="footer" id="Marco Juridico" href="http://www.ordenjuridico.gob.mx" target="_blank" rel="noopener" title="Enlace abre en ventana nueva">Marco Jurídico</a></li>
+						<li><a href="/sitemap">Mapa de sitio</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-3">
+                                  <h2>Contacto</h2>
+				  <p>Dudas e información a<br>
+				    <a href="mailto:info@cnbv.gob.mx"> info@cnbv.gob.mx</a>
+
+				    <!------------------------------------------------------------------------------------------>
+                                    <!-- <a href="mailto:gobmx@funcionpublica.gob.mx"> gobmx@funcionpublica.gob.mx</a>        -->
+                                    <!------------------------------------------------------------------------------------------>
+
+				  </p>
+						<h2>Síguenos en</h2>
+					<ul class="list-inline">
+						<li>
+			              <a id="Facebook" href="https://www.facebook.com/gobmexico" target="_blank" rel="noopener" class="sendEst share-info footer" title="enlace a facebook abre en una nueva ventana">
+			                <img alt="Facebook" src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png">
+			              </a>
+			            </li>
+						<li>
+			              <a id="Twitter" href="https://twitter.com/GobiernoMX" target="_blank" rel="noopener" class="sendEst share-info footer" title="Enlace a twitter abre en una nueva ventana">
+			                <img alt="Twitter" src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png">
+			              </a>
+			            </li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	
+</footer>
+	</div>
+</div>
+<!-- End Footer --> 
+                                            </div></div></div>
+        
+        
+        
+        
+    <div id="DeltaFormDigest">
+<script type="text/javascript">//<![CDATA[
+        var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
+        if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
+            (formDigestElement.value == null) || (formDigestElement.value.length <= 0)))
+        {
+            formDigestElement.value = '0xFCDBBF353FA8EB846DE7E6AE044B5F33104686D85C3F67849525FC0B7E528B671812F4F9E2AEBDB5ED7EA6BDB082E6803E4511C0396A099DAE17921F5EA1BFB8,09 Nov 2026 17:23:51 -0000';_spPageContextInfo.updateFormDigestPageLoaded = new Date();
+        }
+        //]]>
+        </script>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var _spFormDigestRefreshInterval = 1440000; IsSPSocialSwitchEnabled = function() { return true; };var _fV4UI = true;
+function _RegisterWebPartPageCUI()
+{
+    var initInfo = {editable: false,isEditMode: false,allowWebPartAdder: false,listId: "{fbabb97a-cb41-450d-83a1-307292fe2948}",itemId: 4,recycleBinEnabled: true,enableMinorVersioning: true,enableModeration: false,forceCheckout: true,rootFolderUrl: "\u002fPaginas",itemPermissions:{High:16,Low:196673}};
+    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
+    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
+    var hid;
+    hid = document.getElementById("_wpSelected");
+    if (hid != null)
+    {
+        var wpid = hid.value;
+        if (wpid.length > 0)
+        {
+            var zc = document.getElementById(wpid);
+            if (zc != null)
+                wpcomp.selectWebPart(zc, false);
+        }
+    }
+    hid = document.getElementById("_wzSelected");
+    if (hid != null)
+    {
+        var wzid = hid.value;
+        if (wzid.length > 0)
+        {
+            wpcomp.selectWebPartZone(null, wzid);
+        }
+    }
+};
+function __RegisterWebPartPageCUI() {
+ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");}
+_spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI");var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
+var g_clientIdDeltaPlaceHolderUtilityContent = "DeltaPlaceHolderUtilityContent";
+//]]>
+</script>
+</form>
+	
+	
+	
+	
+	
+<span id="DeltaPlaceHolderUtilityContent"></span>
+
+	
+	
+		
+ 
+
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-10080944-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
+	
+
+	</body>
+</html>

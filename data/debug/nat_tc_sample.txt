@@ -1,0 +1,16 @@
+url: https://www.tcifsc.tc/banks-licensed-banks
+bytes: 306562  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Website', 'email': None, 'phone': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Address', 'Website']
+data rows: 6  kept: 6
+type values: [('', 6)]
+first lines:
+'<!doctype html>'
+'<html lang="en" dir="ltr">'
+'    <head>'
+'        <!-- Google Tag Manager -->'
+'        <script>'
+'        setTimeout(function () {        '
+"        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
+"        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"

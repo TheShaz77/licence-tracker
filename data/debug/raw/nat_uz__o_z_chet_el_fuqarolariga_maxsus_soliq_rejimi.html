@@ -1,0 +1,3620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="9nhpnW48mRKQtWz58m2TFuwRwdeeKioJDfxCwNv7">
+    <title>Oʼzbekiston Respublikasi Istiqbolli loyihalar milliy agentligi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://napp.uz/dist/styles.css"/>
+    <script src="https://napp.uz/plugins/jquery/jquery.min.js"></script>
+    <script src="https://napp.uz/js/tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="https://napp.uz/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://napp.uz/plugins/select2/css/select2.min.css">
+    <script src="https://napp.uz/dist/david-ai.min.js"></script>
+    <script src="https://napp.uz/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+    <style>
+        .mobile-menu {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-menu.active {
+          transform: translateX(0);
+        }
+
+        .overlay {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.3s ease-in-out;
+        }
+
+        .overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        #burger-menu.active .burger-line-1 {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        #burger-menu.active .burger-line-2 {
+          opacity: 0;
+        }
+
+        #burger-menu.active .burger-line-3 {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .carousel-track {
+        transition: transform 0.5s ease-in-out;
+      }
+      </style>
+      <style>
+        .theme-bw {
+          filter: grayscale(100%);
+        }
+
+        .theme-dark {
+          background-color: #121212 !important;
+          color: white !important;
+        }
+      </style>
+      <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+        if (localStorage.getItem('theme') === 'dark') {
+              document.documentElement.classList.add('dark');
+          }
+    </script>
+
+  </head>
+  <body class="font-body dark:bg-[rgba(8,16,27)] dark:text-white transition-colors duration-300">
+        <div id="speaker">
+      <button onclick="speak_text('oz')">
+        <img src="https://napp.uz/img/speaker.svg" alt="speaker">
+      </button>
+    </div>
+    <style type="text/css">
+        #speaker {
+            position: fixed;
+            display: none;
+            z-index: 20;
+        }
+        #speaker button {
+            border: 1px solid rgba(4, 93, 162, 1);
+            background: #fff;
+            border-radius: 5px;
+        }
+        #speaker button img {}
+    </style>
+
+    <div id="menu-overlay"
+  class="fixed inset-0 bg-black/50 z-30 hidden transition-opacity duration-300">
+</div>
+
+<!-- Mobile sidebar -->
+<div id="mobile-menu"
+  class="mobile-menu fixed top-0 left-0 h-screen w-[90%] max-w-[90%]
+            dark:bg-[rgba(8,16,27)] bg-white z-40 shadow-2xl
+            flex flex-col justify-between
+            overflow-y-auto
+            -translate-x-full transition-transform duration-300">
+
+  <div>
+
+    <!-- Sidebar header -->
+    <div class="p-4 dark:bg-[rgba(8,16,27)] bg-[rgba(237,237,237,1)]
+                dark:text-secondary text-primary flex justify-between items-center
+                border-b border-gray-200 dark:border-gray-700">
+
+      <span class="text-lg font-bold">
+        Menu
+      </span>
+
+      <button id="close-menu" type="button" class="p-2" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile navigation -->
+    <ul class="menu block z-20 w-full relative dark:bg-[#081e3f4d]">
+
+      
+      
+      
+      
+
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <!-- Main dropdown button -->
+        <button type="button"
+          onclick="toggleMobileMenu('navmenu-1')"
+          class="w-full flex items-center justify-between
+                           py-4 px-4 text-left
+                           text-slate-900 dark:text-white
+                           hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          <span>Agentlik</span>
+
+          <svg id="arrow-navmenu-1"
+            class="w-5 h-5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7" />
+          </svg>
+
+        </button>
+
+
+        <!-- First submenu -->
+        <div id="navmenu-1"
+          class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+          <ul>
+
+            
+            
+            
+            
+            <li>
+              <a href="/pages/malumot"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Agentlik haqida
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/leader/boshqaruv"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Rahbariyat
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/leader/markaziy-apparat"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Markaziy apparat
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/leader/maslahatlashuv-kengashi"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Maslahatlashuv kengashi
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/pages/agentlikdagi-korrupsiyaga-qarshi-kurash"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Korrupsiyaga qarshi kurashish
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/vacancy"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Bo‘sh ish o‘rinlari
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/pages/agentlikga-yosh-mutaxassislarni-tanlash-dasturi"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Lokal aktlar
+
+              </a>
+            </li>
+
+            
+            
+            
+          </ul>
+
+        </div>
+
+      </li>
+
+      
+      
+      
+      
+      
+
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <!-- Main dropdown button -->
+        <button type="button"
+          onclick="toggleMobileMenu('navmenu-2')"
+          class="w-full flex items-center justify-between
+                           py-4 px-4 text-left
+                           text-slate-900 dark:text-white
+                           hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          <span>Faoliyat</span>
+
+          <svg id="arrow-navmenu-2"
+            class="w-5 h-5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7" />
+          </svg>
+
+        </button>
+
+
+        <!-- First submenu -->
+        <div id="navmenu-2"
+          class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+          <ul>
+
+            
+            
+            
+            
+            <li>
+              <a href="/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Chet el fuqarolariga maxsus soliq rejimini taqdim etish uchun maxsus vakolatli kripto-birjalar ro‘yxati
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-2-1')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Kripto-aktivlar aylanmasi</span>
+
+                <svg id="arrow-submenu-2-1"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-2-1"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/mining"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Mayning
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/service-providers"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Xizmatlar provayderlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/distributed-ledger-technology"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Ma’lumotlarning taqsimlangan reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+
+                  <button type="button"
+                    onclick="toggleMobileMenu('childmenu-2-1-3')"
+                    class="w-full flex items-center justify-between 
+                                             py-3 px-3 text-left
+                                             text-sm
+                                             text-slate-900 dark:text-white 
+                                             hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    <span class="w-[90%]">Litsenziyalar va ruxsat etish xususiyatiga ega hujjatlarning elektron reyestri</span>
+
+                    <svg id="arrow-childmenu-2-1-3"
+                      class="w-4 h-4 transition-transform duration-200"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24">
+                      <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m19 9-7 7-7-7" />
+                    </svg>
+
+                  </button>
+
+                  <ul id="childmenu-2-1-3"
+                    class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+                    
+                    <li>
+                      <a href="/pages/ermap"
+                        target="_self"
+                        class="block py-3 px-12 text-sm
+                                              text-slate-700 dark:text-white
+                                              hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                        Mayningni amalga oshirish uchun ruxsatnomalarning elektron reyestri
+
+                      </a>
+                    </li>
+
+                    
+                    <li>
+                      <a href="/pages/erlsp"
+                        target="_self"
+                        class="block py-3 px-12 text-sm
+                                              text-slate-700 dark:text-white
+                                              hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                        Kripto-aktivlar aylanmasi sohasidagi xizmatlar provayderlar faoliyatini amalga oshirish uchun litsenziyalarning elektron reyestri
+
+                      </a>
+                    </li>
+
+                    
+                  </ul>
+
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/special-regime-participants-registry"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kripto-aktivlar aylanmasi sohasidagi maxsus rejim ishtirokchilari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/caer"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kripto-aktivlarning elektron reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/rpssr"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Barqaror tokenlar bo‘yicha maxsus huquqiy rejim ishtirokchilari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/stablecoin-registry"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Barqaror tokenlarning reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-2-2')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Kapital bozori</span>
+
+                <svg id="arrow-submenu-2-2"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-2-2"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/qimmatli-qog-ozlar-bozorida-faoliyatni-litsenziyalash"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qimmatli qog‘ozlar bozorida faoliyatni litsenziyalash
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/qimmatli-qog-ozlar-bozori-professional-ishtirokchilarining-reestri"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qimmatli qog&#039;ozlar bozori professional ishtirokchilarining reestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/qimmatli-qog-ozlar-bilan-operatsiyalarni-amalga-oshirish-huquqini-beruvchi-malaka-sertifikatiga-ega-bo-lgan-jismoniy-shaxslar-reyestri"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qimmatli qog‘ozlar bilan operatsiyalarni amalga oshirish huquqini beruvchi malaka sertifikatiga ega bo‘lgan jismoniy shaxslar reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/davlat-ro-yxatidan-o-tkazilgan-qimmatli-qog-ozlar-chiqarilishlari-reyestri"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Davlat ro‘yxatidan o‘tkazilgan qimmatli qog‘ozlar chiqarilishlari Reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/kapital-bozori-sohasidagi-maxsus-rejim-ishtirokchilari-reyestri"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kapital bozori sohasidagi maxsus rejim ishtirokchilari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/register-of-imb"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Ipoteka obligatsiyalarini chiqarish sohasida maxsus rejim ishtirokchilarining reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/register-of-ips"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Investitsiya platformalari sohasidagi maxsus rejim ishtirokchilari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/list-of-ifis-for-bonds-issuance"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Obligatsiyalar chiqarish bo‘yicha XMI ro‘yxati
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-2-3')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Sug‘urta bozori</span>
+
+                <svg id="arrow-submenu-2-3"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-2-3"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/sug-urta-faoliyatini-litsenziyalash"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Sug‘urta faoliyatini litsenziyalash
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/statistics-and-analysis-for-im"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Statistika va tahlil
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="aktuariy-malaka-sertifikatlari-reyestri"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Aktuariy malaka sertifikatlari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/im-privacy-policy"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Maxfiylik siyosati
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/qualification-requirements"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Malaka talablari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/rating-of-insurers"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Sug‘urtalovchilar reytingi
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-2-4')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Elektron tijorat</span>
+
+                <svg id="arrow-submenu-2-4"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-2-4"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/register-of-electronic-commerce-operators"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Elektron tijorat operatorlari reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/onlayn-savdo-platformalari-faoliyatini-baholash-reytingi"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Onlayn savdo platformalari faoliyatini baholash reytingi
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/registry-of-specialized-electronic-trading-platforms"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Maxsus elektron savdo platformalari reestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/pages/ic"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Xalqaro hamkorlik
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-2-6')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Tavakkalchilikka asoslangan o‘yinlar</span>
+
+                <svg id="arrow-submenu-2-6"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-2-6"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/rbglr"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Litsenziyalar reyestri
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+          </ul>
+
+        </div>
+
+      </li>
+
+      
+      
+      
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <a href="/category/ochiq-ma-lumotlar"
+          target="_self"
+          class="block w-full py-4 px-5 text-left
+                      text-slate-900 dark:text-white
+                      hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          Ochiq ma’lumot
+
+        </a>
+
+      </li>
+
+      
+
+      
+      
+      
+      
+      
+      
+
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <!-- Main dropdown button -->
+        <button type="button"
+          onclick="toggleMobileMenu('navmenu-4')"
+          class="w-full flex items-center justify-between
+                           py-4 px-4 text-left
+                           text-slate-900 dark:text-white
+                           hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          <span>Matbuot markazi</span>
+
+          <svg id="arrow-navmenu-4"
+            class="w-5 h-5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7" />
+          </svg>
+
+        </button>
+
+
+        <!-- First submenu -->
+        <div id="navmenu-4"
+          class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+          <ul>
+
+            
+            
+            
+            
+            <li>
+              <a href="/category/yangiliklar"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Yangiliklar
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/category/e-lonlar"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                E’lonlar
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-4-2')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Bilish muhim</span>
+
+                <svg id="arrow-submenu-4-2"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-4-2"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/kripto-aktivining-aylanmasi"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kripto aktivining aylanmasi
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/kapital-bozori"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kapital bozori
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/sug-urta-bozori"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Sug&#039;urta bozori
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/elektron-tijorat"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Elektron tijorat
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+          </ul>
+
+        </div>
+
+      </li>
+
+      
+      
+      
+      
+      
+
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <!-- Main dropdown button -->
+        <button type="button"
+          onclick="toggleMobileMenu('navmenu-5')"
+          class="w-full flex items-center justify-between
+                           py-4 px-4 text-left
+                           text-slate-900 dark:text-white
+                           hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          <span>Hujjatlar</span>
+
+          <svg id="arrow-navmenu-5"
+            class="w-5 h-5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7" />
+          </svg>
+
+        </button>
+
+
+        <!-- First submenu -->
+        <div id="navmenu-5"
+          class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+          <ul>
+
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-5-0')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Kripto-aktivlar aylanmasi</span>
+
+                <svg id="arrow-submenu-5-0"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-5-0"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/category/qonunlar"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qonunlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/prezident-hujjatlari"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Prezident hujjatlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/dasturlar"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Dasturlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/idoraviy-normativ-huquqiy-hujjatlar"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Idoraviy normativ-huquqiy hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/o-z-kuchini-yo-qotgan-hujjatlar"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    O‘z kuchini yo‘qotgan normativ-huquqiy hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/reporting-forms"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Hisobot shakllari
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-5-1')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Kapital bozori</span>
+
+                <svg id="arrow-submenu-5-1"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-5-1"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/category/qonunlar-2"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qonunlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/prezident-hujjatlari-2"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Prezident hujjatlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/hukumat-qarorlari-2"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Hukumat qarorlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/Idoraviy-normativ-huquqiy-hujjatlar-2"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Idoraviy normativ-huquqiy hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/cm-reporting-forms1"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Hisobot shakllari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/internal-acts-1"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Ichki hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-5-2')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Sug‘urta bozori</span>
+
+                <svg id="arrow-submenu-5-2"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-5-2"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/category/kodekslar-va-qonunlar"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Kodekslar va qonunlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/prezident-hujjatlari-3"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Prezident hujjatlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/vazirlar-mahkamasi-qarorlari"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Hukumat qarorlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/idoraviy-normativ-huquqiy-hujjatlar-3"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Idoraviy normativ huquqiy hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/o-z-kuchini-yo-qotgan-hujjatlar-2"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    O‘z kuchini yo‘qotgan hujjatlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/pages/report-forms"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Hisobot shakllari
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-5-3')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Elektron tijorat</span>
+
+                <svg id="arrow-submenu-5-3"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-5-3"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/category/prezident-hujjatlari-4"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Prezident hujjatlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+                
+                
+                <li>
+                  <a href="/category/qonunlar-4"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Qonunlar
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+
+              <button type="button"
+                onclick="toggleMobileMenu('submenu-5-4')"
+                class="w-full flex items-center justify-between
+                                     py-3 px-3 text-left
+                                    text-sm
+                                     text-slate-900 dark:text-white
+                                     hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                <span>Lotereyalar va tavakkalchilikka asoslangan o‘yinlar</span>
+
+                <svg id="arrow-submenu-5-4"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7" />
+                </svg>
+
+              </button>
+
+
+              <!-- Second submenu -->
+              <ul id="submenu-5-4"
+                class="hidden bg-white dark:bg-[#081e3f4d]">
+
+                
+                
+                
+                
+                <li>
+                  <a href="/category/prezident-hujjatlari-5"
+                    target="_self"
+                    class="block py-3 px-9 text-sm
+                                        text-slate-700 dark:text-white
+                                        hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                    Prezident hujjatlari
+
+                  </a>
+                </li>
+
+                
+                
+                
+              </ul>
+
+            </li>
+
+            
+            
+            
+          </ul>
+
+        </div>
+
+      </li>
+
+      
+      
+      
+      
+      
+
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <!-- Main dropdown button -->
+        <button type="button"
+          onclick="toggleMobileMenu('navmenu-6')"
+          class="w-full flex items-center justify-between
+                           py-4 px-4 text-left
+                           text-slate-900 dark:text-white
+                           hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          <span>Murojaatlar</span>
+
+          <svg id="arrow-navmenu-6"
+            class="w-5 h-5 transition-transform duration-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7" />
+          </svg>
+
+        </button>
+
+
+        <!-- First submenu -->
+        <div id="navmenu-6"
+          class="hidden bg-gray-50 dark:bg-[#081e3f4d]">
+
+          <ul>
+
+            
+            
+            
+            
+            <li>
+              <a href="/corruption"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Agentlik xodimlarining korrupsiyasining oldini olish bo‘yicha murojaat
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/pages/o-zbekiston-respublikasining-qonuni-jismoniy-va-yuridik-shaxslarning-murojaatlari-to-g-risida"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Fuqarolar murojaati haqidagi qonun
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/appeal"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Murojaatni yuborish
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/status"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Arizaning holatini tekshirish
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/reception"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Fuqarolarni qabul qilish jadvali
+
+              </a>
+            </li>
+
+            
+            
+            
+            
+            
+            <li>
+              <a href="/pages/murojaatlarning-ko-rib-chiqilishi-to-g-risida-ma-lumot"
+                target="_self"
+                class="block py-3 px-7 text-sm
+                                text-slate-700 dark:text-white
+                                hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+                Murojaatlarning ko‘rib chiqilishi to‘g‘risida ma&#039;lumot
+
+              </a>
+            </li>
+
+            
+            
+            
+          </ul>
+
+        </div>
+
+      </li>
+
+      
+      
+      
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <a href="/contact"
+          target="_self"
+          class="block w-full py-4 px-5 text-left
+                      text-slate-900 dark:text-white
+                      hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          Bog‘lanish
+
+        </a>
+
+      </li>
+
+      
+
+      
+      
+      
+      
+      
+      
+      <li class="relative w-full border-b border-gray-200 dark:border-gray-700">
+
+        <a href="/pages/faq"
+          target="_self"
+          class="block w-full py-4 px-5 text-left
+                      text-slate-900 dark:text-white
+                      hover:bg-gray-100 dark:hover:bg-[#102642]">
+
+          FAQ
+
+        </a>
+
+      </li>
+
+      
+
+      
+      
+      
+      
+    </ul>
+
+  </div>
+
+
+  <!-- Mobile bottom controls -->
+  <div class="flex items-center justify-end gap-5 p-6">
+
+    
+
+    
+    <div class="dark/light-mode border-2 border-secondary text-secondary
+                  rounded-md p-2 hover:bg-secondary hover:text-white hover:cursor-pointer">
+
+      <a href="https://napp.uz/oz/oneId">Kirish</a>
+
+    </div>
+
+    
+
+    <div class="theme-toggle dark/light-mode border-2 border-secondary
+                rounded-md p-2 hover:bg-secondary hover:text-white hover:cursor-pointer">
+
+      <img src="https://napp.uz/src/images/moon.svg"
+        alt="dark/lightmode"
+        class="dark:filter dark:invert dark:brightness-0" />
+
+    </div>
+
+
+    <div class="relative accessibilityToggle border-2 border-secondary
+                rounded-md p-2 hover:bg-secondary hover:text-white hover:cursor-pointer"
+      data-target="#accessibilityMenu2">
+
+      <img src="https://napp.uz/src/images/eye.svg"
+        alt="special-mode"
+        class="dark:filter dark:invert dark:brightness-0" />
+
+      <div id="accessibilityMenu2"
+        class="absolute accessibilityMenu right-0 bottom-[100%] mt-2 w-64
+                  bg-white border rounded-lg shadow-lg p-4 hidden z-50">
+
+        <div class="mb-4">
+          <h3 class="text-sm font-semibold text-gray-700">
+            Ko&#039;rinish
+          </h3>
+
+          <div class="flex gap-2 mt-2">
+            <button onclick="setTheme('normal')"
+              class="bg-gray-200 px-3 py-1 rounded">
+              Normal
+            </button>
+
+            <button onclick="setTheme('bw')"
+              class="bg-black text-white px-3 py-1 rounded">
+              Black-White
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-gray-700">
+            Shrift o&#039;lchami
+          </h3>
+
+          <div class="sliderText text-gray-700">
+            <span class="range">0</span>% ga kattalashtirish          </div>
+
+          <input type="range"
+            min="14"
+            max="24"
+            class="fontSizeSlider w-full mt-2">
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="dropdown" data-dui-placement="top">
+
+      <button data-dui-toggle="dropdown"
+        class="lang border-2 border-secondary rounded-md p-2
+                     text-white bg-secondary hover:cursor-pointer
+                     hover:text-secondary hover:bg-white">
+
+        OZ
+
+      </button>
+
+      <div data-dui-role="menu"
+        class="hidden absolute right-0 w-[44px] bg-white dark:bg-[#d6c980]
+                  border rounded-lg shadow-lg z-40 text-center">
+
+        <ul class="py-2">
+
+          
+          
+          <li>
+            <a role="menuitem"
+              tabindex="1"
+              id="menu-item-0"
+              hreflang="uz"
+              href="https://napp.uz/uz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens"
+              class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">
+
+              Уз
+
+            </a>
+          </li>
+
+          
+          <li>
+            <a role="menuitem"
+              tabindex="1"
+              id="menu-item-1"
+              hreflang="oz"
+              href="https://napp.uz/oz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens"
+              class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">
+
+              O‘z
+
+            </a>
+          </li>
+
+          
+          <li>
+            <a role="menuitem"
+              tabindex="1"
+              id="menu-item-2"
+              hreflang="ru"
+              href="https://napp.uz/ru/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens"
+              class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">
+
+              Ру
+
+            </a>
+          </li>
+
+          
+          <li>
+            <a role="menuitem"
+              tabindex="1"
+              id="menu-item-3"
+              hreflang="en"
+              href="https://napp.uz/en/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens"
+              class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">
+
+              En
+
+            </a>
+          </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<header class="flex items-center justify-between container-full 2xl:container mx-auto my-6 px-4 md:px-8 2xl:px-0">
+  <button id="burger-menu" class="flex-col justify-center items-center ml-4 w-10 h-10 p-2 group block lg:hidden" aria-label="Menu">
+    <span class="w-6 h-0.5 bg-[rgba(41,45,50,1)] dark:bg-white group-hover:bg-[#d6c980] transition-all duration-300 ease-in-out transform origin-center burger-line-1 block"></span>
+    <span class="w-6 h-0.5 bg-[rgba(41,45,50,1)] dark:bg-white group-hover:bg-[#d6c980] my-1.5 transition-all duration-300 ease-in-out burger-line-2 block"></span>
+    <span class="w-6 h-0.5 bg-[rgba(41,45,50,1)] dark:bg-white group-hover:bg-[#d6c980] transition-all duration-300 ease-in-out transform origin-center burger-line-3 block"></span>
+  </button>
+  <a href="/"><img src="https://napp.uz/src/images/logo.svg" width="60" alt="NAPP" /> </a>
+  <div class="flex items-center lg:ml-4">
+    <form action="https://napp.uz/oz/search" method="get">
+      <input type="hidden" name="_token" value="9nhpnW48mRKQtWz58m2TFuwRwdeeKioJDfxCwNv7">      <div class="relative lg:w-[430px] sm:w-[300px] w-[220px] lg:block hidden">
+        <input
+          type="text"
+          id="search"
+          name="search"
+          class="block w-full p-4 ps-5 text-sm text-gray-900 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#081e3f4d] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Qidirish"
+          required />
+        <button class="block absolute inset-y-0 end-5 flex items-center z-2 ps-3" type="submit">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+              stroke="#3F3F3F"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M22 22L20 20"
+              stroke="#3F3F3F"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <div class="relative block lg:hidden">
+        <button id="searchBtn" class="p-2 bg-white rounded-full shadow hover:bg-gray-100 transition">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+              stroke="#3F3F3F"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path
+              d="M22 22L20 20"
+              stroke="#3F3F3F"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Qidirish"
+          class="absolute right-[100%] top-1/2 -translate-y-1/2 w-0 opacity-0 px-4 py-2 bg-white border border-gray-300 rounded-full shadow focus:outline-none focus:ring transition-all duration-300 z-10" />
+      </div>
+    </form>
+    <div class="hidden items-center lg:flex gap-5 ml-5">
+                  <div id="loginButton" class="login-link dark/light-mode border-2 border-secondary rounded-md p-2 text-primary dark:text-white hover:bg-secondary hover:text-white hover:cursor-pointer">
+        <a href="https://napp.uz/oz/oneId" class="">Kirish</a>
+      </div>
+      
+      <div class="theme-toggle dark/light-mode border-2 border-secondary rounded-md p-2 hover:bg-secondary hover:text-white hover:cursor-pointer">
+        <img src="https://napp.uz/src/images/moon.svg" class="dark:filter dark:invert dark:brightness-0" alt="dark/lightmode" />
+      </div>
+      <div class="relative accessibilityToggle special-view-mode border-2 border-secondary rounded-md p-2 hover:bg-secondary hover:cursor-pointer" data-target="#accessibilityMenu1">
+        <img src="https://napp.uz/src/images/eye.svg" class="dark:filter dark:invert dark:brightness-0" alt="special-mode" />
+        <div id="accessibilityMenu1" class="absolute accessibilityMenu right-0 mt-2 w-64 bg-white border rounded-lg shadow-lg p-4 hidden z-50">
+          <div class="mb-4">
+            <h3 class="text-sm font-semibold text-gray-700">Ko&#039;rinish</h3>
+            <div class="flex gap-2 mt-2">
+              <button onclick="setTheme('normal')" class="bg-gray-200 px-3 py-1 rounded">Normal</button>
+              <button onclick="setTheme('bw')" class="bg-black text-white px-3 py-1 rounded">Black-White</button>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-gray-700">Shrift o&#039;lchami</h3>
+            <div class="sliderText"><span class="range">0</span>% ga kattalashtirish</div>
+            <input type="range" class="fontSizeSlider w-full" min="14" max="24">
+          </div>
+        </div>
+      </div>
+      <div class="relative">
+        <button id="dropdownButton" class="lang border-2 border-secondary rounded-md p-2 text-white bg-secondary hover:cursor-pointer hover:text-secondary hover:bg-white focus:outline-none">OZ</button>
+        <div id="dropdownMenu" class="hidden absolute right-0 w-full bg-white dark:bg-[#d6c980] border rounded-lg shadow-lg z-40 text-center">
+          <ul class="py-2">
+                                    <li><a role="menuitem" tabindex="1" id="menu-item-0" hreflang="uz" href="https://napp.uz/uz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">Уз</a></li>
+                        <li><a role="menuitem" tabindex="1" id="menu-item-1" hreflang="oz" href="https://napp.uz/oz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">O‘z</a></li>
+                        <li><a role="menuitem" tabindex="1" id="menu-item-2" hreflang="ru" href="https://napp.uz/ru/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">Ру</a></li>
+                        <li><a role="menuitem" tabindex="1" id="menu-item-3" hreflang="en" href="https://napp.uz/en/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" class="block px-2 py-2 hover:bg-gray-100 dark:hover:text-secondary">En</a></li>
+                      </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="relative dark:bg-[#081e3f4d] bg-primary text-white">
+  <div class="absolute z-10 inset-0 bg-[-15%_50%] bg-no-repeat bg-[length:150%_150%] opacity-5 bg-[url('/src/images/logo-without-text.svg')]"></div>
+  <div class="flex flex-col items-start relative container-full 2xl:container mx-auto px-4 md:px-8 2xl:px-0">
+    <p class="pt-6 lg:pt-10 lg:text-[26px] text-[18px] w-11/12 leading-7">
+      <strong>O‘zbekiston Respublikasi Istiqbolli loyihalar milliy agentligi</strong> - <br> kripto-aktivlar aylanmasi, kapital bozori, sug‘urta, elektron tijorat, lotereya tashkil etish va bukmekerlik faoliyati sohalarini tartibga solish, litsenziyalash va ruxsat berish tartib-taomillarini amalga oshirish bo‘yicha vakolatli davlat tashkiloti.
+    </p>
+    <a href="/pages/malumot" class="flex z-20 items-center px-3 py-4 my-10 bg-transparent border border-[1px] border-white rounded-md">Nima bilan shug‘ullanamiz <img class="ml-3" src="https://napp.uz/src/images/arrow-right.svg" alt="arrow-right" /></a>
+
+    <ul class="menu hidden lg:flex z-20 justify-between flex-wrap w-full relative">
+                              <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4">
+        <button onclick="toggleDesktopMenu('topmenu-1')" class="block py-2 2xl:px-6 px-3 w-full">
+          Agentlik
+          <svg class="inline-block w-[14px] h-[14px] text-gray-800 dark:text-white w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 9-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="desktop-menu">
+          <div id="topmenu-1-content" class="hidden bg-white dark:bg-slate-900 drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] absolute">
+            <ul>
+                                                        <li><a href="/pages/malumot" target="_self" class="block py-2 px-4 dark:text-white">Agentlik haqida</a></li>
+                                                                      <li><a href="/leader/boshqaruv" target="_self" class="block py-2 px-4 dark:text-white">Rahbariyat</a></li>
+                                                                      <li><a href="/leader/markaziy-apparat" target="_self" class="block py-2 px-4 dark:text-white">Markaziy apparat</a></li>
+                                                                      <li><a href="/leader/maslahatlashuv-kengashi" target="_self" class="block py-2 px-4 dark:text-white">Maslahatlashuv kengashi</a></li>
+                                                                      <li><a href="/pages/agentlikdagi-korrupsiyaga-qarshi-kurash" target="_self" class="block py-2 px-4 dark:text-white">Korrupsiyaga qarshi kurashish</a></li>
+                                                                      <li><a href="/vacancy" target="_self" class="block py-2 px-4 dark:text-white">Bo‘sh ish o‘rinlari</a></li>
+                                                                      <li><a href="/pages/agentlikga-yosh-mutaxassislarni-tanlash-dasturi" target="_self" class="block py-2 px-4 dark:text-white">Lokal aktlar</a></li>
+                                        </ul>
+          </div>
+        </div>
+      </li>
+                                    <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4">
+        <button onclick="toggleDesktopMenu('topmenu-2')" class="block py-2 2xl:px-6 px-3 w-full">
+          Faoliyat
+          <svg class="inline-block w-[14px] h-[14px] text-gray-800 dark:text-white w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 9-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="desktop-menu">
+          <div id="topmenu-2-content" class="hidden bg-white dark:bg-slate-900 drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] absolute">
+            <ul>
+                                                        <li><a href="/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" target="_self" class="block py-2 px-4 dark:text-white">Chet el fuqarolariga maxsus soliq rejimini taqdim etish uchun maxsus vakolatli kripto-birjalar ro‘yxati</a></li>
+                                                                      <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Kripto-aktivlar aylanmasi <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/mining" target="_self" class="dark:text-white">Mayning</a></li>
+                                                                                          <li><a href="/pages/service-providers" target="_self" class="dark:text-white">Xizmatlar provayderlari</a></li>
+                                                                                          <li><a href="/pages/distributed-ledger-technology" target="_self" class="dark:text-white">Ma’lumotlarning taqsimlangan reyestri</a></li>
+                                                                        <li class="relative"><a href="#" class="dark:text-white">Litsenziyalar va ruxsat etish xususiyatiga ega hujjatlarning elektron reyestri</a>
+                    <ul class="hidden bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_submenu z-40 ">
+                                            <li><a href="/pages/ermap" target="_self" class="dark:text-white">Mayningni amalga oshirish uchun ruxsatnomalarning elektron reyestri</a></li>
+                                            <li><a href="/pages/erlsp" target="_self" class="dark:text-white">Kripto-aktivlar aylanmasi sohasidagi xizmatlar provayderlar faoliyatini amalga oshirish uchun litsenziyalarning elektron reyestri</a></li>
+                                          </ul>
+                  </li>
+                                                                                                            <li><a href="/pages/special-regime-participants-registry" target="_self" class="dark:text-white">Kripto-aktivlar aylanmasi sohasidagi maxsus rejim ishtirokchilari reyestri</a></li>
+                                                                                          <li><a href="/pages/caer" target="_self" class="dark:text-white">Kripto-aktivlarning elektron reyestri</a></li>
+                                                                                          <li><a href="/pages/rpssr" target="_self" class="dark:text-white">Barqaror tokenlar bo‘yicha maxsus huquqiy rejim ishtirokchilari reyestri</a></li>
+                                                                                          <li><a href="/pages/stablecoin-registry" target="_self" class="dark:text-white">Barqaror tokenlarning reyestri</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Kapital bozori <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/qimmatli-qog-ozlar-bozorida-faoliyatni-litsenziyalash" target="_self" class="dark:text-white">Qimmatli qog‘ozlar bozorida faoliyatni litsenziyalash</a></li>
+                                                                                          <li><a href="/pages/qimmatli-qog-ozlar-bozori-professional-ishtirokchilarining-reestri" target="_self" class="dark:text-white">Qimmatli qog&#039;ozlar bozori professional ishtirokchilarining reestri</a></li>
+                                                                                          <li><a href="/pages/qimmatli-qog-ozlar-bilan-operatsiyalarni-amalga-oshirish-huquqini-beruvchi-malaka-sertifikatiga-ega-bo-lgan-jismoniy-shaxslar-reyestri" target="_self" class="dark:text-white">Qimmatli qog‘ozlar bilan operatsiyalarni amalga oshirish huquqini beruvchi malaka sertifikatiga ega bo‘lgan jismoniy shaxslar reyestri</a></li>
+                                                                                          <li><a href="/pages/davlat-ro-yxatidan-o-tkazilgan-qimmatli-qog-ozlar-chiqarilishlari-reyestri" target="_self" class="dark:text-white">Davlat ro‘yxatidan o‘tkazilgan qimmatli qog‘ozlar chiqarilishlari Reyestri</a></li>
+                                                                                          <li><a href="/pages/kapital-bozori-sohasidagi-maxsus-rejim-ishtirokchilari-reyestri" target="_self" class="dark:text-white">Kapital bozori sohasidagi maxsus rejim ishtirokchilari reyestri</a></li>
+                                                                                          <li><a href="/pages/register-of-imb" target="_self" class="dark:text-white">Ipoteka obligatsiyalarini chiqarish sohasida maxsus rejim ishtirokchilarining reyestri</a></li>
+                                                                                          <li><a href="/pages/register-of-ips" target="_self" class="dark:text-white">Investitsiya platformalari sohasidagi maxsus rejim ishtirokchilari reyestri</a></li>
+                                                                                          <li><a href="/pages/list-of-ifis-for-bonds-issuance" target="_self" class="dark:text-white">Obligatsiyalar chiqarish bo‘yicha XMI ro‘yxati</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Sug‘urta bozori <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/sug-urta-faoliyatini-litsenziyalash" target="_self" class="dark:text-white">Sug‘urta faoliyatini litsenziyalash</a></li>
+                                                                                          <li><a href="/pages/statistics-and-analysis-for-im" target="_self" class="dark:text-white">Statistika va tahlil</a></li>
+                                                                                          <li><a href="aktuariy-malaka-sertifikatlari-reyestri" target="_self" class="dark:text-white">Aktuariy malaka sertifikatlari reyestri</a></li>
+                                                                                          <li><a href="/pages/im-privacy-policy" target="_self" class="dark:text-white">Maxfiylik siyosati</a></li>
+                                                                                          <li><a href="/pages/qualification-requirements" target="_self" class="dark:text-white">Malaka talablari</a></li>
+                                                                                          <li><a href="/pages/rating-of-insurers" target="_self" class="dark:text-white">Sug‘urtalovchilar reytingi</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Elektron tijorat <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/register-of-electronic-commerce-operators" target="_self" class="dark:text-white">Elektron tijorat operatorlari reyestri</a></li>
+                                                                                          <li><a href="/pages/onlayn-savdo-platformalari-faoliyatini-baholash-reytingi" target="_self" class="dark:text-white">Onlayn savdo platformalari faoliyatini baholash reytingi</a></li>
+                                                                                          <li><a href="/pages/registry-of-specialized-electronic-trading-platforms" target="_self" class="dark:text-white">Maxsus elektron savdo platformalari reestri</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li><a href="/pages/ic" target="_self" class="block py-2 px-4 dark:text-white">Xalqaro hamkorlik</a></li>
+                                                                      <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Tavakkalchilikka asoslangan o‘yinlar <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/rbglr" target="_self" class="dark:text-white">Litsenziyalar reyestri</a></li>
+                                                    </ul>
+              </li>
+                                                                    </ul>
+          </div>
+        </div>
+      </li>
+                              <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4 text-center">
+        <a href="/category/ochiq-ma-lumotlar" target="_self" class="block py-2 2xl:px-6 px-3 w-full">Ochiq ma’lumot</a>
+      </li>
+                                          <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4">
+        <button onclick="toggleDesktopMenu('topmenu-4')" class="block py-2 2xl:px-6 px-3 w-full">
+          Matbuot markazi
+          <svg class="inline-block w-[14px] h-[14px] text-gray-800 dark:text-white w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 9-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="desktop-menu">
+          <div id="topmenu-4-content" class="hidden bg-white dark:bg-slate-900 drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] absolute">
+            <ul>
+                                                        <li><a href="/category/yangiliklar" target="_self" class="block py-2 px-4 dark:text-white">Yangiliklar</a></li>
+                                                                      <li><a href="/category/e-lonlar" target="_self" class="block py-2 px-4 dark:text-white">E’lonlar</a></li>
+                                                                      <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Bilish muhim <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/pages/kripto-aktivining-aylanmasi" target="_self" class="dark:text-white">Kripto aktivining aylanmasi</a></li>
+                                                                                          <li><a href="/pages/kapital-bozori" target="_self" class="dark:text-white">Kapital bozori</a></li>
+                                                                                          <li><a href="/pages/sug-urta-bozori" target="_self" class="dark:text-white">Sug&#039;urta bozori</a></li>
+                                                                                          <li><a href="/pages/elektron-tijorat" target="_self" class="dark:text-white">Elektron tijorat</a></li>
+                                                    </ul>
+              </li>
+                                                                    </ul>
+          </div>
+        </div>
+      </li>
+                                    <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4">
+        <button onclick="toggleDesktopMenu('topmenu-5')" class="block py-2 2xl:px-6 px-3 w-full">
+          Hujjatlar
+          <svg class="inline-block w-[14px] h-[14px] text-gray-800 dark:text-white w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 9-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="desktop-menu">
+          <div id="topmenu-5-content" class="hidden bg-white dark:bg-slate-900 drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] absolute">
+            <ul>
+                                                        <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Kripto-aktivlar aylanmasi <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/category/qonunlar" target="_self" class="dark:text-white">Qonunlar</a></li>
+                                                                                          <li><a href="/category/prezident-hujjatlari" target="_self" class="dark:text-white">Prezident hujjatlari</a></li>
+                                                                                          <li><a href="/category/dasturlar" target="_self" class="dark:text-white">Dasturlar</a></li>
+                                                                                          <li><a href="/category/idoraviy-normativ-huquqiy-hujjatlar" target="_self" class="dark:text-white">Idoraviy normativ-huquqiy hujjatlar</a></li>
+                                                                                          <li><a href="/category/o-z-kuchini-yo-qotgan-hujjatlar" target="_self" class="dark:text-white">O‘z kuchini yo‘qotgan normativ-huquqiy hujjatlar</a></li>
+                                                                                          <li><a href="/category/reporting-forms" target="_self" class="dark:text-white">Hisobot shakllari</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Kapital bozori <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/category/qonunlar-2" target="_self" class="dark:text-white">Qonunlar</a></li>
+                                                                                          <li><a href="/category/prezident-hujjatlari-2" target="_self" class="dark:text-white">Prezident hujjatlari</a></li>
+                                                                                          <li><a href="/category/hukumat-qarorlari-2" target="_self" class="dark:text-white">Hukumat qarorlari</a></li>
+                                                                                          <li><a href="/category/Idoraviy-normativ-huquqiy-hujjatlar-2" target="_self" class="dark:text-white">Idoraviy normativ-huquqiy hujjatlar</a></li>
+                                                                                          <li><a href="/pages/cm-reporting-forms1" target="_self" class="dark:text-white">Hisobot shakllari</a></li>
+                                                                                          <li><a href="/pages/internal-acts-1" target="_self" class="dark:text-white">Ichki hujjatlar</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Sug‘urta bozori <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/category/kodekslar-va-qonunlar" target="_self" class="dark:text-white">Kodekslar va qonunlar</a></li>
+                                                                                          <li><a href="/category/prezident-hujjatlari-3" target="_self" class="dark:text-white">Prezident hujjatlari</a></li>
+                                                                                          <li><a href="/category/vazirlar-mahkamasi-qarorlari" target="_self" class="dark:text-white">Hukumat qarorlari</a></li>
+                                                                                          <li><a href="/category/idoraviy-normativ-huquqiy-hujjatlar-3" target="_self" class="dark:text-white">Idoraviy normativ huquqiy hujjatlar</a></li>
+                                                                                          <li><a href="/category/o-z-kuchini-yo-qotgan-hujjatlar-2" target="_self" class="dark:text-white">O‘z kuchini yo‘qotgan hujjatlar</a></li>
+                                                                                          <li><a href="/pages/report-forms" target="_self" class="dark:text-white">Hisobot shakllari</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Elektron tijorat <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/category/prezident-hujjatlari-4" target="_self" class="dark:text-white">Prezident hujjatlari</a></li>
+                                                                                          <li><a href="/category/qonunlar-4" target="_self" class="dark:text-white">Qonunlar</a></li>
+                                                    </ul>
+              </li>
+                                                                                                  <li class="desktop-menu relative">
+                <a href="#" class="block py-2 px-4 dark:text-white">Lotereyalar va tavakkalchilikka asoslangan o‘yinlar <img src="https://napp.uz/src/images/arrow-line-right.svg" alt="arrow-right"></a>
+                <ul class="bg-white dark:bg-slate-900 dark:text-white drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] child_menu z-40 ">
+                                                                        <li><a href="/category/prezident-hujjatlari-5" target="_self" class="dark:text-white">Prezident hujjatlari</a></li>
+                                                    </ul>
+              </li>
+                                                                    </ul>
+          </div>
+        </div>
+      </li>
+                                    <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4">
+        <button onclick="toggleDesktopMenu('topmenu-6')" class="block py-2 2xl:px-6 px-3 w-full">
+          Murojaatlar
+          <svg class="inline-block w-[14px] h-[14px] text-gray-800 dark:text-white w-[24px] h-[24px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m19 9-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="desktop-menu">
+          <div id="topmenu-6-content" class="hidden bg-white dark:bg-slate-900 drop-shadow-[0_1px_1px_rgba(118,118,118,0.73)] absolute">
+            <ul>
+                                                        <li><a href="/corruption" target="_self" class="block py-2 px-4 dark:text-white">Agentlik xodimlarining korrupsiyasining oldini olish bo‘yicha murojaat</a></li>
+                                                                      <li><a href="/pages/o-zbekiston-respublikasining-qonuni-jismoniy-va-yuridik-shaxslarning-murojaatlari-to-g-risida" target="_self" class="block py-2 px-4 dark:text-white">Fuqarolar murojaati haqidagi qonun</a></li>
+                                                                      <li><a href="/appeal" target="_self" class="block py-2 px-4 dark:text-white">Murojaatni yuborish</a></li>
+                                                                      <li><a href="/status" target="_self" class="block py-2 px-4 dark:text-white">Arizaning holatini tekshirish</a></li>
+                                                                      <li><a href="/reception" target="_self" class="block py-2 px-4 dark:text-white">Fuqarolarni qabul qilish jadvali</a></li>
+                                                                      <li><a href="/pages/murojaatlarning-ko-rib-chiqilishi-to-g-risida-ma-lumot" target="_self" class="block py-2 px-4 dark:text-white">Murojaatlarning ko‘rib chiqilishi to‘g‘risida ma&#039;lumot</a></li>
+                                        </ul>
+          </div>
+        </div>
+      </li>
+                              <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4 text-center">
+        <a href="/contact" target="_self" class="block py-2 2xl:px-6 px-3 w-full">Bog‘lanish</a>
+      </li>
+                                    <li class="block 2xl:w-[12%] rounded-t-2xl bg-[rgba(255,255,255,0.23)] active:bg-secondary lg:mb-0 mb-4 text-center">
+        <a href="/pages/faq" target="_self" class="block py-2 2xl:px-6 px-3 w-full">FAQ</a>
+      </li>
+                            </ul>
+  </div>
+</div>
+
+
+<!-- Mobile menu JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const burgerMenu = document.getElementById('burger-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    if (!burgerMenu || !mobileMenu || !closeMenu || !menuOverlay) {
+      return;
+    }
+
+    // Open sidebar
+    burgerMenu.addEventListener('click', function() {
+      mobileMenu.classList.remove('-translate-x-full');
+      menuOverlay.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    // Close sidebar
+    function closeMobileMenu() {
+      mobileMenu.classList.add('-translate-x-full');
+      menuOverlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    closeMenu.addEventListener('click', closeMobileMenu);
+    menuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close with Escape
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
+
+    // Dropdown open / close
+    window.toggleMobileMenu = function(id) {
+
+      const menu = document.getElementById(id);
+
+      if (!menu) {
+        return;
+      }
+
+      menu.classList.toggle('hidden');
+
+      const arrow = document.getElementById('arrow-' + id);
+
+      if (arrow) {
+        arrow.classList.toggle('rotate-180');
+      }
+    };
+  });
+</script>
+      <div class="lg:flex justify-between gap-6 container-full 2xl:container px-4 md:px-8 2xl:px-0 mx-auto mt-12">
+        <div class="lg:w-full">
+                <section class="news-title mt-1 dark:bg-[#081e3f4d] bg-gray w-full border-l-8 border-primary">
+        <h3 class="p-8 text-primary dark:text-white font-bold text-2xl">Faoliyat</h3>
+        <nav aria-label="Breadcrumb" class="flex ms-8 pb-4">
+            <ol class="breadcrumb inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="breadcrumb-item inline-flex items-center"><a href="/" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                    <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                    </svg>
+                    Asosiy</a></li>
+                <li class="breadcrumb-item inline-flex items-center"><a href="#" class="active ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white before:content-['>'] before:mr-3 after:text-gray-700">Faoliyat</a></li>
+            </ol>
+        </nav>
+    </section>
+    <section class="news-section mb-4 border-x-[1px] border-b-[1px] border-[rgba(234,234,234,1)] dark:border-[#081e3f4d]">
+        <div class="mx-8 py-8">
+            <div class="flex flex-wrap justify-between mb-4">
+                <div class="w-[22%] hidden md:block">
+                    <div class="news-groub">
+    <ul class="flex flex-col gap-0.5">
+                                    <li class=" bg-gray-200  flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    <a class="l-menu-link" href="/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens" target="_self">
+                        <span>Chet el fuqarolariga maxsus soliq rejimini taqdim etish uchun maxsus vakolatli kripto-birjalar ro‘yxati</span>
+                    </a>
+                </li>
+                                                        
+                <div data-dui-toggle="collapse" data-dui-target="#collapseList52" aria-expanded="false" aria-controls="collapseList52"
+                        class="flex items-center justify-between cursor-pointer py-1.5 px-2.5 rounded-md align-middle transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    Kripto-aktivlar aylanmasi
+                    <span data-dui-icon class="grid place-items-center shrink-0">
+                        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5 stroke-[1.5] dark:stroke-stone-300">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" id="collapseList52">
+                    <ul class="flex flex-col gap-0.5">
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/stablecoin-registry" target="_self">Barqaror tokenlarning reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/rpssr" target="_self">Barqaror tokenlar bo‘yicha maxsus huquqiy rejim ishtirokchilari reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/caer" target="_self">Kripto-aktivlarning elektron reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/mining" target="_self">Mayning</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/special-regime-participants-registry" target="_self">Kripto-aktivlar aylanmasi sohasidagi maxsus rejim ishtirokchilari reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/erlsp" target="_self">Litsenziyalar va ruxsat etish xususiyatiga ega hujjatlarning elektron reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/distributed-ledger-technology" target="_self">Ma’lumotlarning taqsimlangan reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/service-providers" target="_self">Xizmatlar provayderlari</a>
+                        </li>
+                                            </ul>
+                </div>
+                                            
+                <div data-dui-toggle="collapse" data-dui-target="#collapseList53" aria-expanded="false" aria-controls="collapseList53"
+                        class="flex items-center justify-between cursor-pointer py-1.5 px-2.5 rounded-md align-middle transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    Kapital bozori
+                    <span data-dui-icon class="grid place-items-center shrink-0">
+                        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5 stroke-[1.5] dark:stroke-stone-300">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" id="collapseList53">
+                    <ul class="flex flex-col gap-0.5">
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/qimmatli-qog-ozlar-bozorida-faoliyatni-litsenziyalash" target="_self">Qimmatli qog‘ozlar bozorida faoliyatni litsenziyalash</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/qimmatli-qog-ozlar-bozori-professional-ishtirokchilarining-reestri" target="_self">Qimmatli qog&#039;ozlar bozori professional ishtirokchilarining reestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/qimmatli-qog-ozlar-bilan-operatsiyalarni-amalga-oshirish-huquqini-beruvchi-malaka-sertifikatiga-ega-bo-lgan-jismoniy-shaxslar-reyestri" target="_self">Qimmatli qog‘ozlar bilan operatsiyalarni amalga oshirish huquqini beruvchi malaka sertifikatiga ega bo‘lgan jismoniy shaxslar reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/davlat-ro-yxatidan-o-tkazilgan-qimmatli-qog-ozlar-chiqarilishlari-reyestri" target="_self">Davlat ro‘yxatidan o‘tkazilgan qimmatli qog‘ozlar chiqarilishlari Reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/kapital-bozori-sohasidagi-maxsus-rejim-ishtirokchilari-reyestri" target="_self">Kapital bozori sohasidagi maxsus rejim ishtirokchilari reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/register-of-imb" target="_self">Ipoteka obligatsiyalarini chiqarish sohasida maxsus rejim ishtirokchilarining reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/list-of-ifis-for-bonds-issuance" target="_self">Obligatsiyalar chiqarish bo‘yicha XMI ro‘yxati</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/register-of-ips" target="_self">Investitsiya platformalari sohasidagi maxsus rejim ishtirokchilari reyestri</a>
+                        </li>
+                                            </ul>
+                </div>
+                                            
+                <div data-dui-toggle="collapse" data-dui-target="#collapseList56" aria-expanded="false" aria-controls="collapseList56"
+                        class="flex items-center justify-between cursor-pointer py-1.5 px-2.5 rounded-md align-middle transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    Sug‘urta bozori
+                    <span data-dui-icon class="grid place-items-center shrink-0">
+                        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5 stroke-[1.5] dark:stroke-stone-300">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" id="collapseList56">
+                    <ul class="flex flex-col gap-0.5">
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="aktuariy-malaka-sertifikatlari-reyestri" target="_self">Aktuariy malaka sertifikatlari reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/rating-of-insurers" target="_self">Sug‘urtalovchilar reytingi</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/qualification-requirements" target="_self">Malaka talablari</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/im-privacy-policy" target="_self">Maxfiylik siyosati</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/statistics-and-analysis-for-im" target="_self">Statistika va tahlil</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/sug-urta-faoliyatini-litsenziyalash" target="_self">Sug‘urta faoliyatini litsenziyalash</a>
+                        </li>
+                                            </ul>
+                </div>
+                                            
+                <div data-dui-toggle="collapse" data-dui-target="#collapseList75" aria-expanded="false" aria-controls="collapseList75"
+                        class="flex items-center justify-between cursor-pointer py-1.5 px-2.5 rounded-md align-middle transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    Elektron tijorat
+                    <span data-dui-icon class="grid place-items-center shrink-0">
+                        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5 stroke-[1.5] dark:stroke-stone-300">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" id="collapseList75">
+                    <ul class="flex flex-col gap-0.5">
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/register-of-electronic-commerce-operators" target="_self">Elektron tijorat operatorlari reyestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/registry-of-specialized-electronic-trading-platforms" target="_self">Maxsus elektron savdo platformalari reestri</a>
+                        </li>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/onlayn-savdo-platformalari-faoliyatini-baholash-reytingi" target="_self">Onlayn savdo platformalari faoliyatini baholash reytingi</a>
+                        </li>
+                                            </ul>
+                </div>
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    <a class="l-menu-link" href="/pages/ic" target="_self">
+                        <span>Xalqaro hamkorlik</span>
+                    </a>
+                </li>
+                                                        
+                <div data-dui-toggle="collapse" data-dui-target="#collapseList101" aria-expanded="false" aria-controls="collapseList101"
+                        class="flex items-center justify-between cursor-pointer py-1.5 px-2.5 rounded-md align-middle transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                    Tavakkalchilikka asoslangan o‘yinlar
+                    <span data-dui-icon class="grid place-items-center shrink-0">
+                        <svg width="1.5em" height="1.5em" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor" class="h-5 w-5 stroke-[1.5] dark:stroke-stone-300">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="overflow-hidden transition-[max-height] duration-300 ease-in-out max-h-0" id="collapseList101">
+                    <ul class="flex flex-col gap-0.5">
+                                                <li class=" flex items-center cursor-pointer py-1.5 px-2.5 rounded-md align-middle select-none font-sans transition-all duration-300 ease-in text-stone-600 hover:text-stone-800 dark:text-stone-300 dark:hover:text-white hover:bg-stone-200 dark:hover:bg-stone-700 focus:bg-stone-200 dark:focus:bg-stone-700 focus:text-stone-800 dark:focus:text-white">
+                            <a href="/pages/rbglr" target="_self">Litsenziyalar reyestri</a>
+                        </li>
+                                            </ul>
+                </div>
+                        </ul>
+</div>
+
+
+                    <div class="bg-gray-100 dark:bg-[#081e3f4d] w-[100%] my-4 px-4 py-2 rounded-lg shadow-md">
+    <div class="dark:bg-[#081e3f4d] bg-gray w-full border-l-4 border-primary">
+        <h3 class="text-primary dark:text-white font-bold text-xl ps-4">Jahon moliya bozorlari yangiliklari</h3>
+    </div>
+                <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://cointelegraph.com/markets/analysts-no-contagion-effect-63b-binance-hack?utm_source=rss_feed&amp;amp;utm_medium=rss_tag_bitcoin&amp;amp;utm_campaign=rss_partner_inbound"
+                    target="_blank">Analysts see no broader ‘contagion’ from $6.3B Binance hack</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://cointelegraph.com/news/strategy-buy-1036-bitcoin-holdings-850364-btc?utm_source=rss_feed&amp;amp;utm_medium=rss_tag_bitcoin&amp;amp;utm_campaign=rss_partner_inbound"
+                    target="_blank">Strategy buys 1,036 Bitcoin as BTC holdings climb to 850,364</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://cointelegraph.com/markets/btc-price-nvidia-volatility-three-things-bitcoin-this-week?utm_source=rss_feed&amp;amp;utm_medium=rss_tag_bitcoin&amp;amp;utm_campaign=rss_partner_inbound"
+                    target="_blank">BTC price eyes $73K amid Nvidia volatility: Three things to know in Bitcoin this week</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://bits.media/kriptobirzha-coinbase-poluchila-bankovskuyu-litsenziyu-v-ssha/"
+                    target="_blank">Криптобиржа Coinbase получила банковскую лицензию в США</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://bits.media/programmist-poshel-pod-sud-za-vypusk-1-mlrd-nesanktsionirovannykh-tokenov/"
+                    target="_blank">Программист пошел под суд за выпуск 1 млрд несанкционированных токенов</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://bits.media/strategy-dokupila-bitkoinov-pochti-na-82-mln/"
+                    target="_blank">Strategy докупила биткоинов почти на $82 млн</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-affair-congress-scrutiny.html"
+                    target="_blank">Nvidia&#039;s CEO turmoil gives newly empowered Democrats fresh ammunition in pursuit of oversight</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.cnbc.com/2026/11/09/us-iran-war-trump-hormuz.html"
+                    target="_blank">Rubio sees little hope of diplomatic breakthrough to Mideast deadlock amid &#039;outrageous&#039; Iranian demands</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.cnbc.com/2026/11/09/novonesis-glp1-weight-loss-drugs-supplements-probiotics.html"
+                    target="_blank">Could supplements be the next big opportunity in the GLP-1 weight-loss drug boom?</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.bloomberg.com/news/articles/2026-11-09/coinbase-gets-final-regulatory-stamp-for-trust-bank-charter"
+                    target="_blank">Coinbase Gets Final Regulatory Stamp for Trust-Bank Charter</a>
+            </div>
+            <div class="text-xs">
+                <span>09.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.ft.com/content/f1b98a61-4103-447c-bb9a-3dccc0819f61?syn-25a6b1a6=1"
+                    target="_blank">Crypto industry braces for reckoning over Trump ties</a>
+            </div>
+            <div class="text-xs">
+                <span>08.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.ft.com/content/3f6ef089-f478-4d00-a080-21a88ffd721b?syn-25a6b1a6=1"
+                    target="_blank">French bank Crédit Mutuel Arkéa seeks to recover funds after €100mn hack</a>
+            </div>
+            <div class="text-xs">
+                <span>05.11.2026</span>
+            </div>
+        </div>
+            <div class="my-2 ps-4 border-l-2 border-secondary">
+            <div class="text-md mb-2">
+                <a href="https://www.ft.com/content/567d7280-2bcb-4802-8caa-01853b3278dc?syn-25a6b1a6=1"
+                    target="_blank">What the historic heist of Binance means for crypto</a>
+            </div>
+            <div class="text-xs">
+                <span>04.11.2026</span>
+            </div>
+        </div>
+        </div>
+
+                </div>
+
+                <div class="w-full md:w-[75%]">
+                    <div class="">
+                        <div class="dark:bg-[#081e3f4d] bg-gray w-full border-l-4 border-primary pb-3 mb-4">
+                            <div class="news-finance-text">
+                                <h3 class="text-primary dark:text-white font-bold text-xl p-4">Chet el fuqarolariga maxsus soliq rejimini taqdim etish uchun maxsus vakolatli kripto-birjalar ro‘yxati</h3>
+                            </div>
+                            <div class="flex flex-wrap mx-4">
+                                <div class="date text-[#A6A6A6] dark:text-white text-md">
+                                                                    </div>
+                                <div class="flex flex-wrap ms-4">
+                                    <img src="https://napp.uz/img/eye.png" alt="" class="w-6">
+                                    <div class="text-md ml-2 text-[#A6A6A6]">
+                                        <span>40703</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-center-img my-owl">
+                                <div class="owl-carousel owl-theme">
+                                                                                                                                                                                    </div>
+                            </div>
+                        </div>
+                        <div class="center-info">
+                            <div class="info-p">
+                                <p style="text-align: left;"><span style="font-size: 14pt;">O&lsquo;zbekiston Respublikasi Prezidentining 2025 yil 4 oktabrdagi PF-180-son &ldquo;Chet el fuqarolari uchun maxsus soliq rejimini joriy etish chora-tadbirlari to&lsquo;g&lsquo;risida&rdquo;gi Farmoni va O&lsquo;zbekiston Respublikasi Istiqbolli loyihalar milliy agentligining 2026 yil 1 iyundagi 49-son buyrug&lsquo;i bilan Chet el fuqarolariga maxsus soliq rejimini taqdim etish komissiyasining maxsus soliq rejimini taqdim etish bo&lsquo;yicha qarorini olgan chet el fuqarolari tomonidan kripto-hamyon ochish ruxsat etilgan maxsus vakolatli kripto-birjalar ro&lsquo;yxatini tasdiqlangan.&nbsp;</span></p>
+<p style="text-align: center;"><strong><span style="font-size: 14pt;">Maxsus vakolatli kripto-birjalar</span></strong><br /><strong><span style="font-size: 14pt;">RO&lsquo;YXATI</span></strong></p>
+<table style="border-collapse: collapse; width: 92.347%; height: 405.451px;" border="1" width="100%">
+<tbody>
+<tr style="border-color: #000000; border-style: none; background-color: #0b375b; text-align: center; height: 121.167px;">
+<td style="width: 4.4071%; text-align: center; vertical-align: middle; height: 121.167px;" width="37">
+<p><span style="color: #ffffff; font-size: 10pt; font-family: verdana, geneva, sans-serif;">T/r</span></p>
+</td>
+<td style="width: 38.5353%; height: 121.167px;" width="295">
+<p><span style="color: #ffffff; font-size: 10pt; font-family: verdana, geneva, sans-serif;"><strong>Kripto-birja nomi</strong></span></p>
+</td>
+<td style="width: 33.322%; height: 121.167px;" width="177">
+<p><span style="color: #ffffff; font-size: 10pt; font-family: verdana, geneva, sans-serif;"><strong>Yuridik manzil va elektron pochta manzili</strong></span></p>
+</td>
+<td style="width: 23.7016%; height: 121.167px;" width="118">
+<p><span style="color: #ffffff; font-size: 10pt; font-family: verdana, geneva, sans-serif;"><strong>Kripto-birja faoliyatini amalga oshirish uchun litsenziya raqami va berilgan sanasi</strong></span></p>
+</td>
+</tr>
+<tr style="height: 76.8px;">
+<td style="width: 4.4071%; text-align: center; vertical-align: middle; height: 76.8px;">
+<p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;"><strong><span style="color: #000000;">1</span></strong></span></p>
+</td>
+<td style="width: 38.5353%;" width="642">
+<p style="text-align: center;"><strong>&ldquo;COINPAY&rdquo;</strong> mas&rsquo;uliyati cheklangan jamiyati</p>
+</td>
+<td style="width: 33.322%; text-align: center; height: 76.8px;" width="173">
+<p>Toshkent&nbsp; shahri,&nbsp; Shayxontoxur tumani, Furqat ko&lsquo;chasi, 2-uy.<br />email: <a href="mailto:info@coinuz.net">info@coinuz.net</a>&nbsp;</p>
+</td>
+<td style="width: 23.7016%; text-align: center; height: 76.8px;" width="160">
+<p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;">CE #0004<br />10.07.2024 y.<br /></span></p>
+</td>
+</tr>
+<tr style="height: 53.617px; background-color: #ecf0f1;">
+<td style="width: 4.4071%; text-align: center; vertical-align: middle; height: 53.617px;">
+<p><span style="font-size: 10pt; font-family: verdana, geneva, sans-serif;"><strong><span style="color: #000000;">2</span></strong></span></p>
+</td>
+<td style="width: 38.5353%;" width="642">
+<p style="text-align: center;"><strong>&ldquo;ASTERIUM&rdquo;</strong> aksiyadorlik jamiyati</p>
+</td>
+<td style="width: 33.322%; text-align: center; height: 53.617px;">
+<p>Toshkent shahri, Mirobod tumani, &ldquo;Oybek&rdquo; MFY, Said Baraka ko&lsquo;chasi, 12A-uy.<br />Email: support@asterium.uz</p>
+</td>
+<td style="width: 23.7016%; text-align: center; height: 53.617px;">
+<p>CE #0006<br />02.04.2026 й.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+                            </div>
+                            <div class="pdf-out mt-3">
+                                                                                                                                                                                                                                                                                            </div>
+                        </div>
+                                                                                                                                                                                                                                                                                                                                                                        <div class="center-dowlound mt-6">
+                            <div class="center-next">
+                                <a href="https://napp.uz/oz/category/faoliyat">
+                                    <div class="center-a-next flex flex-wrap items-center justify-center gap-2">
+                                        <div class="center-next-img">
+                                            <img src="https://napp.uz/img/next.png" alt="next">
+                                        </div>
+                                        <div class="center-next-span">
+                                            <span>Orqaga</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news-3 mt-2">
+    <div class="dark:bg-[#081e3f4d] bg-gray w-full border-l-4 border-primary mb-4">
+        <h3 class="text-primary dark:text-white font-bold text-xl p-8">Boshqa yangiliklar</h3>
+    </div>
+    <div class="relative w-full overflow-hidden grid md:grid-cols-3 sm:grid-cols-2 justify-between gap-6 w-full pb-6">
+                    <div class="md:min-w-[31%] min-w-[45%] dark:bg-[#081e3f4d] bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.16)]">
+                <div class="news-in">
+                    <a href="https://napp.uz/oz/news/investitsiya-vositachisi-sifatidagi-professional-faoliyatni-amalga-oshirish-litsenziyasi-bekor-qilindi-2">
+                                                    <img class="w-full" src="/storage/photos/shares/news/2026/11/09.11.26-1.jpg" alt="Investitsiya vositachisi sifatidagi professional faoliyatni amalga oshirish litsenziyasi bekor qilindi">
+                                            </a>
+                    <div class="flex flex-col xl:gap-4 gap-2 px-3 py-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 xl:gap-4">
+                            <time datetime="09.11.2026" class="date text-[#A6A6A6] dark:text-white text-lg">09.11.2026</time>
+                            <div class="flex flex-wrap gap-1">
+                                <img src="https://napp.uz/img/news-eye.png" alt="news-eye" class="w-6 h-6">
+                                <span class="date text-[#A6A6A6] dark:text-white text-lg">111</span>
+                            </div>
+                        </div>
+                        <a href="https://napp.uz/oz/news/investitsiya-vositachisi-sifatidagi-professional-faoliyatni-amalga-oshirish-litsenziyasi-bekor-qilindi-2" class="line-clamp-5 font-bold text-xl text-primary dark:text-[#d6c980]">
+                            <div class="news-a">
+                                <h4>Investitsiya vositachisi sifatidagi professional faoliyatni amalga oshirish litsenziyasi bekor qilindi</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    <div class="md:min-w-[31%] min-w-[45%] dark:bg-[#081e3f4d] bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.16)]">
+                <div class="news-in">
+                    <a href="https://napp.uz/oz/news/hyt-capital-mchjga-qimmatli-qog-ozlar-bozorida-investitsiya-vositachisi-sifatida-professional-faoliyatni-amalga-oshirish-uchun-berilgan-litsenziya-qayta-rasmiylashtirildi">
+                                                    <img class="w-full" src="/storage/photos/shares/news/2026/11/09.11-1.png" alt="“HYT-CAPITAL” MCHJga qimmatli qog‘ozlar bozorida investitsiya vositachisi sifatida professional faoliyatni amalga oshirish uchun berilgan litsenziya qayta rasmiylashtirildi">
+                                            </a>
+                    <div class="flex flex-col xl:gap-4 gap-2 px-3 py-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 xl:gap-4">
+                            <time datetime="09.11.2026" class="date text-[#A6A6A6] dark:text-white text-lg">09.11.2026</time>
+                            <div class="flex flex-wrap gap-1">
+                                <img src="https://napp.uz/img/news-eye.png" alt="news-eye" class="w-6 h-6">
+                                <span class="date text-[#A6A6A6] dark:text-white text-lg">152</span>
+                            </div>
+                        </div>
+                        <a href="https://napp.uz/oz/news/hyt-capital-mchjga-qimmatli-qog-ozlar-bozorida-investitsiya-vositachisi-sifatida-professional-faoliyatni-amalga-oshirish-uchun-berilgan-litsenziya-qayta-rasmiylashtirildi" class="line-clamp-5 font-bold text-xl text-primary dark:text-[#d6c980]">
+                            <div class="news-a">
+                                <h4>“HYT-CAPITAL” MCHJga qimmatli qog‘ozlar bozorida investitsiya vositachisi sifatida professional faoliyatni amalga oshirish uchun berilgan litsenziya qayta rasmiylashtirildi</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+                    <div class="md:min-w-[31%] min-w-[45%] dark:bg-[#081e3f4d] bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.16)]">
+                <div class="news-in">
+                    <a href="https://napp.uz/oz/news/kripto-do-kon-faoliyatini-amalga-oshirish-uchun-litsenziya-berildi-8">
+                                                    <img class="w-full" src="/storage/photos/shares/news/2026/10/26.10_1.png" alt="Kripto-do‘kon faoliyatini amalga oshirish uchun litsenziya berildi">
+                                            </a>
+                    <div class="flex flex-col xl:gap-4 gap-2 px-3 py-4">
+                        <div class="flex flex-wrap justify-between items-center gap-2 xl:gap-4">
+                            <time datetime="09.11.2026" class="date text-[#A6A6A6] dark:text-white text-lg">09.11.2026</time>
+                            <div class="flex flex-wrap gap-1">
+                                <img src="https://napp.uz/img/news-eye.png" alt="news-eye" class="w-6 h-6">
+                                <span class="date text-[#A6A6A6] dark:text-white text-lg">272</span>
+                            </div>
+                        </div>
+                        <a href="https://napp.uz/oz/news/kripto-do-kon-faoliyatini-amalga-oshirish-uchun-litsenziya-berildi-8" class="line-clamp-5 font-bold text-xl text-primary dark:text-[#d6c980]">
+                            <div class="news-a">
+                                <h4>Kripto-do‘kon faoliyatini amalga oshirish uchun litsenziya berildi</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+        </div>
+    </section>
+        <div class="relative w-full overflow-hidden">
+    <div class="flex transition-transform duration-500 xl:gap-5 sm:gap-4 carousel-track" id="slider_links">
+            <div class="slide flex-shrink-0 flex flex-col gap-5 xl:px-8 px-4 py-10 justify-center w-full sm:w-1/2 lg:w-[31.3%] h-[285px] dark:bg-[#081e3f4d] bg-[#081e3f4d] drop-shadow-[0_2px_2px_rgba(0,39,39,0.19)] rounded-lg">
+        <img class="block mx-auto h-[60px]" src="/storage/photos/shares/link-4.png" alt="Ўзбекистон Республикаси Президенти матбуот хизмати" />
+        <a href="https://president.uz/uz" target="_blank" class="text-sm text-center text-[rgb(30,30,30)] dark:text-white font-medium uppercase">Ўзбекистон Республикаси Президенти матбуот хизмати</a>
+      </div>
+            <div class="slide flex-shrink-0 flex flex-col gap-5 xl:px-8 px-4 py-10 justify-center w-full sm:w-1/2 lg:w-[31.3%] h-[285px] dark:bg-[#081e3f4d] bg-[#081e3f4d] drop-shadow-[0_2px_2px_rgba(0,39,39,0.19)] rounded-lg">
+        <img class="block mx-auto h-[60px]" src="/storage/photos/shares/link-1.png" alt="ЯГОНА ИНТЕРАКТИВ ДАВЛАТ ХИЗМАТЛАРИ ПОРТАЛИ" />
+        <a href="" target="_blank" class="text-sm text-center text-[rgb(30,30,30)] dark:text-white font-medium uppercase">ЯГОНА ИНТЕРАКТИВ ДАВЛАТ ХИЗМАТЛАРИ ПОРТАЛИ</a>
+      </div>
+            <div class="slide flex-shrink-0 flex flex-col gap-5 xl:px-8 px-4 py-10 justify-center w-full sm:w-1/2 lg:w-[31.3%] h-[285px] dark:bg-[#081e3f4d] bg-[#081e3f4d] drop-shadow-[0_2px_2px_rgba(0,39,39,0.19)] rounded-lg">
+        <img class="block mx-auto h-[60px]" src="/storage/photos/shares/link-2.png" alt="O’ZBEKISTON RESPUBLIKASI OLIY MAJLISI QONUNCHILIK PALATASI" />
+        <a href="https://parliament.gov.uz/ru/" target="_blank" class="text-sm text-center text-[rgb(30,30,30)] dark:text-white font-medium uppercase">O’ZBEKISTON RESPUBLIKASI OLIY MAJLISI QONUNCHILIK PALATASI</a>
+      </div>
+            <div class="slide flex-shrink-0 flex flex-col gap-5 xl:px-8 px-4 py-10 justify-center w-full sm:w-1/2 lg:w-[31.3%] h-[285px] dark:bg-[#081e3f4d] bg-[#081e3f4d] drop-shadow-[0_2px_2px_rgba(0,39,39,0.19)] rounded-lg">
+        <img class="block mx-auto h-[60px]" src="/storage/photos/shares/link-3.png" alt="MILLIY HUQUQIY INTERNET PORTALI" />
+        <a href="https://huquqiyportal.uz/" target="_blank" class="text-sm text-center text-[rgb(30,30,30)] dark:text-white font-medium uppercase">MILLIY HUQUQIY INTERNET PORTALI</a>
+      </div>
+          </div>
+    <button id="prev_links" class="flex justify-center items-center absolute left-2 w-[44px] h-[44px] top-1/2 -translate-y-1/2 bg-[#fff] drop-shadow-[0px_0px_4px_0px_rgba(187,185,185,0.5)] text-[#292D32] p-2 rounded-full">❮</button>
+    <button id="next_links" class="flex justify-center items-center absolute right-2 w-[44px] h-[44px] top-1/2 -translate-y-1/2 bg-[#fff] drop-shadow-[0px_0px_4px_0px_rgba(187,185,185,0.5)] text-[#292D32] p-2 rounded-full">❯</button>
+  </div>
+    <br><br>
+<!--
+<div class="mb-[4rem]">
+    <div class="mt-6 bg-gray dark:bg-[#081e3f4d] w-full border-l-8 border-primary">
+      <p class="p-8 text-primary dark:text-white font-bold text-2xl">Idoraviy mansub tashkilotlar</p>
+    </div>
+    <div class="border-x-[1px] border-b-[1px] border-[rgba(234,234,234,1)] dark:border-[#081e3f4d]">
+      <ul class="flex flex-col gap-6 p-8">
+                <li class="flex items-center gap-4 py-2">
+          <a href="https://napp.uz/oz/pages/fond-bozorining-axborot-resurs-markazi-duk" class="w-24 flex-none"><img src="https://napp.uz/img/structures.png" alt="structures" /></a>
+          <a href="https://napp.uz/oz/pages/fond-bozorining-axborot-resurs-markazi-duk" class="flex-auto">
+            <p class="uppercase sm:break-all">“Fond bozorining axborot resurs markazi” DUK</p>
+          </a>
+        </li>
+              </ul>
+    </div>
+  </div>
+-->
+        </div>
+                <!--
+        <div class="lg:w-[23%]">
+          <ul class="w-full font-bold text-2xl text-white sticky top-0">
+            <li class="flex gap-10 dark:bg-[#081e3f4d] bg-primary mt-0 my-5">
+              <a href="/pages/faq" class="flex items-center justify-between w-full px-10 py-5"
+                ><div class="flex items-center"><img src="https://napp.uz/src/images/logo-without-text.svg" class="mr-4" />FAQ</div>
+                <img src="https://napp.uz/src/images/arrow-right-big.svg"
+              /></a>
+            </li>
+            <li class="dark:bg-[#081e3f4d] bg-secondary dark:text-white text-primary my-5">
+              <a href="/contact" class="flex items-center justify-between w-full px-10 py-5 h-[92px]">
+                Bog‘lanish
+                <img src="https://napp.uz/src/images/arrow-right-primary-big.svg" class="dark:filter dark:invert dark:brightness-0" /></a>
+            </li>
+          </ul>
+        </div>
+        -->
+      </div>
+
+      <footer class="bg-primary dark:bg-[#081e3f4d] text-white">
+    <div class="flex flex-col gap-8 pt-16 pb-6 container-full 2xl:container px-4 md:px-8 2xl:px-0 mx-auto">
+      <a href="/">
+        <img class="w-[124px] h-[62px]" src="https://napp.uz/src/images/logo-footer.svg" alt="footer-logo" />
+      </a>
+      <div class="flex justify-between font-medium items-center lg:flex-wrap">
+        <nav class="leading-4 lg:mb-[2rem]">
+          <ul class="flex gap-2 lg:flex-wrap">
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="/pages/malumot" target="_self"
+                >Agentlik
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="#" target=""
+                >Faoliyat
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="/category/ochiq-ma-lumotlar" target="_self"
+                >Ochiq ma’lumot
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="#" target=""
+                >Matbuot markazi
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="#" target=""
+                >Hujjatlar
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="#" target=""
+                >Murojaatlar
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline  after:font-thin after:ml-1 after:content-['|'] after:text-white " href="/contact" target="_self"
+                >Bog‘lanish
+              </a>
+            </li>
+                        <li>
+              <a class="hover:underline " href="/pages/faq" target="_self"
+                >FAQ
+              </a>
+            </li>
+                      </ul>
+        </nav>
+        <div class="flex gap-3 sm:flex-col">
+          <p>Follow us on:</p>
+          <ul class="flex gap-2">
+                        <li>
+              <a class=" after:font-thin after:content-['|'] after:ml-1 after:text-white " href="https://x.com/Napp_uz" target="2">
+                <img class="hover:scale-110 inline-block" src="/storage/photos/shares/social icons/x-twitter.svg" alt="Twitter" />
+              </a>
+            </li>
+                        <li>
+              <a class=" after:font-thin after:content-['|'] after:ml-1 after:text-white " href="https://t.me/napp_uz" target="2">
+                <img class="hover:scale-110 inline-block" src="/storage/photos/shares/social icons/telegram.svg" alt="Telegram" />
+              </a>
+            </li>
+                        <li>
+              <a class=" after:font-thin after:content-['|'] after:ml-1 after:text-white " href="https://www.instagram.com/ilma_uzbekistan/" target="2">
+                <img class="hover:scale-110 inline-block" src="/storage/photos/shares/social icons/instagram.png" alt="Instagram" />
+              </a>
+            </li>
+                        <li>
+              <a class=" after:font-thin after:content-['|'] after:ml-1 after:text-white " href="https://www.facebook.com/nappuz/" target="2">
+                <img class="hover:scale-110 inline-block" src="/storage/photos/shares/social icons/facebook.svg" alt="Facebook" />
+              </a>
+            </li>
+                        <li>
+              <a class="" href="https://www.youtube.com/channel/UCv1_VkhCSoR_a2URfR7xXZA" target="2">
+                <img class="hover:scale-110 inline-block" src="/storage/photos/shares/social icons/youtube.svg" alt="Youtube" />
+              </a>
+            </li>
+                      </ul>
+          <div class="uz">
+            <div class="flex flex-center align-items-center">
+                <!-- START WWW.UZ TOP-RATING --><SCRIPT language="javascript" type="text/javascript">
+                    <!--
+                    top_js="1.0";top_r="id=47340&r="+escape(document.referrer)+"&pg="+escape(window.location.href);document.cookie="smart_top=1; path=/"; top_r+="&c="+(document.cookie?"Y":"N")
+                    //-->
+                </SCRIPT>
+                <SCRIPT language="javascript1.1" type="text/javascript">
+                    <!--
+                    top_js="1.1";top_r+="&j="+(navigator.javaEnabled()?"Y":"N")
+                    //-->
+                </SCRIPT>
+                <SCRIPT language="javascript1.2" type="text/javascript">
+                    <!--
+                    top_js="1.2";top_r+="&wh="+screen.width+'x'+screen.height+"&px="+
+                        (((navigator.appName.substring(0,3)=="Mic"))?screen.colorDepth:screen.pixelDepth)
+                    //-->
+                </SCRIPT>
+                <SCRIPT language="javascript1.3" type="text/javascript">
+                    <!--
+                    top_js="1.3";
+                    //-->
+                </SCRIPT>
+                <SCRIPT language="JavaScript" type="text/javascript">
+                    <!--
+                    top_rat="&col=0063AF&t=ffffff&p=E6850F";top_r+="&js="+top_js+"";document.write('<a href="http://www.uz/ru/res/visitor/index?id=47340" target=_top><img src="https://cnt0.www.uz/counter/collect?'+top_r+top_rat+'" width=88 height=31 border=0 alt="Топ рейтинг www.uz"></a>')//-->
+                </SCRIPT><NOSCRIPT><A href="http://www.uz/ru/res/visitor/index?id=47340" target=_top><IMG height=31 src="https://cnt0.www.uz/counter/collect?id=47340&pg=http%3A//uzinfocom.uz&&col=0063AF&amp;t=ffffff&amp;p=E6850F" width=88 border=0 alt="Топ рейтинг www.uz"></A></NOSCRIPT><!-- FINISH WWW.UZ TOP-RATING -->
+                <a href="https://uzinfocom.uz">
+                <div class="uz-a ml-3">
+                    <img src="https://napp.uz/img/uz.png" alt="uzinfocom">
+                </div>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="text-sm">UZINFOCOM © 2002 - 2026. Все права защищены</p>
+    </div>
+  </footer>
+
+            <script src="https://napp.uz/js/speech.js"></script>
+      <script src="https://napp.uz/js/sweetalert2.min.js"></script>
+      <script src="https://napp.uz/plugins/select2/js/select2.full.min.js"></script>
+      <script>
+        
+        
+                                      </script>
+
+      <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenu = document.getElementById('close-menu');
+
+        function toggleMenu() {
+          mobileMenu.classList.toggle('active');
+          menuOverlay.classList.toggle('active');
+          document.body.classList.toggle('overflow-hidden');
+
+          burgerMenu.classList.toggle('active');
+        }
+
+        function closeMenuHandler() {
+          mobileMenu.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          document.body.classList.remove('overflow-hidden');
+          burgerMenu.classList.remove('active');
+        }
+
+        burgerMenu.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', closeMenuHandler);
+        menuOverlay.addEventListener('click', closeMenuHandler);
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMenuHandler();
+          }
+        });
+
+        burgerMenu.addEventListener('click', () => {
+          burgerMenu.classList.toggle('active');
+        });
+
+        let activeDesktopContent = null;
+
+        function toggleDesktopMenu(menuName) {
+          const contentId = `${menuName}-content`;
+          const content = document.getElementById(contentId);
+
+          if (!content) return;
+
+          if (activeDesktopContent === content) {
+            content.classList.add('hidden');
+            activeDesktopContent = null;
+            return;
+          }
+
+          if (activeDesktopContent) {
+            activeDesktopContent.classList.add('hidden');
+          }
+
+          content.classList.remove('hidden');
+          activeDesktopContent = content;
+        }
+
+        document.addEventListener('click', function (e) {
+          const isMenuBtn = e.target.closest('.menu button');
+          const isMenuContent = e.target.closest('.desktop-menu');
+
+          if (!isMenuBtn && !isMenuContent && activeDesktopContent) {
+            activeDesktopContent.classList.add('hidden');
+            activeDesktopContent = null;
+          }
+        });
+
+      </script>
+
+      <script>
+
+        const slider_links = document.getElementById('slider_links');
+        const slides_links = document.querySelectorAll('#slider_links .slide');
+        const prev_links = document.getElementById('prev_links');
+        const next_links = document.getElementById('next_links');
+
+        let index_links = 0;
+        let autoplayIntervalLinks;
+        let visibleSlidesLinks = getVisibleSlides();
+
+
+        const button = document.getElementById('dropdownButton');
+        const menu = document.getElementById('dropdownMenu');
+
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const button2 = document.getElementById('loginButton');
+        const menu2 = document.getElementById('loginMenu');
+
+        button2.addEventListener('click', () => {
+            menu2.classList.toggle('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!button.contains(event.target) && !menu.contains(event.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+
+
+        function getVisibleSlides() {
+          const width = window.innerWidth;
+          if (width < 640) return 1;
+          if (width < 1024) return 2;
+          return 3;
+        }
+
+        function updateCarouselLinks() {
+          visibleSlidesLinks = getVisibleSlides();
+          const totalSlides = slides_links.length;
+          const totalVisibleSlides = totalSlides - visibleSlidesLinks;
+
+          if (index_links > totalVisibleSlides) index_links = 0;
+
+          const slideWidth = 100 / visibleSlidesLinks;
+          slider_links.style.transform = `translateX(-${index_links * slideWidth}%)`;
+
+          prev_links.disabled = index_links === 0;
+          next_links.disabled = index_links === totalVisibleSlides;
+        }
+
+        function nextSlideLinks() {
+          const totalSlides = slides_links.length;
+          const totalVisibleSlides = totalSlides - visibleSlidesLinks;
+
+          index_links = index_links < totalVisibleSlides ? index_links + 1 : 0;
+          updateCarouselLinks();
+        }
+
+        function prevSlideLinks() {
+          const totalSlides = slides_links.length;
+          const totalVisibleSlides = totalSlides - visibleSlidesLinks;
+
+          index_links = index_links > 0 ? index_links - 1 : totalVisibleSlides;
+          updateCarouselLinks();
+        }
+
+        function startAutoplay() {
+          stopAutoplay();
+          autoplayIntervalLinks = setInterval(nextSlideLinks, 3000);
+        }
+
+        function stopAutoplay() {
+          clearInterval(autoplayIntervalLinks);
+        }
+
+        next_links.addEventListener('click', () => {
+          nextSlideLinks();
+          startAutoplay();
+        });
+
+        prev_links.addEventListener('click', () => {
+          prevSlideLinks();
+          startAutoplay();
+        });
+
+        window.addEventListener('resize', () => {
+          updateCarouselLinks();
+        });
+
+        updateCarouselLinks();
+        startAutoplay();
+
+        const themeButtons = document.querySelectorAll('.theme-toggle');
+        const html = document.documentElement;
+        themeButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            html.classList.toggle('dark');
+
+            if (html.classList.contains('dark')) {
+              localStorage.setItem('theme', 'dark');
+            } else {
+              localStorage.setItem('theme', 'light');
+            }
+          });
+        });
+        window.addEventListener('DOMContentLoaded', () => {
+          const savedTheme = localStorage.getItem('theme');
+          if (savedTheme === 'dark') {
+            html.classList.add('dark');
+          }
+        });
+
+      </script>
+
+      <script>
+        const btn = document.getElementById('searchBtn');
+        const input = document.getElementById('searchInput');
+
+        btn.addEventListener('click', () => {
+          if (input.classList.contains('w-0')) {
+            input.classList.remove('w-0', 'opacity-0');
+            input.classList.add('w-64', 'opacity-100');
+            input.focus();
+          } else {
+            input.classList.remove('w-64', 'opacity-100');
+            input.classList.add('w-0', 'opacity-0');
+            input.blur();
+          }
+        });
+      </script>
+
+      <script>
+
+        document.querySelectorAll('.accessibilityToggle').forEach(button => {
+          button.addEventListener('click', () => {
+            const targetSelector = button.getAttribute('data-target');
+            const menu = document.querySelector(targetSelector);
+            if (menu) {
+              menu.classList.toggle('hidden');
+            }
+          });
+        });
+
+        document.querySelectorAll('.fontSizeSlider').forEach(slider => {
+          slider.addEventListener('input', function () {
+            const size = this.value + 'px';
+            document.body.style.fontSize = size;
+            localStorage.setItem('fontSize', size);
+          });
+        });
+
+
+        function setTheme(type) {
+          document.documentElement.classList.remove('theme-bw', 'theme-dark');
+          if (type === 'bw') {
+            document.documentElement.classList.add('theme-bw');
+          } else if (type === 'dark') {
+            //document.documentElement.classList.add('theme-dark');
+          }
+          localStorage.setItem('theme', type);
+        }
+
+        let activeDesktopStep = null;
+
+        function toggleStepchildMenu(stepName) {
+          const contentId = `${stepName}-step`;
+          const content = document.getElementById(contentId);
+
+          if (!content) return;
+
+          if (activeDesktopStep === content) {
+            content.classList.add('hidden');
+            activeDesktopStep = null;
+            return;
+          }
+
+          if (activeDesktopStep) {
+            activeDesktopStep.classList.add('hidden');
+          }
+
+          content.classList.remove('hidden');
+          activeDesktopStep = content;
+        }
+
+        let activeDesktopLast = null;
+
+        function toggleLastchildMenu(stepName) {
+          const contentId = `${stepName}-last`;
+          const content = document.getElementById(contentId);
+
+          if (!content) return;
+
+          if (activeDesktopLast === content) {
+            content.classList.add('hidden');
+            activeDesktopLast = null;
+            return;
+          }
+
+          if (activeDesktopLast) {
+            activeDesktopLast.classList.add('hidden');
+          }
+
+          content.classList.remove('hidden');
+          activeDesktopLast = content;
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+          const fontSize = localStorage.getItem('fontSize');
+          const theme = localStorage.getItem('theme');
+
+          if (fontSize) {
+            document.body.style.fontSize = fontSize;
+            document.querySelectorAll('.fontSizeSlider').forEach(slider => {
+              slider.value = parseInt(fontSize);
+            });
+          }
+
+          if (theme === 'bw') {
+            document.documentElement.classList.add('theme-bw');
+          } else if (theme === 'dark') {
+            //document.documentElement.classList.add('theme-dark');
+          }
+        });
+
+      </script>
+      <script>
+        Fancybox.bind(".info-p img", {
+          Carousel: {
+            Toolbar: {
+              display: {
+                left: ["counter"],
+                middle: [
+                  "zoomIn",
+                  "zoomOut",
+                  "toggle1to1",
+                  "rotateCCW",
+                  "rotateCW",
+                  "flipX",
+                  "flipY",
+                ],
+                right: ["autoplay", "thumbs", "close"],
+              },
+            },
+          },
+        });
+      </script>
+  </body>
+</html>

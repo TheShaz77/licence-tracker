@@ -48,3 +48,20 @@ first lines:
 '    <meta charset="utf-8">'
 '    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">'
 '    <meta http-equiv="X-UA-Compatible" content="IE=edge" />'
+
+url: https://www.bddk.org.tr/Kurulus/Liste/77
+bytes: 200164  starts: b'\r\n\r\n<!DO'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': 'phone', 'address': 'address', 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'phone', 'address', 'website']
+data rows: 67  kept: 67
+type values: [('', 67)]
+first lines:
+''
+''
+'<!DOCTYPE html>'
+'<html>'
+'<head>'
+'    <meta name="viewport" content="width=device-width" />'
+'    <title>Kuruluş Listesi</title>'
+'    <link rel="shortcut icon" type="image/png" href="/Content/TemplateAssets/layout_images/favicon.ico" />'

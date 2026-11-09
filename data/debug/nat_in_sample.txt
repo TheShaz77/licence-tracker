@@ -14,3 +14,20 @@ first lines:
 '    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />'
 ''
 '     <title>Publications | Official Website of Reserve Bank of India </title>'
+
+url: https://rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2491
+bytes: 77836  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'Name of the Banks', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['S No.', 'Name of the Banks']
+data rows: 64  kept: 63
+type values: [('', 63)]
+first lines:
+''
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+'<html xmlns="http://www.w3.org/1999/xhtml">'
+'<head>'
+'    <meta charset="utf-8" />'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />'
+'    <title></title>'
+'    <meta name="description" content="content - Reserve Bank of India" />'

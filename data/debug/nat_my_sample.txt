@@ -1,3 +1,54 @@
+url: https://www.bnm.gov.my/non-bank-e-money-issuers
+bytes: 230719  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
+data rows: 49  kept: 49
+type values: [('E-Money Issuer (Non-bank)', 20), ('E-Money Issuer (Non-bank) Registered Merchant Acquirer (Non-bank)', 9), ('E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank)', 6), ('E-Money Issuer (Non-bank) - White Labelling Provider', 4), ('Registered Merchant Acquirer (Non-bank) E-Money Issuer (Non-bank)', 2), ('E-Money Issuer (Non-bank) Limited Purpose Charge Card Issuer (for purchase of petrol and petroleum products)', 2), ('E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank) Credit Card Issuer (Non-bank)', 1), ('E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank) Remittance (Class B) Licensee', 1), ('E-Money Issuer (Non-bank) Principal Money Services Business (MSB) Licensee Money Changing & Remittance (Class A) Licensee', 1), ('Principal Money Services Business (MSB) Licensee Money Changing & Remittance (Class A) Licensee E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank)', 1), ('Principal Money Services Business (MSB) Licensee Money Changing & Remittance (Class A) Licensee E-Money Issuer (Non-bank)', 1), ('E-Money Issuer (Non-bank) Remittance (Class B) Licensee', 1)]
+first lines:
+''
+''
+''
+''
+''
+''
+''
+''
+
+url: https://www.bnm.gov.my/regulations/fsp-directory/msb-licensees
+bytes: 890775  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'Licensee', 'type': 'Type of money services business', 'id': 'Business Registration Number', 'lei': None, 'city': None, 'date': None, 'status': 'State', 'website': None, 'email': None, 'phone': None, 'address': 'Full Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Licensee', 'Business Registration Number', 'Full Address', 'State', 'Premises', 'Status of premises', 'Type of money services business']
+data rows: 1155  kept: 252
+type values: [('Currency Exchange Business (Class C)', 458), ('Currency Exchange Business, Remittance & Wholesale Currency (Class A&D)', 319), ('Currency Exchange Business & Remittance (Class A)', 229), ('Remittance (Class B)', 111), ('Currency Exchange Business & Wholesale Currency (Class C&D)', 36), ('Remittance (e-money)', 1), ('Remittance (e-money) (Class B)', 1)]
+first lines:
+''
+''
+''
+''
+''
+''
+''
+''
+
+url: https://www.bnm.gov.my/regulations/fsp-directory
+bytes: 300277  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
+data rows: 200  kept: 55
+type values: [('Registered Merchant Acquirer (Non-bank)', 41), ('E-Money Issuer (Non-bank)', 17), ('General Insurance Business', 16), ('Life Insurance Business', 11), ('Family Takaful Business', 7), ('E-Money Issuer (Non-bank) Registered Merchant Acquirer (Non-bank)', 7), ('Licensed Investment Bank', 5), ('E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank)', 5), ('Principal Money Services Business (MSB) Licensee Money Changing & Remittance (Class A) Licensee', 5), ('Approved Payment System Operator', 5), ('Licensed Investment Bank Approved to operate Islamic Banking Window', 5), ('Limited Purpose Charge Card Issuer (for purchase of petrol and petroleum products)', 4), ('Licensed Islamic Bank Credit Card Issuer Debit Card Issuer Islamic Principal Dealer Physical Cash Operations', 3), ('Registered Merchant Acquirer (Non-bank) E-Money Issuer (Non-bank)', 3), ('Licensed Islamic Bank Debit Card Issuer Physical Cash Operations', 3), ('Development Financial Institution (DFIA 2002 Prescribed Institution) Approved to operate Islamic Banking Window', 3), ('Licensed Commercial Bank Approved to operate Islamic Banking Window', 3), ('E-Money Issuer (Non-bank) - White Labelling Provider', 3), ('Principal Money Services Business (MSB) Licensee Remittance (Class B) Licensee', 3), ('Licensed Islamic Digital Bank Debit Card Issuer', 2), ('Licensed Commercial Bank Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Physical Cash Operations', 2), ('Licensed Commercial Bank Credit Card Issuer Debit Card Issuer E-Money Issuer Registered Merchant Acquirer Principal Dealer Physical Cash Operations', 2), ('Licensed Digital Bank Debit Card Issuer', 2), ('E-Money Issuer (Non-bank) Limited Purpose Charge Card Issuer (for purchase of petrol and petroleum products)', 2), ('Licensed Commercial Bank Credit Card Issuer Debit Card Issuer Charge Card Issuer E-Money Issuer Registered Merchant Acquirer Principal Dealer Physical Cash Operations', 2), ('Licensed Commercial Bank Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Principal Dealer Physical Cash Operations', 2), ('E-Money Issuer (Non-bank) - White Labelling Provider Registered Merchant Acquirer (Non-bank) Credit Card Issuer (Non-bank)', 1), ('Licensed Islamic Bank Debit Card Issuer Charge Card Issuer Physical Cash Operations', 1), ('Licensed Islamic Bank Islamic Principal Dealer Physical Cash Operations', 1), ('Licensed Commercial Bank Physical Cash Operations', 1), ('Licensed Islamic Bank Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Islamic Principal Dealer Physical Cash Operations', 1), ('Development Financial Institution (DFIA 2002 Prescribed Institution) Full-fledged Islamic prescribed DFI Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Physical Cash Operations', 1), ('Licensed Islamic Bank Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Physical Cash Operations', 1), ('Licensed Commercial Bank Principal Dealer Registed Merchant Acquirer Physical Cash Operations', 1), ('Licensed Commercial Bank Credit Card Issuer Debit Card Issuer E-Money Issuer Registered Merchant Acquirer Physical Cash Operations', 1), ('Development Financial Institution (DFIA 2002 Prescribed Institution) Full-fledged Islamic Prescribed DFI Registered Merchant Acquirer Debit Card Issuer Physical Cash Operations', 1), ('Development Financial Institution (DFIA 2002 Prescribed Institution) Approved to operate Islamic Banking Window Credit Card Issuer Debit Card Issuer Registered Merchant Acquirer Physical Cash Operations', 1), ('Licensed Commercial Bank', 1), ('Licensed Commercial Bank Approved to operate Islamic Banking Window Charge Card Issuer Principal Dealer Physical Cash Operations', 1), ('Licensed Commercial Bank Approved to operate Islamic Banking Window Registered Merchant Acquirer Physical Cash Operations', 1)]
+first lines:
+''
+''
+''
+''
+''
+''
+''
+''
+
 url: https://www.bnm.gov.my/documents/20124/1326831/Microsite_Digital.pdf/
 bytes: 308746  starts: b'%PDF-1.7'
 error: None

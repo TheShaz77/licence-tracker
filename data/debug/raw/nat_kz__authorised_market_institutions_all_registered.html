@@ -1,0 +1,1461 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://afsa-public-register-prod.s3.amazonaws.com/static/android-chrome-192x192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg==" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+    
+ <style>
+    @import 'https://fonts.googleapis.com/css?family=Noto+Sans';
+    // Variables
+    // --------------------------------------
+    $scrollbar-width: 5px;
+    $chat-thread-bgd-color: rgba(25, 147, 147, 0.2);
+    $chat-thread-msg-arrow-size: 10px;
+    $chat-thread-avatar-size: 25px;
+    $chat-thread-offset: #{$chat-thread-avatar-size + 20px};
+    $default-shadow-color: rgb(0, 0, 0);
+    // Mixins
+    // --------------------------------------
+    @mixin fancy-background() {
+        background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+        background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    @mixin fancy-scrollbar() {
+        &::-webkit-scrollbar {
+            width: $scrollbar-width;
+        }
+        &::-webkit-scrollbar-track {
+            border-radius: $scrollbar-width;
+            background-color: rgba(25, 147, 147, 0.1);
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: $scrollbar-width;
+            background-color: $chat-thread-bgd-color;
+        }
+    }
+    
+    @mixin scrolling-shadows($background-color: transparent, $shadow-intensity: 0.5, $shadow-color: $default-shadow-color, $cover-size: 40px, $shadow-size: 14px) {
+        // Shadow covers
+        background: linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, radial-gradient(50% 0, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)), radial-gradient(50% 100%, farthest-side, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0)) 0 100%;
+        background: linear-gradient($background-color 30%, rgba($background-color, 0)), linear-gradient(rgba($background-color, 0), $background-color 70%) 0 100%, radial-gradient(farthest-side at 50% 0, rgba($shadow-color, $shadow-intensity), rgba($shadow-color, 0));
+        // also add button shadow:
+        //radial-gradient(farthest-side at 50% 100%, rgba($shadow-color,$shadow-intensity), rgba($shadow-color,0)) 0 100%;
+        background-repeat: no-repeat;
+        background-color: $background-color;
+        background-size: 100% $cover-size, 100% $cover-size, 100% $shadow-size, 100% $shadow-size;
+        // Opera doesn't support this in the shorthand
+        background-attachment: local, local, scroll, scroll;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        
+        
+    }
+    
+    .floating-chat {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      transform: translateY(70px);
+      transition: all 250ms ease-out;
+      border-radius: 50%;
+      opacity: 0;
+      background: -moz-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+      background: -webkit-linear-gradient(-45deg, #183850 0, #183850 25%, #192C46 50%, #22254C 75%, #22254C 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .floating-chat.enter:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      opacity: 1;
+    }
+    .floating-chat.enter {
+      transform: translateY(0);
+      opacity: 0.6;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.14);
+    }
+    .floating-chat.expand {
+      width: 500px;
+      max-height: 650px;
+      height: 650px;
+      border-radius: 5px;
+      cursor: auto;
+      opacity: 1;
+    }
+    .floating-chat :focus {
+      outline: 0;
+      box-shadow: 0 0 3pt 2pt rgba(14, 200, 121, 0.3);
+    }
+    .floating-chat button {
+      background: transparent;
+      border: 0;
+      color: white;
+      text-transform: uppercase;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .floating-chat .chat {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      border-radius: 50%;
+      transition: all 250ms ease-out;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .floating-chat .chat.enter {
+      opacity: 1;
+      border-radius: 0;
+      margin: 10px;
+      width: auto;
+      height: auto;
+    }
+    .floating-chat .chat .header {
+      flex-shrink: 0;
+      padding-bottom: 10px;
+      display: flex;
+      background: transparent;
+    }
+    .floating-chat .chat .header .title {
+      flex-grow: 1;
+      flex-shrink: 1;
+      padding: 0 5px;
+    }
+    .floating-chat .chat .header button {
+      flex-shrink: 0;
+    }
+    .floating-chat .chat .messages {
+      padding: 10px;
+      margin: 0;
+      list-style: none;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      flex-grow: 1;
+      border-radius: 4px;
+      background: transparent;
+    }
+    .floating-chat .chat .messages::-webkit-scrollbar {
+      width: 5px;
+    }
+    .floating-chat .chat .messages::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: rgba(25, 147, 147, 0.1);
+    }
+    .floating-chat .chat .messages::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(25, 147, 147, 0.2);
+    }
+    .floating-chat .chat .messages li {
+      position: relative;
+      clear: both;
+      display: inline-block;
+      padding: 14px;
+      margin: 0 0 20px 0;
+      font: 12px/16px "Noto Sans", sans-serif;
+      border-radius: 10px;
+      background-color: rgba(25, 147, 147, 0.2);
+      word-wrap: break-word;
+      max-width: 81%;
+    }
+    .floating-chat .chat .messages li:before {
+      position: absolute;
+      top: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 25px;
+      content: "";
+      background-size: cover;
+    }
+    .floating-chat .chat .messages li:after {
+      position: absolute;
+      top: 10px;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 10px solid rgba(25, 147, 147, 0.2);
+    }
+    .floating-chat .chat .messages li.other {
+      animation: show-chat-odd 0.15s 1 ease-in;
+      -moz-animation: show-chat-odd 0.15s 1 ease-in;
+      -webkit-animation: show-chat-odd 0.15s 1 ease-in;
+      float: right;
+      margin-right: 45px;
+      color: #0AD5C1;
+    }
+    .floating-chat .chat .messages li.other:before {
+      right: -45px;
+      background-image: url(https://afsa-public-register-prod.s3.eu-central-1.amazonaws.com/chatbot/bot.png);
+    }
+    .floating-chat .chat .messages li.other:after {
+      border-right: 10px solid transparent;
+      right: -10px;
+    }
+    .floating-chat .chat .messages li.self {
+      animation: show-chat-even 0.15s 1 ease-in;
+      -moz-animation: show-chat-even 0.15s 1 ease-in;
+      -webkit-animation: show-chat-even 0.15s 1 ease-in;
+      float: left;
+      margin-left: 45px;
+      color: #0EC879;
+    }
+    .floating-chat .chat .messages li.self:before {
+      left: -45px;
+      background-image: url(https://afsa-public-register-prod.s3.eu-central-1.amazonaws.com/chatbot/pokemon256.png);
+    }
+    .floating-chat .chat .messages li.self:after {
+      border-left: 10px solid transparent;
+      left: -10px;
+    }
+    .floating-chat .chat .footer {
+      flex-shrink: 0;
+      display: flex;
+      padding-top: 10px;
+      max-height: 90px;
+      background: transparent;
+    }
+    .floating-chat .chat .footer .text-box {
+      border-radius: 3px;
+      background: rgba(0, 37, 84, 0.96);;
+      min-height: 100%;
+      width: 100%;
+      margin-right: 5px;
+      color: #0EC879;
+      overflow-y: auto;
+      padding: 2px 5px;
+    }
+    .floating-chat .chat .footer .text-box::-webkit-scrollbar {
+      width: 5px;
+    }
+    .floating-chat .chat .footer .text-box::-webkit-scrollbar-track {
+      border-radius: 5px;
+      background-color: rgba(0, 37, 84, 0.86);;
+    }
+    .floating-chat .chat .footer .text-box::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(0, 37, 84, 0.96);;
+    }
+    .blink {
+      animation: blink 1s linear infinite;
+    } 
+
+    // Animation
+    // --------------------------------------
+    @keyframes show-chat-even {
+        0% {
+            margin-left: -480px;
+        }
+        100% {
+            margin-left: 0;
+        }
+    }
+    
+    @-moz-keyframes show-chat-even {
+        0% {
+            margin-left: -480px;
+        }
+        100% {
+            margin-left: 0;
+        }
+    }
+    
+    @-webkit-keyframes show-chat-even {
+        0% {
+            margin-left: -480px;
+        }
+        100% {
+            margin-left: 0;
+        }
+    }
+    
+    @keyframes show-chat-odd {
+        0% {
+            margin-right: -480px;
+        }
+        100% {
+            margin-right: 0;
+        }
+    }
+    
+    @-moz-keyframes show-chat-odd {
+        0% {
+            margin-right: -480px;
+        }
+        100% {
+            margin-right: 0;
+        }
+    }
+    
+    @-webkit-keyframes show-chat-odd {
+        0% {
+            margin-right: -480px;
+        }
+        100% {
+            margin-right: 0;
+        }
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  
+  </style>
+</head>
+<body id="doc" class="bg-light">
+    
+    
+    
+
+
+<header class="border-bottom sticky-top">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+       <div class="header-content">
+           <form action="/i18n/setlang/" method="post">
+               <input type="hidden" name="csrfmiddlewaretoken" value="NJea4u0RkFqOlQo720CvOEzg0eMZlXLIyC9Wyu5gwWuTGPJqSuAKhtWFnJr1Yp4G">
+               <input name="next" type="hidden" value=/roc/ />
+
+               <select class="selectpicker" name="language" style="width: auto;" onchange="this.form.submit()">
+                 
+                 
+                 
+                 
+
+                     <option
+                       value="en"
+                        selected="selected"
+                       data-content='<img src="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/flags/en.gif"> en'</span>
+                       <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
+                         English
+                         <!-- span style="color:#999;">&nbsp;[en]</span -->
+                       </span>'>
+                       en
+                     </option>
+
+                 
+
+                     <option
+                       value="ru"
+                       
+                       data-content='<img src="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/flags/ru.gif"> ru'</span>
+                       <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
+                         Русский
+                         <!-- span style="color:#999;">&nbsp;[ru]</span -->
+                       </span>'>
+                       ru
+                     </option>
+
+                 
+
+                     <option
+                       value="kk"
+                       
+                       data-content='<img src="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/flags/kk.gif"> kk'</span>
+                       <span style="display:inline-block; width:100px; padding-left: 10px; text-shadow:none">
+                         Қазақ
+                         <!-- span style="color:#999;">&nbsp;[kk]</span -->
+                       </span>'>
+                       kk
+                     </option>
+
+                 
+               </select>
+           </form>
+       </div>
+       <div class="navbar__container">
+          <a class="ml-5 navbar-brand" href="https://afsa.aifc.kz/"><img src="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/AFSA_Secondary.png" alt="AIFC" class="img-fluid"></a><button aria-controls="responsive-navbar-nav" type="button" aria-label="Toggle navigation" class="bg-green navbar-toggler collapsed"><span class="navbar-toggler-icon"></span></button>
+          <div class="navbar-collapse collapse" id="responsive-navbar-nav">
+             <div class="justify-content-end align-items-center flex-grow-1 mr-3 navbar-nav">
+                <div class="nav-item">
+                   <span>ABOUT</span>
+                   <div class="nav-menu d-none d-lg-block">
+                      <div class="container">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <h2>ABOUT</h2>
+                            </div>
+                            <div class="d-flex flex-column col-lg-3">
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/what-we-do/">What we do</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/our-mission/">Our Mission</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/our-jurisdiction/">Our Jurisdiction</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/our-structure/">Our Structure</a></div>
+                            </div>
+                            <div class="d-flex flex-column pl-5 col-lg-3">
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/Management/">Management</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/risk-management-framework/">Risk Management Framework</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/international-cooperation/">International Cooperation</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="nav-item">
+                   <span>FIRMS</span>
+                   <div class="nav-menu d-none d-lg-block">
+                      <div class="container">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <h2>FIRMS</h2>
+                            </div>
+                            <div class="d-flex flex-column col-lg-3">
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/authorisation/">Authorisation</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/about-supervision/">Supervision</a></div>
+                            </div>
+                            <div class="d-flex flex-column pl-5 col-lg-3">
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/anti-money-laundering/">Anti-Money Laundering</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/enforcement/">Enforcement</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="nav-item">
+                   <span> CONSUMERS</span>
+                   <div class="nav-menu d-none d-lg-block">
+                      <div class="container">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <h2>CONSUMERS</h2>
+                            </div>
+                            <div class="d-flex flex-column col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/complaints-we-deal-with/">Complaints</a></div>
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/know-your-rights/">Know your rights</a></div>
+                            </div>
+                            <div class="d-flex flex-column pl-5 col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/scams/">Scams</a></div>
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/investment-guide/">Investment Guide</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="nav-item">
+                   <span>Fintech</span>
+                   <div class="nav-menu d-none d-lg-block">
+                      <div class="container">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <h2>Fintech</h2>
+                            </div>
+                            <div class="d-flex flex-column col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/fintech-lab/">FinTech Lab</a></div>
+                               <div class="nav-menu-item"><a target="_blank" href="https://fintech.aifc.kz">FinTech Hub</a></div>
+                            </div>
+                            <div class="d-flex flex-column pl-5 col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/global-financial-innovation-network-gfin/">Global Financial Innovation Network (GFIN)</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="nav-item">
+                   <span>REGISTRATION</span>
+                   <div class="nav-menu d-none d-lg-block">
+                      <div class="container">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <h2>REGISTRATION</h2>
+                            </div>
+                            <div class="d-flex flex-column col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/consider-before-opening-business/">Consider before opening business</a></div>
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/post-registration/">Post-registration</a></div>
+                            </div>
+                            <div class="d-flex flex-column pl-5 col-lg-3">
+                               <div class="nav-menu-item"><a href="https://afsa.aifc.kz/private-company/">Types of participants</a></div>
+                                <div class="nav-menu-item"><a href="https://afsa.aifc.kz/guidance/">Guidances</a></div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <a href="https://orderly.myafsa.com/"><span>LEGAL FRAMEWORK</span></a>
+                <a href="/" data-rb-event-key="https://publicreg.myafsa.com/" class="nav-link"><span>PUBLIC REGISTER</span></a>
+                <a href="https://afsa.aifc.kz/notice-register/" class="nav-link"><span>NOTICE REGISTER</span></a>
+             </div>
+          </div>
+       </div>
+   </nav>
+</header>
+    
+
+
+<div class="nav-side-menu">
+    <div class="brand">Menu</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+        <div class="menu-list">
+            <!--TODO: Provide multilanguage support-->
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a href="/"><i class="fa fa-dashboard fa-lg"></i> Index</a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a href="#"><i class="fa fa-qrcode fa-lg"></i> Registered entities <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a href="/roc/"> All registered</a></li>
+                    <li><a href="/roc/?form=Private%C2%A0Company">Private Companies</a></li>
+                    <li><a href="/roc/?form=Public%C2%A0Company">Public Companies</a></li>
+                    <li><a href="/roc/?form=Non-Profit%C2%A0Incorporated%C2%A0Organisation">Non-Profit Incorporated Organisations</a></li>
+                    <li><a href="/roc/?form=Limited%C2%A0Liability%C2%A0Partnership">Limited Liability Partnerships</a></li>
+                    <li><a href="/roc/?form=General%C2%A0Partnership">General Partnerships</a></li>
+                    <li><a href="/roc/?form=Limited%C2%A0Partnership">Limited Partnerships</a></li>
+                    <li><a href="/roc/?form=Recognised%C2%A0Company">Recognised companies</a></li>
+                    <li><a href="/roc/?form=Recognised%C2%A0Limited%C2%A0Liability%C2%A0Partnership">Recognised Limited Liability Partnerships</a></li>
+                    <li><a href="/roc/?form=Recognised%C2%A0General%C2%A0Partnership">Recognised Gereral Partnerships</a></li>
+                    <li><a href="/roc/?form=Recognised%C2%A0Limited%C2%A0Partnership">Recognised Limited Partnerships</a></li>
+                    <li><a href="/roc/?form=Foundation">Foundations</a></li>
+                    <li><a href="/roc/?form=Private%C2%A0Investment%C2%A0Company">Private Investment Companies</a></li>
+                    <li><a href="/roc/?form=Public%C2%A0Investment%C2%A0Company">Public Investment Companies</a></li>
+                </ul>
+
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/sps/"><i class="fa fa-warning fa-lg"></i> Special Purpose Companies</a>
+                </li>
+
+                <li data-toggle="collapse" data-target="#authorised" class="collapsed">
+                  <a href="#"><i class="fa fa-id-card-o fa-lg"></i> Authorised Firms <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="authorised">
+                  <li><a href="/authorised/">Authorised Firms</a></li>
+                  <li><a href="/authorised_mi/">Authorised Market Institutions</a></li>
+                </ul>
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/ancillary/"><i class="fa fa-handshake-o fa-lg"></i> Ancillary Service Providers </a>
+                </li>
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/rnam/"><i class="fa fa-globe fa-lg"></i> Recognised Non-AIFC entities </a>
+                </li>
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/fintech/"><i class="fa fa-flask fa-lg"> </i> FinTech Lab Participants</a>
+                </li>
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/dasp/"><i class="fa fa-link fa-lg"></i> Digital Asset Service Providers</a>
+                </li> 
+                
+
+                <li data-toggle="collapse" class="collapsed">
+                  <a href="/liquidators/"><i class="fa fa-briefcase fa-lg"></i> Insolvency Practitioners and Official Liquidators</a>
+                </li>
+
+                
+
+            </ul>
+     </div>
+</div>
+
+    <div class="container-fluid">
+        <div align="right">
+            <button type="button"
+                    class="btn btn-success js-export"
+                    data-url="/export_file/">
+                <span class="fa fa-download"></span>
+            </button>
+        </div>
+        <h1  align="center">
+            <font color="DarkBlue">
+                Public Register
+            </font>
+        </h1>
+        <a href="/"> return </a>
+        <br>
+        <b>Search by type</b>
+
+        
+            <form action="" method="get" class="form form-inline js-data">
+                <div class="form-group"><label class="sr-only" for="id_form">Organisational-legal Form</label><select name="form" class="form-control" title="" id="id_form">
+  <option value="" selected>---------</option>
+
+  <option value="Private Company">Private Company</option>
+
+  <option value="Public Company">Public Company</option>
+
+  <option value="Non-Profit Incorporated Organisation">Non-Profit Incorporated Organisation</option>
+
+  <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+
+  <option value="General Partnership">General Partnership</option>
+
+  <option value="Limited Partnership">Limited Partnership</option>
+
+  <option value="Recognised Company">Recognised Company</option>
+
+  <option value="Recognised Limited Liability Partnership">Recognised Limited Liability Partnership</option>
+
+  <option value="Recognised General Partnership">Recognised General Partnership</option>
+
+  <option value="Recognised Limited Partnership">Recognised Limited Partnership</option>
+
+  <option value="Foundation">Foundation</option>
+
+  <option value="Private Investment Company">Private Investment Company</option>
+
+  <option value="Public Investment Company">Public Investment Company</option>
+
+  <option value="Private Protected Cell Company">Private Protected Cell Company</option>
+
+  <option value="Public Protected Cell Company">Public Protected Cell Company</option>
+
+</select></div>
+<div class="form-group"><label class="sr-only" for="id_name">Company name contains</label><input type="text" name="name" placeholder="company name contains" class="form-control" title="" id="id_name"></div>
+<div class="form-group"><label class="sr-only" for="id_bin_number">BIN contains</label><input type="text" name="bin_number" placeholder="BIN contains" class="form-control" title="" id="id_bin_number"></div>
+<div class="form-group"><label class="sr-only" for="id_reg_status">Registration status contains</label><input type="text" name="reg_status" placeholder="registration status contains" class="form-control" title="" id="id_reg_status"></div>
+                    <button class="btn btn-primary"> Search </button>
+            </form>
+        
+        
+
+
+<div class="table-container">
+    
+        <table class="table">
+            
+            
+                <thead >
+                <tr>
+                
+                    <th class="orderable">
+                        
+                            <a href="?sort=form">Organisational-legal Form</a>
+                        
+                    </th>
+                
+                    <th class="orderable">
+                        
+                            <a href="?sort=name">Company name</a>
+                        
+                    </th>
+                
+                    <th class="orderable">
+                        
+                            <a href="?sort=bin_number">BIN</a>
+                        
+                    </th>
+                
+                    <th class="orderable">
+                        
+                            <a href="?sort=address">Registered address</a>
+                        
+                    </th>
+                
+                    <th class="desc orderable">
+                        
+                            <a href="?sort=reg_date">Registration date</a>
+                        
+                    </th>
+                
+                    <th class="asc orderable">
+                        
+                            <a href="?sort=-reg_status">Registration status</a>
+                        
+                    </th>
+                
+                    <th >
+                        
+                            Details
+                        
+                    </th>
+                
+                </tr>
+                </thead>
+            
+            
+            
+                <tbody >
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Spec Ltd.</td>
+                        
+                            <td >251040900179</td>
+                        
+                            <td >—</td>
+                        
+                            <td >—</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/251040900179/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >NAPRO Ltd.</td>
+                        
+                            <td >261140900451</td>
+                        
+                            <td >Z05K6D9,Astana,Esil district,34А,Sarayshyq</td>
+                        
+                            <td >09-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900451/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Payward KZ Ltd.</td>
+                        
+                            <td >261140900461</td>
+                        
+                            <td >Z05T3F5,Astana,Esil district,55/22,Мәңгілік Ел,office Block C4.3, Office 322</td>
+                        
+                            <td >09-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900461/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >IDB Holding Company Ltd.</td>
+                        
+                            <td >261140900441</td>
+                        
+                            <td >010000,Astana,Nura district,50,Turan,office 1</td>
+                        
+                            <td >09-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900441/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Griffin Reserve Ltd.</td>
+                        
+                            <td >261140900471</td>
+                        
+                            <td >010000,Astana,Esil district,56blockБ,Kabanbay Batyr,office 2</td>
+                        
+                            <td >09-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900471/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >GH Group Ltd.</td>
+                        
+                            <td >261140900382</td>
+                        
+                            <td >Z05T2K5,Astana,Esil district,21/1,Әл-Фараби,office 5</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900382/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Juxin Machinery Equipment Sales and Leasing Co Ltd.</td>
+                        
+                            <td >261140900411</td>
+                        
+                            <td >010000,Astana,Esil district,5/2,Dostyk,office 4</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900411/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >SETTE CONTINENTI Limited</td>
+                        
+                            <td >261140900401</td>
+                        
+                            <td >010000,Astana,Esil district,34/1,Әл-Фараби,office 134</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900401/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >ONE Development Ltd.</td>
+                        
+                            <td >261140900431</td>
+                        
+                            <td >010000,Astana,Esil district,55/20,Мәңгілік Ел,office 325</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900431/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >HYDROMET PROCESS DEVELOPMENT Ltd.</td>
+                        
+                            <td >261140900421</td>
+                        
+                            <td >010000,Astana,Esil district,1,Turar Ryskulov,office 143</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900421/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >TMF Holding Ltd.</td>
+                        
+                            <td >261140900392</td>
+                        
+                            <td >Z05K7B1,Astana,Esil district,43,Syganak</td>
+                        
+                            <td >06-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900392/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >SAVV Holding Ltd.</td>
+                        
+                            <td >261140900372</td>
+                        
+                            <td >010000,Astana,Nura district,47/2,Kabanbay Batyr,office 2</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900372/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >White Gold KZ Ltd.</td>
+                        
+                            <td >261140900362</td>
+                        
+                            <td >010000,Astana,Nura district,2,Kerey and Zhanibek Khans,office 46</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900362/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Bala Urpek Limited</td>
+                        
+                            <td >261140900332</td>
+                        
+                            <td >Z05H9B0,Astana,Esil district,12/1,Dinmukhamed Qonayev</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900332/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >PSK Holding Limited</td>
+                        
+                            <td >261140900312</td>
+                        
+                            <td >010000,Astana,Esil district,3,Turar Ryskulov,office 119</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900312/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Central Asia Shenghang Trading Co., Ltd.</td>
+                        
+                            <td >261140900342</td>
+                        
+                            <td >010000,Astana,Esil district,16,Turkistan,office 58</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900342/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Fortress Insurance Brokers Limited</td>
+                        
+                            <td >261140900293</td>
+                        
+                            <td >010000,Astana,Esil district,5,Dostyk</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900293/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Ozen X Limited</td>
+                        
+                            <td >261140900302</td>
+                        
+                            <td >010000,Astana,Esil district,22,Керей, Жәнібек хандар,office 315</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900302/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Ainalym.eco Ltd.</td>
+                        
+                            <td >261140900283</td>
+                        
+                            <td >010000,Astana,Esil district,56blockБ,Kabanbay Batyr,office 2</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900283/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Lancangjiang International Energy Engineering Ltd.</td>
+                        
+                            <td >261140900273</td>
+                        
+                            <td >Z05P9T1,Astana,Esil district,34/1,Әл-Фараби,office 134</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900273/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Nextford Ltd.</td>
+                        
+                            <td >261140900352</td>
+                        
+                            <td >Z05T6P2,Astana,Esil district,31,Мәңгілік Ел,office 5</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900352/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Kazakhstan OfisMall Ltd.</td>
+                        
+                            <td >261140900322</td>
+                        
+                            <td >010000,Astana,Esil district,14,Dinmukhamed Qonayev,office 18</td>
+                        
+                            <td >05-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900322/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Veridan Ltd.</td>
+                        
+                            <td >261140900184</td>
+                        
+                            <td >010000,Astana,Nura district,1/1,Е 899</td>
+                        
+                            <td >04-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900184/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="odd">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Nodeworks Ltd.</td>
+                        
+                            <td >261140900233</td>
+                        
+                            <td >010000,Astana,Nura district,47/2,Kabanbay Batyr,office 2</td>
+                        
+                            <td >04-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900233/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                    
+                    <tr class="even">
+                        
+                            <td >Private Company</td>
+                        
+                            <td >Eurasia Resource Group Ltd.</td>
+                        
+                            <td >261140900194</td>
+                        
+                            <td >010000,Astana,Esil district,1А,Dostyk,office 3</td>
+                        
+                            <td >04-11-2026</td>
+                        
+                            <td >Active</td>
+                        
+                            <td ><a href="/details/261140900194/">show more</a></td>
+                        
+                    </tr>
+                    
+                
+                </tbody>
+            
+            
+            
+            
+        </table>
+    
+
+    
+        
+        <nav aria-label="Table navigation">
+            <ul class="pagination justify-content-center">
+            
+            
+            
+            
+                <li class="page-item active">
+                    <a class="page-link" href="?page=1">
+                        1
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=2">
+                        2
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=3">
+                        3
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=4">
+                        4
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=5">
+                        5
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=6">
+                        6
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=7">
+                        7
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=8">
+                        8
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" >
+                        ...
+                    </a>
+                </li>
+            
+                <li class="page-item">
+                    <a class="page-link" href="?page=279">
+                        279
+                    </a>
+                </li>
+            
+            
+            
+            
+                
+                <li class="next page-item">
+                    <a href="?page=2" class="page-link">
+                        next
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                
+            
+            </ul>
+        </nav>
+        
+    
+</div>
+
+
+
+    </div>
+
+    <div class="modal fade" id="modal-name">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js" integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg==" crossorigin="anonymous"></script>
+    <script>
+        var element = $('.floating-chat');
+        var myStorage = localStorage;
+        
+        if (!myStorage.getItem('chatID')) {
+            myStorage.setItem('chatID', createUUID());
+        }
+        
+        setTimeout(function() {
+            element.addClass('enter');
+        }, 1000);
+        
+        element.click(openElement);
+        
+        function openElement() {
+            var messages = element.find('.messages');
+            var textInput = element.find('.text-box');
+            element.find('>i').hide();
+            element.addClass('expand');
+            element.find('.chat').addClass('enter');
+            var strLength = textInput.val().length * 2;
+            textInput.keydown(onMetaAndEnter).prop("disabled", false).focus();
+            element.off('click', openElement);
+            element.find('.header button').click(closeElement);
+            element.find('#sendMessage').click(sendNewMessage);
+            messages.scrollTop(messages.prop("scrollHeight"));
+        }
+        
+        function closeElement() {
+            element.find('.chat').removeClass('enter').hide();
+            element.find('>i').show();
+            element.removeClass('expand');
+            element.find('.header button').off('click', closeElement);
+            element.find('#sendMessage').off('click', sendNewMessage);
+            element.find('.text-box').off('keydown', onMetaAndEnter).prop("disabled", true).blur();
+            setTimeout(function() {
+                element.find('.chat').removeClass('enter').show()
+                element.click(openElement);
+            }, 500);
+        }
+        
+        function createUUID() {
+            // http://www.ietf.org/rfc/rfc4122.txt
+            var s = [];
+            var hexDigits = "0123456789abcdef";
+            for (var i = 0; i < 36; i++) {
+                s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+            }
+            s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+            s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+            s[8] = s[13] = s[18] = s[23] = "-";
+        
+            var uuid = s.join("");
+            return uuid;
+        }
+      
+        function csrfSafeMethod(method) {
+          // these HTTP methods do not require CSRF protection
+          return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+      
+        var chatterbotUrl = 'https://6nfrvifaq2.execute-api.us-east-1.amazonaws.com/Staging/api/v1/chat';
+        var csrftoken = 'NJea4u0RkFqOlQo720CvOEzg0eMZlXLIyC9Wyu5gwWuTGPJqSuAKhtWFnJr1Yp4G';
+        
+        $.ajaxSetup({
+          beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+              xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+          }
+        });
+      
+        function sendNewMessage() {
+            var userInput = $('.text-box');
+            var newMessage = userInput.html().replace(/\<div\>|\<br.*?\>/ig, '\n').replace(/\<\/div\>/g, '').trim().replace(/\n/g, '<br>');
+        
+            if (!newMessage) return;
+        
+            var messagesContainer = $('.messages');
+        
+            messagesContainer.append([
+                '<li class="self">',
+                newMessage,
+                '</li>'
+            ].join(''));
+                  
+            // Add a "thinking..." message
+            var thinkingMessage = $('<li class="other">Thinking<span class="blink">...</span></li>');
+            messagesContainer.append(thinkingMessage);
+
+            var inputData = {
+              'text': newMessage,
+              'chatId': myStorage.getItem('chatID')
+            }
+      
+            var $submit = $.ajax({
+              type: 'POST',
+              url: chatterbotUrl,
+              data: JSON.stringify(inputData),
+              contentType: 'application/json'
+            });
+      
+            $submit.done(function(statement) {
+              // Remove the "thinking..." message
+              thinkingMessage.remove(); 
+
+              messagesContainer.append([
+                '<li class="other">',
+                  statement.text,
+                '</li>'
+              ].join(''));
+
+              // Scroll to bottom
+              messagesContainer.finish().animate({
+                scrollTop: messagesContainer.prop("scrollHeight")
+              }, 250);
+            });
+      
+            $submit.fail(function() {
+              // TODO: Handle errors
+              console.log("something wrong")
+            });
+        
+            // clean out old message
+            userInput.html('');
+            // focus on input
+            userInput.focus();
+        
+            messagesContainer.finish().animate({
+                scrollTop: messagesContainer.prop("scrollHeight")
+            }, 250);
+        }
+        
+        function onMetaAndEnter(event) {
+            if ((event.metaKey || event.ctrlKey) && event.keyCode == 13) {
+                sendNewMessage();
+            }
+        }
+      </script>
+    
+    <script src="https://afsa-public-register-prod.s3.amazonaws.com/static/publicreg/scripts.js"></script>
+
+</body>
+</html>

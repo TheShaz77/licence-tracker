@@ -1,0 +1,342 @@
+/**
+ * Aplicación de Proveedores de Servicios de Pago
+ * Consume la API REST y renderiza los resultados.
+ */
+
+(function() {
+    'use strict';
+
+    const CONFIG = {
+        apiUrl: '/api/endpoints/proveedores-psp.php',
+        translationsUrl: '/api/traducciones/proveedores-psp.json',
+        containerId: 'proveedores-psp-app',
+        defaultLang: 'es'
+    };
+
+    let translations = {};
+    let currentLang = CONFIG.defaultLang;
+    let currentData = null;
+
+    // ============================================
+    // UTILIDADES
+    // ============================================
+
+    function getUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+            tipoPSP: params.get('tipoPSP') || '',
+            lang: params.get('lang') || ''
+        };
+    }
+
+    function detectLanguage() {
+        const container = document.getElementById(CONFIG.containerId);
+        if (container && container.dataset.lang) {
+            return container.dataset.lang;
+        }
+        const params = getUrlParams();
+        if (params.lang === 'en') return 'en';
+        if (window.location.pathname.includes('/en/')) return 'en';
+        if (document.documentElement.lang === 'en') return 'en';
+        return 'es';
+    }
+
+    function t(key, replacements = {}) {
+        const keys = key.split('.');
+        let value = translations[currentLang];
+
+        for (const k of keys) {
+            if (value && typeof value === 'object') {
+                value = value[k];
+            } else {
+                return key;
+            }
+        }
+
+        if (typeof value !== 'string') return key;
+
+        return value.replace(/\{(\w+)\}/g, (match, placeholder) => {
+            return replacements[placeholder] !== undefined ? replacements[placeholder] : match;
+        });
+    }
+
+    function escapeHtml(text) {
+        if (text === null || text === undefined) return '';
+        const div = document.createElement('div');
+        div.textContent = String(text);
+        return div.innerHTML;
+    }
+
+    // Escapa HTML pero re-permite <br> (tal como vienen de la BD para saltos de línea)
+    function escapeHtmlAllowBr(text) {
+        return escapeHtml(text).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+    }
+
+    // ============================================
+    // RENDERIZADO
+    // ============================================
+
+    function renderLoading() {
+        return `
+            <div class="psp-loading">
+                <div class="spinner"></div>
+                <p>${escapeHtml(t('page.loading'))}</p>
+            </div>
+        `;
+    }
+
+    function renderError(message) {
+        return `
+            <div class="psp-error">
+                <h2>${escapeHtml(t('page.error_title'))}</h2>
+                <p>${escapeHtml(message)}</p>
+            </div>
+        `;
+    }
+
+    function renderTable(data) {
+
+        const { tipoPSP } = getUrlParams();
+        const totalColumnas =
+                            tipoPSP === '5' ? 10 :
+                            tipoPSP === '1' ? 11 :
+                            9;
+
+        if (!data.proveedores || data.proveedores.length === 0) {
+            return `
+                <div>
+                    <div id="TableToPrint">
+                        <div class="salto-linea">
+                            <table id="tabla-rowcolspan-int">
+                                <thead>
+                                    ${data.tipo_psp_nombre ? `<tr><th colspan="${totalColumnas}">${escapeHtml(data.tipo_psp_nombre)}</th></tr>` : ''}
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="${totalColumnas}">${escapeHtml(t('page.maintenance'))}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        let rowsHtml = '';
+        data.proveedores.forEach(proveedor => {
+
+
+            const linkRegistroEntes = `
+                    <a href="/nomina-de-entes-vinculados-al-proveedor/?idProveedor=${encodeURIComponent(proveedor.id_proveedor)}"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        Ver
+                    </a>
+                `;
+
+                
+            rowsHtml += `
+                <tr>
+                    <td>${escapeHtml(proveedor.codigo)}</td>
+                    <td>${escapeHtml(proveedor.denominacion_pj)}</td>
+                    <td>${escapeHtml(proveedor.denominacion)}</td>
+                    <td>${escapeHtml(proveedor.cuit)}</td>
+                    ${tipoPSP === '5'
+                             ? `<td>${escapeHtml(proveedor.habilitadoCCT)}</td>`
+                    : ''}
+                    ${tipoPSP === '1'
+                            ? `<td>${escapeHtml(proveedor.habilitadoOperaComoServicio)}</td>
+                               <td>${['Si', 'Sí'].includes(proveedor.habilitadoOperaComoServicio)
+                                 ? linkRegistroEntes
+                                 : ''}</td>`
+                     : ''}
+
+                    <td>${escapeHtmlAllowBr(proveedor.domicilio)}</td>
+                    <td>${escapeHtml(proveedor.localidad)}</td>
+                    <td>${escapeHtml(proveedor.provincia)}</td>
+                    <td>${escapeHtml(proveedor.codigo_postal)}</td>
+                    <td>${escapeHtml(proveedor.telefono)}</td>
+                    
+                </tr>
+            `;
+        });
+
+        return `
+            <div>
+                <i class="fa fa-print pull-right" id="Imprime" style="cursor: pointer;" title="${escapeHtml(t('acciones.imprimir'))}"></i>
+                
+                <div id="TableToPrint">
+                    <div class="salto-linea">
+                        <table id="tabla-rowcolspan-int">
+                            <thead>
+                                ${data.tipo_psp_nombre ? `<tr><th colspan="${totalColumnas}">${escapeHtml(data.tipo_psp_nombre)}</th></tr>` : ''}
+                                <tr>
+                                    <th rowspan="2">${escapeHtml(t('tabla.codigo'))}</th>
+                                    <th rowspan="2">${escapeHtml(t('tabla.denominacion_pj'))}</th>
+                                    <th rowspan="2">${escapeHtml(t('tabla.denominacion'))}</th>
+                                    <th rowspan="2">${escapeHtml(t('tabla.cuit'))}</th>
+                                    ${tipoPSP === '5' ? `<th rowspan="2">${escapeHtml(t('tabla.habilitadoCCT'))}</th>`
+                                     : ''}
+                                    ${tipoPSP === '1'
+                                        ? ` <th rowspan="2">${escapeHtml(t('tabla.habilitadoOperaComoServicio'))}</th>
+                                            <th rowspan="2">${escapeHtml(t('tabla.registro_entes'))}</th>`
+                                     : ''}
+                                    <th colspan="5" style="text-align:center">${escapeHtml(t('tabla.domicilio_legal'))}</th>
+                                    
+                                    
+                                </tr>
+                                <tr>
+                                    <th>${escapeHtml(t('tabla.calle_nro'))}</th>
+                                    <th>${escapeHtml(t('tabla.localidad'))}</th>
+                                    <th>${escapeHtml(t('tabla.provincia'))}</th>
+                                    <th>${escapeHtml(t('tabla.codigo_postal'))}</th>
+                                    <th>${escapeHtml(t('tabla.telefono'))}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${rowsHtml}
+                            </tbody>
+                        </table>
+                        <p>${escapeHtml(t('page.total'))} ${data.total}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // ============================================
+    // FUNCIONALIDAD DE IMPRESIÓN
+    // ============================================
+
+    function setupPrintButton() {
+        const printBtn = document.getElementById('Imprime');
+        if (printBtn) {
+            printBtn.addEventListener('click', function() {
+                const tabla = document.querySelector('#TableToPrint');
+                if (!tabla) return;
+
+                const newWin = window.open('', '_blank');
+                if (!newWin) {
+                    alert('Por favor, permita las ventanas emergentes para imprimir.');
+                    return;
+                }
+
+                newWin.document.write(`
+                    <html>
+                        <head>
+                            <title>${escapeHtml(t('acciones.imprimir'))}</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; margin: 20px; }
+                                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                                th { background-color: #003A70; color: white; font-weight: bold; }
+                                @media print {
+                                    body { margin: 0; }
+                                }
+                            </style>
+                        </head>
+                        <body onload="window.print(); window.close();">
+                            ${tabla.innerHTML}
+                        </body>
+                    </html>
+                `);
+                newWin.document.close();
+            });
+        }
+    }
+
+    // ============================================
+    // CONSULTAR API
+    // ============================================
+
+    async function fetchProveedores(tipoPSP) {
+        // Los filtros viajan en los nombres que la CDN incluye en su cache key
+        // {serie, detalle, detalle_sub, action, lang, category, desde, hasta, page}.
+        // Con los nombres viejos el endpoint no se podia cachear.
+        const params = new URLSearchParams({
+            category: tipoPSP,
+            lang: currentLang
+        });
+
+        try {
+            const response = await fetch(`${CONFIG.apiUrl}?${params.toString()}`);
+
+            // Intentamos parsear el body como JSON aunque la respuesta no sea 2xx,
+            // porque la API devuelve el detalle del error en el campo "error".
+            let data = null;
+            try {
+                data = await response.json();
+            } catch (e) {
+                data = null;
+            }
+
+            if (!response.ok || !data || !data.success) {
+                const apiError = data && data.error ? data.error : null;
+                const fallback = t('page.error_http', { status: response.status });
+                throw new Error(apiError || fallback);
+            }
+
+            return data;
+        } catch (error) {
+            console.error('Error en consulta:', error);
+            throw error;
+        }
+    }
+
+    // ============================================
+    // RENDERIZADO PRINCIPAL
+    // ============================================
+
+    async function render() {
+        const container = document.getElementById(CONFIG.containerId);
+        if (!container) return;
+
+        const params = getUrlParams();
+        
+        // Validar que tenemos el parámetro tipoPSP
+        if (!params.tipoPSP) {
+            container.innerHTML = renderError(t('page.error_no_tipo_psp'));
+            return;
+        }
+
+        container.innerHTML = renderLoading();
+
+        try {
+            currentData = await fetchProveedores(params.tipoPSP);
+            container.innerHTML = renderTable(currentData);
+            setupPrintButton();
+        } catch (error) {
+            container.innerHTML = renderError(error.message || t('page.error_generic'));
+        }
+    }
+
+    // ============================================
+    // INICIALIZACIÓN
+    // ============================================
+
+    async function init() {
+        currentLang = detectLanguage();
+
+        // Cargar traducciones
+        try {
+            const response = await fetch(CONFIG.translationsUrl);
+            if (response.ok) {
+                translations = await response.json();
+            }
+        } catch (error) {
+            console.error('Error cargando traducciones:', error);
+        }
+
+        // Renderizar
+        await render();
+    }
+
+    // Iniciar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();

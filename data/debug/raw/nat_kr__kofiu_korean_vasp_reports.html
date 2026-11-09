@@ -1,0 +1,1171 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>금융정보분석원</title>
+	<meta name="HandheldFriendly" content="true">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.5"> 
+	<link rel="shortcut icon" type="image/x-icon" href="/images/kor/favicon.png">
+	<link rel="stylesheet" href="/css/kor/base_23.css?version=20241121">
+	<link rel="stylesheet" href="/css/kor/contents_23.css?version=20260611"> <!-- 추가될 탭 배포예정일자로 배포 -->
+	<link rel="stylesheet" href="/css/lib/modal.css?version=20241121">
+	
+	<script>
+	var globalSetting = {
+			lang: 'kor'
+	}
+	</script>
+
+	
+	<script src="/js/lib/jquery-3.6.4.min.js"></script>
+	<script src="/js/lib/jquery.ui.js"></script>
+	
+	
+	
+	
+	<script src="/js/lib/swiper.min.js"></script>
+	
+	
+	<script src="/js/kor/common_23.js?version=20241121"></script>
+	<script src="/js/lib/js-cookie.min.js"></script>
+	<script src="/js/lib/modal.js"></script>
+	<script src="/js/kor/board.js?version=20241121"></script>
+	
+	
+	<!-- <style>
+		.home_video{padding: 0;padding-top:20px;}
+		.home_video .banner_slider{text-shadow:none}
+		.home_institution{padding-top:20px;}
+	</style> -->
+</head>
+<body>
+<div class="skip_navi">
+	<a href="#contentsWraps">본문바로가기</a>
+	<a href="#gnb">주메뉴 바로가기</a>
+	<a href="#footer">하단정보 바로가기</a>
+</div>
+<div id="wrap">
+	
+
+
+
+
+
+
+
+
+
+	<!-- s: header -->
+	<header class="header" id="header">
+		<!-- header_util -->
+		<div class="header_util">
+			<div class="inner">
+				<div class="lang">
+					<a href="/kor/main.do" class="current" title="국문 홈페이지 바로가기">KR</a>
+					<a href="/eng/main.do"  title="영문 홈페이지 바로가기">EN</a>
+				</div>
+
+				<div class="zoom">
+					<button type="button" class="zoom_base" title="화면크기 기본값으로 변경">화면크기</button>
+					<button type="button" class="zoom_in" title="화면크기 확대하기"><span class="sr_only">화면크기 확대</span></button>
+					<button type="button" class="zoom_out" title="화면크기 축소하기"><span class="sr_only">화면크기 축소</span></button>
+				</div>
+			</div>
+		</div>
+
+		<div class="gnbbar">
+			<div class="inner">
+				<h1 class="logo">
+					<a href="/kor/main.do" title="메인바로가기"><span class="ir_wa">금융위원회 금융정보분석원</span></a>
+				</h1>
+
+				<form class="top_search" id="top_search">
+					<input type="text" id="topkeywrod" name="topkeywrod" title="검색어를 입력해주세요" value="" placeholder="검색어를 입력해주세요" autocomplete="off">
+					<button type="button" class="topClearBtn" id="topClearBtn" title="검색어 삭제">
+                     	<span aria-hidden="true">X</span>
+                     	<span class="sr_only">검색어 삭제</span>   
+                     </button>
+					<button title="검색">검색</button>
+				</form>
+
+				<nav class="topnav">
+					<ul id="gnb" class="gnb">
+						<li><a href="#" class="gnb_dep1">정책마당</a></li>
+						<li><a href="#"  class="gnb_dep1">알림마당</a></li>
+						<li><a href="#"  class="gnb_dep1">법령정보</a></li>
+						<li><a href="#"  class="gnb_dep1">정보공개</a></li>
+						<li><a href="#" class="gnb_dep1 blank_menu">민원마당</a></li>
+						<li><a href="#" class="gnb_dep1 firstmenu">기관소개</a></li>
+					</ul>
+				</nav>
+
+				<button class="gnb_allmenu_btn">
+					전체메뉴 열기
+					<span></span>
+				</button>
+			</div>
+		</div>
+		
+		<div class="gnb_sub">
+			<div class="inner">
+				<ul>
+					<!-- 정책마당 -->
+					<li><a href="/kor/policy/amls01.do"  class="gnb_dep1">정책마당</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/kor/policy/amls01.do" >자금세탁방지제도</a></li>
+								<li><a href="/kor/policy/ptfps01.do">공중협박자금조달금지제도</a></li>
+								<li><a href="/kor/policy/iois01_1.do">국제기준 및 국제기구</a></li>
+								<li><a href="/kor/policy/mou.do">MOU체결현황</a></li>
+								<li><a href="/kor/policy/guide01.do">알기쉬운 제도안내</a></li>
+							</ul>
+						</div>
+					</li>
+					
+					<!-- 알림마당 -->
+					<li><a href="/kor/notification/notice.do"  class="gnb_dep1">알림마당</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/kor/notification/notice.do" >공지사항</a></li>
+								<li><a href="/kor/notification/report.do">보도자료</a></li>
+								<li><a href="/kor/notification/sanctions.do">제재공시</a></li>
+								<li><a href="/kor/notification/info.do" >재정정보</a></li>
+								<li><a href="/kor/notification/publish.do" >발행자료</a></li>
+								<li><a href="/kor/notification/education.do">교육자료</a></li>
+								<li><a href="/kor/notification/workshop01.do" >홍보자료</a></li>
+								<li><a href="/kor/notification/faq.do">자주 묻는 질문</a></li>
+							</ul>
+						</div>
+					</li>
+
+
+					<!-- 법령정보 -->
+					<li><a href="/kor/law/law.do"  class="gnb_dep1">법령정보</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/kor/law/law.do">소관법규</a></li>
+								<li><a href="/kor/law/announce_list.do" >공고/고시/훈령/예규</a></li>
+								<li><a href="/kor/law/legislation_list.do" >입법/규정변경 예고</a></li>
+							</ul>
+						</div>
+					</li>
+					
+					<!-- 정보공개 -->
+					<li><a href="/kor/info/preDisclosureList.do"  class="gnb_dep1">정보공개</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="https://www.open.go.kr/infOthbc/infOthbc/infOthbc.do">정보공개제도 안내<i class="icon_blank sm">opens new window</i></a></li>
+								<li><a href="https://www.open.go.kr/rqestMlrd/rqestReg/rqestRegWritingForm.do" >정보공개청구<i class="icon_blank sm">opens new window</i></a></li>
+								<li><a href="/kor/info/preDisclosureList.do" >사전정보공표목록</a></li>
+								<li><a href="https://www.fsc.go.kr/in070000">비공개정보 세부기준<i class="icon_blank sm">opens new window</i></a></li>
+							</ul>
+						</div>
+					</li>
+
+					<!-- 민원마당 -->
+					<li><a href="/kor/etc/fcsc.do" class="gnb_dep1 blank_menu" >민원마당</a></li>
+					
+					<!-- 기관소개 -->
+					<li><a href="/kor/intro/about.do"  class="gnb_dep1 firstmenu">기관소개</a>
+						<div class="dropmenu_g dropmenu_g-5">
+							<ul>
+								<li><a href="/kor/intro/about.do">인사말</a></li>
+								<li><a href="/kor/intro/establish.do">설립배경</a></li>
+								<li><a href="/kor/intro/history.do">연혁</a></li>
+								<li><a href="/kor/intro/ci.do">CI 소개</a></li>
+								<li><a href="/kor/intro/organization.do">조직도</a></li>
+								<li><a href="/kor/intro/direction.do" class="end_menu_focus">오시는 길</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+	<div class="mobile_snb">
+		<div class="mobile_snb_header">
+			<a href="/kor/main.do" class="logo" title="메인바로가기"><strong>금융위원회 금융정보분석원</strong></a>
+		</div>
+		<div class="mobile_snb_cont">
+			<ul class="mobile_gnb">
+										<!-- 정책마당 -->
+						<li><a href="/kor/policy/amls01.do"  class="gnb_dep1">정책마당</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li>
+										<a href="/kor/policy/amls01.do" >자금세탁방지제도</a>
+										<ul>
+											<li><a href="/kor/policy/amls01.do">자금세탁방지제도</a></li>
+						                    <li><a href="/kor/policy/amls02.do">자금세탁 범죄화</a></li>
+						                    <li><a href="/kor/policy/amls03.do">의심거래보고</a></li>
+						                    <li><a href="/kor/policy/amls04.do">고액현금거래보고</a></li>
+						                    <li><a href="/kor/policy/amls05.do">고객확인제도</a></li>
+						                    <li><a href="/kor/policy/amls06.do">범죄수익몰수</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/kor/policy/ptfps01.do">공중협박자금조달금지제도</a>
+										<ul>
+											<li><a href="/kor/policy/ptfps01.do">공중협박자금조달금지제도</a></li>
+						                    <li><a href="/kor/policy/ptfps02_1.do">금융거래등제한대상자</a></li>
+						                    <li><a href="/kor/policy/ptfps03.do">자금세탁방지제도와의 관계</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/kor/policy/iois01_1.do">국제기준 및 국제기구</a>
+										<ul>
+											<li><a href="/kor/policy/iois01_1.do">국제기구</a></li>
+						                    <li><a href="/kor/policy/iois02.do">주요국제규범</a></li>
+						                    <li><a href="/kor/policy/iois03.do">개별규범</a></li>
+						                    <li><a href="/kor/policy/iois04_1.do">국제기준</a></li>
+						                    <li><a href="/kor/policy/iois05.do">국제동향</a></li>
+										</ul>
+									</li>
+									<li><a href="/kor/policy/mou.do">MOU체결현황</a></li>
+									<li><a href="/kor/policy/guide01.do">알기쉬운 제도안내</a></li>
+								</ul>
+							</div>
+						</li>
+						
+						<!-- 알림마당 -->
+						<li><a href="/kor/notification/notice.do"  class="gnb_dep1">알림마당</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li><a href="/kor/notification/notice.do" >공지사항</a></li>
+									<li><a href="/kor/notification/report.do">보도자료</a></li>
+									<li><a href="/kor/notification/sanctions.do">제재공시</a></li>
+									<li><a href="/kor/notification/info.do" >재정정보</a></li>
+									<li><a href="/kor/notification/publish.do" >발행자료</a></li>
+									<li><a href="/kor/notification/education.do">교육자료</a></li>
+									<li><a href="/kor/notification/workshop01.do" >홍보자료</a></li>
+									<li><a href="/kor/notification/faq.do">자주 묻는 질문</a></li>
+								</ul>
+							</div>
+						</li>
+	
+	
+						<!-- 법령정보 -->
+						<li><a href="/kor/law/law.do"  class="gnb_dep1">법령정보</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li><a href="/kor/law/law.do">소관법규</a></li>
+									<li><a href="/kor/law/announce_list.do" >공고/고시/훈령/예규</a></li>
+									<li><a href="/kor/law/legislation_list.do" >입법/규정변경 예고</a></li>
+								</ul>
+							</div>
+						</li>
+						
+						<!-- 정보공개 -->
+						<li><a href="/kor/info/preDisclosureList.do"  class="gnb_dep1">정보공개</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li><a href="https://www.open.go.kr/infOthbc/infOthbc/infOthbc.do" escapeXml="true">정보공개제도 안내</a></li>
+									<li><a href="https://www.open.go.kr/rqestMlrd/rqestReg/rqestRegWritingForm.do" escapeXml="true">정보공개청구</a></li>
+									<li><a href="/kor/info/preDisclosureList.do" escapeXml="true">사전정보공표목록</a></li>
+									<li><a href="https://www.fsc.go.kr/in070000" escapeXml="true">비공개정보 세부기준</a></li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- 민원마당 -->
+						<li><a href="/kor/etc/fcsc.do" class="gnb_dep1 blank_menu" >민원마당 </a>
+						
+						<!-- 기관소개 -->
+						<li><a href="/kor/intro/about.do"  class="gnb_dep1 firstmenu">기관소개</a>
+							<div class="dropmenu_g dropmenu_g-5">
+								<ul>
+									<li><a href="/kor/intro/about.do">인사말</a></li>
+									<li><a href="/kor/intro/establish.do">설립배경</a></li>
+									<li><a href="/kor/intro/history.do">연혁</a></li>
+									<li><a href="/kor/intro/ci.do">CI 소개</a></li>
+									<li><a href="/kor/intro/organization.do">조직도</a></li>
+									<li><a href="/kor/intro/direction.do" class="end_menu_focus">오시는 길</a></li>
+								</ul>
+							</div>
+						</li>
+			</ul>
+		</div>
+		<button class="gnb_allmenu_btn gnb_allmenu_btn_close">
+			전체메뉴 닫기
+			<span></span>
+		</button>
+	</div>
+
+	<div class="gnbbg"></div>
+	
+	<!-------------메인 게시판 시작------------- -->
+	<form id="totalSearchForm" method="POST">
+		<input type="hidden" name="subSech" id="mainSubSech" value="">
+		<input type="hidden" name="size" id="mainSize" value="3">
+		<input type="hidden" name="page" id="mainPage" value="1">
+		<input type="hidden" name="seCd" id="mainSeCd" value="">
+		<input type="hidden" name="selScope" id="mainSelScope" value="" >
+		<input type="hidden" name="ntcnYardOrdrNo" id="mainNtcnYardOrdrNo" value="">
+	</form>
+	<script>
+	jQuery(function(){
+		$('#top_search').submit(function(e){
+			var searchString = $('#topkeywrod').val();
+			e.preventDefault();
+			if (!!searchString?.trim()) {
+				$('#mainSubSech').val(searchString);
+				$('#totalSearchForm').attr('action', '/kor/etc/search.do').submit();
+			} else {
+				// 빈 문자열 혹은 검색어가 없는 경우 통합검색 미진행
+				alert("검색어를 입력해주세요.");
+				return false;
+			}
+		});	
+	});
+	</script>
+	<script>
+	(function () { 
+		$('#topClearBtn').on('click', function(e){
+			e.preventDefault();
+			$('#topkeywrod').val('').focus();
+		});
+		
+	})();
+	</script>
+	<!-- e: header -->
+	
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/kor/main_23.css?version=20241212">
+<script src="/js/kor/main_23.js?version=20241212"></script>
+<script src="/js/kor/noticeModal.js?version=20241121"></script>
+
+<script>
+jQuery(function(){
+	mainNoticeModal2({
+		seCd: "0015",
+	});
+});
+
+$(function(){
+	var windowWidth = $(window).width();
+	if(windowWidth < 768){		
+		var icon1 = document.getElementById('report_icon');
+		icon1.style.display = "none";				
+		var icon2 = document.getElementById('rba_icon');
+		icon2.style.display = "none";				
+		var icon3 = document.getElementById('direction_icon');
+		icon3.style.display = "none";				
+	}
+}); 
+
+
+
+</script>
+
+
+<section id="contentsWraps" class="home">
+		<!-- s: top visual -->
+		<section class="visual swiper" id="krMain">
+			<div class="swiper-wrapper">
+
+				<div class="visual-item swiper-slide">
+					<a href="#" onclick="openMovieModal()" id="returnfocus" data-id="videobtn" title="홍보영상 열림" class="visual-item__inner aa" role="button" data-index="0">
+						<div class="visual-text">
+							<div class="visual-text__inner">
+								<div class="visual-text-1">금융정보분석원</div>
+								<strong class="visual-text-2">홍보영상</strong>
+								<span class="visual-btn">
+									전체영상 보기
+									<i class="btn-arr"></i>
+								</span>
+							</div>
+						</div>
+						
+						<div class="visual-video">
+							<video autoplay muted loop playsinline webkit-playsinline poster="/images/movie/moviecut2_poster.jpg" title="홍보영상 배경동영상">
+								<source src="/images/movie/moviecut2.mp4" type="video/mp4">
+							</video>
+						</div>
+					</a>
+				</div>
+				
+				
+				<div class="visual-item swiper-slide">
+					<a href="/kor/policy/guide01.do" title="알기쉬운 제도안내 이동" class="visual-item__inner aa" role="button" data-index="1">
+						<div class="visual-text">
+							<div class="visual-text__inner">
+								<div class="visual-text-1">알기쉬운</div>
+								<strong class="visual-text-2">자금세탁방지제도</strong>
+								<div class="visual-text-3">자금세탁방지제도에 대해 알기 쉽게 안내해드립니다.</div>
+								<span class="visual-btn">
+									자세히 알아보기
+									<i class="btn-arr"></i>
+								</span>
+							</div>
+						</div>
+						<div class="visual-image" style="background-image:url(/images/kor/main/banner.jpg)"></div>
+					</a>
+				</div>
+
+				<div class="visual-item swiper-slide">
+					<a href="/kor/policy/guide03.do" title="FIU 제도안내 이동" class="visual-item__inner aa" role="button" data-index="2">
+						<div class="visual-text">
+							<div class="visual-text__inner">
+								<div class="visual-text-1">자금세탁방지의 든든한 지킴이</div>
+								<strong class="visual-text-2">금융정보분석원</strong>
+								<div class="visual-text-3">국가 경제를 흔드는 검은 돈의 농간,<br> 자금 세탁은 반드시 근절되어야 합니다.</div>
+								<span class="visual-btn">
+									자세히 알아보기
+									<i class="btn-arr"></i>
+								</span>
+							</div>
+						</div>
+						<div class="visual-image" style="background-image:url(/images/kor/main/banner2.jpg)"></div>
+					</a>
+				</div>
+
+			</div>
+			<div class="swiper-ctrl">
+				<div class="swiper-pagination"></div>
+				<!-- <button type="button" class="slide-play" title="자동 재생 시작">재생</button> -->
+				<button type="button" class="slide-pause slide-play-control" title="자동 재생 정지">정지</button>
+			</div>
+			
+			<button type="button" class="s-button-prev" title="이전 슬라이드 이동">이전</button>
+			<button type="button" class="s-button-next" title="다음 슬라이드 이동">다음</button>
+		</section>
+		<!-- e: top visual -->
+
+		<!-- s: quick nav -->
+		<section class="main_quciknav">
+			<div class="main_inner">
+				<a href="https://report.fiu.go.kr" title="새창열림" target="_blank" id="report_icon">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon1"></i></div>
+						<strong>보고시스템<br>보고기관용</strong>
+					</div>
+				</a>
+				<a href="javascript:linkBoard({secd: '0007',orderNo:'194',type:'view'});">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon2"></i></div>
+						<strong>가상자산사업자<br>신고현황</strong>
+					</div>
+				</a>
+				<a href="https://rba.kofiu.go.kr/cmm/main/mainPage.do;jsessionid=C9479F35C40D4A9A03ADE9BEE647D6FA" title="새창열림" target="_blank" id="rba_icon">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon3"></i></div>
+						<strong>위험평가<br>시스템</strong>
+					</div>
+				</a>
+				<a href="/kor/policy/amls01.do">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon4"></i></div>
+						<strong>자금세탁<br>방지제도</strong>
+					</div>
+				</a>
+				<a href="/kor/policy/amls04.do">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon5"></i></div>
+						<strong>고액현금<br>거래보고</strong>
+					</div>
+				</a>
+				<a href="/kor/policy/ptfps02_1.do">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon6"></i></div>
+						<strong>금융거래<br>제한대상자</strong>
+					</div>
+				</a>
+				<a href="/kor/law/law.do">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon7"></i></div>
+						<strong>법령정보</strong>
+					</div>
+				</a>
+				<a href="javascript:linkBoard({secd: '0003',knsecd:'0003_001', type:'list'})">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon8"></i></div>
+						<strong>연차보고서</strong>
+					</div>
+				</a>
+				<a href="/kor/intro/direction.do" id="direction_icon">
+					<div class="item_wrap">
+						<div class="item_icon_box"><i class="quick-icon9"></i></div>
+						<strong>오시는 길</strong>
+					</div>
+				</a>
+			</div>
+		</section>
+		<!-- e: quick nav -->
+		
+
+		<!-- s: boards -->
+		<section class="main_boards">
+			<div class="main_inner">
+				<!-- s: 알림마당 -->
+				<div class="board_notice">
+					<!-- 타이틀 -->
+					<div class="board_notice_title">
+						<h2>
+							<span>금융정보분석원</span>
+							<strong>알림마당</strong>
+						</h2>
+						<div class="board_notice_tag">
+							<button type="button" class="active" title="선택됨" data-outboard-id="all">#전체</button>
+							<button type="button" data-outboard-id="notice">#공지사항</button>
+							<button type="button" data-outboard-id="news">#보도자료</button>
+						</div>
+					</div>
+					<!-- 리스트 -->
+					<div class="output_board_list">
+						<!-- 전체 -->
+						<ul data-outboard-id="all">
+							
+						</ul>
+						<!-- 공지사항 -->
+						<ul data-outboard-id="notice"></ul>
+
+						<!-- 보도자료 -->
+						<ul data-outboard-id="news"></ul>
+						
+					</div>
+				</div>
+				<!-- e: 알림마당 -->
+
+				<!-- s: 자주 묻는 질문 -->
+				<div class="board_qna">
+					<h2>자주 묻는 질문</h2>
+					<ul class="output_qna_list">
+					</ul>
+					<a href="/kor/notification/faq.do" class="board_more">자주 묻는 질문 더보기</a>
+				</div>
+				<!-- e: 자주 묻는 질문 -->
+			</div>
+		</section>
+		<!-- e: boards -->
+		
+		<section class="main_boards2">
+			<div class="main_inner">
+				<div class="output_board_section">
+					<h2>공지사항</h2>
+					<ul class="output_board_list2" data-outboard-id="moNotice">
+					
+					</ul>
+					<a href="/kor/notification/notice.do" class="board_more"><span clss="ir_wa">공지사항 더보기</span></a>
+				</div>
+				
+			
+				<div class="output_board_section">
+					<h2>보도자료</h2>
+					<ul class="output_board_list2" data-outboard-id="moNews">
+					
+					</ul>
+					<a href="/kor/notification/report.do" class="board_more"><span clss="ir_wa">보도자료 더보기</span></a>
+				</div>
+					
+				<div class="output_board_section">
+					<h2>자주 묻는 질문</h2>
+					<ul class="output_qna_list">
+					</ul>
+					<a href="/kor/notification/faq.do" class="board_more"><span clss="ir_wa">자주 묻는 질문 더보기</span></a>
+				</div>
+			</div>
+		</section>
+		
+		
+
+		<section class="main_boards_mo">
+			<div class="main_inner">
+				<div class="main_boards_mo_header" role="tablist">
+					<!-- 251125 수정 -->
+					<button class="active" type="button" data-board="1" role="tab" aria-selected="true" aria-controls="panel-notice" id="tab-notice" title="선택됨">공지사항</button>
+					<button type="button" data-board="2" role="tab" aria-selected="false" aria-controls="panel-news" id="tab-news">보도자료</button>
+					<button type="button" data-board="3" role="tab" aria-selected="false" aria-controls="panel-faq" id="tab-faq">자주 묻는 질문</button>
+				</div>
+
+				<div class="main_board_mo_cont swiper">
+					<div class="swiper-wrapper">
+						<!-- 공지사항 251125 수정 -->
+						<section class="swiper-slide" role="tabpanel" id="panel-notice" aria-labelledby="tab-notice">
+							<div class="output_board_list_mo">
+								<ul data-outboard-id="moNotice">
+								</ul>
+							</div>
+							<a href="/kor/notification/notice.do" class="board_more"><span class="sr_only">공지사항</span> 더보기</a>
+						</section>
+
+						<!-- 보도자료 251125 수정 -->
+						<section class="swiper-slide" role="tabpanel" id="panel-news" aria-labelledby="tab-news" aria-hidden="true">
+							<div class="output_board_list_mo">
+								<ul data-outboard-id="moNews">
+								</ul>
+							</div>
+							<a href="/kor/notification/report.do" class="board_more"><span class="sr_only">보도자료</span> 더보기</a>
+						</section>
+
+						<!-- 자주 묻는 질문 251125 수정 -->
+						<section class="swiper-slide" role="tabpanel" id="panel-faq" aria-labelledby="tab-faq" aria-hidden="true">
+							<div class="output_qna_list_mo">
+								<ul>
+								</ul>
+							</div>
+							<a href="/kor/notification/faq.do" class="board_more"><span class="sr_only">자주묻는질문</span> 더보기</a>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+		<!-- s: site infos-->
+		<section class="main_siteinfo">
+			<div class="main_inner">
+				<div class="siteinfo_cate">
+					<button type="button" title="선택됨" class="active" data-sec="1">자금세탁방지제도</button>
+					<button type="button" data-sec="2">공중협박자금조달금지제도</button>
+					<button type="button" data-sec="3">국제기준 및 국제기구</button>
+				</div>
+
+
+				<div class="siteinfo_cont_wrap swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							
+							<!-- <strong class="sr_only">자금세탁방지제도</strong> -->
+							<div class="siteinfo_cont">
+								<a href="/kor/policy/amls01.do" role="button" data-i="0">
+									<i class="info_icon1"></i>
+									<strong>자금세탁방지제도</strong>
+									<div>불법자금의 세탁을 적발·예방하기 위한 법적·제도적 장치</div>
+								</a>
+								<a href="/kor/policy/amls02.do" role="button" data-i="0">
+									<i class="info_icon2"></i>
+									<strong>자금세탁 범죄화</strong>
+									<div>자금세탁을 독립된 범죄로 규정하고 처벌하는 제도</div>
+								</a>
+								<a href="/kor/policy/amls03.do" role="button" data-i="0">
+									<i class="info_icon3"></i>
+									<strong>의심거래보고</strong>
+									<div>자금세탁행위로 의심되는 합당한 근거가 있는 경우 이를 금융정보분석원장에게 보고토록 한 제도</div>
+								</a>
+								<a href="/kor/policy/amls04.do" role="button" data-i="0">
+									<i class="info_icon4"></i>
+									<strong>고액현금거래보고</strong>
+									<div>객관적 기준에 의해 일정금액 이상의 현금거래를 FIU에 보고토록 한 제도</div>
+								</a>
+								<a href="/kor/policy/amls05.do" role="button" data-i="0">
+									<i class="info_icon5"></i>
+									<strong>고객확인제도</strong>
+									<div>금융거래 또는 금융서비스가 불법행위에 이용되지 않도록 고객에 대해 주의를 기울이도록 하는 제도</div>
+								</a>
+								<a href="/kor/policy/amls06.do" role="button" data-i="0">
+									<i class="info_icon6"></i>
+									<strong>범죄수익몰수</strong>
+									<div>자금세탁된 재산, 수익, 도구 또는 이들 재산의 가치에 상당하는 재산을 몰수할 수 있도록 하는 조치</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="swiper-slide">
+							<!-- <strong class="sr_only">공중협박자금조달금지제도</strong> -->
+							<div class="siteinfo_cont">
+								<a href="/kor/policy/ptfps01.do" role="button" data-i="1">
+									<i class="info_icon7"></i>
+									<strong>공중협박자금<br> 조달금지제도</strong>
+									<div>
+									공중 등 협박목적 및 대량살상무기확산을 위한 자금조달행위를 금지하는 제도
+										</div>
+								</a>
+								<a href="/kor/policy/ptfps02_1.do" role="button" data-i="1">
+									<i class="info_icon8"></i>
+									<strong>금융거래등제한대상자
+										</strong>
+									<div>국제평화와 안전유지를 위한
+										국제적 노력에 기여하기 위해
+										공중협박자금조달의
+										규제가 필요한 대상을
+										지정하여 고시
+										</div>
+									<i class="icon_arr_link"></i>
+								</a>
+								<a href="/kor/policy/ptfps03.do" role="button" data-i="1">
+									<i class="info_icon9"></i>
+									<strong>자금세탁방지제도와의 관계</strong>
+									<div>
+										특정금융정보법은 테러자금금지법상 공중협박자금을 의심거래보고대상인 '불법재산'에 포함되는 것으로 규정
+									</div>
+								</a>
+							</div>
+						</div>
+
+						<div class="swiper-slide">
+							<!-- <strong class="sr_only">국제기준 및 국제기구</strong> -->
+							<div class="siteinfo_cont">
+								<a href="/kor/policy/iois01_1.do" role="button" data-i="2">
+									<i class="info_icon10"></i>
+									<strong>국제기구</strong>
+									<div>FATF, Egmont, APG, UN 등 자금세탁방지 국제기구와 우리나라의 회원국 활동</div>
+								</a>
+								<a href="/kor/policy/iois02.do" role="button" data-i="2">
+									<i class="info_icon11"></i>
+									<strong>주요국제 규범</strong>
+									<div>자금세탁/테러자금조달 방지 분야에서 전세계적으로 가장 광범위한 영향력을 행사하고 있는 주요국제규범인 FATF 권고사항과 UN협약</div>
+								</a>
+								<a href="/kor/policy/iois03.do" role="button" data-i="2">
+									<i class="info_icon12"></i>
+									<strong>개별 규범</strong>
+									<div>
+									국제조직범죄방지협약, 부패방지협약, 테러자금조달금지협약 등 관련 국제연합 협약
+										</div>
+								</a>
+								<a href="/kor/policy/iois04_1.do" role="button" data-i="2">
+									<i class="info_icon13"></i>
+									<strong>국제기준</strong>
+									<div>FATF, Egmont, APG, UN 등 자금세탁방지 국제기구가 발행한 국제기준</div>
+								</a>
+								<a href="/kor/policy/iois05.do" role="button" data-i="2">
+									<i class="info_icon14"></i>
+									<strong>국제동향</strong>
+									<div>FATF, Egmont, APG 연차보고서 등 국제동향</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- e: site infos-->
+		
+		<!-- s : 위젯 -->
+		<section class="widget">
+			<div class="widget_inner">
+				<iframe style="width:100%; height:100%;" src="https://www.korea.kr/etc/news_widget.do?svrId=JFJ9CP8cDGJ000" title="정책브리핑 뉴스 위젯" frameborder="0" allowfullscreen scrolling="no">
+				</iframe>
+			</div>
+		</section>
+		<!-- e : 위젯 -->
+
+	</section>
+
+	<!-- s: footer -->
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+<!-- s: footer -->
+	<footer class="foot" id="footer">
+		<div class="inner">
+			<!-- foot_nav -->
+			<div class="foot_nav">
+				<ul>
+					<li><a href="/kor/etc/guide.do">홈페이지 이용안내</a></li>
+					<!-- sr16555 update 개인정보 처리방침 -->
+					<li><a href="/kor/etc/privacy2026-aug.do" class="personal">개인정보처리방침</a></li>
+					<li><a href="/kor/etc/email.do">이메일무단수집거부</a></li>
+					<li><a href="https://www.fcsc.kr/ucms/main/main.do" target="_blank">정보공개 <i class="icon_blank">새창열림</i></a></li>
+					<li class="tb_hidden"><a href="/kor/etc/viewer.do">뷰어 다운로드</a></li>
+				</ul>
+			</div>
+
+			<!-- foot_cont -->
+			<div class="foot_cont">
+
+				<strong class="siteinfo_title">금융위원회 금융정보분석원</strong>
+				<div class="siteinfo_text">03171 서울특별시 종로구 세종대로 209 정부서울청사 본관 14층 금융정보분석원</div>
+				<div class="siteinfo_text">대표전화 : <a href="tel:+82-2-2100-2500" style= "color: #ffffff">+82-2-2100-2500</a></div>
+				<!-- sr16409 
+				<div class="siteinfo_text">Contact Us : kofiuinfo@korea.kr</div>
+				-->
+				<div class="siteinfo_copy">Copyright ⓒ KoFIU. All Rights Reserved.</div>
+
+				<!-- foot_marks -->
+				<ul class="foot_marks">
+					<!-- SR 16710 현행화 예정으로 삭제
+					<li>
+						<a href="https://www.president.go.kr/affairs/gov_project" target="_blank" title="새창열림">
+							<img src="/images/kor/common/footer_marks1.png" alt="다시 대한민국! 새로운 국민의 나라">
+						</a>
+					</li>
+					-->
+					<li>
+						<a href="http://www.nctc.go.kr/" target="_blank" title="새창열림">
+							<img src="/images/kor/common/footer_marks2.png" alt="대테러센터">
+						</a>
+					</li>
+					<li>
+						<img src="/images/kor/common/footer_marks3.png" alt="금융정보분석원">
+					</li>
+
+					<!-- SR 16713 WA 인증마크 갱신 -->
+					<li>
+						<img src="/images/kor/common/footer_marks7.png"
+							 alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크,웹와치(WebWatch) 2025.12.26 ~ 2026.12.25" title="WA 품질인증 마크, 웹와치(WebWatch) 2025.12.26 ~ 2026.12.25">
+
+					</li>
+				</ul>
+
+
+				<!-- 관련사이트 -->
+				<div class="foot_link_list">
+					
+					<div class="relatedmenu">
+						<button type="button" title="관련사이트 목록 닫힘" class="btn_family">관련사이트</button>
+						<div class="scroll_area">
+							<ul>
+								<li><a href="https://report.fiu.go.kr" title="새창열림" target="_blank">보고시스템</a></li>
+								<li><a href="https://rba.kofiu.go.kr/cmm/main/mainPage.do;jsessionid=C9479F35C40D4A9A03ADE9BEE647D6FA" title="새창열림" target="_blank">위험평가시스템</a></li>	
+								<li><a href="http://www.spo.go.kr" title="새창열림" target="_blank">공소청</a></li>
+								<li><a href="http://www.sci.go.kr" title="새창열림" target="_blank">중대범죄수사청</a></li>
+								<li><a href="http://www.police.go.kr" title="새창열림" target="_blank">경찰청</a></li>
+								<li><a href="http://www.msit.go.kr" title="새창열림" target="_blank">과학기술정보통신부</a></li>
+								<li><a href="http://www.customs.go.kr" title="새창열림" target="_blank">관세청</a></li>
+								<li><a href="http://www.nis.go.kr" title="새창열림" target="_blank">국가정보원</a></li>
+								<li><a href="http://www.nts.go.kr" title="새창열림" target="_blank">국세청</a></li>
+								<li><a href="http://www.molit.go.kr" title="새창열림" target="_blank">국토교통부</a></li>
+								<li><a href="http://www.assembly.go.kr" title="새창열림" target="_blank">국회</a></li>
+								<li><a href="http://www.fsc.go.kr" title="새창열림" target="_blank">금융위원회</a></li>
+								<li><a href="http://www.moef.go.kr" title="새창열림" target="_blank">기획재정부</a></li>
+								<li><a href="http://www.moel.go.kr" title="새창열림" target="_blank">고용노동부</a></li>
+								<li><a href="http://www.moj.go.kr" title="새창열림" target="_blank">법무부</a></li>
+								<li><a href="http://www.moleg.go.kr" title="새창열림" target="_blank">법제처</a></li>
+								<li><a href="http://www.nec.go.kr" title="새창열림" target="_blank">선거관리위원회</a></li>
+								<li><a href="http://www.mss.go.kr" title="새창열림" target="_blank">중소벤처기업부</a></li>
+								<li><a href="http://www.president.go.kr" title="새창열림" target="_blank">청와대</a></li>
+								<li><a href="http://www.kcg.go.kr" title="새창열림" target="_blank">해양경찰청</a></li>
+								<li><a href="http://www.mois.go.kr" title="새창열림" target="_blank">행정안전부</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 패밀리사이트 -->
+					<div class="relatedmenu">
+						<button type="button" title="패밀리사이트 목록 닫힘" class="btn_family">패밀리사이트</button>
+						<div class="scroll_area">
+							<ul>
+								<li><a href="http://www.fss.or.kr" title="새창열림" target="_blank">금융감독원</a></li>
+								<li><a href="http://www.koscom.co.kr" title="새창열림" target="_blank">Koscom</a></li>
+								<li><a href="http://www.kftc.or.kr" title="새창열림" target="_blank">금융결제원</a></li>
+								<li><a href="http://www.fsec.or.kr" title="새창열림" target="_blank">금융보안원</a></li>
+								<li><a href="http://www.kibo.or.kr" title="새창열림" target="_blank">기술보증기금</a></li>
+								<li><a href="http://www.nonghyup.com" title="새창열림" target="_blank">농협중앙회</a></li>
+								<li><a href="http://www.kidi.or.kr" title="새창열림" target="_blank">보험개발원</a></li>
+								<li><a href="http://www.nfcf.or.kr" title="새창열림" target="_blank">산립조합중앙회</a></li>
+								<li><a href="http://www.fsb.or.kr" title="새창열림" target="_blank">상호저축은행중앙회</a></li>
+								<li><a href="http://www.kfcc.co.kr" title="새창열림" target="_blank">새마을금고중앙회</a></li>
+								<li><a href="http://www.klia.or.kr" title="새창열림" target="_blank">생명보험협회</a></li>
+								<li><a href="http://www.knia.or.kr" title="새창열림" target="_blank">손해보험협회</a></li>
+								<li><a href="http://www.suhyup.co.kr" title="새창열림" target="_blank">수협중앙회</a></li>
+								<li><a href="http://www.kodit.co.kr" title="새창열림" target="_blank">신용보증기금</a></li>
+								<li><a href="http://www.cica.or.kr" title="새창열림" target="_blank">신용정보협회</a></li>
+								<li><a href="http://www.cu.co.kr" title="새창열림" target="_blank">신용협동조합중앙회</a></li>
+								<li><a href="http://www.crefia.or.kr" title="새창열림" target="_blank">여신금융협회</a></li>
+								<li><a href="http://www.ksd.or.kr" title="새창열림" target="_blank">한국예탁결제원</a></li>
+								<li><a href="http://www.kfb.or.kr" title="새창열림" target="_blank">은행연합회</a></li>
+								<li><a href="http://www.koreacasino.or.kr" title="새창열림" target="_blank">한국카지노업관광협회</a></li>
+								<li><a href="http://www.korfin.kr" title="새창열림" target="_blank">한국핀테크산업협회</a></li>
+								<li><a href="http://www.krx.co.kr" title="새창열림" target="_blank">한국거래소</a></li>
+								<li><a href="http://www.kofia.or.kr/" title="새창열림" target="_blank">금융투자협회</a></li>
+								<li><a href="http://www.ikiba.or.kr" title="새창열림" target="_blank">한국보험중개사협회</a></li>
+								<li><a href="http://www.bok.or.kr" title="새창열림" target="_blank">한국은행</a></li>
+								<li><a href="http://www.kamco.or.kr" title="새창열림" target="_blank">한국자산관리공사</a></li>
+								<li><a href="http://www.ksfc.co.kr" title="새창열림" target="_blank">한국증권금융</a></li>
+								<li><a href="http://www.kfpa.or.kr" title="새창열림" target="_blank">한국화재보험협회</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 해외사이트 -->
+					<div class="relatedmenu relatedmenu_wide">
+						<button type="button" title="회외사이트 목록 닫힘" class="btn_family" id="relateMneu111">해외사이트</button>
+						<div class="scroll_area">
+							<strong>FATF &amp; 지역기구(FATF and FSRBs) / 정부기관</strong>
+							<ul>
+								<li><a href="http://www.fatf-gafi.org" title="새창열림" target="_blank">FATF (Financial Action Task Force)</a></li>
+								<li><a href="http://www.cfatf-gafic.org" title="새창열림" target="_blank">CFATF (Caribbean Financial Action Task Force)</a></li>
+								<li><a href="http://www.eurasiangroup.org" title="새창열림" target="_blank">EAG (Eurasian Group)</a></li>
+								<li><a href="http://www.esaamlg.org" title="새창열림" target="_blank">ESAAMLG (Eastern and South African Anti Money Laundering Group)</a></li>
+								<li><a href="http://www.gafisud.org" title="새창열림" target="_blank">GAFISUD (Grupo de Accion Financiera de Sudamerica)</a></li>
+								<li><a href="http://www.giaba.org" title="새창열림" target="_blank">GIABA (Groupe inter-Gouvernemental d’Action Contre Ie Blanchiment de I’Argent en Afrique)</a></li>
+								<li><a href="http://www.menafatf.org" title="새창열림" target="_blank">MENAFATF (Middle East and North Africa Financial Action Task Force)</a></li>
+								<li><a href="http://www.coe.int/t/dghl/monitoring/moneyval" title="새창열림" target="_blank">MONEYVAL (Council of Europe, Committee of Experts on the Evaluation of AML Measures and FT)</a></li>
+								<li><a href="http://www.apgml.org" title="새창열림" target="_blank">APG (Asia/Pacific Group on Money Laundering)</a></li>
+							</ul>
+
+							<strong>에그몽 그룹 및 외국 FIU</strong>
+							<ul>
+								<li><a href="http://www.egmontgroup.org" title="새창열림" target="_blank">Egmont Group</a></li>
+								<li><a href="http://www.apgml.org" title="새창열림" target="_blank">Asia</a></li>
+								<li><a href="http://www.menafatf.org" title="새창열림" target="_blank">Africa</a></li>
+								<li><a href="http://www.gafisud.org" title="새창열림" target="_blank">The Americas</a></li>
+								<li><a href="http://www.coe.int/en/web/moneyval" title="새창열림" target="_blank">Europe</a></li>
+								<li><a href="http://www.cfatf.org" title="새창열림" target="_blank">Oceania</a></li>
+							</ul>
+
+							<strong>국제 금융기구</strong>
+							<ul>
+								<li><a href="http://www.imf.org" title="새창열림" target="_blank">IMF (International Monetary Fund)</a></li>
+								<li><a href="http://www.worldbank.org" title="새창열림" target="_blank">World Bank</a></li>
+								<li><a href="http://www.bis.org" title="새창열림" target="_blank">BIS (Bank for International Settlements)</a></li>
+							</ul>
+
+							<strong>국제 금융기구</strong>
+							<ul>
+								<li><a href="http://www.unodc.org" title="새창열림" target="_blank">UNODC (United Nations Office on Drugs and Crime)</a></li>
+								<li><a href="https://main.un.org/securitycouncil/en/sanctions/1267/aq_sanctions_list" title="새창열림" target="_blank">UN 1267 Committee Consolidated List – Al-Qaida, Usama bin Laden, the Taliban and other individuals</a></li>
+								<li><a href="https://main.un.org/securitycouncil/en/sanctions/1267/resolutions" title="새창열림" target="_blank">UN Security Council Resolution 1267 Committee</a></li>
+								<li><a href="http://www.un.org/sc/ctc" title="새창열림" target="_blank" data-focus-next="relate_tab2">UN Counter-Terrorism Committee</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="foot_bg"><div>금융정보분석원은 투명한 금융거래 질서를 확립합니다</div></div>
+		</div>
+	</footer>
+	<!-- e: footer -->
+	
+<!-- 홍보동영상 -->	
+<div data-id="js__video" class="laymodal laymodal_video" style="max-width:900px;">
+	<div class="laymodal-content">
+		<div id="videoPlyWrap">
+			
+		</div>
+		<div title="금융정보분석원 홍보영상 자막" tabindex="0" class="video_subtitle" id="movieCn"></div>
+	</div>
+	<div class="laymodal-footer">
+		<button class="gnb_allmenu_btn gnb_allmenu_btn_close" title="영상닫힘" onclick="layModalClose(this);$('#returnfocus').focus();$('#videoPly').get(0).pause();$('#videoPly').get(0).currentTime=0"><span>닫기</span></button>
+	</div>
+</div>
+<script>
+
+
+
+//동영상로드
+var movieLoadComplete = false;
+function openMovieModal() {
+	var player;
+	var ordrNo = $('#ntcnYardOrdrNo').val();
+
+	var loadCheckNum = 0;
+	var loadCheck = function(){
+		loadCheckNum++;
+		
+		if(loadCheckNum == 2){
+			movieLoadComplete = true;
+		}
+	}
+	
+	if(movieLoadComplete){
+		layModalOpen('js__video', '[data-id=videobtn]','#videoPly');
+		player.get(0).play();
+		return;
+	}
+	
+	//동영상
+	$.ajax({
+		type : 'POST',
+		url : '/cmn/board/selectBoardFile.do',
+		dataType : 'json',
+		data : {'seCd' : '0013', 'ntcnYardOrdrNo' : ordrNo, 'atchmnflKndSeCd':'001'}, // 동영상(첨부파일) 조회
+		success : function(data) {
+			loadCheck();
+			var videoHtml = '<video style="width: 100%;" id="videoPly" muted controls title="금융정보분석원 홍보영상">';
+			videoHtml += '<source src="/media/' +data.result[0].atchmnflStreNm +'" type="video/mp4">';
+			videoHtml += '</video>';
+			$('#videoPlyWrap').html(videoHtml);
+
+			player = $('#videoPly');
+			layModalOpen('js__video','[data-id=videobtn]','#videoPly');
+			player.get(0).play();
+		}
+	});
+	//자막
+	$.ajax({
+		type : 'GET',
+		url : '/cmn/board/selectBoardListFile.do',
+		dataType : 'json',
+		data : {'size' : '1', 'page' : '1', 'seCd' : '0013','atchmnflKndSeCd':'003', 'viewType': 'allCnList'}, // 썸네일 조회
+		success : function(data) {
+			loadCheck();
+			var strYardCn = data.result[0].ntcnYardCn;
+			$('#movieCn').html(strYardCn);
+		}
+	});
+	
+	//251124 추가
+	$('jq_modal_wrap .laymodal-focusclose').remove();
+	//251124 끝
+}
+
+//공지사항
+var boardNoticeData,
+	boardNewsData;
+
+// 공지사항, 보도자료 모두 로드 완료시
+var boardLoeadCount = 0;
+
+//알림마당 INIT
+var boardState = function(state){
+	if(state == 'loading'){
+		return '<li class="item_state"><div><strong>로딩중</strong></div><li>';
+	}else if(state == 'error'){
+		return '<li class="item_state"><div><strong>로딩 실패</strong><span>새로고침해주세요</span>	</div></li>';
+	}
+}
+$('ul[data-outboard-id="all"], ul[data-outboard-id="notice"], ul[data-outboard-id="news"]').html(boardState('loading'));
+
+//모바일 공지사항, 보도자료 html
+var getBoardListMo = function(data){
+	var html = ''
+		var count = 0;
+		$(data).each(function(idx, item){
+			if(++count > 3) return true;
+			html += '<li>';
+			html += '	<a href="javascript:linkBoard({secd: \''+ item.ntcnYardTySeCd +'\',orderNo:\''+ item.ntcnYardOrdrNo+'\',type:\'view\'});" role="button">';
+			html += '		<strong class="item_title">'+ getBoardText(item.ntcnYardSjNm) +'</strong>';
+			html += '		<div class="item_description">'+ item.ntcnYardCn +'</div>';
+			html += '		<div class="item_date">'+ item.ntcnYardRgiDt.substring(0,10) +'</div>';
+			html += '	</a>';
+			html += '</li>';
+		});
+		/* console.log('getBoardListMo'); */
+		return html;
+}
+
+//공지사항 데이터
+var boardNotice = new getBoardDataSimple({
+	config:{
+		size: '4',
+		seCd: '0007',
+		viewType: 'cnList'
+	},
+	complete: function(data){
+		boardNoticeData = data.result;
+		$('ul[data-outboard-id="moNotice"]').html( getBoardListMo(boardNoticeData) );
+	},
+	error: function(){
+		$('ul[data-outboard-id="notice"]').html(boardState('error'));
+		$('ul[data-outboard-id="all"]').html(boardState('error'));
+	}
+});
+
+//보도자료 데이터
+var boardNews = new getBoardDataSimple({
+	config:{
+		size: '4',
+		seCd: '0001',
+		viewType: 'cnList'
+	},
+	complete: function(data){
+		boardNewsData = data.result;
+		$('ul[data-outboard-id="moNews"]').html( getBoardListMo(boardNewsData) );
+	},
+	error: function(){
+		$('ul[data-outboard-id="news"]').html(boardState('error'));
+		$('ul[data-outboard-id="all"]').html(boardState('error'));
+	}
+});
+
+
+//자주묻는질문
+var baordQna = new getBoardDataSimple({
+	config:{
+		size: '8',
+		seCd: '0009'
+	},
+	complete: function(data){
+		var html = '';
+		var moHtml = '';
+		var forCount = 5;
+		$(data.result).each(function(idx, item){
+			if(idx < forCount){
+				html += '<li><a href="/kor/notification/faq.do?faqid='+item.ntcnYardOrdrNo+'" data-title="'+ getBoardText(item.ntcnYardSjNm) +'" title="" role="button"><i>질문</i><div>'+ getBoardText(item.ntcnYardSjNm) +'</div></a></li>';
+			}
+			moHtml += '<li><a href="/kor/notification/faq.do?faqid='+item.ntcnYardOrdrNo+'" data-title="'+ getBoardText(item.ntcnYardSjNm) +'" title="" role="button"><i>질문</i><div>'+ getBoardText(item.ntcnYardSjNm) +'</div></a></li>';
+		});
+		
+		$('ul.output_qna_list').html( html );
+		$('.output_qna_list_mo ul').html( moHtml );
+		
+		/*
+		자주묻는질문 툴팁
+		$('ul.output_qna_list').find('a').tooltip({
+			position:{
+				at: 'left+40 bottom-20',
+			},
+			content: function(){
+				return $(this).data('title');
+			},
+		}); */
+	}
+});
+
+</script>
+
+<script>
+jQuery(function($){
+	var tooltipLink = $('#testzone a'); 
+	tooltipLink.tooltip({
+		content: function(){
+			console.log($(this).text());
+			return $(this).text();
+		}
+	});
+});
+
+
+</script>
+
+<script>
+//251124 추가
+//모달 포커스 트랩 (순환)
+$(document).on('keydown', '.jq_modal_wrap', function(e) {
+if (e.keyCode === 9) { // Tab 키
+ var $modal = $(this).find('.jq_modal');
+ var $focusableElements = $modal.find('video, button, [tabindex="0"]').filter(':visible');
+ var $firstElement = $focusableElements.first();
+ var $lastElement = $focusableElements.last();
+ 
+ if (e.shiftKey) { // Shift + Tab
+   if ($(document.activeElement).is($firstElement)) {
+     e.preventDefault();
+     $lastElement.focus();
+   }
+ } else { // Tab
+   if ($(document.activeElement).is($lastElement)) {
+     e.preventDefault();
+     $firstElement.focus();
+   }
+ }
+}
+});
+//251124 끝
+</script>
+	
+</div>
+</body>
+</html>

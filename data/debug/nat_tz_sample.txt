@@ -1,0 +1,33 @@
+url: https://www.bot.go.tz/BankSupervision/Institutions
+bytes: 205968  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Name of Institution', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Name of Institution', 'Region', 'Physical Address']
+data rows: 180  kept: 180
+type values: [('', 180)]
+first lines:
+'<!DOCTYPE html>'
+''
+'<html lang="sw">'
+'<head>'
+'    <!-- Required meta tags -->'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
+'    '
+
+url: https://www.bot.go.tz/BankSupervision/Institutions
+bytes: 205968  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Name of Institution', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Name of Institution', 'Contact person', 'Contact Address/ Website/EMail', 'Physical Location Of Head Office', 'section']
+data rows: 61  kept: 53
+type values: [('', 61)]
+first lines:
+'<!DOCTYPE html>'
+''
+'<html lang="sw">'
+'<head>'
+'    <!-- Required meta tags -->'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
+'    '

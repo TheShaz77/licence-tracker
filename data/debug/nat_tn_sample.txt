@@ -1,0 +1,9 @@
+url: https://www.bct.gov.tn/bct/siteprod/documents/Liste_bureaux_de_change_autorises_en.pdf
+bytes: 357368  starts: b'%PDF-1.7'
+error: RuntimeError('TN: no name column found; headers are ["N° Bénéficiaire Identifiant BC Adresse du BC Date d\'autorisation Date d\'ouverture effective Nom Commercial"]')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'(binary)'

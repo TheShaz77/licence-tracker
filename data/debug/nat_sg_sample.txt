@@ -1,10 +1,27 @@
-url: https://eservices.mas.gov.sg/fid/institution/print?count=0
-bytes: 2836  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://eservices.mas.gov.sg/fid/custom/printpartial?count=0
+bytes: 10465201  starts: b'\r\n\r\n\r\n<h'
+error: None
+columns used: {'name': 'Organisation Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Website', 'email': None, 'phone': 'Phone Number', 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Organisation Name', 'Address', 'Phone Number', 'Website', 'Sector', 'Licence Type/Status', 'Activity/Business Type', 'Sub-Activity/Product']
+data rows: 8719  kept: 687
+type values: [('', 8719)]
+first lines:
+''
+''
+''
+'<h4>'
+'    <span class="fid-print-span-red">*</span> Please note that for entities with multiple activities, some information such as Organisation Name, Address, etc will be repeated in subsequent rows in the excel spreadsheet.'
+'</h4>'
+'<table border="1" class="fid-print-table">'
+'    <tr>'
+
+url: https://eservices.mas.gov.sg/fid/institution?count=0
+bytes: 60502  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type']
+data rows: 10  kept: 4
+type values: [('Capital Markets Services Licensee', 4), ('Money-changing Licensee', 3), ('Licensed Financial Adviser', 1), ('Recognised Market Operator', 1), ('Major Payment Institution', 1)]
 first lines:
 '<!DOCTYPE html>'
 '<html lang="en">'
