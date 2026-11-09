@@ -10,6 +10,8 @@ handful of batched requests however many country tabs there are.
 """
 from __future__ import annotations
 
+import re
+
 import json
 import os
 from collections import Counter, defaultdict
@@ -146,9 +148,12 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
             reqs.append({"setBasicFilter": {"filter": {"range": {
                 "sheetId": sid, "startRowIndex": 0, "endRowIndex": n_rows,
                 "startColumnIndex": 0, "endColumnIndex": n_cols}}}})
-    # the empty default tab of a brand-new spreadsheet
+    # the empty default tab of a brand-new spreadsheet, and country tabs ("Japan (JP)") with no firms
+    # left, e.g. a country that has been excluded
     for title, sid in existing.items():
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") and title not in tabs:
+        if title in tabs:
+            continue
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\([A-Z]{2}\)$", title):
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 

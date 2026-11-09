@@ -1,11 +1,12 @@
 # Licence tracker configuration
 # ---------------------------------------------------------------------------
 
-# Firms licensed in these countries are never included (ISO-2 codes).
+# Firms licensed in these countries are never included (ISO-2 codes): sanctioned,
+# plus OpenPayd's prohibited jurisdictions list (Nov 2026).
 # Default = countries under comprehensive UK/EU/US sanctions programmes.
 # Syria: UK, EU and US sanctions were substantially eased in 2025-26 - keep or
 # remove SY in line with your compliance team's policy.
-excluded_countries: [RU, BY, IR, KP, CU, SY]
+excluded_countries: [AF, AL, AM, AZ, BB, BF, BI, BW, BY, CD, CF, CU, GH, GN, GW, HT, IQ, IR, JM, JO, JP, KG, KH, KP, KZ, LY, MA, ML, MM, MZ, NI, PA, PK, PS, RU, SD, SN, SO, SS, SY, TJ, TM, TN, TT, TZ, UA, UG, UZ, VE, VU, YE, ZW]
 
 # If a register suddenly lists fewer than 70% of yesterday's active firms,
 # treat it as a broken download: skip it for the day instead of reporting
@@ -113,8 +114,6 @@ sources:
     min_hours: 12
   nat_hk:         # Hong Kong registers (see national: below); lists change slowly
     min_hours: 6
-  nat_jp:
-    min_hours: 12
   nat_ng:
     min_hours: 12
   br_bcb:         # Brazil: payment institutions, FX brokers, banks, Pix participants and Pix applicants (Banco Central)
@@ -229,51 +228,6 @@ national:
       table_exclude: removal|CE Reference|closed down
       name_column: Company name of virtual asset trading platform operator
       licence_type: Crypto trading platform applicant (SFC)
-  JP:
-    regulator: JFSA
-    files:
-    - label: JFSA crypto exchanges
-      url: https://www.fsa.go.jp/en/regulated/licensed/en_kasoutuka.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Crypto-asset exchange service provider
-      name_column: Name of Crypto
-      id_column: Registration Number
-    - label: JFSA stablecoin intermediaries
-      url: https://www.fsa.go.jp/en/regulated/licensed/denshikessaisyudan.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Electronic payment instrument (stablecoin) exchange service provider
-      name_column: Name of Electronic Payment
-      id_column: Registration Number
-    - label: JFSA funds transfer providers
-      url: https://www.fsa.go.jp/menkyo/menkyoj/shikin_idou.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Funds transfer service provider (payments / remittance)
-      name_column: 資金移動業者名
-      id_column: 登録番号
-    - label: JFSA prepaid issuers
-      url: https://www.fsa.go.jp/menkyo/menkyoj/daisan.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Prepaid payment instrument issuer (e-money)
-      name_column: 前払式支払手段（第三者型） 発行者名
-      id_column: 登録番号
-    - label: JFSA electronic payment agents
-      url: https://www.fsa.go.jp/menkyo/menkyoj/dendai.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Electronic payment services operator (open banking)
-      name_column: 電子決済等代行業者名
-      id_column: 登録番号
-    - label: JFSA city and trust banks
-      url: https://www.fsa.go.jp/en/regulated/licensed/city.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Bank (city / trust bank)
-      name_column: The name of a financial
-      id_column: JCN
-    - label: JFSA regional banks
-      url: https://www.fsa.go.jp/en/regulated/licensed/reg.xlsx
-      register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
-      licence_type: Bank (regional bank)
-      name_column: name(English)
-      id_column: JCN
   NG:
     regulator: CBN
     files:
@@ -700,14 +654,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  JO:
-    regulator: CBJ
-    files:
-    - label: CBJ homepage (English)
-      url: https://www.cbj.gov.jo/EN/
-      probe: true
-      follow: payment|exchange|bank|licen|list|e-money|wallet
-      follow_max: 15
   EG:
     regulator: CBE
     files:
@@ -722,75 +668,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  TN:
-    regulator: BCT
-    files:
-    - label: BCT homepage
-      url: https://www.bct.gov.tn/bct/siteprod/index.jsp?la=AN
-      probe: true
-      follow: payment|établissement|etablissement|liste|bank|banque|list
-      follow_max: 12
-    - label: List of exchange offices authorized by the BCT
-      url: https://www.bct.gov.tn/bct/siteprod/documents/Liste_bureaux_de_change_autorises_en.pdf
-      format: pdf_table
-  GH:
-    regulator: BoG
-    files:
-    - label: BoG banks
-      url: https://www.bog.gov.gh/supervision-regulation/banking-supervision/banks
-      format: html_table
-      licence_type: Bank
-    - label: BoG remittance companies
-      url: https://www.bog.gov.gh/supervision-regulation/register-of-licensed-institutions/remittance-companies/
-      format: html_table
-      licence_type: Remittance company
-    - label: BoG payment systems
-      url: https://www.bog.gov.gh/banking-and-payments-system/
-      probe: true
-      follow: licen|psp|payment service|dedicated|enhanced|standard|electronic money|fintech|list
-      follow_max: 15
-    - label: Approved Institutions
-      url: https://www.bog.gov.gh/fintech-innovation/approved-institutions/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Other Banks
-      url: https://www.bog.gov.gh/supervision-regulation/register-of-licensed-institutions/other-banks/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  UG:
-    regulator: BoU
-    files:
-    - label: BoU homepage
-      url: https://www.bou.or.ug/
-      probe: true
-      follow: supervised|licensed|payment|institutions|forex|money
-      follow_max: 12
-  TZ:
-    regulator: BoT
-    files:
-    - label: BoT bureaux de change
-      url: https://www.bot.go.tz/BankSupervision/Institutions
-      format: html_table
-      table_headers: Region
-      name_column: Name of Institution
-      licence_type: Bureau de change
-    - label: BoT banks and financial institutions
-      url: https://www.bot.go.tz/BankSupervision/Institutions
-      format: html_table
-      all_tables: true
-      table_headers: Contact person
-      name_column: Name of Institution
-      licence_type: Bank / financial institution (BoT)
-    - label: BoT payment systems
-      url: https://www.bot.go.tz/PaymentSystems
-      probe: true
-      follow: licen|provider|operator|e-money|electronic money|list
-      follow_max: 10
-    - label: List of Money Transfer Operators
-      url: https://www.bot.go.tz/Publications/NPS/List of MTOs Operating in Tanzania.pdf
-      format: pdf_table
   MU:
     regulator: FSC
     files:
@@ -811,27 +688,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  BW:
-    regulator: BoB
-    files:
-    - label: BoB licensed institutions
-      url: https://www.bankofbotswana.bw/content/licensed-institutions
-      probe: true
-    - label: www.bankofbotswana.bw homepage
-      url: https://www.bankofbotswana.bw/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Bureau de Change
-      url: https://www.bankofbotswana.bw/content/bureau-de-change
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Bureau de Change (2)
-      url: https://www.bankofbotswana.bw/content/bureau-de-change-0
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
   NA:
     regulator: BoN
     files:
@@ -853,19 +709,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  SN:
-    regulator: BCEAO
-    files:
-    - label: BCEAO e-money institutions page
-      url: https://www.bceao.int/fr/content/etablissements-de-monnaie-electronique
-      probe: true
-      follow: liste|pdf|établissement|etablissement|agr
-      follow_max: 10
-    - label: BCEAO homepage
-      url: https://www.bceao.int/fr
-      probe: true
-      follow: liste|établissements de crédit|etablissements-de-credit|paiement|monnaie
-      follow_max: 12
   AR:
     regulator: BCRA
     files:
@@ -1031,17 +874,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  PA:
-    regulator: SBP
-    files:
-    - label: SBP banks
-      url: https://www.superbancos.gob.pa/en/supervised-entities/banks
-      probe: true
-    - label: www.superbancos.gob.pa homepage
-      url: https://www.superbancos.gob.pa/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
   HN:
     regulator: CNBS
     files:
@@ -1061,43 +893,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  JM:
-    regulator: BOJ
-    files:
-    - label: BOJ licensees (remittance, payment)
-      url: https://boj.org.jm/core-functions/financial-institutions-supervision/licensees/
-      probe: true
-    - label: boj.org.jm homepage
-      url: https://boj.org.jm/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Authorised Dealers
-      url: https://boj.org.jm/market/foreign-exchange/fx-rates-volumes-by-dealers/authorised-dealers/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Commercial Banks
-      url: https://boj.org.jm/core-functions/financial-system/deposit-taking-institutions/commercial-banks/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Payment Service Providers
-      url: https://boj.org.jm/core-functions/financial-system/payment-systems/authorised-payment-service-providers/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  TT:
-    regulator: CBTT
-    files:
-      - label: CBTT payment service providers page
-        url: https://www.central-bank.org.tt/core-functions/payments-system/
-        probe: true
-      - label: CBTT approved PSPs, EMIs and PSOs
-        url: https://www.central-bank.org.tt/wp-content/uploads/2026/08/list-of-approved-psps-emis-and-psos-as-at-01-august-2026.pdf
-        format: pdf_table
-        licence_type: Payment service provider / e-money issuer (CBTT approved)
-
   BS:
     regulator: CBOB
     files:
@@ -1120,32 +915,6 @@ national:
       follow_max: 15
     - label: Regulates Entities
       url: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  BB:
-    regulator: CBB
-    files:
-    - label: CBB licensed institutions
-      url: https://www.centralbank.org.bb/financial-institutions/licensed-institutions
-      probe: true
-    - label: www.centralbank.org.bb homepage
-      url: https://www.centralbank.org.bb/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Licensed Financial Institutions
-      url: https://www.centralbank.org.bb/financial-stability-and-financial-regulation/licensed-financial-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Authorised Dealers and Depositories
-      url: https://www.centralbank.org.bb/foreign-exchange/authorised-dealers-and-depositories
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: List of Brokers
-      url: https://www.centralbank.org.bb/list-of-brokers
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
@@ -1418,19 +1187,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  AL:
-    regulator: BoA
-    files:
-    - label: BoA licensed entities
-      url: https://www.bankofalbania.org/Mbikeqyrja/Subjekte_te_licencuara/
-      probe: true
-      follow: banka|subjekt|institucion|pages|pagesa|parave elektronike|këmbim|licenc|lista
-      follow_max: 15
-    - label: BoA payments licensing
-      url: https://www.bankofalbania.org/Pagesat/Licensimi_dhe_mbikeqyrja/
-      probe: true
-      follow: licenc|lista|subjekt|pagesa|elektronik
-      follow_max: 10
   ME:
     regulator: CBCG
     files:
@@ -1464,17 +1220,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  UA:
-    regulator: NBU
-    files:
-    - label: NBU register of payment market participants
-      url: https://bank.gov.ua/en/supervision/register-payment
-      probe: true
-    - label: bank.gov.ua homepage
-      url: https://bank.gov.ua/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
   XK:
     regulator: CBK
     files:
@@ -1500,199 +1245,6 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
-  AM:
-    regulator: CBA
-    files:
-    - label: CBA payment and settlement organizations
-      url: https://www.cba.am/en/SitePages/fssupervisedinstitutions.aspx
-      probe: true
-    - label: www.cba.am homepage
-      url: https://www.cba.am/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-  AZ:
-    regulator: CBAR
-    files:
-    - label: CBAR e-money institutions
-      url: https://www.cbar.az/page-853/electronic-money-institutions?language=en
-      format: html_table
-      licence_type: E-money institution
-    - label: CBAR payment institutions
-      url: https://www.cbar.az/page-854/payment-institutions?language=en
-      format: html_table
-      licence_type: Payment institution
-    - label: CBAR payment system operators
-      url: https://www.cbar.az/page-855/payment-system-operators?language=en
-      format: html_table
-      licence_type: Payment system operator
-    - label: CBAR banks
-      url: https://www.cbar.az/page-195/banks?language=en
-      format: html_table
-      licence_type: Bank
-    - label: CBAR currency exchange offices
-      url: https://www.cbar.az/page-464/currency-exchange-offices?language=en
-      format: html_table
-      licence_type: Currency exchange office
-    - label: Electronic money institutions
-      url: https://www.cbar.az/page-853/electronic-money-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Payment institutions
-      url: https://www.cbar.az/page-854/payment-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: List of money transfer systems
-      url: https://www.cbar.az/page-624/list-of-money-transfer-systems
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: AZ
-      url: https://www.cbar.az/page-162/payment-institutions?language=az
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  KZ:
-    regulator: AFSA
-    files:
-    - label: AFSA authorised firms (AIFC)
-      url: https://publicreg.myafsa.com/authorised/
-      format: html_table
-    - label: NBK payment organizations register
-      regulator: NBK
-      url: https://nationalbank.kz/en/page/reestr-platezhnyh-organizaciy
-      probe: true
-      follow: payment|reestr|register|\.xlsx|\.pdf
-      follow_max: 10
-    - label: Authorised Market Institutions
-      url: https://publicreg.myafsa.com/authorised_mi/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Digital Asset Service Providers
-      url: https://publicreg.myafsa.com/dasp/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Registered entities  6933
-      url: https://publicreg.myafsa.com/roc/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  UZ:
-    regulator: CBU
-    files:
-    - label: NAPP authorised crypto exchanges
-      regulator: NAPP
-      url: https://napp.uz/en/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-ci
-      format: html_table
-      licence_type: Crypto exchange (NAPP)
-    - label: NAPP crypto licence registry
-      regulator: NAPP
-      url: https://napp.uz/en/pages/erlsp
-      format: html_table
-      licence_type: Crypto-asset service provider (NAPP licence)
-    - label: NAPP pages
-      regulator: NAPP
-      url: https://napp.uz/en/pages/erlsp
-      probe: true
-    - label: CBU homepage
-      url: https://cbu.uz/en/
-      probe: true
-      follow: payment|bank|licen|list|organizations|operators
-      follow_max: 12
-    - label: 'List of specially authorized crypto-exchanges for '
-      url: https://napp.uz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-citizens
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: 'Special regime participants registry in the field '
-      url: https://napp.uz/pages/special-regime-participants-registry
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Electronic register of crypto-assets
-      url: https://napp.uz/pages/caer
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Register of Electronic Commerce Operators
-      url: https://napp.uz/pages/register-of-electronic-commerce-operators
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Уз
-      url: https://napp.uz/uz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-ci
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: O‘z
-      url: https://napp.uz/oz/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-ci
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  KG:
-    regulator: NBKR
-    files:
-    - label: NBKR homepage
-      url: https://www.nbkr.kg/index.jsp?lang=ENG
-      probe: true
-      follow: payment|bank|list|licen|exchange|virtual|e-money|operator
-      follow_max: 15
-    - label: Reserves of commercial banks
-      url: https://www.nbkr.kg/index1.jsp?item=2645&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Deposits in commercial banks by the end of the per
-      url: https://www.nbkr.kg/index1.jsp?item=124&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Newly accepted deposits by commercial banks within
-      url: https://www.nbkr.kg/index1.jsp?item=1549&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Deposits in commercial banks by regions of the Kyr
-      url: https://www.nbkr.kg/index1.jsp?item=2426&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Credits of commercial banks by the end of the peri
-      url: https://www.nbkr.kg/index1.jsp?item=125&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Newly issued credits by commercial banks within th
-      url: https://www.nbkr.kg/index1.jsp?item=1550&lang=ENG
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  TJ:
-    regulator: NBT
-    files:
-    - label: NBT payment organizations
-      url: https://nbt.tj/en/payment_systems/
-      probe: true
-    - label: nbt.tj homepage
-      url: https://nbt.tj/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-  TM:
-    regulator: CBT
-    files:
-    - label: CBT banks
-      url: https://www.cbt.tm/en/banklar.html
-      format: html_table
-      licence_type: Bank
-    - label: CBT banks page
-      url: https://www.cbt.tm/en/banklar.html
-      probe: true
-      follow: bank|payment
   MN:
     regulator: BoM
     files:
@@ -1724,44 +1276,6 @@ national:
       follow_max: 6
     - label: Banking license
       url: https://www.mongolbank.mn/en/p/1463
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-  PK:
-    regulator: SBP
-    files:
-    - label: SBP regulated institutions
-      url: https://www.sbp.org.pk/f_links/index.asp
-      probe: true
-      follow: bank|EMI|PSO|PSP|exchange|regulated|list|microfinance|DFI
-      follow_max: 15
-    - label: SBP payments ecosystem
-      url: https://www.sbp.org.pk/our-operations/payments-ecosystem-and-infrastructure
-      probe: true
-      follow: EMI|PSO|PSP|licen|list|electronic money|operator
-      follow_max: 15
-    - label: Roshan Digital Account   Roshan Digital Account is
-      url: https://www.sbp.org.pk/our-operations/roshan-digital-accounts
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: SBP Regulated Institutions
-      url: https://www.sbp.org.pk/sbp-regulated-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Development Finance Institutions   View more
-      url: https://www.sbp.org.pk/sbp-regulated-institutions/development-finance-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Microfinance Banks   View more
-      url: https://www.sbp.org.pk/sbp-regulated-institutions/microfinance-banks
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Exchange Companies   View more
-      url: https://www.sbp.org.pk/sbp-regulated-institutions/exchange-companies
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
@@ -1801,17 +1315,6 @@ national:
     - label: RMA licensed institutions
       url: https://www.rma.org.bt/
       probe: true
-  KH:
-    regulator: NBC
-    files:
-    - label: NBC licensed payment service institutions
-      url: https://www.nbc.gov.kh/english/banking_supervision/list_of_bfi.php
-      probe: true
-    - label: www.nbc.gov.kh homepage
-      url: https://www.nbc.gov.kh/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
   BN:
     regulator: BDCB
     files:
@@ -1874,12 +1377,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  VU:
-    regulator: RBV
-    files:
-    - label: RBV licensed institutions
-      url: https://www.rbv.gov.vu/
-      probe: true
   SB:
     regulator: CBSI
     files:
@@ -1938,25 +1435,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  MZ:
-    regulator: BM
-    files:
-    - label: Banco de Mocambique homepage
-      url: https://www.bancomoc.mz/
-      probe: true
-      follow: institui|supervis|autoriz|lista|registo|bancos|pagamento|moeda electr
-      follow_max: 15
-  ZW:
-    regulator: RBZ
-    files:
-    - label: RBZ registered institutions
-      url: https://www.rbz.co.zw/index.php/financial-stability/banking-supervision
-      probe: true
-    - label: www.rbz.co.zw homepage
-      url: https://www.rbz.co.zw/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
   SZ:
     regulator: CBE
     files:
@@ -2067,18 +1545,6 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-  GN:
-    regulator: BCRG
-    files:
-    - label: BCRG banks
-      url: https://www.bcrg-guinee.org/missions/supervision/banques/societes-bancaires/
-      format: html_table
-      licence_type: Bank
-    - label: BCRG payment systems
-      url: https://www.bcrg-guinee.org/les-systemes-et-moyens-de-paiement-en-republique-de-guinee/
-      probe: true
-      follow: monnaie|paiement|agr|liste|établissement|etablissement|\.pdf
-      follow_max: 15
   DJ:
     regulator: BCD
     files:
@@ -2086,20 +1552,6 @@ national:
       url: https://banque-centrale.dj/
       probe: true
       follow: banque|établissement|etablissement|liste|agr|supervision|paiement|transfert
-      follow_max: 15
-  BI:
-    regulator: BRB
-    files:
-    - label: BRB institutions
-      url: https://www.brb.bi/
-      probe: true
-  CD:
-    regulator: BCC
-    files:
-    - label: BCC financial intermediaries
-      url: https://www.bcc.cd/intermediaires-financiers
-      probe: true
-      follow: banque|monnaie|paiement|transfert|liste|agr
       follow_max: 15
   KM:
     regulator: BCC
@@ -2117,17 +1569,6 @@ national:
       probe: true
       follow: institui|supervis|lista|bancos|autoriz
       follow_max: 12
-  NI:
-    regulator: SIBOIF
-    files:
-    - label: SIBOIF supervised institutions
-      url: https://www.siboif.gob.ni/supervision/intendencia-bancos/instituciones
-      format: html_table
-    - label: SIBOIF supervised institutions page
-      url: https://www.siboif.gob.ni/supervision/intendencia-bancos/instituciones
-      probe: true
-      follow: institu|banco|pago|remes
-      follow_max: 8
 # Contact details (website / email / phone). Only fills blanks; a value the
 # register itself gives is never overwritten. The "Contact found via" column
 # says where each one came from.

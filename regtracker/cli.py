@@ -90,7 +90,8 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
     for name in all_sources(cfg):
         if name in switched_off:
             continue  # source turned off in config.yaml: its old snapshot is not shown
-        snap = load_snapshot(data_dir, name).values()
+        snap = [r for r in load_snapshot(data_dir, name).values()
+                if (r.get("jurisdiction") or "").upper() not in ctx.excluded_countries]   # prohibited countries
         if name == "eba":  # national register replaces the EU copy where we have one
             snap = [r for r in snap if r.get("jurisdiction") not in covered]
         records.extend(snap)
