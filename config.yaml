@@ -111,6 +111,12 @@ sources:
   za_casp:        # South Africa: licensed crypto asset service providers (FSCA)
     enabled: true
     min_hours: 12
+  nat_hk:         # Hong Kong registers (see national: below); lists change slowly
+    min_hours: 6
+  nat_jp:
+    min_hours: 12
+  nat_ng:
+    min_hours: 12
   br_bcb:         # Brazil: payment institutions, FX brokers, banks, Pix participants and Pix applicants (Banco Central)
     enabled: true
     include_banks: true
@@ -123,6 +129,9 @@ sources:
     min_hours: 6  # states update monthly/quarterly; checked four times a day
 
 # ---------------------------------------------------------------------------
+# How often each national register below is re-read (hours), unless set under sources:.
+national_min_hours: 12
+
 # Direct national registers. Where one is set up and working, the sheet shows
 # the national data for that country instead of the EU (EBA) copy, its
 # changes are alerted, and the "Source check" tab measures how far behind the
@@ -180,6 +189,1095 @@ national:
           PI: Payment institution
           EM: E-money institution
           AISP: Account information service provider
+
+  # ----------------------------------------------------------------- Asia-Pacific / Africa
+  # Each file is checked against the site's robots.txt. If one file can't be read, its
+  # firms from the last good run are kept, so an outage isn't reported as removals.
+  HK:
+    regulator: HKMA
+    files:
+      - label: HKMA SVF licensees
+        url: https://api.hkma.gov.hk/public/bank-svf-info/register-svf-licensees?lang=en&segment=SVFLic&offset=0
+        register_url: https://www.hkma.gov.hk/eng/regulatory-resources/registers/register-of-svf-licensees
+        licence_type: Stored value facility licensee (e-money)
+        id_column: licence_no
+      - label: HKMA banks
+        url: https://api.hkma.gov.hk/public/bank-svf-info/register-ais-lros?lang=en&offset=0
+        register_url: https://www.hkma.gov.hk/eng/key-functions/banking/banking-regulatory-and-supervisory-regime/register-of-authorized-institutions-and-local-representative-offices/
+        type_column: type
+        # licensed and restricted-licence banks; deposit-taking companies and representative offices left out
+        type_patterns:
+          "restricted licen": Bank (restricted licence bank)
+          "^licensed bank": Bank (licensed bank)
+      - label: Customs money service operators
+        regulator: C&ED
+        url: https://eservices.customs.gov.hk/MSOS/wsrh/003s1?request_locale=en&format=csv
+        register_url: https://eservices.customs.gov.hk/MSOS/wsrh/001s0
+        licence_type: Money service operator (remittance / money changer)
+      - label: SFC licensed crypto platforms
+        regulator: SFC
+        url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
+        format: html_table
+        table_headers: "CE Reference"
+        name_column: "Company name of virtual asset trading platform operator"
+        licence_type: Crypto trading platform (SFC licensed)
+      - label: SFC crypto platform applicants
+        regulator: SFC
+        url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
+        format: html_table
+        table_headers: "Date of submission of licence application"
+        table_exclude: "removal|CE Reference|closed down"
+        name_column: "Company name of virtual asset trading platform operator"
+        licence_type: Crypto trading platform applicant (SFC)
+  JP:
+    regulator: JFSA
+    files:
+      - label: JFSA crypto exchanges
+        url: https://www.fsa.go.jp/en/regulated/licensed/en_kasoutuka.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Crypto-asset exchange service provider
+      - label: JFSA stablecoin intermediaries
+        url: https://www.fsa.go.jp/en/regulated/licensed/denshikessaisyudan.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Electronic payment instrument (stablecoin) exchange service provider
+      - label: JFSA funds transfer providers
+        url: https://www.fsa.go.jp/menkyo/menkyoj/shikin_idou.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Funds transfer service provider (payments / remittance)
+      - label: JFSA prepaid issuers
+        url: https://www.fsa.go.jp/menkyo/menkyoj/daisan.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Prepaid payment instrument issuer (e-money)
+      - label: JFSA electronic payment agents
+        url: https://www.fsa.go.jp/menkyo/menkyoj/dendai.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Electronic payment services operator (open banking)
+      - label: JFSA city and trust banks
+        url: https://www.fsa.go.jp/en/regulated/licensed/city.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Bank (city / trust bank)
+      - label: JFSA regional banks
+        url: https://www.fsa.go.jp/en/regulated/licensed/reg.xlsx
+        register_url: https://www.fsa.go.jp/en/regulated/licensed/index.html
+        licence_type: Bank (regional bank)
+  NG:
+    regulator: CBN
+    files:
+      - label: CBN money transfer operators
+        url: https://www.cbn.gov.ng/PaymentsSystem/InternationalMoneyTransferOperators.html
+        format: html_table
+        table_headers: "OPERATOR"
+        licence_type: International money transfer operator (IMTO)
+
+  SG:
+    regulator: MAS
+    files:
+      - label: MAS financial institutions directory
+        url: https://eservices.mas.gov.sg/fid/institution?count=0
+        register_url: https://eservices.mas.gov.sg/fid/institution
+        probe: true          # directory is a result list, not a table: reader written from the first saved copy
+
+  AE:
+    regulator: VARA
+    files:
+      - label: VARA licensed VASPs
+        url: https://www.vara.ae/page-data/en/licenses-and-register/public-register/page-data.json
+        register_url: https://www.vara.ae/en/licenses-and-register/public-register/
+        licence_type: Virtual asset service provider (VARA, Dubai)
+      - label: VARA register page
+        url: https://www.vara.ae/en/licenses-and-register/public-register/
+        probe: true
+      - label: DFSA firms
+        regulator: DFSA
+        url: https://www.dfsa.ae/public-register/firms
+        probe: true
+      - label: ADGM FSRA firms
+        regulator: FSRA
+        url: https://www.adgm.com/public-registers/fsra
+        probe: true
+      - label: CBUAE licensing
+        regulator: CBUAE
+        url: https://www.centralbank.ae/en/licensing/
+        probe: true
+
+  MY:
+    regulator: BNM
+    files:
+      - label: BNM non-bank e-money issuers
+        url: https://www.bnm.gov.my/non-bank-e-money-issuers
+        probe: true
+      - label: BNM payment system regulatees
+        url: https://www.bnm.gov.my/list-of-regulatees
+        probe: true
+      - label: BNM MSB licensees
+        url: https://www.bnm.gov.my/regulations/fsp-directory/msb-licensees
+        probe: true
+      - label: BNM digital MSB channels
+        url: https://www.bnm.gov.my/documents/20124/1326831/Microsite_Digital.pdf/
+        format: pdf_table
+        licence_type: Money services business (digital remittance)
+      - label: BNM B2B remittance
+        url: https://www.bnm.gov.my/documents/20124/1326831/Microsite-B2B.pdf
+        format: pdf_table
+        licence_type: Money services business (B2B remittance)
+      - label: BNM FSP directory
+        url: https://www.bnm.gov.my/regulations/fsp-directory
+        probe: true
+      - label: SC registered digital asset exchanges
+        regulator: SC
+        url: https://www.sc.com.my/development/digital/list-of-registered-digital-asset-exchanges
+        probe: true
+
+  AU:
+    regulator: APRA
+    files:
+      - label: APRA ADIs and payment facilities
+        url: https://www.apra.gov.au/register-of-authorised-deposit-taking-institutions
+        format: html_table
+        all_tables: true
+        table_headers: "entity name"
+        type_column: section
+        type_patterns:
+          "purchased payment": Purchased payment facility provider (e-money)
+          "branch": Bank (branch of foreign bank)
+          "foreign subsidiar": Bank (foreign subsidiary bank)
+          "restricted": Bank (restricted ADI)
+          "australian": Bank / ADI (Australian-owned)
+      - label: AUSTRAC digital currency exchange register
+        regulator: AUSTRAC
+        url: https://www.austrac.gov.au/digital-currency-exchange-register
+        probe: true
+
+  MX:
+    regulator: CNBV
+    files:
+      - label: CNBV register of supervised entities
+        url: https://www.cnbv.gob.mx/Paginas/PADRÓN-DE-ENTIDADES-SUPERVISADAS.aspx
+        probe: true
+
+  IN:
+    regulator: RBI
+    files:
+      - label: RBI authorised payment system operators page
+        url: https://www.rbi.org.in/Scripts/PublicationsView.aspx?Id=12043
+        probe: true
+      - label: RBI authorised payment system operators
+        url: https://website.rbi.org.in/documents/87730/39016390/PSO+PDF.pdf
+        format: pdf_table
+        licence_type: Payment system operator (RBI authorised)
+      - label: RBI payment aggregators
+        page: https://www.rbi.org.in/Scripts/PublicationsView.aspx?Id=12043
+        link_pattern: "pa.?(and.?pa.?cb)?.?list|payment aggregator"
+        format: pdf_table
+        licence_type: Payment aggregator (RBI authorised)
+
+  TR:
+    regulator: CBRT
+    files:
+      - label: CBRT e-money institutions
+        url: https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Temel+Faaliyetler/Odeme+Hizmetleri/Elektronik+Para+Kuruluslari
+        probe: true
+      - label: CBRT payment institutions
+        url: https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Temel+Faaliyetler/Odeme+Hizmetleri/Odeme+Kuruluslari
+        probe: true
+      - label: SPK crypto asset service providers
+        regulator: SPK
+        url: https://spk.gov.tr/kurumlar/kripto-varlik-hizmet-saglayicilar
+        probe: true
+      - label: BDDK deposit banks
+        regulator: BDDK
+        url: https://www.bddk.org.tr/Kurulus/Liste/77
+        probe: true
+
+  KR:
+    regulator: FSC
+    files:
+      - label: KoFIU registered VASPs
+        url: https://www.kofiu.go.kr/kor/policy/pmlv01.do
+        probe: true
+      - label: FSS homepage
+        url: https://www.fss.or.kr/eng/main/main.do
+        regulator: FSS
+        probe: true
+      - label: FSC homepage
+        url: https://www.fsc.go.kr/eng/index
+        probe: true
+
+  TW:
+    regulator: FSC
+    files:
+      - label: FSC banking bureau institutions
+        url: https://www.banking.gov.tw/en/home.jsp?id=13&parentpath=0
+        probe: true
+      - label: FSC homepage
+        url: https://www.fsc.gov.tw/en/index.jsp
+        probe: true
+
+  ID:
+    regulator: BI
+    files:
+      - label: BI payment service providers
+        url: https://www.bi.go.id/id/fungsi-utama/sistem-pembayaran/perizinan
+        probe: true
+      - label: OJK crypto traders
+        url: https://www.ojk.go.id/id/kanal/iakd/Pages/default.aspx
+        regulator: OJK
+        probe: true
+
+  TH:
+    regulator: BOT
+    files:
+      - label: BOT payment service providers
+        url: https://www.bot.or.th/en/financial-institutions/payment-systems-and-payment-services.html
+        probe: true
+      - label: SEC digital asset operators
+        url: https://www.sec.or.th/EN/Pages/Shortcut/DigitalAsset.aspx
+        regulator: SEC
+        probe: true
+
+  PH:
+    regulator: BSP
+    files:
+      - label: BSP operators of payment systems
+        url: https://www.bsp.gov.ph/SitePages/PaymentAndSettlement/RegisteredOPS.aspx
+        probe: true
+      - label: BSP directory of supervised institutions
+        url: https://www.bsp.gov.ph/SitePages/FinancialStability/DirectoryOfBSFI.aspx
+        probe: true
+
+  NZ:
+    regulator: FMA
+    files:
+      - label: RBNZ registered banks
+        url: https://www.rbnz.govt.nz/regulation-and-supervision/oversight-of-banks/registered-banks-in-new-zealand
+        regulator: RBNZ
+        probe: true
+      - label: Financial Service Providers Register
+        url: https://fsp-register.companiesoffice.govt.nz/
+        regulator: MBIE
+        probe: true
+
+  IL:
+    regulator: ISA
+    files:
+      - label: CMISA licensees (payment, crypto)
+        url: https://www.gov.il/en/departments/capital_market_insurance_and_savings_authority/govil-landing-page
+        regulator: CMISA
+        probe: true
+      - label: ISA payment services licences
+        url: https://www.isa.gov.il/sites/ISAEng/Pages/default.aspx
+        probe: true
+
+  SA:
+    regulator: SAMA
+    files:
+      - label: SAMA licensed entities
+        url: https://www.sama.gov.sa/en-US/Licenses/Pages/default.aspx
+        probe: true
+      - label: SAMA fintech licensed payment companies
+        url: https://www.sama.gov.sa/en-US/FinTech/Pages/default.aspx
+        probe: true
+
+  QA:
+    regulator: QCB
+    files:
+      - label: QCB licensed institutions
+        url: https://www.qcb.gov.qa/en/Pages/LicensedFinancialInstitutions.aspx
+        probe: true
+      - label: QFC public register
+        url: https://www.qfcra.com/public-register/
+        regulator: QFCRA
+        probe: true
+
+  BH:
+    regulator: CBB
+    files:
+      - label: CBB register
+        url: https://www.cbb.gov.bh/licensing-directory/
+        probe: true
+
+  OM:
+    regulator: CBO
+    files:
+      - label: CBO licensed institutions
+        url: https://cbo.gov.om/Pages/LicensedEntities.aspx
+        probe: true
+
+  JO:
+    regulator: CBJ
+    files:
+      - label: CBJ payment companies
+        url: https://www.cbj.gov.jo/EN/List/Electronic_Payment_and_Money_Transfer_Companies
+        probe: true
+
+  EG:
+    regulator: CBE
+    files:
+      - label: CBE registered banks
+        url: https://www.cbe.org.eg/en/banks
+        probe: true
+      - label: FRA fintech licences
+        url: https://fra.gov.eg/en/
+        regulator: FRA
+        probe: true
+
+  MA:
+    regulator: BAM
+    files:
+      - label: BAM payment institutions
+        url: https://www.bkam.ma/en/Payment-systems-and-means/Payment-institutions
+        probe: true
+      - label: BAM credit institutions list
+        url: https://www.bkam.ma/en/Banking-supervision/Institutional-framework/List-of-credit-institutions-and-similar-entities
+        probe: true
+
+  TN:
+    regulator: BCT
+    files:
+      - label: BCT payment institutions
+        url: https://www.bct.gov.tn/bct/siteprod/page.jsp?id=69&la=AN
+        probe: true
+
+  GH:
+    regulator: BoG
+    files:
+      - label: BoG payment service providers
+        url: https://www.bog.gov.gh/supervision-regulation/registered-institutions/
+        probe: true
+
+  RW:
+    regulator: BNR
+    files:
+      - label: BNR payment service providers
+        url: https://www.bnr.rw/financial-stability/financial-institutions/
+        probe: true
+
+  UG:
+    regulator: BoU
+    files:
+      - label: BoU licensed payment providers
+        url: https://www.bou.or.ug/bouwebsite/Supervision/supervisedinstitutions.html
+        probe: true
+
+  TZ:
+    regulator: BoT
+    files:
+      - label: BoT payment service providers
+        url: https://www.bot.go.tz/PaymentSystem/PSPs
+        probe: true
+
+  ZM:
+    regulator: BoZ
+    files:
+      - label: BoZ payment system businesses
+        url: https://www.boz.zm/payment-systems-businesses.htm
+        probe: true
+
+  MU:
+    regulator: FSC
+    files:
+      - label: FSC Mauritius licensees
+        url: https://www.fscmauritius.org/en/supervision/register-of-licensees
+        probe: true
+      - label: BoM licensed banks
+        url: https://www.bom.mu/financial-stability/supervision/licensees
+        regulator: BoM
+        probe: true
+
+  BW:
+    regulator: BoB
+    files:
+      - label: BoB licensed institutions
+        url: https://www.bankofbotswana.bw/content/licensed-institutions
+        probe: true
+
+  NA:
+    regulator: BoN
+    files:
+      - label: BoN payment service providers
+        url: https://www.bon.com.na/Payment-Systems/Payment-Service-Providers.aspx
+        probe: true
+
+  SN:
+    regulator: BCEAO
+    files:
+      - label: BCEAO e-money and payment institutions (WAEMU)
+        url: https://www.bceao.int/fr/content/etablissements-de-monnaie-electronique
+        probe: true
+      - label: BCEAO list of credit institutions (WAEMU)
+        url: https://www.bceao.int/fr/content/liste-des-etablissements-de-credit
+        probe: true
+
+  GA:
+    regulator: COBAC
+    files:
+      - label: BEAC payment institutions (CEMAC)
+        url: https://www.beac.int/
+        probe: true
+
+  AR:
+    regulator: BCRA
+    files:
+      - label: BCRA payment service providers (PSP)
+        url: https://www.bcra.gob.ar/SistemasFinancierosYdePagos/Proveedores-servicios-de-pago-ofrecen-cuentas-de-pago.asp
+        probe: true
+      - label: CNV virtual asset service providers
+        url: https://www.cnv.gov.ar/SitioWeb/PSAV
+        regulator: CNV
+        probe: true
+
+  CL:
+    regulator: CMF
+    files:
+      - label: CMF fintech register
+        url: https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-43586.html
+        probe: true
+      - label: CMF banks
+        url: https://www.cmfchile.cl/portal/principal/613/w3-propertyvalue-29006.html
+        probe: true
+
+  CO:
+    regulator: SFC
+    files:
+      - label: SFC supervised entities
+        url: https://www.superfinanciera.gov.co/publicaciones/10084264/entidades-vigiladas/
+        probe: true
+
+  PE:
+    regulator: SBS
+    files:
+      - label: SBS e-money and supervised companies
+        url: https://www.sbs.gob.pe/sistema-financiero/relacion-de-empresas-que-se-encuentran-autorizadas
+        probe: true
+
+  UY:
+    regulator: BCU
+    files:
+      - label: BCU payment and e-money institutions
+        url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/Instituciones-Emisoras-de-Dinero-Electronico.aspx
+        probe: true
+      - label: BCU virtual asset service providers
+        url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/Proveedores-de-Servicios-de-Activos-Virtuales.aspx
+        probe: true
+
+  PY:
+    regulator: BCP
+    files:
+      - label: BCP e-money companies
+        url: https://www.bcp.gov.py/entidades-de-medios-de-pago-electronicos-i454
+        probe: true
+
+  EC:
+    regulator: BCE
+    files:
+      - label: Superintendencia de Bancos entities
+        url: https://www.superbancos.gob.ec/bancos/entidades-controladas/
+        regulator: SB
+        probe: true
+
+  CR:
+    regulator: SUGEF
+    files:
+      - label: SUGEF supervised entities
+        url: https://www.sugef.fi.cr/entidades_supervisadas/
+        probe: true
+
+  PA:
+    regulator: SBP
+    files:
+      - label: SBP banks
+        url: https://www.superbancos.gob.pa/en/supervised-entities/banks
+        probe: true
+
+  GT:
+    regulator: SIB
+    files:
+      - label: SIB supervised entities
+        url: https://www.sib.gob.gt/web/sib/entidades-supervisadas
+        probe: true
+
+  HN:
+    regulator: CNBS
+    files:
+      - label: CNBS supervised institutions
+        url: https://www.cnbs.gob.hn/instituciones-supervisadas/
+        probe: true
+
+  SV:
+    regulator: SSF
+    files:
+      - label: SSF supervised entities
+        url: https://ssf.gob.sv/entidades-supervisadas/
+        probe: true
+      - label: BCR bitcoin service providers
+        url: https://bitcoin.bcr.gob.sv/
+        regulator: BCR
+        probe: true
+
+  DO:
+    regulator: SB
+    files:
+      - label: SB supervised entities
+        url: https://sb.gob.do/entidades-supervisadas/
+        probe: true
+
+  JM:
+    regulator: BOJ
+    files:
+      - label: BOJ licensees (remittance, payment)
+        url: https://boj.org.jm/core-functions/financial-institutions-supervision/licensees/
+        probe: true
+
+  TT:
+    regulator: CBTT
+    files:
+      - label: CBTT payment service providers page
+        url: https://www.central-bank.org.tt/core-functions/payments-system/
+        probe: true
+      - label: CBTT approved PSPs, EMIs and PSOs
+        url: https://www.central-bank.org.tt/wp-content/uploads/2026/08/list-of-approved-psps-emis-and-psos-as-at-01-august-2026.pdf
+        format: pdf_table
+        licence_type: Payment service provider / e-money issuer (CBTT approved)
+
+  BS:
+    regulator: CBOB
+    files:
+      - label: CBOB register of licensees
+        url: https://www.centralbankbahamas.com/bank-supervision/register-of-licensees
+        probe: true
+      - label: SCB digital asset businesses
+        url: https://www.scb.gov.bs/registrations-and-licences/
+        regulator: SCB
+        probe: true
+
+  BB:
+    regulator: CBB
+    files:
+      - label: CBB licensed institutions
+        url: https://www.centralbank.org.bb/financial-institutions/licensed-institutions
+        probe: true
+
+  KY:
+    regulator: CIMA
+    files:
+      - label: CIMA regulated entities
+        url: https://www.cima.ky/search-entities-cima
+        probe: true
+
+  BM:
+    regulator: BMA
+    files:
+      - label: BMA regulated entities
+        url: https://www.bma.bm/regulated-entities
+        probe: true
+
+  CW:
+    regulator: CBCS
+    files:
+      - label: CBCS supervised institutions
+        url: https://www.centralbank.cw/supervision/supervised-institutions
+        probe: true
+
+  AW:
+    regulator: CBA
+    files:
+      - label: CBA supervised institutions
+        url: https://www.cbaruba.org/supervision/registers
+        probe: true
+
+  TC:
+    regulator: FSC
+    files:
+      - label: TCI FSC licensees
+        url: https://www.tcifsc.tc/licensees/
+        probe: true
+
+  BZ:
+    regulator: CBB
+    files:
+      - label: Central Bank of Belize licensees
+        url: https://www.centralbank.org.bz/financial-system/licensed-institutions
+        probe: true
+
+  GY:
+    regulator: BOG
+    files:
+      - label: Bank of Guyana licensed institutions
+        url: https://www.bankofguyana.org.gy/bog/financial-sector/licensed-financial-institutions
+        probe: true
+
+  SR:
+    regulator: CBvS
+    files:
+      - label: CBvS supervised institutions
+        url: https://www.cbvs.sr/en/supervision
+        probe: true
+
+  LC:
+    regulator: ECCB
+    files:
+      - label: ECCB licensed institutions (Eastern Caribbean)
+        url: https://www.eccb-centralbank.org/financial-institutions/licensed-financial-institutions
+        probe: true
+
+  PR:
+    regulator: OCIF
+    files:
+      - label: OCIF money transmitters
+        url: https://www.ocif.pr.gov/
+        probe: true
+
+  GI:
+    regulator: GFSC
+    files:
+      - label: GFSC regulated entities
+        url: https://www.fsc.gi/regulated-entities
+        probe: true
+
+  JE:
+    regulator: JFSC
+    files:
+      - label: JFSC regulated entities
+        url: https://www.jerseyfsc.org/registry/regulated-entities/
+        probe: true
+
+  GG:
+    regulator: GFSC
+    files:
+      - label: GFSC regulated entities
+        url: https://www.gfsc.gg/commission/regulated-entities
+        probe: true
+
+  IM:
+    regulator: IOMFSA
+    files:
+      - label: IOMFSA register of licence holders
+        url: https://www.iomfsa.im/register-search/
+        probe: true
+
+  AD:
+    regulator: AFA
+    files:
+      - label: AFA supervised entities
+        url: https://www.afa.ad/en/supervised-entities
+        probe: true
+
+  MC:
+    regulator: ACPR
+    files:
+      - label: Monaco banks and payment institutions
+        url: https://www.amaf.mc/en/
+        probe: true
+
+  SM:
+    regulator: BCSM
+    files:
+      - label: BCSM register of authorised entities
+        url: https://www.bcsm.sm/site/en/home/supervision/registers.html
+        probe: true
+
+  RS:
+    regulator: NBS
+    files:
+      - label: NBS payment institutions
+        url: https://nbs.rs/en/finansijske-institucije/platne-institucije/spisak/
+        probe: true
+      - label: NBS e-money institutions
+        url: https://nbs.rs/en/finansijske-institucije/institucije-elektronskog-novca/spisak/
+        probe: true
+      - label: NBS banks
+        url: https://nbs.rs/en/finansijske-institucije/banke/spisak-banaka/
+        probe: true
+      - label: NBS virtual asset service providers
+        url: https://nbs.rs/en/finansijske-institucije/digitalna-imovina/
+        probe: true
+
+  AL:
+    regulator: BoA
+    files:
+      - label: BoA licensed entities
+        url: https://www.bankofalbania.org/Supervision/Licensed_entities/
+        probe: true
+
+  ME:
+    regulator: CBCG
+    files:
+      - label: CBCG payment and e-money institutions
+        url: https://www.cbcg.me/en/supervision/payment-institutions
+        probe: true
+
+  MK:
+    regulator: NBRM
+    files:
+      - label: NBRM payment service providers
+        url: https://www.nbrm.mk/registri.nspx
+        probe: true
+
+  MD:
+    regulator: NBM
+    files:
+      - label: NBM payment service providers
+        url: https://www.bnm.md/en/content/payment-service-providers
+        probe: true
+
+  UA:
+    regulator: NBU
+    files:
+      - label: NBU register of payment market participants
+        url: https://bank.gov.ua/en/supervision/register-payment
+        probe: true
+
+  XK:
+    regulator: CBK
+    files:
+      - label: CBK licensed institutions
+        url: https://bqk-kos.org/financial-institutions/
+        probe: true
+
+  GE:
+    regulator: NBG
+    files:
+      - label: NBG payment service providers
+        url: https://nbg.gov.ge/en/page/payment-service-providers-registry
+        probe: true
+      - label: NBG VASP registry
+        url: https://nbg.gov.ge/en/page/vasp-registry
+        probe: true
+
+  AM:
+    regulator: CBA
+    files:
+      - label: CBA payment and settlement organizations
+        url: https://www.cba.am/en/SitePages/fssupervisedinstitutions.aspx
+        probe: true
+
+  AZ:
+    regulator: CBAR
+    files:
+      - label: CBAR payment institutions
+        url: https://www.cbar.az/page-162/payment-institutions?language=en
+        probe: true
+
+  KZ:
+    regulator: ARDFM
+    files:
+      - label: NBK payment organizations register
+        url: https://nationalbank.kz/en/page/reestr-platezhnyh-organizaciy
+        regulator: NBK
+        probe: true
+      - label: AFSA (AIFC) public register
+        url: https://publicreg.myafsa.com/
+        regulator: AFSA
+        probe: true
+
+  UZ:
+    regulator: CBU
+    files:
+      - label: CBU payment organizations
+        url: https://cbu.uz/en/payment-systems/payment-organizations/
+        probe: true
+      - label: NAPP crypto service providers
+        url: https://napp.uz/en/registry
+        regulator: NAPP
+        probe: true
+
+  KG:
+    regulator: NBKR
+    files:
+      - label: NBKR payment organizations
+        url: https://www.nbkr.kg/index1.jsp?item=1867&lang=ENG
+        probe: true
+
+  TJ:
+    regulator: NBT
+    files:
+      - label: NBT payment organizations
+        url: https://nbt.tj/en/payment_systems/
+        probe: true
+
+  TM:
+    regulator: CBT
+    files:
+      - label: Central Bank of Turkmenistan
+        url: https://www.cbt.tm/en/
+        probe: true
+
+  MN:
+    regulator: BoM
+    files:
+      - label: BoM payment system participants
+        url: https://www.mongolbank.mn/en/payment-system
+        probe: true
+      - label: FRC virtual asset service providers
+        url: https://www.frc.mn/
+        regulator: FRC
+        probe: true
+
+  PK:
+    regulator: SBP
+    files:
+      - label: SBP payment system operators and EMIs
+        url: https://www.sbp.org.pk/psd/PSOs.htm
+        probe: true
+      - label: SBP banks
+        url: https://www.sbp.org.pk/f_links/index.asp
+        probe: true
+
+  BD:
+    regulator: BB
+    files:
+      - label: BB payment system operators
+        url: https://www.bb.org.bd/en/index.php/financialsystem/psdlist
+        probe: true
+
+  LK:
+    regulator: CBSL
+    files:
+      - label: CBSL licensed payment service providers
+        url: https://www.cbsl.gov.lk/en/financial-system/financial-system-stability/payment-and-settlement-systems
+        probe: true
+
+  MV:
+    regulator: MMA
+    files:
+      - label: MMA licensed institutions
+        url: https://www.mma.gov.mv/#/financial-institutions
+        probe: true
+
+  BT:
+    regulator: RMA
+    files:
+      - label: RMA licensed institutions
+        url: https://www.rma.org.bt/
+        probe: true
+
+  KH:
+    regulator: NBC
+    files:
+      - label: NBC licensed payment service institutions
+        url: https://www.nbc.gov.kh/english/banking_supervision/list_of_bfi.php
+        probe: true
+
+  BN:
+    regulator: BDCB
+    files:
+      - label: BDCB licensed institutions
+        url: https://www.bdcb.gov.bn/regulation-supervision/licensed-institutions
+        probe: true
+
+  MO:
+    regulator: AMCM
+    files:
+      - label: AMCM authorized institutions
+        url: https://www.amcm.gov.mo/en/banking-sector/list-of-authorized-institutions
+        probe: true
+
+  CN:
+    regulator: PBOC
+    files:
+      - label: PBOC non-bank payment institutions
+        url: http://www.pbc.gov.cn/zhengwugongkai/4081330/4081344/4081407/4081702/index.html
+        probe: true
+
+  TL:
+    regulator: BCTL
+    files:
+      - label: BCTL licensed institutions
+        url: https://www.bancocentral.tl/en/
+        probe: true
+
+  FJ:
+    regulator: RBF
+    files:
+      - label: RBF licensed institutions
+        url: https://www.rbf.gov.fj/financial-institutions/
+        probe: true
+
+  WS:
+    regulator: CBS
+    files:
+      - label: CBS Samoa licensed institutions
+        url: https://www.cbs.gov.ws/
+        probe: true
+
+  TO:
+    regulator: NRBT
+    files:
+      - label: NRBT licensed institutions
+        url: https://www.reservebank.to/
+        probe: true
+
+  VU:
+    regulator: RBV
+    files:
+      - label: RBV licensed institutions
+        url: https://www.rbv.gov.vu/
+        probe: true
+
+  SB:
+    regulator: CBSI
+    files:
+      - label: CBSI licensed institutions
+        url: https://www.cbsi.com.sb/
+        probe: true
+
+  DZ:
+    regulator: BA
+    files:
+      - label: Bank of Algeria approved institutions
+        url: https://www.bank-of-algeria.dz/
+        probe: true
+
+  ET:
+    regulator: NBE
+    files:
+      - label: NBE payment instrument issuers
+        url: https://nbe.gov.et/payment-system/
+        probe: true
+
+  MW:
+    regulator: RBM
+    files:
+      - label: RBM payment systems licensees
+        url: https://www.rbm.mw/PaymentSystems/
+        probe: true
+
+  MZ:
+    regulator: BM
+    files:
+      - label: Banco de Moçambique institutions
+        url: https://www.bancomoc.mz/
+        probe: true
+
+  ZW:
+    regulator: RBZ
+    files:
+      - label: RBZ registered institutions
+        url: https://www.rbz.co.zw/index.php/financial-stability/banking-supervision
+        probe: true
+
+  SZ:
+    regulator: CBE
+    files:
+      - label: CBE Eswatini licensed institutions
+        url: https://www.centralbank.org.sz/
+        probe: true
+
+  LS:
+    regulator: CBL
+    files:
+      - label: CBL licensed institutions
+        url: https://www.centralbank.org.ls/
+        probe: true
+
+  MG:
+    regulator: BFM
+    files:
+      - label: BFM e-money institutions
+        url: https://www.banky-foibe.mg/
+        probe: true
+
+  SC:
+    regulator: CBS
+    files:
+      - label: CBS Seychelles licensed institutions
+        url: https://www.cbs.sc/FinancialInstitutions/licensedinstitutions.html
+        probe: true
+      - label: FSA Seychelles licensees
+        url: https://fsaseychelles.sc/
+        regulator: FSA
+        probe: true
+
+  CV:
+    regulator: BCV
+    files:
+      - label: BCV institutions
+        url: https://www.bcv.cv/
+        probe: true
+
+  GM:
+    regulator: CBG
+    files:
+      - label: CBG licensed institutions
+        url: https://www.cbg.gm/
+        probe: true
+
+  SL:
+    regulator: BSL
+    files:
+      - label: BSL licensed institutions
+        url: https://www.bsl.gov.sl/
+        probe: true
+
+  LR:
+    regulator: CBL
+    files:
+      - label: CBL licensed institutions
+        url: https://www.cbl.org.lr/
+        probe: true
+
+  GN:
+    regulator: BCRG
+    files:
+      - label: BCRG institutions
+        url: https://www.bcrg-guinee.org/
+        probe: true
+
+  MR:
+    regulator: BCM
+    files:
+      - label: BCM institutions
+        url: https://www.bcm.mr/
+        probe: true
+
+  DJ:
+    regulator: BCD
+    files:
+      - label: BCD institutions
+        url: https://www.banque-centrale.dj/
+        probe: true
+
+  BI:
+    regulator: BRB
+    files:
+      - label: BRB institutions
+        url: https://www.brb.bi/
+        probe: true
+
+  CD:
+    regulator: BCC
+    files:
+      - label: BCC institutions
+        url: https://www.bcc.cd/
+        probe: true
+
+  KM:
+    regulator: BCC
+    files:
+      - label: BCC Comores institutions
+        url: https://www.banque-comores.km/
+        probe: true
+
+  ST:
+    regulator: BCSTP
+    files:
+      - label: BCSTP institutions
+        url: https://www.bcstp.st/
+        probe: true
+
+  ER:
+    regulator: BOE
+    files:
+      - label: Bank of Eritrea
+        url: https://www.boe.gov.er/
+        probe: true
+
+  NI:
+    regulator: SIBOIF
+    files:
+      - label: SIBOIF supervised entities
+        url: https://www.siboif.gob.ni/
+        probe: true
 
 # Contact details (website / email / phone). Only fills blanks; a value the
 # register itself gives is never overwritten. The "Contact found via" column

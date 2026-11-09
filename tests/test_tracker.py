@@ -590,7 +590,7 @@ def test_cli_national_replaces_eba_and_measures_lag(tmp_path, monkeypatch):
     monkeypatch.setitem(ALL_SOURCES, "eba", E())
     monkeypatch.setattr(national.NationalSource, "fetch", nl_fetch)
     cfgp = tmp_path / "c.yaml"
-    cfgp.write_text("sources:\n  eba: {enabled: true}\nnational:\n  NL:\n    regulator: DNB\n    files: [{url: u}]\n")
+    cfgp.write_text("national_min_hours: 0\nsources:\n  eba: {enabled: true}\nnational:\n  NL:\n    regulator: DNB\n    files: [{url: u}]\n")
     data = tmp_path / "data"
     args = ["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email", "--no-contacts"]
     times = iter(["2026-11-06 08:17", "2026-11-06 10:17", "2026-11-06 14:17", "2026-11-06 16:17"])
@@ -1832,3 +1832,119 @@ def test_brazil_banks():
     assert licence_label("Banco Múltiplo") == "Bank (multiple-service bank)"
     assert licence_label("Banco de Câmbio") == "Bank (FX bank – banco de câmbio)"
     assert licence_label("Banco Múltiplo Cooperativo") == "Bank (co-operative bank)"
+
+
+# ---------------------------------------------------------------- national registers: HTML tables, JSON APIs
+SFC_HTML = b"""<html><body>
+<table><tr><th>CE Reference</th><th>Company name of virtual asset trading platform operator</th><th>Virtual asset trading platform</th><th>Date of licence</th></tr>
+<tr><td><a href="x">BPJ213</a></td><td>OSL Digital Securities Limited</td><td>OSL Exchange</td><td>15/12/2020</td></tr>
+<tr><td>BPL992</td><td>Hash Blockchain Limited</td><td>HashKey Exchange</td><td>09/11/2022</td></tr></table>
+<table><tr><th>Company name of virtual asset trading platform operator</th><th>Virtual asset trading platform</th><th>Date of submission of licence application*</th></tr>
+<tr><td>HighBlock Limited</td><td>bitV</td><td>06/02/2024</td></tr>
+<tr><td>Foris DAX HK Limited^</td><td>Crypto.com</td><td>09/02/2024</td></tr></table>
+<table><tr><th>Company name of virtual asset trading platform operator</th><th>Virtual asset trading platform</th><th>Date of submission of licence application</th><th>Date of removal from List of VATP applicants</th></tr>
+<tr><td>AMMBR (HK) LIMITED</td><td>Ammbr</td><td>29/09/2023</td><td>06/10/2023</td></tr></table>
+</body></html>"""
+
+
+def test_html_table_files():
+    from regtracker.sources.national import parse_file
+    lic, _ = parse_file(SFC_HTML, {"url": "u", "format": "html_table", "table_headers": "CE Reference",
+                                   "name_column": "Company name of virtual asset trading platform operator",
+                                   "licence_type": "Crypto trading platform (SFC licensed)"}, "HK", "SFC")
+    assert [(r.name, r.reference, r.status_date) for r in lic] == [
+        ("OSL Digital Securities Limited", "BPJ213", "2020-12-15"), ("Hash Blockchain Limited", "BPL992", "2022-11-09")]
+    app, _ = parse_file(SFC_HTML, {"url": "u", "format": "html_table",
+                                   "table_headers": "Date of submission of licence application",
+                                   "table_exclude": "removal|CE Reference",
+                                   "name_column": "Company name of virtual asset trading platform operator",
+                                   "licence_type": "Crypto trading platform applicant (SFC)"}, "HK", "SFC")
+    assert [r.name for r in app] == ["HighBlock Limited", "Foris DAX HK Limited"]
+
+
+def test_hkma_json_and_types():
+    import json
+    from regtracker.sources.national import parse_file
+    doc = {"header": {"success": True}, "result": {"datasize": 3, "records": [
+        {"name": "Bank A Limited", "local_address": "1 Queen's Rd", "type": "Licensed Banks"},
+        {"name": "Bank B Limited", "local_address": "2 Des Voeux Rd", "type": "Restricted Licence Banks"},
+        {"name": "DTC C Limited", "local_address": "3 Road", "type": "Deposit-taking Companies"}]}}
+    recs, _ = parse_file(json.dumps(doc).encode(), {"url": "u", "type_column": "type", "type_patterns": {
+        "restricted licen": "Bank (restricted licence bank)", "^licensed bank": "Bank (licensed bank)"}}, "HK", "HKMA")
+    by = {r.name: r for r in recs}
+    assert by["Bank A Limited"].licence_type == "Bank (licensed bank)"
+    assert by["Bank B Limited"].licence_type == "Bank (restricted licence bank)"
+    assert "DTC C Limited" not in by and by["Bank A Limited"].extra["address"] == "1 Queen's Rd"
+
+
+def test_japanese_headers():
+    import io
+    from openpyxl import Workbook
+    from regtracker.sources.national import parse_file
+    wb = Workbook(); ws = wb.active
+    ws.append(["資金移動業者登録一覧"]); ws.append([])
+    ws.append(["管轄財務局", "登録番号", "登録年月日", "商号又は名称", "本店所在地", "電話番号"])
+    ws.append(["関東財務局", "00001", "2010/05/25", "株式会社テスト", "東京都千代田区", "03-0000-0000"])
+    buf = io.BytesIO(); wb.save(buf)
+    recs, info = parse_file(buf.getvalue(), {"url": "u", "licence_type": "Funds transfer service provider"}, "JP", "JFSA")
+    assert len(recs) == 1 and recs[0].name == "株式会社テスト" and recs[0].reference == "00001"
+    assert recs[0].extra["phone"] == "03-0000-0000" and recs[0].status_date == "2010-05-25"
+
+
+def test_national_keeps_failed_file_firms(tmp_path):
+    import logging
+    from regtracker.sources.national import NationalSource
+    from regtracker.sources.base import Context
+    from regtracker.store import save_snapshot
+    from regtracker import http
+
+    class Resp:
+        def __init__(self, code, body=b""):
+            self.status_code, self.content, self.text = code, body, body.decode()
+        def raise_for_status(self):
+            if self.status_code >= 400:
+                raise RuntimeError(f"HTTP {self.status_code}")
+
+    class Sess:
+        def get(self, url, **k):
+            if url.endswith("robots.txt"):
+                return Resp(404)
+            return Resp(500) if "down" in url else Resp(200, b"name;licence no\nAlpha Ltd;1\n")
+    http._TEXT.clear()
+    cfg = {"regulator": "X", "files": [{"label": "up", "url": "https://a.example/up.csv", "licence_type": "PI"},
+                                       {"label": "down", "url": "https://a.example/down.csv", "licence_type": "EMI"}]}
+    src = NationalSource("ZZ", cfg)
+    save_snapshot(tmp_path, src.name, {"nat_zz:9": {"key": "nat_zz:9", "source": "nat_zz", "jurisdiction": "ZZ",
+                                                     "regulator": "X", "name": "Beta Ltd", "licence_type": "EMI",
+                                                     "active": True, "status": "Active", "extra": {"file": "down"}}})
+    ctx = Context(config={}, session=Sess(), today="2026-11-08", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+    names = sorted(r.name for r in src.fetch(ctx))
+    assert names == ["Alpha Ltd", "Beta Ltd"]
+
+
+def test_text_regex_and_date_key():
+    from regtracker.sources.national import parse_file, _date_key
+    html = b"""<html><body><h2>Licensed remittance companies</h2><ol>
+    <li>1. Alpha Remit Ltd - Licence No. R001</li><li>2. Beta Pay Limited - Licence No. R002</li></ol>
+    <h2>Revoked</h2><ol><li>1. Gamma Ltd - Licence No. R003</li></ol></body></html>"""
+    recs, _ = parse_file(html, {"url": "u", "format": "text_regex", "between": ["Licensed remittance", "Revoked"],
+                                "row_regex": r"^\d+\.\s*(?P<name>.+?)\s+-\s+Licence No\.\s*(?P<id>\S+)",
+                                "licence_type": "Remittance"}, "ZZ", "X")
+    assert [(r.name, r.reference) for r in recs] == [("Alpha Remit Ltd", "R001"), ("Beta Pay Limited", "R002")]
+    assert _date_key("list-2026-11-06.pdf") > _date_key("list_05102026.pdf") > _date_key("List September 2026.pdf")
+
+
+def test_html_all_tables_with_sections():
+    from regtracker.sources.national import parse_file
+    html = b"""<h2>Australian-owned authorised deposit-taking institutions</h2>
+    <table><tr><th>Entity Name</th></tr><tr><td>Alex Bank Pty Ltd</td></tr><tr><td>AMP Bank Ltd</td></tr></table>
+    <h2>Branches of foreign banks</h2><table><tr><th>Entity name</th></tr><tr><td>ABN Amro Bank NV</td></tr></table>
+    <h2>Providers of purchased payment facilities</h2><table><tr><th>Entity Name</th></tr><tr><td>PPF Co Ltd</td></tr></table>"""
+    recs, _ = parse_file(html, {"url": "u", "format": "html_table", "all_tables": True, "table_headers": "entity name",
+                                "type_column": "section", "type_patterns": {
+                                    "purchased payment": "Purchased payment facility provider",
+                                    "foreign": "Bank (foreign bank branch)", "australian": "Bank / ADI"}}, "AU", "APRA")
+    by = {r.name: r.licence_type for r in recs}
+    assert by == {"Alex Bank Pty Ltd": "Bank / ADI", "AMP Bank Ltd": "Bank / ADI",
+                  "ABN Amro Bank NV": "Bank (foreign bank branch)", "PPF Co Ltd": "Purchased payment facility provider"}

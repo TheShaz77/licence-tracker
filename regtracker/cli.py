@@ -53,6 +53,11 @@ def all_sources(cfg: dict) -> dict:
     return {**ALL_SOURCES, **national_sources(cfg), **us_state_sources(cfg)}
 
 
+# national registers inside the EU/EEA are compared with the EU (EBA) copy; others aren't
+EEA_COUNTRIES = {"AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV",
+                 "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO"}
+
+
 def covered_countries(cfg: dict, data_dir: Path) -> dict:
     """Countries whose national register is live: {country: its snapshot}.
     For these the sheet shows national data and EU-register changes are only
@@ -70,6 +75,7 @@ def enabled_sources(cfg: dict, only: str | None) -> list:
     names = [n.strip() for n in only.split(",")] if only else [
         n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) and n != "us_states"
     ] + list(national_sources(cfg)) + list(us_state_sources(cfg))
+    names = list(dict.fromkeys(names))   # nat_* can appear both here (for min_hours) and under national:
     unknown = [n for n in names if n not in known]
     if unknown:
         sys.exit(f"Unknown source(s): {', '.join(unknown)}. Known: {', '.join(known)}")
@@ -124,6 +130,8 @@ def cmd_run(args, cfg, data_dir) -> int:
     for src in enabled_sources(cfg, args.sources):
         log.info("── %s", src.label)
         conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
+        if src.name.startswith("nat_") and "min_hours" not in conf:
+            conf = {**conf, "min_hours": cfg.get("national_min_hours", 12)}
         min_hours = float(conf.get("min_hours", 0) or 0)
         fp_now = getattr(src, "fingerprint", None)
         fp_saved = data_dir / "snapshots" / f"{src.name}.settings"
@@ -175,7 +183,7 @@ def cmd_run(args, cfg, data_dir) -> int:
         events, merged = diff(prev, curr, ctx.now, src.removal_is_event, track_services)
         friendly_labels(events)
         save_snapshot(data_dir, src.name, merged)
-        if src.name.startswith("nat_"):
+        if src.name.startswith("nat_") and getattr(src, "country", "") in EEA_COUNTRIES:
             compare.log_events(data_dir, events, "national")
         elif src.name == "eba":
             covered = covered_countries(cfg, data_dir)
