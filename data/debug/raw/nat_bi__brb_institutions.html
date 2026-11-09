@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" class=" fs-16 gap-16">
+  <head>
+    <meta charset="utf-8" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>body {
+display: block;
+overflow: auto;
+}
+.site-logo-img {
+  border-radius: 45px;
+}
+h1.page-title-text {
+font-size : var(--solo-px16) !important;
+line-height : calc(2 * var(--solo-px10)) !important;
+padding : var(--solo-px2) 0 !important;
+
+}
+.solo-block-title{
+font-size : var(--solo-px20) !important; 
+text-align:center !important;
+}
+.view-empty {
+visibility : hidden !important;
+}
+.feed-icons {
+visibility : hidden !important;
+}
+#main-menubar{
+background-color:  #88432D !important;
+}
+
+.view-principaux-indicateurs {
+font-size : var(--solo-px15) !important;
+font-weight: bold ;
+line-height : 18px !important;
+border : 1px solid lightgray;
+}
+.view-taux-directeur {
+
+font-size : var(--solo-px15) !important;
+font-weight: bold ;
+line-height : 18px;
+}
+
+.sidebar-box-first-inner , .sidebar-box-second-inner, .top-box-second-inner
+{
+display: flex !important;
+flex-wrap: wrap !important;
+gap : 1rem !important;
+height: auto;
+}
+
+.views-field-field-taux-moyen-pondere-journal .field-content
+{
+width: 320px;
+height: 320px;
+text-align : center;
+font-size : 36px;
+display: block;
+margin-left : auto;
+margin-right : auto;
+margin-top : auto;
+margin-bottom : auto;
+padding : 140px 0;
+background-image : linear-gradient(to right, #C0C0C0 , #F8F8F8);
+border-radius: 50%;
+}
+.views-field-field-taux-directeur-1 
+{
+width:320px;
+height:320px;
+text-align : center;
+font-size : 36px;
+display: block;
+margin-left : auto;
+margin-right : auto;
+margin-top : auto;
+margin-bottom : auto;
+padding : 140px 0;
+background-image : linear-gradient(to right, #C0C0C0 , #F8F8F8);
+border-radius: 50%;
+}
+
+.slides .views-field-field-image{
+float:left;
+width : 60%;
+/*height : auto;
+height : 100%;
+max-height : 100%;*/
+background-color:#EDEADE;
+position: absolute;   
+ top: 50%;
+ transform: translateY(-50%);
+display: inline-block;
+
+}
+
+.slides .views-field-field-image:after {
+content: " ";
+  position: absolute;
+  border-left: 4px solid rgba(250, 250, 250, 1) ;
+box-shadow: 1px 0 0 0 #d9d9d9;
+  top: -25%;
+  right: 0;
+  height: 150%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.slides .views-field-body{
+float:right;
+font-size: calc(0.8vw + 3px);
+font-weight : bold;
+padding : 15px;
+display: flex;
+flex-wrap: wrap;
+text-align : center;
+width : 40%;
+height : 100% !important;
+/*min-height : 100% !important;
+max-height : 100% !important;*/
+/*position:absolute;*/
+place-content : center;
+line-height: 1.5em;
+background-color:#EDEADE;
+border-radius : 20rem  0 0 20rem;
+}
+
+.site-name-link 
+{
+color : #88432D !important;
+font-size : var(--solo-px24);
+}
+
+.views-field-field-document {
+font-weight:bold;
+}
+.views-field-field-description {
+font-style : italic;
+}
+
+#flexslider-1 .solo-image {
+/*height : 100% !important;
+max-height : 100% !important;*/
+max-width: 100%;
+height: auto;
+object-fit: contain;
+}
+
+#flexslider-2 .solo-image {
+height: 60% !important;
+width : 80%  !important;
+}
+.top-box-first-inner
+{
+height : 100%;
+place-content : center;
+}
+.top-box-first .solo-clear, .top-box-first .view-content, .top-box-first div
+{
+height:100% !important;
+}
+#flexslider-1 
+{
+overflow : hidden !important;
+height:100% !important;
+}
+#flexslider-1 .slides, #flexslider-1 li
+{
+height:100% !important;
+}
+
+#block-solo-views-block-membres-du-cg-block-1 .solo-image
+{
+height : 150px;
+width: 150px;
+border-radius : 50%;
+}
+#block-solo-views-block-membres-du-cg-block-1 .views-field-field-image
+{
+display: grid;
+place-items: center;
+}
+#block-solo-views-block-membres-du-cg-block-1 .views-field-field-image a {
+padding: 3px 0;
+margin:5px;
+text-align: center;
+color :#404040;
+text-style: italic;
+display: inline-block;
+font-size : var(--solo-px14) !important;
+text-align : center;
+border-style: 1px outset #FAF9F6;
+background-color : #FAF9F6;
+box-shadow : 0 3px 10px rgb(0 0 0 / 0.2);
+}
+#block-solo-mainnavigation li button, #block-solo-mainnavigation li a
+{
+background-color : #F8F8F8 !important;
+}
+#quicktabs-test_quicktabs
+{
+display: flex;
+flex-direction: column;
+}
+#quicktabs-test_quicktabs .item-list
+{
+flex: 1; /* take available space */
+}
+#quicktabs-test_quicktabs .solo-ul
+{
+padding: 7px 0;
+margin:0;
+text-align: left;
+}
+#quicktabs-test_quicktabs .solo-ul li
+{
+float:left;
+display: inline;
+margin: 0;
+margin-right:3px;
+}
+
+#quicktabs-test_quicktabs .solo-ul li a
+{
+    position: relative;
+    z-index: 1;
+    padding: 7px 16px;
+    border-radius: 6px 6px 0px 0px;
+ -moz-border-radius: 6px 6px 0px 0px;
+    outline:none;
+}
+#sidebar-box-first table{
+/*word-break: break-word;   for responsive table on small screen*/ 
+font-size : var(--solo-px15) !important;
+
+}
+#block-solo-views-block-principaux-indicateurs-block-1 .more-link
+{
+float:right;
+}
+</style>
+<link rel="icon" href="/sites/default/files/Logo%20BRB_png_1_1.png" type="image/png" />
+<link rel="alternate" type="application/rss+xml" title="" href="http://www.brb.bi/rss.xml" />
+
+    <title>Bienvenue ! | Banque de la République du Burundi</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_z5kh1qYNF7g8XmDw728MnvFNFRIVnRmv2k5Qck8HeCk.css?delta=0&amp;language=fr&amp;theme=solo&amp;include=eJxtj-FuwzAIhF8ozD-mbnsdXBMXxTapz2nSt1_aSlWS7Q-C7-4Q9EkWJA1SnZYmsXJTK9110vPQ2MONnCXxBry7DpbM9VYa8SywLHQiWV74USj2slDUFJiCYkx834laiKtmO8KQCVK1_y-UzHP6A8hX4WG09QUQPH1__Ww8Wcp0GHeBXI4BDUXjpdF8WS-Qio2GO5rkdQnAUUCB6_CS5086Y7U-Dc4zpLupzHDP-pEtTGmPqmC0Ar0JxarhF_TTlqY" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_eF73nOgEs1nZAqhodVh9V5jPNTeOJuf3rhfClVO0wo0.css?delta=1&amp;language=fr&amp;theme=solo&amp;include=eJxtj-FuwzAIhF8ozD-mbnsdXBMXxTapz2nSt1_aSlWS7Q-C7-4Q9EkWJA1SnZYmsXJTK9110vPQ2MONnCXxBry7DpbM9VYa8SywLHQiWV74USj2slDUFJiCYkx834laiKtmO8KQCVK1_y-UzHP6A8hX4WG09QUQPH1__Ww8Wcp0GHeBXI4BDUXjpdF8WS-Qio2GO5rkdQnAUUCB6_CS5086Y7U-Dc4zpLupzHDP-pEtTGmPqmC0Ar0JxarhF_TTlqY" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" defer />
+<link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;display=swap" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_NMkgMUxmTXPYETvP6tXYtQFqsMkIVf_erZ7XqSbKjyY.css?delta=4&amp;language=fr&amp;theme=solo&amp;include=eJxtj-FuwzAIhF8ozD-mbnsdXBMXxTapz2nSt1_aSlWS7Q-C7-4Q9EkWJA1SnZYmsXJTK9110vPQ2MONnCXxBry7DpbM9VYa8SywLHQiWV74USj2slDUFJiCYkx834laiKtmO8KQCVK1_y-UzHP6A8hX4WG09QUQPH1__Ww8Wcp0GHeBXI4BDUXjpdF8WS-Qio2GO5rkdQnAUUCB6_CS5086Y7U-Dc4zpLupzHDP-pEtTGmPqmC0Ar0JxarhF_TTlqY" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" defer></script>
+
+          <script type="text/javascript" src="/modules/seckit/js/seckit.document_write.js"></script>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-no-body" media="all" href="/modules/seckit/css/seckit.no_body.css" />
+        <!-- stop SecKit protection -->
+        <noscript>
+        <link type="text/css" rel="stylesheet" id="seckit-clickjacking-noscript-tag" media="all" href="/modules/seckit/css/seckit.noscript_tag.css" />
+        <div id="seckit-noscript-tag">
+          Sorry, you need to enable JavaScript to visit this website.
+        </div>
+        </noscript></head>
+  <body class="views-page path-view-frontpage path-frontpage">
+        <a href="#main-content" class="visually-hidden focusable skip-link">
+      Aller au contenu principal
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+<!-- Start: Page Wrapper -->
+
+
+<div id="page-wrapper" class="page-wrapper sw-100 sb-768 mn-768 solo-gilda-display" >
+
+            
+    
+    <div id="fixed-search-block" class="solo-outer lone fixed-search-block" role="search" aria-label="Search Bar"  style="--r-bg:#ffffff;--r-bg-fr:#ffffff;--r-bg-lk:#ffffff">
+    <div id="fixed-search-block-inner" class="solo-inner solo-col solo-col-1 fixed-search-block-inner">
+      <div class="fixed-search-wrapper">
+        <div id="search-button-close" class="hamburger-icon hamburger-icon-close search-button-close">
+          <!-- Button for closing the search bar -->
+          <button class="btn-animate solo-button-menu" data-drupal-selector="search-block-button-close-inner" aria-label="Close Search Block" aria-controls="fixed-search-block" aria-expanded="false">
+            <span>  <svg width="60" height="40" viewbox="0 0 60 40">
+    <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" class="svg-stroke">
+      <path id="svg-top" d="M10,10 L50,10 Z"></path>
+      <path id="svg-middle" d="M10,20 L50,20 Z"></path>
+      <path id="svg-bottom" d="M10,30 L50,30 Z"></path>
+    </g>
+  </svg>
+
+
+
+
+
+</span>
+            <span class="visually-hidden">Close Search Block</span>
+          </button>
+        </div>
+            
+  
+    
+      <form action="/search/node" method="get" id="search-block-form" accept-charset="UTF-8" class="solo-clear solo-search-block-form">
+  <div class="js-form-item form-item js-form-type-search form-type-search js-form-item-keys form-item-keys form-no-label">
+      <label for="edit-keys" class="form-item__label visually-hidden">Rechercher</label>
+        <input title="Saisir les termes à rechercher." placeholder="Recherche par mot-clé ou expression." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" class="form-search form-element form-element--type-search form-element--api-search solo-input" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions solo-clear element-container-wrapper js-form-wrapper form-wrapper" id="edit-actions"><input class="button--primary search-button-block button js-form-submit form-submit solo-button btn-animate" data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Rechercher" />
+</div>
+
+</form>
+
+  
+
+      </div>
+    </div>
+  </div>
+
+      <!-- Start: Popup Login Block -->
+  <div id="popup-login-block" class="solo-outer lone popup-login-block solo-animate-opacity" role="login" aria-hidden="true" aria-label="Login Block"  style="--r-bg:#88432D;--r-bg-fr:#88432D;--r-bg-lk:#88432D;--r-bg-lk-h:#88432D;--r-bg-bt:#88432D;--r-bg-bt-h:#88432D">
+    <div id="popup-login-block-inner" class="solo-inner solo-col popup-login-block-inner">
+      <div id="login-button-close" class="hamburger-icon hamburger-icon-close login-button-close">
+              <button class="solo-button-menu login-block-button-close-inner" data-drupal-selector="login-block-button-close-inner" aria-label="Close Login Popup Block" aria-controls="popup-login-block" aria-expanded="false">
+            <span>  <svg width="60" height="40" viewbox="0 0 60 40">
+    <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" class="svg-stroke">
+      <path id="svg-top" d="M10,10 L50,10 Z"></path>
+      <path id="svg-middle" d="M10,20 L50,20 Z"></path>
+      <path id="svg-bottom" d="M10,30 L50,30 Z"></path>
+    </g>
+  </svg>
+
+
+
+
+
+</span>
+            <span class="visually-hidden">Close Login Popup Block</span>
+        </button>
+      </div>
+        
+<section id="block-solo-userlogin" role="form" class="solo-clear solo-block block-user block-user-login-block">
+  
+    
+      <form class="user-login-form solo-clear" data-drupal-selector="user-login-form" action="/node?destination=/node" method="post" id="user-login-form" accept-charset="UTF-8">
+  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-name form-item-name">
+      <label for="edit-name" class="form-item__label js-form-required form-required">Nom d'utilisateur</label>
+        <input autocorrect="none" autocapitalize="none" spellcheck="false" autocomplete="username" data-drupal-selector="edit-name" type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required form-element form-element--type-text form-element--api-textfield solo-input" required="required" aria-required="true" />
+
+        </div>
+<div class="js-form-item form-item js-form-type-password form-type-password js-form-item-pass form-item-pass">
+      <label for="edit-pass" class="form-item__label js-form-required form-required">Mot de passe</label>
+        <input autocomplete="current-password" data-drupal-selector="edit-pass" type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required form-element form-element--type-password form-element--api-password solo-input" required="required" aria-required="true" />
+
+        </div>
+<input autocomplete="off" data-drupal-selector="form-7sqngfn0ek3q2g6joeavgcfol96czuefje4gnb6lxda" type="hidden" name="form_build_id" value="form-7SqNGfn0eK3q2g6joEAVGCfol96cZuefJe4gnb6lXdA" class="solo-input" />
+<input data-drupal-selector="edit-user-login-form" type="hidden" name="form_id" value="user_login_form" class="solo-input" />
+<div data-drupal-selector="edit-actions" class="form-actions solo-clear element-container-wrapper js-form-wrapper form-wrapper" id="edit-actions--2"><input class="button--primary button js-form-submit form-submit solo-button btn-animate" data-drupal-selector="edit-submit" type="submit" id="edit-submit--2" name="op" value="Se connecter" />
+</div>
+
+</form>
+<div class="solo-clear item-list"><ul  class="solo-ul"><li class="solo-li-list"><a href="/user/password" title="Envoyer les instructions de réinitialisation par courriel." class="request-password-link">Réinitialiser votre mot de passe</a> </li></ul></div>
+  </section>
+
+
+    </div>
+  </div>
+  <!-- End: Popup Login Block -->
+  
+          <!-- Start: Header -->
+    <header id="header" class="solo-outer lone header" role="banner" aria-label="Site header" style="--r-bg:#FEFEE2;--r-bg-lk:#88432D;--r-bg-bt:#88432D">
+      <div id="header-inner" class="solo-inner solo-col solo-col-1 header-inner">
+
+        
+                  <div id="search-button-open" class="hamburger-icon search-button-open">
+                        <button class="btn-animate solo-button-menu sidebar-hamburger-icon" data-drupal-selector="sidebar-hamburger-icon" aria-label="Open Search Block" aria-controls="fixed-search-block" aria-expanded="false">
+              <span><svg width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" class="svg-stroke">
+  <circle cx="11" cy="11" r="8"></circle>
+  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+</svg>
+</span>
+              <span class="visually-hidden">Open Search Block</span>
+            </button>
+          </div>
+        
+                      
+<section id="block-solo-branding" class="solo-clear solo-block block-system block-system-branding-block">
+  
+    
+  
+<div class="branding-wrapper">
+    <div class="branding-first">
+      <a class="site-logo" href="/" title="Accueil" rel="Accueil">
+      <img src="/sites/default/files/Logo%20BRB_png_1.png" class="site-logo-img" alt="Accueil" />
+    </a>
+  
+    </div>
+  
+    <div class="branding-second site-name-outer">
+          <div class="site-name">
+        <a class="site-name-link" href="/" title="Accueil" rel="Accueil">
+        Banque de la République du Burundi
+      </a>
+      </div>
+    
+      </div>
+  
+</div>
+</section>
+
+
+        
+      </div>
+    </header>
+    <!-- End: Header -->
+    
+      <!-- Start: Primary Menu -->
+    <div id="primary-menu" class="solo-outer lone main-navigation-wrapper primary-menu has-border menu--justify" role="navigation" aria-label="Main Navigation" style="--r-bg:#88432D;--r-bg-lk:#88432D;--r-bg-lk-h:#394558;--r-bg-bt:#88432D;--r-bg-bt-h:#394558">
+      <div id="primary-menu-inner" class="solo-inner solo-col solo-col-1 primary-menu-inner">
+            <nav  id="block-solo-main-menu" class="block block-menu navigation menu--main" aria-labelledby="block-solo-main-menu-menu" role="navigation">
+            
+  <h2 class="visually-hidden block__title" id="block-solo-main-menu-menu">Navigation principale</h2>
+  
+        
+
+
+<div class="solo-clear solo-menu navigation-responsive navigation-primary-responsive navigation-responsive-click menu-align-center expand-left">
+
+  
+  <div class="mobile-nav hamburger-icon solo-block">
+    <button class="solo-button-menu mobile-menubar-toggler-button" data-drupal-selector="mobile-menubar-toggler-button" tabindex='-1' aria-label="Open or Close horizontal Main Menu" aria-expanded="false">
+      <span>
+          <svg width="60" height="40" viewbox="0 0 60 40">
+    <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="currentColor" class="svg-stroke">
+      <path id="svg-top" d="M10,10 L50,10 Z"></path>
+      <path id="svg-middle" d="M10,20 L50,20 Z"></path>
+      <path id="svg-bottom" d="M10,30 L50,30 Z"></path>
+    </g>
+  </svg>
+
+
+
+
+
+
+      </span>
+      <span class="visually-hidden">Open or Close horizontal Main Menu</span>
+    </button>
+  </div>
+
+
+
+
+
+
+
+    <ul class="navigation__menubar navigation__responsive navigation__primary navigation__menubar-main"  id="main-menubar" role="menubar">
+  
+        
+                      
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item link-only" role='none'>
+        <a href="/" class="nav__menu-link nav__menu-link-main is-active" role="menuitem" tabindex="-1" data-drupal-link-system-path="&lt;front&gt;" aria-current="page">        <span class="menu__url-title">Accueil</span>
+      </a>
+    
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-2" role="menuitem" aria-controls="main-sub-menu-2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">La  BRB</span>
+            <span class="visually-hidden">sous-navigation La  BRB</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-2" tabindex="-1"  id="main-submenu--2" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/11" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/11">        <span class="menu__url-title">Missions</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/8" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/8">        <span class="menu__url-title">Vision et Valeurs</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/80" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/80">        <span class="menu__url-title">Organigramme</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/81" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/81">        <span class="menu__url-title">Conseil Général</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/82" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/82">        <span class="menu__url-title">Directions</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/9" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/9">        <span class="menu__url-title">Historique de la Banque</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-3--2" role="menuitem" aria-controls="main-sub-menu-3--2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Politique Monétaire</span>
+            <span class="visually-hidden">sous-navigation Politique Monétaire</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-3--2" tabindex="-1"  id="main-submenu--3" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/12" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/12">        <span class="menu__url-title">Cadre de Politique Monétaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/d-claration-de-politique-mon-taire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="d-claration-de-politique-mon-taire">        <span class="menu__url-title">Déclaration de la Politique Monétaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/234" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/234">        <span class="menu__url-title">Politique de Change</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-4--2" role="menuitem" aria-controls="main-sub-menu-4--2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Système Financier</span>
+            <span class="visually-hidden">sous-navigation Système Financier</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-4--2" tabindex="-1"  id="main-submenu--4" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/119" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/119">        <span class="menu__url-title">Supervision Bancaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/120" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/120">        <span class="menu__url-title">Supervision de la Microfinance</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/2928" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/2928">        <span class="menu__url-title">Système de Paiement</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-5--2" role="menuitem" aria-controls="main-sub-menu-5--2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Réglementation</span>
+            <span class="visually-hidden">sous-navigation Réglementation</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-5--2" tabindex="-1"  id="main-submenu--5" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes-r-gissant-la-brb" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes-r-gissant-la-brb">        <span class="menu__url-title">Textes Régissant la BRB</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_au_secteur_bancaire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_au_secteur_bancaire">        <span class="menu__url-title">Secteur Bancaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes-legaux-relatifs-aux-microfinances" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes-legaux-relatifs-aux-microfinances">        <span class="menu__url-title">Secteur de la Microfinance</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_au_change" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_au_change">        <span class="menu__url-title">Marché de Change</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_au_marche_monetaire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_au_marche_monetaire">        <span class="menu__url-title">Marché Monétaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_aux_systemes_de_paiement" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_aux_systemes_de_paiement">        <span class="menu__url-title">Systèmes de Paiement</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_aux_fonds_de_garantie" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_aux_fonds_de_garantie">        <span class="menu__url-title">Fonds de Garantie</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/textes_legaux_relatifs_a_la_protection_des_consommateurs" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="textes_legaux_relatifs_a_la_protection_des_consommateurs">        <span class="menu__url-title">Protection des Consommateurs</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-6--3" role="menuitem" aria-controls="main-sub-menu-6--3" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Marchés </span>
+            <span class="visually-hidden">sous-navigation Marchés </span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-6--3" tabindex="-1"  id="main-submenu--6" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-child "  data-drupal-selector="main-sub-menu-1--6" role="menuitem" aria-controls="main-sub-menu-1--6" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Marché des Titres du Trésor</span>
+            <span class="visually-hidden">sous-navigation Marché des Titres du Trésor</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-1--6" tabindex="-1"  id="main-submenu--7" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/node/360" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/360">        <span class="menu__url-title">Marché Primaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/marche-secondaire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="node/359">        <span class="menu__url-title">Marché Secondaire</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/Marche%20Interbancaire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="Marche Interbancaire">        <span class="menu__url-title">Marché Interbancaire</span>
+      </a>
+    
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-child "  data-drupal-selector="main-sub-menu-3--6" role="menuitem" aria-controls="main-sub-menu-3--6" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Appels d&#039;offres de liquidités</span>
+            <span class="visually-hidden">sous-navigation Appels d&#039;offres de liquidités</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-3--6" tabindex="-1"  id="main-submenu--8" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/avis-d-appels-d-offres-de-liquidit-s" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="avis-d-appels-d-offres-de-liquidit-s">        <span class="menu__url-title">Avis d&#039;Appels d&#039;Offres de liquidités</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/dispositions-l-gales-et-r-glementaires" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="dispositions-l-gales-et-r-glementaires">        <span class="menu__url-title">Dispositions légales et réglementaires</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/r-sultats-des-appels-d-offres-de-liquidit-s" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="r-sultats-des-appels-d-offres-de-liquidit-s">        <span class="menu__url-title">Résultats des appels d&#039;offres de liquidités</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/affichagetoustauxchange" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="affichagetoustauxchange">        <span class="menu__url-title">Marché des Changes</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/Avis%20au%20Public" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="Avis au Public">        <span class="menu__url-title">Fourniture et Services</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-7--2" role="menuitem" aria-controls="main-sub-menu-7--2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Statistiques</span>
+            <span class="visually-hidden">sous-navigation Statistiques</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-7--2" tabindex="-1"  id="main-submenu--9" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/view-secteurreel-" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="view-secteurreel-">        <span class="menu__url-title">Secteur Réel</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/monnaie-et-credit" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="monnaie-et-credit">        <span class="menu__url-title">Monnaie et Crédit</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/finances-publiques" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="finances-publiques">        <span class="menu__url-title">Finances Publiques</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/balance-des-paiements-" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="balance-des-paiements-">        <span class="menu__url-title">Balance des Paiements</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/view-autres-statistiques" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="view-autres-statistiques">        <span class="menu__url-title">Autres Statistiques</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+    
+                      
+                
+    
+    
+            
+            <li class="btn-animate nav__menu-item nav__menu-item-main nav__menubar-item has-sub__menu button-only" role='none'>
+                    <button class="ds-link dropdown-toggler dropdown-toggler-parent "  data-drupal-selector="main-sub-menu-8--2" role="menuitem" aria-controls="main-sub-menu-8--2" aria-haspopup="true" aria-expanded="false" tabindex="-1">
+            <span class="menu__url-title-disabled">Publications</span>
+            <span class="visually-hidden">sous-navigation Publications</span>
+            <span class="toggler-icon dropdown-arrow">  <svg aria-hidden="true" width="24" height="24" viewbox="0 0 24 24" stroke-width="2" stroke-linecap="butt" stroke-linejoin="bevel" fill="none" stroke="currentColor" class="svg-stroke">
+    <path d="M6 9l6 6 6-6"/>
+  </svg>
+
+</span>
+        </button>
+    
+    
+                
+
+
+
+
+
+
+    <ul class="sub__menu sub__menu-main" id="main-sub-menu-8--2" tabindex="-1"  id="main-submenu--10" role="menu" tabindex="-1" aria-hidden="true">
+  
+        
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapports_annuels" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapports_annuels">        <span class="menu__url-title">Rapport Annuel</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapports_stabilite_financiere" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapports_stabilite_financiere">        <span class="menu__url-title">Rapport de Stabilité Financière</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapports_annuels_supervision" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapports_annuels_supervision">        <span class="menu__url-title">Rapport Annuel de Supervision</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapport-de-politique-mon-taire" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapport-de-politique-mon-taire">        <span class="menu__url-title">Rapport de Politique Monétaire</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapports-des-syst-mes-de-paiement" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapports-des-syst-mes-de-paiement">        <span class="menu__url-title">Rapport des Systèmes de Paiement</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapports_semestriels" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapports_semestriels">        <span class="menu__url-title">Rapport Semestriel</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/vue-bulletins-mensuels" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="vue-bulletins-mensuels">        <span class="menu__url-title">Bulletin Mensuel</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/etats_financiers" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="etats_financiers">        <span class="menu__url-title">Etat Financier</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/indicateurs_de_conjoncture" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="indicateurs_de_conjoncture">        <span class="menu__url-title">Indicateur de Conjoncture</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/enquetes_de_conjoncture" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="enquetes_de_conjoncture">        <span class="menu__url-title">Enquête de Conjoncture</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/revues_economiques" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="revues_economiques">        <span class="menu__url-title">Revue Economique</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/rapport-d-inclusion-financi-re" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="rapport-d-inclusion-financi-re">        <span class="menu__url-title">Rapport d&#039;Inclusion Financière</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/strat-gie-nationale-inclusion-financi-re" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="strat-gie-nationale-inclusion-financi-re">        <span class="menu__url-title">Stratégie Nationale d&#039;Inclusion Financière</span>
+      </a>
+    
+        </li>
+    
+            
+                
+    
+    
+            
+                         <li class="btn-animate nav__menu-item nav__menu-item-main nav__submenu-item link-only" role='none'>
+        <a href="/autres_documents" class="nav__menu-link nav__menu-link-main" role="menuitem" tabindex="-1" data-drupal-link-system-path="autres_documents">        <span class="menu__url-title">Autre Rapport</span>
+      </a>
+    
+        </li>
+      </ul>
+ 
+        </li>
+      </ul>
+ 
+</div>
+
+
+
+  </nav>
+
+
+      </div>
+    </div>
+    <!-- End: Primary Menu -->
+    
+            
+    
+
+
+
+      
+      
+
+
+
+
+  <!-- Start: Top Container -->
+  <div id="top-container" class="solo-outer multi top-container active-top-2 has-border animate-hover"  style="--r-bg:#FEFEE2">
+    <div id="top-container-inner" class="solo-inner solo-col top-container-inner solo-col-4-1">
+
+          <!-- Start: Top container first region -->
+      <div id="top-box-first" class="region-outer top-box top-box-first">
+        <div class="region-inner top-box-inner top-box-first-inner fade-inner" >
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blockviewslider-block-1" id="block-solo-views-block-viewslider-block-1">
+  
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-viewslider view-id-viewslider view-display-id-block_1 js-view-dom-id-791e080d48a71bc732a3fcf4eae5651cf64ca3564be27b3655c43f2f436d0782">
+  
+    
+      
+      <div class="view-content">
+      
+<div>
+    
+<div id="flexslider-1" class="flexslider optionset-default">
+ 
+<ul class="slides">
+    
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2026-09/Photos%20agence%20buhumuza_31.JPG" width="2740" height="1824" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p><em><strong>Agence BUHUMUZA&nbsp;: La BRB se rapproche de plus en plus de la Population</strong></em></p><p>Un ouf… <a href="/node/3862" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2026-05/PIC_9.JPG" width="3603" height="4016" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p><strong>Interopérabilité des systèmes de paiement : du local au continental.</strong></p><p>Le 23 avril 2026, la… <a href="/node/3304" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2026-05/photo%20burundi%20pay.jpg" width="5859" height="4016" alt="Lancement du système de paiement du Burundi BurundiPay " class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>Ce 23 avril 2026, le Gouverneur de la Banque de la République du Burundi, Edouard Normand Bigendako a procédé au… <a href="/node/3293" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2026-02/PIC_5.JPG" width="6016" height="4011" alt="En date du 26/02/2026, la BRB a présenté le Rapport de Politique Monétaire pour le 4ème trimestre 2025" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>En date du 26/02/2026, la BRB a présenté le <a href="https://www.brb.bi/node/3000">Rapport de Politique Monétaire… <a href="/node/3007" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-11/PIC-2.JPG" width="1000" height="555" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>La Banque de la République du Burundi, BRB, a organisé, le vendredi 7 novembre 2025, un atelier de sensibilisation… <a href="/node/2593" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-11/CONFERENCE-67.JPG" width="1000" height="699" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p><strong>Visite du Vice-Président de la République sur le chantier du futur &nbsp;Siège de la BRB</strong></p><p>… <a href="/node/2578" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-11/CONFERENCE-2.JPG" width="1000" height="667" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>Du 27 au 31 octobre 2025, les cadres de la Banque de la République du Burundi (BRB) chargés de la supervision et de… <a href="/node/2575" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-09/EAC%20CBMP.jpg" width="1066" height="1502" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>Plan Directeur Transfrontalier du Système de Paiement</p><p>La Communauté Est Africaine vient de publier le Plan… <a href="/node/2413" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-08/FDC_4.JPG" width="6192" height="4128" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p><strong>Se renforcer pour mieux superviser les systèmes de paiement numériques</strong></p><p>Du 4 au 14 août 2025,… <a href="/node/2232" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+<li>
+    <span class="views-field views-field-field-image"><span class="field-content">  <img loading="lazy" src="/sites/default/files/2025-07/1.%20Refinitive-11.JPG" width="1000" height="546" alt="" class="solo-image" />
+
+</span></span><span class="views-field views-field-body"><span class="field-content height300px"><p>Ce mercredi, La BRB a procédé au lancement de l’opérationnalisation d’une plateforme pour les opérations de… <a href="/node/2115" class="views-more-link">Lire la suite</a></span></span>
+    </li>
+</ul>
+</div>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Top Container First -->
+    
+          <!-- Start: Top Container Second  -->
+      <div id="top-box-second" class="region-outer top-box top-box-second">
+        <div class="region-inner top-box-inner top-box-second-inner fade-inner height:300px;" >
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blocktaux-directeur-block-1" id="block-solo-views-block-taux-directeur-block-1">
+  
+      <h2 class="solo-block-title">Taux Directeur</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-taux-directeur view-id-taux_directeur view-display-id-block_1 js-view-dom-id-0b6ebdfa10a283384170bce8a9b86dc35c8eeea9786f36ae97ca52711c7452f0">
+  
+    
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul   class="item-list solo-ul">
+
+          <li class="solo-clear"><span class="views-field views-field-field-taux-directeur-1"><span class="field-content">10.00%</span></span><HR size="4"><span class="views-field views-field-field-date-de-mise-a-jour"><span class="views-label views-label-field-date-de-mise-a-jour">Effectif depuis le </span><span class="field-content">26/02/2026</span></span></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Top Container Second -->
+    
+    
+    </div>
+  </div>
+  <!-- End: Top container -->
+
+      
+    
+    
+    
+  
+
+      
+      
+
+
+
+
+  <!-- Start: Main -->
+  <div id="main-container" class="solo-outer multi main-container active-main-2 has-border"  style="--r-bg:#FEFEE2">
+    <div id="main-container-inner" class="solo-inner solo-col main-container-inner solo-col-1-3 main-left-right">
+      <!-- Start Main Container -->
+
+          <!-- Start Left SideBar -->
+      <div id="sidebar-box-first" class="region-outer main-box sidebar-box-first" role="complementary">
+        <div class="region-inner main-box-inner sidebar-box-first-inner fade-inner" >
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blocktaux-de-change-version-2-block-1" id="block-solo-views-block-taux-de-change-version-2-block-1">
+  
+      <h2 class="solo-block-title">Taux de change du jour</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-taux-de-change-version-2 view-id-taux_de_change_version_2 view-display-id-block_1 js-view-dom-id-353f7c8e23d90853e9606e8b1652c927be99b9faaaeeb4dcf0fc18892db5b5e4">
+  
+    
+      
+      <div class="view-content">
+      <div class="solo-responsive">
+  <table class="solo-table-all cols-4">
+        <thead>
+      <tr>
+                                                  <th id="view-field-code-pays-table-column" class="views-field views-field-field-code-pays" scope="col">Monnaie </th>
+                                                  <th id="view-field-acheteur-table-column" class="views-field views-field-field-acheteur" scope="col">Taux Acheteur </th>
+                                                  <th id="view-field-moyen-table-column" class="views-field views-field-field-moyen" scope="col">Taux Moyen </th>
+                                                  <th id="view-field-vendeur-table-column" class="views-field views-field-field-vendeur" scope="col">Taux Vendeur </th>
+              </tr>
+    </thead>
+    <tbody>
+          <tr>
+                                                                                        <td headers="view-field-code-pays-table-column" class="views-field views-field-field-code-pays"> <a href="/node/144" hreflang="fr">USD</a>          </td>
+                                                                                        <td headers="view-field-acheteur-table-column" class="views-field views-field-field-acheteur"> 2990.2650          </td>
+                                                                                        <td headers="view-field-moyen-table-column" class="views-field views-field-field-moyen"> 3014.3800          </td>
+                                                                                        <td headers="view-field-vendeur-table-column" class="views-field views-field-field-vendeur"> 3038.4950          </td>
+              </tr>
+          <tr>
+                                                                                        <td headers="view-field-code-pays-table-column" class="views-field views-field-field-code-pays"> <a href="/node/145" hreflang="fr">EUR</a>          </td>
+                                                                                        <td headers="view-field-acheteur-table-column" class="views-field views-field-field-acheteur"> 3337.1148          </td>
+                                                                                        <td headers="view-field-moyen-table-column" class="views-field views-field-field-moyen"> 3364.0270          </td>
+                                                                                        <td headers="view-field-vendeur-table-column" class="views-field views-field-field-vendeur"> 3390.9392          </td>
+              </tr>
+          <tr>
+                                                                                        <td headers="view-field-code-pays-table-column" class="views-field views-field-field-code-pays"> <a href="/node/286" hreflang="fr">DTS</a>          </td>
+                                                                                        <td headers="view-field-acheteur-table-column" class="views-field views-field-field-acheteur"> 4048.5586          </td>
+                                                                                        <td headers="view-field-moyen-table-column" class="views-field views-field-field-moyen"> 4081.2083          </td>
+                                                                                        <td headers="view-field-vendeur-table-column" class="views-field views-field-field-vendeur"> 4113.8579          </td>
+              </tr>
+      </tbody>
+  </table>
+</div>
+
+    </div>
+  
+          <div class="more-link solo-clear element-container-wrapper"><a href="/Details%20Taux%20de%20Change">Voir Plus</a></div>
+
+      </div>
+</div>
+
+  </section>
+
+<section class="views-element-container solo-clear solo-block block-views block-views-blockvue-tauxchangepdf-block-1" id="block-solo-views-block-vue-tauxchangepdf-block-1">
+  
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-vue-tauxchangepdf view-id-vue_tauxchangepdf view-display-id-block_1 js-view-dom-id-e45404a0b261c1e55aa830b353b09e9d446f65377b0ed19eb02c4b28214fd872">
+  
+    
+      
+      <div class="view-content">
+      <div class="solo-responsive">
+  <table class="solo-table-all cols-0">
+      <tbody>
+          <tr>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/4125" hreflang="fr">Cours de change du 09-11-2026</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/4117" hreflang="fr">Cours de change du 06-11-2026</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/4111" hreflang="fr">Cours de change du 05-11-2026</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/4106" hreflang="fr">Cours de change  du 04-11-2026</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/4096" hreflang="fr">Cours de change du 03-11-2026</a>          </td>
+              </tr>
+      </tbody>
+  </table>
+</div>
+
+    </div>
+  
+          <div class="more-link solo-clear element-container-wrapper"><a href="/affichagetoustauxchange">Voir Plus</a></div>
+
+      </div>
+</div>
+
+  </section>
+
+<section class="views-element-container solo-clear solo-block block-views block-views-blocktaux-moyen-pondere-journalier-en-block-1" id="block-solo-views-block-taux-moyen-pondere-journalier-en-block-1">
+  
+      <h2 class="solo-block-title">Taux moyen pondéré Journalier du Marché Interbancaire</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-taux-moyen-pondere-journalier-en view-id-taux_moyen_pondere_journalier_en view-display-id-block_1 js-view-dom-id-44aa47229dac332fa7fde42432a5a4b1b69ab2e58d5072ddcfb7611ba4c64886">
+  
+    
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul   class="item-list solo-ul">
+
+          <li class="solo-clear"><div class="views-field views-field-field-taux-moyen-pondere-journal"><div class="field-content">13.00%</div></div><div class="views-field views-field-field-date-taux-interbancaire"><div class="field-content"><time datetime="2026-11-05T12:00:00Z">5  novembre,  2026</time>
+</div></div></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          <div class="more-link solo-clear element-container-wrapper"><a href="/taux-pondere-journalier-en-pourcentage">voir plus</a></div>
+
+      </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Left SideBar -->
+    
+          <!-- Start: Main Content -->
+      <div id="sidebar-box-main" class="region-outer main-box sidebar-box-main" role="main">
+        <div class="region-inner main-box-inner sidebar-box-main-inner fade-inner" >
+          <a id="main-content" tabindex="-1"></a>
+              <div data-drupal-messages-fallback class="hidden"></div>
+<section id="block-solo-quicktabstestquicktabs" class="solo-clear solo-block block-quicktabs block-quicktabs-blocktest-quicktabs">
+  
+    
+      <div class="quicktabs-wrapper pamela solo-clear element-container-wrapper" id="quicktabs-test_quicktabs"><div class="solo-clear item-list"><ul  class="quicktabs-tabs solo-ul" role="tablist"><li role="tab" aria-controls="quicktabs-tabpage-test_quicktabs-0" aria-selected="true" id="quicktabs-tab-test_quicktabs-0" tabIndex="-1" class="active actualités solo-li-list" tabindex="0"><a href="/quicktabs/nojs/test_quicktabs/0" class="quicktabs-loaded" data-quicktabs-tab-index="0">Actualités</a> </li><li role="tab" aria-controls="quicktabs-tabpage-test_quicktabs-1" aria-selected="false" id="quicktabs-tab-test_quicktabs-1" tabIndex="-1" class="evènements solo-li-list"><a href="/quicktabs/nojs/test_quicktabs/1" class="quicktabs-loaded" data-quicktabs-tab-index="1">Evènements</a> </li><li role="tab" aria-controls="quicktabs-tabpage-test_quicktabs-2" aria-selected="false" id="quicktabs-tab-test_quicktabs-2" tabIndex="-1" class="marché-public solo-li-list"><a href="/quicktabs/nojs/test_quicktabs/2" class="quicktabs-loaded" data-quicktabs-tab-index="2">Marché Public</a> </li><li role="tab" aria-controls="quicktabs-tabpage-test_quicktabs-3" aria-selected="false" id="quicktabs-tab-test_quicktabs-3" tabIndex="-1" class="marché-financier solo-li-list"><a href="/quicktabs/nojs/test_quicktabs/3" class="quicktabs-loaded" data-quicktabs-tab-index="3">Marché Financier</a> </li><li role="tab" aria-controls="quicktabs-tabpage-test_quicktabs-4" aria-selected="false" id="quicktabs-tab-test_quicktabs-4" tabIndex="-1" class="communiqués solo-li-list"><a href="/quicktabs/nojs/test_quicktabs/4" class="quicktabs-loaded" data-quicktabs-tab-index="4">Communiqués</a> </li></ul></div><div class="quicktabs-main solo-clear element-container-wrapper" id="quicktabs-container-test_quicktabs"><div id="quicktabs-tabpage-test_quicktabs-0" class="quicktabs-tabpage" role="tabpanel" aria-labelledby="quicktabs-tab-test_quicktabs-0" tabindex="0">
+<div class="quicktabs-block-title"></div>
+<div><div class="views-element-container solo-clear element-container-wrapper"><div class="solo-clear view view-viewactualite view-id-viewactualite view-display-id-block_1 js-view-dom-id-d95d61e5d922090b254dedeb48d994d574703d43e8b6a38c7cfc211c4c67edc5">
+  
+    
+      
+      <div class="view-content">
+      <div class="solo-responsive">
+  <table class="solo-table-all cols-0">
+      <tbody>
+          <tr>
+                                                                                                                  <td class="views-field views-field-title views-field-body-1"> <a href="/node/3861" hreflang="fr">Agence BUHUMUZA : La BRB se rapproche de plus en plus de la Population </a> <p>Un ouf de soulagement pour les opérateurs économiques et les habitants de la province de BUHUMUZA et, plus largement, ceux de l'Est du pays. Le Gouverneur de la BRB Edouard Normand BIGENDAKO, accompagné de certains membres du Conseil Général de la Banque de République du Burundi, a… <a href="/node/3861" class="views-more-link">Lire plus</a>          </td>
+              </tr>
+          <tr>
+                                                                                                                  <td class="views-field views-field-title views-field-body-1"> <a href="/node/3764" hreflang="fr">Le Burundi renforce son intégration aux systèmes régionaux de paiement du COMESA</a> <p>Le 10 août 2026, la Banque a organisé, un atelier de formation consacré à l’intégration du Système de règlement instantané de gros montants (RTGS en sigle anglais) et au Système Régional de paiement et de règlement (REPSS en sigle anglais) du Marché commun de l’Afrique orientale et australe (… <a href="/node/3764" class="views-more-link">Lire plus</a>          </td>
+              </tr>
+          <tr>
+                                                                                                                  <td class="views-field views-field-title views-field-body-1"> <a href="/node/3631" hreflang="fr">CIRCULAIRE RELATIVE A LA TARIFICATION DES SERVICES RENDUS DANS LE DOMAINE DE LA SUPERVISION DES ETABLISSEMENT DE CREDIT </a> <p>La Banque de la République du Burundi a modifié la circulaire du 21 decembre 2020 relative à la grille de tarification des services rendus par la Banque centrale dans le domaine de la supervision des etablissement de credit. cette circulaire est edictée en vertu de la loi No 1/17 du 22 aout 2017… <a href="/node/3631" class="views-more-link">Lire plus</a>          </td>
+              </tr>
+          <tr>
+                                                                                                                  <td class="views-field views-field-title views-field-body-1"> <a href="/node/3629" hreflang="fr">CIRCULAIRE RELATIVE A LA TARIFICATION DES SERVICES RENDUS AUX ETABLISSEMENT DE FINANCEMENT ET /OU DE GARANTIE</a> <p>La Banque de la République du Burundi a modifié la circulaire no 02/M/2024 relative à la tarification des services rendus aux Etablissement de financement et/ou de Garantie. Elle est edictée en vertu du reglement relatif aux entités exercant au Burundi des opérations de financement et/ou de… <a href="/node/3629" class="views-more-link">Lire plus</a>          </td>
+              </tr>
+          <tr>
+                                                                                                                  <td class="views-field views-field-title views-field-body-1"> <a href="/node/3627" hreflang="fr">MODIFICATION DE LA CIRCULAIRE No 05/M/2018</a> <p>La Banque de la République du Burundi a modifié la circulaire no 05/M/2018 relative à la tarification des services rendus aux institutions de microfinance, aux groupements financiers communautaires, aux structures faitières et aux organes Financiers. cette circulaire est edictée en vertu du… <a href="/node/3627" class="views-more-link">Lire plus</a>          </td>
+              </tr>
+      </tbody>
+  </table>
+</div>
+
+    </div>
+  
+          </div>
+</div>
+</div>
+</div>
+<div id="quicktabs-tabpage-test_quicktabs-1" class="quicktabs-tabpage quicktabs-hide" role="tabpanel" aria-labelledby="quicktabs-tab-test_quicktabs-1" tabindex="0">
+<div class="quicktabs-block-title"></div>
+<div><div class="views-element-container solo-clear element-container-wrapper"><div class="solo-clear view view-vueevents view-id-vueevents view-display-id-block_1 js-view-dom-id-e30f008d5718a98a69624aff81c5b1e0386c35b0640d64d668b7443fe61b458b">
+  
+    
+      
+  
+          </div>
+</div>
+</div>
+</div>
+<div id="quicktabs-tabpage-test_quicktabs-2" class="quicktabs-tabpage quicktabs-hide" role="tabpanel" aria-labelledby="quicktabs-tab-test_quicktabs-2" tabindex="0">
+<div class="quicktabs-block-title"></div>
+<div><div class="views-element-container solo-clear element-container-wrapper"><div class="solo-clear view view-avispublic view-id-avispublic view-display-id-block_1 js-view-dom-id-c0157b1888a4628f46dbe2365a090c5b734041588cd7572a74f4840c79cb11ca">
+  
+    
+      
+      <div class="view-content">
+      <div class="solo-responsive">
+  <table class="solo-table-all cols-0">
+      <tbody>
+          <tr>
+                                                                                        <td class="views-field views-field-nothing"> &#8226; <a href="/node/3914" hreflang="fr">AVIS D&#039;APPEL D&#039;OFFRES OUVERT NATIONAL POUR LA FOURNITURE DES ARTICLES DIVERS A LA BANQUE DE LA REPUBLIQUE DU BURUNDI</a> <br />          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-nothing"> &#8226; <a href="/node/3913" hreflang="fr">AVIS D&#039;APPEL D&#039;OFFRES POUR NATIONAL POUR LA FORNITURE DES ARTICLES DIVERS A LA BANQUE DE LA REPUBLIQUE DU BURUNDI</a> <br />          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-nothing"> &#8226; <a href="/node/3844" hreflang="fr">AVIS D&#039;APPEL D&#039;OFFRES OUVERT NATIONAL POUR LA SOUSCRIPTION D&#039;UNE ASSURANCE  PROTECTION SOCIALE DES EMPLOYES DE LA BANQUE DE LA REPUBLIQUE DU BURUNDI</a> <br />          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-nothing"> &#8226; <a href="/node/3807" hreflang="fr">AVIS D&#039;APPEL D&#039;OFFRES OUVERT NATIONAL POUR L&#039;ASSURANCE DU PATRIMOINE IMMOBILIER DE LA BANQUE DE LA REPUBLIQUE DU BURUNDI</a> <br />          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-nothing"> &#8226; <a href="/node/3651" hreflang="fr">AVIS D&#039;APPEL D&#039;OFFRES OUVERT NATIONAL POUR LA FOURNITURE DES MEDICAMENTS ET PRODUITS PHARMACEUTIQUES DU DISPENSAIRE DE LA BANQUE DE LA REPUBLIQUE DU BURUNDI </a> <br />          </td>
+              </tr>
+      </tbody>
+  </table>
+</div>
+
+    </div>
+  
+          </div>
+</div>
+</div>
+</div>
+<div id="quicktabs-tabpage-test_quicktabs-3" class="quicktabs-tabpage quicktabs-hide" role="tabpanel" aria-labelledby="quicktabs-tab-test_quicktabs-3" tabindex="0">
+<div class="quicktabs-block-title"></div>
+<div>
+<article data-history-node-id="362" class="node solo-clear node--type-page node--view-mode-full">
+
+  <header class="solo-clear node__header">
+    
+          <h3  class="node__title">
+        <a href="/node/362" rel="bookmark"></a>
+      </h3>
+        
+
+    
+  </header>
+
+  <div class="solo-clear node__content">
+    
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><ul><li><a href="/appel-de-soumission-aux-bons-du-tr-sor">Appel de soumission aux Bons du Trésor</a></li><li><a href="/appel-de-soumission-aux-obligations-du-tr-sor">Appel de soumission aux Obligations du Trésor</a></li><li><a href="/avis-d-appels-d-offres-de-liquidit-s">Avis d'Appels d'Offres de Liquidités</a></li><li><a href="/r-sultats-d-adjudications-des-bons-du-tr-sor">Résultats d'Adjudication des Bons du Trésor</a></li><li><a href="/r-sultats-d-adjudication-des-obligations-du-tr-sor">Résultats d'Adjudication des Obligations du Trésor</a></li><li><a href="https://www.brb.bi/node/55">Résultats des Appels d'offres de liquidités</a></li></ul></div>
+      
+  </div>
+
+</article>
+</div>
+</div>
+<div id="quicktabs-tabpage-test_quicktabs-4" class="quicktabs-tabpage quicktabs-hide" role="tabpanel" aria-labelledby="quicktabs-tab-test_quicktabs-4" tabindex="0">
+<div class="quicktabs-block-title"></div>
+<div><div class="views-element-container solo-clear element-container-wrapper"><div class="solo-clear view view-vuecommuniques view-id-vuecommuniques view-display-id-block_1 js-view-dom-id-959a1b3913ee4067a3f2c7f9433d3ed15a2fa7e597a1602e7bf85144b6351431">
+  
+    
+      
+      <div class="view-content">
+      <div class="solo-responsive">
+  <table class="solo-table-all cols-0">
+      <tbody>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2026-07-17T15:52:39+03:00" title="Vendredi 17 juillet 2026 - 15:52">17/07/2026</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/3625" hreflang="fr">Nouvelle tarification des services rendus par la Banque de la Republique du Burundi </a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2026-07-09T17:56:24+03:00" title="Jeudi 9 juillet 2026 - 17:56">09/07/2026</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/3585" hreflang="fr">Communiqué</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2026-07-09T12:32:25+03:00" title="Jeudi 9 juillet 2026 - 12:32">09/07/2026</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/3581" hreflang="fr">Communiqué sur les billets de BIF 5 000 et BIF 10 000</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2026-05-21T10:52:22+03:00" title="Jeudi 21 mai 2026 - 10:52">21/05/2026</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/3357" hreflang="fr">Réaction de la BRB sur les conclusions de la mission de consultation au titre de l&#039;article IV du FMI</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2025-07-14T11:21:10+03:00" title="Lundi 14 juillet 2025 - 11:21">14/07/2025</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/2121" hreflang="fr">Communiqué Restitutions de frais pour les clients de SAMA MONEY</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2025-01-24T15:49:23+02:00" title="Vendredi 24 janvier 2025 - 15:49">24/01/2025</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/1431" hreflang="fr">Communiqué N° 02/2025 relatif aux opérations illicites exercées par certains Groupements financiers Communautaires</a>          </td>
+              </tr>
+          <tr>
+                                                                                        <td class="views-field views-field-created"> <time datetime="2025-01-23T09:36:44+02:00" title="Jeudi 23 janvier 2025 - 09:36">23/01/2025</time>
+          </td>
+                                                                                        <td class="views-field views-field-title"> <a href="/node/1416" hreflang="fr">Communiqué de lancement du marché des titres de la BRB</a>          </td>
+              </tr>
+      </tbody>
+  </table>
+</div>
+
+    </div>
+  
+      
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  </section>
+
+<section id="block-solo-content" class="solo-clear solo-block block-system block-system-main-block">
+  
+    
+      <div class="views-element-container solo-clear element-container-wrapper"><div class="solo-clear view view-frontpage view-id-frontpage view-display-id-page_1 js-view-dom-id-62c40c149a009a184a5f6b71687f3892a5ed4a7cfdf0dc8921def1002adb0f63">
+  
+    
+      
+      <div class="view-empty">
+      Aucun contenu de page d'accueil n'a été créé pour l'instant. Suivre le <a href="https://www.drupal.org/fr/docs/user_guide/fr/index.html">Guide utilisateur</a> pour démarrer la construction de votre site.
+    </div>
+  
+      
+              <div class="feed-icons">
+      <a href="http://www.brb.bi/rss.xml" class="solo-clear feed-icon">
+  S'abonner à 
+</a>
+
+    </div>
+  </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Main Content -->
+    
+    
+      <!-- End: Main Container -->
+    </div>
+  </div>
+<!-- End: Main -->
+
+      
+
+
+
+      
+
+
+
+
+
+  <!-- Start: Bottom Container -->
+  <div id="bottom-container" class="solo-outer multi bottom-container active-bottom-1 has-border animate-hover"  style="--r-bg:#FEFEE2;--r-h1:#000000;--r-tx-lk:#000000;--r-tx-lk-h:#000000;--r-tx-bt:#000000;--r-tx-bt-h:#000000">
+    <div id="bottom-container-inner" class="solo-inner solo-col bottom-container-inner solo-col-1">
+
+    
+          <!-- Start: Bottom Second -->
+      <div id="bottom-box-second" class="region-outer bottom-box bottom-box-second">
+        <div class="region-inner bottom-box-inner bottom-box-second-inner fade-inner"  style="--r-bg:#FFFFFF;--r-h1:#000000">
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blockviewrotation-block-1" id="block-solo-views-block-viewrotation-block-1">
+  
+      <h2 class="solo-block-title">Nos Partenaires</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-viewrotation view-id-viewrotation view-display-id-block_1 js-view-dom-id-b54c0e66ab64117414d646024a36e676d83178aa6f33af7ed8df4946f7393274">
+  
+    
+      
+      <div class="view-content">
+      
+<div>
+    
+<div id="flexslider-2" class="flexslider optionset-flexslider-carousel-with-min-and-max-ranges">
+ 
+<ul class="slides">
+    
+<li>
+    <a href="http://www.bcc.cd/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/BCC.png" width="286" height="176" alt="Banque Centrale du Congo" title="Banque Centrale du Congo" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.bkam.ma/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/Bank_Al-Maghrib_logo.png" width="662" height="600" alt="Bank Al-Maghrib" title="Bank Al-Maghrib" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.nbb.be/fr" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/bnb%20real%20logo%20%282%29.jpeg" width="400" height="241" alt="Banque Nationale de Belgique" title="Banque Nationale de Belgique" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.imf.org" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/FMI%20real%20logo.jpeg" width="866" height="574" alt="FMI" title="FMI" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.banquemondiale.org" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/logo%20wb.jpg" width="1200" height="630" alt="Banque Mondiale" title="Banque Mondiale" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.bnr.rw/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/bnr%20real%20logo.png" width="290" height="180" alt="Banque Nationale du Rwanda" title="Banque Nationale du Rwanda" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.bou.or.ug" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-09/bou%20real%20logo.png" width="2520" height="1346" alt="Bank of Uganda" title="Bank of Uganda" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.bot.go.tz/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-08/bot-bank-of-tanzania.gif" width="777" height="437" alt="Bank of Tanzania" title="Bank of Tanzania" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.centralbank.go.ke/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-08/Central-Bank-of-Kenya-cbk.webp" width="900" height="563" alt="Central Bank of Kenya" title="Central Bank of Kenya" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://www.eac.int/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-08/eac-logo_0.png" width="473" height="329" alt="EAC" title="EAC" class="solo-image" />
+
+</a>
+    </li>
+<li>
+    <a href="https://info.commerce.bi/" target="_blank">  <img loading="lazy" src="/sites/default/files/2024-08/Burundi%20Trade%20Portal-1.png" width="518" height="211" alt="Burundi Trade Portal" title="Burundi Trade Portal" class="solo-image" />
+
+</a>
+    </li>
+</ul>
+</div>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Bottom Second -->
+    
+    
+    
+    </div>
+  </div>
+  <!-- End: Bottom -->
+
+    
+    
+
+
+      
+      
+      
+
+
+
+  <!-- start: Footer -->
+  <div id="footer-container" class="solo-outer multi footer-container active-footer-3 has-border animate-hover"  style="--r-bg:#FEFEE2;--r-tx:#000000">
+    <div id="footer-container-inner" class="solo-inner solo-col footer-container-inner solo-col-1-1-1">
+
+          <!-- Start: Footer First  -->
+      <div id="footer-box-first" class="region-outer footer-box footer-box-first">
+        <div class="region-inner footer-box-inner footer-box-first-inner fade-inner"  style="--r-bg:#ffffff;--r-tx:#000000;--r-h1:#000000;--r-lk:#000000">
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blockliensrapides-block-1" id="block-solo-views-block-liensrapides-block-1">
+  
+      <h2 class="solo-block-title">Liens Rapides</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-liensrapides view-id-liensrapides view-display-id-block_1 js-view-dom-id-75c7896506c5e2a6cc4d85487fefa7c58e9cf99916de6238226bb40ea10c08ea">
+  
+    
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul   class="item-list solo-ul">
+
+          <li class="solo-clear"><span class="views-field views-field-field-lien"><span class="field-content"><a href="/rapports_annuels_supervision">Rapports de Supervision Bancaire</a></span></span></li>
+          <li class="solo-clear"><span class="views-field views-field-field-lien"><span class="field-content"><a href="/rapport-de-politique-mon-taire">Rapport de Politique Monétaire</a></span></span></li>
+          <li class="solo-clear"><span class="views-field views-field-field-lien"><span class="field-content"><a href="/vue-bulletins-mensuels">Bulletins Mensuels</a></span></span></li>
+          <li class="solo-clear"><span class="views-field views-field-field-lien"><span class="field-content"><a href="/rapports_stabilite_financiere">Rapports de Stabilité Financière</a></span></span></li>
+          <li class="solo-clear"><span class="views-field views-field-field-lien"><span class="field-content"><a href="/revues_economiques">Revues Economiques</a></span></span></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Footer First -->
+    
+          <!-- Start: Footer Second Region -->
+      <div id="footer-box-second" class="region-outer footer-box footer-box-second">
+        <div class="region-inner footer-box-inner footer-box-second-inner fade-inner"  style="--r-bg:#ffffff;--r-tx:#000000;--r-h1:#000000;--r-lk:#000000">
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blockliens-importants-block-1" id="block-solo-views-block-liens-importants-block-1">
+  
+      <h2 class="solo-block-title">Liens Importants</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-liens-importants view-id-liens_importants view-display-id-block_1 js-view-dom-id-62059d33291fecdebc886b226e5ae6651eedf080d7a38a125b9ce5611db6c484">
+  
+    
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul   class="item-list solo-ul">
+
+          <li class="solo-clear"><div class="views-field views-field-field-link"><div class="field-content"><a href="https://finances.gov.bi/">Ministère des Finances , du Budget et de la Planification Economique</a></div></div></li>
+          <li class="solo-clear"><div class="views-field views-field-field-link"><div class="field-content"><a href="https://www.insbu.bi/">Institut National de la Statistique du Burundi</a></div></div></li>
+          <li class="solo-clear"><div class="views-field views-field-field-link"><div class="field-content"><a href="https://arct.gov.bi">Agence de Régulation et Contrôle des Télécommunications</a></div></div></li>
+          <li class="solo-clear"><div class="views-field views-field-field-link"><div class="field-content"><a href="https://arca.bi/">Agence de Régulation et de Contrôle des Assurances</a></div></div></li>
+    
+  </ul>
+
+</div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Footer Second -->
+    
+          <!-- Start: Footer Third -->
+      <div id="footer-box-third" class="region-outer footer-box footer-box-third">
+        <div class="region-inner footer-box-inner footer-box-third-inner fade-inner"  style="--r-bg:#ffffff;--r-tx:#000000;--r-h1:#000000;--r-lk:#000000">
+              
+<section class="views-element-container solo-clear solo-block block-views block-views-blockviewcontact-block-1" id="block-solo-views-block-viewcontact-block-1">
+  
+      <h2 class="solo-block-title">Contactez-nous</h2>
+    
+      <div class="solo-clear element-container-wrapper"><div class="solo-clear view view-viewcontact view-id-viewcontact view-display-id-block_1 js-view-dom-id-bb41aa820a2bef7f489fd9dfc8bbcc9cf819367630c4e27ea3ba3aa7e12e3aac">
+  
+    
+      
+      <div class="view-content">
+      
+
+
+
+
+<div class="views-view-responsive-grid views-view-responsive-grid--horizontal" style="--views-responsive-grid--column-count:1;--views-responsive-grid--cell-min-width:100px;--views-responsive-grid--layout-gap:10px;">
+      <div class="views-view-responsive-grid__item">
+      <div class="views-view-responsive-grid__item-inner"><div class="views-field views-field-body"><div class="field-content"><p><em>1, Avenue du Gouvernement, BP 705 Bujumbura&nbsp;</em></p><p>Tél. : (+257) 22 20 40 00 / 22 22 27 44</p><p>Fax : (+257) 22 22 31 28</p><p>Email : brb<a href="mailto:info@brb.bi">@brb.bi</a></p><p>&nbsp;</p><p>&nbsp;</p></div></div></div>
+    </div>
+  </div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </section>
+
+
+        </div>
+      </div>
+      <!-- End: Footer Third -->
+    
+    </div>
+  </div>
+  <!-- End: Footer -->
+
+      
+        <!-- Start: Footer Menu -->
+    <div id="footer-menu" class="solo-outer lone footer-menu"  style="--r-bg:#FEFEE2;--r-lk:#000000;--r-tx-lk:#000000">
+      <div id="footer-menu-inner" class="solo-inner solo-col solo-col-1 footer-menu-inner">
+
+          <!-- Start: Social Media -->
+      <div class="solo-clear fade-inner footer-menu-first sm-icons sm-icons-large" >
+                                                    <a href="https://www.facebook.com/profile.php?id=100087522442905&amp;mibextid=ZbWKwL" title="Facebook" class="solo-clear facebook" target="_blank">
+                            <span class="sm-icon">
+                                    <svg class="svg-icon facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1"><g><path class="path-update" style=" stroke:none;fill-rule:nonzero;fill:--solo-fb;fill-opacity:1;" d="M 30 15.085938 C 30 6.761719 23.289062 0 15 0 C 6.710938 0 0 6.75 0 15.085938 C 0 22.625 5.488281 28.875 12.664062 30 L 12.664062 19.449219 L 8.851562 19.449219 L 8.851562 15.085938 L 12.648438 15.085938 L 12.648438 11.761719 C 12.648438 7.988281 14.898438 5.886719 18.324219 5.886719 C 19.960938 5.886719 21.675781 6.1875 21.675781 6.1875 L 21.675781 9.898438 L 19.800781 9.898438 C 17.925781 9.898438 17.351562 11.0625 17.351562 12.261719 L 17.351562 15.085938 L 21.5 15.085938 L 20.835938 19.460938 L 17.335938 19.460938 L 17.335938 30 C 24.523438 28.875 30 22.625 30 15.085938 "/></g></svg>
+                </span>
+              </a>
+                                                                        <a href="https://x.com/bankinkuru" title="Twitter" class="solo-clear twitter" target="_blank">
+                            <span class="sm-icon">
+                                    <svg class="svg-icon twitter" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 512"><path fill="--solo-tw" class="path-update" d="M256 0c141.384 0 256 114.616 256 256 0 141.384-114.616 256-256 256C114.616 512 0 397.384 0 256 0 114.616 114.616 0 256 0zm62.64 157.549h33.401l-72.974 83.407 85.85 113.495h-67.222l-52.645-68.837-60.244 68.837h-33.422l78.051-89.212-82.352-107.69h68.924l47.59 62.916 55.043-62.916zm-11.724 176.908h18.509L205.95 176.494h-19.861l120.827 157.963z"/></svg>
+
+                </span>
+              </a>
+                                                                        <a href="https://x.com/bankinkuru" title="Youtube" class="solo-clear youtube" target="_blank">
+                            <span class="sm-icon">
+                                    <svg class="svg-icon youtube" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1"><g><path class="path-update" style=" stroke:none;fill-rule:nonzero;fill:--solo-tb;fill-opacity:1;" d="M 15 0 C 23.285156 0 30 6.714844 30 15 C 30 23.285156 23.285156 30 15 30 C 6.714844 30 0 23.285156 0 15 C 0 6.714844 6.714844 0 15 0 Z M 15.367188 8.75 L 14.632812 8.75 L 13.253906 8.765625 C 11.40625 8.796875 8.617188 8.882812 7.671875 9.121094 C 6.878906 9.316406 6.25 9.917969 6.015625 10.703125 C 5.789062 11.507812 5.695312 12.8125 5.652344 13.777344 L 5.625 14.796875 L 5.625 15.203125 L 5.636719 15.738281 C 5.664062 16.691406 5.75 18.347656 6.015625 19.296875 C 6.230469 20.066406 6.867188 20.671875 7.671875 20.878906 C 8.59375 21.113281 11.257812 21.199219 13.105469 21.230469 L 14.863281 21.25 L 16.3125 21.238281 C 18.128906 21.214844 21.300781 21.136719 22.324219 20.878906 C 23.121094 20.683594 23.75 20.082031 23.984375 19.296875 C 24.246094 18.359375 24.332031 16.738281 24.359375 15.777344 L 24.375 15.117188 L 24.371094 14.613281 C 24.355469 13.777344 24.289062 11.78125 23.984375 10.703125 C 23.75 9.917969 23.121094 9.316406 22.324219 9.121094 C 21.5 8.910156 19.261719 8.820312 17.476562 8.78125 Z M 13.082031 12.363281 L 17.984375 15 L 13.082031 17.636719 Z M 13.082031 12.363281 "/></g></svg>
+                </span>
+              </a>
+                                                                                                                                                                                                                              </div>
+      <!-- End: Social Media -->
+    
+        <!-- Start: Bottom Menu -->
+              </div>
+    </div>
+    <!-- End: Footer Menu -->
+  
+
+
+        <!-- Start: Copyright -->
+    <div id="copyright" class="solo-outer lone copyright"  style="--r-bg:#88432D">
+      <div id="copyright-inner" class="solo-inner solo-col copyright-inner solo-col-1">
+            <!-- Start: Copyright -->
+      <p class="copyright-first">
+                Copyright © 2026 Banque de la République du Burundi - All rights reserved
+      </p>
+      <!-- End: Copyright -->
+                  </div>
+    </div>
+    <!-- End: Copyright -->
+  </div>
+<!-- End: Page Wrapper -->
+
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"fr"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtj1FygzAMRC-E6o9O21xHjoWjYFvUawK5fWgy0wHaH430dlcj9UkWJA1SnZYmsXJTK933pOehsYcbOUviDfjtOlgy11tpxLPAstAHyfLCP4ViLwtFTYEpKMbE952ohbhqtiMMmSBV-_9CyTynP4B8FR5GW18AwdPX52njyVKmw7gL5HIMaCgaL43my3qBVGw03NEkr0sAjgIKXIeXPL_TGav1aXCeId1NZYZ71je-8rID2cKU9p4qGK1Ab0KxangAKdudLw","theme":"solo","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/search\/node":true},"flexslider":{"optionsets":{"flexslider_carousel_with_min_and_max_ranges":{"animation":"slide","animationSpeed":900,"direction":"horizontal","slideshow":true,"easing":"linear","smoothHeight":false,"reverse":false,"slideshowSpeed":7000,"animationLoop":false,"randomize":false,"startAt":0,"itemWidth":210,"itemMargin":5,"minItems":2,"maxItems":4,"move":0,"directionNav":true,"controlNav":true,"thumbCaptions":false,"thumbCaptionsBoth":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":false,"touch":true,"prevText":"Previous","nextText":"Next","namespace":"flex-","selector":".slides \u003E li","sync":"","asNavFor":"","initDelay":0,"useCSS":true,"video":false,"pausePlay":false,"pauseText":"Pause","playText":"Play","pauseOnAction":true,"pauseOnHover":false,"controlsContainer":".flex-control-nav-container","manualControls":""},"default":{"animation":"fade","animationSpeed":1200,"direction":"horizontal","slideshow":true,"easing":"swing","smoothHeight":true,"reverse":false,"slideshowSpeed":8000,"animationLoop":true,"randomize":false,"startAt":0,"itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"directionNav":true,"controlNav":true,"thumbCaptions":false,"thumbCaptionsBoth":false,"keyboard":true,"multipleKeyboard":false,"mousewheel":false,"touch":true,"prevText":"Previous","nextText":"Next","namespace":"flex-","selector":".slides \u003E li","sync":"","asNavFor":"","initDelay":0,"useCSS":true,"video":false,"pausePlay":false,"pauseText":"Pause","playText":"Play","pauseOnAction":true,"pauseOnHover":false,"controlsContainer":".flex-control-nav-container","manualControls":""}},"instances":{"flexslider-2":"flexslider_carousel_with_min_and_max_ranges","flexslider-1":"default"}},"quicktabs":{"qt_test_quicktabs":{"tabs":[{"title":"Actualit\u00e9s","weight":0,"type":"block_content","content":{"block_content":{"options":{"bid":"views_block:viewactualite-block_1","block_title":"Actualit\u00e9s","display_title":false}},"node_content":{"options":{"nid":"","view_mode":"full","hide_title":true}},"view_content":{"options":{"vid":"avispublic","display":"default","args":""}},"qtabs_content":{"options":{"machine_name":""}}},"tab_page":0},{"title":"Ev\u00e8nements","weight":0,"type":"block_content","content":{"block_content":{"options":{"bid":"views_block:vueevents-block_1","block_title":"Ev\u00e8nements","display_title":false}},"node_content":{"options":{"nid":"","view_mode":"full","hide_title":true}},"view_content":{"options":{"vid":"avispublic","display":"default","args":""}},"qtabs_content":{"options":{"machine_name":""}}},"tab_page":1},{"title":"March\u00e9 Public","weight":0,"type":"block_content","content":{"block_content":{"options":{"bid":"views_block:avispublic-block_1","block_title":"Avis au Public","display_title":false}},"node_content":{"options":{"nid":"","view_mode":"full","hide_title":true}},"view_content":{"options":{"vid":"avispublic","display":"default","args":""}},"qtabs_content":{"options":{"machine_name":""}}},"tab_page":2},{"title":"March\u00e9 Financier","weight":0,"type":"node_content","content":{"block_content":{"options":{"bid":"announce_block","block_title":"","display_title":false}},"node_content":{"options":{"nid":"362","view_mode":"full","hide_title":true}},"view_content":{"options":{"vid":"affichagetoustauxchange","display":"default","args":""}},"qtabs_content":{"options":{"machine_name":""}}},"tab_page":3},{"title":"Communiqu\u00e9s","weight":0,"type":"block_content","content":{"block_content":{"options":{"bid":"views_block:vuecommuniques-block_1","block_title":"Communiqu\u00e9s","display_title":false}},"node_content":{"options":{"nid":"","view_mode":"full","hide_title":true}},"view_content":{"options":{"vid":"affichagetoustauxchange","display":"default","args":""}},"qtabs_content":{"options":{"machine_name":""}}},"tab_page":4}]}},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:353f7c8e23d90853e9606e8b1652c927be99b9faaaeeb4dcf0fc18892db5b5e4":{"view_name":"taux_de_change_version_2","view_display_id":"block_1","view_args":"all","view_path":"\/node","view_base_path":"taux-de-change-version-2","view_dom_id":"353f7c8e23d90853e9606e8b1652c927be99b9faaaeeb4dcf0fc18892db5b5e4","pager_element":0}}},"user":{"uid":0,"permissionsHash":"b048f48fe6577ae50fcd4198b290cb3b8be4bb5f5efc8651e1bacabc582af0c2"}}</script>
+<script src="/sites/default/files/js/js_JB_T62SOMOQ6gAbZzdIDPEkXkkHW8vuTJMHv33w1BNU.js?scope=footer&amp;delta=0&amp;language=fr&amp;theme=solo&amp;include=eJxNyEEOgCAMAMEPgZx8UNFCqoVGCsLzjZoYL5PNBsahTCsWR7liLFBJsjkaLXsFr-4ro8LiguRqoaNKQjtbHO--sZHFA_9GwtzMSdjVPU6wwbgA_dwr-w"></script>
+
+  </body>
+</html>
