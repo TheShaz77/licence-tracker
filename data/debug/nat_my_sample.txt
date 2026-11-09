@@ -1,10 +1,10 @@
 url: https://www.bnm.gov.my/documents/20124/1326831/Microsite_Digital.pdf/
 bytes: 308746  starts: b'%PDF-1.7'
-error: RuntimeError('no firms matched')
+error: None
 columns used: {'name': 'Licensee', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['', 'No', '', '', 'Licensee', '', '', 'Channel', '', '', 'Types of money services', '', '', 'Allow for eKYC', '', '', 'HQ Address', '']
-data rows: 37  kept: 0
-type values: []
+headers: ['No', 'Licensee', 'Channel', 'Types of money services', 'Allow for eKYC', 'HQ Address']
+data rows: 37  kept: 37
+type values: [('', 37)]
 first lines:
 '(binary)'
 

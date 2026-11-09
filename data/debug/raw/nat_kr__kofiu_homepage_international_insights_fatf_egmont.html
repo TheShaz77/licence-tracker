@@ -1,0 +1,873 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>FIU</title>
+	<meta name="HandheldFriendly" content="true">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1.5">
+	<link rel="shortcut icon" type="image/x-icon" href="/images/kor/favicon.png">
+	<link rel="stylesheet" href="/css/eng/base_23.css?version=20241121">
+	<link rel="stylesheet" href="/css/eng/contents_23.css?version=20260611"> <!-- 추가될 탭 배포예정일자로 배포 -->
+	<link rel="stylesheet" href="/css/lib/modal.css?version=20241121">
+
+	<script>
+	var globalSetting = {
+			lang: 'eng'
+	}
+	</script>
+	
+	
+	<script src="/js/lib/jquery-3.6.4.min.js"></script>
+	<script src="/js/lib/jquery.ui.js"></script>
+	
+	
+	
+	
+	<script src="/js/lib/swiper.min.en.js"></script>
+	
+	
+	<script src="/js/kor/common_23.js?version=20241121"></script>
+	<script src="/js/lib/js-cookie.min.js"></script>
+	<script src="/js/lib/modal.js"></script>
+	<script src="/js/kor/board.js?version=20241121"></script>
+</head>
+<body>
+<div class="skip_navi">
+	<a href="#contentsWraps">Skip to main content</a>
+	<a href="#gnb">Skip to global navigation</a>
+	<a href="#footer">Skip to footer content</a>
+</div>
+<div id="wrap">
+	<!-- s: header.jsp -->
+
+
+
+
+
+
+
+
+
+
+	<!-- s: header -->
+	<header class="header" id="header">
+		<div class="header_util">
+			<div class="inner">
+				<div class="lang">
+					<a href="/kor/main.do" title="kor homepage go">KR</a>
+					<a href="/eng/main.do" class="current" title="Go to main page">EN</a>
+				</div>
+
+				<div class="zoom">
+					<button type="button" class="zoom_base" title="change to default screen size">Zoom</button>
+					<button type="button" class="zoom_in" title="change to zoom In screen size"><span class="sr_only">Zoom In</span></button>
+					<button type="button" class="zoom_out" title="change to zoom out screen size"><span class="sr_only">Zoom Out</span></button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="gnbbar">
+			<div class="inner">
+				<h1 class="logo">
+					<a href="/eng/main.do" title="Go to main page"><span class="ir_wa">KoFIU</span></a>
+				</h1>
+
+				<form class="top_search" id="top_search">
+					<label for="topkeywrod" class="sr_only">Search</label>
+					<input type="text" id="topkeywrod" name="topkeywrod" title="Search" value="" placeholder="Search" autocomplete="off">
+					<button type="button" class="topClearBtn" id="topClearBtn" title="검색어 삭제">
+                     	<span aria-hidden="true">X</span>
+                     	<span class="sr_only">검색어 삭제</span>   
+                     </button>
+					<button>Search</button>
+				</form>
+
+				<nav class="topnav">
+					<ul id="gnb" class="gnb">
+						<!-- 정책마당 -->
+						<li><a href="#" class="gnb_dep1">Policy</a></li>
+						<!-- 알림마당 -->
+						<li><a href="#" class="gnb_dep1">Press</a></li>
+						<!-- 법령정보 -->
+						<li><a href="#" class="gnb_dep1">Legal Information</a></li>
+						<!-- 민원마당 -->
+						<li><a href="#" class="gnb_dep1 blank_menu" target="_blank" title="Finance Consumer Service Center">FCSC <i class="icon_blank">opens new window</i></a></li>
+						<!-- 기관소개 -->
+						<li><a href="#" class="gnb_dep1 firstmenu">About Us</a></li>
+					</ul>
+				</nav>
+
+				<button class="gnb_allmenu_btn">
+					show sitemap
+					<span></span>
+				</button>
+			</div>
+		</div>
+		
+		<div class="gnb_sub">
+			<div class="inner">
+				<ul>
+					<!-- 정책마당 -->
+					<li><a href="/eng/policy/amls01.do"  class="gnb_dep1">Policy</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/eng/policy/amls01.do">AML Regime</a></li>
+								<li><a href="/eng/policy/ptfps01.do">CFT Regime</a></li>
+								<li><a href="/eng/policy/iois01_1.do">International Standards &amp; Organizations</a></li>
+								<li><a href="/eng/policy/mou.do">MOU Status</a></li>
+								<li><a href="/eng/policy/guide01.do">What we do</a></li>
+							</ul>
+						</div>
+					</li>
+					
+					<!-- 알림마당 -->
+					<li><a href="/eng/notification/notice.do"  class="gnb_dep1">Press</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/eng/notification/notice.do">Announcement</a></li>
+								<li><a href="/eng/notification/report.do">Press Release</a></li>
+								<li><a href="/eng/notification/sanctions.do">Sanctions Disclosure</a></li>
+								<li><a href="/eng/notification/info.do" >Disclosures</a></li>
+								<li><a href="/eng/notification/publish.do">Publications</a></li>
+								
+								<li><a href="/eng/notification/education.do">Training Materials</a></li>
+								<li><a href="/eng/notification/workshop01.do">Publicity Materials</a></li>
+								<li><a href="/eng/notification/faq.do"  class="end_menu_focus">FAQs</a></li>
+							</ul>
+						</div>
+					</li>
+
+
+					<!-- 법령정보 -->
+					<li><a href="/eng/law/law.do"  class="gnb_dep1">Legal Information</a>
+						<div class="dropmenu_g">
+							<ul>
+								<li><a href="/eng/law/law.do">Statutes & Regulations</a></li>
+								<li><a href="/eng/law/announce_list.do">Notices/Orders/Rules</a></li>
+								<li><a href="/eng/law/legislation_list.do">Prior Notice on Enactment/Amendment</a></li>
+							</ul>
+						</div>
+					</li>
+
+					<!-- 민원마당 -->
+					<li><a href="http://www.fcsc.kr" class="gnb_dep1 blank_menu" target="_blank" title="Finance Consumer Service Center">FCSC <i class="icon_blank">opens new window</i></a>
+					
+					<!-- 기관소개 -->
+					<li><a href="/eng/intro/about.do"  class="gnb_dep1 firstmenu">About Us</a>
+						<div class="dropmenu_g dropmenu_g-5">
+							<ul>
+								<li><a href="/eng/intro/about.do">Message from the Commissioner</a></li>
+								<li><a href="/eng/intro/establish.do">Background</a></li>
+								<li><a href="/eng/intro/history.do">History</a></li>
+								<li><a href="/eng/intro/ci.do">CI</a></li>
+								<li><a href="/eng/intro/organization.do">Organization</a></li>									
+								<li><a href="/eng/intro/direction.do">Contact Us</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
+	<!-- 모바일 햄버거 메뉴 -->
+	<div class="mobile_snb">
+		<div class="mobile_snb_header">
+			<a href="/eng/main.do" class="logo" title="Go to main page"><strong>Korea Financial Intelligence Unit</strong></a>
+		</div>
+		<div class="mobile_snb_cont">
+		<ul class="mobile_gnb">
+						<!-- 정책마당 -->
+						<li><a href="/eng/policy/amls01.do"  class="gnb_dep1">Policy</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li>
+										<a href="/eng/policy/amls01.do">AML Regime</a>
+										<ul>
+											<li><a href="/eng/policy/amls01.do">AML Regime</a></li>
+						                    <li><a href="/eng/policy/amls02.do">Criminalization of ML</a></li>
+						                    <li><a href="/eng/policy/amls03.do">Suspicious Transaction Report</a></li>
+						                    <li><a href="/eng/policy/amls04.do">Currency Transaction Report</a></li>
+						                    <li><a href="/eng/policy/amls05.do">Customer Due Diligence</a></li>
+						                    <li><a href="/eng/policy/amls06.do">Confiscation</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/eng/policy/ptfps01.do">CFT Regime</a>
+										<ul>
+											<li><a href="/eng/policy/ptfps01.do">CFT Regime</a></li>
+						                    <li><a href="/eng/policy/ptfps02_1.do">Designated Persons/Entity</a></li>
+						                    <li><a href="/eng/policy/ptfps03.do">CFT’s link to AML</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/eng/policy/iois01_1.do">International Standards &amp; Organizations</a>
+										<ul>
+											<li><a href="/eng/policy/iois01_1.do">International Organizations</a></li>
+						                    <li><a href="/eng/policy/iois02.do">Key International Standards</a></li>
+						                    <li><a href="/eng/policy/iois03.do">International Conventions</a></li>
+						                    <li><a href="/eng/policy/iois04_1.do">International Standards</a></li>
+						                    <li><a href="/eng/policy/iois05.do">International Insights</a></li>
+										</ul>
+									</li>
+									<li><a href="/eng/policy/mou.do">MOU Status</a></li>
+									<li><a href="/eng/policy/guide01.do">What we do</a></li>
+								</ul>
+							</div>
+						</li>
+						
+						<!-- 알림마당 -->
+						<li><a href="/eng/notification/notice.do"  class="gnb_dep1">Press</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li><a href="/eng/notification/notice.do">Announcement</a></li>
+									<li><a href="/eng/notification/report.do">Press Release</a></li>
+									<li><a href="/eng/notification/sanctions.do">Sanctions Disclosure</a></li>
+									<li><a href="/eng/notification/info.do" >Disclosures</a></li>
+									<li><a href="/eng/notification/publish.do">Publications</a></li>
+ 								
+									<li><a href="/eng/notification/education.do">Training Materials</a></li>
+									<li><a href="/eng/notification/workshop01.do">Publicity Materials</a></li>
+									<li><a href="/eng/notification/faq.do"  class="end_menu_focus">FAQs</a></li>
+								</ul>
+							</div>
+						</li>
+	
+	
+						<!-- 법령정보 -->
+						<li><a href="/eng/law/law.do"  class="gnb_dep1">Legal Information</a>
+							<div class="dropmenu_g">
+								<ul>
+									<li><a href="/eng/law/law.do">Statutes &amp; Regulations</a></li>
+									<li><a href="/eng/law/announce_list.do">Notices/Orders/Rules</a></li>
+									<li><a href="/eng/law/legislation_list.do">Prior Notice on Enactment/Amendment</a></li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- 민원마당 -->
+						<li><a href="http://www.fcsc.kr" class="gnb_dep1 blank_menu" target="_blank" title="Finance Consumer Service Center">FCSC <i class="icon_blank">opens new window</i></a>
+						
+						<!-- 기관소개 -->
+						<li><a href="/eng/intro/about.do"  class="gnb_dep1 firstmenu">About Us</a>
+							<div class="dropmenu_g dropmenu_g-5">
+								<ul>
+									<li><a href="/eng/intro/about.do">Message from the Commissioner</a></li>
+									<li><a href="/eng/intro/establish.do">Background</a></li>
+									<li><a href="/eng/intro/history.do">History</a></li>
+									<li><a href="/eng/intro/ci.do">CI</a></li>
+									<li><a href="/eng/intro/organization.do">Organization</a></li>									
+									<li><a href="/eng/intro/direction.do">Contact Us</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+		</div>
+		<button class="gnb_allmenu_btn gnb_allmenu_btn_close">
+			hide sitemap
+			<span></span>
+		</button>
+	</div>
+
+	<div class="gnbbg"></div>
+	<!-- e: header -->
+
+	<script>
+	jQuery(function(){
+		$('#top_search').submit(function(e){
+			var searchString = $('#topkeywrod').val()
+			e.preventDefault();
+			if (!!searchString?.trim()) {
+				$('#mainSubSech').val(searchString);
+				$('#totalSearchForm').attr('action', '/eng/etc/search.do').submit();
+			} else {
+				// 빈 문자열 혹은 검색어가 없는 경우 통합검색 미진행
+				alert("Please enter a keyword for search.");
+				return false;
+			}
+		});	
+	});
+	</script>
+	<script>
+	(function () { 
+		$('#topClearBtn').on('click', function(e){
+			e.preventDefault();
+			$('#topkeywrod').val('').focus();
+		});
+		
+	})();
+	</script>
+	
+	<!-------------메인 게시판 시작------------- -->
+	<form id="totalSearchForm" method="POST">
+		<input type="hidden" name="subSech" id="mainSubSech" value="">
+		<input type="hidden" name="size" id="mainSize" value="3">
+		<input type="hidden" name="page" id="mainPage" value="1">
+		<input type="hidden" name="seCd" id="mainSeCd" value="">
+		<input type="hidden" name="selScope" id="mainSelScope" value="" >
+		<input type="hidden" name="ntcnYardOrdrNo" id="mainNtcnYardOrdrNo" value="">
+	</form>
+	
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+	<div class="subtop top_system">
+		<div class="inner">
+			<p class="top_txt">Policy</p>
+		</div>
+	</div>
+
+
+	<div id="breadcrumb">
+		<div class="inner">
+			<ul class="list">
+				<li>
+					<a href="/eng/main.do" class="home">
+					<img style="margin-top: 11px;"src="/images/kor/sub/icon_home.svg" alt="Home">
+					<text style="text-decoration: underline">Home</text>
+					</a>
+				</li>
+				<li class=breadcrumb_li>
+					<a href="/eng/policy/amls01.do">Policy</a>
+				</li>
+				<li class="breadcrumb_li">
+					<a href="/eng/policy/iois01_1.do" title="International Standards & Organizations 이동" aria-current="page">International Standards & Organizations</a>
+				</li>
+			</ul>
+			<button type="button" class="btn_doc_print"><span class="sr_only">Print</span></button>
+		</div>
+	</div>
+<script>
+//프린트
+$('.btn_doc_print').on('click',function(){
+	window.top.print();
+});   
+</script>
+	
+<div id="contentsWraps" class="wrapsub">
+          <div class="title_wrap"><h3>International Standards & Organizations</h3></div>
+          <nav class="link_tab len_5">
+              <ul class="inner">
+          			<li><a href="/eng/policy/iois01_1.do">International Organizations</a></li>
+                    <li><a href="/eng/policy/iois02.do">Key International Standards</a></li>
+                    <li><a href="/eng/policy/iois03.do">International Conventions</a></li>
+                    <li><a href="/eng/policy/iois04_1.do">International Standards</a></li>
+                    <li class="current"><a href="/eng/policy/iois05.do">International Insights</a></li> 
+              </ul>
+          </nav>
+
+          <div class="system system-3-5">
+              <div class="inner">
+                  <div class="color_row">
+                      <div class="search_f v2">
+                      	<form id="boardSearchForm">
+                           <fieldset>
+                                   <legend class="sr_only">International Insights Search</legend>
+	                       			<div class="search_g">
+                                        <select  id="searchType" class="search_select sr_only" title="검색 구분 선택">
+										<option value="전체">ALL</option>
+										<option value="제목">SUBJECT</option>
+										<option value="내용">CONTENT</option>  
+										</select>
+										
+										<div class="custom_select" id="searchTypeCustom">
+											<button type="button" class="select_trigger" aria-haspopup="listbox" aria-expanded="false">
+												<span class="selected_label">ALL</span> 
+											</button>
+											<ul class="select_options" role="listbox" hidden>
+												<li role="option" aria-selected="true" data-value="전체">ALL</li>
+												<li role="option" aria-selected="false" data-value="제목">SUBJECT</li>
+												<li role="option" aria-selected="false" data-value="내용">CONTENT</li>
+											</ul>
+										</div>
+										
+                                        <div class="search_bar">
+                                            <input type="text" id="searchString" value="" class="search_txt" title="Search" placeholder="Search">
+                                            <button type="button" class="btnClear" id="btnClear" title="clear">
+                                            	<span aria-hidden="true">X</span>
+                                            	<span class="sr_only">clear</span>  
+                                            </button>
+                                            <button class="btnSearch" title="Search" id="btnSearch"><span class="sr_only">Search</span></button>
+                                        </div>
+                                    </div>
+                           </fieldset>
+                          </form>
+                      </div>
+                      <!-- //search_f -->
+                      
+                      <div class="bo_list_top">
+                      	<span class="list_total">Total<b id="totCnt">0</b></span>
+                      	
+                      	<div class="search_sort_btn_g">
+                               <select  id="pageUnit" class="ui_select" title="select the type of publication">
+                                  <option value="">ALL</option>
+                                  <option value="0004_001">Int’l Insights</option>
+                                  <option value="0004_002">Annual Report</option>
+                                  <option value="0004_003">Press Release </option>
+                                  <option value="0004_004">Others</option>
+                               </select>
+                               <button type="button" class="search_sort_button" id="btnPage">Search</button>
+                           </div>
+                      </div>
+                     
+                      <div class="webzine_group" id="list"></div>
+				</div>
+			</div>
+		   	<!-- 페이징 -->
+		    <nav class="paging">
+				<div class="paging_g">
+				</div>
+			</nav>
+		</div>
+</div>
+
+
+<form id="searchForm" method="POST">
+<input type="hidden" name="selScope" id="selScope" value="">
+<input type="hidden" name="subSech" id="subSech" value="">
+<input type="hidden" name="size" id="size" value="6">
+<input type="hidden" name="page" id="page" value="1">
+<input type="hidden" name="seCd" id="seCd" value="0024">
+<input type="hidden" name="ntcnYardKndSeCd" id="ntcnYardKndSeCd" value="">
+<input type="hidden" name="ntcnYardOrdrNo" id="ntcnYardOrdrNo" value="">
+<input type="hidden" name="viewType" id="viewType" value="cnList">
+</form>
+<script src="/js/cmn/paging.js"></script>
+
+<script>
+var boardList;
+jQuery(function(){
+	var listElm = $('#list'); 
+	boardList = new getBoardData({
+		viewer:'/eng/policy/iois05_view.do',
+		lang: 'eng',
+		complete: function(data){setBoardList(data.result)},
+	});
+	
+	viewLink = function(id){boardList.viewLink(id)}
+	boardList.getList();
+	
+	var firstLoad = true;
+	function setBoardList(items){
+		var html = '';
+		
+		if(items.length < 1) {
+			listElm.html(boardList.empty());
+		} else {
+		$.each(items, function(index, item) {
+			//카테고리
+			var kndCd = item.ntcnYardKndSeCd;
+			var kndNm = '';
+			if(kndCd == '0004_001') {
+				kndNm ='Int’l Insights';			
+			} else if(kndCd == '0004_002') {
+				kndNm ='Annual Report'; 
+			} else if(kndCd == '0004_003') {
+				kndNm ='Press Release ';
+			} else { 
+				kndNm ='Others';
+			}
+			
+			//html
+			html +='<div class="webzine_list">';
+			html +='<div class="webzine_hgroup">';
+			html +='<span class="tag">'+kndNm+'</span>';
+			html +='<h4><a href="javascript:viewLink(\''+item.ntcnYardOrdrNo+'\');">'+ getBoardText(item.ntcnYardSjNm) +'</a></h4>';
+			html +='<span class="date">'+item.ntcnYardRgiDt.substring(0,10)+'<span>&nbsp;/&nbsp;views : </span>' +item.ntcnYardIqrCo +'</span>';
+			html +='</div>';
+			html +='<div class="webzine_content v2"><a href="javascript:viewLink(\''+item.ntcnYardOrdrNo+'\');">'+ getBoardText(item.ntcnYardCn, 50) +'</a></div>';
+			//첨부파일
+			if(item.fileList != null && item.fileList.length > 0){
+				html += getAttachment(item.fileList, 1, 'eng');
+			};
+			html +='</div>';
+		});
+		
+		listElm.html(html);
+		}
+		
+		//웹접근성
+		if(!firstLoad){
+			if(boardList.config.config.total == 0){
+			//	listElm.attr('tabindex', '0');
+				//listElm.focus();
+			}else{
+				//listElm.find('>div').eq(0).attr('tabindex', '0');
+			//	listElm.find('>div').eq(0).focus();	
+			}
+		}
+		firstLoad = false;
+	}
+	
+	$('#boardSearchForm').submit(function(e){
+		e.preventDefault();
+		boardList.search({scope: $('#searchType').val(), text: $('#searchString').val(), kncd: $('#pageUnit').val()});
+	});
+
+});
+
+//페이지 네비게이션
+var goPaging_PagingView = function(cPage) {
+	boardList.setPage(cPage); 
+}
+
+
+// 종류 선택
+$('#btnPage').click(function(){
+	boardList.search({scope: $('#searchType').val(), text: $('#searchString').val(), kncd: $('#pageUnit').val()});
+});
+
+</script>
+<script> 
+
+(function () {
+	var wrap = document.getElementById('searchTypeCustom');
+	var btn = wrap.querySelector('.select_trigger');
+	var list = wrap.querySelector('.select_options');
+	var label = wrap.querySelector('.selected_label');
+	var items = list.querySelectorAll('li');
+	var nativeSelect = document.getElementById('searchType');
+	
+	btn.addEventListener('click', function(){
+		var isOpen = !list.hidden; 
+		list.hidden = isOpen;
+		btn.setAttribute('aria-expended', String(!isOpen));
+	});
+	
+	items.forEach(function(li){
+		li.addEventListener('click', function(){
+			items.forEach(function(o){ o.setAttribute('aria-selected', 'false'); });
+			li.setAttribute('aria-selected', 'true'); 
+			label.textContent = li.textContent.trim();
+			nativeSelect.value = li.dataset.value;  
+			list.hidden = true; 
+			btn.setAttribute('aria-expended', 'false');
+		});
+	});
+	 
+	document.addEventListener('click', function(e) {
+		if (!wrap.contains(e.target)){
+			list.hidden = true;
+			btn.setAttribute('aria-expanded', 'false');
+		}
+	});
+	
+})();
+
+(function () {
+	var $input = $('#searchString');
+	var $clearBtn = $('#btnClear');
+	
+	$clearBtn.on('click', function(e){
+		e.preventDefault();
+		$input.val('').focus();
+	});
+	
+})();
+</script>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="satisfaction">
+		<form id="stsfdgExaminRspnsScoForm">
+			<fieldset>
+				<legend class="sr_only">feedback</legend>
+				<div class="inner">
+					<div class="research">
+						<p>We are pleased to hear your feedback on this website.<br> 
+How satisfied are you with the information provided from us?</p>
+						<span class="guide">* essential</span>
+						<ul class="review_list">
+							<li><label class="label_radio"><input class="checkMsg" type="radio" name="stsfdgExaminRspnsSco" value="5"><span><i></i> Very Satisfied </span></label></li>
+							<li><label class="label_radio"><input class="checkMsg" type="radio" name="stsfdgExaminRspnsSco" value="4"><span><i></i> Satisfied</span></label></li>
+							<li><label class="label_radio"><input class="checkMsg" type="radio" name="stsfdgExaminRspnsSco" value="3"><span><i></i> Moderately Satisfied</span></label></li>
+							<li><label class="label_radio"><input class="checkMsg" type="radio" name="stsfdgExaminRspnsSco" value="2"><span><i></i> Not So Satisfied</span></label></li>
+							<li><label class="label_radio"><input class="checkMsg" type="radio" name="stsfdgExaminRspnsSco" value="1"><span><i></i> Not At All Satisfied</span></label></li>
+							<!-- 20.11.06 접근성 위배 주석처리 <input type="hidden" id="" title=" value=""></input> -->
+						</ul>
+						<button id="commit" type="button" title="send survey">Submit</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	
+	<div data-id="js__alert" class="laymodal modal-alert">
+		<div class="laymodal-header">
+			<h2>Info</h2>
+			<!-- <button class="laymodal-close" data-id="modal-close">닫기</button> -->
+		</div>
+		<div class="laymodal-content">
+		</div>
+		<div class="laymodal-footer">
+			<button class="modal-btn" onclick="satiAlertClose(this);">Close</button>
+		</div>
+	</div>
+	
+	<script>
+	var satiState = true;
+	
+	function satiAlertClose(t){
+		console.log('%c'+satiState,'color:red');
+		if(!satiState){
+			layModalClose(t,{autoFocus: false});
+			$('.review_list input').eq(0).focus();
+			satiState = true;
+		}else{
+			console.log(t);
+			layModalClose(t);
+		}
+	}
+	
+	
+	function insertModalOpen(t,text){
+		layModalOpen('js__alert',t);
+		$('[data-id=js__alert] .laymodal-content').text(text);
+	}
+	
+	function updateCommitBtnState(){
+		var checked = $(':radio[name="stsfdgExaminRspnsSco"]:checked').length > 0;
+		$('#commit').prop('disabled', !checked);
+	}
+	
+	$(function() {
+		//페이지 로드 시 비활성화
+		updateCommitBtnState();
+		$(':radio[name="stsfdgExaminRspnsSco"]').on('change', updateCommitBtnState);
+	});
+	
+	
+	// 만족도 조사 등록
+	$('#commit').on('click', function() {
+		var stsfdgExaminRspnsSco = $(':radio[name="stsfdgExaminRspnsSco"]:checked').val();
+		var btn = this;
+		if(stsfdgExaminRspnsSco == null || stsfdgExaminRspnsSco == '') {
+			insertModalOpen(btn,'check answer');
+			satiState = false;
+			return false;
+		} else {
+			var uri = $(location).attr('pathname');
+			$.ajax({
+				type : 'POST',
+				url : '/cmn/survey/insertSurvey.do',
+				dataType : 'json',
+				data : {'stsfdgExaminRspnsSco': stsfdgExaminRspnsSco, 'uri': uri},
+				success : function(data) {
+					insertModalOpen(btn,'Thank you for your precious answers.');
+					$('.checkMsg').prop("checked", false);
+					updateCommitBtnState();
+				},
+				error : function( data ){
+					insertModalOpen(btn,'Submission failed.');
+				}
+			});
+		}
+	});
+	</script>
+
+
+<!-- s: footer -->
+	<footer class="foot" id="footer">
+		<div class="inner">
+			<!-- foot_nav -->
+			<div class="foot_nav">
+				<ul>
+					<li><a href="/eng/etc/guide.do">Contacts</a></li>
+					<li><a href="/eng/etc/privacy2026-aug.do" class="personal">Privacy Policy</a></li>
+					<li><a href="/eng/etc/email.do">Disclaimer</a></li>
+					<li><a href="https://www.fcsc.kr/ucms/main/main.do" target="_blank">Public Information Access <i class="icon_blank">new window</i></a></li>
+					<li class="tb_hidden"><a href="/eng/etc/viewer.do">Download Viewer Program</a></li>
+				</ul>
+			</div>
+
+			<!-- foot_cont -->
+			<div class="foot_cont">
+
+				<strong class="siteinfo_title">KoFIU</strong>
+				<div class="siteinfo_text">209, Sejong-daero, Jongno-gu, Seoul 03171, Korea</div>
+				<div class="siteinfo_text">Tel : <a href="tel:+82-2-2100-2500" style= "color: #ffffff">+82-2-2100-2500</a> / Fax : <a href="tel:+82-2-2100-1733" style= "color: #ffffff">+82-2-2100-1733</a></div>
+				<!-- sr16409 
+				<div class="siteinfo_text">Contact Us : kofiuinfo@korea.kr</div>
+				-->
+				<div class="siteinfo_copy">Copyright ⓒ KoFIU. All Rights Reserved.</div>
+
+				<!-- foot_marks -->
+				<ul class="foot_marks">
+					<!-- SR 16710 현행화 예정으로 삭제
+					<li>
+						<a href="https://www.president.go.kr/affairs/gov_project" target="_blank" title="new window">
+							<img src="/images/kor/common/footer_marks1.png" alt="Again Republic of Korea, a New Nation of the People">
+						</a>
+					</li>
+					-->
+					<li>
+						<a href="http://www.nctc.go.kr/" target="_blank" title="new window">
+							<img src="/images/kor/common/footer_marks2.png" alt="National Counterterrorism Center">
+						</a>
+					</li>
+					<li>
+						<img src="/images/kor/common/footer_marks3.png" alt="KoFIU">
+					</li>
+					
+					<!-- SR 16713 WA 인증마크 갱신 -->
+					<li>
+						<img src="/images/kor/common/footer_marks7.png"
+					         alt="Web Accessibility Quality Certification Mark by Ministry of Science and ICT,WebWatch 2025.12.26 ~ 2026.12.25" title="WA Quality Certification Mark, WebWatch 2025.12.26 ~ 2026.12.25">
+
+					</li>
+				</ul>
+
+
+				<!-- 관련사이트 -->
+				<div class="foot_link_list">
+					
+					<div class="relatedmenu">
+						<button type="button" title="Peer Sites list closed" class="btn_family">Peer Sites</button>
+						<div class="scroll_area">
+							<ul>
+								<li><a href="https://report.fiu.go.kr" title="new window" target="_blank">Reporting System</a></li>
+								<li><a href="https://rba.kofiu.go.kr/cmm/main/mainPage.do;jsessionid=C9479F35C40D4A9A03ADE9BEE647D6FA" title="new window" target="_blank">RBA System</a></li>	
+								<li><a href="http://www.spo.go.kr" title="new window" target="_blank">Prosecutors’ Office</a></li>
+								<li><a href="http://www.police.go.kr" title="new window" target="_blank">National Police Agency</a></li>
+								<li><a href="http://www.msit.go.kr" title="new window" target="_blank">Ministry of Science and ICT</a></li>
+								<li><a href="http://www.customs.go.kr" title="new window" target="_blank">Korea Customs Service</a></li>
+								<li><a href="http://www.nis.go.kr" title="new window" target="_blank">National Intelligence Service </a></li>
+								<li><a href="http://www.nts.go.kr" title="new window" target="_blank">National Tax Services</a></li>
+								<li><a href="http://www.molit.go.kr" title="new window" target="_blank">Ministry of Land, Infrastructure and Transport</a></li>
+								<li><a href="http://www.assembly.go.kr" title="new window" target="_blank">National Assembly of South Korea</a></li>
+								<li><a href="http://www.fsc.go.kr" title="new window" target="_blank">Financial Services Commission </a></li>
+								<li><a href="http://www.moef.go.kr" title="new window" target="_blank">Ministry of Economy and Finance</a></li>
+								<li><a href="http://www.moel.go.kr" title="new window" target="_blank">Ministry of Employment and Labor</a></li>
+								<li><a href="http://www.moj.go.kr" title="new window" target="_blank">Department of Justice</a></li>
+								<li><a href="http://www.moleg.go.kr" title="new window" target="_blank">Ministry of Government Legislation </a></li>
+								<li><a href="http://www.nec.go.kr" title="new window" target="_blank">National Election Commission</a></li>
+								<li><a href="http://www.mss.go.kr" title="new window" target="_blank">Ministry of SMEs and Startups</a></li>
+								<li><a href="http://www.president.go.kr" title="new window" target="_blank">Blue House</a></li>
+								<li><a href="http://www.kcg.go.kr" title="new window" target="_blank">Korea Coast Guard</a></li>
+								<li><a href="http://www.mois.go.kr" title="new window" target="_blank">Ministry of Interior and Safety of South Korea</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 패밀리사이트 -->
+					<div class="relatedmenu">
+						<button type="button" title="Family Sites list closed" class="btn_family">Family Sites</button>
+						<div class="scroll_area">
+							<ul>
+								<li><a href="http://www.fss.or.kr" title="new window" target="_blank">Financial Supervisory Service</a></li>
+								<li><a href="http://www.koscom.co.kr" title="new window" target="_blank">Koscom</a></li>
+								<li><a href="http://www.kftc.or.kr" title="new window" target="_blank">Korea Financial Telecommunications &amp; Clearings Institute</a></li>
+								<li><a href="http://www.fsec.or.kr" title="new window" target="_blank">Financial Security Institute</a></li>
+								<li><a href="http://www.kibo.or.kr" title="new window" target="_blank">Korea Technology Finance Corporation </a></li>
+								<li><a href="http://www.nonghyup.com" title="new window" target="_blank">National Agricultural Cooperative Federation</a></li>
+								<li><a href="http://www.kidi.or.kr" title="new window" target="_blank">Korea Insurance Development Institute</a></li>
+								<li><a href="http://www.nfcf.or.kr" title="new window" target="_blank">National Forestry Cooperative Federation </a></li>
+								<li><a href="http://www.fsb.or.kr" title="new window" target="_blank">Korea Federation of Savings Banks</a></li>
+								<li><a href="http://www.kfcc.co.kr" title="new window" target="_blank">MG Community Credit Cooperatives</a></li>
+								<li><a href="http://www.klia.or.kr" title="new window" target="_blank">Korea Life Insurance Association</a></li>
+								<li><a href="http://www.knia.or.kr" title="new window" target="_blank">KNIA</a></li>
+								<li><a href="http://www.suhyup.co.kr" title="new window" target="_blank">National Federation of Fisheries</a></li>
+								<li><a href="http://www.kodit.co.kr" title="new window" target="_blank">Korea Credit Guarantee Fund</a></li>
+								<li><a href="http://www.cica.or.kr" title="new window" target="_blank">Credit Information Companies Association</a></li>
+								<li><a href="http://www.cu.co.kr" title="new window" target="_blank">National Credit Union Federation of Korea </a></li>
+								<li><a href="http://www.crefia.or.kr" title="new window" target="_blank">The Credit Finance Association</a></li>
+								<li><a href="http://www.ksd.or.kr" title="new window" target="_blank">Korea Securities Depository</a></li>
+								<li><a href="http://www.kfb.or.kr" title="new window" target="_blank">Korea Federation of Banks</a></li>
+								<li><a href="http://www.koreacasino.or.kr" title="new window" target="_blank">Korea Casino Association</a></li>
+								<li><a href="http://www.korfin.kr" title="new window" target="_blank">Korea Fintech Industry Association</a></li>
+								<li><a href="http://www.krx.co.kr" title="new window" target="_blank">KRX</a></li>
+								<li><a href="http://www.kofia.or.kr/" title="new window" target="_blank">Korea Financial Investment Association</a></li>
+								<li><a href="http://www.ikiba.or.kr" title="new window" target="_blank">Korea Insurance Brokers Association</a></li>
+								<li><a href="http://www.bok.or.kr" title="new window" target="_blank">Bank of Korea</a></li>
+								<li><a href="http://www.kamco.or.kr" title="new window" target="_blank">Korea Asset Management Corporation</a></li>
+								<li><a href="http://www.ksfc.co.kr" title="new window" target="_blank">Korea Securities Finance Corporation</a></li>
+								<li><a href="http://www.kfpa.or.kr" title="new window" target="_blank">Korea Fire Protection Association</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 해외사이트 -->
+					<div class="relatedmenu relatedmenu_wide">
+						<button type="button" title="Overseas Website list close" class="btn_family" id="relateMneu111">Overseas Website</button>
+						
+						<div class="scroll_area">
+							<strong>FATF & FSRBs / Government Agencies</strong>
+							<ul>
+								<li><a href="http://www.fatf-gafi.org" title="new window" target="_blank">FATF (Financial Action Task Force)</a></li>
+								<li><a href="http://www.cfatf-gafic.org" title="new window" target="_blank">CFATF (Caribbean Financial Action Task Force)</a></li>
+								<li><a href="http://www.eurasiangroup.org" title="new window" target="_blank">EAG (Eurasian Group)</a></li>
+								<li><a href="http://www.esaamlg.org" title="new window" target="_blank">ESAAMLG (Eastern and South African Anti Money Laundering Group)</a></li>
+								<li><a href="http://www.gafisud.org" title="new window" target="_blank">GAFISUD (Grupo de Accion Financiera de Sudamerica)</a></li>
+								<li><a href="http://www.giaba.org" title="new window" target="_blank">GIABA (Groupe inter-Gouvernemental d’Action Contre Ie Blanchiment de I’Argent en Afrique)</a></li>
+								<li><a href="http://www.menafatf.org" title="new window" target="_blank">MENAFATF (Middle East and North Africa Financial Action Task Force)</a></li>
+								<li><a href="http://www.coe.int/t/dghl/monitoring/moneyval" title="new window" target="_blank">MONEYVAL (Council of Europe, Committee of Experts on the Evaluation of AML Measures and FT)</a></li>
+								<li><a href="http://www.apgml.org" title="new window" target="_blank">APG (Asia/Pacific Group on Money Laundering)</a></li>
+							</ul>
+
+							<strong>Egmont Group and Foreign FIUs</strong>
+							<ul>
+								<li><a href="http://www.egmontgroup.org" title="new window" target="_blank">Egmont Group</a></li>
+								<li><a href="http://www.apgml.org" title="new window" target="_blank">Asia</a></li>
+								<li><a href="http://www.menafatf.org" title="new window" target="_blank">Africa</a></li>
+								<li><a href="http://www.gafisud.org" title="new window" target="_blank">The Americas</a></li>
+								<li><a href="http://www.coe.int/en/web/moneyval" title="new window" target="_blank">Europe</a></li>
+								<li><a href="http://www.cfatf.org" title="new window" target="_blank">Oceania</a></li>
+							</ul>
+
+							<strong>International Organization</strong>
+							<ul>
+								<li><a href="http://www.imf.org" title="new window" target="_blank">IMF (International Monetary Fund)</a></li>
+								<li><a href="http://www.worldbank.org" title="new window" target="_blank">World Bank</a></li>
+								<li><a href="http://www.bis.org" title="new window" target="_blank">BIS (Bank for International Settlements)</a></li>
+							</ul>
+
+							<strong>International Organization</strong>
+							<ul>
+								<li><a href="http://www.unodc.org" title="new window" target="_blank">UNODC (United Nations Office on Drugs and Crime)</a></li>
+								<li><a href="https://main.un.org/securitycouncil/en/sanctions/1267/aq_sanctions_list" title="new window" target="_blank">UN 1267 Committee Consolidated List – Al-Qaida, Usama bin Laden, the Taliban and other individuals</a></li>
+								<li><a href="https://main.un.org/securitycouncil/en/sanctions/1267/resolutions" title="new window" target="_blank">UN Security Council Resolution 1267 Committee</a></li>
+								<li><a href="http://www.un.org/sc/ctc" title="new window" target="_blank" data-focus-next="relate_tab2">UN Counter-Terrorism Committee</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="foot_bg"><div>KoFIU establishes transparent financial practice.</div></div>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

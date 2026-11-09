@@ -1,0 +1,1342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Money Service Business Code of Practice &#x2014; Jersey Financial Services Commission</title>
+    <meta name="description" content="This code has been prepared and issued for the purpose of setting out the principles and detailed requirements that must be complied with in the conduct of money service business ">
+    <meta name="google-site-verification" content="s0dPPdHgULkPp6J0hQQCTwATZyICwKZT54bixjUCU0U" />
+    <meta name="keywords" content="Money Service Business,MSB,Code of Practice" />
+    <meta property="og:title" content="Money Service Business Code of Practice" />
+    <meta property="og:description" content="This code has been prepared and issued for the purpose of setting out the principles and detailed requirements that must be complied with in the conduct of money service business ">
+    <meta property="og:site_name" content="Jersey Financial Services Commission">
+
+    <!-- TODO: get absolute URL in a better way -->
+    <meta property="og:image" content="https://www.jerseyfsc.org/images/og-image.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JerseyFSC" />
+    <meta name="twitter:title" content="Money Service Business Code of Practice" />
+    <meta name="twitter:description" content="This code has been prepared and issued for the purpose of setting out the principles and detailed requirements that must be complied with in the conduct of money service business " />
+
+    <!-- TODO: get absolute URL in a better way -->
+    <meta name="twitter:image" content="https://www.jerseyfsc.org/images/twitter-summarycard.png" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/assets/dist/css/main.css?v=LziQOLHqSGtBD_NroWKJW-1c01xmNdywVOZGIpYen5g" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg">
+
+    <!-- TODO: These need to be combined and minified -->
+    <script src="/scripts/libraries/jquery/jquery-3.7.1.min.js?20250619"></script>
+    <script src="/scripts/libraries/jquery/jquery-migrate.js?20250619"></script>
+
+    <script type="text/javascript" src="/scripts/libraries/select2/select2.min.js?20261109"></script>
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.thc/jquery.thc.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.responsiveTable/jquery.tableDataAttributes.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.responsiveTable/jquery.responsiveTable.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.touch.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.gallery.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.gallery.swipe.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/sass-to-js/sass-to-js.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/simplePagination/jquery.simplePagination.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/waypoints/jquery.waypoints.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/waypoints/sticky.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.toc/jquery.toc.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/slick-carousel/slick/slick.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/functions.js?20220523?20261109"></script>
+    <script type="text/javascript" src="/scripts/header.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/global-announcements.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/form.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/base.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/home.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/map.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/common.js?20210517?20261109"></script>
+    <script type="text/javascript" src="/scripts/dynamic-sidenav.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/filtered-table.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/accordion.js?20261109"></script>
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+        var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+        f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+        var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+        _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+        var ml_account = ml('accounts', '2805433', 'c7l2s4x7a3', 'load');
+    </script>
+    <!-- End MailerLite Universal -->
+
+    
+
+        <script>
+            $(document).ready(function () {
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({
+                        'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                    }); var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-P3KQRQ4R');
+            });
+        </script>
+
+    
+</head>
+
+<body class="template-sharepoint template-code-of-practice">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3KQRQ4R"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>
+        <link rel="stylesheet" href="/css/accordion-noscript.css" />
+    </noscript>
+    <div id="skiptocontent" class="noindex">
+        <a class="noindex" href="#startcontent">Skip to main content</a>
+    </div>
+    <div class="main-wrapper">
+
+        <header class="main-header" role="banner">
+            <section class="header">
+
+                <nav aria-label="main" class="main-menu-wrapper">
+                    <a class="menu-toggle" role="button" aria-haspopup="true" id="main-menu-button" tabindex="0" aria-label="Main Menu">
+                        <span class="icon"></span>
+                    </a>
+                    <div class="menu-overlay">
+	<div class="row">
+
+					<ul class="main-menu">
+					<li>
+							<a href="/home/">Home</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/">About us</a>
+
+									<ul class="">
+					<li>
+							<a href="/about-us/board-of-commissioners/">Board of Commissioners</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/directors/">Directors</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/contact-us/">Contact us</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/data-protection/">Data protection</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/making-a-complaint/">Making a complaint</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/">Our teams</a>
+
+									<ul class="">
+					<li>
+							<a href="/about-us/our-teams/enforcement/">Enforcement</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/policy-and-risk/">Policy and Risk</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/registry/">Registry</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/supervision/">Supervision</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/intelligence/">Intelligence</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/about-us/jfsc-connect/">JFSC Connect</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/careers/">Careers</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/">Industry</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/">Codes of Practice</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/alternative-investment-funds-code-of-practice/">Alternative Investment Funds Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/">Certified Funds Code of Practice</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-1/">Certified Funds Code of Practice Schedule 1</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-2/">Certified Funds Code of Practice Schedule 2</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-3/">Certified Funds Code of Practice Schedule 3</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-4/">Certified Funds Code of Practice Schedule 4</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-5/">Certified Funds Code of Practice Schedule 5</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/fund-services-business-code-of-practice/">Fund Services Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/general-insurance-mediation-business-code-of-practice/">General Insurance Mediation Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/insurance-business-code-of-practice/">Insurance Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/investment-business-code-of-practice/">Investment Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/money-service-business-code-of-practice/">Money Service Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/trust-company-business-code-of-practice/">Trust Company Business Code of Practice </a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/alternative-investment-funds-code-of-practice-1/">Alternative Investment Funds Code of Practice (1)</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/consultations/">Consultations</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/consultations/fee-consultation-no-3-2024-feedback-paper/">Fee consultation No 3 2024 - Feedback Paper</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2024-consultations/">2024 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2023-consultations/">2023 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2022-consultations/">2022 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2021-consultations/">2021 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2020-consultations/">2020 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2019-consultations/">2019 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2018-consultations/">2018 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2017-consultations/">2017 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2016-consultations/">2016 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2025-consultations/">2025 consultations</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/digital-assets/">Digital assets</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/digital-assets/getting-started-with-digital-assets/">Getting started with digital assets</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/digital-assets-in-jersey/">Digital assets in Jersey</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/digital-asset-funds/">Digital asset funds</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/initial-coin-or-token-offerings/">Initial coin or token offerings</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/tokenised-real-world-assets/">Tokenised real-world assets</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/virtual-asset-service-providers/">Virtual asset service providers</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/examinations/">Examinations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/fees/">Fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/financial-crime/">Financial crime</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/">Innovation Hub</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/innovation-hub/about/">About</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/help/">Help</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/collaboration/">Collaboration</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/regtech/">Regtech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/fintech/">Fintech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/suptech/">Suptech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/virtual-asset-service-providers/">Virtual Asset Service Providers</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/local-partnerships-and-associations/">Local partnerships and associations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/innovation-reports/">Innovation reports</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/forms/">Forms</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/guidance-and-policy/">Guidance and policy</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/">International-co-operation</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/international-co-operation/international-assessments/">International assessments</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/memoranda-of-understanding/">Memoranda of Understanding</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/sanctions/">Sanctions</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/legislation/">Legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/regulated-entities/">Regulated entities</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/risk/">Risk</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/risk/national-risk-assessments/">National Risk Assessments</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/sectors/">Sectors</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/sectors/auditors/">Auditors</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/banking/">Banking</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/funds/">Funds</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/general-insurance-mediation-business/">General Insurance Mediation Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/insurance/">Insurance</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/investment-business/">Investment Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/financial-crime-schedule-2-business/">Financial Crime - Schedule 2 Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/trust-company-business/">Trust Company Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/">Non- profit organisations</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/non-profit-organisations-legislation/">Non-profit organisations legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/npo-risk-assessment/">NPO risk assessment</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/sectors/financial-institutions/">Financial Institutions</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/money-service-business/">Money Service Business</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/schedule-2-business-faqs/">Schedule 2 Business FAQs</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sustainable-finance/">Sustainable finance</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/news-and-events/">News and events</a>
+
+									<ul class="">
+					<li>
+							<a href="/news-and-events/events-and-webinars/">Events and webinars</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=Industry+updates">Industry updates</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=News">News</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=Public+statements">Public statements and warnings</a>
+
+						
+					</li>
+					<li>
+							<a href="/subscribe-to-our-rss/">RSS feeds</a>
+
+						
+					</li>
+					<li>
+							<a href="/subscribe-to-our-news-and-updates/">Subscribe</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/protecting-the-public/">Protecting the public</a>
+
+									<ul class="">
+					<li>
+							<a href="/protecting-the-public/fraud-prevention/">Fraud prevention</a>
+
+						
+					</li>
+					<li>
+							<a href="/protecting-the-public/investment-mis-selling/">Investment mis-selling</a>
+
+						
+					</li>
+					<li>
+							<a href="/protecting-the-public/complaints-reporting-and-whistleblowing/">Complaints reporting and whistleblowing</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/publications/">Publications</a>
+
+									<ul class="">
+					<li>
+							<a href="/publications/annual-reports/">Annual reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/business-plans/">Business plans</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/presentations/">Presentations</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/service-reports/">Service reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/engagement-reports/">Engagement reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/2026-2030-strategy/">2026-2030 strategy</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/registry/">Registry</a>
+
+									<ul class="">
+					<li>
+							<a href="/registry/annual-confirmation/">Annual confirmation</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/beneficial-ownership-information/">Beneficial ownership information</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/register-or-make-a-change/">Register or make a change</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-fees/">Registry fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-forms/">Registry forms</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-legislation/">Registry legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-notices/">Registry notices</a>
+
+									<ul class="">
+					<li>
+							<a href="/registry/registry-notices/public-notices/">Public notices</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/registry/2025-registry-fees/">2025 Registry fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/2024-registry-fees/">2024 Registry fees</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/whistleblowing/">Whistleblowing</a>
+
+						
+					</li>
+					<li>
+							<a href="/login/">Login</a>
+
+						
+					</li>
+			</ul>
+
+
+	</div>
+</div>
+
+
+                </nav>
+                <a href="/" class="logo">
+                    <img src="/images/JFSC-logo-Landscape-rgb.svg" alt="Jersey Financial Services Commission" class="full" width="233" height="44" />
+                    <img src="/images/JFSC-logo-Icon-rgb.svg" alt="Jersey Financial Services Commission" class="small" width="44" height="44" />
+                </a>
+                <div class="menu main-menu">
+                    <ul>
+                            <li>
+                                <a href="/about-us/">About us</a>
+                            </li>
+                            <li class="active-trail">
+                                <a href="/industry/">Industry</a>
+                            </li>
+                            <li>
+                                <a href="/registry/">Registry</a>
+                            </li>
+                            <li>
+                                <a href="/protecting-the-public/">Protecting the public</a>
+                            </li>
+                            <li>
+                                <a href="/news-and-events/">News and events</a>
+                            </li>
+                            <li>
+                                <a href="/login/">Login</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+                <div class="search-wrapper" role="search" aria-label="main">
+                    <a class="search-toggle" role="button" aria-haspopup="true" tabindex="0" aria-label="Search">
+                        <span class="icon"></span>
+
+                    </a>
+                    
+                    
+<div class="search-overlay">
+	<div class="row">
+		<form action="/search" method="get">
+			<label for="overlay-search">Search JFSC</label>
+			<input type="text" name="search" id="overlay-search" placeholder="Search the site" />
+			<button type="submit" class="button">Search</button>
+		</form>
+			<div id="popular-searches" class="popular-searches">
+				<h2>Popular searches</h2>
+				<ul>
+						<li><a href="/Search?search=Industry&#x2B;Survey">Industry Survey</a></li>
+						<li><a href="/Search?search=Annual&#x2B;confirmation&#x2B;statement">Annual confirmation statement</a></li>
+						<li><a href="/Search?search=Business&#x2B;Plan">Business Plan</a></li>
+						<li><a href="/Search?search=Compliance&#x2B;monitoring">Compliance monitoring</a></li>
+						<li><a href="/Search?search=Guidance&#x2B;notes">Guidance notes</a></li>
+						<li><a href="/Search?search=myProfile">myProfile</a></li>
+						<li><a href="/Search?search=myRegistry">myRegistry</a></li>
+						<li><a href="/Search?search=Outsourcing">Outsourcing</a></li>
+						<li><a href="/Search?search=Sanctions">Sanctions</a></li>
+						<li><a href="/Search?search=Sound&#x2B;business&#x2B;policy">Sound business policy</a></li>
+						<li><a href="/Search?search=Consumer&#x2B;credit">Consumer credit</a></li>
+				</ul>
+			</div>
+	</div>
+</div>
+                </div>
+               
+            </section>
+
+        </header>
+
+        <main role="main" class="main-page">
+
+            
+    <section class="global-announcement js-global-announcement" data-announcement-id="B2DE24D54503">
+        <div class="global-announcement-content">
+            <p><strong>Service notice -</strong> myRegistry will be unavailable due to scheduled maintenance from <strong>6:00pm</strong> until <strong>10:00pm</strong> on <strong>Monday 9 November</strong>.</p>
+        </div>
+        <button type="button" class="global-announcement-dismiss js-global-announcement__dismiss" aria-label="Dismiss this announcement">
+            <span class="icon" aria-hidden="true"></span>
+        </button>
+    </section>
+
+    <script>
+        (function () {
+            try {
+                var dismissed = JSON.parse(window.sessionStorage.getItem("jfsc-dismissed-announcements") || "[]");
+                document.querySelectorAll(".js-global-announcement").forEach(function (el) {
+                    if (dismissed.indexOf(el.getAttribute("data-announcement-id")) !== -1) {
+                        el.remove();
+                    }
+                });
+            } catch (e) { }
+        })();
+    </script>
+
+
+                    <nav class="breadcrumb" aria-label="breadcrumb">
+                        <p class="invisible">You are here</p>
+                        <ul>
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/industry/">Industry</a>
+                                </li>
+                                <li>
+                                    <a href="/industry/codes-of-practice/">Codes of Practice</a>
+                                </li>
+                            <li>
+                                <span>Money Service Business Code of Practice</span>
+                            </li>
+                        </ul>
+                    </nav>
+            <a name="startcontent" id="startcontent" href="#"></a>
+            
+<section class="general-banner no-image">
+
+	<div class="image"></div>
+
+</section>
+
+<section class="sidebar-partial">
+	<div class="row">
+		<aside class="sidebar">
+
+			<div class="document-nav-parent">
+				<div class="header">Contents<a class="toggle"></a></div>
+
+				<ul class="document-nav">
+					<!--Dynamic side bar renders here-->
+				</ul>
+				<div class="document-nav-bottom"></div>
+			</div>
+
+        </aside>
+        <div class="partial">
+            <section class="flexi-row copy">
+                <div class="row">
+
+                    <ul class="page-actions">
+                        <li><button class="print" onclick="window.print();">Print</button></li>
+                    </ul>
+
+                    <h1>Money Service Business Code of Practice - 1 January 2021</h1>
+
+                        <div class="sharepoint-meta">
+                            <ul>
+                                    <li><span class="meta-label">Issued:</span><span class="meta-value">01 July 2007</span></li>
+                                    <li><span class="meta-label">Effective from:</span><span class="meta-value">01 January 2021</span></li>
+                                    <li><span class="meta-label">Last revised:</span><span class="meta-value">01 January 2021</span></li>
+                                    <li>
+                                        <br />
+                                        <a href="/media/kdmlgg03/cop-money-service-business-code-of-practice.pdf" target="_blank"><span class="icon-pdf" aria-hidden="true"></span>Money Service Business Code of Practice - 1 January 2021</a>
+                                    </li>
+                            </ul>
+                        </div>
+                
+                    <div class="generic-content">
+                        <!--body start-->
+                        <h2><a name="Glossary"></a></h2>
+<h2><a name="Glossary"></a>Glossary</h2>
+<p>Unless otherwise defined, the following terms when used in the Code shall have the meanings set out below. If not defined below or elsewhere in the Code, terms, where relevant, have the same meanings as are ascribed to them in the FS(J)L.</p>
+<p>All terms which appear in this Glossary are reflected in the Code utilising italic text. Guidance to the Code in the form of “Notes” has been placed in a box to highlight its status.</p>
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<p>Anti-money laundering legislation</p>
+</td>
+<td>
+<p>Includes the Proceeds of Crime (Jersey) Law 1999, the Money Laundering (Jersey) Order 2008 (the&nbsp;<strong>Money Laundering Order</strong>) and the Terrorism (Jersey) Law 2002, as well as any other applicable laws, all as amended from time to time. It also includes the international sanctions regimes implemented through the Sanctions and Asset-Freezing (Implementation of EU Regulations) (Jersey) Order 2020 and equivalent legislation relating to the implementation of UK sanctions. The legislation must be observed in conjunction with the requirements of the relevant Handbook for the Prevention and Detection of Money Laundering and the Financing of Terrorism, issued by the JFSC.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Client</p>
+</td>
+<td>
+<p>Has the same meaning as provided by Article 1 of the FS(J)L, namely:</p>
+<p>“client”, in relation to a registered person, means a person, whether resident on or off Jersey, with or for whom the registered person transacts or has transacted financial service business (other than trust company business) or gives or has given advice about financial service business (other than trust company business)”.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Code</p>
+</td>
+<td>
+<p>Means the Code of Practice for Money Service Business.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Complaint</p>
+</td>
+<td>
+<p>Means any oral or written expression of dissatisfaction, whether justified or not, from, or on behalf of, a person about the provision of, or failure to provide, a service that relates to money service business carried on by the registered person, which alleges that the complainant has suffered (or may suffer) financial loss, material distress or material inconvenience.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>FS(J)L</p>
+</td>
+<td>
+<p>Means the Financial Services (Jersey) Law 1998, as amended.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>JFSC</p>
+</td>
+<td>
+<p>Means Jersey Financial Services Commission.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Key person</p>
+</td>
+<td>
+<p>Has the same meaning as provided by Article 1 of the FS(J)L.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Money Laundering Order</p>
+</td>
+<td>
+<p>Means the Money Laundering (Jersey) Order 2008, as amended.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Principal person</p>
+</td>
+<td>
+<p>Has the same meaning as provided by Article 1 of the FS(J)L.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Registered person</p>
+</td>
+<td>
+<p>Means, a person registered under Article 9 of the FS(J)L to carry on money service business.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Relevant AML/CFT Handbook</p>
+</td>
+<td>
+<p>Means the relevant Handbook for the Prevention and Detection of Money Laundering and the Financing of Terrorism, issued by the JFSC.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><a name="_Ref286155599"></a></p>
+<h2><a name="Introduction"></a>Introduction</h2>
+<p><strong>Power exercised and scope</strong></p>
+<p>The Code of Practice for Money Service Business (the&nbsp;<strong>Code</strong>) is issued by the Jersey Financial Services Commission (the&nbsp;<strong>JFSC</strong>) under powers given to it by Article 19 of the Financial Services (Jersey) Law 1998, as amended (the&nbsp;<strong>FS(J)L</strong>). The Code has been prepared and issued for the purpose of setting out the principles and detailed requirements that must be complied with in the conduct of money service business as defined in Article 2(9) of the FS(J)L.</p>
+<p>The Code applies to all persons registered by the JFSC under Article 9 of the FS(J)L to carry on money service business as defined under Article 2(9) of the FS(J)L (a&nbsp;<strong>registered person</strong>).</p>
+<p>Article 9 of the FS(J)L establishes threshold conditions that apply on an on-going basis – the fit and proper assessment – to registered persons, principal persons and key persons<a name="_ednref1"></a><a href="#_edn1">[i]</a>. This assessment process includes consideration of integrity, competence, financial standing, structure and organisation.</p>
+<p>The JFSC has published a Policy Statement: Licensing Policy in respect of those that require registration under the FS(J)L Part 2 of which provides further information on The JFSC’s “fit and proper” assessment and paragraph&nbsp;<strong>4.5&nbsp;</strong>of which highlights the continuing nature of the fit and proper assessment. The Code assists the JFSC with its on-going consideration of the fitness and propriety of a registered person by setting out actions that the registered person must or must not undertake, which it can then be assessed against.</p>
+<p>Unless otherwise stated, all registered persons must satisfy the five principles and comply with the detailed standards of conduct.</p>
+<p>Where the Code requires a registered person to provide information to the JFSC, such requirement is established in accordance with the powers provided by Article 8 of the Financial Services Commission (Jersey) Law 1998.</p>
+<p>Registered persons are reminded of the provisions of Article 7 of the FS(J)L in respect of the prohibition of carrying out unauthorised money service business.</p>
+<p><strong>Arrangement of the Code</strong><strong>s</strong></p>
+<p>The Code provides enforceable requirements in the form of high level principles supported by detailed rules in the areas of corporate governance and conduct of business and are arranged under five principles as described below. The Code is arranged under five principles and include detailed provisions governing minimum standards of conduct expected of registered persons in the areas of corporate governance and conduct of business matters.</p>
+<p>The principles are:</p>
+<p class="indent">1.&nbsp;<a href="#_Ref286320181">A registered person must conduct its money service business with integrity.</a></p>
+<p class="indent">2.&nbsp;<a href="#_Ref286155632">A registered person must have due regard for the interests of its clients.</a></p>
+<p class="indent">3.&nbsp;<a href="#_Ref293385843">A registered person must organise and control its affairs effectively for the proper performance of its money service business activities and be able to demonstrate the existence of adequate risk management systems.</a></p>
+<p class="indent">4.&nbsp;<a href="#_Ref293385868">A registered person must be transparent in its money service business arrangements.</a></p>
+<p class="indent">5.&nbsp;<a href="#_Ref286155732">A registered person is expected to deal with the JFSC in an open and co‑operative manner.</a></p>
+<p>Each section of the Code is designed to be understood by reference to its full text including any notes.</p>
+<p><strong>Compliance with the Code</strong></p>
+<p>The Code should be read by registered persons in conjunction with the FS(J)L and its subordinate legislation together with any conditions attached to a registration held under the FS(J)L and the relevant Handbook for the Prevention and Detection of Money Laundering and the Financing of Terrorism, issued by the JFSC (the&nbsp;<strong>relevant AML/CFT Handbook</strong>).</p>
+<p>It is the responsibility of a registered person, however, not only to comply with the Code, but also to implement such additional practices as it considers necessary for the proper management and control of its business. Where a registered person considers that it may not be able to achieve full compliance with the Code for a temporary period (for example, for a short period after first being licensed) it should, in advance, agree a plan of action (to include timescales) with the JFSC to bring itself into full compliance with the Code. In exceptional circumstances, where strict adherence to the Code would produce an anomalous result, registered persons may apply to the JFSC for variation from the Code.</p>
+<p>Failure by a registered person to comply with the Code represents grounds for the JFSC to take regulatory action. Where the JFSC has reason to believe that at any time there has been a failure of the part of a registered person to comply with the Code, it may consider making use of its regulatory powers which, in serious cases, could include the revocation of a registration to carry on money service business. In appropriate circumstances, in line with Article 25 of the FS(J)L, the JFSC may issue a public statement concerning a registered person.</p>
+<p>In addition, failure to comply with the Code may support a decision by the JFSC that, for example, continued non-compliance or other failure to remedy the circumstances giving rise to the breach may be addressed by the issue of a written direction under Article&nbsp;23 of the FS(J)L. Such a direction might impose requirements on the registered person to do or not to do specified things, including the removal of principal persons or the cessation of business. In appropriate circumstances a direction can be made public by virtue of Article&nbsp;25(a) of the FS(J)L. The JFSC also has the power under Article 21A of the Financial Services Commission (Jersey) Law 1998 to impose financial penalties for significant and material contraventions of the Code.</p>
+<p>Whilst Article 19(3) of the FS(J)L provides that the contravention of the Code shall not of itself render any person liable to legal proceedings of any kind (excluding regulatory action that may be taken by the JFSC in response to a contravention) or invalidate any transaction, Article 19(4) provides that, subject to a condition of registration indicating that any part or parts of the Code are to be wholly or partly disregarded by a registered person, the Code shall be admissible in evidence if it appears to the court conducting the proceedings to be relevant to any questions arising in the proceedings and shall be taken into account in determining any such questions.</p>
+<p>When considering a registered person’s failure to comply with the Code the JFSC places emphasis on whether or not a registered person conducts its business with integrity and deals with the JFSC in an open and co-operative manner.</p>
+<p>Where it appears to the JFSC that a person has failed to comply with the Code, it may issue a public statement under Article 25(b) of the FS(J)L.</p>
+<p>In a number of places the Code requires the JFSC to be advised of a matter “in writing”. For the avoidance of doubt, a notification given by email, or by means of the JFSC’s online portal, will be considered by the JFSC to meet that requirement (unless the particular Code requirement specifies otherwise how a notification “in writing” must be given).</p>
+<p><strong>Revision of the Code</strong></p>
+<p>In accordance with Article 19(1)(b) of the FS(J)L the JFSC may, after consultation with such persons or bodies as appear to be representative of the interests concerned, revise the Code by revoking, varying, amending or adding to its provisions.</p>
+<p>In November 2018 the JFSC published Consultation Paper No. 10, proposing a number of amendments to the Code and, in March 2019, published a feedback paper summarising respondents’ comments and the JFSC’s responses.</p>
+<p>Rather than detail the amendments here, the JFSC has published a version of the Code that highlights the amendments applied.</p>
+<p><strong>Effective Date</strong></p>
+<p>This revised Code is effective from 1 June 2019 for all registered persons.</p>
+<p>Any person that has made an application to the JFSC which is currently under consideration, should review the Code and contact the JFSC to discuss any areas where compliance on grant of registration may be an issue.</p>
+<p><strong>&nbsp;</strong></p>
+<p><a name="_Ref286155788"></a><strong>The Principles</strong></p>
+<h2>1 &nbsp;&nbsp;<a name="_Ref286320181"></a>A registered person must conduct its money service business with integrity.</h2>
+<p class="indentH2"><strong>1.1&nbsp;</strong>Without limiting the scope of the above principle, a registered person must not:</p>
+<p class="indentH3"><strong>1.1.1&nbsp;</strong>&nbsp; Act or refrain from acting; or</p>
+<p class="indentH3"><strong>1.1.2&nbsp;</strong>&nbsp; Contract or have any other arrangement,</p>
+<p>So as to avoid, or seek to avoid, any regulatory responsibilities it may have under the Code and the full legal consequences of not following them unless the Code expressly permits any such avoidance.</p>
+<h2>2 &nbsp;&nbsp;<a name="_Ref286155632"></a>A registered person must have due regard for the interests of its clients.</h2>
+<p class="indentH2"><strong>2.1&nbsp;</strong>A registered person must have due regard for the interests of its clients in fulfilling the responsibilities it has undertaken.</p>
+<p class="indentH2"><strong>2.2&nbsp;</strong>A registered person must use best endeavours to execute the proper and lawful instructions of its clients promptly and accurately. This must include appropriate arrangements for protecting confidentiality.</p>
+<p class="indentH2"><strong>2.3&nbsp;</strong>A registered person must either avoid any conflict of interest arising or, where conflicts do occur, must address such conflicts by disclosure, by applying appropriate internal rules of confidentiality, or by declining to act, as appropriate.</p>
+<h2>3 &nbsp;&nbsp;<a name="_Ref293385843"></a><a name="_Ref288129823"></a>A registered person must organise and control its affairs effectively for the proper performance of its money service business activities and be able to demonstrate the existence of adequate risk management systems.</h2>
+<p class="indentH2"><strong>3.1&nbsp;</strong><a name="_Ref286155648"></a>Corporate governance</p>
+<p class="indentH3"><strong>3.1.1&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref242509059"></a>A registered person must operate an effective corporate governance system that must include the following key elements:</p>
+<p class="indentH4"><strong>3.1.1.1&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref242095247"></a><a name="_Ref353367591"></a>An adequate span of control, at all times, appropriate to the nature of its business.</p>
+<p class="indentH4"><strong>3.1.1.2&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref293386672"></a>Apportionment of responsibilities in such a way that an individual’s responsibilities and accountabilities are clear and that there is separation of critical functions so as to guard against fraud and market abuse.</p>
+<p class="indentH4"><strong>3.1.1.3&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref286155659"></a>The business and affairs of the registered person must be adequately monitored and controlled at senior management and board level, as appropriate.</p>
+<p class="indentH3"><strong>3.1.2&nbsp;</strong>&nbsp; With respect to&nbsp;<a href="#_Ref353367591">3.1.1.1</a>, where a registered person is not a Jersey incorporated person, the span of control arrangements must be discussed and agreed with the JFSC in advance of their implementation. If an individual who is not a principal person but is actively involved in the day-to-day management of the business is to be included in the determination of span of control then the JFSC will consider the fitness and propriety of that person using the procedure established for considering principal persons and key persons.</p>
+<p class="indentH3"><strong>3.1.3&nbsp;</strong>&nbsp; All aspects of corporate governance arrangements must be subject to appropriately regular review to ensure their continuing adequacy in light of the registered person’s business activities and risk profiles, and include a periodic self-assessment, or external assessment, of the board’s effectiveness.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>Corporate governance is the system by which an organisation is directed and controlled. A corporate governance framework specifies the distribution of rights and responsibilities among different participants in the organisation and sets out the rules and procedures for making decisions. In the context of Principle 3, “risk” refers to&nbsp;<strong>all</strong>&nbsp;the risks that a registered person faces, or may face, as a business enterprise.</li>
+<li>Article 74(1) of the Companies (Jersey) Law 1991 states:
+<p>“A director, in exercising the director’s powers and discharging the director’s duties, shall–</p>
+<p class="indent">A.Act honestly and in good faith with a view to the best interests of the company; and</p>
+<p class="indent">B.Exercise the care, diligence and skill that a reasonably prudent person would exercise in comparable circumstances.</p>
+</li>
+<li>The requirements set out under paragraph&nbsp;<a href="#_Ref242509059">3.1.1</a>&nbsp;deal with both prudential and conduct of business issues referring as they do, to the&nbsp;<strong>direction of the business of the registered person itself.</strong>&nbsp;As such, this is not a provision that directly governs, for instance, appropriate signatory arrangements for the execution of a specific transaction or exercise of a particular discretion.</li>
+<li><a name="_Ref488311727"></a>For the purpose of&nbsp;<a href="#_Ref293386672">3.1.1.2</a>, all individuals having up to date job descriptions may best evidence apportionment of responsibilities. However, the terms of reference relating to particular offices or committees, or Board resolutions, may also demonstrate apportionment of responsibilities.</li>
+</ol>
+</div>
+<p class="indentH2"><strong>3.2&nbsp;</strong><a name="_Ref488311890"></a>Internal systems and controls</p>
+<p class="indentH3"><strong>3.2.1&nbsp;</strong>&nbsp; A registered person must maintain and adequately document policies and procedures that cover the operations of the business.</p>
+<p class="indentH3"><strong>3.2.2&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref476303523"></a>A registered person must comply with the JFSC’s policy on outsourcing as may be updated from time to time.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>With respect to&nbsp;<a href="#_Ref476303523">3.2.2</a>, the JFSC’s policy on outsourcing is available from the JFSC’s website.</li>
+<li>With respect to the various risk management provisions under principle 3 of the Code, particularly&nbsp;<a href="#_Ref286155648">3.1</a>,&nbsp;<a href="#_Ref488311890">3.2</a>&nbsp;and&nbsp;<a href="#_Ref488311914">3.4</a>, it is expected that a registered person will have specifically considered, amongst other risks, the risk of a cyber security incident, and have in place a corresponding documented policy to identify assets and risks, to protect them, to quickly detect potential cyber security incidents, to respond to contain the impact of an incident and to recover from it.</li>
+</ol>
+</div>
+<p><a name="_Ref260036586"></a>&nbsp;</p>
+<p class="indentH3"><strong>3.2.3&nbsp;</strong>&nbsp; A registered person must ensure that its internal systems and controls provide reasonable assurance that:</p>
+<p class="indentH4"><strong>3.2.3.1&nbsp;</strong>&nbsp; The business is planned and conducted properly and adequately and in an orderly manner, in accordance with local and any group management policies;</p>
+<p class="indentH4"><strong>3.2.3.2&nbsp;</strong>&nbsp; Transactions and commitments are entered into in accordance with documented general or specific authorities;</p>
+<p class="indentH4"><strong>3.2.3.3&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref286155674"></a>The accounting and other records of the registered person are complete, accurate and up to date and can be used to compile financial statements, management information and returns in line with applicable regulatory and legal requirements;</p>
+<p class="indentH4"><strong>3.2.3.4&nbsp;</strong>&nbsp; Management is able to assess and monitor the adequacy of capital in relation to the dynamics of the business operation, including risk profiles and the quality of its assets; and</p>
+<p class="indentH4"><strong>3.2.3.5&nbsp;</strong>&nbsp; Management is able to properly guard against involvement in financial crime and ensure that the registered person is complying with all relevant anti-money laundering legislation, and the Code.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>In seeking to ensure that these objectives are met, directors and senior management need to exercise their judgement in determining the scope and nature of the controls that are necessary (also having regard to their cost effectiveness). Once such controls are established, it is the responsibility of directors and senior management to monitor their effective operation on a regular basis. The JFSC considers that, for this to be achieved, it is necessary to establish a corporate culture that encapsulates the principles involved and employee compensation and incentive arrangements that support these. Supervisory assessment of registered persons will include consideration of these aspects.</li>
+<li>The anti-money laundering legislation must be observed in conjunction with the standards set out in the relevant AML/CFT Handbook. Failure to comply with anti-money laundering legislation or the relevant AML/CFT Handbook may form the basis for regulatory action by the JFSC. This is in addition to any legal action that may be taken by the judicial authorities for failure to comply with anti-money laundering legislation.</li>
+</ol>
+</div>
+<p class="indentH2"><strong>3.3&nbsp;</strong><a name="_Ref488311900"></a>Compliance Officer, Money-laundering Reporting Officer and Money Laundering Compliance Officer</p>
+<p class="indentH3"><strong>3.3.1&nbsp;</strong>&nbsp; The senior management (most often the board of directors) of the registered person is responsible for ensuring that it has robust arrangements for compliance with the regulatory framework.</p>
+<p class="indentH3"><strong>3.3.2&nbsp;</strong>&nbsp; A registered person must appoint an appropriately skilled and experienced person as its Compliance Officer.</p>
+<p class="indentH3"><strong>3.3.3&nbsp;</strong>&nbsp; The registered person must ensure that the Compliance Officer is responsible for:</p>
+<p class="indentH4"><strong>3.3.3.1&nbsp;</strong>&nbsp; Ensuring appropriate monitoring of operational performances and managing regulatory and compliance risk within the registered person which includes, where appropriate, promptly instigating action to remedy any deficiencies in such arrangements; and</p>
+<p class="indentH4"><strong>3.3.3.2&nbsp;</strong>&nbsp; Providing the principal point of contact on regulatory matters for employees and the JFSC.</p>
+<p class="indentH3"><strong>3.3.4&nbsp;</strong>&nbsp; The Compliance Officer must:</p>
+<p class="indentH4"><strong>3.3.4.1&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref259447833"></a>Have appropriate independence and direct access to the registered person’s Jersey board of directors or equivalent;</p>
+<p class="indentH4"><strong>3.3.4.2&nbsp;</strong>&nbsp; Have unfettered access to all business lines, support departments and information necessary to properly discharge their responsibilities;</p>
+<p class="indentH4"><strong>3.3.4.3&nbsp;</strong>&nbsp; Be based in Jersey;</p>
+<p class="indentH4"><strong>3.3.4.4&nbsp;</strong>&nbsp; Have appropriate status within the registered person to ensure that directors and senior management react to and determine whether to act upon his or her recommendations; and</p>
+<p class="indentH4"><strong>3.3.4.5&nbsp;</strong>&nbsp; Have sufficient resources to properly discharge the responsibilities of the position.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>Where temporary circumstances arise which result in a registered person having a limited or inexperienced compliance resource, the JFSC expects the registered person to support this area of operation as necessary, possibly by importing specialist skills or through the use of group resources.</li>
+<li>Where a registered person carries on money service business through a Jersey-based agent, it may apply to the JFSC for approval to designate an employee of its Jersey-based agent as its local Compliance Officer. A pre-condition for such approval will be a requirement for the registered person to undertake to provide the Compliance Officer with an appropriate level of support and training. Where such approval is granted by the JFSC, paragraph&nbsp;<a href="#_Ref259447833">3.3.4.1</a>&nbsp;above shall be read as requiring the Compliance Officer to have direct access to a senior officer of the registered person who performs equivalent functions and who has direct access to the registered person’s board of directors or equivalent.</li>
+<li>It is a requirement of the Money Laundering Order that a registered person must appoint a Money Laundering Reporting Officer and a Money Laundering Compliance Officer. The relevant AML/CFT Handbook sets out additional requirements for the registered person.</li>
+<li>The roles of Compliance Officer, Money Laundering Reporting Officer and Money Laundering Compliance Officer meet the definition of a key person, as defined by Article 1 of the FS(J)L; consequently, Article 14 of the FS(J)L applies.</li>
+<li>Where operating volumes are at a level for it to be appropriate, the Compliance Officer, the Money Laundering Reporting Officer and the Money Laundering Compliance Officer may be the same person.</li>
+</ol>
+</div>
+<p><a name="_Ref286155685"></a>&nbsp;</p>
+<p class="indentH2"><strong>3.4&nbsp;</strong><a name="_Ref488311914"></a>Record keeping</p>
+<p><strong>All Records</strong></p>
+<p class="indentH3"><strong>3.4.1&nbsp;</strong>&nbsp; A registered person must ensure that it has appropriate record keeping arrangements for compliance with the applicable laws (including anti‑money laundering legislation and company legislation), Orders and regulatory requirements, set by the Code or the relevant AML/CFT Handbook.</p>
+<p class="indentH3"><strong>3.4.2&nbsp;</strong>&nbsp; A registered person is expected to maintain and adequately document policies and procedures that cover the management of the business.</p>
+<p class="indentH3"><strong>3.4.3&nbsp;</strong>&nbsp; A registered person is expected to maintain such books and records in a language understood by the employees of the business. These must be translated into English at the request of the JFSC. A registered person must be able to readily retrieve them in Jersey and, if kept otherwise than in legible form, maintain them so as to be readable at a computer terminal in Jersey so that they may be produced in legible form without any delay.</p>
+<p class="indentH3"><strong>3.4.4&nbsp;</strong>&nbsp; A registered person must have a clearly documented policy and procedure regarding record retention that includes:</p>
+<p class="indentH4"><strong>3.4.4.1&nbsp;</strong>&nbsp; Periodic review of the accessibility and condition of paper and electronic records;</p>
+<p class="indentH4"><strong>3.4.4.2&nbsp;</strong>&nbsp; The adequacy of the safekeeping of records; and</p>
+<p class="indentH4"><strong>3.4.4.3&nbsp;</strong>&nbsp; Periodic testing of procedures relating to the retrieval of records.</p>
+<p><strong>Business Records</strong></p>
+<p class="indentH3"><strong>3.4.5&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref374536237"></a><a name="_Ref286155697"></a>A registered person must maintain an audit trail of material changes to the policies and procedures manual that covers the operation of the business, which is updated as required. When updates are made, the effective date of such updates must be recorded and the superseded records maintained.</p>
+<p class="indentH3"><strong>3.4.6&nbsp;</strong>&nbsp; The period for which business records must be kept is the later of:</p>
+<p class="indentH4"><strong>3.4.6.1&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref349738560"></a>The period required for any particular record by any law; or</p>
+<p class="indentH4"><strong>3.4.6.2&nbsp;</strong>&nbsp; Where records relate to significant corporate governance matters, such as management meeting minutes and risk assessment matters, or are records relating to requirements established by the Code - ten years from the date of the record.</p>
+<p class="indentH3"><strong>3.4.7&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref260037221"></a>A registered person must maintain a list containing the names of any agents it appoints to carry on money service business on its behalf and the addresses of premises which such agents operate from, and notify the JFSC, in writing, within five business days of any changes made to that list.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>Where a registered person carries on money service business through a Jersey-based agent, the requirement in&nbsp;<a href="#_Ref260037221">3.4.7</a>&nbsp;should be read as requiring the registered person to maintain a list of the agents it has appointed in Jersey (and not those appointed outside of Jersey).</li>
+<li>The Code does not establish any retention requirements for tape recordings of telephone conversations.</li>
+<li>With respect to&nbsp;<a href="#_Ref374536237">3.4.5</a>, a material change to the policies and procedures manual is one that necessitates communication to impacted staff.</li>
+<li>With respect to&nbsp;<a href="#_Ref349738560">3.4.6.1</a>, the JFSC considers that laws relating to companies, tax, proceeds of crime, and data protection may be relevant.</li>
+</ol>
+</div>
+<p><strong>Client records</strong></p>
+<p class="indentH3"><strong>3.4.8&nbsp;</strong>&nbsp; A registered person is expected to keep adequate, orderly and up to date client records which are in line with the requirements established by Part&nbsp;4 of the Money Laundering Order and as set out in the relevant AML/CFT Handbook.</p>
+<p class="indentH3"><strong>3.4.9&nbsp;</strong>&nbsp; Where the Code requires client related records to be kept, which are in addition to the records required by the Money Laundering Order, these should be kept for at least five years from the date of the event to which the record relates.</p>
+<p class="indentH2"><strong>3.5&nbsp;</strong><a name="_Ref488311927"></a><a name="_Ref286155711"></a>Complaints</p>
+<p class="indentH3"><strong>3.5.1&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref435713243"></a>A registered person must establish and maintain an effective complaint handling system and procedures.</p>
+<p class="indentH3"><strong>3.5.2&nbsp;</strong>&nbsp; The complaint handling system and procedures must include provision for:</p>
+<p class="indentH4"><strong>3.5.2.1&nbsp;</strong>&nbsp; A complainant to be advised in writing when their complaint is considered closed and, where the complaint is not upheld, for the reason(s) for rejecting the complaint to be clearly stated; and</p>
+<p class="indentH4"><strong>3.5.2.2&nbsp;</strong>&nbsp; At the same time, advise the complainant in writing:</p>
+<p class="indentH5">3.<strong>5.2.2.1&nbsp;</strong>&nbsp; That if they are dissatisfied with its response to the complaint, the complainant may be able to refer the complaint to the Channel Islands Financial Ombudsman;</p>
+<p class="indentH5">3.<strong>5.2.2.2&nbsp;</strong>&nbsp; Of the contact details for the Channel Islands Financial Ombudsman (namely its website address, postal address, email address and telephone number).</p>
+<p class="indentH3"><strong>3.5.3&nbsp;</strong>&nbsp;&nbsp;<a name="_Ref435713273"></a>As soon as it becomes aware, a registered person must notify the JFSC in writing if the Channel Islands Financial Ombudsman, using the powers it has under Article 16 of the Financial Services Ombudsman (Jersey) Law 2014, requires the registered person to pay compensation to a complainant or directs the registered person to take other specified steps in relation to the complainant.</p>
+<p class="indentH3"><strong>3.5.4&nbsp;</strong>&nbsp; A registered person must deal with the Channel Islands Financial Ombudsman in an open and co-operative manner.</p>
+<div class="notes">
+<p>Note:</p>
+<ol type="1">
+<li>With respect to&nbsp;<a href="#_Ref435713243">3.5.1</a>, a registered person may wish to consider adopting and following the “Model complaint-handling procedure for financial services providers” published by the Channel Islands Financial Ombudsman.</li>
+<li>With respect to&nbsp;<a href="#_Ref435713273">3.5.3</a>, “as soon as it becomes aware” applies from the point at which the registered person knows, or has reasonable grounds for believing, that any of the matters stated has occurred or may be about to occur, even where it is outside the control of the registered person.</li>
+</ol>
+</div>
+<p><a name="_Ref286155721"></a>&nbsp;</p>
+<p class="indentH2"><strong>3.6&nbsp;</strong><a name="_Ref488311938"></a>Integrity and competence</p>
+<p><strong>Integrity</strong></p>
+<p class="indentH3"><strong>3.6.1&nbsp;</strong>&nbsp; A registered person must ensure that its directors, senior managers and all other employees are fit and proper for their roles. The term “employees” includes not only staff directly employed by the registered person but also indirect employees such as temporary or contracted employees and other contracted service providers, and in the case of a sole trader, the proprietor of the business.</p>
+<p><strong>Competence</strong></p>
+<p class="indentH3"><strong>3.6.2&nbsp;</strong>&nbsp; Without limiting paragraph 3.6.1, directors and senior managers will be expected to be able to demonstrate proper competence.</p>
+<p class="indentH3"><strong>3.6.3&nbsp;</strong>&nbsp; A registered person must ensure that its employees are appropriately competent on an on-going basis and trained adequately and appropriately. Competence may comprise a balance between relevant qualifications held, training received and experience gained, having regard, amongst other things, to the nature of the work carried out by the employee and the level of his or her responsibility.</p>
+<p class="indentH2"><strong>3.7&nbsp;</strong><a name="_Ref528320433"></a>Payment of financial penalties</p>
+<p class="indentH3"><strong>3.7.1&nbsp;</strong><a name="_Ref528312320"></a>A registered person must not pay a financial penalty imposed by the JFSC on any other person.</p>
+<p class="indentH3"><strong>3.7.2&nbsp;</strong><a name="_Ref528312954"></a>A registered person must not enter into, arrange, claim on or make a payment under a contract of insurance that is intended to have, or has or would have, the effect of indemnifying any person against all or part of a financial penalty imposed by the JFSC.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>Paragraph&nbsp;<a href="#_Ref528312954">3.7.2</a>&nbsp;is not intended to prevent a registered person from entering into, arranging, claiming on or making any payment under a contract of insurance which indemnifies any person against all or part of the costs of defending JFSC enforcement action or any costs the person may be ordered to pay to the JFSC.</li>
+</ol>
+</div>
+<h2>4 &nbsp;&nbsp;<a name="_Ref293385868"></a>A registered person must be transparent in its money service business arrangements.</h2>
+<p class="indentH2"><strong>4.1&nbsp;</strong><a name="_Ref259190780"></a>A registered person must inform its clients that it is regulated by the Jersey Financial Services JFSC.</p>
+<p class="indentH2"><strong>4.2&nbsp;</strong>A registered person must communicate information to clients in a way that is adequate, fair and not misleading. A registered person must also provide confirmation, in legible form, of any transaction effected for the client.</p>
+<p class="indentH2"><strong>4.3&nbsp;</strong>A registered person must be open and transparent about its charges - effectively a “no surprises” policy. Publication of scales of charges, which are available on request, could assist in this regard.</p>
+<p class="indentH2"><strong>4.4&nbsp;</strong>A registered person must ensure that its advertising and promotional literature is clear, fair, reasonable and is not deceptive or misleading.</p>
+<h2>5 &nbsp;&nbsp;<a name="_Ref286155732"></a><a name="_Ref290031399"></a>A registered person is expected to deal with the JFSC in an open and co‑operative manner.</h2>
+<p><strong>General Notification</strong></p>
+<p class="indentH2"><strong>5.1&nbsp;</strong><a name="_Ref348015968"></a><a name="_Ref428455859"></a>A registered person must advise the JFSC in writing as soon as it becomes aware of any matter that might reasonably be expected to affect its registration or be in the interests of its clients/investors to disclose. Wherever possible, this notification must include details of the steps the registered person has taken, or intends to take, to mitigate the matter.</p>
+<p class="indentH2"><strong>5.2&nbsp;</strong>A registered person must comply with the notification requirements of the JFSC’s policy on outsourcing as may be updated from time to time.</p>
+<div class="notes">
+<p>Notes:</p>
+<ol type="1">
+<li>There is a need for candour and co-operation in a registered person’s relationship with the JFSC. Article 28(3) of the FS(J)L provides that a registered person, or formerly registered person, shall be guilty of an offence if he or she fails to provide the JFSC with any information in his or her possession, knowing or having reasonable cause to believe that or being reckless as to whether:
+<p class="indent">A.The information is relevant to the exercise by the JFSC of its functions under the FS(J)L in relation to the registered person or formerly registered person; and</p>
+<p class="indent">B.The withholding of the information is likely to result in the JFSC being misled as to any matter which is relevant to and of material significance for the exercise of those functions in relation to the registered person or formerly registered person.</p>
+</li>
+<li>The scope of Principle 5 is extended to the provision of information and the notification of events concerning non-regulated activities and other members of the corporate group, to the extent that such information or events might reasonably be expected to have a material impact on the registered person in Jersey.</li>
+<li>The JFSC considers that the obligations of a registered person under this Principle include the timely provision of data required in connection with a registered person’s regulatory fees and the timely payment of fees due.</li>
+<li id="notesInsert0">With respect to&nbsp;<a href="#_Ref348015968">5.1</a>, “as soon as it becomes aware” applies from the point at which the registered person knows, or has reasonable grounds for believing, that any of the matters referred to have occurred or may be about to occur, even where it is outside the control of the registered person. The JFSC considers the following indicative that notification is necessary. Any matter which:
+<p class="indent">A.Is material to the JFSC’s ability to undertake its function of supervision of financial services provided in or from within Jersey;</p>
+<p class="indent">B.The registered person considers is material to, or may make it impractical for them to comply with, one or more of:</p>
+<ol type="i">
+<li>The provisions of the FS(J)L or any Regulation or Order made under it;</li>
+<li>Compliance with a registration condition;</li>
+<li>Compliance with a direction issued by the JFSC;</li>
+<li>The Code;</li>
+<li>The fitness and propriety of their principal persons or key persons, especially where the registered person has imposed a formal disciplinary measure or sanction.</li>
+</ol>
+</li>
+</ol>
+</div>
+<p><strong>Notifications arising in other parts of the Code</strong></p>
+<p class="indentH2"><strong>5.3&nbsp;</strong>A registered person is required to comply with notification requirements established in other parts of the Code:</p>
+<p class="indentH3"><strong>5.3.1&nbsp;</strong>&nbsp;&nbsp;<a href="#_Ref260037221">3.4.7</a>&nbsp;sets a notification requirement in respect of changes to the details (name and address) of any agents appointed to carry on money service business on a registered person’s behalf.</p>
+<p class="indentH3"><strong>5.3.2&nbsp;</strong>&nbsp;&nbsp;<a href="#_Ref435713273">3.5.3</a>&nbsp;sets a notification requirement where the Channel Islands Financial Ombudsman requires the registered person to pay compensation to a complainant or directs the registered person to take other specified steps in relation to the complainant.</p>
+<p><strong>Notifying or providing information via the&nbsp;</strong><strong>JFSC’s</strong><strong>&nbsp;online portal</strong></p>
+<p class="indentH2"><strong>5.4&nbsp;</strong>Where the JFSC so specifies (whether in the Code or otherwise) a registered person must notify or provide information by means of the JFSC’s online portal.</p>
+<p class="indentH2"><strong>5.5&nbsp;</strong>If, because of a systems failure of any kind, a registered person is unable to access the online portal to make a relevant notification or provide required information it must notify the JFSC in writing within one business day of the systems failure being identified.</p>
+<p><a href="#_ednref1">[i]</a>&nbsp;Registered person, principal person and key person are defined in Article 1 of the FS(J)L.&nbsp;<a name="_edn1"></a></p>
+                        <!--body end-->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>
+
+            
+        </main>
+
+        <div class="page-feedback">
+            <div class="page-feedback-grid grid">
+                <div class="page-feedback-question">
+                    <h3>Was this page useful?</h3>
+                    <div class="page-feedback-answer">
+                        <a class="button" id="pageFeedbackYes" onclick="feedbackYes()">Yes</a>
+                        <a class="button" id="pageFeedbackNo" onclick="feedbackNo()">No</a>
+                    </div>
+                </div>
+                <div class="page-feedback-yes" style="display:none;">
+                    <p>Thank you for your feedback.</p>
+                </div>
+                <div class="page-feedback-no" style="display:none;">
+                <p>To help us improve, tell us more about your visit today. <a href="https://www.smartsurvey.co.uk/s/OMGVVQ/" target="_blank">Please fill in this short feedback survey.</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function feedbackYes(){
+                $('.page-feedback-yes').show();
+                $('.page-feedback-question').hide();
+            }
+            function feedbackNo(){
+                $('.page-feedback-no').show();
+                $('.page-feedback-question').hide();
+            }
+        </script>
+
+        <footer role="contentinfo" class="main-footer">
+
+            <div class="footer-background-logo" >
+                <img src="/images/full-graphic.svg" />
+            </div>
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <img class="footer-logo" src="/images/JFSC-logo-Stacked-white.svg" />
+                </div>
+
+                <nav>
+                            <section class="footer-menu">
+                                <h5>Stay informed</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/subscribe-to-our-news-and-updates/">Subscribe to our emails</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/company/jersey-financial-services-commission" target="_blank">Follow us on LinkedIn</a>
+                                        </li>
+                                        <li>
+                                            <a href="/subscribe-to-our-rss/">Subscribe to RSS</a>
+                                        </li>
+                                </ul>
+                            </section>
+                            <section class="footer-menu">
+                                <h5>Get in touch</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/about-us/contact-us/">Contact us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/protecting-the-public/complaints-reporting-and-whistleblowing/">Complaints and whistleblowing</a>
+                                        </li>
+                                        <li>
+                                            <a href="/press-office/">Press enquiries</a>
+                                        </li>
+                                </ul>
+                            </section>
+                            <section class="footer-menu">
+                                <h5>About</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/about-us/">About us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about-us/directors/">Directors</a>
+                                        </li>
+                                        <li>
+                                            <a href="/privacy-policy/">Privacy policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="/publications/">Publications</a>
+                                        </li>
+                                </ul>
+                            </section>
+                </nav>
+            </div>
+
+            <div class="bottom-section">
+                <div class="copyright">
+                    &copy; 2026 Jersey Financial Services Commission
+                </div>
+                    <ul class="social">
+                            <li><a href="https://www.facebook.com/jerseyfsc" target="_blank" class="facebook" title="Facebook">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/jersey-financial-services-commission" target="_blank" class="linkedin" title="LinkedIn">LinkedIn</a></li>
+                    </ul>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="/scripts/libraries/van11y-accessible-tab-panel-aria-2.0.0/van11y-accessible-tab-panel-aria.min.js?20261109"></script>
+        <script type="text/javascript" src="/scripts/libraries/details-polyfill/details-polyfill.js?20261109"></script>
+    </div>
+</body>
+
+</html>

@@ -1,16 +1,16 @@
-url: https://website.rbi.org.in/documents/87730/39016390/PSO+PDF.pdf
-bytes: 153657  starts: b'\r\n<!DOCT'
-error: PdfminerException(PDFSyntaxError('No /Root object! - Is this really a PDF?'))
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.rbi.org.in/Scripts/PublicationsView.aspx?Id=12043
+bytes: 211376  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'Name of the Authorised Entity', 'type': 'Payment System Authorised', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Sr. No.', 'Name of the Authorised Entity', 'Address of the Principal Office', 'Payment System Authorised', 'Date of issue of Authorisation & Validity Period (given in brackets)']
+data rows: 269  kept: 144
+type values: [('Prepaid Payment Instruments', 19), ('Bharat Bill Payment Operating Unit (BBPOU) under Bharat Bill Payment System (BBPS)', 10), ('PA-O', 3), ('Installation and operation of WLAs', 3), ('National Financial Switch (NFS)', 2), ('Securities segment covering Govt Securities', 1), ('Repo transactions in corporate debt securities', 1), ('Interoperable Mobile and Net Banking solution- ‘Banking Connect’', 1), ('Bharat Bill Payment Central Unit (BBPCU)', 1), ('Affiliation of credit cards/debit cards/prepaid cards issued by banks and co-branded credit cards issued by non-banking financial companies (NBFCs) or any other entity approved by the Reserve Bank of India.', 1), ('Affiliation of credit card issued by banks or any other entity approved by the Reserve Bank of India.', 1), ('Affiliation of credit cards/ debit cards/ prepaid cards issued by banks and co-branded credit cards issued by non-banking financial companies (NBFCs) or any other entity approved by the Reserve Bank of India.', 1), ('Affiliation of RuPay Cards (debit cards/ prepaid cards) issued by banks and co-branded credit cards issued by non-banking financial companies (NBFCs) or any other entity approved by the RBI.', 1), ('Affiliation of credit cards/ debit cards/ prepaid cards issued by banks and co-branded credit cards issued by non-banking financial companies (NBFCs) or any other entity approved by the RBI.', 1), ('Money Transfer Service (MTSS)– cross border in-bound service (customer to customer) known as “EzRemit”', 1), ('MTSS- cross border in-bound service (customer to customer) known as “Ria Money Transfer”', 1), ('MTSS- cross border in-bound service (customer to customer) known as “MoneyGram or MoneyGram International”', 1), ('MTSS- cross border in-bound service (customer to customer)', 1), ('MTSS- cross border in-bound service (customer to customer) known as “Instant Cash”', 1), ('MTSS- cross border in-bound service (customer to customer) known as “Western Union or WU”', 1), ('‘BANCS’ – ATM network', 1), ('CASHNET – ATM Network', 1), ('Bilateral ATM sharing arrangement with Everest Bank of Nepal', 1), ('State Bank Group ATM network', 1), ('Prepaid Payment Instruments known as “ABCD”', 1), ('Prepaid Payment Instruments known as “Amazon Pay balance: Money”', 1), ('Prepaid Payment Instruments known as “Jupiter Account”', 1), ('Prepaid Payment Instruments known as “GoWallet”', 1), ('Prepaid Payment Instruments known as ‘Cashfree Payments’', 1), ('Prepaid Payment Instruments known as ‘CSCPay’', 1), ('Prepaid Payment Instruments for Mass Transit Systems', 1), ('Prepaid Payment Instruments known as ‘EBIXCASH’', 1), ('Prepaid Payment Instruments known as ‘Arthyam’', 1), ('Prepaid Payment Instruments known as ‘Quick Ride Wallet’', 1), ('Prepaid Payment Instruments known as ‘Ongo’', 1), ('Prepaid Payment Instruments known as ‘Consumer Choice Payments’', 1), ('Prepaid Payment Instruments knows as ‘Junio’', 1), ('Prepaid Payment Instruments known as QuikWallet/ LivQuik', 1), ('Prepaid Payment Instruments known as ‘mpurse wallet’', 1), ('Prepaid Payment Instruments known as ‘Mswipe’', 1)]
 first lines:
 ''
-'<!DOCTYPE html>'
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+'<html lang="en"  xmlns="http://www.w3.org/1999/xhtml">'
+'<head>'
+'    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />'
 ''
-'<html xmlns="http://www.w3.org/1999/xhtml" lang="en">'
-'<head id="Head1"><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><title>'
-'\tHome | Official website of Reserve Bank of India'
-'</title><meta name="description" content="Official website of Reserve Bank of India" /><meta name="author" content="author" /><meta name="viewport" content="width=device-width" /><link href="Styles/960.css?v=3.0" rel="stylesheet" type="text/css" />'
-'    <link href="Includes1/rbi.css?v=7.3" rel="stylesheet" type="text/css" />'
+'     <title>Publications | Official Website of Reserve Bank of India </title>'

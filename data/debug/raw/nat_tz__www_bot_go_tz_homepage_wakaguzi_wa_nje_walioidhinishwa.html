@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+
+<html lang="sw">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/touch-icon-ipad-retina.png">
+
+    <link href="/Scripts/datatable/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="/Scripts/datatable/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <title>Wakaguzi wa nje walioidhinishwa - Bank of Tanzania</title>
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script src="/js/fa-v4-shims.js"></script>
+    <link href="/css/select2.css" rel="stylesheet" />
+    <link href="/css/jquery-confirm.min.css" rel="stylesheet" />
+    <link href="/css/accordionStyle.css" rel="stylesheet" />
+    <link href="/css/Menucss.css" rel="stylesheet" />
+    <link href="/css/feedbackStyles.css" rel="stylesheet" />
+
+    <link href="/css/jquery-ui.css" rel="stylesheet"/>
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="/css/icon.css" rel="stylesheet"/>
+<link href="/css/swiper.css" rel="stylesheet"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/toastr.css" rel="stylesheet"/>
+<link href="/bootstrap/css/bootstrap-grid.css" rel="stylesheet"/>
+<link href="/css/photoswipe.css" rel="stylesheet"/>
+<link href="/css/nouislider.css" rel="stylesheet"/>
+<link href="/css/photoswipe-default-skin/default-skin.css" rel="stylesheet"/>
+<link href="/css/dataTables.jqueryui.min.css" rel="stylesheet"/>
+<link href="/css/responsive.jqueryui.min.css" rel="stylesheet"/>
+<link href="/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<link href="/css/buttons.dataTables.min.css" rel="stylesheet"/>
+<link href="/css/Custom_.css" rel="stylesheet"/>
+
+    
+    <link href="/css/public-ui.css?v=639264582038513788" rel="stylesheet" />
+    <script src="/Scripts/modernizr-2.6.2.js"></script>
+<script src="/Scripts/modernizr-2.8.3.js"></script>
+
+
+
+</head>
+
+<body class="site-shell">
+    <a href="#main-content" class="sr-only sr-only-focusable">Skip to content</a>
+
+
+    <script src="/Scripts/internetExplorer.js" type="text/javascript"></script>
+    
+<style>
+    .ui-autocomplete-loading {
+        background: white url("../Content/images/ajax-loader.gif") right center no-repeat;
+    }
+</style>
+
+<div class="top-header2">
+    <div class="container-fluid limited">
+        <input type="hidden" id="sessionLanguage" value="sw" />
+        <div class="row">
+
+            <div class="col-lg-12 col-md-12 d-none d-md-block">
+                <div class="row">
+                    <div class="col-lg-1 col-md-1 col-sm-6">
+                        <div class="logo-img mt-1">
+                            <img class="img-fluid img-responsive float-left" src="/img/TanzaniaEmblem2.svg" alt="Government of Tanzania">
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-6 d-none d-md-block">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav class="nav pull-right mt-0 top-utility">
+
+                                        <a class="nav-a link-divider" href="https://www.bot.go.tz/BankSupervision/ApprovedAuditors?lang=en" id="lang">
+                                            <img alt="english" src="/img/en.png" />
+                                            English
+                                        </a>
+
+                                    <a class="nav-a link-divider" href="/Home/ContactUs">
+                                        <i class="fa fa-phone"></i>
+                                        Wasiliana nasi
+                                    </a>
+
+                                    <a class="nav-a link-divider" href="/FAQ" title="Frequently asked Questions">
+                                        Maswali na Majibu
+                                    </a>
+
+                                    <a class="nav-a" href="#" data-toggle="modal" data-target="#siteMapModal" title="Sitemap">
+                                        Ramani
+                                    </a>
+
+                                    
+                                    <span class="nav-socials">
+                                        <a class="nav-social" href="https://www.facebook.com/BankOfTanzaniaOfficial"
+                                           target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                                        </a>
+                                        <a class="nav-social" href="https://www.youtube.com/channel/UCML8A0jRIu8csMXjEI8o-ZQ"
+                                           target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                        </a>
+                                        <a class="nav-social nav-social--hidden" href="https://twitter.com/BankOfTanzania"
+                                           target="_blank" rel="noopener noreferrer" aria-label="X (formerly Twitter)">
+                                            
+                                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="1em" height="1em" style="vertical-align:-0.125em"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                        </a>
+                                        <a class="nav-social" href="https://www.instagram.com/bankoftanzania_/"
+                                           target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </span>
+                                </nav>
+                            </div>
+                            <div class="col-md-12 mb-0">
+                                
+                                <center>
+                                    <span class="firstTop-heading">
+                                        <b>
+                                            BENKI KUU YA TANZANIA
+                                        </b>
+                                    </span>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-6">
+                        <div class="logo-img mt-1">
+                            <a href="/">
+                                
+                                <img src="/img/BankOfTanzania_logo_sw.png" alt="BENKI KUU YA TANZANIA" class="img-responsive" style="max-height:100px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row d-md-none">
+            <div class="col-12">
+                <a href="/" class="mobile-brand">
+                    <img src="/img/TanzaniaEmblem2.svg" alt="" class="mobile-brand__logo" aria-hidden="true">
+                    <span class="mobile-brand__text">
+                        BENKI KUU YA TANZANIA
+                    </span>
+                    <img src="/img/BankOfTanzania_logo_sw.png" alt="" class="mobile-brand__logo" aria-hidden="true">
+                </a>
+            </div>
+        </div>
+
+    </div>
+    
+    <img src="/img/FlagColours.jpg" class="d-none d-md-block rounded-top w-100" style="height:auto;object-fit:contain">
+</div>
+<!-- /Top Header -->
+<!-- Middle Header -->
+<div class="middle-header" id="middle-header" style="background-color:#202020;">
+    <div class="container-fluid limited position-relative">
+        <div class="input-search-wrapper invisible">
+            
+<form action="/Home/Search" class="form form-horizontal no-ajax-submit" id="searchForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="3tvEY59AEUG_qOV8bifUl0E023XQZuvc7IQkMIuEoI73VIoMg2NwRyF_pUv0zlmjOtzU2vtBQcOUi3UsU-_Wav7EKBOuZpaKs_O4xyYTIBA1" />                <input name="SearchText" type="text" class="input-sm form-control" id="input-search" placeholder="Tafuta.." aria-label="Search">
+                <span class="rounded-circle bg-dark text-white toggle-search"><i class="small material-icons">close</i></span>
+                <input type="submit" hidden="hidden">
+</form>        </div>
+
+        <div class="row rounded-bottom" style="padding:0px;margin:0px">
+            <div class="col-4 d-flex d-md-none align-items-center">
+                <a href="#" class="text-white" data-toggle="modal" data-target="#menuModal"><i class="material-icons md-2">menu</i></a>
+            </div>
+            
+            <div class="col d-none d-md-block position-static ">
+                <nav class="navbar nav main-nav justify-content-center justify-content-md-start position-static p-0">
+                    <a class="nav-link" href="/"><i class="fa fa-home" style="color:goldenrod;font-size:0.9em"></i> Mwanzo</a>
+                    <div class="nav-item dropdown position-static">
+                        <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Kuhusu Benki Kuu</a>
+                        <div class="dropdown-menu dropdown-menu-mega animate dropdown-menu-bg">
+                            <form>
+                                <!-- added <form> tags to prevent dropdown closed when clicked inside dropdown-menu -->
+                                <div class="row">
+                                    <div class="col-3 col-lg-4">
+                                        <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Kuhusu Benki Kuu</h6>
+                                        <div class="list-group list-group-no-border list-group-sm">
+                                            <a href="/Home/History" class="list-group-item list-group-item-action dropdownlist-bg">Historia ya Benki Kuu</a>
+                                            <a href="/Home/Mandate" class="list-group-item list-group-item-action dropdownlist-bg">Jukumu la Benki Kuu</a>
+                                            <a href="/BOTAct2006.pdf" class="list-group-item list-group-item-action dropdownlist-bg" target="_blank" title="Sheria ya Benki Kuu, 2006">Sheria ya Benki Kuu, 2006</a>
+                                            <a href="/Home/ContactUs" class="list-group-item list-group-item-action dropdownlist-bg">Wasiliana nasi</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-lg-5">
+                                        <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Uongozi wa Shirika</h6>
+                                        <div class="list-group list-group-no-border list-group-sm" id="list-mega" data-children=".list-submega">
+                                            <a href="/Board" class="list-group-item list-group-item-action dropdownlist-bg">Bodi ya Wakurugenzi</a>
+                                            <div class="list-group-collapse list-submega">
+                                                <a href="/Home/OrganizationStructure" class="list-group-item list-group-item-action dropdownlist-bg">Muundo wa Shirika</a>
+                                                <div class="collapse" id="list-submega-1" data-parent="#list-mega">
+                                                    <div class="list-group">
+                                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="#">Link one</a>
+                                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="#">Link one</a>
+                                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="#">Link one</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="/Governors" class="list-group-item list-group-item-action dropdownlist-bg">Magavana wa Sasa na Waliopita</a>
+                                            <a href="/Adverts/PressRelease/sw/2023070516020902.pdf" class="list-group-item list-group-item-action dropdownlist-bg">Mkataba wa Huduma kwa Wateja</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 col-lg-3">
+                                        <div class="mt-3" id="list-mega" data-children=".list-submega">
+                                            <img src="/img/aboutBOT.jpg" class="img-fluid hover-style2 img-responsive" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown position-static">
+                        <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Kazi za Msingi
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-mega animate dropdown-menu-bg">
+                            <form>
+                                <!-- added <form> tags to prevent dropdown closed when clicked inside dropdown-menu -->
+                                <div class="row">
+                                    <div class="col-3 col-lg-4">
+                                        <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Sera ya Fedha</h6>
+                                        <div class="list-group list-group-no-border list-group-sm">
+                                            <a class="list-group-item list-group-item-action dropdownlist-bg" href="/MPS">
+                                                Mfumo wa Sera ya Fedha
+                                            </a>
+                                            <a class="list-group-item list-group-item-action dropdownlist-bg" href="/MPS/Decisions">
+                                                Utekelezaji wa Sera ya Fedha
+                                            </a>
+
+                                            
+                                            
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                                    Banking Services
+                                                </h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/Bankingservices">
+                                                        Huduma za Kibenki
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Masoko ya Fedha</h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket">
+
+                                                        Kuhusu Masoko ya Fedha
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket/FMExhange">
+                                                        Akiba ya Fedha za Kigeni
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket/DomesticDept">
+                                                        Deni la Ndani la Serikali
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                                    Usimamizi wa sekta ya fedha
+                                                </h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision">
+                                                        Utangulizi
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Objectives">
+                                                        Majukumu
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Mandate">
+                                                        Usajili wa taasisi za fedha
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Regulations">
+                                                        Sheria na Kanuni
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/ToolAndMethodology">
+                                                        Nyenzo za Usimamizi
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Institutions">
+                                                        Orodha ya Taasisi Zinazosimamiwa na Benki Kuu
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/digitalLanding">
+                                                        Orodha ya Majukwaa na Program Tumizi Ambazo Hazijaidhinishwa na Benki Kuu
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/ApprovedAuditors">
+                                                        Wakaguzi wa nje walioidhinishwa
+                                                    </a>
+
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                                    Noti na Sarafu
+                                                </h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency">
+                                                        Sarafu
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/CurrencyMng">
+                                                        Usimamizi wa Sarafu
+                                                    </a>
+
+
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/BanknotesAndCoinsIssued">
+                                                        Noti na sarafu zilizotolewa na Benki Kuu ya Tanzania
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/RightAndObligations">
+                                                        Haki na wajibu wa mteja wa benki katika kufanya miamala
+                                                    </a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/CommemorativeBanknotesAndCoin">
+                                                        Noti na Sarafu za Kumbukumbu (numismatics)
+                                                    </a>
+
+
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                                    Ustawi na huduma Jumuishi za Kifedha
+                                                </h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI">Ustawi na huduma Jumuishi za Kifedha</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/FinancialInclusion">Huduma Jumuishi za Kifedha</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ObjectivesAndFunctions">Malengo na Majukumu</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Sandbox">Mazingira ya Majaribio wa Ubunifu wa Teknolojia</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ConsumerProtection">Kumlinda mtumiaji wa huduma za kifedha</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Deepening"> Ustawi wa Kifedha</a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ReportsAndPublications"> Ripoti na Machapisho ya Huduma Jumuishi za Kifedha</a>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                                    Mifumo ya Malipo ya Taifa
+                                                </h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem">
+                                                        Overview
+                                                    </a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Objectives">
+                                                        Majukumu ya Mifumo ya Malipo ya Taifa
+                                                    </a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Systems">
+                                                        Mifumo ya Malipo iliyopo
+                                                    </a>
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Oversight">
+                                                        Usimamizi wa Mifumo ya Malipo
+                                                    </a>
+                                                    
+                                                    
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Initiatives">
+                                                        Juhudi za Kuboresha Mifumo ya Malipo
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            
+                            <div class="nav-item dropdown position-static">
+                                <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Machapisho</a>
+                                <div class="dropdown-menu dropdown-menu-mega animate dropdown-menu-bg">
+                                    <form>
+                                        <!-- added <form> tags to prevent dropdown closed when clicked inside dropdown-menu -->
+
+                                        <div class="row" style="max-height:500px; overflow-y:auto">
+
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Sheria, Kanuni, Waraka, Miongozo</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/Filter/37" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Sheria
+                                                                </a>
+                                                                <a href="/Publications/Filter/45" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Makubaliano
+                                                                </a>
+                                                                <a href="/Publications/Filter/39" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Nyaraka
+                                                                </a>
+                                                                <a href="/Publications/Filter/46" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Kanuni za Maadili
+                                                                </a>
+                                                                <a href="/Publications/Filter/48" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mifumo
+                                                                </a>
+                                                                <a href="/Publications/Filter/40" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Miongozo
+                                                                </a>
+                                                                <a href="/Publications/Filter/43" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taratibu
+                                                                </a>
+                                                                <a href="/Publications/Filter/38" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Kanuni
+                                                                </a>
+                                                                <a href="/Publications/Filter/44" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Sheria
+                                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Machapisho mengineyo</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/Filter/41" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Financial Sector Supervision Annual Report
+                                                                </a>
+                                                                <a href="/Publications/Filter/53" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Jarida la Uchumi Wetu
+                                                                </a>
+                                                                <a href="/Publications/Filter/7" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Kongamano la Taasisi za Fedha
+                                                                </a>
+                                                                <a href="/Publications/Filter/10" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mihadhara ya Kumbukumbu ya Gilman Rutihinda
+                                                                </a>
+                                                                <a href="/Publications/Filter/11" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Jarida la Utafiti
+                                                                </a>
+                                                                <a href="/Publications/Filter/12" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Hotuba
+                                                                </a>
+                                                                <a href="/Publications/Filter/5" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Uwekezaji Tanzania
+                                                                </a>
+                                                                <a href="/Publications/Filter/9" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa ya Tathmini ya Sekta ya Utalii
+                                                                </a>
+                                                                <a href="/Publications/Filter/47" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Maadhimisho ya BOT
+                                                                </a>
+                                                                <a href="/Publications/Filter/8" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Makrasha ya Kazi
+                                                                </a>
+                                                                <a href="/Publications/Filter/6" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Uwekezaji Zanzibar
+                                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Machapisho ya mara kwa mara</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/Filter/34" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa mbalimbali za kila Mwaka
+                                                                </a>
+                                                                <a href="/Publications/Filter/36" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mjumuisho wa taarifa za uchumi za kanda
+                                                                </a>
+                                                                <a href="/Publications/Filter/51" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Foreign Exchange Derivatives
+                                                                </a>
+                                                                <a href="/Publications/Filter/4" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Uthabiti wa Sekta ya Fedha
+                                                                </a>
+                                                                <a href="/Publications/Filter/49" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Ripoti ya MPC
+                                                                </a>
+                                                                <a href="/Publications/Filter/3" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Muhtasari wa Tamko la Sera ya Fedha
+                                                                </a>
+                                                                <a href="/Publications/Filter/1" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Tathmini za Uchumi za kila Mwezi
+                                                                </a>
+                                                                <a href="/Publications/Filter/2" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa za Uchumi za Robo Mwaka
+                                                                </a>
+                                                                <a href="/Publications/Filter/50" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa za Takwimu za Robo Mwaka
+                                                                </a>
+                                                                <a href="/Publications/Filter/52" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mpango Mkakati
+                                                                </a>
+                                                                <a href="/Publications/Filter/54" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Weekly Financial Markets Report
+                                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Machapisho ya taarifa za fedha</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/Filter/19" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa ya Fedha ya Mwaka
+                                                                </a>
+                                                                <a href="/Publications/Filter/17" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Taarifa ya Fedha ya Mwezi
+                                                                </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Machapisho ya Mifumo ya Malipo ya Taifa</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/NPS/BankSortCodes.xlsx" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Bank Acquirer Codes
+                                                                </a>
+                                                                <a href="/Publications/NPS/ListofMtos.pdf" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Kampuni za kufanya miamala ya fedha
+                                                                </a>
+                                                    </div>
+                                                </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown position-static">
+                                <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Takwimu</a>
+                                <div class="dropdown-menu dropdown-menu-mega animate dropdown-menu-bg">
+                                    <form>
+                                        <!-- added <form> tags to prevent dropdown closed when clicked inside dropdown-menu -->
+
+                                        <div class="row" style="max-height:500px; overflow-y:auto">
+
+                                                <div class="col-md-4 float-left">
+                                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Machapisho ya takwimu za uchumi</h6>
+                                                    <div class="list-group list-group-no-border list-group-sm">
+                                                                <a href="/Publications/Filter/15" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mwaka wa Kalenda
+                                                                </a>
+                                                                <a href="/Publications/Filter/16" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Mwaka wa Fedha
+                                                                </a>
+                                                                <a href="/Publications/Filter/13" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Kila mwezi
+                                                                </a>
+                                                                <a href="/Publications/Filter/14" class="list-group-item list-group-item-action dropdownlist-bg">
+                                                                    Robo Mwaka
+                                                                </a>
+                                                    </div>
+                                                </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown position-static" style="display:none">
+                                <a href="/Statistics" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Statistics
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-mega animate dropdown-menu-bg" style="display:none">
+                                    <form>
+                                        <!-- added <form> tags to prevent dropdown closed when clicked inside dropdown-menu -->
+                                        <div class="row">
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">General Information</h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+                                                    <a href="#" class="list-group-item list-group-item-action dropdownlist-bg">Exchange Rates</a>
+                                                    <a href="#" class="list-group-item list-group-item-action dropdownlist-bg">Inflation Rates</a>
+                                                    <a href="#" class="list-group-item list-group-item-action dropdownlist-bg">IBCM statistics</a>
+                                                    <a href="#" class="list-group-item list-group-item-action dropdownlist-bg">Indicators</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-3 col-lg-4">
+                                                <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">NPS Statistics</h6>
+                                                <div class="list-group list-group-no-border list-group-sm">
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/NPS/LARGE VALUE TRANSACTIONS.xlsx">Large value Transactions</a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/NPS/CARD TRANSACTIONS.xlsx">Card Payments</a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/NPS/CLEARING TRANSACTIONS.xlsx">Clearing House</a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/NPS/INTERNET BANKING.xlsx">Internet Banking</a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/NPS/MOBILE TRANSACTIONS.xlsx">Mobile Transactions</a>
+
+                                                    <a class="list-group-item list-group-item-action dropdownlist-bg" href="/webdocs/MONEY REMITTANCES.xlsx">Money Remittance</a>
+                                                </div>
+                                            </div>
+                                            
+
+                                 <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">Masoko ya Fedha</h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket">
+
+                                            Kuhusu Masoko ya Fedha
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket/FMExhange">
+                                            Akiba ya Fedha za Kigeni
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/FinancialMarket/DomesticDept">
+                                            Deni la Ndani la Serikali
+                                        </a>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                        Usimamizi wa sekta ya fedha
+                                    </h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision">
+                                            Utangulizi
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Objectives">
+                                            Majukumu
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Mandate">
+                                            Usajili wa taasisi za fedha
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Regulations">
+                                            Sheria na Kanuni
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/ToolAndMethodology">
+                                            Nyenzo za Usimamizi
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/Institutions">
+                                            Orodha ya Taasisi Zinazosimamiwa na Benki Kuu
+                                        </a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/BankSupervision/ApprovedAuditors">
+                                            Wakaguzi wa nje walioidhinishwa
+                                        </a>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                        Noti na Sarafu
+                                    </h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency">
+                                            Sarafu
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/CurrencyMng">
+                                            Usimamizi wa Sarafu
+                                        </a>
+
+
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/BanknotesAndCoinsIssued">
+                                            Noti na sarafu zilizotolewa na Benki Kuu ya Tanzania
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/RightAndObligations">
+                                            Haki na wajibu wa mteja wa benki katika kufanya miamala
+                                        </a>
+
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/Currency/CommemorativeBanknotesAndCoin">
+                                            Noti na Sarafu za Kumbukumbu (numismatics)
+                                        </a>
+
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                        Ustawi na huduma Jumuishi za Kifedha
+                                    </h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI">Ustawi na huduma Jumuishi za Kifedha</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/FinancialInclusion">Huduma Jumuishi za Kifedha</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ObjectivesAndFunctions">Malengo na Majukumu</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Sandbox">Mazingira ya Majaribio wa Ubunifu wa Teknolojia</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ConsumerProtection">Kumlinda mtumiaji wa huduma za kifedha</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Deepening"> Ustawi wa Kifedha</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/ReportsAndPublications"> Ripoti na Machapisho ya Huduma Jumuishi za Kifedha</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                        Uthabiti wa Sekta ya Fedha
+                                    </h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/FinancialStability">Uthabiti wa Sekta ya Fedha</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Frameworks">Mpango Mkakati, Kanuni, Nyaraka, Miongozo na Taratibu</a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/DFDI/Publications">Takwimu na Machapisho</a>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-3 col-lg-4">
+                                    <h6 class="p-2 font-weight-bold border border-top-0 border-right-0 border-left-0">
+                                        Mifumo ya Malipo ya Taifa
+                                    </h6>
+                                    <div class="list-group list-group-no-border list-group-sm">
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem">
+                                            Overview
+                                        </a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Objectives">
+                                            Majukumu ya Mifumo ya Malipo ya Taifa
+                                        </a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Systems">
+                                            Mifumo ya Malipo iliyopo
+                                        </a>
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Oversight">
+                                            Usimamizi wa Mifumo ya Malipo
+                                        </a>
+                                        
+                                        
+                                        <a class="list-group-item list-group-item-action dropdownlist-bg" href="/PaymentSystem/Initiatives">
+                                            Juhudi za Kuboresha Mifumo ya Malipo
+                                        </a>
+                                    </div>
+                                </div>
+
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle no-caret" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Matangazo</a>
+                                <div class="dropdown-menu animate dropdown-menu-bg" style="width:auto;min-width:200px">
+
+                                    <a href="/CallsforTender" class="list-group-item list-group-item-action dropdownlist-bg">Zabuni</a>
+                                    <a href="/CareerOpportunities" class="list-group-item list-group-item-action dropdownlist-bg">Ajira</a>
+                                    <a href="/Scholarships" class="list-group-item list-group-item-action dropdownlist-bg">Ufadhili wa masomo</a>
+                                </div>
+                            </div>
+                            <a class="nav-link" href="/PressRelease"><i class=""></i> Taarifa kwa Umma</a>
+
+                        </nav>
+                    </div>
+                    <div class="col-8 col-md-auto d-flex pull-right justify-content-end pl-0">
+
+                        <a href="#" class="nav-link toggle-search "><i class="fa fa-search " style="color:#ffffff; font-size:1.4em"></i></a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    <main id="main-content" class="site-shell__main">
+        
+
+
+<div class="container-fluid limited mt-5">
+
+    <div class=" row no-gutters mb-3">
+        <div class="title col-md-12 col-lg-12">
+            <span>Wakaguzi wa nje walioidhinishwa</span>
+        </div>
+        <div class="col-md-9 col-lg-9">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        <p>Kwa mujibu wa Kanuni za Mabenki na Taasisi za Fedha (Wakaguzi wa Hesabu wa Nje), 2014, kampuni ya ukaguzi wa hesabu inayotaka kukagua benki au taasisi ya fedha inayofanya kazi Tanzania, lazima iombe kusajiliwa na Benki Kuu ya Tanzania kama kampuni ya ukaguzi ya nje iliyoidhinishwa.</p>
+<p><strong>Kusajiliwa na Benki Kuu ya Tanzania</strong><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br /> </strong>Zifuatazo ni hatua za kufuata ili kusajiliwa kama mkaguzi wa hesabu wa benki na taasisi za fedha zinazofanya kazi nchini, na ambazo zinasimamiwa na Kanuni za Mabenki na Taasisi za Fedha (Wakaguzi wa Hesabu wa Nje), 2014: -</p>
+<ul class="custom-bullet"><ul>
+<li>Kila kampuni ya ukaguzi wa mahesabu inayotaka kuidhinishwa kama Mkaguzi wa Nje itawasilisha barua ya maombi Benki Kuu pamoja na: -</li>
+<li>Maelezo ya kina ya muundo wa taasisi, makao makuu ya shughuli zake na matawi, na wka taasisi za ukaguzi wa hesabu za kimataifa, zitaeleza makao makuu yao pamoja masuala kisheria na kitaalamu ya kampuni mama;</li>
+<li>Maelezo na sifa za wenye kampuni na watendaji wakuu zikionyesha uzoefu wao katika kukagua hesabu za benki na taasisi za fedha;</li>
+<li>Orodha ya kazi kubwa za ukaguzi ambazo zimefanywa katika kipindi cha miaka mitatu iliyopita na tozo zilizopokelewa kwa kipindi cha mwaka mmoja uliopita katika kila kazi ya ukaguzi iliyofanyika;</li>
+<li>Uthibitisho kwamba kampuni ina angalau wafanyakazi wa kudumu 10 were elimu na uzoefu katika uhasibu na ukaguzi wa mahesabu, na angalau wanne kati yao wawe wamesajiliwa na Bodi ya Uhasibu na Ukaguzi wa Hesabu ya Tanzania (NBAA);</li>
+<li>Maelezo ya kina ya uhusiano wowote ama wa moja kwa moja au usio wa moja kwa moja kati ya kampuni au mmiliki na benki au taasisi ya fedha yoyote;</li>
+<li>Maelezo ya kina ya kampuni ambayo kuna makubaliano yoyote kuhusu ukaguzi</li>
+<li>Taarifa nyingine yoyote ambayo Benki Kuu itaihitaji..</li>
+</ul>
+                    </p>
+                    <p>
+                        For a list of approved external auditors 
+                        <a href="/webdocs/Other/List of Audit Firms.pdf">bofya hapa</a>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-3 col-lg-3">
+            <div class="col-md-12 col-lg-12  submenu">
+<div class="outerWraper">
+    <div class="right-fixed-menu">
+        <div style="margin-bottom:20px;">
+            <img src="/img/aboutBOT.jpg" class="img-fluid img-responsive rounded-top" />
+        </div>
+        <div id="menu12">
+            <ul>
+                <li>
+                    <a href="/BankSupervision">
+                        Utangulizi
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/Objectives">
+                        Majukumu
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/Mandate">
+                        Usajili wa taasisi za fedha
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/Regulations">
+                        Sheria, Kanuni, Nyaraka na Miongozo
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/ToolAndMethodology">
+                        Nyenzo za Usimamizi
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/Institutions">
+                        Orodha ya Taasisi Zinazosimamiwa na Benki Kuu
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/digitalLanding">
+                        Orodha ya Majukwaa na Program Tumizi Ambazo Hazijaidhinishwa na Benki Kuu
+                    </a>
+                </li>
+                <li>
+                    <a href="/publications/Filter/41">
+                        Machapisho
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Contactus">
+                        Wasiliana nasi
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/publicNotes">
+                        Taarifa kwa umma
+
+                    </a>
+                </li>
+                <li>
+                    <a href="/BankSupervision/ApprovedAuditors">
+                        Wakaguzi wa nje walioidhinishwa
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+    </main>
+    <hr />
+    <footer>
+        
+<div class="footer site-footer">
+    <div class="container-fluid limited">
+        <div class="row footer-main">
+
+            <!-- Support -->
+            <div class="col-12 col-md-4 footer-col">
+                <h6 class="footer-heading"><i class="fa fa-life-ring"></i> Msaada</h6>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#siteMapModal">
+                            Ramani
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/ContactUs">
+                            Mawasiliano
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/FAQ">
+                            Maswali na Majibu
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/Disclaimer">
+                            Kanusho
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-12 col-md-4 footer-col">
+                <h6 class="footer-heading"><i class="fa fa-th-large"></i> Tovuti Zinazohusiana</h6>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="footer-links">
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://edi.bot.go.tz//EDIAPP">EDI</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://cdsapp.bot.go.tz">CDS</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://semanabot.bot.go.tz">Sema na BOT</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://www.bot.go.tz/reporting/">SMR/Clearing portal</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="footer-links">
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://library.bot.go.tz/">eLibrary</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://owa.bot.go.tz/owa">WebMail</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://loan-calculator.bot.go.tz">Loan Calculator</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://kilinganishi.bot.go.tz/login">Price Comparator</a></li>
+                            <li><a class="ext" target="_blank" rel="noopener" href="https://itms-portal.bot.go.tz">ITMS Portal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bank of Tanzania address -->
+            <div class="col-12 col-md-4 footer-col footer-contact">
+                <h6 class="footer-heading"><i class="fa fa-university"></i> BENKI KUU YA TANZANIA</h6>
+                <div class="footer-address">
+                    Barabara ya 16 ya Jakaya Kikwete 40184<br/>
+S.L.P 2303<br/>
+Dodoma Tanzania<br/>
+Simu: 255 26 2963182 - 7 au +255 22 2232541<br/>
+Faksi: +255 26 2963189<br/>
+Barua pepe: botcommunications@bot.go.tz<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : info@bot.go.tz</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Working / visiting hours -->
+        <div class="row footer-hours">
+            <div class="col-12 col-md-4">
+                <div class="hours-card">
+                    <span class="hours-ico"><i class="fa fa-calendar-o"></i></span>
+                    <div>
+                        <p class="footer-p">Siku za Kazi</p>
+                        Jumatatu mpaka Ijumaa, isipokuwa<a href="/webdocs/Other/PUBLIC HOLIDAYS 2025.pdf">sikukuu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="hours-card">
+                    <span class="hours-ico"><i class="fa fa-clock-o"></i></span>
+                    <div>
+                        <p class="footer-p">Saa za Kazi</p>
+                        Saa 2:00 Asubuhi mpaka saa 7:00 Mchana na saa 08:00 Mchana mpaka saa 11:00 Jioni<br/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="hours-card">
+                    <span class="hours-ico"><i class="fa fa-street-view"></i></span>
+                    <div>
+                        <p class="footer-p">Muda wa Wageni</p>
+                        Saa 2:30 Asubuhi mpaka saa 6:30 Mchana <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Footer -->
+<!-- Copyright -->
+<div class="copyright">
+    
+    <div class="container-fluid limited copyright-row">
+        <div class="copyright-text">
+                <span>Hatimiliki ya Benki Kuu ya Tanzania &copy; 2026</span>
+        </div>
+        <div class="copyright-legal">
+            <a class="copyright-legal__link" href="/Home/Disclaimer">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                Kanusho
+            </a>
+        </div>
+    </div>
+</div>
+<!-- /Copyright -->
+<script src=https://sema-chatbot.bot.go.tz/sema-chatbot-widget.v1.js defer></script>
+
+        
+
+
+
+
+<!-- Modal Menu -->
+<div class="modal fade modal-menu" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title menu-modal" id="menuModalLabel">
+                    
+                    <a href="/" class="d-inline-block"><img src="/img/BankOfTanzania_logo_sw.png" alt="" height="35" aria-hidden="true">&nbsp; BENKI KUU YA TANZANIA</a>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="list-group list-group-no-border" id="list-menu" data-children=".list-submenu">
+
+                    <a href="/" class="list-group-item list-group-item-action">Mwanzo</a>
+
+                    
+                    <div class="list-group-collapse list-submenu">
+                        <a class="list-group-item list-group-item-action" href="#list-submenu-1" data-toggle="collapse" aria-expanded="false" aria-controls="list-submenu-1">
+                            Kuhusu Benki Kuu
+                        </a>
+                        <div class="collapse" id="list-submenu-1" data-parent="#list-menu">
+                            <div class="list-group">
+                                <a class="list-group-item list-group-item-action" href="/Home/History">Historia ya Benki Kuu</a>
+                                <a class="list-group-item list-group-item-action" href="/Home/Mandate">Jukumu la Benki Kuu</a>
+                                <a class="list-group-item list-group-item-action" href="/BOTAct2006.pdf" target="_blank" rel="noopener">Sheria ya Benki Kuu, 2006</a>
+                                <a class="list-group-item list-group-item-action" href="/Home/ContactUs">Wasiliana nasi</a>
+                                <a class="list-group-item list-group-item-action" href="/Board">Bodi ya Wakurugenzi</a>
+                                <a class="list-group-item list-group-item-action" href="/Home/OrganizationStructure">Muundo wa Shirika</a>
+                                <a class="list-group-item list-group-item-action" href="/Governors">Magavana wa Sasa na Waliopita</a>
+                                <a class="list-group-item list-group-item-action" href="/Adverts/PressRelease/sw/2023070516020902.pdf">Mkataba wa Huduma kwa Wateja</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="list-group-collapse list-submenu">
+                        <a class="list-group-item list-group-item-action" href="#list-submenu-2" data-toggle="collapse" aria-expanded="false" aria-controls="list-submenu-2">
+                            Kazi za Msingi
+                        </a>
+                        <div class="collapse" id="list-submenu-2" data-parent="#list-menu">
+                            <div class="list-group">
+                                <div class="menu-subhead">Sera ya Fedha</div>
+                                <a class="list-group-item list-group-item-action" href="/MPS">Mfumo wa Sera ya Fedha</a>
+                                <a class="list-group-item list-group-item-action" href="/MPS/Decisions">Utekelezaji wa Sera ya Fedha</a>
+
+                                <div class="menu-subhead">Huduma za Kibenki</div>
+                                <a class="list-group-item list-group-item-action" href="/Currency/Bankingservices">Huduma za Kibenki</a>
+
+                                <div class="menu-subhead">Masoko ya Fedha</div>
+                                <a class="list-group-item list-group-item-action" href="/FinancialMarket">Kuhusu Masoko ya Fedha</a>
+                                <a class="list-group-item list-group-item-action" href="/FinancialMarket/FMExhange">Akiba ya Fedha za Kigeni</a>
+                                <a class="list-group-item list-group-item-action" href="/FinancialMarket/DomesticDept">Deni la Ndani la Serikali</a>
+
+                                <div class="menu-subhead">Usimamizi wa sekta ya fedha</div>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision">Utangulizi</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/Objectives">Majukumu</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/Mandate">Usajili wa taasisi za fedha</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/Regulations">Sheria na Kanuni</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/ToolAndMethodology">Nyenzo za Usimamizi</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/Institutions">Orodha ya Taasisi Zinazosimamiwa na Benki Kuu</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/digitalLanding">Orodha ya Majukwaa na Program Tumizi Ambazo Hazijaidhinishwa na Benki Kuu</a>
+                                <a class="list-group-item list-group-item-action" href="/BankSupervision/ApprovedAuditors">Wakaguzi wa nje walioidhinishwa</a>
+
+                                <div class="menu-subhead">Noti na Sarafu</div>
+                                <a class="list-group-item list-group-item-action" href="/Currency">Sarafu</a>
+                                <a class="list-group-item list-group-item-action" href="/Currency/CurrencyMng">Usimamizi wa Sarafu</a>
+                                <a class="list-group-item list-group-item-action" href="/Currency/BanknotesAndCoinsIssued">Noti na sarafu zilizotolewa na Benki Kuu ya Tanzania</a>
+                                <a class="list-group-item list-group-item-action" href="/Currency/RightAndObligations">Haki na wajibu wa mteja wa benki katika kufanya miamala</a>
+                                <a class="list-group-item list-group-item-action" href="/Currency/CommemorativeBanknotesAndCoin">Noti na Sarafu za Kumbukumbu (numismatics)</a>
+
+                                <div class="menu-subhead">Ustawi na huduma Jumuishi za Kifedha</div>
+                                <a class="list-group-item list-group-item-action" href="/DFDI">Ustawi na huduma Jumuishi za Kifedha</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/FinancialInclusion">Huduma Jumuishi za Kifedha</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/ObjectivesAndFunctions">Malengo na Majukumu</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/FinancialStability">Uthabiti wa Sekta ya Fedha</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/Sandbox">Mazingira ya Majaribio wa Ubunifu wa Teknolojia</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/ConsumerProtection">Kumlinda mtumiaji wa huduma za kifedha</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/Deepening">Ustawi wa Kifedha</a>
+                                <a class="list-group-item list-group-item-action" href="/DFDI/ReportsAndPublications">Ripoti na Machapisho ya Huduma Jumuishi za Kifedha</a>
+
+                                <div class="menu-subhead">Mifumo ya Malipo ya Taifa</div>
+                                <a class="list-group-item list-group-item-action" href="/PaymentSystem">Muhtasari kuhusu mifumo ya Malipo</a>
+                                <a class="list-group-item list-group-item-action" href="/PaymentSystem/Objectives">Majukumu ya Mifumo ya Malipo ya Taifa</a>
+                                <a class="list-group-item list-group-item-action" href="/PaymentSystem/Systems">Mifumo ya Malipo iliyopo</a>
+                                <a class="list-group-item list-group-item-action" href="/PaymentSystem/Oversight">Usimamizi wa Mifumo ya Malipo</a>
+                                <a class="list-group-item list-group-item-action" href="/PaymentSystem/Initiatives">Juhudi za Kuboresha Mifumo ya Malipo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="list-group-collapse list-submenu">
+                        <a class="list-group-item list-group-item-action" href="#list-submenu-4" data-toggle="collapse" aria-expanded="false" aria-controls="list-submenu-4">
+                            Machapisho
+                        </a>
+                        <div class="collapse" id="list-submenu-4" data-parent="#list-menu">
+                            <div class="list-group">
+                                    <div class="menu-subhead">Sheria, Kanuni, Waraka, Miongozo</div>
+                                            <a href="/Publications/Filter/37" class="list-group-item list-group-item-action dropdownlist-bg">Sheria</a>
+                                            <a href="/Publications/Filter/45" class="list-group-item list-group-item-action dropdownlist-bg">Makubaliano</a>
+                                            <a href="/Publications/Filter/39" class="list-group-item list-group-item-action dropdownlist-bg">Nyaraka</a>
+                                            <a href="/Publications/Filter/46" class="list-group-item list-group-item-action dropdownlist-bg">Kanuni za Maadili</a>
+                                            <a href="/Publications/Filter/48" class="list-group-item list-group-item-action dropdownlist-bg">Mifumo</a>
+                                            <a href="/Publications/Filter/40" class="list-group-item list-group-item-action dropdownlist-bg">Miongozo</a>
+                                            <a href="/Publications/Filter/43" class="list-group-item list-group-item-action dropdownlist-bg">Taratibu</a>
+                                            <a href="/Publications/Filter/38" class="list-group-item list-group-item-action dropdownlist-bg">Kanuni</a>
+                                            <a href="/Publications/Filter/44" class="list-group-item list-group-item-action dropdownlist-bg">Sheria</a>
+                                    <div class="menu-subhead">Machapisho mengineyo</div>
+                                            <a href="/Publications/Filter/41" class="list-group-item list-group-item-action dropdownlist-bg">Financial Sector Supervision Annual Report</a>
+                                            <a href="/Publications/Filter/53" class="list-group-item list-group-item-action dropdownlist-bg">Jarida la Uchumi Wetu</a>
+                                            <a href="/Publications/Filter/7" class="list-group-item list-group-item-action dropdownlist-bg">Kongamano la Taasisi za Fedha</a>
+                                            <a href="/Publications/Filter/10" class="list-group-item list-group-item-action dropdownlist-bg">Mihadhara ya Kumbukumbu ya Gilman Rutihinda</a>
+                                            <a href="/Publications/Filter/11" class="list-group-item list-group-item-action dropdownlist-bg">Jarida la Utafiti</a>
+                                            <a href="/Publications/Filter/12" class="list-group-item list-group-item-action dropdownlist-bg">Hotuba</a>
+                                            <a href="/Publications/Filter/5" class="list-group-item list-group-item-action dropdownlist-bg">Uwekezaji Tanzania</a>
+                                            <a href="/Publications/Filter/9" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa ya Tathmini ya Sekta ya Utalii</a>
+                                            <a href="/Publications/Filter/47" class="list-group-item list-group-item-action dropdownlist-bg">50th Anniversary</a>
+                                            <a href="/Publications/Filter/8" class="list-group-item list-group-item-action dropdownlist-bg">Makrasha ya Kazi</a>
+                                            <a href="/Publications/Filter/6" class="list-group-item list-group-item-action dropdownlist-bg">Uwekezaji Zanzibar</a>
+                                    <div class="menu-subhead">Machapisho ya mara kwa mara</div>
+                                            <a href="/Publications/Filter/34" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa mbalimbali za kila Mwaka</a>
+                                            <a href="/Publications/Filter/36" class="list-group-item list-group-item-action dropdownlist-bg">Mjumuisho wa taarifa za uchumi za kanda</a>
+                                            <a href="/Publications/Filter/51" class="list-group-item list-group-item-action dropdownlist-bg">Foreign Exchange Derivatives</a>
+                                            <a href="/Publications/Filter/4" class="list-group-item list-group-item-action dropdownlist-bg">Uthabiti wa Sekta ya Fedha</a>
+                                            <a href="/Publications/Filter/49" class="list-group-item list-group-item-action dropdownlist-bg">Ripoti ya MPC</a>
+                                            <a href="/Publications/Filter/3" class="list-group-item list-group-item-action dropdownlist-bg">Muhtasari wa Tamko la Sera ya Fedha</a>
+                                            <a href="/Publications/Filter/1" class="list-group-item list-group-item-action dropdownlist-bg">Tathmini za Uchumi za kila Mwezi</a>
+                                            <a href="/Publications/Filter/2" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa za Uchumi za Robo Mwaka</a>
+                                            <a href="/Publications/Filter/50" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa za Takwimu za Robo Mwaka</a>
+                                            <a href="/Publications/Filter/52" class="list-group-item list-group-item-action dropdownlist-bg">Mpango Mkakati</a>
+                                            <a href="/Publications/Filter/54" class="list-group-item list-group-item-action dropdownlist-bg">Weekly Financial Markets Report</a>
+                                    <div class="menu-subhead">Machapisho ya taarifa za fedha</div>
+                                            <a href="/Publications/Filter/19" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa ya Fedha ya Mwaka</a>
+                                            <a href="/Publications/Filter/17" class="list-group-item list-group-item-action dropdownlist-bg">Taarifa ya Fedha ya Mwezi</a>
+                                    <div class="menu-subhead">Machapisho ya Mifumo ya Malipo ya Taifa</div>
+                                            <a href="/Publications/NPS/BankSortCodes.xlsx" class="list-group-item list-group-item-action dropdownlist-bg">Bank Acquirer Codes</a>
+                                            <a href="/Publications/NPS/ListofMtos.pdf" class="list-group-item list-group-item-action dropdownlist-bg">Kampuni za kufanya miamala ya fedha</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="list-group-collapse list-submenu">
+                        <a class="list-group-item list-group-item-action" href="#list-submenu-5" data-toggle="collapse" aria-expanded="false" aria-controls="list-submenu-5">
+                            Takwimu
+                        </a>
+                        <div class="collapse" id="list-submenu-5" data-parent="#list-menu">
+                            <div class="list-group">
+                                    <div class="menu-subhead">Machapisho ya takwimu za uchumi</div>
+                                            <a href="/Publications/Filter/15" class="list-group-item list-group-item-action dropdownlist-bg">Mwaka wa Kalenda</a>
+                                            <a href="/Publications/Filter/16" class="list-group-item list-group-item-action dropdownlist-bg">Mwaka wa Fedha</a>
+                                            <a href="/Publications/Filter/13" class="list-group-item list-group-item-action dropdownlist-bg">Kila mwezi</a>
+                                            <a href="/Publications/Filter/14" class="list-group-item list-group-item-action dropdownlist-bg">Robo Mwaka</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="list-group-collapse list-submenu">
+                        <a class="list-group-item list-group-item-action" href="#list-submenu-6" data-toggle="collapse" aria-expanded="false" aria-controls="list-submenu-6">
+                            Matangazo
+                        </a>
+                        <div class="collapse" id="list-submenu-6" data-parent="#list-menu">
+                            <div class="list-group">
+                                <a class="list-group-item list-group-item-action" href="/CallsforTender">Zabuni</a>
+                                <a class="list-group-item list-group-item-action" href="/CareerOpportunities">Ajira</a>
+                                <a class="list-group-item list-group-item-action" href="/Scholarships">Ufadhili wa masomo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="/PressRelease" class="list-group-item list-group-item-action">Taarifa kwa Umma</a>
+
+                        <a class="list-group-item list-group-item-action" href="https://www.bot.go.tz/BankSupervision/ApprovedAuditors?lang=en" id="lang">
+                            <img alt="english" src="/img/en.png" />&nbsp;English&nbsp;
+                        </a>
+
+                    
+
+                </div>
+            </div>
+            <div class="modal-footer text-center">
+                <small><strong>
+                    Hatimiliki ya Benki Kuu ya Tanzania © 2022
+                </strong></small>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+
+<link href="/css/sitemap.css" rel="stylesheet" />
+<script src="/Scripts/siteMapModal.js" type="text/javascript"></script>
+
+<!-- Site Map Modal -->
+<div class="modal fade m-3" id="siteMapModal" tabindex="-1" role="dialog" aria-labelledby="siteMapModalLabel" aria-hidden="true">
+    <div class="dialog-fullscreen modal-dialog" role="document">
+        <div class="modal-content modal-lg content-fullscreen">
+            <div class="modal-header">
+                <h5 class="modal-title" id="siteMapModalLabel">
+                    <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    Ramani ya Tovuti
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-times-circle"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <nav class="sitemap" aria-label="Site map">
+                    <div class="sitemap-grid">
+
+                        <!-- Home -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">
+                                <a href="/">Mwanzo</a>
+                            </h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/Home/ContactUs">Wasiliana nasi</a></li>
+                                <li><a href="/FAQ">Maswali na Majibu</a></li>
+                                <li><a href="/PressRelease">Taarifa kwa Umma</a></li>
+                                <li><a href="/Home/Disclaimer">Kanusho</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- About Us -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Kuhusu Benki Kuu</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/Home/History">Historia ya Benki Kuu</a></li>
+                                <li><a href="/Home/Mandate">Jukumu la Benki Kuu</a></li>
+                                <li><a href="/Home/VisionAndMission">Dhima na Dira</a></li>
+                                <li><a href="/Board">Bodi ya Wakurugenzi</a></li>
+                                <li><a href="/Home/OrganizationStructure">Muundo wa Shirika</a></li>
+                                <li><a href="/Governors">Magavana wa Sasa na Waliopita</a></li>
+                                <li><a href="/Adverts/PressRelease/sw/2023070516020902.pdf">Mkataba wa Huduma kwa Wateja</a></li>
+                                <li><a href="/BOTAct2006.pdf" target="_blank" rel="noopener">Sheria ya Benki Kuu, 2006</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Monetary Policy -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Sera ya Fedha</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/MPS">Mfumo wa Sera ya Fedha</a></li>
+                                <li><a href="/MPS/Decisions">Utekelezaji wa Sera ya Fedha</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Financial Sector Supervision -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Usimamizi wa sekta ya fedha</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/BankSupervision">Utangulizi</a></li>
+                                <li><a href="/BankSupervision/Objectives">Majukumu</a></li>
+                                <li><a href="/BankSupervision/Mandate">Usajili wa taasisi za fedha</a></li>
+                                <li><a href="/BankSupervision/Regulations">Sheria na Kanuni</a></li>
+                                <li><a href="/BankSupervision/ToolAndMethodology">Nyenzo za Usimamizi</a></li>
+                                <li><a href="/BankSupervision/Institutions">Orodha ya Taasisi Zinazosimamiwa na Benki Kuu</a></li>
+                                <li><a href="/BankSupervision/digitalLanding">Orodha ya Majukwaa na Program Tumizi Ambazo Hazijaidhinishwa na Benki Kuu</a></li>
+                                <li><a href="/BankSupervision/ApprovedAuditors">Wakaguzi wa nje walioidhinishwa</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Payment & Settlement Systems -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Mifumo ya Malipo ya Taifa</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/PaymentSystem">Maelezo ya Jumla</a></li>
+                                <li><a href="/PaymentSystem/Objectives">Majukumu ya Mifumo ya Malipo ya Taifa</a></li>
+                                <li><a href="/PaymentSystem/Systems">Mifumo ya Malipo iliyopo</a></li>
+                                <li><a href="/PaymentSystem/Oversight">Usimamizi wa Mifumo ya Malipo</a></li>
+                                <li><a href="/PaymentSystem/Initiatives">Juhudi za Kuboresha Mifumo ya Malipo</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Financial Markets -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Masoko ya Fedha</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/FinancialMarket">Kuhusu Masoko ya Fedha</a></li>
+                                <li><a href="/FinancialMarket/FMExhange">Akiba ya Fedha za Kigeni</a></li>
+                                <li><a href="/FinancialMarket/DomesticDept">Deni la Ndani la Serikali</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Currency -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Noti na Sarafu</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/Currency">Sarafu</a></li>
+                                <li><a href="/Currency/CurrencyMng">Usimamizi wa Sarafu</a></li>
+                                <li><a href="/Currency/BanknotesAndCoinsIssued">Noti na sarafu zilizotolewa na Benki Kuu ya Tanzania</a></li>
+                                <li><a href="/Currency/RightAndObligations">Haki na wajibu wa mteja wa benki katika kufanya miamala</a></li>
+                                <li><a href="/Currency/CommemorativeBanknotesAndCoin">Noti na Sarafu za Kumbukumbu (numismatics)</a></li>
+                                <li><a href="/Currency/Bankingservices">Huduma za Kibenki</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Financial Deepening & Inclusion -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Ustawi na huduma Jumuishi za Kifedha</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/DFDI">Ustawi na huduma Jumuishi za Kifedha</a></li>
+                                <li><a href="/DFDI/FinancialInclusion">Huduma Jumuishi za Kifedha</a></li>
+                                <li><a href="/DFDI/ObjectivesAndFunctions">Malengo na Majukumu</a></li>
+                                <li><a href="/DFDI/Sandbox">Mazingira ya Majaribio wa Ubunifu wa Teknolojia</a></li>
+                                <li><a href="/DFDI/ConsumerProtection">Kumlinda mtumiaji wa huduma za kifedha</a></li>
+                                <li><a href="/DFDI/Deepening">Ustawi wa Kifedha</a></li>
+                                <li><a href="/DFDI/ReportsAndPublications">Ripoti na Machapisho ya Huduma Jumuishi za Kifedha</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Publications & Statistics -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">
+                                <a href="/Publications">Machapisho</a>
+                            </h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/Statistics">Takwimu</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Advertisements -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Matangazo</h3>
+                            <ul class="sitemap-links">
+                                <li><a href="/CallsforTender">Zabuni</a></li>
+                                <li><a href="/CareerOpportunities">Ajira</a></li>
+                                <li><a href="/Scholarships">Ufadhili wa masomo</a></li>
+                            </ul>
+                        </section>
+
+                        <!-- Related Links -->
+                        <section class="sitemap-col">
+                            <h3 class="sitemap-heading">Tovuti Zinazohusiana</h3>
+                            <ul class="sitemap-links">
+                                <li><a class="sitemap-ext" href="https://edi.bot.go.tz//EDIAPP" target="_blank" rel="noopener">EDI</a></li>
+                                <li><a class="sitemap-ext" href="https://cdsapp.bot.go.tz" target="_blank" rel="noopener">CDS</a></li>
+                                <li><a class="sitemap-ext" href="https://semanabot.bot.go.tz" target="_blank" rel="noopener">Sema na BOT</a></li>
+                                <li><a class="sitemap-ext" href="https://www.bot.go.tz/reporting/" target="_blank" rel="noopener">SMR/Clearing portal</a></li>
+                                <li><a class="sitemap-ext" href="https://library.bot.go.tz/" target="_blank" rel="noopener">eLibrary</a></li>
+                                <li><a class="sitemap-ext" href="https://loan-calculator.bot.go.tz" target="_blank" rel="noopener">Loan Calculator</a></li>
+                                <li><a class="sitemap-ext" href="https://kilinganishi.bot.go.tz/login" target="_blank" rel="noopener">Price Comparator</a></li>
+                                <li><a class="sitemap-ext" href="https://itms-portal.bot.go.tz" target="_blank" rel="noopener">ITMS Portal</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </nav>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-xs btn-secondary" data-dismiss="modal"><i class="fa fa-times"></i> CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery-ui.js"></script>
+<script src="/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="/js/typeahead.bundle.min.js"></script>
+<script src="/js/swiper.min.js"></script>
+<script src="/js/jquery.countdown.min.js"></script>
+<script src="/js/jquery.dataTables.min.js"></script>
+<script src="/js/dataTables.jqueryui.min.js"></script>
+<script src="/js/dataTables.buttons.min.js"></script>
+<script src="/js/buttons.flash.min.js"></script>
+<script src="/js/jszip.min.js"></script>
+<script src="/js/buttons.html5.min.js"></script>
+<script src="/js/buttons.print.min.js"></script>
+<script src="/js/dataTables.responsive.min.js"></script>
+<script src="/js/toastr.js"></script>
+<script src="/js/script.js"></script>
+
+    
+    <script src="/Scripts/datatable-export-names.js?v=639263067458860710"></script>
+    <script src="/js/jquery-confirm.min.js"></script>
+    
+    <script src="/Scripts/form-validate.js?v=639170501744205504"></script>
+    <script src="/js/select2.full.min.js"></script>
+    <script src="/js/fontawesome-all.js" data-auto-add-css="false"></script>
+
+    
+
+    <script src="/Scripts/bootstrap-datepicker.js"></script>
+    <script src="/Scripts/custom2.js"></script>
+    <script src="/Scripts/accordionScript.js"></script>
+    <script src="/Scripts/accounting.js"></script>
+    
+    <script src="/Scripts/feedback2.js?v=639262973349981536"></script>
+
+    
+
+<input name="__RequestVerificationToken" type="hidden" value="eOmxz_N2wrkHg5gBJRW-8Vx1a7KNFqx0PfU19OWwnDLb5P-cuP-BuhezHxq6uOSSlRSaCyGr-cnXUyoaog93rF8aUrF_8fG315AJCtSQhB41" />
+
+<script src="/Scripts/frontEnd-layout.js"></script>
+
+
+
+
+</body>
+</html>

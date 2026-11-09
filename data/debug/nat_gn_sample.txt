@@ -1,0 +1,16 @@
+url: https://www.bcrg-guinee.org/missions/supervision/banques/societes-bancaires/
+bytes: 153701  starts: b'<!doctyp'
+error: RuntimeError('no matching table on the page; table headers were: []')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!doctype html>'
+'<html lang="fr-FR" class="no-js" itemtype="https://schema.org/WebPage" itemscope>'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">'
+'\t<title>Sociétés bancaires &#8211; BCRG</title>'
+"<meta name='robots' content='max-image-preview:large' />"
+'\t<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>'

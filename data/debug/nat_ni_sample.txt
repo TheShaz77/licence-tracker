@@ -1,0 +1,16 @@
+url: https://www.siboif.gob.ni/supervision/intendencia-bancos/instituciones
+bytes: 79347  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Instituciones', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Web', 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Instituciones', 'Siglas', 'No. Resolución', 'Fecha Autorización/ Inscripción/ Licencia', 'Municipio', 'Dirección', 'Teléfono', 'Web']
+data rows: 8  kept: 8
+type values: [('', 8)]
+first lines:
+'<!DOCTYPE html>'
+'<!--[if IE 7]>                  <html class="ie7 no-js" lang="es" dir="ltr"'
+'  xmlns:content="http://purl.org/rss/1.0/modules/content/"'
+'  xmlns:dc="http://purl.org/dc/terms/"'
+'  xmlns:foaf="http://xmlns.com/foaf/0.1/"'
+'  xmlns:og="http://ogp.me/ns#"'
+'  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"'
+'  xmlns:sioc="http://rdfs.org/sioc/ns#"'

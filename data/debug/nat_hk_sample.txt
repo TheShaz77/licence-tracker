@@ -8,23 +8,23 @@ type values: [('', 11)]
 first lines:
 '{"header":{"success":true,"err_code":"0000","err_msg":"No error found"},"result":{"datasize":11,"records":[{"name":"33 Financial Services Limited","local_address":"Suite 710, 7th Floor, Ocean Centre, Harbour City, 5 Canton Road, Kowloon, Hong Kong","licence_no":"SVF0010","effective_date":"2016-11-04'
 
-url: https://api.hkma.gov.hk/public/bank-svf-info/register-ais-lros?lang=en&offset=0
-bytes: 35457  starts: b'{"header'
+url: https://api.hkma.gov.hk/public/bank-svf-info/register-ais-lros?lang=en&pagesize=1000&offset=0
+bytes: 70599  starts: b'{"header'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'local_address', 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'local_address', 'principle_address', 'type', 'secstaff_reg_url', 'latitude', 'longitude']
-data rows: 100  kept: 79
-type values: [('Licensed Bank', 71), ('Local Representative Office', 15), ('Restricted Licence Bank', 8), ('Deposit-taking Company', 6)]
+data rows: 202  kept: 164
+type values: [('Licensed Bank', 147), ('Local Representative Office', 27), ('Restricted Licence Bank', 17), ('Deposit-taking Company', 11)]
 first lines:
-'{"header":{"success":true,"err_code":"0000","err_msg":"No error found"},"result":{"datasize":100,"records":[{"name":"ABC BANKING CORPORATION LTD","local_address":"9/F, SIBERIAN BUILDING, 29 DES VOEUX ROAD, CENTRAL, HONG KONG","principle_address":"7 DUKE OF EDINBURGH AVENUE, PLACE D\' ARMES, 11328, PO'
+'{"header":{"success":true,"err_code":"0000","err_msg":"No error found"},"result":{"datasize":202,"records":[{"name":"ABC BANKING CORPORATION LTD","local_address":"9/F, SIBERIAN BUILDING, 29 DES VOEUX ROAD, CENTRAL, HONG KONG","principle_address":"7 DUKE OF EDINBURGH AVENUE, PLACE D\' ARMES, 11328, PO'
 
 url: https://eservices.customs.gov.hk/MSOS/wsrh/003s1?request_locale=en&format=csv
 bytes: 228028  starts: b'\xef\xbb\xbfName '
-error: RuntimeError("HK: no name column found; headers are ['Name of Licensee (English)', 'Name of Licensee (Chinese)', 'Branch Name (English)', 'Branch Name (Chinese)', 'Address (English only)', 'Address Type (English)', 'Address Type (Chinese)', 'As at (Date)']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': 'Name of Licensee (English)', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name of Licensee (English)', 'Name of Licensee (Chinese)', 'Branch Name (English)', 'Branch Name (Chinese)', 'Address (English only)', 'Address Type (English)', 'Address Type (Chinese)', 'As at (Date)']
+data rows: 1071  kept: 614
+type values: [('', 1071)]
 first lines:
 'Name of Licensee (English),Name of Licensee (Chinese),Branch Name (English),Branch Name (Chinese),Address (English only),Address Type (English),Address Type (Chinese),As at (Date)'
 '2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"SHOP 3B, MTR/F, ISQUARE, 63 NATHAN ROAD, TSIM SHA TSUI, KOWLOON",Specified Premises,指明處所,08/11/2026'

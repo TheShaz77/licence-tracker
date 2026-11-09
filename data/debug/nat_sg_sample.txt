@@ -1,0 +1,16 @@
+url: https://eservices.mas.gov.sg/fid/institution/print?count=0
+bytes: 2836  starts: b'<!DOCTYP'
+error: RuntimeError('no matching table on the page; table headers were: []')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<!-- html head -->'
+'<head>'
+'    <!-- meta -->'
+'    <title>Financial Institutions Directory</title>'
+'    <meta charset="utf-8">'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge">'

@@ -1,0 +1,33 @@
+url: https://www.cbg.gm/list-of-licensed-banks
+bytes: 43795  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Commercial Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Commercial Bank', 'Address', 'Contact Details']
+data rows: 11  kept: 11
+type values: [('', 11)]
+first lines:
+'<!DOCTYPE html>'
+'<html>'
+'<head>'
+'<meta charset="utf-8">'
+'<title>List of Licensed Banks - Central Bank of The Gambia</title>'
+'<link href="/plugins/bootstrap-5.3.5/css/bootstrap.min.css" rel="stylesheet">'
+'<link href="/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css">'
+'<link href="/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css">'
+
+url: https://www.cbg.gm/list-of-approved-bureaus
+bytes: 58438  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Forex Bureau', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Forex Bureau', 'Address', 'Contact Details']
+data rows: 82  kept: 82
+type values: [('', 82)]
+first lines:
+'<!DOCTYPE html>'
+'<html>'
+'<head>'
+'<meta charset="utf-8">'
+'<title>List of Approved Bureaus - Central Bank of The Gambia</title>'
+'<link href="/plugins/bootstrap-5.3.5/css/bootstrap.min.css" rel="stylesheet">'
+'<link href="/plugins/revolution/css/settings.css" rel="stylesheet" type="text/css">'
+'<link href="/plugins/revolution/css/layers.css" rel="stylesheet" type="text/css">'

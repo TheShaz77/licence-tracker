@@ -1,69 +1,69 @@
 url: https://www.fsa.go.jp/en/regulated/licensed/en_kasoutuka.xlsx
 bytes: 37536  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['List of Registered Crypto-asset Exchange Service Providers in Japan', '', '', '', '', '', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': 'Name of Crypto-asset Exchange Service Providers', 'type': None, 'id': 'Registration Number', 'lei': None, 'city': None, 'date': 'Date of Registration', 'status': None, 'website': None, 'email': None, 'phone': 'Phone Number', 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['', 'Registration Number', 'Date of Registration', 'Name of Crypto-asset Exchange Service Providers', 'Corporate Number', 'Postal Code', 'Location of the head office, etc', 'Phone Number', 'Crypto-assets handled by the service provider']
+data rows: 27  kept: 27
+type values: [('', 27)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/en/regulated/licensed/denshikessaisyudan.xlsx
 bytes: 32637  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['List of Registered Electronic Payment Instrument Exchange Service Providers in Japan', '', '', '', '', '', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': 'Name of Electronic Payment Instrument Exchange Service Providers', 'type': None, 'id': 'Registration Number', 'lei': None, 'city': None, 'date': 'Date of Registration', 'status': None, 'website': None, 'email': None, 'phone': 'Phone Number', 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['', 'Registration Number', 'Date of Registration', 'Name of Electronic Payment Instrument Exchange Service Providers', 'Corporate Number', 'Postal Code', 'Location of the head office, etc', 'Phone Number', 'Electronic payment instruments handled by the service provider']
+data rows: 2  kept: 2
+type values: [('', 2)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/menkyo/menkyoj/shikin_idou.xlsx
 bytes: 36214  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['資金移動業者登録一覧', '', '', '', '', '', '', '', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': '資金移動業者名', 'type': None, 'id': '登録番号', 'lei': None, 'city': None, 'date': '登録年月日', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': '本店等所在地', 'end': None, 'exclude': None, 'require': None}
+headers: ['所管', '登録番号', '登録年月日', '資金移動業者名', '法人番号', '郵便番号', '本店等所在地', '代表等電話番号', '業務の種別', '', '']
+data rows: 86  kept: 84
+type values: [('', 84)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/menkyo/menkyoj/daisan.xlsx
 bytes: 112818  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['前払式支払手段（第三者型）発行者登録一覧', '', '', '', '', '', '', '', '', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': '前払式支払手段（第三者型） 発行者名', 'type': None, 'id': '登録番号', 'lei': None, 'city': None, 'date': '登録年月日', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': '本店等所在地', 'end': None, 'exclude': None, 'require': None}
+headers: ['所管', '登録番号', '登録年月日', '前払式支払手段（第三者型） 発行者名', '法人番号', '郵便番号', '本店等所在地', '代表等電話番号', '', '', '', '']
+data rows: 787  kept: 787
+type values: [('', 787)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/menkyo/menkyoj/dendai.xlsx
 bytes: 81355  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['電子決済等代行業者登録一覧', '', '', '', '', '', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': '電子決済等代行業者名', 'type': None, 'id': '登録番号', 'lei': None, 'city': None, 'date': '登録年月日', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': '本店等所在地', 'end': None, 'exclude': None, 'require': None}
+headers: ['所管', '登録番号', '登録年月日', '電子決済等代行業者名', '法人番号', '郵便番号', '本店等所在地', '代表等電話番号', '']
+data rows: 125  kept: 124
+type values: [('', 124)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/en/regulated/licensed/city.xlsx
 bytes: 22871  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['City Banks and Trust Banks Total 36 banks', '', '', 'As of September 24, 2026', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': 'The name of a financial institution', 'type': None, 'id': 'JCN', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'Telephone', 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Business category', 'The name of a financial institution', 'JCN', 'Address', 'Telephone', '', '']
+data rows: 36  kept: 36
+type values: [('', 36)]
 first lines:
 '(binary)'
 
 url: https://www.fsa.go.jp/en/regulated/licensed/reg.xlsx
 bytes: 21300  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: RuntimeError("JP: no name column found; headers are ['The list of licensed institutions (Regional Banks) Total 61 banks', '', '', '']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+error: None
+columns used: {'name': 'name(English)', 'type': None, 'id': 'JCN', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name(Japanese)', 'name(English)', 'JCN', 'phone']
+data rows: 62  kept: 62
+type values: [('', 62)]
 first lines:
 '(binary)'

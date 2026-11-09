@@ -1,9 +1,26 @@
-url: https://www.vara.ae/page-data/en/licenses-and-register/public-register/page-data.json
-bytes: 15180  starts: b'{"compon'
-error: RuntimeError("AE: no name column found; headers are ['content.key', 'content.value']")
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.vara.ae/en/licenses-and-register/public-register/
+bytes: 768294  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'VASP Name', 'type': 'Licence Type', 'id': 'Reference', 'lei': None, 'city': None, 'date': 'Licence Issued', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['VASP Name', 'Licence Type', 'Reference', 'Licensed Activities', 'Licence Issued', 'Status', 'CMA Registration Number']
+data rows: 60  kept: 60
+type values: [('VASP Licence', 60)]
 first lines:
-'{"componentChunkName":"component---src-templates-page-jsx","path":"/en/licenses-and-register/public-register/","result":{"data":{"umbraco":{"newVaraPage":{"contentTypeAlias":"newVaraPage","id":"74c46468-5556-4080-a8e1-1ab91e188d03","name":"Public Register","url":"/vara-en/licenses-and-register/publi'
+'<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.6"/><meta data-react-helmet="true" name="desc'
+'        px-[60px] transition-all duration-300 lg:flex 2xl:px-[100px] translate-y-0 bg-transparent"><div class="flex items-end" style="opacity:0;transform:translateY(20px) translateZ(0)"><a aria-label="Virtual Assets Regulatory Authority" href="/en/"><svg class="max-w-[75%]" width="200px" height="64p'
+'      .st0 {'
+'        fill: #ff0006;'
+'      }'
+''
+'      .st1 {'
+'        fill: #ba9248;'
+
+url: https://www.centralbank.ae/media/lmbpqcll/cb-register-sept-2026.pdf
+bytes: 626493  starts: b'%PDF-1.6'
+error: None
+columns used: {'name': 'Institution Name', 'type': 'License Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'Head office', 'end': None, 'exclude': None, 'require': None}
+headers: ['No', 'Institution Name', 'License Type', 'License Category', 'Head office', 'Identification Number', 'ﺮﻘﻤﻟا ﻲﺴﯿﺋﺮﻟا', 'ﺔ ﺼﺧﺮﻟا ﺔﺌﻓ', 'عﻮﻧ ﺔ ﺼﺧﺮﻟا', 'ﺔ ﺴﺳﺆﻤﻟا ﻢﺳا', 'ﻢ ﻗﺮﻟا']
+data rows: 348  kept: 242
+type values: [('Exchange Business', 62), ('National Company', 62), ('Representative Office', 53), ('Foreign Bank', 38), ('National Bank', 25), ('National Finance Company', 19), ('License Type', 6), ('', 2), ('Foreign Finance Company', 1)]
+first lines:
+'(binary)'

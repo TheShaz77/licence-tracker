@@ -1,0 +1,33 @@
+url: https://napp.uz/en/pages/list-of-specially-authorized-crypto-exchanges-for-providing-a-special-tax-regime-to-foreign-ci
+bytes: 116845  starts: b'<!DOCTYP'
+error: RuntimeError('no matching table on the page; table headers were: []')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'  <head>'
+'    <meta charset="UTF-8" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'    <meta name="csrf-token" content="ICoRuuUio2hvmUiDxbeEsCnzwrH9w1kxQK6ymwCD">'
+'    <title>National Agency of prospective projects of the Republic of Uzbekistan</title>'
+'    <link rel="preconnect" href="https://fonts.googleapis.com" />'
+
+url: https://napp.uz/en/pages/erlsp
+bytes: 226241  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Link to graphic image', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['#', 'Legal entity name – licensee, organizational and legal form, location (postal address), e-mail address, telephone', "Information on the founders' shares in the charter capital (fund)", 'Licence index and number', 'License issue date', 'Grounds and dates for re-issuance, suspension, renewal, termination, cancellation of license', 'Link to graphic image']
+data rows: 26  kept: 23
+type values: [('', 23)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'  <head>'
+'    <meta charset="UTF-8" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'    <meta name="csrf-token" content="ICoRuuUio2hvmUiDxbeEsCnzwrH9w1kxQK6ymwCD">'
+'    <title>National Agency of prospective projects of the Republic of Uzbekistan</title>'
+'    <link rel="preconnect" href="https://fonts.googleapis.com" />'

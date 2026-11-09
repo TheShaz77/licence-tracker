@@ -1,0 +1,16 @@
+url: https://www.amaf.mc/en/membre-list
+bytes: 50821  starts: b'<!doctyp'
+error: None
+columns used: {'name': '(guessed) 2PM Personalised Porfolio Management', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['2PM Personalised Porfolio Management', '8, avenue de Fontvieille', '97 97 43 80']
+data rows: 68  kept: 68
+type values: [('', 68)]
+first lines:
+'<!doctype html>'
+'<html lang="en">'
+'<head>'
+'    <title>Members Of Monaco Association For Financial Activities | AMAF</title>'
+'    <meta charset="utf-8"/>'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>'
+'    <meta name="viewport" content="width=device-width, initial-scale=1"/>'
+'                        <meta name="description" content="L\'Association Monégasque des Activités Financières (A.M.A.F.) fédère l\'ensemble des établissements de la place financière monégasque."/>'

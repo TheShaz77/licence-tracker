@@ -1,0 +1,49 @@
+url: https://www.cbar.az/page-853/electronic-money-institutions?language=en
+bytes: 93545  starts: b' <!DOCTY'
+error: None
+columns used: {'name': '(guessed) EPT-009', 'type': None, 'id': 'License number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['License number', 'EPT-009']
+data rows: 10  kept: 8
+type values: [('', 8)]
+first lines:
+' <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="author" content="Central Bank of the Republic of Azerbaijan"><title>Central Bank of the Republic of Azerba'
+
+url: https://www.cbar.az/page-854/payment-institutions?language=en
+bytes: 70803  starts: b' <!DOCTY'
+error: None
+columns used: {'name': '(guessed) ÖT-010', 'type': None, 'id': 'License number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['License number', 'ÖT-010']
+data rows: 10  kept: 8
+type values: [('', 8)]
+first lines:
+' <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="author" content="Central Bank of the Republic of Azerbaijan"><title>Central Bank of the Republic of Azerba'
+
+url: https://www.cbar.az/page-855/payment-system-operators?language=en
+bytes: 63088  starts: b' <!DOCTY'
+error: None
+columns used: {'name': '(guessed) ÖSO-001', 'type': None, 'id': 'License number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['License number', 'ÖSO-001']
+data rows: 11  kept: 9
+type values: [('', 9)]
+first lines:
+' <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="author" content="Central Bank of the Republic of Azerbaijan"><title>Central Bank of the Republic of Azerba'
+
+url: https://www.cbar.az/page-195/banks?language=en
+bytes: 156666  starts: b' <!DOCTY'
+error: None
+columns used: {'name': '(guessed) 246', 'type': None, 'id': 'License number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['License number', '246']
+data rows: 30  kept: 17
+type values: [('', 17)]
+first lines:
+' <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="author" content="Central Bank of the Republic of Azerbaijan"><title>Central Bank of the Republic of Azerba'
+
+url: https://www.cbar.az/page-464/currency-exchange-offices?language=en
+bytes: 56918  starts: b' <!DOCTY'
+error: RuntimeError('no matching table on the page; table headers were: []')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+' <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="author" content="Central Bank of the Republic of Azerbaijan"><title>Central Bank of the Republic of Azerba'

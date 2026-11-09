@@ -1,0 +1,33 @@
+url: https://www.bog.gov.gh/supervision-regulation/banking-supervision/banks
+bytes: 227352  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Bank Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Website', 'email': 'Email', 'phone': 'Phone Number', 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Bank Name', 'Address', 'Phone Number', 'Website', 'Email']
+data rows: 24  kept: 24
+type values: [('', 24)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'<meta charset="UTF-8">'
+'<link rel="profile" href="http://gmpg.org/xfn/11">'
+'<link rel="pingback" href="https://www.bog.gov.gh/xmlrpc.php">'
+''
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'
+
+url: https://www.bog.gov.gh/supervision-regulation/register-of-licensed-institutions/remittance-companies/
+bytes: 216249  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Remittance Company Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Website', 'email': 'Email', 'phone': 'Phone Number', 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+headers: ['Remittance Company Name', 'Address', 'Phone Number', 'Fax', 'Website', 'Email']
+data rows: 2  kept: 2
+type values: [('', 2)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'<meta charset="UTF-8">'
+'<link rel="profile" href="http://gmpg.org/xfn/11">'
+'<link rel="pingback" href="https://www.bog.gov.gh/xmlrpc.php">'
+''
+'<meta name="viewport" content="width=device-width, initial-scale=1" />'

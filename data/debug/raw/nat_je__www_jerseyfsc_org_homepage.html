@@ -1,0 +1,1765 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jersey Financial Services Commission</title>
+    <meta name="description" content="The Jersey Financial Services Commission is the financial services regulator for Jersey, Channel Islands. Our Registry is responsible for ten registers.">
+    <meta name="google-site-verification" content="s0dPPdHgULkPp6J0hQQCTwATZyICwKZT54bixjUCU0U" />
+    <meta name="keywords" content="JFSC,Jersey Financial Services Commission,Regulator,Registry,Jersey,Channel Islands" />
+    <meta property="og:title" content="Jersey Financial Services Commission" />
+    <meta property="og:description" content="The Jersey Financial Services Commission is the financial services regulator for Jersey, Channel Islands. Our Registry is responsible for ten registers.">
+    <meta property="og:site_name" content="Jersey Financial Services Commission">
+
+    <!-- TODO: get absolute URL in a better way -->
+    <meta property="og:image" content="https://www.jerseyfsc.org/images/og-image.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@JerseyFSC" />
+    <meta name="twitter:title" content="Home" />
+    <meta name="twitter:description" content="The Jersey Financial Services Commission is the financial services regulator for Jersey, Channel Islands. Our Registry is responsible for ten registers." />
+
+    <!-- TODO: get absolute URL in a better way -->
+    <meta name="twitter:image" content="https://www.jerseyfsc.org/images/twitter-summarycard.png" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/assets/dist/css/main.css?v=LziQOLHqSGtBD_NroWKJW-1c01xmNdywVOZGIpYen5g" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/touch-icon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg">
+
+    <!-- TODO: These need to be combined and minified -->
+    <script src="/scripts/libraries/jquery/jquery-3.7.1.min.js?20250619"></script>
+    <script src="/scripts/libraries/jquery/jquery-migrate.js?20250619"></script>
+
+    <script type="text/javascript" src="/scripts/libraries/select2/select2.min.js?20261109"></script>
+    <script type="text/javascript" src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.thc/jquery.thc.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.responsiveTable/jquery.tableDataAttributes.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.responsiveTable/jquery.responsiveTable.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.touch.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.gallery.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.gallery/jquery.gallery.swipe.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/sass-to-js/sass-to-js.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/simplePagination/jquery.simplePagination.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/waypoints/jquery.waypoints.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/waypoints/sticky.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/jquery.toc/jquery.toc.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/libraries/slick-carousel/slick/slick.min.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/functions.js?20220523?20261109"></script>
+    <script type="text/javascript" src="/scripts/header.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/global-announcements.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/form.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/base.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/home.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/map.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/common.js?20210517?20261109"></script>
+    <script type="text/javascript" src="/scripts/dynamic-sidenav.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/filtered-table.js?20261109"></script>
+    <script type="text/javascript" src="/scripts/accordion.js?20261109"></script>
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+        var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+        f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+        var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+        _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+
+        var ml_account = ml('accounts', '2805433', 'c7l2s4x7a3', 'load');
+    </script>
+    <!-- End MailerLite Universal -->
+
+    
+
+        <script>
+            $(document).ready(function () {
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || []; w[l].push({
+                        'gtm.start':
+                            new Date().getTime(), event: 'gtm.js'
+                    }); var f = d.getElementsByTagName(s)[0],
+                        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+                })(window, document, 'script', 'dataLayer', 'GTM-P3KQRQ4R');
+            });
+        </script>
+
+    
+</head>
+
+<body class="template-home">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3KQRQ4R"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>
+        <link rel="stylesheet" href="/css/accordion-noscript.css" />
+    </noscript>
+    <div id="skiptocontent" class="noindex">
+        <a class="noindex" href="#startcontent">Skip to main content</a>
+    </div>
+    <div class="main-wrapper">
+
+        <header class="main-header" role="banner">
+            <section class="header">
+
+                <nav aria-label="main" class="main-menu-wrapper">
+                    <a class="menu-toggle" role="button" aria-haspopup="true" id="main-menu-button" tabindex="0" aria-label="Main Menu">
+                        <span class="icon"></span>
+                    </a>
+                    <div class="menu-overlay">
+	<div class="row">
+
+					<ul class="main-menu">
+					<li>
+							<a href="/home/">Home</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/">About us</a>
+
+									<ul class="">
+					<li>
+							<a href="/about-us/board-of-commissioners/">Board of Commissioners</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/directors/">Directors</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/contact-us/">Contact us</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/data-protection/">Data protection</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/making-a-complaint/">Making a complaint</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/">Our teams</a>
+
+									<ul class="">
+					<li>
+							<a href="/about-us/our-teams/enforcement/">Enforcement</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/policy-and-risk/">Policy and Risk</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/registry/">Registry</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/supervision/">Supervision</a>
+
+						
+					</li>
+					<li>
+							<a href="/about-us/our-teams/intelligence/">Intelligence</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/about-us/jfsc-connect/">JFSC Connect</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/careers/">Careers</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/">Industry</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/">Codes of Practice</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/alternative-investment-funds-code-of-practice/">Alternative Investment Funds Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/">Certified Funds Code of Practice</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-1/">Certified Funds Code of Practice Schedule 1</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-2/">Certified Funds Code of Practice Schedule 2</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-3/">Certified Funds Code of Practice Schedule 3</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-4/">Certified Funds Code of Practice Schedule 4</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/certified-funds-code-of-practice/certified-funds-code-of-practice-schedule-5/">Certified Funds Code of Practice Schedule 5</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/fund-services-business-code-of-practice/">Fund Services Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/general-insurance-mediation-business-code-of-practice/">General Insurance Mediation Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/insurance-business-code-of-practice/">Insurance Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/investment-business-code-of-practice/">Investment Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/money-service-business-code-of-practice/">Money Service Business Code of Practice</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/trust-company-business-code-of-practice/">Trust Company Business Code of Practice </a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/codes-of-practice/alternative-investment-funds-code-of-practice-1/">Alternative Investment Funds Code of Practice (1)</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/consultations/">Consultations</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/consultations/fee-consultation-no-3-2024-feedback-paper/">Fee consultation No 3 2024 - Feedback Paper</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2024-consultations/">2024 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2023-consultations/">2023 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2022-consultations/">2022 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2021-consultations/">2021 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2020-consultations/">2020 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2019-consultations/">2019 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2018-consultations/">2018 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2017-consultations/">2017 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2016-consultations/">2016 consultations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/consultations/2025-consultations/">2025 consultations</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/digital-assets/">Digital assets</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/digital-assets/getting-started-with-digital-assets/">Getting started with digital assets</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/digital-assets-in-jersey/">Digital assets in Jersey</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/digital-asset-funds/">Digital asset funds</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/initial-coin-or-token-offerings/">Initial coin or token offerings</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/tokenised-real-world-assets/">Tokenised real-world assets</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/digital-assets/virtual-asset-service-providers/">Virtual asset service providers</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/examinations/">Examinations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/fees/">Fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/financial-crime/">Financial crime</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/">Innovation Hub</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/innovation-hub/about/">About</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/help/">Help</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/collaboration/">Collaboration</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/regtech/">Regtech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/fintech/">Fintech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/suptech/">Suptech</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/virtual-asset-service-providers/">Virtual Asset Service Providers</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/local-partnerships-and-associations/">Local partnerships and associations</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/innovation-hub/innovation-reports/">Innovation reports</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/forms/">Forms</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/guidance-and-policy/">Guidance and policy</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/">International-co-operation</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/international-co-operation/international-assessments/">International assessments</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/memoranda-of-understanding/">Memoranda of Understanding</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/international-co-operation/sanctions/">Sanctions</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/legislation/">Legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/regulated-entities/">Regulated entities</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/risk/">Risk</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/risk/national-risk-assessments/">National Risk Assessments</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/sectors/">Sectors</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/sectors/auditors/">Auditors</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/banking/">Banking</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/funds/">Funds</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/general-insurance-mediation-business/">General Insurance Mediation Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/insurance/">Insurance</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/investment-business/">Investment Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/financial-crime-schedule-2-business/">Financial Crime - Schedule 2 Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/trust-company-business/">Trust Company Business</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/">Non- profit organisations</a>
+
+									<ul class="">
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/non-profit-organisations-legislation/">Non-profit organisations legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/non-profit-organisations/npo-risk-assessment/">NPO risk assessment</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/sectors/financial-institutions/">Financial Institutions</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sectors/money-service-business/">Money Service Business</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/industry/schedule-2-business-faqs/">Schedule 2 Business FAQs</a>
+
+						
+					</li>
+					<li>
+							<a href="/industry/sustainable-finance/">Sustainable finance</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/news-and-events/">News and events</a>
+
+									<ul class="">
+					<li>
+							<a href="/news-and-events/events-and-webinars/">Events and webinars</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=Industry+updates">Industry updates</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=News">News</a>
+
+						
+					</li>
+					<li>
+							<a href="/news-and-events/?contenttype=Public+statements">Public statements and warnings</a>
+
+						
+					</li>
+					<li>
+							<a href="/subscribe-to-our-rss/">RSS feeds</a>
+
+						
+					</li>
+					<li>
+							<a href="/subscribe-to-our-news-and-updates/">Subscribe</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/protecting-the-public/">Protecting the public</a>
+
+									<ul class="">
+					<li>
+							<a href="/protecting-the-public/fraud-prevention/">Fraud prevention</a>
+
+						
+					</li>
+					<li>
+							<a href="/protecting-the-public/investment-mis-selling/">Investment mis-selling</a>
+
+						
+					</li>
+					<li>
+							<a href="/protecting-the-public/complaints-reporting-and-whistleblowing/">Complaints reporting and whistleblowing</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/publications/">Publications</a>
+
+									<ul class="">
+					<li>
+							<a href="/publications/annual-reports/">Annual reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/business-plans/">Business plans</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/presentations/">Presentations</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/service-reports/">Service reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/engagement-reports/">Engagement reports</a>
+
+						
+					</li>
+					<li>
+							<a href="/publications/2026-2030-strategy/">2026-2030 strategy</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/registry/">Registry</a>
+
+									<ul class="">
+					<li>
+							<a href="/registry/annual-confirmation/">Annual confirmation</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/beneficial-ownership-information/">Beneficial ownership information</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/register-or-make-a-change/">Register or make a change</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-fees/">Registry fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-forms/">Registry forms</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-legislation/">Registry legislation</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/registry-notices/">Registry notices</a>
+
+									<ul class="">
+					<li>
+							<a href="/registry/registry-notices/public-notices/">Public notices</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/registry/2025-registry-fees/">2025 Registry fees</a>
+
+						
+					</li>
+					<li>
+							<a href="/registry/2024-registry-fees/">2024 Registry fees</a>
+
+						
+					</li>
+			</ul>
+
+					</li>
+					<li>
+							<a href="/whistleblowing/">Whistleblowing</a>
+
+						
+					</li>
+					<li>
+							<a href="/login/">Login</a>
+
+						
+					</li>
+			</ul>
+
+
+	</div>
+</div>
+
+
+                </nav>
+                <a href="/" class="logo">
+                    <img src="/images/JFSC-logo-Landscape-rgb.svg" alt="Jersey Financial Services Commission" class="full" width="233" height="44" />
+                    <img src="/images/JFSC-logo-Icon-rgb.svg" alt="Jersey Financial Services Commission" class="small" width="44" height="44" />
+                </a>
+                <div class="menu main-menu">
+                    <ul>
+                            <li>
+                                <a href="/about-us/">About us</a>
+                            </li>
+                            <li>
+                                <a href="/industry/">Industry</a>
+                            </li>
+                            <li>
+                                <a href="/registry/">Registry</a>
+                            </li>
+                            <li>
+                                <a href="/protecting-the-public/">Protecting the public</a>
+                            </li>
+                            <li>
+                                <a href="/news-and-events/">News and events</a>
+                            </li>
+                            <li>
+                                <a href="/login/">Login</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+                <div class="search-wrapper" role="search" aria-label="main">
+                    <a class="search-toggle" role="button" aria-haspopup="true" tabindex="0" aria-label="Search">
+                        <span class="icon"></span>
+
+                    </a>
+                    
+                    
+<div class="search-overlay">
+	<div class="row">
+		<form action="/search" method="get">
+			<label for="overlay-search">Search JFSC</label>
+			<input type="text" name="search" id="overlay-search" placeholder="Search the site" />
+			<button type="submit" class="button">Search</button>
+		</form>
+			<div id="popular-searches" class="popular-searches">
+				<h2>Popular searches</h2>
+				<ul>
+						<li><a href="/Search?search=Industry&#x2B;Survey">Industry Survey</a></li>
+						<li><a href="/Search?search=Annual&#x2B;confirmation&#x2B;statement">Annual confirmation statement</a></li>
+						<li><a href="/Search?search=Business&#x2B;Plan">Business Plan</a></li>
+						<li><a href="/Search?search=Compliance&#x2B;monitoring">Compliance monitoring</a></li>
+						<li><a href="/Search?search=Guidance&#x2B;notes">Guidance notes</a></li>
+						<li><a href="/Search?search=myProfile">myProfile</a></li>
+						<li><a href="/Search?search=myRegistry">myRegistry</a></li>
+						<li><a href="/Search?search=Outsourcing">Outsourcing</a></li>
+						<li><a href="/Search?search=Sanctions">Sanctions</a></li>
+						<li><a href="/Search?search=Sound&#x2B;business&#x2B;policy">Sound business policy</a></li>
+						<li><a href="/Search?search=Consumer&#x2B;credit">Consumer credit</a></li>
+				</ul>
+			</div>
+	</div>
+</div>
+                </div>
+               
+            </section>
+
+        </header>
+
+        <main role="main" class="main-page">
+
+            
+    <section class="global-announcement js-global-announcement" data-announcement-id="B2DE24D54503">
+        <div class="global-announcement-content">
+            <p><strong>Service notice -</strong> myRegistry will be unavailable due to scheduled maintenance from <strong>6:00pm</strong> until <strong>10:00pm</strong> on <strong>Monday 9 November</strong>.</p>
+        </div>
+        <button type="button" class="global-announcement-dismiss js-global-announcement__dismiss" aria-label="Dismiss this announcement">
+            <span class="icon" aria-hidden="true"></span>
+        </button>
+    </section>
+
+    <script>
+        (function () {
+            try {
+                var dismissed = JSON.parse(window.sessionStorage.getItem("jfsc-dismissed-announcements") || "[]");
+                document.querySelectorAll(".js-global-announcement").forEach(function (el) {
+                    if (dismissed.indexOf(el.getAttribute("data-announcement-id")) !== -1) {
+                        el.remove();
+                    }
+                });
+            } catch (e) { }
+        })();
+    </script>
+
+
+            <a name="startcontent" id="startcontent" href="#"></a>
+            
+<section class="search-banner full-image">
+
+    <div class="image" style="background-image:url(/media/w0xnncdh/website-landscape-hero-11.jpg?width=1600&amp;height=835&amp;v=1dd2fa8c9553a40);"></div>
+
+    <div class="introduction">
+        <h1 class="page-title">Jersey Financial Services Commission</h1>
+        <p class="MsoNormal"><span style="font-size: 18pt; font-family: Aptos, sans-serif;">Our vision is to be a trusted regulator and registry, <br>enabling Jersey's economic growth.</span></p>
+    </div>
+
+    <div class="search">
+        <div class="js-tabs">
+            <ul class="js-tablist">
+                <li class="js-tablist__item"><a href="#search_all" class="js-tablist__link">Search all</a></li>
+                <li class="js-tablist__item"><a href="#search_regulated" class="js-tablist__link regulated">Regulated business</a></li>
+                <li class="js-tablist__item"><a href="#search_registry" class="js-tablist__link registry">Companies registry</a></li>
+                <li class="js-tablist__item"><a href="#search_vasp" class="js-tablist__link regulated">Virtual asset service providers</a></li>
+            </ul>
+            <div class="js-tabcontent" id="search_all">
+
+                <form role="search" aria-label="main" class="search-banner-form" action="/search" method="get">
+                    <label for="general-search" class="hidden">Search JFSC</label>
+                    <input type="text" name="search" id="general-search" class="search-query" placeholder="Search the site" />
+                    <button type="submit" class="button search-submit">Search</button>
+                </form>
+
+            </div>
+            <div class="js-tabcontent" id="search_regulated">
+
+                <form role="search" aria-label="regulated business" class="search-banner-form" action="/industry/regulated-entities" method="get">
+                    <label for="regulated-search" class="hidden">Search Regulated Businesses</label>
+                    <input type="text" name="search" id="regulated-search" class="search-query" placeholder="Search for regulated businesses" />
+                    <button type="submit" class="button search-submit">Search</button>
+                </form>
+
+            </div>
+
+            <div class="js-tabcontent" id="search_registry">
+
+                <form role="search" class="search-banner-form" aria-label="companies registry" action="/registry/registry-entities/" method="get">
+                    <label for="registry-search" class="hidden">Search Companies Registry</label>
+                    <input type="text" name="search" id="registry-search" class="search-query" placeholder="Search for registered companies" />
+                    <button type="submit" class="button search-submit">Search</button>
+                </form>
+
+            </div>
+
+            <div class="js-tabcontent" id="search_vasp">
+                <form role="search" class="search-banner-form" aria-label="vasp business" action="/industry/vasp-entities/" method="get">
+                    <label for="vasp-search" class="hidden">Search Virtual Asset Service Provider (VASP)</label>
+                    <input type="text" name="search" id="vasp-search" class="search-query" placeholder="Search for Virtual Asset Service Providers (VASP)" />
+                    <button type="submit" class="button search-submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+<div class="links-container">
+    <h5>Quick links</h5>
+
+    <ul class="links">
+            <li class="document">
+                <a href="/industry/financial-crime/amlcftcpf-handbooks/" target="">
+                    AML/CFT/CPF Handbook
+                </a>
+            </li>
+            <li class="document">
+                <a href="/industry/codes-of-practice/">
+                    Codes of Practice
+                </a>
+            </li>
+            <li class="document">
+                <a href="/industry/consultations/">
+                    Consultations
+                </a>
+            </li>
+            <li class="document">
+                <a href="/industry/guidance-and-policy/">
+                    Guidance and policy
+                </a>
+            </li>
+            <li class="document">
+                <a href="/industry/legislation/">
+                    Legislation
+                </a>
+            </li>
+            <li class="document">
+                <a href="https://www.jerseyfsc.org/news-and-events/?contenttype=Public%20statements">
+                    Public statements and warnings
+                </a>
+            </li>
+            <li class="document innovation-hub">
+                <a href="/industry/reggie-regulatory-chatbot/">
+                    Reggie &#x2013; regulatory chatbot
+                </a>
+            </li>
+            <li class="document">
+                <a href="/industry/sectors/schedule-2-forms/">
+                    Schedule 2 Forms and Guidance
+                </a>
+            </li>
+    </ul>
+</div>
+
+    
+    
+
+<div class="registry-links-container content-block">
+    <div class="main-content">
+        <div class="text-content">
+            <h5>Registry</h5>
+
+            <div class="links-list">
+                    <a class="first-link"
+                        href="https://www.jerseyfsc.org/myregistry/">
+                        Sign in to myRegistry
+                    </a>
+                    <a class=""
+                        href="/registry/annual-confirmation/">
+                        Annual confirmation
+                    </a>
+                    <a class=""
+                        href="/registry/register-or-make-a-change/incorporate-a-company/">
+                        Incorporate a company
+                    </a>
+                    <a class=""
+                        href="/registry/intellectual-property-office/">
+                        Intellectual Property Office
+                    </a>
+                    <a class=""
+                        href="/registry/sole-trader-and-small-business-support/">
+                        Sole trader and small business support
+                    </a>
+            </div>
+        </div>
+
+            <a class="bottom-link"
+                href="/registry/">
+                Visit Registry home
+            </a>
+
+    </div>
+</div>
+
+</section>
+
+    <section class="full">
+
+<section class="flexi-row updates-quicklinks">
+    <div class="grid updates">
+        <div id="updates_news">
+            <div class="updates-header">
+                <h4 class="updates-title">Latest News</h4>
+                <a href="/news-and-events">View all</a>
+            </div>
+
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Public statement</div>
+        <time datetime="11/9/2026">09 November 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/nordvault-private-bank-the-scam-entity/">NordVault Private Bank (the scam entity)</a>
+    </h3>
+</article>
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Industry update</div>
+        <time datetime="11/6/2026">06 November 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/listening-and-acting-on-your-feedback-read-our-2026-industry-survey-report/">Listening and acting on your feedback: read our 2026 industry survey report</a>
+    </h3>
+</article>
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Industry update</div>
+        <time datetime="11/6/2026">06 November 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/jfsc-strengthens-digital-assets-expertise-with-newly-appointed-commissioners/">JFSC strengthens digital assets expertise with newly appointed commissioners&#x202F; </a>
+    </h3>
+</article>
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Industry update</div>
+        <time datetime="11/2/2026">02 November 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/amlcftcpf-handbook-updates-now-in-effect/">AML/CFT/CPF Handbook updates now in effect</a>
+    </h3>
+</article>
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Industry update</div>
+        <time datetime="10/29/2026">29 October 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/digital-assets-hub-launched/">Digital assets hub launched</a>
+    </h3>
+</article>
+
+
+<article class="news-article-entry">
+    <div class="article-top">
+        <div class="type green">Industry update</div>
+        <time datetime="10/28/2026">28 October 2026</time>
+    </div>
+    <h3 class="title">
+        <a href="/news-and-events/watch-monthly-update-october-2026/">Watch: monthly update - October 2026 </a>
+    </h3>
+</article>
+        </div>
+        <div id="updates_events">
+            <div class="updates-header">
+                <h4 class="updates-title">Upcoming Events</h4>
+                <a href="/news-and-events/events-and-webinars">View all</a>
+            </div>
+
+
+
+<article class="event-entry">
+    <div class="calendar-date-entry">
+        <section class="month">
+            <h6>Nov</h6>
+        </section>
+        <section class="day">
+            <h6>09</h6>
+        </section>
+    </div>
+    <div class="news-article-entry">
+        <div class="article-top">
+            <div class="type blue">Event</div>
+            <time datetime="11/9/2026">
+                2:30 PM - 4:00 PM
+            </time>
+        </div>
+        <h3 class="title">
+            <a href="/news-and-events/annual-update-prescribed-non-profit-organisations-2026/">Annual update: Prescribed non-profit organisations 2026</a>
+        </h3>
+    </div>
+</article>
+
+
+<article class="event-entry">
+    <div class="calendar-date-entry">
+        <section class="month">
+            <h6>Nov</h6>
+        </section>
+        <section class="day">
+            <h6>12</h6>
+        </section>
+    </div>
+    <div class="news-article-entry">
+        <div class="article-top">
+            <div class="type blue">Event</div>
+            <time datetime="11/12/2026">
+                9:00 AM - 12:00 PM
+            </time>
+        </div>
+        <h3 class="title">
+            <a href="/news-and-events/2026-annual-update-designated-non-financial-businesses-and-professions-session-1/">2026 Annual update: Designated non-financial businesses and professions - session 1</a>
+        </h3>
+    </div>
+</article>
+
+
+<article class="event-entry">
+    <div class="calendar-date-entry">
+        <section class="month">
+            <h6>Nov</h6>
+        </section>
+        <section class="day">
+            <h6>12</h6>
+        </section>
+    </div>
+    <div class="news-article-entry">
+        <div class="article-top">
+            <div class="type blue">Event</div>
+            <time datetime="11/12/2026">
+                2:00 PM - 5:00 PM
+            </time>
+        </div>
+        <h3 class="title">
+            <a href="/news-and-events/2026-annual-update-designated-non-financial-businesses-and-professions-session-2/">2026 Annual update: Designated non-financial businesses and professions - session 2</a>
+        </h3>
+    </div>
+</article>
+
+
+<article class="event-entry">
+    <div class="calendar-date-entry">
+        <section class="month">
+            <h6>Nov</h6>
+        </section>
+        <section class="day">
+            <h6>24</h6>
+        </section>
+    </div>
+    <div class="news-article-entry">
+        <div class="article-top">
+            <div class="type blue">Event</div>
+            <time datetime="11/24/2026">
+                10:00 AM - 12:00 PM
+            </time>
+        </div>
+        <h3 class="title">
+            <a href="/news-and-events/build-a-strong-business-risk-assessment-workshop-for-sole-traders/">Build a strong business risk assessment: workshop for sole traders</a>
+        </h3>
+    </div>
+</article>
+
+
+<article class="event-entry">
+    <div class="calendar-date-entry">
+        <section class="month">
+            <h6>Dec</h6>
+        </section>
+        <section class="day">
+            <h6>08</h6>
+        </section>
+    </div>
+    <div class="news-article-entry">
+        <div class="article-top">
+            <div class="type blue">Event</div>
+            <time datetime="12/8/2026">
+                12:00 PM - 2:00 PM
+            </time>
+        </div>
+        <h3 class="title">
+            <a href="/news-and-events/npo-drop-in-session-december-2026/">NPO drop-in session &#x2013; December 2026</a>
+        </h3>
+    </div>
+</article>
+        </div>
+    </div>
+</section>
+
+<div id="" class="content-blocks-container container-green">
+
+
+    <div class="flexi-row">
+        <div class="grid">
+                <h5 class="anchor-title">Features and consultations</h5>
+
+                <div class="rows-grid">
+
+
+<div class="content-blocks-row"
+    style="--content-blocks-columns: 4;">
+
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/5rbpftuz/website-landscape-hero-34.jpg" alt="Jersey white house with landscape and sunset" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">NEW: Digital assets</h3>
+
+            <p>Explore our guides to digital assets and tokenisation</p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/industry/digital-assets/">
+            </a>
+    </div>
+</div>
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/1gzmtmhe/website-landscape-hero-30.jpg" alt="Jersey country lane with trees either side creating a canopy top" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Update on the repeal and replacement of COBO framework</h3>
+
+            <p>Read about the latest news on COBO</p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/news-and-events/update-on-the-repeal-and-replacement-of-cobo-framework/">
+            </a>
+    </div>
+</div>
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/pxeb5v3d/website-landscape-hero-31.jpg" alt="jersey coast with vibrant blue sea and green landscape and rocks and pier" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Proposed 2027 fee increase reduced following consultation</h3>
+
+            <p>Information on our latest fee decision</p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/news-and-events/proposed-2027-fee-increase-reduced-following-consultation/">
+            </a>
+    </div>
+</div>
+
+
+<div class="content-block ">
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Consultations</h3>
+
+            <p></p>
+
+                <div class="links-list">
+                        <a class="first-link"
+                            href="/industry/consultations/">
+                            See all consultations
+                        </a>
+                        <a class=""
+                            href="/industry/consultations/consultation-on-proposed-fees-for-2027/">
+                            Consultation on proposed fees for 2027
+                        </a>
+                        <a class=""
+                            href="/industry/consultations/consultation-on-changes-to-the-reliance-and-money-laundering-compliance-officer-regimes/">
+                            Consultation on changes to the reliance and money laundering compliance officer regimes
+                        </a>
+                        <a class=""
+                            href="/industry/consultations/consultation-on-limited-liability-companies-guidance/">
+                            Consultation on limited liability companies guidance
+                        </a>
+                </div>
+        </div>
+
+    </div>
+</div>
+</div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div id="" class="content-blocks-container container-embossed-leopard-gradient">
+
+        <div class="leopard-background">
+            <img src="/images/full-graphic.svg" />
+        </div>
+
+    <div class="flexi-row">
+        <div class="grid">
+                <h5 class="anchor-title">What we do</h5>
+
+                <div class="rows-grid">
+
+
+<div class="content-blocks-row"
+    style="--content-blocks-columns: 3;">
+
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/sbofod1c/website-landscape-hero-02.jpg" alt="Jersey pebble beach with a sun set and rocks in the distance" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">About us</h3>
+
+            <p></p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/about-us/">
+            </a>
+    </div>
+</div>
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/vw2fevvo/website-landscape-hero-29.jpg" alt="St Brelades bay in jersey with stone pier and a white boat attached to a buoy" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Publications</h3>
+
+            <p></p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/publications/">
+            </a>
+    </div>
+</div>
+
+
+<div class="content-block content-block--hover">
+        <div class="block-image">
+            <img src="/media/5804/c-jfsc-22-10076-1.jpg" alt="Daniella and Amanda speaking" />
+        </div>
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Work at JFSC</h3>
+
+            <p></p>
+
+        </div>
+
+            <a class="bottom-link bottom-link--icon-only bottom-link--stretched"
+                href="/careers/">
+            </a>
+    </div>
+</div>
+</div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div id="" class="content-blocks-container container-green">
+
+
+    <div class="flexi-row">
+        <div class="grid">
+
+                <div class="rows-grid">
+
+
+<div class="content-blocks-row"
+    style="--content-blocks-columns: 3;">
+
+
+
+<div class="content-block ">
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Protecting the public</h3>
+
+            <p></p>
+
+                <div class="links-list">
+                        <a class=""
+                            href="/protecting-the-public/complaints-reporting-and-whistleblowing/">
+                            Complaints, reporting and whistleblowing
+                        </a>
+                        <a class=""
+                            href="/protecting-the-public/fraud-prevention/">
+                            Fraud prevention
+                        </a>
+                        <a class=""
+                            href="/protecting-the-public/investment-mis-selling/">
+                            Investment mis-selling
+                        </a>
+                        <a class=""
+                            href="/protecting-the-public/making-a-complaint-against-a-regulated-financial-services-business/">
+                            Making a complaint against a regulated financial services business
+                        </a>
+                </div>
+        </div>
+
+            <a class="bottom-link "
+                href="/protecting-the-public/">
+Protecting the public            </a>
+    </div>
+</div>
+
+
+<div class="content-block ">
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Industry</h3>
+
+            <p></p>
+
+                <div class="links-list">
+                        <a class="first-link"
+                            href="https://myprofile.jerseyfsc.org/">
+                            Sign into myJFSC and myProfile
+                        </a>
+                        <a class=""
+                            href="/central-authorisations/">
+                            Central Authorisations
+                        </a>
+                        <a class=""
+                            href="/industry/consultations/">
+                            Consultations
+                        </a>
+                        <a class=""
+                            href="/industry/sectors/consumer-credit-business/">
+                            Consumer credit business
+                        </a>
+                        <a class=""
+                            href="/industry/examinations/">
+                            Examinations
+                        </a>
+                        <a class=""
+                            href="/industry/fees/">
+                            Fees
+                        </a>
+                        <a class=""
+                            href="/industry/financial-crime/">
+                            Financial crime
+                        </a>
+                        <a class=""
+                            href="/industry/international-co-operation/memoranda-of-understanding/">
+                            Memoranda of Understanding
+                        </a>
+                        <a class=""
+                            href="/industry/sectors/funds/regulated-funds/">
+                            Regulated funds
+                        </a>
+                        <a class=""
+                            href="/industry/regulated-entities/">
+                            Regulated entities
+                        </a>
+                        <a class=""
+                            href="/industry/risk/supervisory-risk-data-collection-exercise/">
+                            Supervisory risk data collection exercise
+                        </a>
+                </div>
+        </div>
+
+            <a class="bottom-link "
+                href="/industry/">
+Visit Industry            </a>
+    </div>
+</div>
+
+
+<div class="content-block ">
+
+    <div class="main-content">
+        <div class="text-content">
+            <h3 class="title">Regulatory framework</h3>
+
+            <p></p>
+
+                <div class="links-list">
+                        <a class=""
+                            href="/industry/financial-crime/amlcftcpf-handbooks/">
+                            AML/CFT/CPF Handbooks
+                        </a>
+                        <a class=""
+                            href="/industry/codes-of-practice/">
+                            Codes of Practice
+                        </a>
+                        <a class=""
+                            href="/industry/guidance-and-policy/">
+                            Guidance and policy
+                        </a>
+                        <a class=""
+                            href="/industry/legislation/">
+                            Legislation
+                        </a>
+                        <a class=""
+                            href="/industry/international-co-operation/sanctions/">
+                            Sanctions
+                        </a>
+                        <a class=""
+                            href="https://www.jerseyfsc.org/news-and-events/?categories=Dear%20CEO">
+                            Dear CEO letters
+                        </a>
+                        <a class=""
+                            href="https://www.jerseyfsc.org/industry/simplifying-our-regulatory-framework/">
+                            Simplifying our regulatory framework
+                        </a>
+                </div>
+        </div>
+
+    </div>
+</div>
+</div>
+                </div>
+        </div>
+    </div>
+</div>
+
+	<section class="flexi-row icon-panels">
+		<div class="panels">
+
+
+<div class="icon-panel">
+				<a href="/about-us/our-teams/enforcement/">
+
+					<div class="icon" aria-hidden="true">
+                        
+						<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.667 266.667" height="266.667" width="266.667" xml:space="preserve" id="svg2" version="1.1"><g transform="matrix(1.33333 0 0 -1.33333 0 266.667)" id="g10"><g transform="scale(.1)" id="g12"><path id="path14" d="M1001.07 1298.32c87.37 0 158.46-71.23 158.46-158.78 0-87.54-71.09-158.759-158.46-158.759-87.363 0-158.449 71.219-158.449 158.759 0 87.55 71.086 158.78 158.449 158.78zm0-336.648c97.91 0 177.56 79.788 177.56 177.868 0 98.09-79.65 177.89-177.56 177.89-97.902 0-177.554-79.8-177.554-177.89 0-98.08 79.652-177.868 177.554-177.868" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path16" d="M1001.07 1298.32c87.37 0 158.46-71.23 158.46-158.78 0-87.54-71.09-158.759-158.46-158.759-87.363 0-158.449 71.219-158.449 158.759 0 87.55 71.086 158.78 158.449 158.78zm0-336.648c97.91 0 177.56 79.788 177.56 177.868 0 98.09-79.65 177.89-177.56 177.89-97.902 0-177.554-79.8-177.554-177.89 0-98.08 79.652-177.868 177.554-177.868z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path18" d="M1001.07 922.891c-128.531 0-233.101-104.77-233.101-233.563h19.105c0 118.254 96 214.453 213.996 214.453 118.02 0 214.02-96.199 214.02-214.453h19.11c0 128.793-104.58 233.563-233.13 233.563" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path20" d="M1001.07 922.891c-128.531 0-233.101-104.77-233.101-233.563h19.105c0 118.254 96 214.453 213.996 214.453 118.02 0 214.02-96.199 214.02-214.453h19.11c0 128.793-104.58 233.563-233.13 233.563z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path22" d="M1000.18 227.578c-425.825 0-772.254 346.434-772.254 772.25 0 425.822 346.429 772.262 772.254 772.262 425.82 0 772.25-346.44 772.25-772.262 0-425.816-346.43-772.25-772.25-772.25zm-.15-167.09c-518.874 0-939.499 420.621-939.499 939.5 0 518.872 420.625 939.492 939.499 939.492 518.87 0 939.5-420.62 939.5-939.492 0-256-102.44-488.039-268.5-657.488l-104.82 104.809c139.34 142.73 225.33 337.781 225.33 552.519 0 436.362-355 791.372-791.36 791.372-436.364 0-791.367-355.01-791.367-791.372 0-436.348 355.003-791.359 791.367-791.359 214.74 0 409.8 85.992 552.52 225.332l104.82-104.813c-169.45-166.066-401.49-268.5-657.49-268.5zm975.01 939.5c0 537.622-437.39 975.012-975.01 975.012-537.624 0-975.014-437.39-975.014-975.012 0-537.629 437.39-975.02 975.014-975.02 265.39 0 506.3 106.634 682.28 279.231l252.08-252.07 13.52 13.52-252.09 252.062c172.6 175.98 279.22 416.891 279.22 682.277" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path24" d="M1000.18 227.578c-425.825 0-772.254 346.434-772.254 772.25 0 425.822 346.429 772.262 772.254 772.262 425.82 0 772.25-346.44 772.25-772.262 0-425.816-346.43-772.25-772.25-772.25zm-.15-167.09c-518.874 0-939.499 420.621-939.499 939.5 0 518.872 420.625 939.492 939.499 939.492 518.87 0 939.5-420.62 939.5-939.492 0-256-102.44-488.039-268.5-657.488l-104.82 104.809c139.34 142.73 225.33 337.781 225.33 552.519 0 436.362-355 791.372-791.36 791.372-436.364 0-791.367-355.01-791.367-791.372 0-436.348 355.003-791.359 791.367-791.359 214.74 0 409.8 85.992 552.52 225.332l104.82-104.813c-169.45-166.066-401.49-268.5-657.49-268.5zm975.01 939.5c0 537.622-437.39 975.012-975.01 975.012-537.624 0-975.014-437.39-975.014-975.012 0-537.629 437.39-975.02 975.014-975.02 265.39 0 506.3 106.634 682.28 279.231l252.08-252.07 13.52 13.52-252.09 252.062c172.6 175.98 279.22 416.891 279.22 682.277z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/></g></g></svg>
+					</div>
+
+					<h3 class="title">
+						Enforcement
+					</h3>
+
+					<div class="description">
+						
+					</div>
+
+				</a>
+
+
+
+
+
+</div>
+<div class="icon-panel">
+				<a href="/industry/risk/cyber-security/understanding-your-regulatory-obligations/">
+
+					<div class="icon" aria-hidden="true">
+                        
+						<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.667 266.667" height="266.667" width="266.667" xml:space="preserve" id="svg2" version="1.1"><g transform="matrix(1.33333 0 0 -1.33333 0 266.667)" id="g10"><g transform="scale(.1)" id="g12"><path id="path14" d="M1782.36 1027.7c-9.03 0-16.75-5.3-20.38-12.89h-148.82a17.33 17.33 0 0 1-14.38 7.62c-9.55 0-17.3-7.7-17.3-17.17 0-9.51 7.75-17.209 17.3-17.209 6.02 0 11.31 3.058 14.41 7.687h148.76c3.6-7.636 11.35-12.968 20.41-12.968 12.48 0 22.6 10.058 22.6 22.48 0 12.39-10.12 22.45-22.6 22.45" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path16" d="M1782.36 1027.7c-9.03 0-16.75-5.3-20.38-12.89h-148.82a17.33 17.33 0 0 1-14.38 7.62c-9.55 0-17.3-7.7-17.3-17.17 0-9.51 7.75-17.209 17.3-17.209 6.02 0 11.31 3.058 14.41 7.687h148.76c3.6-7.636 11.35-12.968 20.41-12.968 12.48 0 22.6 10.058 22.6 22.48 0 12.39-10.12 22.45-22.6 22.45z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path18" d="M311.203 1374.89c10.801-6.21 24.641-2.51 30.879 8.23 6.215 10.74 2.523 24.48-8.281 30.68-10.801 6.22-24.61 2.54-30.856-8.23-6.238-10.75-2.547-24.48 8.258-30.68" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path20" d="M311.203 1374.89c10.801-6.21 24.641-2.51 30.879 8.23 6.215 10.74 2.523 24.48-8.281 30.68-10.801 6.22-24.61 2.54-30.856-8.23-6.238-10.75-2.547-24.48 8.258-30.68z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path22" d="M311.184 635.68c-10.801-6.211-14.496-19.95-8.25-30.692 6.214-10.75 20.046-14.449 30.851-8.238 10.801 6.211 14.5 19.949 8.254 30.691-6.215 10.75-20.051 14.45-30.855 8.239" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path24" d="M311.184 635.68c-10.801-6.211-14.496-19.95-8.25-30.692 6.214-10.75 20.046-14.449 30.851-8.238 10.801 6.211 14.5 19.949 8.254 30.691-6.215 10.75-20.051 14.45-30.855 8.239z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path26" d="M1000.02 70.82c-518.872 0-939.497 418.36-939.497 934.44s420.625 934.44 939.497 934.44c518.87 0 939.5-418.36 939.5-934.44s-420.63-934.44-939.5-934.44zm0 1904.21c-537.622 0-975.012-435.04-975.012-969.77 0-534.729 437.39-969.772 975.012-969.772 537.62 0 975.01 435.043 975.01 969.772 0 534.73-437.39 969.77-975.01 969.77" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path28" d="M1000.02 70.82c-518.872 0-939.497 418.36-939.497 934.44s420.625 934.44 939.497 934.44c518.87 0 939.5-418.36 939.5-934.44s-420.63-934.44-939.5-934.44zm0 1904.21c-537.622 0-975.012-435.04-975.012-969.77 0-534.729 437.39-969.772 975.012-969.772 537.62 0 975.01 435.043 975.01 969.772 0 534.73-437.39 969.77-975.01 969.77z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path30" d="M1000 249.609c-12.484 0-22.594-10.058-22.594-22.468 0-12.422 10.11-22.481 22.594-22.481 12.49 0 22.6 10.059 22.6 22.481 0 12.41-10.11 22.468-22.6 22.468" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path32" d="M1000 249.609c-12.484 0-22.594-10.058-22.594-22.468 0-12.422 10.11-22.481 22.594-22.481 12.49 0 22.6 10.059 22.6 22.481 0 12.41-10.11 22.468-22.6 22.468z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path34" d="M1388.26 353.648l-73.37 128.231c2.47 4.98 2.47 11.051-.54 16.23-4.76 8.211-15.34 11.02-23.62 6.282-8.25-4.743-11.08-15.262-6.32-23.493 3.02-5.207 8.36-8.238 13.98-8.558l73.8-128.961c-4.37-6.84-4.94-15.738-.59-23.238 6.25-10.75 20.06-14.442 30.86-8.243 10.8 6.211 14.52 19.973 8.28 30.711-4.7 8.09-13.7 12.172-22.48 11.039" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path36" d="M1388.26 353.648l-73.37 128.231c2.47 4.98 2.47 11.051-.54 16.23-4.76 8.211-15.34 11.02-23.62 6.282-8.25-4.743-11.08-15.262-6.32-23.493 3.02-5.207 8.36-8.238 13.98-8.558l73.8-128.961c-4.37-6.84-4.94-15.738-.59-23.238 6.25-10.75 20.06-14.442 30.86-8.243 10.8 6.211 14.52 19.973 8.28 30.711-4.7 8.09-13.7 12.172-22.48 11.039z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path38" d="M1688.84 635.641c-10.81 6.211-24.64 2.539-30.86-8.243-6.24-10.738-2.55-24.468 8.26-30.679 10.8-6.207 24.64-2.508 30.85 8.23 6.24 10.75 2.55 24.481-8.25 30.692" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path40" d="M1688.84 635.641c-10.81 6.211-24.64 2.539-30.86-8.243-6.24-10.738-2.55-24.468 8.26-30.679 10.8-6.207 24.64-2.508 30.85 8.23 6.24 10.75 2.55 24.481-8.25 30.692z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path42" d="M1688.85 1374.85c10.81 6.21 14.5 19.94 8.26 30.69-6.22 10.74-20.05 14.44-30.86 8.23-10.8-6.2-14.49-19.94-8.25-30.69 6.24-10.76 20.05-14.44 30.85-8.23" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path44" d="M1688.85 1374.85c10.81 6.21 14.5 19.94 8.26 30.69-6.22 10.74-20.05 14.44-30.86 8.23-10.8-6.2-14.49-19.94-8.25-30.69 6.24-10.76 20.05-14.44 30.85-8.23z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path46" d="M1000.04 1760.91c12.48 0 22.59 10.06 22.59 22.48s-10.11 22.48-22.59 22.48c-12.466 0-22.606-10.06-22.606-22.48s10.14-22.48 22.606-22.48" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path48" d="M1000.04 1760.91c12.48 0 22.59 10.06 22.59 22.48s-10.11 22.48-22.59 22.48c-12.466 0-22.606-10.06-22.606-22.48s10.14-22.48 22.606-22.48z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path50" d="M1527.21 722.379c-5.17 2.961-11.24 2.973-16.23.562l-138.81 79.571c-1 2.258-2.5 4.308-4.8 5.629-5.76 3.32-13.12 1.339-16.46-4.391-3.34-5.73-1.35-13.051 4.4-16.371 2.29-1.32 4.82-1.59 7.26-1.328l138.75-79.531c.32-5.61 3.36-10.93 8.59-13.942 8.28-4.738 18.86-1.918 23.62 6.313 4.79 8.211 1.94 18.73-6.32 23.488" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path52" d="M1527.21 722.379c-5.17 2.961-11.24 2.973-16.23.562l-138.81 79.571c-1 2.258-2.5 4.308-4.8 5.629-5.76 3.32-13.12 1.339-16.46-4.391-3.34-5.73-1.35-13.051 4.4-16.371 2.29-1.32 4.82-1.59 7.26-1.328l138.75-79.531c.32-5.61 3.36-10.93 8.59-13.942 8.28-4.738 18.86-1.918 23.62 6.313 4.79 8.211 1.94 18.73-6.32 23.488z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path54" d="M1509.92 1317.92c-5.25-3.03-8.28-8.39-8.58-14l-138.51-79.49c-2.52.32-5.14.05-7.51-1.31-5.75-3.3-7.72-10.65-4.4-16.37 3.34-5.73 10.7-7.7 16.46-4.39 2.22 1.28 3.68 3.25 4.69 5.4l139 79.77c4.97-2.37 11-2.35 16.15.59 8.28 4.74 11.11 15.29 6.34 23.49-4.79 8.24-15.36 11.05-23.64 6.31" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path56" d="M1509.92 1317.92c-5.25-3.03-8.28-8.39-8.58-14l-138.51-79.49c-2.52.32-5.14.05-7.51-1.31-5.75-3.3-7.72-10.65-4.4-16.37 3.34-5.73 10.7-7.7 16.46-4.39 2.22 1.28 3.68 3.25 4.69 5.4l139 79.77c4.97-2.37 11-2.35 16.15.59 8.28 4.74 11.11 15.29 6.34 23.49-4.79 8.24-15.36 11.05-23.64 6.31z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path58" d="M1290.77 1506.13c8.28-4.77 18.86-1.96 23.62 6.28 2.99 5.16 2.99 11.23.53 16.2l74.75 128.18c8.33-.55 16.65 3.43 21.1 11.11 6.25 10.74 2.55 24.5-8.28 30.69-10.8 6.2-24.61 2.52-30.85-8.21-4.6-7.92-3.76-17.46 1.31-24.42l-74.52-127.8c-5.62-.33-10.96-3.35-13.98-8.54-4.79-8.24-1.96-18.75 6.32-23.49" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path60" d="M1290.77 1506.13c8.28-4.77 18.86-1.96 23.62 6.28 2.99 5.16 2.99 11.23.53 16.2l74.75 128.18c8.33-.55 16.65 3.43 21.1 11.11 6.25 10.74 2.55 24.5-8.28 30.69-10.8 6.2-24.61 2.52-30.85-8.21-4.6-7.92-3.76-17.46 1.31-24.42l-74.52-127.8c-5.62-.33-10.96-3.35-13.98-8.54-4.79-8.24-1.96-18.75 6.32-23.49z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path62" d="M1017.33 1600.81c0 9.5-7.75 17.21-17.3 17.21-9.53 0-17.28-7.71-17.28-17.21 0-5.99 3.082-11.25 7.742-14.33v-159.27c-1.472-1.98-2.512-4.31-2.512-6.97 0-6.61 5.403-11.98 12.05-11.98 6.65 0 12.05 5.37 12.05 11.98 0 2.67-1.05 5.01-2.53 7v159.22c4.68 3.07 7.78 8.35 7.78 14.35" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path64" d="M1017.33 1600.81c0 9.5-7.75 17.21-17.3 17.21-9.53 0-17.28-7.71-17.28-17.21 0-5.99 3.082-11.25 7.742-14.33v-159.27c-1.472-1.98-2.512-4.31-2.512-6.97 0-6.61 5.403-11.98 12.05-11.98 6.65 0 12.05 5.37 12.05 11.98 0 2.67-1.05 5.01-2.53 7v159.22c4.68 3.07 7.78 8.35 7.78 14.35z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path66" d="M701.695 1538.18l-73.644 129.29c4.179 6.8 4.672 15.54.383 22.92-6.239 10.75-20.047 14.44-30.852 8.24-10.801-6.22-14.523-19.98-8.281-30.72 4.765-8.2 13.929-12.24 22.804-10.96l73.075-128.27c-2.492-4.99-2.516-11.07.488-16.26 4.789-8.21 15.359-11.05 23.617-6.28 8.281 4.73 11.11 15.25 6.344 23.49-3.004 5.19-8.336 8.21-13.934 8.55" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path68" d="M701.695 1538.18l-73.644 129.29c4.179 6.8 4.672 15.54.383 22.92-6.239 10.75-20.047 14.44-30.852 8.24-10.801-6.22-14.523-19.98-8.281-30.72 4.765-8.2 13.929-12.24 22.804-10.96l73.075-128.27c-2.492-4.99-2.516-11.07.488-16.26 4.789-8.21 15.359-11.05 23.617-6.28 8.281 4.73 11.11 15.25 6.344 23.49-3.004 5.19-8.336 8.21-13.934 8.55z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path70" d="M472.824 1288.14c5.227-2.99 11.352-2.96 16.371-.47l138.66-79.63c.997-2.27 2.504-4.33 4.817-5.65 5.758-3.33 13.121-1.35 16.461 4.38 3.336 5.73 1.347 13.05-4.41 16.37-2.274 1.32-4.785 1.58-7.215 1.33l-138.77 79.7c-.371 5.53-3.414 10.8-8.613 13.77-8.254 4.74-18.852 1.93-23.617-6.28-4.762-8.24-1.934-18.76 6.316-23.52" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path72" d="M472.824 1288.14c5.227-2.99 11.352-2.96 16.371-.47l138.66-79.63c.997-2.27 2.504-4.33 4.817-5.65 5.758-3.33 13.121-1.35 16.461 4.38 3.336 5.73 1.347 13.05-4.41 16.37-2.274 1.32-4.785 1.58-7.215 1.33l-138.77 79.7c-.371 5.53-3.414 10.8-8.613 13.77-8.254 4.74-18.852 1.93-23.617-6.28-4.762-8.24-1.934-18.76 6.316-23.52z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path74" d="M401.258 1022.48c-6.008 0-11.289-3.05-14.395-7.67H238.082c-3.613 7.63-11.355 12.95-20.398 12.95-12.485 0-22.602-10.07-22.602-22.49 0-12.391 10.117-22.45 22.602-22.45 9.039 0 16.773 5.309 20.39 12.918h148.793a17.307 17.307 0 0 1 14.391-7.648c9.555 0 17.301 7.699 17.301 17.18 0 9.5-7.746 17.21-17.301 17.21" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path76" d="M401.258 1022.48c-6.008 0-11.289-3.05-14.395-7.67H238.082c-3.613 7.63-11.355 12.95-20.398 12.95-12.485 0-22.602-10.07-22.602-22.49 0-12.391 10.117-22.45 22.602-22.45 9.039 0 16.773 5.309 20.39 12.918h148.793a17.307 17.307 0 0 1 14.391-7.648c9.555 0 17.301 7.699 17.301 17.18 0 9.5-7.746 17.21-17.301 17.21z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path78" d="M709.266 504.398c-8.254 4.762-18.852 1.954-23.618-6.289-2.976-5.14-2.984-11.16-.566-16.121L610.359 353.73c-8.32.551-16.636-3.429-21.093-11.101-6.243-10.75-2.52-24.481 8.281-30.688 10.801-6.211 24.609-2.531 30.855 8.207 4.598 7.922 3.754 17.461-1.32 24.43l74.445 127.781c5.645.301 11.036 3.321 14.086 8.551 4.762 8.231 1.934 18.75-6.347 23.488" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path80" d="M709.266 504.398c-8.254 4.762-18.852 1.954-23.618-6.289-2.976-5.14-2.984-11.16-.566-16.121L610.359 353.73c-8.32.551-16.636-3.429-21.093-11.101-6.243-10.75-2.52-24.481 8.281-30.688 10.801-6.211 24.609-2.531 30.855 8.207 4.598 7.922 3.754 17.461-1.32 24.43l74.445 127.781c5.645.301 11.036 3.321 14.086 8.551 4.762 8.231 1.934 18.75-6.347 23.488z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path82" d="M982.711 409.719c0-9.5 7.746-17.207 17.299-17.207 9.53 0 17.28 7.707 17.28 17.207 0 5.98-3.08 11.25-7.74 14.332v159.258c1.47 1.98 2.51 4.312 2.51 6.972 0 6.617-5.4 11.989-12.05 11.989-6.647 0-12.053-5.372-12.053-11.989 0-2.672 1.051-5 2.535-7V424.059c-4.683-3.071-7.781-8.348-7.781-14.34" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path84" d="M982.711 409.719c0-9.5 7.746-17.207 17.299-17.207 9.53 0 17.28 7.707 17.28 17.207 0 5.98-3.08 11.25-7.74 14.332v159.258c1.47 1.98 2.51 4.312 2.51 6.972 0 6.617-5.4 11.989-12.05 11.989-6.647 0-12.053-5.372-12.053-11.989 0-2.672 1.051-5 2.535-7V424.059c-4.683-3.071-7.781-8.348-7.781-14.34z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path86" d="M1202.6 656.25c-5.76-3.32-7.74-10.641-4.41-16.371 3.32-5.731 10.7-7.699 16.46-4.391 5.76 3.301 7.75 10.653 4.41 16.383-3.34 5.719-10.7 7.699-16.46 4.379" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path88" d="M1202.6 656.25c-5.76-3.32-7.74-10.641-4.41-16.371 3.32-5.731 10.7-7.699 16.46-4.391 5.76 3.301 7.75 10.653 4.41 16.383-3.34 5.719-10.7 7.699-16.46 4.379z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path90" d="M1429.3 1005.26c0 6.61-5.41 11.98-12.05 11.98-6.65 0-12.06-5.37-12.06-11.98 0-6.619 5.41-11.99 12.06-11.99 6.64 0 12.05 5.371 12.05 11.99" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path92" d="M1429.3 1005.26c0 6.61-5.41 11.98-12.05 11.98-6.65 0-12.06-5.37-12.06-11.98 0-6.619 5.41-11.99 12.06-11.99 6.64 0 12.05 5.371 12.05 11.99z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path94" d="M1214.67 1375.02c-5.76 3.32-13.12 1.34-16.46-4.38-3.33-5.73-1.35-13.05 4.41-16.37 5.76-3.32 13.12-1.35 16.46 4.38 3.31 5.73 1.35 13.08-4.41 16.37" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path96" d="M1214.67 1375.02c-5.76 3.32-13.12 1.34-16.46-4.38-3.33-5.73-1.35-13.05 4.41-16.37 5.76-3.32 13.12-1.35 16.46 4.38 3.31 5.73 1.35 13.08-4.41 16.37z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path98" d="M785.395 1375.03c-5.758-3.32-7.747-10.64-4.411-16.37 3.34-5.73 10.704-7.71 16.461-4.39 5.762 3.32 7.719 10.65 4.407 16.37-3.34 5.74-10.704 7.71-16.457 4.39" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path100" d="M785.395 1375.03c-5.758-3.32-7.747-10.64-4.411-16.37 3.34-5.73 10.704-7.71 16.461-4.39 5.762 3.32 7.719 10.65 4.407 16.37-3.34 5.74-10.704 7.71-16.457 4.39z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path102" d="M570.746 1005.27c0-6.61 5.399-11.989 12.051-11.989 6.648 0 12.051 5.379 12.051 11.989 0 6.62-5.403 11.99-12.051 11.99-6.652 0-12.051-5.37-12.051-11.99" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path104" d="M570.746 1005.27c0-6.61 5.399-11.989 12.051-11.989 6.648 0 12.051 5.379 12.051 11.989 0 6.62-5.403 11.99-12.051 11.99-6.652 0-12.051-5.37-12.051-11.99z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path106" d="M797.426 656.262c-5.762 3.316-13.153 1.34-16.461-4.383-3.34-5.731-1.352-13.051 4.402-16.379 5.762-3.32 13.125-1.34 16.461 4.391 3.34 5.73 1.352 13.078-4.402 16.371" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path108" d="M797.426 656.262c-5.762 3.316-13.153 1.34-16.461-4.383-3.34-5.731-1.352-13.051 4.402-16.379 5.762-3.32 13.125-1.34 16.461 4.391 3.34 5.73 1.352 13.078-4.402 16.371z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path110" d="M637.523 786.07c2.426-.242 4.922.032 7.192 1.328 5.758 3.301 7.742 10.653 4.41 16.383-3.34 5.719-10.703 7.699-16.461 4.379-2.32-1.34-3.832-3.41-4.824-5.68l-138.809-79.511a17.403 17.403 0 0 1-16.211-.571c-8.281-4.738-11.109-15.257-6.32-23.488 4.766-8.238 15.34-11.051 23.621-6.289 5.234 3.008 8.274 8.328 8.594 13.93l138.808 79.519" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path112" d="M637.523 786.07c2.426-.242 4.922.032 7.192 1.328 5.758 3.301 7.742 10.653 4.41 16.383-3.34 5.719-10.703 7.699-16.461 4.379-2.32-1.34-3.832-3.41-4.824-5.68l-138.809-79.511a17.403 17.403 0 0 1-16.211-.571c-8.281-4.738-11.109-15.257-6.32-23.488 4.766-8.238 15.34-11.051 23.621-6.289 5.234 3.008 8.274 8.328 8.594 13.93z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path114" d="M1055.66 1073.5c-15.19 12.27-34.54 19.64-55.64 19.64-20.891 0-40.055-7.25-55.184-19.3-28.102 27.77-59.449 58.73-94.664 93.47h299.848zm107.96-217.34c-15.06 15.352-42.94 43.34-94.43 94.512 11.98 15 19.19 33.949 19.19 54.588 0 20.7-7.24 39.7-19.29 54.72l94.53 93.98zM850 842.18l94.969 94.41c15.105-11.988 34.219-19.219 55.051-19.219 21.14 0 40.53 7.41 55.74 19.731 41.94-41.653 76.49-76.102 95.09-94.922zm-13.551 311.89c29.809-29.41 62.278-61.48 94.824-93.66-12.246-15.09-19.617-34.26-19.617-55.15 0-20.959 7.414-40.19 19.735-55.299l-94.942-94.383zm163.571 140.15c61.9 0 112.82-47.57 117.71-107.86H882.313c4.882 60.29 55.812 107.86 117.707 107.86zm0 19.05c-72.415 0-131.895-56.11-136.821-126.91h-45.808V823.121h365.279v363.239h-45.83c-4.92 70.8-64.41 126.91-136.82 126.91" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path116" d="M1055.66 1073.5c-15.19 12.27-34.54 19.64-55.64 19.64-20.891 0-40.055-7.25-55.184-19.3-28.102 27.77-59.449 58.73-94.664 93.47h299.848zm107.96-217.34c-15.06 15.352-42.94 43.34-94.43 94.512 11.98 15 19.19 33.949 19.19 54.588 0 20.7-7.24 39.7-19.29 54.72l94.53 93.98zM850 842.18l94.969 94.41c15.105-11.988 34.219-19.219 55.051-19.219 21.14 0 40.53 7.41 55.74 19.731 41.94-41.653 76.49-76.102 95.09-94.922zm-13.551 311.89c29.809-29.41 62.278-61.48 94.824-93.66-12.246-15.09-19.617-34.26-19.617-55.15 0-20.959 7.414-40.19 19.735-55.299l-94.942-94.383zm163.571 140.15c61.9 0 112.82-47.57 117.71-107.86H882.313c4.882 60.29 55.812 107.86 117.707 107.86zm0 19.05c-72.415 0-131.895-56.11-136.821-126.91h-45.808V823.121h365.279v363.239h-45.83c-4.92 70.8-64.41 126.91-136.82 126.91z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/></g></g></svg>
+					</div>
+
+					<h3 class="title">
+						Cyber-security
+					</h3>
+
+					<div class="description">
+						
+					</div>
+
+				</a>
+
+
+
+
+
+</div>
+<div class="icon-panel">
+				<a href="/industry/innovation-hub/">
+
+					<div class="icon" aria-hidden="true">
+                        
+						<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.667 266.667" height="266.667" width="266.667" xml:space="preserve" id="svg2" version="1.1"><g transform="matrix(1.33333 0 0 -1.33333 0 266.667)" id="g10"><g transform="scale(.1)" id="g12"><path id="path14" d="M217.68 1022.63c12.484 0 22.601-10.11 22.601-22.6 0-12.479-10.117-22.569-22.601-22.569-12.481 0-22.598 10.09-22.598 22.569 0 12.49 10.117 22.6 22.598 22.6" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path16" d="M217.68 1022.63c12.484 0 22.601-10.11 22.601-22.6 0-12.479-10.117-22.569-22.601-22.569-12.481 0-22.598 10.09-22.598 22.569 0 12.49 10.117 22.6 22.598 22.6" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path18" d="M1666.24 589.262c-10.81 6.238-14.5 20.047-8.26 30.859 6.22 10.801 20.05 14.52 30.86 8.277 10.8-6.238 14.49-20.046 8.25-30.859-6.21-10.828-20.05-14.519-30.85-8.277" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path20" d="M1666.24 589.262c-10.81 6.238-14.5 20.047-8.26 30.859 6.22 10.801 20.05 14.52 30.86 8.277 10.8-6.238 14.49-20.046 8.25-30.859-6.21-10.828-20.05-14.519-30.85-8.277" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path22" d="M1782.36 977.398c-12.48 0-22.6 10.114-22.6 22.602 0 12.48 10.12 22.57 22.6 22.57 12.48 0 22.6-10.09 22.6-22.57 0-12.488-10.12-22.602-22.6-22.602" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path24" d="M1782.36 977.398c-12.48 0-22.6 10.114-22.6 22.602 0 12.48 10.12 22.57 22.6 22.57 12.48 0 22.6-10.09 22.6-22.57 0-12.488-10.12-22.602-22.6-22.602" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path26" d="M1688.85 1371.6c-10.8-6.24-24.63-2.55-30.85 8.28-6.24 10.8-2.55 24.61 8.25 30.86 10.81 6.24 24.64 2.52 30.86-8.29 6.24-10.8 2.55-24.61-8.26-30.85" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path28" d="M1688.85 1371.6c-10.8-6.24-24.63-2.55-30.85 8.28-6.24 10.8-2.55 24.61 8.25 30.86 10.81 6.24 24.64 2.52 30.86-8.29 6.24-10.8 2.55-24.61-8.26-30.85" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path30" d="M1000.02 1939.51c518.87 0 939.5-420.63 939.5-939.49 0-518.879-420.63-939.5-939.5-939.5-518.872 0-939.497 420.621-939.497 939.5 0 518.86 420.625 939.49 939.497 939.49m0 35.52c-537.622 0-975.012-437.39-975.012-975.01C25.008 462.391 462.398 25 1000.02 25c537.62 0 975.01 437.391 975.01 975.02 0 537.62-437.39 975.01-975.01 975.01" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path32" d="M1000.02 1939.51c518.87 0 939.5-420.63 939.5-939.49 0-518.879-420.63-939.5-939.5-939.5-518.872 0-939.497 420.621-939.497 939.5 0 518.86 420.625 939.49 939.497 939.49m0 35.52c-537.622 0-975.012-437.39-975.012-975.01C25.008 462.391 462.398 25 1000.02 25c537.62 0 975.01 437.391 975.01 975.02 0 537.62-437.39 975.01-975.01 975.01" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path34" d="M1088.39 1000.02c0-48.801-39.57-88.372-88.36-88.372-48.819 0-88.362 39.571-88.362 88.372 0 48.78 39.543 88.36 88.362 88.36 48.79 0 88.36-39.58 88.36-88.36" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path36" d="M1088.39 1000.02c0-48.801-39.57-88.372-88.36-88.372-48.819 0-88.362 39.571-88.362 88.372 0 48.78 39.543 88.36 88.362 88.36 48.79 0 88.36-39.58 88.36-88.36" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path38" d="M1022.63 1782.36c0-12.49-10.11-22.6-22.59-22.6-12.466 0-22.602 10.11-22.602 22.6 0 12.48 10.136 22.59 22.602 22.59 12.48 0 22.59-10.11 22.59-22.59" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path40" d="M1022.63 1782.36c0-12.49-10.11-22.6-22.59-22.6-12.466 0-22.602 10.11-22.602 22.6 0 12.48 10.136 22.59 22.602 22.59 12.48 0 22.59-10.11 22.59-22.59" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path42" d="M628.434 1688.85c6.246-10.8 2.55-24.64-8.278-30.85-10.804-6.25-24.613-2.55-30.855 8.25-6.242 10.8-2.52 24.64 8.281 30.88 10.801 6.22 24.613 2.52 30.852-8.28" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path44" d="M628.434 1688.85c6.246-10.8 2.55-24.64-8.278-30.85-10.804-6.25-24.613-2.55-30.855 8.25-6.242 10.8-2.52 24.64 8.281 30.88 10.801 6.22 24.613 2.52 30.852-8.28" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path46" d="M333.801 1410.77c10.804-6.24 14.5-20.05 8.281-30.86-6.242-10.8-20.074-14.52-30.879-8.27-10.805 6.24-14.496 20.05-8.258 30.85 6.243 10.83 20.055 14.52 30.856 8.28" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path48" d="M333.801 1410.77c10.804-6.24 14.5-20.05 8.281-30.86-6.242-10.8-20.074-14.52-30.879-8.27-10.805 6.24-14.496 20.05-8.258 30.85 6.243 10.83 20.055 14.52 30.856 8.28" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path50" d="M311.184 628.43c10.804 6.242 24.64 2.55 30.855-8.282 6.242-10.796 2.547-24.609-8.254-30.847-10.805-6.25-24.64-2.531-30.855 8.277-6.242 10.801-2.547 24.613 8.254 30.852" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path52" d="M311.184 628.43c10.804 6.242 24.64 2.55 30.855-8.282 6.242-10.796 2.547-24.609-8.254-30.847-10.805-6.25-24.64-2.531-30.855 8.277-6.242 10.801-2.547 24.613 8.254 30.852" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path54" d="M589.266 333.801c6.242 10.801 20.05 14.488 30.855 8.277 10.801-6.25 14.524-20.078 8.281-30.879-6.246-10.808-20.05-14.5-30.855-8.258-10.805 6.239-14.524 20.047-8.281 30.86" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path56" d="M589.266 333.801c6.242 10.801 20.05 14.488 30.855 8.277 10.801-6.25 14.524-20.078 8.281-30.879-6.246-10.808-20.05-14.5-30.855-8.258-10.805 6.239-14.524 20.047-8.281 30.86" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path58" d="M977.402 217.68c0 12.48 10.114 22.601 22.598 22.601 12.49 0 22.6-10.121 22.6-22.601 0-12.489-10.11-22.602-22.6-22.602-12.484 0-22.598 10.113-22.598 22.602" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path60" d="M977.402 217.68c0 12.48 10.114 22.601 22.598 22.601 12.49 0 22.6-10.121 22.6-22.601 0-12.489-10.11-22.602-22.6-22.602-12.484 0-22.598 10.113-22.598 22.602" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path62" d="M1371.6 311.18c-6.24 10.8-2.54 24.609 8.29 30.859 10.8 6.242 24.61 2.539 30.85-8.258 6.24-10.801 2.52-24.64-8.28-30.883-10.8-6.218-24.61-2.519-30.86 8.282" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path64" d="M1371.6 311.18c-6.24 10.8-2.54 24.609 8.29 30.859 10.8 6.242 24.61 2.539 30.85-8.258 6.24-10.801 2.52-24.64-8.28-30.883-10.8-6.218-24.61-2.519-30.86 8.282" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path66" d="M1410.77 1666.23c-6.24-10.8-20.05-14.5-30.85-8.28-10.8 6.25-14.52 20.08-8.28 30.88 6.24 10.81 20.05 14.5 30.88 8.26 10.8-6.25 14.5-20.05 8.25-30.86" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path68" d="M1410.77 1666.23c-6.24-10.8-20.05-14.5-30.85-8.28-10.8 6.25-14.52 20.08-8.28 30.88 6.24 10.81 20.05 14.5 30.88 8.26 10.8-6.25 14.5-20.05 8.25-30.86" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path70" d="M715.629 1527.21c4.766-8.28 1.937-18.85-6.344-23.61-8.254-4.77-18.828-1.94-23.617 6.31-4.766 8.29-1.938 18.86 6.34 23.62 8.258 4.79 18.855 1.97 23.621-6.32" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path72" d="M715.629 1527.21c4.766-8.28 1.937-18.85-6.344-23.61-8.254-4.77-18.828-1.94-23.617 6.31-4.766 8.29-1.938 18.86 6.34 23.62 8.258 4.79 18.855 1.97 23.621-6.32" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path74" d="M490.129 1314.39c8.277-4.77 11.105-15.34 6.34-23.62-4.789-8.28-15.364-11.11-23.645-6.35-8.254 4.79-11.082 15.37-6.316 23.65 4.765 8.25 15.363 11.08 23.621 6.32" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path76" d="M490.129 1314.39c8.277-4.77 11.105-15.34 6.34-23.62-4.789-8.28-15.364-11.11-23.645-6.35-8.254 4.79-11.082 15.37-6.316 23.65 4.765 8.25 15.363 11.08 23.621 6.32" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path78" d="M401.262 1017.32c9.551 0 17.297-7.74 17.297-17.3 0-9.532-7.746-17.27-17.297-17.27-9.559 0-17.301 7.738-17.301 17.27 0 9.56 7.742 17.3 17.301 17.3" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path80" d="M401.262 1017.32c9.551 0 17.297-7.74 17.297-17.3 0-9.532-7.746-17.27-17.297-17.27-9.559 0-17.301 7.738-17.301 17.27 0 9.56 7.742 17.3 17.301 17.3" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path82" d="M472.82 715.621c8.282 4.77 18.856 1.938 23.621-6.32 4.789-8.281 1.934-18.852-6.32-23.641-8.281-4.762-18.855-1.941-23.621 6.34-4.789 8.289-1.957 18.859 6.32 23.621" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path84" d="M472.82 715.621c8.282 4.77 18.856 1.938 23.621-6.32 4.789-8.281 1.934-18.852-6.32-23.641-8.281-4.762-18.855-1.941-23.621 6.34-4.789 8.289-1.957 18.859 6.32 23.621" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path86" d="M685.652 490.129c4.762 8.281 15.36 11.101 23.618 6.312 8.281-4.761 11.109-15.332 6.343-23.621-4.789-8.25-15.363-11.101-23.644-6.308-8.254 4.758-11.082 15.34-6.317 23.617" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path88" d="M685.652 490.129c4.762 8.281 15.36 11.101 23.618 6.312 8.281-4.761 11.109-15.332 6.343-23.621-4.789-8.25-15.363-11.101-23.644-6.308-8.254 4.758-11.082 15.34-6.317 23.617" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path90" d="M982.711 401.25c0 9.559 7.75 17.301 17.299 17.301 9.53 0 17.28-7.742 17.28-17.301 0-9.551-7.75-17.301-17.28-17.301-9.549 0-17.299 7.75-17.299 17.301" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path92" d="M982.711 401.25c0 9.559 7.75 17.301 17.299 17.301 9.53 0 17.28-7.742 17.28-17.301 0-9.551-7.75-17.301-17.28-17.301-9.549 0-17.299 7.75-17.299 17.301" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path94" d="M1284.41 472.82c-4.76 8.282-1.93 18.852 6.32 23.621 8.28 4.758 18.86 1.93 23.62-6.32 4.79-8.281 1.96-18.859-6.32-23.621-8.28-4.789-18.85-1.961-23.62 6.32" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path96" d="M1284.41 472.82c-4.76 8.282-1.93 18.852 6.32 23.621 8.28 4.758 18.86 1.93 23.62-6.32 4.79-8.281 1.96-18.859-6.32-23.621-8.28-4.789-18.85-1.961-23.62 6.32" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path98" d="M1509.91 685.641c-8.25 4.769-11.11 15.339-6.32 23.621 4.77 8.277 15.34 11.109 23.62 6.347 8.26-4.789 11.11-15.371 6.32-23.648-4.76-8.25-15.34-11.082-23.62-6.32" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path100" d="M1509.91 685.641c-8.25 4.769-11.11 15.339-6.32 23.621 4.77 8.277 15.34 11.109 23.62 6.347 8.26-4.789 11.11-15.371 6.32-23.648-4.76-8.25-15.34-11.082-23.62-6.32" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path102" d="M1598.78 982.711c-9.55 0-17.3 7.738-17.3 17.299 0 9.55 7.75 17.27 17.3 17.27 9.56 0 17.3-7.72 17.3-17.27 0-9.561-7.74-17.299-17.3-17.299" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path104" d="M1598.78 982.711c-9.55 0-17.3 7.738-17.3 17.299 0 9.55 7.75 17.27 17.3 17.27 9.56 0 17.3-7.72 17.3-17.27 0-9.561-7.74-17.299-17.3-17.299" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path106" d="M1527.22 1284.41c-8.28-4.77-18.86-1.94-23.62 6.32-4.76 8.28-1.93 18.85 6.32 23.61 8.28 4.8 18.85 1.97 23.64-6.31 4.77-8.28 1.94-18.86-6.34-23.62" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path108" d="M1527.22 1284.41c-8.28-4.77-18.86-1.94-23.62 6.32-4.76 8.28-1.93 18.85 6.32 23.61 8.28 4.8 18.85 1.97 23.64-6.31 4.77-8.28 1.94-18.86-6.34-23.62" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path110" d="M1314.39 1509.91c-4.77-8.28-15.34-11.11-23.62-6.32-8.28 4.76-11.11 15.34-6.32 23.62 4.77 8.25 15.34 11.11 23.62 6.31 8.26-4.76 11.09-15.33 6.32-23.61" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path112" d="M1314.39 1509.91c-4.77-8.28-15.34-11.11-23.62-6.32-8.28 4.76-11.11 15.34-6.32 23.62 4.77 8.25 15.34 11.11 23.62 6.31 8.26-4.76 11.09-15.33 6.32-23.61" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path114" d="M1017.33 1598.78c0-9.55-7.75-17.3-17.3-17.3-9.534 0-17.276 7.75-17.276 17.3 0 9.56 7.742 17.3 17.276 17.3 9.55 0 17.3-7.74 17.3-17.3" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path116" d="M1017.33 1598.78c0-9.55-7.75-17.3-17.3-17.3-9.534 0-17.276 7.75-17.276 17.3 0 9.56 7.742 17.3 17.276 17.3 9.55 0 17.3-7.74 17.3-17.3" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path118" d="M411.316 1000.02c0-324.61 264.094-588.692 588.704-588.692 324.61 0 588.69 264.082 588.69 588.692 0 324.6-264.08 588.68-588.69 588.68-324.61 0-588.704-264.08-588.704-588.68zm588.704-607.801c-335.149 0-607.809 272.66-607.809 607.801 0 335.13 272.66 607.78 607.809 607.78 335.14 0 607.79-272.65 607.79-607.78 0-335.141-272.65-607.801-607.79-607.801zm0 1379.901c-425.735 0-772.098-346.37-772.098-772.1 0-425.739 346.363-772.11 772.098-772.11 425.74 0 772.11 346.371 772.11 772.11 0 425.73-346.37 772.1-772.11 772.1zm0-1563.319c-436.27 0-791.207 354.937-791.207 791.219 0 436.27 354.937 791.21 791.207 791.21 436.28 0 791.22-354.94 791.22-791.21 0-436.282-354.94-791.219-791.22-791.219" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path120" d="M411.316 1000.02c0-324.61 264.094-588.692 588.704-588.692 324.61 0 588.69 264.082 588.69 588.692 0 324.6-264.08 588.68-588.69 588.68-324.61 0-588.704-264.08-588.704-588.68zm588.704-607.801c-335.149 0-607.809 272.66-607.809 607.801 0 335.13 272.66 607.78 607.809 607.78 335.14 0 607.79-272.65 607.79-607.78 0-335.141-272.65-607.801-607.79-607.801zm0 1379.901c-425.735 0-772.098-346.37-772.098-772.1 0-425.739 346.363-772.11 772.098-772.11 425.74 0 772.11 346.371 772.11 772.11 0 425.73-346.37 772.1-772.11 772.1zm0-1563.319c-436.27 0-791.207 354.937-791.207 791.219 0 436.27 354.937 791.21 791.207 791.21 436.28 0 791.22-354.94 791.22-791.21 0-436.282-354.94-791.219-791.22-791.219z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path122" d="M801.855 1367.38c3.313-5.76 1.352-13.15-4.406-16.46-5.761-3.34-13.148-1.35-16.461 4.4-3.336 5.76-1.347 13.13 4.407 16.47 5.761 3.33 13.125 1.34 16.46-4.41" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path124" d="M801.855 1367.38c3.313-5.76 1.352-13.15-4.406-16.46-5.761-3.34-13.148-1.35-16.461 4.4-3.336 5.76-1.347 13.13 4.407 16.47 5.761 3.33 13.125 1.34 16.46-4.41" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path126" d="M644.723 1219.07c5.761-3.33 7.75-10.69 4.41-16.46-3.34-5.75-10.703-7.74-16.461-4.4-5.758 3.31-7.746 10.7-4.406 16.45 3.339 5.77 10.703 7.75 16.457 4.41" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path128" d="M644.723 1219.07c5.761-3.33 7.75-10.69 4.41-16.46-3.34-5.75-10.703-7.74-16.461-4.4-5.758 3.31-7.746 10.7-4.406 16.45 3.339 5.77 10.703 7.75 16.457 4.41" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path130" d="M582.793 1012.08c6.648 0 12.055-5.4 12.055-12.06 0-6.641-5.407-12.051-12.055-12.051s-12.051 5.41-12.051 12.051c0 6.66 5.403 12.06 12.051 12.06" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path132" d="M582.793 1012.08c6.648 0 12.055-5.4 12.055-12.06 0-6.641-5.407-12.051-12.055-12.051s-12.051 5.41-12.051 12.051c0 6.66 5.403 12.06 12.051 12.06" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path134" d="M632.664 801.852c5.758 3.328 13.121 1.347 16.457-4.411 3.34-5.761 1.352-13.152-4.406-16.461-5.762-3.339-13.121-1.351-16.461 4.411-3.336 5.757-1.352 13.121 4.41 16.461" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path136" d="M632.664 801.852c5.758 3.328 13.121 1.347 16.457-4.411 3.34-5.761 1.352-13.152-4.406-16.461-5.762-3.339-13.121-1.351-16.461 4.411-3.336 5.757-1.352 13.121 4.41 16.461" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path138" d="M780.965 644.719c3.308 5.761 10.699 7.75 16.457 4.41 5.758-3.34 7.746-10.707 4.41-16.457-3.34-5.762-10.703-7.75-16.461-4.41-5.758 3.34-7.746 10.699-4.406 16.457" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path140" d="M780.965 644.719c3.308 5.761 10.699 7.75 16.457 4.41 5.758-3.34 7.746-10.707 4.41-16.457-3.34-5.762-10.703-7.75-16.461-4.41-5.758 3.34-7.746 10.699-4.406 16.457" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path142" d="M987.961 582.789c0 6.652 5.398 12.051 12.049 12.051 6.65 0 12.05-5.399 12.05-12.051 0-6.648-5.4-12.051-12.05-12.051-6.651 0-12.049 5.403-12.049 12.051" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path144" d="M987.961 582.789c0 6.652 5.398 12.051 12.049 12.051 6.65 0 12.05-5.399 12.05-12.051 0-6.648-5.4-12.051-12.05-12.051-6.651 0-12.049 5.403-12.049 12.051" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path146" d="M1198.19 632.66c-3.34 5.75-1.35 13.141 4.41 16.449 5.76 3.34 13.12 1.352 16.46-4.398 3.34-5.762 1.35-13.129-4.41-16.461-5.76-3.34-13.15-1.352-16.46 4.41" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path148" d="M1198.19 632.66c-3.34 5.75-1.35 13.141 4.41 16.449 5.76 3.34 13.12 1.352 16.46-4.398 3.34-5.762 1.35-13.129-4.41-16.461-5.76-3.34-13.15-1.352-16.46 4.41" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path150" d="M1355.32 780.961c-5.76 3.34-7.74 10.699-4.41 16.461 3.34 5.758 10.7 7.738 16.46 4.406 5.76-3.316 7.72-10.707 4.41-16.457-3.34-5.762-10.7-7.75-16.46-4.41" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path152" d="M1355.32 780.961c-5.76 3.34-7.74 10.699-4.41 16.461 3.34 5.758 10.7 7.738 16.46 4.406 5.76-3.316 7.72-10.707 4.41-16.457-3.34-5.762-10.7-7.75-16.46-4.41" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path154" d="M1417.25 987.961c-6.65 0-12.05 5.398-12.05 12.049 0 6.65 5.4 12.05 12.05 12.05s12.05-5.4 12.05-12.05c0-6.651-5.4-12.049-12.05-12.049" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path156" d="M1417.25 987.961c-6.65 0-12.05 5.398-12.05 12.049 0 6.65 5.4 12.05 12.05 12.05s12.05-5.4 12.05-12.05c0-6.651-5.4-12.049-12.05-12.049" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path158" d="M1367.38 1198.18c-5.76-3.33-13.14-1.35-16.46 4.41-3.33 5.76-1.35 13.15 4.41 16.46 5.76 3.34 13.12 1.35 16.46-4.41 3.34-5.75 1.35-13.12-4.41-16.46" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path160" d="M1367.38 1198.18c-5.76-3.33-13.14-1.35-16.46 4.41-3.33 5.76-1.35 13.15 4.41 16.46 5.76 3.34 13.12 1.35 16.46-4.41 3.34-5.75 1.35-13.12-4.41-16.46" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path162" d="M1219.08 1355.31c-3.34-5.76-10.7-7.74-16.46-4.4-5.76 3.33-7.74 10.7-4.41 16.45 3.34 5.76 10.7 7.75 16.46 4.41 5.76-3.34 7.72-10.7 4.41-16.46" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path164" d="M1219.08 1355.31c-3.34-5.76-10.7-7.74-16.46-4.4-5.76 3.33-7.74 10.7-4.41 16.45 3.34 5.76 10.7 7.75 16.46 4.41 5.76-3.34 7.72-10.7 4.41-16.46" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path166" d="M1012.08 1417.24c0-6.65-5.4-12.05-12.05-12.05-6.647 0-12.05 5.4-12.05 12.05s5.403 12.05 12.05 12.05c6.65 0 12.05-5.4 12.05-12.05" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path168" d="M1012.08 1417.24c0-6.65-5.4-12.05-12.05-12.05-6.647 0-12.05 5.4-12.05 12.05s5.403 12.05 12.05 12.05c6.65 0 12.05-5.4 12.05-12.05" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path170" d="M692.359 1513.57l-91.8 161.25 16.609 9.46 91.797-161.26zm615.291-.06l-16.53 9.58 92.08 158.88 16.53-9.58zM401.266 990.461H217.691v19.109h183.575zm1381.084 0h-183.57v19.109h183.57zM849.172 1164c26.254-26.73 84.367-84.82 150.301-150.49L1150.04 1164zm-12.734-14.1V850.559l149.492 149.41c-88.106 87.741-129.723 129.671-149.492 149.931zm176.572-149.87c50.06-49.839 103.59-103.018 150.54-149.6v300.06zM849.957 837.051h299.953c-60.56 60.07-110.02 109.211-150.441 149.437zm0-19.11L1000.01 667.98l150.03 149.961zm150.053-176.972l-182.682 182.57v359.571h365.342V823.539zm0 766.531c-224.783 0-407.655-182.8-407.655-407.48 0-224.692 182.872-407.481 407.655-407.481 224.8 0 407.68 182.789 407.68 407.481 0 224.68-182.88 407.48-407.68 407.48zm9.55-1005.949h-19.107v171.98c-150.301 3.321-281.68 84.68-355.105 205.071L486.117 692.52l-9.547 16.55 149.196 86.059c-33.469 60.84-52.52 130.691-52.52 204.891 0 74.25 19.082 144.15 52.598 205.02l-149.145 85.94 9.539 16.56 149.196-85.97c73.445 120.31 204.777 201.61 355.019 204.93v171.98h19.107V1426.5c150.26-3.32 281.6-84.62 355.05-204.93l149.17 85.95 9.54-16.56-149.12-85.92c33.51-60.88 52.6-130.77 52.6-205.02 0-74.27-19.08-144.161-52.61-205.04l149.14-86.14-9.56-16.551-149.17 86.16c-73.45-120.308-204.78-201.597-355.04-204.918zm-392.712-83.5l-16.532 9.59 92.082 158.757 16.528-9.589zm766.302-3.582l-92.08 162.551 16.63 9.421 92.08-162.55-16.63-9.422" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path172" d="M692.359 1513.57l-91.8 161.25 16.609 9.46 91.797-161.26zm615.291-.06l-16.53 9.58 92.08 158.88 16.53-9.58zM401.266 990.461H217.691v19.109h183.575zm1381.084 0h-183.57v19.109h183.57zM849.172 1164c26.254-26.73 84.367-84.82 150.301-150.49L1150.04 1164zm-12.734-14.1V850.559l149.492 149.41c-88.106 87.741-129.723 129.671-149.492 149.931zm176.572-149.87c50.06-49.839 103.59-103.018 150.54-149.6v300.06zM849.957 837.051h299.953c-60.56 60.07-110.02 109.211-150.441 149.437zm0-19.11L1000.01 667.98l150.03 149.961zm150.053-176.972l-182.682 182.57v359.571h365.342V823.539zm0 766.531c-224.783 0-407.655-182.8-407.655-407.48 0-224.692 182.872-407.481 407.655-407.481 224.8 0 407.68 182.789 407.68 407.481 0 224.68-182.88 407.48-407.68 407.48zm9.55-1005.949h-19.107v171.98c-150.301 3.321-281.68 84.68-355.105 205.071L486.117 692.52l-9.547 16.55 149.196 86.059c-33.469 60.84-52.52 130.691-52.52 204.891 0 74.25 19.082 144.15 52.598 205.02l-149.145 85.94 9.539 16.56 149.196-85.97c73.445 120.31 204.777 201.61 355.019 204.93v171.98h19.107V1426.5c150.26-3.32 281.6-84.62 355.05-204.93l149.17 85.95 9.54-16.56-149.12-85.92c33.51-60.88 52.6-130.77 52.6-205.02 0-74.27-19.08-144.161-52.61-205.04l149.14-86.14-9.56-16.551-149.17 86.16c-73.45-120.308-204.78-201.597-355.04-204.918zm-392.712-83.5l-16.532 9.59 92.082 158.757 16.528-9.589zm766.302-3.582l-92.08 162.551 16.63 9.421 92.08-162.55z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/></g></g></svg>
+					</div>
+
+					<h3 class="title">
+						Innovation Hub
+					</h3>
+
+					<div class="description">
+						
+					</div>
+
+				</a>
+
+
+
+
+
+</div>
+<div class="icon-panel">
+				<a href="https://www.smartsurvey.co.uk/s/OMGVVQ/" target="_blank">
+
+					<div class="icon" aria-hidden="true">
+                        
+						<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266.667 266.667" height="266.667" width="266.667" xml:space="preserve" id="svg2" version="1.1"><g transform="matrix(1.33333 0 0 -1.33333 0 266.667)" id="g10"><g transform="scale(.1)" id="g12"><path id="path14" d="M1000.01 60.52C481.145 60.52 60.523 481.14 60.523 1000c0 518.87 420.622 939.49 939.487 939.49 518.86 0 939.48-420.62 939.48-939.49 0-518.859-420.62-939.48-939.48-939.48zm0 1914.48c-537.615 0-975.002-437.38-975.002-975 0-537.609 437.387-975 975.002-975 537.62 0 975 437.391 975 975 0 537.62-437.38 975-975 975" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path16" d="M1000.01 60.52C481.145 60.52 60.523 481.14 60.523 1000c0 518.87 420.622 939.49 939.487 939.49 518.86 0 939.48-420.62 939.48-939.49 0-518.859-420.62-939.48-939.48-939.48zm0 1914.48c-537.615 0-975.002-437.38-975.002-975 0-537.609 437.387-975 975.002-975 537.62 0 975 437.391 975 975 0 537.62-437.38 975-975 975z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path18" d="M1000.01 1622.66c56.47 0 102.42-45.96 102.42-102.45h19.11c0 67.03-54.52 121.56-121.53 121.56-67.03 0-121.557-54.53-121.557-121.56h19.106c0 56.49 45.957 102.45 102.451 102.45" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path20" d="M1000.01 1622.66c56.47 0 102.42-45.96 102.42-102.45h19.11c0 67.03-54.52 121.56-121.53 121.56-67.03 0-121.557-54.53-121.557-121.56h19.106c0 56.49 45.957 102.45 102.451 102.45z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path22" d="M1572.91 609.488c-41.13 0-74.6 33.473-74.6 74.602 0 41.148 33.47 74.629 74.6 74.629 41.14 0 74.6-33.481 74.6-74.629 0-41.129-33.46-74.602-74.6-74.602zm0 168.332c-51.67 0-93.71-42.039-93.71-93.73 0-51.668 42.04-93.711 93.71-93.711 51.67 0 93.71 42.043 93.71 93.711 0 51.691-42.04 93.73-93.71 93.73" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path24" d="M1572.91 609.488c-41.13 0-74.6 33.473-74.6 74.602 0 41.148 33.47 74.629 74.6 74.629 41.14 0 74.6-33.481 74.6-74.629 0-41.129-33.46-74.602-74.6-74.602zm0 168.332c-51.67 0-93.71-42.039-93.71-93.73 0-51.668 42.04-93.711 93.71-93.711 51.67 0 93.71 42.043 93.71 93.711 0 51.691-42.04 93.73-93.71 93.73z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path26" d="M1150.47 1076.01l552.47 319.01-37.6-140.32 18.46-4.94 46.04 171.83-171.81 46.04-4.94-18.46 140.3-37.6-552.47-319.02 9.55-16.54" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path28" d="M1150.47 1076.01l552.47 319.01-37.6-140.32 18.46-4.94 46.04 171.83-171.81 46.04-4.94-18.46 140.3-37.6-552.47-319.02z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path30" d="M1000.01 1819.96c41.13 0 74.6-33.48 74.6-74.62 0-41.15-33.47-74.63-74.6-74.63-41.135 0-74.604 33.48-74.604 74.63 0 41.14 33.469 74.62 74.604 74.62zm0-168.36c51.67 0 93.71 42.05 93.71 93.74 0 51.68-42.04 93.73-93.71 93.73-51.674 0-93.713-42.05-93.713-93.73 0-51.69 42.039-93.74 93.713-93.74" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path32" d="M1000.01 1819.96c41.13 0 74.6-33.48 74.6-74.62 0-41.15-33.47-74.63-74.6-74.63-41.135 0-74.604 33.48-74.604 74.63 0 41.14 33.469 74.62 74.604 74.62zm0-168.36c51.67 0 93.71 42.05 93.71 93.74 0 51.68-42.04 93.73-93.71 93.73-51.674 0-93.713-42.05-93.713-93.73 0-51.69 42.039-93.74 93.713-93.74z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path34" d="M1009.56 193.852v637.937h-19.107V193.852L887.754 296.57l-13.512-13.511L1000.01 157.27l125.76 125.789-13.51 13.511-102.7-102.718" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path36" d="M1009.56 193.852v637.937h-19.107V193.852L887.754 296.57l-13.512-13.511L1000.01 157.27l125.76 125.789-13.51 13.511z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path38" d="M334.672 1254.7l-37.594 140.32 552.442-319.01 9.554 16.54-552.445 319.02 140.301 37.6-4.95 18.46-171.8-46.04 46.039-171.83 18.453 4.94" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path40" d="M334.672 1254.7l-37.594 140.32 552.442-319.01 9.554 16.54-552.445 319.02 140.301 37.6-4.95 18.46-171.8-46.04 46.039-171.83z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path42" d="M1572.91 580.551c-67.03 0-121.55-54.539-121.55-121.59h19.1c0 56.508 45.96 102.48 102.45 102.48 56.48 0 102.42-45.972 102.42-102.48h19.11c0 67.051-54.52 121.59-121.53 121.59" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path44" d="M1572.91 580.551c-67.03 0-121.55-54.539-121.55-121.59h19.1c0 56.508 45.96 102.48 102.45 102.48 56.48 0 102.42-45.972 102.42-102.48h19.11c0 67.051-54.52 121.59-121.53 121.59z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path46" d="M502.879 684.09c0-41.129-33.481-74.602-74.629-74.602-41.133 0-74.598 33.473-74.598 74.602 0 41.148 33.465 74.629 74.598 74.629 41.148 0 74.629-33.481 74.629-74.629zm-168.336 0c0-51.668 42.039-93.711 93.707-93.711 51.688 0 93.734 42.043 93.734 93.711 0 51.691-42.046 93.73-93.734 93.73-51.668 0-93.707-42.039-93.707-93.73" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path48" d="M502.879 684.09c0-41.129-33.481-74.602-74.629-74.602-41.133 0-74.598 33.473-74.598 74.602 0 41.148 33.465 74.629 74.598 74.629 41.148 0 74.629-33.481 74.629-74.629zm-168.336 0c0-51.668 42.039-93.711 93.707-93.711 51.688 0 93.734 42.043 93.734 93.711 0 51.691-42.046 93.73-93.734 93.73-51.668 0-93.707-42.039-93.707-93.73z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path50" d="M428.25 580.551c-67.016 0-121.531-54.539-121.531-121.59h19.109c0 56.508 45.945 102.48 102.422 102.48 56.488 0 102.449-45.972 102.449-102.48h19.11c0 67.051-54.532 121.59-121.559 121.59" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path52" d="M428.25 580.551c-67.016 0-121.531-54.539-121.531-121.59h19.109c0 56.508 45.945 102.48 102.422 102.48 56.488 0 102.449-45.972 102.449-102.48h19.11c0 67.051-54.532 121.59-121.559 121.59z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/><path id="path54" d="M1473.45 739.711c0 12.48-10.12 22.59-22.6 22.59-4.78 0-9.2-1.512-12.85-4.051l-360.68 208.281a84.05 84.05 0 0 1 6.94 33.457c0 43.292-32.66 78.922-74.7 83.682v416.51c7.68 3.61 13.04 11.36 13.04 20.41 0 12.48-10.12 22.6-22.6 22.6-12.461 0-22.57-10.12-22.57-22.6 0-9.05 5.351-16.8 13.023-20.41v-416.51c-42.023-4.75-74.707-40.39-74.707-83.682a83.789 83.789 0 0 1 6.949-33.457L562.016 758.25c-3.653 2.539-8.078 4.051-12.868 4.051-12.46 0-22.574-10.11-22.574-22.59 0-12.492 10.114-22.609 22.574-22.609 12.485 0 22.598 10.117 22.598 22.609l-.199 1.98L932.297 950c15.351-20.75 39.922-34.27 67.703-34.27 27.8 0 52.38 13.52 67.72 34.282l360.76-208.332-.2-1.969c0-12.492 10.11-22.609 22.57-22.609 12.48 0 22.6 10.117 22.6 22.609" fill="#367ac2" fill-opacity="1" fill-rule="nonzero" stroke="none"/><path id="path56" d="M1473.45 739.711c0 12.48-10.12 22.59-22.6 22.59-4.78 0-9.2-1.512-12.85-4.051l-360.68 208.281a84.05 84.05 0 0 1 6.94 33.457c0 43.292-32.66 78.922-74.7 83.682v416.51c7.68 3.61 13.04 11.36 13.04 20.41 0 12.48-10.12 22.6-22.6 22.6-12.461 0-22.57-10.12-22.57-22.6 0-9.05 5.351-16.8 13.023-20.41v-416.51c-42.023-4.75-74.707-40.39-74.707-83.682a83.789 83.789 0 0 1 6.949-33.457L562.016 758.25c-3.653 2.539-8.078 4.051-12.868 4.051-12.46 0-22.574-10.11-22.574-22.59 0-12.492 10.114-22.609 22.574-22.609 12.485 0 22.598 10.117 22.598 22.609l-.199 1.98L932.297 950c15.351-20.75 39.922-34.27 67.703-34.27 27.8 0 52.38 13.52 67.72 34.282l360.76-208.332-.2-1.969c0-12.492 10.11-22.609 22.57-22.609 12.48 0 22.6 10.117 22.6 22.609z" fill="none" stroke="#367ac2" stroke-width="15" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="none" stroke-opacity="1"/></g></g></svg>
+					</div>
+
+					<h3 class="title">
+						Website feedback
+					</h3>
+
+					<div class="description">
+						
+					</div>
+
+				</a>
+
+
+
+
+
+</div>
+		</div>
+	</section>
+    </section>
+
+            
+        </main>
+
+        <div class="page-feedback">
+            <div class="page-feedback-grid grid">
+                <div class="page-feedback-question">
+                    <h3>Was this page useful?</h3>
+                    <div class="page-feedback-answer">
+                        <a class="button" id="pageFeedbackYes" onclick="feedbackYes()">Yes</a>
+                        <a class="button" id="pageFeedbackNo" onclick="feedbackNo()">No</a>
+                    </div>
+                </div>
+                <div class="page-feedback-yes" style="display:none;">
+                    <p>Thank you for your feedback.</p>
+                </div>
+                <div class="page-feedback-no" style="display:none;">
+                <p>To help us improve, tell us more about your visit today. <a href="https://www.smartsurvey.co.uk/s/OMGVVQ/" target="_blank">Please fill in this short feedback survey.</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            function feedbackYes(){
+                $('.page-feedback-yes').show();
+                $('.page-feedback-question').hide();
+            }
+            function feedbackNo(){
+                $('.page-feedback-no').show();
+                $('.page-feedback-question').hide();
+            }
+        </script>
+
+        <footer role="contentinfo" class="main-footer">
+
+            <div class="footer-background-logo" >
+                <img src="/images/full-graphic.svg" />
+            </div>
+
+            <div class="footer-top">
+
+                <div class="footer-brand">
+                    <img class="footer-logo" src="/images/JFSC-logo-Stacked-white.svg" />
+                </div>
+
+                <nav>
+                            <section class="footer-menu">
+                                <h5>Stay informed</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/subscribe-to-our-news-and-updates/">Subscribe to our emails</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.linkedin.com/company/jersey-financial-services-commission" target="_blank">Follow us on LinkedIn</a>
+                                        </li>
+                                        <li>
+                                            <a href="/subscribe-to-our-rss/">Subscribe to RSS</a>
+                                        </li>
+                                </ul>
+                            </section>
+                            <section class="footer-menu">
+                                <h5>Get in touch</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/about-us/contact-us/">Contact us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/protecting-the-public/complaints-reporting-and-whistleblowing/">Complaints and whistleblowing</a>
+                                        </li>
+                                        <li>
+                                            <a href="/press-office/">Press enquiries</a>
+                                        </li>
+                                </ul>
+                            </section>
+                            <section class="footer-menu">
+                                <h5>About</h5>
+
+                                <ul>
+                                        <li>
+                                            <a href="/about-us/">About us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about-us/directors/">Directors</a>
+                                        </li>
+                                        <li>
+                                            <a href="/privacy-policy/">Privacy policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="/publications/">Publications</a>
+                                        </li>
+                                </ul>
+                            </section>
+                </nav>
+            </div>
+
+            <div class="bottom-section">
+                <div class="copyright">
+                    &copy; 2026 Jersey Financial Services Commission
+                </div>
+                    <ul class="social">
+                            <li><a href="https://www.facebook.com/jerseyfsc" target="_blank" class="facebook" title="Facebook">Facebook</a></li>
+                            <li><a href="https://www.linkedin.com/company/jersey-financial-services-commission" target="_blank" class="linkedin" title="LinkedIn">LinkedIn</a></li>
+                    </ul>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="/scripts/libraries/van11y-accessible-tab-panel-aria-2.0.0/van11y-accessible-tab-panel-aria.min.js?20261109"></script>
+        <script type="text/javascript" src="/scripts/libraries/details-polyfill/details-polyfill.js?20261109"></script>
+    </div>
+</body>
+
+</html>

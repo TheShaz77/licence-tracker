@@ -1,0 +1,588 @@
+{
+ "AD": {
+  "AFA supervised entities": "HTTP 404",
+  "date": "2026-11-09",
+  "www.afa.ad homepage": "probe saved (425271 bytes, 10 linked pages)"
+ },
+ "AE": {
+  "CBUAE register": "ok: 242 firms",
+  "DFSA firms": "probe saved earlier this week",
+  "VARA register page": "ok: 60 firms",
+  "date": "2026-11-09"
+ },
+ "AL": {
+  "BoA licensed entities": "probe saved earlier this week",
+  "BoA payments licensing": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "AM": {
+  "CBA payment and settlement organizations": "HTTP 404",
+  "date": "2026-11-09",
+  "www.cba.am homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "AR": {
+  "BCRA EFT networks": "read failed: no matching table on the page; table headers were: []",
+  "BCRA QR administrators": "read failed: no matching table on the page; table headers were: []",
+  "BCRA acceptors": "read failed: no matching table on the page; table headers were: []",
+  "BCRA acquirers": "read failed: no matching table on the page; table headers were: []",
+  "BCRA aggregators": "read failed: no matching table on the page; table headers were: []",
+  "BCRA collection services": "read failed: no matching table on the page; table headers were: []",
+  "BCRA payment account providers": "read failed: no matching table on the page; table headers were: []",
+  "BCRA payment initiators": "read failed: no matching table on the page; table headers were: []",
+  "CNV homepage": "probe saved (54129 bytes, 0 linked pages)",
+  "CNV virtual asset service providers": "HTTP 404",
+  "date": "2026-11-09"
+ },
+ "AW": {
+  "CBA supervised institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.cbaruba.org homepage": "probe saved (33728 bytes, 15 linked pages)"
+ },
+ "AZ": {
+  "CBAR banks": "ok: 17 firms",
+  "CBAR currency exchange offices": "read failed: no matching table on the page; table headers were: []",
+  "CBAR e-money institutions": "ok: 8 firms",
+  "CBAR payment institutions": "ok: 8 firms",
+  "CBAR payment system operators": "ok: 9 firms",
+  "date": "2026-11-09"
+ },
+ "BB": {
+  "CBB licensed institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.centralbank.org.bb homepage": "probe saved (137392 bytes, 15 linked pages)"
+ },
+ "BD": {
+  "BB payment system operators": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bb.org.bd homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "BH": {
+  "CBB register": "HTTP 403",
+  "date": "2026-11-09",
+  "www.cbb.gov.bh homepage": "HTTP 403"
+ },
+ "BI": {
+  "BRB institutions": "probe saved earlier this week",
+  "date": "2026-11-09"
+ },
+ "BM": {
+  "BMA regulated entities": "blocked by robots.txt",
+  "date": "2026-11-09",
+  "www.bma.bm homepage": "blocked by robots.txt"
+ },
+ "BN": {
+  "BDCB licensed institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bdcb.gov.bn homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "BS": {
+  "CBOB register of licensees": "HTTP 404",
+  "SCB digital asset businesses": "HTTP 404",
+  "date": "2026-11-09",
+  "www.centralbankbahamas.com homepage": "probe saved (443195 bytes, 15 linked pages)",
+  "www.scb.gov.bs homepage": "probe saved (294465 bytes, 15 linked pages)"
+ },
+ "BT": {
+  "RMA licensed institutions": "SSL error",
+  "date": "2026-11-09"
+ },
+ "BW": {
+  "BoB licensed institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bankofbotswana.bw homepage": "probe saved (144765 bytes, 15 linked pages)"
+ },
+ "BZ": {
+  "Central Bank of Belize licensees": "HTTP 404",
+  "date": "2026-11-09",
+  "www.centralbank.org.bz homepage": "probe saved (192568 bytes, 15 linked pages)"
+ },
+ "CD": {
+  "BCC financial intermediaries": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "CL": {
+  "CMF banks and financial institutions": "HTTP 404",
+  "CMF entity types": "HTTP 404",
+  "date": "2026-11-09"
+ },
+ "CN": {
+  "PBOC non-bank payment institutions": "blocked by robots.txt",
+  "date": "2026-11-09",
+  "www.pbc.gov.cn homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "CO": {
+  "SFC homepage": "probe saved (242394 bytes, 7 linked pages)",
+  "date": "2026-11-09"
+ },
+ "CR": {
+  "SUGEF exchange houses": "ok: 1 firms",
+  "SUGEF supervised entities list": "ok: 18 firms",
+  "date": "2026-11-09"
+ },
+ "CV": {
+  "BCV homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "CW": {
+  "CBCS supervised institutions": "HTTP 403",
+  "date": "2026-11-09",
+  "www.centralbank.cw homepage": "HTTP 403"
+ },
+ "DJ": {
+  "BCD homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "DO": {
+  "SB supervised entities": "HTTP 404",
+  "date": "2026-11-09",
+  "sb.gob.do homepage": "probe saved (168424 bytes, 12 linked pages)"
+ },
+ "DZ": {
+  "Bank of Algeria approved institutions": "SSL error",
+  "date": "2026-11-09"
+ },
+ "EC": {
+  "Superintendencia de Bancos entities": "HTTP 404",
+  "date": "2026-11-09",
+  "www.superbancos.gob.ec homepage": "probe saved (87 bytes, 0 linked pages)"
+ },
+ "EG": {
+  "FRA registers in the financing sector": "probe saved (189775 bytes, 15 linked pages)",
+  "date": "2026-11-09"
+ },
+ "ER": {
+  "Bank of Eritrea": "timeout (connect)",
+  "date": "2026-11-09"
+ },
+ "ET": {
+  "NBE payment instrument issuers": "HTTP 404",
+  "date": "2026-11-09",
+  "nbe.gov.et homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "FJ": {
+  "RBF licensing": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "GA": {
+  "BEAC payment institutions (CEMAC)": "DNS: no such site",
+  "date": "2026-11-09"
+ },
+ "GE": {
+  "NBG VASP registry": "HTTP 500",
+  "NBG payment service providers": "HTTP 500",
+  "date": "2026-11-09",
+  "nbg.gov.ge homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "GG": {
+  "GFSC regulated entities": "probe saved earlier this week",
+  "date": "2026-11-09"
+ },
+ "GH": {
+  "BoG banks": "ok: 24 firms",
+  "BoG payment systems": "probe saved (197928 bytes, 1 linked pages)",
+  "BoG remittance companies": "ok: 2 firms",
+  "date": "2026-11-09"
+ },
+ "GI": {
+  "GFSC regulated entities": "HTTP 403",
+  "date": "2026-11-09",
+  "www.fsc.gi homepage": "HTTP 403"
+ },
+ "GM": {
+  "CBG approved bureaus": "ok: 82 firms",
+  "CBG licensed banks": "ok: 11 firms",
+  "CBG mobile money": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "GN": {
+  "BCRG banks": "read failed: no matching table on the page; table headers were: []",
+  "BCRG payment systems": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "GT": {
+  "SIB supervised entities": "HTTP 403",
+  "date": "2026-11-09",
+  "www.sib.gob.gt homepage": "HTTP 403"
+ },
+ "GY": {
+  "Bank of Guyana licensed institutions": "HTTP 403",
+  "date": "2026-11-09",
+  "www.bankofguyana.org.gy homepage": "HTTP 403"
+ },
+ "HK": {
+  "Customs money service operators": "ok: 614 firms",
+  "HKMA SVF licensees": "ok: 11 firms",
+  "HKMA banks": "ok: 164 firms",
+  "SFC crypto platform applicants": "ok: 6 firms",
+  "SFC licensed crypto platforms": "ok: 14 firms",
+  "date": "2026-11-09"
+ },
+ "HN": {
+  "CNBS supervised institutions": "probe saved earlier this week",
+  "date": "2026-11-09"
+ },
+ "ID": {
+  "BI e-licensing": "probe saved (28214 bytes, 1 linked pages)",
+  "OJK digital financial assets": "HTTP 404",
+  "date": "2026-11-09"
+ },
+ "IM": {
+  "IOMFSA register search": "probe saved (50774 bytes, 6 linked pages)",
+  "date": "2026-11-09"
+ },
+ "IN": {
+  "RBI authorised payment system operators": "ok: 144 firms",
+  "RBI regulated entities": "probe saved (65658 bytes, 12 linked pages)",
+  "date": "2026-11-09"
+ },
+ "JE": {
+  "JFSC regulated entities": "HTTP 404",
+  "date": "2026-11-09",
+  "www.jerseyfsc.org homepage": "probe saved (118569 bytes, 15 linked pages)"
+ },
+ "JM": {
+  "BOJ licensees (remittance, payment)": "HTTP 404",
+  "boj.org.jm homepage": "probe saved (369391 bytes, 15 linked pages)",
+  "date": "2026-11-09"
+ },
+ "JO": {
+  "CBJ homepage (English)": "HTTP 404",
+  "date": "2026-11-09"
+ },
+ "JP": {
+  "JFSA city and trust banks": "ok: 36 firms",
+  "JFSA crypto exchanges": "ok: 27 firms",
+  "JFSA electronic payment agents": "ok: 124 firms",
+  "JFSA funds transfer providers": "ok: 84 firms",
+  "JFSA prepaid issuers": "ok: 787 firms",
+  "JFSA regional banks": "ok: 62 firms",
+  "JFSA stablecoin intermediaries": "ok: 2 firms",
+  "date": "2026-11-09"
+ },
+ "KG": {
+  "NBKR homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "KH": {
+  "NBC licensed payment service institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.nbc.gov.kh homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "KM": {
+  "BCC Comores homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "KR": {
+  "FSS financial institutions directory": "ok: 10 firms",
+  "KoFIU homepage": "probe saved (44599 bytes, 6 linked pages)",
+  "date": "2026-11-09"
+ },
+ "KY": {
+  "CIMA entity search": "probe saved (187004 bytes, 10 linked pages)",
+  "date": "2026-11-09"
+ },
+ "KZ": {
+  "AFSA authorised firms (AIFC)": "ok: 25 firms",
+  "NBK payment organizations register": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "LC": {
+  "ECCB licensed institutions (Eastern Caribbean)": "HTTP 404",
+  "date": "2026-11-09",
+  "www.eccb-centralbank.org homepage": "probe saved (5090924 bytes, 0 linked pages)"
+ },
+ "LK": {
+  "CBSL licensed payment service providers": "HTTP 403",
+  "date": "2026-11-09",
+  "www.cbsl.gov.lk homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "LR": {
+  "CBL supervision": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "LS": {
+  "CBL licensed institutions": "SSL error",
+  "date": "2026-11-09"
+ },
+ "MA": {
+  "BAM credit institutions list": "HTTP 403",
+  "BAM payment institutions": "HTTP 403",
+  "date": "2026-11-09",
+  "www.bkam.ma homepage": "HTTP 403"
+ },
+ "MC": {
+  "AMAF members (Monaco banks)": "ok: 68 firms",
+  "AMAF members page": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "MD": {
+  "NBM payment service providers": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bnm.md homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "ME": {
+  "CBCG payment and e-money institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.cbcg.me homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "MG": {
+  "BFM e-money institutions": "SSL error",
+  "date": "2026-11-09"
+ },
+ "MK": {
+  "NBRM payment service providers": "HTTP 403",
+  "date": "2026-11-09",
+  "www.nbrm.mk homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "MN": {
+  "BoM banking supervision": "probe waiting for the next run (page budget used up)",
+  "FRC homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "MU": {
+  "BoM licensed banks": "SSL error",
+  "FSC Mauritius licensees": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bom.mu homepage": "SSL error",
+  "www.fscmauritius.org homepage": "probe saved (328540 bytes, 0 linked pages)"
+ },
+ "MV": {
+  "MMA homepage": "probe waiting for the next run (page budget used up)",
+  "MMA money changers": "blocked by robots.txt",
+  "date": "2026-11-09"
+ },
+ "MW": {
+  "RBM homepage": "probe waiting for the next run (page budget used up)",
+  "RBM payment systems": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "MX": {
+  "CNBV register of supervised entities": "SSL error",
+  "CNBV supervised entities register": "SSL error",
+  "date": "2026-11-09",
+  "www.cnbv.gob.mx homepage": "SSL error"
+ },
+ "MY": {
+  "BNM B2B remittance": "ok: 27 firms",
+  "BNM FSP directory": "probe saved earlier this week",
+  "BNM MSB licensees": "probe saved earlier this week",
+  "BNM digital MSB channels": "ok: 37 firms",
+  "BNM non-bank e-money issuers": "probe saved earlier this week",
+  "BNM payment system regulatees": "probe saved earlier this week",
+  "SC registered digital asset exchanges": "probe saved earlier this week",
+  "date": "2026-11-09"
+ },
+ "MZ": {
+  "Banco de Mocambique homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "NA": {
+  "BoN payment service providers": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bon.com.na homepage": "probe saved (195181 bytes, 15 linked pages)"
+ },
+ "NG": {
+  "CBN money transfer operators": "ok: 108 firms",
+  "date": "2026-11-09"
+ },
+ "NI": {
+  "SIBOIF supervised institutions": "ok: 8 firms",
+  "SIBOIF supervised institutions page": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "NZ": {
+  "RBNZ registered banks": "HTTP 403",
+  "date": "2026-11-09"
+ },
+ "OM": {
+  "CBO licensed institutions": "SSL error",
+  "cbo.gov.om homepage": "SSL error",
+  "date": "2026-11-09"
+ },
+ "PA": {
+  "SBP banks": "HTTP 404",
+  "date": "2026-11-09",
+  "www.superbancos.gob.pa homepage": "probe saved (74193 bytes, 15 linked pages)"
+ },
+ "PE": {
+  "SBS homepage": "probe saved (123999 bytes, 15 linked pages)",
+  "date": "2026-11-09"
+ },
+ "PH": {
+  "BSP directory of supervised institutions": "blocked by robots.txt",
+  "BSP operators of designated payment systems": "blocked by robots.txt",
+  "BSP operators of payment systems": "blocked by robots.txt",
+  "BSP payments and settlements": "blocked by robots.txt",
+  "date": "2026-11-09",
+  "www.bsp.gov.ph homepage": "blocked by robots.txt"
+ },
+ "PK": {
+  "SBP payments ecosystem": "probe waiting for the next run (page budget used up)",
+  "SBP regulated institutions": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "PY": {
+  "BCP e-money companies": "HTTP 403",
+  "date": "2026-11-09",
+  "www.bcp.gov.py homepage": "HTTP 403"
+ },
+ "QA": {
+  "QCB homepage": "SSL error",
+  "QFCRA homepage": "probe saved (182600 bytes, 3 linked pages)",
+  "date": "2026-11-09"
+ },
+ "RS": {
+  "NBS banks": "HTTP 404",
+  "NBS e-money institutions": "HTTP 404",
+  "NBS payment institutions": "HTTP 404",
+  "NBS virtual asset service providers": "HTTP 404",
+  "date": "2026-11-09",
+  "nbs.rs homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "SB": {
+  "CBSI financial system": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "SC": {
+  "CBS Seychelles homepage": "probe waiting for the next run (page budget used up)",
+  "FSA regulated entities": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "SG": {
+  "MAS directory (download list)": "read failed: no matching table on the page; table headers were: []",
+  "MAS directory print page": "probe saved (2836 bytes, 0 linked pages)",
+  "date": "2026-11-09"
+ },
+ "SL": {
+  "BSL licensed institutions": "DNS: no such site",
+  "date": "2026-11-09"
+ },
+ "SM": {
+  "BCSM register of authorised entities": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bcsm.sm homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "SN": {
+  "BCEAO e-money institutions page": "probe saved (127724 bytes, 10 linked pages)",
+  "BCEAO homepage": "probe saved (151967 bytes, 12 linked pages)",
+  "date": "2026-11-09"
+ },
+ "SR": {
+  "CBvS supervised institutions": "HTTP 403",
+  "date": "2026-11-09",
+  "www.cbvs.sr homepage": "HTTP 403"
+ },
+ "ST": {
+  "BCSTP homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "SV": {
+  "BCR bitcoin service providers": "DNS: no such site",
+  "SSF supervised entities": "HTTP 403",
+  "date": "2026-11-09",
+  "ssf.gob.sv homepage": "HTTP 403"
+ },
+ "SZ": {
+  "CBE Eswatini homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "TC": {
+  "TCI FSC licensees": "HTTP 404",
+  "date": "2026-11-09",
+  "www.tcifsc.tc homepage": "probe saved (358681 bytes, 15 linked pages)"
+ },
+ "TH": {
+  "BOT Payment Systems Act oversight": "probe saved (89684 bytes, 14 linked pages)",
+  "BOT payment service providers": "HTTP 404",
+  "SEC digital asset operators": "HTTP 403",
+  "date": "2026-11-09",
+  "www.bot.or.th homepage": "probe saved (208784 bytes, 15 linked pages)",
+  "www.sec.or.th homepage": "HTTP 403"
+ },
+ "TJ": {
+  "NBT payment organizations": "HTTP 404",
+  "date": "2026-11-09",
+  "nbt.tj homepage": "probe waiting for the next run (page budget used up)"
+ },
+ "TL": {
+  "BCTL homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "TM": {
+  "CBT banks": "ok: 3 firms",
+  "CBT banks page": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "TN": {
+  "BCT homepage": "probe saved (105113 bytes, 6 linked pages)",
+  "date": "2026-11-09"
+ },
+ "TO": {
+  "NRBT financial institutions": "read failed: no matching table on the page; table headers were: []",
+  "NRBT financial institutions page": "probe saved (108425 bytes, 0 linked pages)",
+  "date": "2026-11-09"
+ },
+ "TR": {
+  "BDDK deposit banks": "probe saved earlier this week",
+  "CBRT e-money institutions": "ok: 55 firms",
+  "CBRT payment institutions": "ok: 20 firms",
+  "SPK crypto asset service providers": "ok: 48 firms",
+  "SPK crypto list page": "probe saved (36183 bytes, 4 linked pages)",
+  "date": "2026-11-09"
+ },
+ "TT": {
+  "CBTT approved PSPs, EMIs and PSOs": "HTTP 404",
+  "CBTT payment service providers page": "HTTP 404",
+  "date": "2026-11-09"
+ },
+ "TW": {
+  "Banking Bureau e-payment institutions": "probe saved (103070 bytes, 12 linked pages)",
+  "Banking Bureau institutions directory": "probe saved (107392 bytes, 15 linked pages)",
+  "date": "2026-11-09"
+ },
+ "TZ": {
+  "BoT payment service providers": "HTTP 404",
+  "date": "2026-11-09",
+  "www.bot.go.tz homepage": "probe saved (147362 bytes, 15 linked pages)"
+ },
+ "UA": {
+  "NBU register of payment market participants": "HTTP 404",
+  "bank.gov.ua homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "UG": {
+  "BoU homepage": "probe saved (7578 bytes, 0 linked pages)",
+  "date": "2026-11-09"
+ },
+ "UY": {
+  "BCU payment and e-money institutions": "SSL error",
+  "BCU virtual asset service providers": "SSL error",
+  "date": "2026-11-09",
+  "www.bcu.gub.uy homepage": "SSL error"
+ },
+ "UZ": {
+  "CBU homepage": "probe waiting for the next run (page budget used up)",
+  "NAPP authorised crypto exchanges": "read failed: no matching table on the page; table headers were: []",
+  "NAPP crypto licence registry": "ok: 23 firms",
+  "NAPP pages": "probe saved (226241 bytes, 0 linked pages)",
+  "date": "2026-11-09"
+ },
+ "VU": {
+  "RBV licensed institutions": "SSL error",
+  "date": "2026-11-09"
+ },
+ "WS": {
+  "CBS Samoa supervision": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "XK": {
+  "CBK licensed institutions": "HTTP 404",
+  "bqk-kos.org homepage": "probe waiting for the next run (page budget used up)",
+  "date": "2026-11-09"
+ },
+ "ZW": {
+  "RBZ registered institutions": "HTTP 404",
+  "date": "2026-11-09",
+  "www.rbz.co.zw homepage": "probe waiting for the next run (page budget used up)"
+ }
+}

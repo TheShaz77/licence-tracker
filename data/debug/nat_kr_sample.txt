@@ -1,0 +1,16 @@
+url: https://www.fss.or.kr/eng/sprvise/instt/list.do?menuNo=400029
+bytes: 174056  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Name of financial institution', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Homepage', 'email': None, 'phone': 'Tel', 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No', 'Name of financial institution', 'Homepage', 'Tel']
+data rows: 10  kept: 10
+type values: [('', 10)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<title>Financial Institutions Directory(list) | Supervision | </title>'
+'<link rel="stylesheet" href="/static/eng/css/new/sub.css" />'
+'    <link rel="stylesheet" href="/static/eng/css/new/sub_new.css" />'
+'    <link rel="stylesheet" href="/static/eng/css/new/sub_new1.css" />'

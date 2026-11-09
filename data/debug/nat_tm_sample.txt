@@ -1,0 +1,16 @@
+url: https://www.cbt.tm/en/banklar.html
+bytes: 9901  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) GOLD', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['GOLD']
+data rows: 3  kept: 3
+type values: [('', 3)]
+first lines:
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
+'<html xmlns="http://www.w3.org/1999/xhtml">'
+'<head>'
+'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+'<title>Central Bank of Turkmenistan</title>'
+'<link rel="stylesheet" href="../styles/layout.css" type="text/css" />'
+'<link rel="shortcut icon" href="../../favicon.ico" />'
+'<script type="text/javascript" src="../scripts/calendar_en.js"></script>'

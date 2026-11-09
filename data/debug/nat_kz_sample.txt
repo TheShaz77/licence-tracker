@@ -1,0 +1,16 @@
+url: https://publicreg.myafsa.com/authorised/
+bytes: 59666  starts: b'\n\n<!DOCT'
+error: None
+columns used: {'name': 'Company name', 'type': None, 'id': 'License Number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Company name', 'License Number', 'Status of the license', 'License issue date:', 'Ordered activities', 'Details']
+data rows: 25  kept: 25
+type values: [('', 25)]
+first lines:
+''
+''
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'    <meta charset="UTF-8">'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1">'

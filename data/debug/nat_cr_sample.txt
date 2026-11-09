@@ -1,0 +1,33 @@
+url: https://www.sugef.fi.cr/entidades_supervisadas/lista_entidades_supervisadas_por_SUGEF.aspx
+bytes: 808292  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': '(guessed) Descripción', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Fecha Actualización', 'Descripción', 'Año', 'Tipo de Documento', 'section']
+data rows: 346  kept: 18
+type values: [('Histórico de lista de entidades supervisadas años anteriores', 334), ('Año anterior 2025', 8), ('Año actual 2026', 4)]
+first lines:
+''
+'<!DOCTYPE html>'
+'<html lang="es">'
+'<head id="ctl00_HeaderMaster">'
+'    <!-- Response Elapsed Time: 6,4534-->'
+'    <title>'
+'\tLista de entidades supervisadas por la SUGEF'
+'</title><!-- OPEN GRAPH -->'
+
+url: https://www.sugef.fi.cr/entidades_supervisadas/Lista%20de%20Casas%20de%20Cambio.aspx
+bytes: 135413  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': '(guessed) Descripción', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Fecha de Actualización', 'Descripción', 'Año', 'Tipo de Documento']
+data rows: 3  kept: 1
+type values: [('', 3)]
+first lines:
+''
+'<!DOCTYPE html>'
+'<html lang="es">'
+'<head id="ctl00_HeaderMaster">'
+'    <!-- Response Elapsed Time: 15,6262-->'
+'    <title>'
+'\tLista de entidades supervisadas por la SUGEF'
+'</title><!-- OPEN GRAPH -->'

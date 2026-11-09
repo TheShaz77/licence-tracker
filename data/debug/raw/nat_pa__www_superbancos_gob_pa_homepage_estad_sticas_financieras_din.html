@@ -1,0 +1,1878 @@
+
+ 
+  
+
+
+
+   
+    
+
+
+
+<div id= "language" class="shadow language flex ">
+<div class="lang-item lang-on" ><a href ="?lang=es">ES</a></div>
+<div>|</div>
+<div class="lang-item " ><a href ="?lang=en">EN</a></div>
+</div>
+<style type="text/css">
+	#language {
+		position: absolute;
+		z-index: 1000;
+		right: 20vw;
+		
+		font-size: 10px;
+		background-color: #002060;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	#language div{
+		padding: 5px;
+
+	}
+
+	#language .lang-item{
+		font-weight: lighter;
+		color: #F1F6FC;
+
+	}
+
+
+	#language .lang-on{
+		font-weight: bolder;
+		color: #BF9000;
+
+
+	}
+	.language {
+		top: -50px;
+		transition: 2s all;
+		color: #fff;
+	}
+	.language-on {
+		top: 0px;
+		
+	}
+
+		
+
+
+</style>
+<script type="text/javascript">
+	
+	setTimeout(function(){ $('#language').addClass('language-on'); }, 1000);
+</script><!DOCTYPE html>
+<html lang="es">  
+  <head>    
+    
+	    <title>Estadísticas Financieras</title>    
+	    <meta charset="UTF-8">
+	    <meta name="title" content="Estadísticas Financieras">
+	    <meta name="description" content="Estadísticas, analitica "> 
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link href="css/style.css?v=1794233713" rel="stylesheet" type="text/css" />
+      <link  rel="icon"   href="images/fav.png" type="image/png" />
+  		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css">
+  		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+      <script type="text/javascript">
+      <!--//--><![CDATA[//><!--
+      (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");ga("create", "UA-11210421-3", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+    //--><!]]>
+    </script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<script src="https://code.highcharts.com/stock/highstock.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+		
+		<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+		<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+		
+		<script type="text/javascript" src="assets/selectize/js/standalone/selectize.js"></script>
+		<link rel="stylesheet" type="text/css" href="assets/selectize/css/selectize.css" />
+				
+								
+
+<style>
+
+    .filtro-btn-active {
+        background-color: #2b6cb0 !important;
+
+    }
+
+    .subfiltro-btn {
+        display: none;
+        transition: 0.3s all 1s;
+        margin-left: 4px;
+    }
+
+    .subfiltro-btn-show {
+        margin-left: 10px;
+        display: inherit;
+  
+    }
+   
+
+</style>
+
+
+<script>
+  
+
+    function show_only(chart,num,pairs){
+
+        for(var a = 0;a<=chart.series.length-1;a++){
+            chart.series[a].hide();
+        }
+
+        
+        if(pairs==1) {
+            chart.series[num].show();
+        }else{
+           // alert(((((num)*pairs))+pairs));
+
+            for(var a=((num)*pairs);a<=((((num)*pairs))+(pairs-1));a++){
+        //alert(a);
+                chart.series[a].show();
+            }
+        }
+        // console.log($("#"+$(a).attr("rel")));
+
+    }
+
+    function show_subfiltro_btn(id, filtro) {
+        $(".filtro-btn-active").removeClass("filtro-btn-active");
+        $("#" + id + "-" + filtro).addClass("filtro-btn-active");
+        $('.subfiltro-btn-show').removeClass("subfiltro-btn-show");
+        $("." + id + "-" + filtro).addClass("subfiltro-btn-show");
+
+    }
+
+</script>				
+
+	</head>
+<script type="text/javascript">
+
+Highcharts.wrap(Highcharts.Chart.prototype, 'init', function(proceed, options, callback) {
+    if (options.chart && options.chart.forExport && options.series) {
+        $.each(options.series, function() {
+            if (this.visible === false) {
+                this.showInLegend = false;
+            }
+        });
+    }
+
+    return proceed.call(this, options, callback);
+});
+
+ 
+  var H = Highcharts,
+doc = H.doc,
+fireEvent = H.fireEvent;
+H.Chart.prototype.viewData = function () {
+            // Create div and generate the data table.
+            if (!this.dataTableDiv) {
+                this.dataTableDiv = doc.createElement('div');
+                this.dataTableDiv.className = 'highcharts-data-table';
+                // Insert after the chart container
+                this.renderTo.parentNode.insertBefore(this.dataTableDiv, this.renderTo.nextSibling);
+            }
+            this.dataTableDiv.innerHTML = this.getTable();
+
+            // Show the data table again.
+            if (this.dataTableDiv.style.display === '' || this.dataTableDiv.style.display === 'none') {
+                this.dataTableDiv.style.display = 'block';
+            }
+            this.isDataTableVisible = true;
+            fireEvent(this, 'afterViewData', this.dataTableDiv);
+        };
+        
+	Highcharts.setOptions({
+                    colors: ['#002060', '#2E75B6', '#BF9000', '#BDD7EE', ' #c0392b', '#148f77', '#d35400', '#34495e', '#2874a6', 
+                    '#f0b27a',  '#17202a', ' #a9cce3', ' #641e16 ', '#45b39d ', '#004D40', '#F9A825', '#7986CB', '#6D4C41', '#90A4AE', '#1A237E', '#FF7043', '#80CBC4', '#A9CCE3', '#641E16', '#7D6608'],
+                    lang: {
+                          thousandsSep: ',',
+                          numericSymbols: [' thousands', ' million'],
+                    },
+                     credits: {
+					        text: 'Fuente: Superintendencia de Bancos de Panamá',
+					        href: 'http://www.superbancos.gob.pa'
+					    },
+
+                    exporting: {
+
+                        chartOptions: {
+                          chart: {
+                              height: 750,
+                              width:1300
+                          },
+                           legend:{
+
+
+                            width: '100%',
+                            y: 5,
+                            title:{
+                              text:''
+                            },
+                            backgroundColor: '#fff',
+                            verticalAlign: 'bottom',
+                            navigation:{
+                              enabled:false,
+                            },
+                            enabled:true,
+                            layout:'horizontal',
+                          },
+                      },
+
+
+          buttons: {
+            contextButton: {
+              enabled: true,
+              
+              menuItems: ['printChart',
+                        'viewFullscreen',
+                        'separator',
+                        'downloadPNG',
+                        'downloadJPEG',
+                        'downloadPDF',
+                        
+                        'separator',
+                        'downloadCSV',
+                        'downloadXLS',
+                        'viewData']
+    }
+  }},
+
+                    });
+
+
+
+
+	    function cerrar(btn_close_data){
+ let tableDiv = document.querySelector('.highcharts-data-table');
+
+var element = document.getElementById('id');
+ console.log(element);
+   tableDiv.style.display = "none";
+  btn_close_data.style.display = "none";
+   
+  
+}
+
+function toggleDataTable() {
+    var chart = $('#container').highcharts()
+    if (chart.options.exporting.showTable) {
+      var element = document.getElementById("highcharts-data-table-0");
+      element.parentNode.removeChild(element);
+    }
+    chart.update({
+      exporting: {
+        showTable: !chart.options.exporting.showTable
+      }
+    });
+  }
+
+
+
+</script>
+
+<body>
+	<header>
+		
+		<div class="bg-fixed sm:bg-local md:bg-scroll lg:bg-local xl:bg-fixed relative">
+		 
+		    <img id="banner-2" src="images/banner2_es.png"> 
+
+		    <div id="banner" class="banner absolute" style="top:0px;left:0px">
+		    	<a href="/analitica">
+<img src="images/banner1_es.png">
+ </a>
+		    </div>
+
+		</div>
+      
+
+
+<div id= "language" class="shadow language flex ">
+<div class="lang-item lang-on" ><a href ="?lang=es">ES</a></div>
+<div>|</div>
+<div class="lang-item " ><a href ="?lang=en">EN</a></div>
+</div>
+<style type="text/css">
+	#language {
+		position: absolute;
+		z-index: 1000;
+		right: 20vw;
+		
+		font-size: 10px;
+		background-color: #002060;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+	}
+	#language div{
+		padding: 5px;
+
+	}
+
+	#language .lang-item{
+		font-weight: lighter;
+		color: #F1F6FC;
+
+	}
+
+
+	#language .lang-on{
+		font-weight: bolder;
+		color: #BF9000;
+
+
+	}
+	.language {
+		top: -50px;
+		transition: 2s all;
+		color: #fff;
+	}
+	.language-on {
+		top: 0px;
+		
+	}
+
+		
+
+
+</style>
+<script type="text/javascript">
+	
+	setTimeout(function(){ $('#language').addClass('language-on'); }, 1000);
+</script>
+		<script>
+
+$( '#banner-2' ).ready(function() {
+    cargar_banner();
+});
+
+
+function cargar_banner(){
+	  $('#banner').addClass('banner-on');
+}
+
+
+		</script>
+
+
+		<style>
+         
+         .banner{
+         	width:0%;
+         	overflow: hidden;
+         	height: 100%;
+         	transition: 2s  all;
+         }
+
+         .banner img{
+         	width:100vw;
+         	max-width: inherit;
+         }
+
+         .banner-on{
+         	width:100%;
+         }
+
+		</style>
+
+
+
+
+	</header>
+
+	<!--<nav>
+		<div class="w3-bar " >
+	  	<a href ="index.php" class="w3-btn color-blue">Por tipo de Banca</a>
+	 	<a href ="individual_por_banco" class="w3-btn color-blue">Individual por Bancos</a>
+		</div>
+	</nav>-->
+
+
+	<section style="width:100%; max-width: 90vw; margin-left: auto; margin-right: auto">
+	
+
+
+		  
+
+
+  <div id="container-central" >
+              <div class="w3-row  ">
+
+
+<div class="div-grafica text-white">
+  
+
+
+<script type="text/javascript">var datos = {"id":"sbp6af1d571dbbc5","path_csv":"data\/tasas\/","csv":"tasa_interbancarias.csv","delimitador":",","columna":"","fecha":"","columna_filtro":"","filtro":"","title":"","fecha_reciente":"","custom":"","chart_type":"column","general_custom":"","chart":".chart","json_file":"","json_file_path":"..\/..\/json\/","json_formatear_para_mapa":false,"datos":[["05\/03\/19",2.28,2.05,1.85,2.65,2.45,"null"],["05\/10\/19",1.86,1.57,1.66,1.86,"null",2.65],["05\/17\/19",2.17,1.79,1.64,2.04,2.59,"null"],["05\/24\/19",1.95,2.12,1.41,2.01,2.47,"null"],["05\/31\/19",2.15,2.02,1.55,1.8,"null",2.64],["06\/07\/19",2.2,1.94,1.62,1.93,"null","null"],["06\/14\/19",2.41,2,1.65,2.13,"null",2.79],["06\/21\/19",2.16,1.76,1.95,1.91,3.34,2.38],["06\/28\/19",1.98,2.23,1.79,2.3,"null",1.96],["07\/05\/19",2.3,1.84,1.59,2.36,3.48,"null"],["07\/12\/19",2.17,1.95,1.76,2.16,4.05,2.3],["07\/19\/19",2.22,1.69,1.82,1.9,"null",2.9],["07\/26\/19",2.07,2.03,2.18,2.11,"null",1.99],["08\/02\/19",1.95,1.87,1.83,2.39,"null","null"],["08\/09\/19",1.94,1.96,1.81,1.88,"null",2.24],["08\/16\/19",1.9,1.93,1.73,2.03,2.19,2.3],["08\/23\/19",1.9,1.85,1.67,2.11,2.1,"null"],["08\/30\/19",2.06,1.82,1.78,2.21,2.37,"null"],["09\/06\/19",1.92,1.9,1.76,1.98,"null","null"],["09\/13\/19",1.92,1.83,1.7,2.34,2.45,"null"],["09\/20\/19",1.88,1.87,1.69,2.05,3.15,1.54],["09\/27\/19",1.91,1.71,1.72,1.92,"null",2.03],["10\/04\/19",1.82,1.73,1.81,2.13,2.05,2.98],["10\/11\/19",1.85,1.7,1.55,1.78,2.3,3.73],["10\/18\/19",1.84,1.66,1.62,1.64,2.49,"null"],["10\/25\/19",1.78,1.73,1.64,1.71,1.64,"null"],["11\/01\/19",1.47,1.68,1.63,1.69,2.35,"null"],["11\/08\/19",1.64,1.69,1.6,1.62,1.83,"null"],["11\/15\/19",1.55,1.53,1.37,1.61,1.91,2.75],["11\/22\/19",1.56,1.55,1.59,1.58,"null",1.96],["11\/29\/19",1.69,1.54,1.75,1.59,1.84,2.35],["12\/06\/19",1.7,1.59,1.49,1.55,2.35,3.54],["12\/13\/19",1.45,1.5,1.67,1.62,"null",2.7],["12\/20\/19",1.36,1.6,1.55,1.83,"null",3.63],["12\/27\/19",1.58,1.57,1.57,1.91,1.6,"null"],["01\/03\/20",1.66,1.66,1.69,1.53,2.02,"null"],["01\/10\/20",1.5,1.46,1.5,1.93,"null",3.53],["01\/17\/20",1.4,1.47,1.51,1.9,1.8,1.9],["01\/24\/20",1.53,1.53,1.5,1.61,1.85,1.95],["01\/31\/20",1.51,1.55,1.52,1.56,1.83,"null"],["02\/07\/20",1.49,1.55,1.39,1.69,"null","null"],["02\/14\/20",1.53,1.47,1.47,1.64,1.76,2.55],["02\/21\/20",1.51,1.58,1.53,1.91,1.8,"null"],["02\/28\/20",1.59,1.5,1.5,1.48,2.35,"null"],["03\/06\/20",1.15,1.16,1.25,1.2,2.25,"null"],["03\/13\/20",0.99,0.83,0.79,1.28,0.92,"null"],["03\/20\/20",0.56,0.79,0.84,1.98,1.92,"null"],["03\/27\/20",0.67,0.56,1.32,0.84,1.2,"null"],["04\/03\/20",0.76,0.77,0.96,1.02,1.5,2.9],["04\/10\/20",0.82,0.42,0.96,1.05,1.96,"null"],["04\/17\/20",0.7,0.43,0.9,1.42,"null","null"],["04\/24\/20",0.77,0.32,0.58,0.86,0.57,"null"],["05\/01\/20",0.87,0.31,0.49,0.71,0.73,1.33],["05\/08\/20",0.88,0.24,1.1,0.93,1,0.63],["05\/15\/20",0.84,0.25,0.43,0.88,"null",0.71],["05\/22\/20",0.72,0.49,0.34,1.03,"null",0.65],["05\/29\/20",0.79,0.59,0.61,0.26,1.97,"null"],["06\/05\/20",0.73,0.13,0.27,"null","null","null"],["06\/12\/20",0.15,0.19,0.62,0.86,0.53,1.47],["06\/19\/20",0.85,0.18,0.54,0.61,"null",3.25],["06\/26\/20",0.71,0.21,0.36,0.82,"null","null"],["07\/03\/20",0.13,0.17,0.27,0.56,"null","null"],["07\/10\/20",0.93,0.44,0.39,0.55,3.25,"null"],["07\/17\/20",0.89,0.18,0.32,"null","null","null"],["07\/24\/20",0.84,0.18,0.34,0.42,1.9,1.5],["07\/31\/20",0.79,0.15,0.3,0.3,0.57,1.01],["08\/07\/20",0.86,0.16,0.26,0.48,0.52,0.75],["08\/14\/20",0.83,0.15,0.31,0.77,0.52,0.91],["08\/21\/20",0.94,0.13,0.27,0.31,0.55,"null"],["08\/28\/20",0.8,0.16,0.25,0.43,0.7,"null"],["09\/04\/20",0.69,0.14,0.4,0.43,"null","null"],["09\/11\/20",0.76,0.16,0.29,0.8,"null",0.32],["09\/18\/20",0.64,0.13,0.28,0.36,"null","null"],["09\/25\/20",0.39,0.14,0.24,0.38,0.19,"null"],["10\/02\/20",0.54,0.15,0.23,0.69,"null","null"],["10\/09\/20",0.56,0.15,0.25,0.64,0.54,3.25],["10\/16\/20",0.55,0.17,0.24,0.37,0.75,0.81],["10\/23\/20",0.41,0.12,0.24,0.41,1.15,"null"],["10\/30\/20",0.43,0.39,0.21,0.31,0.58,0.55],["11\/06\/20",0.64,0.16,0.26,0.36,2.35,"null"],["11\/13\/20",0.58,0.12,0.23,0.26,0.54,0.31],["11\/20\/20",0.41,0.14,0.24,0.3,0.54,0.57],["11\/27\/20",0.12,0.11,0.2,0.35,0.27,0.81],["12\/04\/20",0.1,0.13,0.19,0.22,0.35,"null"],["12\/11\/20",0.12,0.13,0.25,0.26,1.43,1.4],["12\/18\/20",0.33,0.34,0.2,0.29,"null",2.4],["12\/25\/20",0.06,0.33,0.22,0.13,"null","null"],["01\/01\/21",0.52,0.14,0.24,0.44,0.87,"null"],["01\/08\/21",0.1,0.1,0.23,0.52,1.14,2.01],["01\/15\/21",0.1,0.13,0.2,0.21,0.45,1.39],["01\/22\/21",0.1,0.14,0.24,0.32,0.35,0.98],["01\/29\/21",0.11,0.14,0.23,0.32,0.44,0.93],["02\/05\/21",0.1,0.11,0.2,0.27,0.46,"null"],["02\/12\/21",0.11,0.13,0.21,0.18,0.47,0.4],["02\/19\/21",0.13,0.15,0.18,0.23,0.69,3],["02\/26\/21",0.13,0.14,0.2,0.32,0.44,0.44],["03\/05\/21",0.09,0.19,0.16,0.27,0.54,"null"],["03\/12\/21",0.08,0.17,0.23,0.29,0.74,0.29],["03\/19\/21",0.1,0.11,0.23,0.1,0.22,"null"],["03\/26\/21",0.06,0.13,0.19,0.3,0.1,"null"],["04\/02\/21",0.06,0.17,0.14,0.14,0.22,0.24],["04\/09\/21",0.1,0.13,0.27,0.29,0.73,"null"],["04\/16\/21",0.09,0.11,0.19,0.31,0.71,0.63],["04\/23\/21",0.09,0.07,0.21,0.18,0.36,0.5],["04\/30\/21",0.09,0.13,0.18,0.29,0.44,0.94],["05\/07\/21",0.08,0.09,0.18,0.4,0.93,0.25],["05\/14\/21",0.09,0.17,0.17,0.27,0.39,1.79],["05\/21\/21",0.07,0.08,0.18,0.21,0.34,"null"],["05\/28\/21",0.07,0.11,0.19,0.23,0.36,0.52],["06\/04\/21",0.07,0.09,0.19,0.21,0.66,"null"],["06\/11\/21",0.06,0.12,0.2,0.21,0.2,0.35],["06\/18\/21",0.08,0.11,0.21,0.21,0.2,0.25],["06\/25\/21",0.07,0.09,0.22,0.21,0.25,0.48],["07\/02\/21",0.14,0.09,0.17,0.27,0.42,"null"],["07\/09\/21",0.08,0.12,0.32,0.43,1.07,"null"],["07\/16\/21",0.06,0.11,0.25,0.18,0.16,1.05],["07\/23\/21",0.08,0.09,0.18,0.33,0.33,1.27],["07\/30\/21",0.09,0.11,0.19,0.2,0.33,0.42],["08\/06\/21",0.14,0.13,0.17,0.42,0.37,"null"],["08\/13\/21",0.14,0.12,0.17,0.22,0.15,0.3],["08\/20\/21",0.14,0.12,0.22,0.29,0.32,1.4],["08\/27\/21",0.09,0.1,0.21,0.22,0.41,0.48],["09\/03\/21",0.09,0.13,0.18,0.26,0.83,0.17],["09\/10\/21",0.07,0.09,0.16,0.32,0.36,0.25],["09\/17\/21",0.07,0.11,0.22,0.24,0.37,"null"],["09\/24\/21",0.14,0.13,0.19,0.27,0.55,0.16],["10\/01\/21",0.08,0.11,0.16,0.37,0.27,0.99],["10\/08\/21",0.08,0.11,0.2,0.23,0.2,"null"],["10\/15\/21",0.08,0.11,0.16,0.22,0.3,0.22],["10\/22\/21",0.04,0.11,0.37,0.26,0.23,1.1],["10\/29\/21",0.08,0.29,0.17,0.22,0.3,0.8],["11\/05\/21",0.08,0.08,0.17,0.21,"null","null"],["11\/12\/21",0.05,0.12,0.32,0.17,0.33,"null"],["11\/19\/21",0.08,0.17,0.33,0.22,0.34,0.37],["11\/26\/21",0.04,0.12,0.22,0.4,0.46,0.25],["12\/03\/21",0.13,0.16,0.2,0.26,1.92,1.5],["12\/10\/21",0.08,0.3,0.29,0.2,0.47,"null"],["12\/17\/21",0.08,0.16,0.2,0.22,0.32,1.61],["12\/24\/21",0.08,0.24,0.21,0.99,0.67,0.54],["12\/31\/21",0.08,0.11,0.34,0.72,0.68,0.25],["01\/07\/22",0.07,0.14,0.27,0.14,0.01,"null"],["01\/14\/22",0.07,0.1,0.2,0.2,0.28,0.39],["01\/21\/22",0.08,0.22,0.31,0.17,0.54,"null"],["01\/28\/22",0.08,0.1,0.22,0.29,0.25,0.65],["02\/04\/22",0.07,0.14,0.31,0.28,0.38,2.25],["02\/11\/22",0.09,0.08,0.2,0.26,0.17,"null"],["02\/18\/22",0.09,0.17,0.2,0.44,0.08,"null"],["02\/25\/22",0.23,0.17,0.2,0.88,0.59,1.08],["03\/04\/22",0.21,0.17,0.41,0.23,0.6,"null"],["03\/11\/22",0.15,0.15,0.23,0.29,0.3,"null"],["03\/18\/22",0.3,0.2,0.28,0.38,"null",1.5],["03\/25\/22",0.27,0.3,0.35,0.36,1.85,"null"],["04\/01\/22",0.34,0.24,0.51,0.35,0.65,1.8],["04\/08\/22",0.29,0.32,0.38,0.37,1.24,"null"],["04\/15\/22",0.29,0.36,0.33,0.35,0.46,"null"],["04\/22\/22",0.21,0.33,0.47,1.04,1.5,1.44],["04\/29\/22",0.31,0.27,0.64,0.47,1.43,1.29],["05\/06\/22",0.53,0.71,0.61,0.6,1.56,"null"],["05\/13\/22",0.57,0.5,0.64,0.51,"null","null"],["05\/20\/22",0.66,0.59,0.85,1.68,"null",1.9],["05\/27\/22",0.67,0.44,0.94,0.87,"null","null"],["06\/03\/22",0.61,0.78,0.52,0.83,1.59,1.5],["06\/10\/22",0.84,0.66,0.72,0.7,"null","null"],["06\/17\/22",1.06,1.25,1.44,1.5,"null",1.5],["06\/24\/22",0.93,1.28,1.72,0.32,2.43,"null"],["07\/01\/22",0.98,1.07,1.7,"null","null","null"],["07\/08\/22",1.21,1.43,1.32,1.5,2.58,"null"],["07\/15\/22",1.16,1.6,1.36,1.24,"null",3],["07\/22\/22",1.81,1.31,1.83,2.73,1.95,"null"],["08\/05\/22",2.1,1.99,2.27,2.53,2.32,"null"],["08\/12\/22",2.16,1.91,2.16,2.57,4.85,"null"],["08\/19\/22",2.1,2.05,1.89,2.49,3.52,2],["08\/26\/22",2.21,1.86,2.49,2.58,"null","null"],["09\/02\/22",2.25,2.1,2.31,2.58,2.52,3.2],["09\/09\/22",2.19,2.13,2.38,2.9,3,"null"],["09\/16\/22",2.18,2.25,2.82,3.68,"null","null"],["09\/23\/22",2.69,2.25,3.23,2.15,4.75,"null"],["09\/30\/22",2.85,2.39,2.97,3.73,"null",4.6],["10\/07\/22",2.89,2.46,3.17,3.38,3.99,"null"],["10\/14\/22",2.79,2.6,3.37,3.43,"null",3.75],["10\/21\/22",2.89,2.72,3.4,3.92,"null",5.1],["10\/28\/22",2.75,3.1,3.26,3.6,"null","null"],["11\/04\/22",3.43,3,3.39,3.76,3.84,2],["11\/11\/22",3.51,3.08,3.76,4.31,"null","null"],["11\/18\/22",3.35,3.27,3.84,4.49,4.96,"null"],["11\/25\/22",3.37,3.34,4.16,4.36,6.66,"null"],["12\/02\/22",3.41,3.71,3.89,4,4.86,"null"],["12\/09\/22",3.47,3.74,4.06,3.77,5.13,"null"],["12\/16\/22",3.7,3.47,4.32,4.52,6.1,"null"],["12\/23\/22",3.9,3.81,4.44,4.68,4.81,"null"],["12\/30\/22",3.74,3.85,3.87,4.42,4.99,"null"],["01\/06\/23",3.91,3.65,3.96,3.92,"null","null"],["01\/13\/23",3.91,3.83,4.46,4.53,"null","null"],["01\/20\/23",4.17,3.59,4.4,"null","null","null"],["01\/27\/23",3.89,3.92,4.13,4.66,5.17,"null"],["02\/03\/23",4.03,3.89,4.53,3.98,6.63,4.42],["02\/10\/23",4.08,4.5,4.31,3.99,4.75,5.09],["02\/17\/23",4.4,4,4.42,4.71,5.25,"null"],["02\/24\/23",4.11,3.96,4.46,4.74,6.39,"null"],["03\/03\/23",4.03,4.15,4.13,3.73,5.53,"null"],["03\/10\/23",4.02,4.14,4.42,4.76,3.75,"null"],["03\/17\/23",4,4.07,4.45,4.66,4.81,"null"],["03\/24\/23",4.38,4.13,4.15,5.11,5.35,"null"],["03\/31\/23",4.33,4.31,4.21,5.21,5.21,"null"],["04\/07\/23",4.42,4.22,4.54,5.18,5.08,"null"],["04\/14\/23",4.38,4.18,4.42,4.49,"null",5.35],["04\/21\/23",4.34,4.03,4.61,5.2,3,4],["04\/28\/23",4.42,4.27,4.4,5.34,5.25,"null"],["05\/05\/23",4.53,4.41,4.31,4.35,5.25,5.4],["05\/12\/23",4.66,4.24,4.2,5.22,"null","null"],["05\/19\/23",4.66,4.44,4.86,4.98,"null",5.2],["05\/26\/23",4.53,4.66,5.06,6.73,"null","null"],["06\/02\/23",4.56,4.44,4.97,5.44,5.35,4],["06\/09\/23",4.56,4.7,4.38,5.25,"null","null"],["06\/16\/23",4.55,4.75,4.64,4.26,5.31,"null"],["06\/23\/23",4.55,4.71,4.91,5.78,"null","null"],["06\/30\/23",4.66,4.77,5.12,5.35,5.53,5.2],["07\/07\/23",4.69,4.69,5.19,5.25,"null","null"],["07\/14\/23",4.71,4.81,4.87,5.02,6.61,5.81],["07\/21\/23",4.61,4.6,4.87,5.5,"null","null"],["07\/28\/23",4.91,4.87,5.06,5.65,5.42,6.8],["08\/04\/23",4.88,5.16,5.18,5.55,"null",4.5],["08\/11\/23",4.84,4.87,4.69,5.36,"null","null"],["08\/18\/23",5.03,4.9,4.94,5.42,5.28,"null"],["08\/25\/23",4.91,4.8,5.31,5.44,5.5,5],["09\/01\/23",4.97,4.85,5.23,"null",5.65,"null"],["09\/08\/23",4.94,5.11,5.41,5.46,4.75,4.92],["09\/15\/23",4.92,5.24,5.39,4.95,5.49,"null"],["09\/22\/23",5.05,5.24,5.2,4.8,"null","null"],["09\/29\/23",5.04,5.12,5.18,5.93,"null","null"],["10\/06\/23",5.01,5.05,5.4,5.53,5.5,"null"],["10\/13\/23",4.96,5.24,5.15,5.93,"null","null"],["10\/20\/23",4.88,4.98,5.21,5.13,"null","null"],["10\/27\/23",4.95,5.21,5.47,5.1,5.51,"null"],["11\/03\/23",5.23,5.08,4.83,5.53,"null",5.93],["11\/10\/23",5,4.8,5.35,5.5,"null","null"],["11\/17\/23",5.05,4.91,5.52,5.45,"null",6.13],["11\/24\/23",5.06,4.77,5.27,5.53,7.06,5.5],["12\/01\/23",5.03,5.04,5.48,5.65,5.67,5.5],["12\/08\/23",5.08,5.09,5.36,"null",5.43,5],["12\/15\/23",5.01,5.17,5.42,5.46,5.56,5.67],["12\/22\/23",5.09,4.98,5.4,6.16,"null",5.75],["12\/29\/23",5.08,5.24,5.47,5.41,5.08,5.84],["01\/05\/24",5.15,5.19,5.36,5.47,5.58,5.63],["01\/12\/24",5.06,5.09,5.45,5.49,5.57,"null"],["01\/19\/24",5.12,5.14,4.88,5.3,5.34,"null"],["01\/26\/24",5.16,5.36,5.48,5.66,"null","null"],["02\/02\/24",5.08,5.09,5.39,5.46,6.3,5.13],["02\/09\/24",5.11,5.02,5.46,4.62,5.3,5.6],["02\/16\/24",5.3,5.23,5.09,4.65,"null","null"],["02\/23\/24",5.04,5.08,5.39,5.19,5.07,"null"],["03\/01\/24",5.08,5.3,5.43,5.45,5.23,5.72],["03\/08\/24",5.09,5.12,5.42,5.4,5.48,5.39],["03\/15\/24",5.07,5.28,4.86,5.32,5.54,5.64],["03\/22\/24",5.11,5.18,5.21,5.61,7.13,"null"],["03\/29\/24",5.05,5.24,5.08,5.64,5,"null"],["04\/05\/24",5.09,5.15,5.42,5.27,"null","null"],["04\/12\/24",5.08,5.13,5.05,5.18,"null","null"],["04\/19\/24",5.1,5.07,5,4.88,5.03,"null"],["04\/26\/24",5.11,5.09,5.45,5.18,5.26,5.61],["05\/03\/24",5.19,5.16,5.29,5.54,5.39,6.69],["05\/10\/24",5.11,5.17,5.29,5.43,5.59,"null"],["05\/17\/24",5.12,5.33,4.82,5.19,5.57,5.1],["05\/24\/24",5.11,5.21,5.46,5.18,4.4,5.55],["05\/31\/24",5.12,5.08,5.35,5.33,5.56,5.39],["06\/07\/24",5.11,5.26,5.54,5.37,5,5.55],["06\/14\/24",5.15,5.11,4.9,5.23,"null",4.75],["06\/21\/24",5.11,5.47,5.23,4.69,"null","null"],["06\/28\/24",5.07,5.16,5.4,5.13,5,5.67],["07\/05\/24",5.21,5.32,4.95,5.31,"null","null"],["07\/12\/24",5.11,5.31,5.35,5.04,"null","null"],["07\/19\/24",5.1,5.33,5.14,5.38,5.6,"null"],["07\/26\/24",5.25,5.32,5.2,6.05,5.8,"null"],["08\/02\/24",5.25,5.32,5.3,6.03,5.53,5.52],["08\/09\/24",5.13,5.15,5.29,5.2,5.31,"null"],["08\/16\/24",5.11,5.35,5.03,5.05,5.15,"null"],["08\/23\/24",5.1,5.15,5.25,5.29,"null","null"],["08\/30\/24",5.07,5.28,5.13,5.06,5.23,5.5],["09\/06\/24",5.09,5.31,5.51,5.33,5.33,5.45],["09\/13\/24",5.15,5.29,5.02,4.8,5.27,"null"],["09\/20\/24",4.9,4.93,4.92,5.77,5.06,5.28],["09\/27\/24",4.86,4.85,4.94,5.66,5.01,5.02],["10\/04\/24",4.79,4.79,4.99,4.83,4.98,4.8],["10\/11\/24",4.76,4.78,4.88,4.84,"null",5.12],["10\/18\/24",4.83,4.73,4.72,4.79,5.1,"null"],["10\/25\/24",4.74,4.75,4.85,5.11,5.63,5.06],["11\/01\/24",4.8,4.76,4.86,5.37,"null",5],["11\/08\/24",4.64,4.72,4.73,5.33,4.83,4.77],["11\/15\/24",4.64,4.57,4.57,5.12,4.74,5.27],["11\/22\/24",4.6,4.49,4.67,4.69,4.9,"null"],["11\/29\/24",4.42,4.56,4.64,4.56,"null",5.04],["12\/06\/24",4.39,4.45,4.64,4.73,4.85,5.11],["12\/13\/24",4.41,4.44,4.57,4.62,4.45,5.5],["12\/20\/24",4.31,4.24,4.9,4.64,4.6,5],["12\/27\/24",4.27,4.32,4.53,4.69,4.49,5.15],["01\/03\/25",4.26,4.28,4,43,4.45,4.75,"null"],["01\/10\/25",4.23,4.26,4.37,4.58,4.71,"null"],["01\/17\/25",4.23,4.18,4.4,4.54,5.65,4.5],["01\/24\/25",4.23,4.19,4.39,4.51,4.7,"null"],["01\/31\/25",4.2,4.23,4.31,4.47,4.62,"null"],["02\/07\/25",4.21,4.25,4.34,4.49,5.1,4.77],["02\/14\/25",4.21,4.28,4.35,4.4,4.68,"null"],["02\/21\/25",4.21,4.2,4.32,4.43,4.75,"null"],["02\/28\/25",4.21,4.26,4.44,4.38,4.65,4.84],["03\/07\/25",4.19,4.26,4.34,4.41,4.62,5.5],["03\/14\/25",4.22,4.33,4.43,4.37,4.66,4.7],["03\/21\/25",4.23,4.25,4.25,4.55,4.64,"null"],["03\/28\/25",4.27,4.24,4.41,4.47,4.67,4.81],["04\/04\/25",4.22,4.3,4.36,4.44,"null",4.45],["04\/11\/25",4.25,4.2,4.37,4.36,4.73,5.04],["04\/18\/25",4.26,4.23,4.33,4.42,"null","null"],["04\/25\/25",4.2,4.28,4.41,5,5.12,"null"],["05\/02\/25",4.26,4.29,4.44,4.66,4.49,4.55],["05\/09\/25",4.31,4.2,4.35,4.33,4.7,4.85],["05\/16\/25",4.32,4.3,4.36,4.43,4.68,"null"],["05\/23\/25",4.32,4.28,4.36,4.43,4.65,4.63],["05\/30\/25",4.32,4.33,4.44,4.44,4.27,5.5],["06\/06\/25",4.25,4.25,4.39,4.37,4.62,5.75],["06\/13\/25",4.23,4.32,4.51,4.43,4.48,4.57],["06\/20\/25",4.27,4.24,4.76,4.27,4.68,4.38],["06\/27\/25",4.38,4.3,4.35,4.43,5.29,5.43],["07\/04\/25",4.3,4.26,4.26,4.5,4.63,4.67],["07\/11\/25",3.66,4.31,4.32,4.66,4.71,5],["07\/18\/25",4.23,4.19,4.31,4.38,4.59,4.7],["07\/25\/25",3.85,4.26,4.36,4.39,4.61,4.68],["08\/01\/25",4.22,4.29,4.36,4.34,4.57,"null"],["08\/08\/25",4.06,4.29,4.3,4.93,4.55,4.65],["08\/15\/25",3.94,4.25,4.47,4.37,"null",4.62],["08\/22\/25",4.12,4.2,4.31,4.36,"null",5.6],["08\/29\/25",3.99,4.18,4.38,4.74,4.43,5],["09\/05\/25",4.27,4.39,4.26,4.48,4.44,4.7],["09\/12\/25",4.26,4.08,4.65,4.42,4.71,4.91],["09\/19\/25",4.09,4.19,4.17,4.26,4.52,4.58],["09\/26\/25",4.01,4.03,4.22,4.35,4.37,4.58],["10\/03\/25",3.95,4.15,4.29,4.16,4.71,4.41],["10\/10\/25",3.82,4.02,4.17,4.54,4.21,4.9],["10\/17\/25",3.88,4.1,4.2,4.19,4.19,4.31],["10\/24\/25",3.97,3.94,4.2,4.22,4.21,5.11],["10\/31\/25",3.79,3.91,4.16,4.19,4.19,4.35],["11\/07\/25",3.89,3.81,4.17,4.17,4.05,4.53],["11\/14\/25",3.78,3.82,4.06,4.5,4.44,4.3],["11\/21\/25",3.76,3.82,4.19,4.2,"null","null"],["11\/28\/25",3.86,3.93,3.92,3.97,4.99,4.15],["12\/05\/25",3.53,3.85,3.84,4.36,3.91,4.05],["12\/12\/25",3.53,3.96,3.91,4.01,"null",4.61],["12\/19\/25",3.37,3.96,3.74,3.99,4.28,3.97],["12\/26\/25",3.58,3.65,3.73,3.92,4.05,4.75],["01\/02\/26",3.6,3.67,3.89,3.78,"null","null"],["01\/09\/26",3.07,3.64,3.9,3.71,4.15,4.2],["01\/16\/26",3.28,3.92,3.73,3.76,4.01,4.5],["01\/23\/26",3.37,3.7,3.82,3.89,4.09,4.31],["01\/30\/26",3.57,3.71,3.73,3.72,4.02,"null"],["02\/06\/26",3.51,3.62,3.68,3.68,4.07,3.79],["02\/13\/26",3.4,3.6,4.16,3.76,4,4.05],["02\/20\/26",3.58,3.51,3.56,4.02,4.86,"null"],["02\/27\/26",3.52,3.6,3.68,3.92,4,"null"],["03\/06\/26",3.49,3.52,3.8,3.61,3.89,4.08],["03\/13\/26",3.21,3.64,3.63,4.37,3.96,4.9],["03\/20\/26",3.21,3.45,3.51,3.82,3.87,4.22],["03\/27\/26",3.27,3.58,3.6,3.8,3.92,4.34],["04\/03\/26",3.25,3.59,3.74,3.67,"null",4.5],["04\/10\/26",3.5,3.62,3.6,3.61,4.2,"null"],["04\/17\/26",3.5,3.56,3.76,3.77,4.29,"null"],["04\/24\/26",3.5,3.61,3.78,3.77,3.62,"null"],["05\/01\/26",3.55,3.57,3.82,4.32,"null",4.2],["05\/08\/26",3.49,3.61,3.65,3.67,"null",4.05],["05\/15\/26",3.54,3.57,3.56,3.72,4.57,4],["05\/22\/26",3.54,3.5,3.66,3.84,4.83,"null"],["05\/29\/26",3.31,3.53,3.66,3.86,3.85,4.2],["06\/05\/26",3.48,3.58,3.61,3.79,3.9,"null"],["06\/12\/26",3.59,3.49,3.52,3.64,3.76,4.25],["06\/19\/26",3.51,3.57,3.7,3.82,3.7,4.07],["06\/26\/26",3.51,3.61,3.8,3.68,4.41,4.5],["07\/03\/26",3.3,3.67,3.88,3.68,"null","null"],["07\/10\/26",3.51,3.64,3.51,3.68,"null",3.71],["07\/17\/26",3.45,3.55,3.92,3.84,3.9,4.5],["07\/24\/26",3.11,3.6,3.86,3.67,"null",3.93],["07\/31\/26",3.54,3.53,3.68,3.76,4.78,4.2],["08\/07\/26",3.59,3.57,3.59,3.69,4.06,4.1],["08\/14\/26",3.46,3.53,3.75,4.63,"null",4.35],["08\/21\/26",3.48,3.54,3.73,3.93,4.22,5],["08\/28\/26",3.51,3.48,3.76,3.68,4.06,"null"],["09\/04\/26",3.51,3.56,3.86,3.76,4.93,4.15],["09\/11\/26",3.54,3.49,3.71,4.27,4.48,4.79]],"cabeceras":[["﻿Semana","Vencimiento hasta 1 semana","Vencimiento hasta 2 semana","Vencimiento hasta 1 mes","Vencimiento hasta 2 meses","Vencimiento hasta 3 meses","Vencimiento hasta 6 meses"]],"drilldown":"","columnas":[],"operacion_al_agrupar":"suma","quiebre_del_filtro":7,"stacked_column":"","epoch":true,"filtrar_repetidos":false,"remover_codigo_bancario":false,"ordenar_alfabeticamente":false,"generar_sin_precompilar":false,"series":"series: [],","series_var":[],"grafica_filtro":"","grafica_subfiltro":"","grafica_columna_subfiltro":""};
+</script>
+
+
+<!--<div style="text-align: justify; color: #000; padding: 4px;" > “Nos mantenemos realizando mejoras en la presentación y actualización de los informes financieros en nuestra base de datos, los cuales atienden a cambios estructurales vinculados a la implementación de los nuevos requerimientos, por tal motivo, les informamos que mientras dure el proceso de actualización no se verán reflejadas las cifras correspondientes al crédito para el mes de abril 2021.” </div> <br> -->
+
+<div class="w3-row div-grafica-titulo ">LIQUIDEZ SEMANAL</div>
+
+  <div class="flex flex-wrap  justify-between ml-3 mr-3 ">
+      <div id="sbn" class="w-full sm:w-1/2 lg:w-1/4 div-front text-center " ></div>
+      <div id="bpp" class="w-full  sm:w-1/2 lg:w-1/4 div-front text-center "> </div>
+      <div id="bpe" class="w-full  sm:w-1/2 lg:w-1/4 div-front text-center "> </div>
+      <div id="bo" class="w-full sm:w-1/2 lg:w-1/4 div-front text-center "> </div>
+  </div>
+
+  <div class="w3-row div-grafica-titulo ">TASA DE REFERENCIA INTERBANCARIA SEMANAL    </div>
+  <div class="flex  flex-wrap ml-3 mr-3 justify-between">
+      <div id="ti-1sem" class="w-full  sm:w-1/2 md:w-1/3 lg:w-1/6 div-front  text-center "></div>
+      <div id="ti-2sem" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 div-front  text-center "></div>
+      <div id="ti-1mes" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 div-front  text-center "></div>
+      <div id="ti-2meses" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 div-front text-center "></div>
+      <div id="ti-3meses" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 div-front text-center "></div>
+      <div id="ti-6meses" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/6 div-front text-center "></div>
+  </div>
+
+
+<div class="w3-row div-grafica-titulo ">INDICADORES MENSUALES</div>
+  <div class="flex md:flex flex-wrap  justify-between">
+      <div id="roa" class="w-full sm:w-1/2 div-front  text-center "></div>
+      <div id="roe" class="w-full sm:w-1/2 div-front text-center "> </div>
+      
+  </div>
+
+  <div class="w3-row div-grafica-titulo ">TOTAL DE ACTIVOS Y UTILIDAD NETA (mensual)</div>
+  <div class="flex md:flex flex-wrap  justify-between">
+      <div id="activos" class="w-full sm:w-1/2 div-front  text-center "></div>
+      <div id="estado" class="w-full sm:w-1/2 div-front text-center "> </div>
+      
+  </div>
+
+  <div class="w3-row div-grafica-titulo ">ENLACES ÚTILES</a></div>
+  <div class="flex md:flex flex-wrap  justify-between" style="background: #fff;">  
+    
+    
+      <div id ="cantidad-bancos" class="w-full  sm:w-1/2  div-front text-center "> </div>
+    
+      <div class="w-full sm:w-1/2 div-front reportes text-center flex md:flex flex-wrap ">
+        <div class="w-full sm:w-1/2 ">
+        <a href="/analitica/data/otros/IAB_es.pdf" target="_blank"> Informe de actividad bancaria <img src="images/report.png" style="margin: auto;">  </a> 
+      </div>
+      <div class="w-full sm:w-1/2  "><a href="/analitica/data/otros/deuda_hogar_es.pdf" target="_blank"> Endeudamiento de los hogares <img src="images/report.png" style="margin: auto;">  </a> 
+      </div>
+    </div>
+
+</div>
+
+<style type="text/css">
+   
+   .div-front {
+    margin-bottom: 13px;
+  border-left: 2px solid #E9ECEF;
+  border-right: 2px solid #E9ECEF;
+
+}
+    .reportes{
+          color: #002060;
+          text-align: center;
+          margin:auto;
+          
+        }
+        
+
+    .div-front-2 {
+        width: 48%;
+        padding-bottom: 13px;
+    }
+
+
+</style>
+
+<script type="text/javascript">
+
+ 
+ var actualizado_tasas = [
+        ['09/11/26'],    ];
+
+     var data_1sem_front = [
+        ['08/21/26', 3.48],['08/28/26', 3.51],['09/04/26', 3.51],['09/11/26', 3.54],    ];
+     var data_2sem_front = [
+        ['08/21/26', 3.54],['08/28/26', 3.48],['09/04/26', 3.56],['09/11/26', 3.49],    ];
+    var data_1mes_front = [
+        ['08/21/26', 3.73],['08/28/26', 3.76],['09/04/26', 3.86],['09/11/26', 3.71],    ];
+     var data_2mes_front = [
+        ['08/21/26', 3.93],['08/28/26', 3.68],['09/04/26', 3.76],['09/11/26', 4.27],    ];
+     var data_3mes_front = [
+        ['08/21/26', 4.22],['08/28/26', 4.06],['09/04/26', 4.93],['09/11/26', 4.48],    ];
+     var data_6mes_front = [
+        ['08/21/26', 5.00],['08/28/26', null],['09/04/26', 4.15],['09/11/26', 4.79],    ];
+
+
+ 
+
+
+   Highcharts.chart('ti-1sem', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '1 semana ',
+    },
+    subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+
+    legend: {
+    enabled:false,
+    },
+     credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span>{series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                 style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+                     exporting: {
+        enabled: false
+    },
+   
+
+
+    series: [{
+    name:'1 semana',
+    color:'#002060',
+         data: data_1sem_front
+    }],
+    
+});
+
+
+
+   Highcharts.chart('ti-2sem', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '2 semanas',
+    },
+       subtitle: {
+        text: 'Actualizado al:<br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+   
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:false,
+    },
+     credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+      
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'2 semanas',
+    color:'#002060',
+    data: data_2sem_front
+    }]
+});
+
+ Highcharts.chart('ti-1mes', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '1 mes',
+    },
+       subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+ 
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:false,
+    },
+     credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+       
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'1 mes',
+    color:'#002060',
+         data: data_1mes_front
+    }]
+});
+  Highcharts.chart('ti-2meses', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '2 meses',
+    },
+       subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+ 
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:false,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+     credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'2 meses',
+    color:'#002060',
+         data: data_2mes_front
+    }]
+});
+   Highcharts.chart('ti-3meses', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '3 meses',
+    },
+       subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+
+                     exporting: {
+        enabled: false
+    },
+
+    legend: {
+    enabled:false,
+    },
+     credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'3 meses',
+    color:'#002060',
+         data: data_3mes_front
+    }]
+});
+    Highcharts.chart('ti-6meses', {
+    chart: {
+        type: 'line',
+        height:200
+    },
+    title:{
+    text: '6 meses',
+    },
+       subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_tasas,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:false,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+  credits: {
+        text: 'Fuente: SBP',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'6 meses',
+    color:'#002060',
+         data: data_6mes_front
+    }]
+});
+
+</script>
+
+<script type="text/javascript">var datos = {"id":"sbp6af1d571dcc69","path_csv":"data\/liquidez\/","csv":"liquidez.csv","delimitador":";","columna":"","fecha":"","columna_filtro":"","filtro":"","title":"","fecha_reciente":"","custom":"","chart_type":"column","general_custom":"","chart":".chart","json_file":"","json_file_path":"..\/..\/json\/","json_formatear_para_mapa":false,"datos":[["01\/04\/19",58.77,46.53,65.96,68.54],["01\/11\/19",59.13,46.98,65.98,69.47],["01\/18\/19",57.52,46.43,62.12,70.19],["01\/25\/19",56.46,46.08,60.97,68.65],["02\/01\/19",57.2,45.76,63.21,67.54],["02\/08\/19",56.47,46.13,61.68,66.61],["02\/15\/19",57.27,46.45,62.27,68.27],["02\/22\/19",57.27,46.67,62.92,66.77],["03\/01\/19",56.12,47.38,60.76,64.01],["03\/08\/19",55.88,47.19,60.48,63.89],["03\/15\/19",55.93,47.63,59.9,64.84],["03\/22\/19",54.57,47.18,58.67,60.75],["03\/29\/19",56.78,47.89,61.89,63.67],["04\/05\/19",55.84,47.71,60.81,61.39],["04\/12\/19",55.76,48.02,60.39,61.4],["04\/19\/19",56.34,47.83,59.4,66.61],["04\/26\/19",56.07,48.25,58.83,65.67],["05\/03\/19",57,50.36,59.01,66.39],["05\/10\/19",57.78,49.81,61.02,66.66],["05\/17\/19",56.61,49.24,59.02,66.49],["05\/24\/19",57.2,49.43,60.08,66.29],["05\/31\/19",56.2,49.02,59.17,63.65],["06\/07\/19",55.73,49.32,58.73,61.97],["06\/14\/19",55.27,48.84,58.18,61.6],["06\/21\/19",56.43,48.08,60.4,64.12],["06\/28\/19",56.76,49.22,60.65,63.22],["07\/05\/19",56.46,49.38,59.64,63.4],["07\/12\/19",56.54,50.01,59.69,62.96],["07\/19\/19",55.89,49.71,59.01,61.65],["07\/26\/19",57.32,49.26,57.91,70.14],["08\/02\/19",56.32,48.42,56.62,69.31],["08\/09\/19",57.36,48.91,59.92,67.1],["08\/16\/19",56.79,49.73,58.77,65.35],["08\/23\/19",56.26,48.57,58.8,64.88],["08\/30\/19",56.73,48.05,59.46,66.21],["09\/06\/19",55.95,46.97,59.35,65.47],["09\/13\/19",56,47.31,59.79,64.48],["09\/20\/19",55.36,45.64,60,64.15],["09\/27\/19",56.18,45.92,61.39,64.45],["10\/04\/19",56.53,47.15,61.44,63.93],["10\/11\/19",56.79,47.33,60.98,65.24],["10\/18\/19",56.12,46.69,60.38,64.42],["10\/25\/19",56.96,47.86,61.65,64],["11\/01\/19",54.76,46.04,58.08,63.69],["11\/08\/19",54.77,45.46,59.17,62.72],["11\/15\/19",54.89,45.5,59.52,62.57],["11\/22\/19",54.1,45.28,57.95,61.54],["11\/29\/19",56.22,46.12,57.8,68.81],["12\/06\/19",55.96,44.69,59.09,67.89],["12\/13\/19",56.95,45.03,61.47,67.61],["12\/20\/19",57.21,44.81,61.97,68.4],["12\/27\/19",56.95,46.01,61.6,66.35],["01\/03\/20",57.54,46.98,60.53,69],["01\/10\/20",56.78,45.69,59.97,68.67],["01\/17\/20",56.62,46.37,58.96,68.46],["01\/24\/20",55.79,46.49,57.32,67.86],["01\/31\/20",54.77,45.66,57.46,65.51],["02\/07\/20",55.59,46.61,58.49,65.41],["02\/14\/20",55.53,46.79,58.23,65.2],["02\/21\/20",54.91,46.6,57.51,64.18],["02\/28\/20",55.62,47.4,59.01,63.24],["03\/06\/20",54.88,47.55,57.41,62.71],["03\/13\/20",55.47,48.24,58.57,62.13],["03\/20\/20",55.53,47.17,60.46,60.78],["03\/27\/20",57.43,47.7,64.48,60.95],["04\/03\/20",60.3,48.05,65.46,69.29],["04\/10\/20",60.63,48.26,66.22,69.05],["04\/17\/20",60.16,48.04,65.76,68.54],["04\/24\/20",60.23,47.71,66.28,68.47],["04\/28\/20",60.35,47.4,66.74,68.56],["05\/01\/20",60.05,47.75,66.26,67.77],["05\/05\/20",60.27,47.13,66.84,68.39],["05\/08\/20",59.56,46.98,65.29,68.23],["05\/12\/20",59.39,46.93,65.51,67.33],["05\/15\/20",60.25,47.47,66.48,68.09],["05\/19\/20",61.12,47.21,67.58,69.72],["05\/22\/20",60.66,47.07,66.65,69.75],["05\/26\/20",60.82,47,66.88,70.55],["05\/29\/20",60.46,47.74,65.77,69.96],["06\/02\/20",60.3,47.88,65.46,69.7],["06\/05\/20",60.54,48.38,65.72,69.75],["06\/09\/20",60.26,48.28,65.24,69.54],["06\/12\/20",60.61,48.73,65.63,69.64],["06\/16\/20",60.15,48.25,64.93,69.62],["06\/19\/20",60.4,48.61,65.62,69.2],["06\/23\/20",60.28,48.42,65.42,69.21],["06\/26\/20",60.5,48.77,65.75,69.25],["06\/30\/20",60.99,49.17,65.8,70.15],["07\/03\/20",60.88,49,64.91,70.01],["07\/07\/20",60.32,49.11,64.1,70.15],["07\/10\/20",60.89,48.25,65.12,70.09],["07\/14\/20",60.37,48.18,64.29,69.6],["07\/17\/20",61.67,48.5,65.93,71.39],["07\/21\/20",61.17,47.45,65.77,71.15],["07\/24\/20",61.43,47.28,65.47,72.84],["07\/28\/20",61.29,47.05,65.55,72.5],["07\/31\/20",61.37,46.96,66.11,71.57],["08\/04\/20",61.47,46.95,65.21,73.54],["08\/07\/20",61.83,47.85,65.5,73.4],["08\/11\/20",63.98,47.77,65.85,81.68],["08\/14\/20",65.31,49.63,66.1,84.13],["08\/18\/20",65.37,48.96,66.12,85.72],["08\/21\/20",65.06,49.31,65.23,85.7],["08\/25\/20",65.26,49.54,65.53,85.6],["08\/28\/20",65.55,49.34,66.11,85.99],["09\/01\/20",65.39,49.24,65.86,86.24],["09\/04\/20",65.75,49.32,66.22,86.99],["09\/08\/20",65.15,49.31,65.6,86.13],["09\/11\/20",65.55,49.14,66.21,86.64],["09\/15\/20",65.72,49.09,66.9,86.26],["09\/18\/20",65.03,49.07,65.97,85.31],["09\/22\/20",64.53,48.39,65.1,85.6],["09\/25\/20",64.27,47.8,64.88,85.81],["09\/29\/20",63.53,48.17,63.31,81.33],["10\/02\/20",64.62,47.08,62.07,88.25],["10\/06\/20",64.57,46.91,62.14,88.43],["10\/09\/20",64.51,47.07,62.56,87.09],["10\/13\/20",64.63,47.24,62.58,88.02],["10\/16\/20",64.27,47.18,61.73,88.14],["10\/20\/20",64,47.19,61.75,87.3],["10\/23\/20",64.15,47.66,61.63,87.68],["10\/27\/20",63.8,47.43,61.37,87.34],["10\/30\/20",64.2,47.81,62.09,87.19],["11\/03\/20",64.16,48.26,61.6,87.22],["11\/06\/20",64.25,47.19,62.77,87.19],["11\/10\/20",63.9,46.77,61.99,87.26],["11\/13\/20",64.77,47.24,64.23,87.11],["11\/17\/20",64.39,47.15,63.49,87.05],["11\/20\/20",63.71,47.81,61.7,86.73],["11\/24\/20",63.65,47.8,60.94,87.12],["11\/27\/20",63.26,48.16,59.88,87.07],["12\/01\/20",62.41,47.92,59.79,83.41],["12\/04\/20",62.72,48.62,60.33,83.23],["12\/08\/20",62.27,48.1,59.78,83.24],["12\/11\/20",62.41,48.82,60.42,81.97],["12\/15\/20",63.1,48.38,60.95,84.23],["12\/18\/20",62.88,48.46,60.65,83.94],["12\/22\/20",62.69,47.98,60.45,84.41],["12\/25\/20",62.59,47.78,60.62,84.06],["12\/29\/20",63.53,48.76,61.12,84.89],["01\/01\/21",63.29,48.47,60.07,84.92],["01\/05\/21",63.3,49.06,59.91,84.82],["01\/08\/21",63.41,49.23,60.17,84.72],["01\/12\/21",63.37,49.33,60.1,84.64],["01\/15\/21",63.49,49.7,60.01,84.66],["01\/19\/21",63.07,49.87,60.07,83.85],["01\/22\/21",63.16,49.68,60.83,83.75],["01\/26\/21",62.7,49.91,59.97,83.21],["01\/29\/21",64.13,50.51,58.8,86],["02\/02\/21",64.11,50.01,59.46,85.8],["02\/05\/21",63.92,50.53,58.91,85.68],["02\/09\/21",63.85,50.15,59.09,85.83],["02\/12\/21",63.34,49.79,57.86,85.88],["02\/16\/21",62.93,49.68,56.93,85.82],["02\/19\/21",63.09,49.44,58.08,85.43],["02\/23\/21",63.02,49.54,58.08,85.21],["02\/26\/21",62.96,50.29,57.46,85.07],["03\/02\/21",62.89,49.48,58.22,84.89],["03\/05\/21",63.15,50.18,58.56,84.81],["03\/09\/21",62.58,50.02,57.46,84.87],["03\/12\/21",62.37,50.07,57.59,84.16],["03\/16\/21",61.96,49.77,56.92,83.95],["03\/19\/21",61.96,48.96,57.6,83.99],["03\/23\/21",62.59,50.27,58.13,84.18],["03\/26\/21",63.09,51.22,58.82,84.13],["03\/30\/21",63.55,52,59.32,84.07],["04\/02\/21",63.18,50.88,59.52,83.67],["04\/06\/21",63.22,51.11,59.28,83.93],["04\/09\/21",62.49,49.98,58.48,83.76],["04\/13\/21",62.62,50.34,58.75,83.73],["04\/16\/21",62.68,49.95,59.61,83.22],["04\/20\/21",62.37,49.47,59.41,83.09],["04\/23\/21",62.62,49.69,59.91,83.1],["04\/27\/21",62.83,49.99,60.34,82.94],["04\/30\/21",61.95,49.73,58.89,82.47],["05\/04\/21",62.12,49.8,59.2,82.64],["05\/07\/21",62.84,53.47,58.21,82.59],["05\/11\/21",61.98,51.47,58.03,82.15],["05\/14\/21",63.1,52.34,58.9,84.24],["05\/18\/21",62.79,52.49,58.37,83.79],["05\/21\/21",63.62,52.39,60.08,84.28],["05\/25\/21",63.25,52.26,59.37,84.2],["05\/28\/21",63.6,52.51,59.85,84.25],["06\/01\/21",62.82,52.05,58.73,83.89],["06\/04\/21",63.04,51.87,59.41,83.81],["06\/08\/21",62.55,51.72,58.53,83.85],["06\/11\/21",62.23,51.68,58.36,83.17],["06\/15\/21",61.96,51.05,58.3,83.14],["06\/18\/21",62.08,51.55,58.29,82.95],["06\/22\/21",61.78,51.14,58.15,82.53],["06\/25\/21",62.13,50.76,59.03,82.92],["06\/29\/21",61.53,51.38,57.59,82.17],["07\/02\/21",62.31,51.5,57,83.93],["07\/07\/21",62.16,51.58,57.11,83.58],["07\/09\/21",62.2,51.39,57.51,83.32],["07\/13\/21",61.75,50.48,57.46,82.96],["07\/16\/21",61.88,50.98,57.49,82.86],["07\/20\/21",61.37,50.42,56.99,82.66],["07\/23\/21",60.97,50.34,56.49,82.15],["07\/27\/21",60.48,49.67,56.02,82.05],["07\/30\/21",60.55,50.38,55.77,81.89],["08\/03\/21",60.23,50,55.48,81.74],["08\/06\/21",59.93,50.06,54.98,81.46],["08\/10\/21",59.77,49.95,54.84,81.38],["08\/13\/21",60.14,50.95,55.32,80.87],["08\/17\/21",59.9,50.51,54.94,81.22],["08\/20\/21",59.73,50.41,54.55,81.39],["08\/24\/21",59.2,49.99,53.82,81.03],["08\/27\/21",59.7,50.2,54.78,80.93],["08\/31\/21",59.38,49.67,54.31,81.23],["09\/03\/21",59.98,50.96,54.52,81.44],["09\/10\/21",59.46,49.83,55.06,80.61],["09\/17\/21",59.38,50.03,54.18,81.35],["09\/24\/21",59.03,48.87,54.68,80.99],["10\/01\/21",58.38,49,53.37,80.49],["10\/08\/21",58.09,48.83,52.38,80.9],["10\/15\/21",57.74,49.29,52.29,79.77],["10\/22\/21",57.49,48.08,52.57,79.87],["10\/29\/21",56.31,48.04,51.24,77.34],["11\/05\/21",56.46,47.91,50.36,79.76],["11\/12\/21",56.59,48.12,50.74,79.82],["11\/19\/21",56.96,47.71,50.64,80.7],["11\/26\/21",56.96,48.25,50.05,80.92],["12\/03\/21",58.27,47.58,53.22,81.33],["12\/10\/21",58.31,47.53,55.04,77.54],["12\/17\/21",59.25,48.23,54.75,81.39],["12\/24\/21",59.22,47.94,56.3,79.98],["12\/31\/21",60.02,48.53,57.43,80.01],["01\/07\/22",59.1,48.39,55.57,80.04],["01\/14\/22",59.27,48.8,55.36,80.09],["01\/21\/22",59.56,48.63,54.23,80.35],["01\/28\/22",60.61,48.94,54.94,82.84],["02\/04\/22",60.7,48.09,56.02,82.48],["02\/11\/22",59.88,47.89,54.63,82.58],["02\/18\/22",59.29,46.45,53.77,82.74],["02\/25\/22",58.72,47.34,52.31,82.06],["03\/04\/22",58.77,46.97,52.19,83.31],["03\/11\/22",58.14,46.29,51.92,82.5],["03\/18\/22",58.4,46.23,52.82,82.58],["03\/25\/22",57.7,45.98,51.7,81.97],["04\/01\/22",58.34,47.01,52.02,82.16],["04\/08\/22",58.54,46.19,53.57,81.88],["04\/15\/22",57.91,46.08,52.54,81.2],["04\/22\/22",57.42,45.4,52.19,81.27],["04\/29\/22",57.75,46.1,52.42,81.21],["05\/09\/22",57.59,46.18,52.03,81.06],["05\/13\/22",57.04,46.75,51.46,79.25],["05\/20\/22",58.18,46.7,53.71,80.51],["05\/27\/22",58.53,46.47,54.71,80.07],["06\/03\/22",58.06,46.26,54.35,79.67],["06\/10\/22",58.14,45.44,55.64,79.03],["06\/17\/22",57.57,45.64,53.27,79.77],["06\/24\/22",57.73,46,54.16,79.16],["07\/01\/22",56.7,45.21,51.72,79.43],["07\/08\/22",56.83,45.08,52.7,78.71],["07\/15\/22",56.59,44.29,53.22,77.86],["07\/22\/22",56.45,43.54,53.95,77.69],["08\/05\/22",56.58,44.44,55.25,75.8],["08\/12\/22",56.59,44.37,55.85,75.13],["08\/19\/22",56.16,43.91,55.67,74.41],["08\/26\/22",56.42,44.27,56.08,74.44],["09\/02\/22",57.16,44.34,57.85,73.82],["09\/09\/22",56.48,43.85,57.66,72.52],["09\/16\/22",54.69,43.78,55.25,69.01],["09\/23\/22",54.68,43.37,55.52,68.94],["09\/30\/22",54.5,43.17,53.61,74.22],["10\/07\/22",54.4,42.4,53.3,75.29],["10\/14\/22",54.56,42.05,54.82,73.88],["10\/21\/22",54.03,41.53,54.18,73.73],["10\/28\/22",54.83,41.79,54.99,75.2],["11\/04\/22",54.7,41.33,55.34,74.76],["11\/11\/22",55.02,41.65,56.15,73.84],["11\/18\/22",55.64,41.49,57.07,74.48],["11\/25\/22",56.47,41.65,56.59,76.82],["12\/02\/22",56.94,42.59,57.2,76.58],["12\/09\/22",56.92,42.57,58.43,73.67],["12\/16\/22",58.04,42.69,58.01,80.05],["12\/23\/22",56.84,42.77,58.08,72.98],["12\/30\/22",57.17,42.88,59.03,72.35],["01\/06\/23",57.61,43.37,59.24,73.17],["01\/13\/23",57.32,43.71,58.03,73.48],["01\/20\/23",57.25,43.54,58.61,72.85],["01\/27\/23",56.91,43.48,58.46,71.61],["02\/03\/23",56.77,43.5,58.2,71.49],["02\/10\/23",56.9,43.36,58.64,71.62],["02\/17\/23",56.47,43.24,58.49,70.3],["02\/24\/23",56.55,43.13,58.79,70.31],["03\/03\/23",56.14,43.34,57.96,70.11],["03\/10\/23",56.37,43.04,58.44,70.8],["03\/17\/23",56.5,42.51,59.47,70.37],["03\/24\/23",56.31,42.5,59.47,69.6],["03\/31\/23",57.93,43.56,58.45,74.71],["04\/07\/23",58.71,44.44,59.87,74.19],["04\/14\/23",59.38,46.54,59.4,75.88],["04\/21\/23",57.67,43.67,57.92,75.41],["04\/28\/23",58.12,44.17,59.25,74.58],["05\/05\/23",58.8,44.25,60.68,74.65],["05\/12\/23",58.58,44.77,60.1,74.37],["05\/19\/23",57.8,45.14,58.62,73.51],["05\/26\/23",58.13,45.78,58.56,73.68],["06\/02\/23",57.16,45.12,57.93,72.48],["06\/09\/23",57.24,45.25,58.91,70.55],["06\/16\/23",57.77,45.83,58.68,72.87],["06\/23\/23",57.57,45.63,58.96,72.04],["06\/30\/23",58.17,45.84,60.9,70.33],["07\/07\/23",57.91,46.02,59.98,70.76],["07\/14\/23",58.32,46.28,59.8,73.71],["07\/21\/23",58.04,45.86,59.97,72.85],["07\/28\/23",58.46,45.83,58.9,75.87],["08\/04\/23",57.77,45.85,58.76,73.19],["08\/11\/23",56.83,45.97,57.04,72.72],["08\/18\/23",56.31,45.37,56.89,71.84],["08\/25\/23",55.48,45.05,55.32,71.84],["09\/01\/23",56.24,45.38,56.23,71.85],["09\/08\/23",55.43,44.79,55.59,71.19],["09\/15\/23",55.24,45.18,55.23,71.19],["09\/22\/23",55.21,44.51,55.51,71.31],["09\/29\/23",55.3,44.9,56.03,70.76],["10\/06\/23",56.2,44.83,55.22,73.91],["10\/13\/23",55.55,44.51,55.12,72.3],["10\/20\/23",54.93,43.97,54.45,71.83],["10\/27\/23",55.16,44.25,55.08,71.27],["11\/03\/23",54.86,44.72,54.15,70.99],["11\/10\/23",54.71,43.84,54.91,70.28],["11\/17\/23",56.18,45.32,55.31,72.84],["11\/21\/23",55.65,45.07,54.35,72.72],["11\/24\/23",57.06,44.97,55.52,75.56],["11\/28\/23",57.09,44.87,56.12,74.64],["12\/01\/23",57.01,45.08,56.39,73.58],["12\/05\/23",56.92,44.4,56.85,73.61],["12\/08\/23",56.84,44.71,55.97,74.72],["12\/12\/23",57.58,43.86,58,74.32],["12\/15\/23",58.27,44.79,59.01,74.48],["12\/19\/23",58.18,44.39,59.06,74.66],["12\/22\/23",58.57,44.45,60.09,74.15],["12\/26\/23",58.28,44.18,59.77,73.97],["12\/29\/23",59.01,46.02,60.49,73.28],["01\/03\/24",58.88,45.4,60.64,73.11],["01\/05\/24",58.78,45.52,59.98,73.7],["01\/12\/24",58.11,45.81,59.59,70.78],["01\/19\/24",57.4,45.71,58.52,70.36],["01\/26\/24",56.58,45.15,57.36,69.95],["02\/02\/24",56.91,44.32,58.68,69.81],["02\/09\/24",56.8,44.23,58.94,69.15],["02\/16\/24",57.11,44.57,58.94,68.73],["02\/23\/24",57.06,44.34,59.52,68.02],["03\/01\/24",59.28,44.03,59.98,74.59],["03\/08\/24",59.01,45,58.78,75.02],["03\/15\/24",57.89,45.36,56.62,74.39],["03\/22\/24",58.13,44.53,57.76,74.39],["03\/29\/24",57.65,44.9,56.9,73.79],["04\/05\/24",56.84,44.18,55.86,73.35],["04\/12\/24",55.89,44.1,54.51,72.48],["04\/19\/24",55.61,44.21,53.19,74.03],["04\/26\/24",55.62,44.23,53.93,72.99],["05\/03\/24",57.1,44.83,56.44,73.33],["05\/10\/24",56.74,45.34,55.6,73.18],["05\/17\/24",56.56,45.45,55.9,72.34],["05\/24\/24",57.81,45.29,58.8,72.04],["05\/31\/24",56.31,44.83,56.12,71.7],["06\/07\/24",56.85,45.13,56.91,72.44],["06\/14\/24",55.86,45.09,55.04,72.66],["06\/21\/24",55.7,43.91,55.06,73.62],["06\/28\/24",55.69,45.06,56.28,68.78],["07\/05\/24",55.43,44.34,55.8,69.57],["07\/12\/24",54.68,44.28,54.6,69.31],["07\/19\/24",55.37,43.98,54.38,75],["07\/26\/24",55.18,43.82,53.35,78.26],["08\/02\/24",54.5,43.34,53.11,76.24],["08\/09\/24",54.72,44.19,53.05,76.29],["08\/16\/24",54.91,44.76,54.06,74.26],["08\/23\/24",54.91,44.89,53.99,74.12],["08\/30\/24",54.54,45.31,53.5,72.51],["09\/06\/24",54.07,44.23,53.09,73.01],["09\/13\/24",54.22,44.22,52.53,74.43],["09\/20\/24",53.9,44.02,52.3,73.69],["09\/27\/24",53.73,44.24,52.7,71.23],["10\/04\/24",53.21,43.33,52.61,70.22],["10\/11\/24",53.52,43.45,52.5,71.52],["10\/18\/24",53.17,43.36,52.92,69.33],["10\/25\/24",54.53,43.19,53.74,73.08],["11\/01\/24",54.02,43.68,52.47,72.89],["11\/08\/24",54.6,43.85,53.5,73.21],["11\/15\/24",53.76,44.14,51.85,73.05],["11\/22\/24",54.05,44.36,52.33,73.09],["11\/29\/24",54.11,44.53,52.45,73.01],["12\/06\/24",53.53,44.74,51.95,70.88],["12\/13\/24",54.87,45.42,53.7,71.61],["12\/20\/24",54.06,45.45,52.04,71.67],["12\/27\/24",54.7,45.42,53.39,72.09],["01\/03\/25",55.72,45.05,55.56,71.78],["01\/10\/25",55.53,45.27,55.46,70.88],["01\/17\/25",54.5,45.95,53.97,67.88],["01\/24\/25",53.94,44.3,55.17,64.94],["01\/31\/25",52.78,44,53.34,64.29],["02\/07\/25",53.29,44.97,53.27,65.68],["02\/14\/25",53.61,46.31,53.03,65.79],["02\/18\/25",53.48,45.16,53,67.13],["02\/21\/25",52.98,45.65,53.09,63.41],["02\/25\/25",52.72,45.16,53.01,63.41],["02\/28\/25",52.59,45.2,51.77,65.24],["03\/07\/25",52.48,45.34,51.39,65.75],["03\/11\/25",52.99,45.82,50.89,67.96],["03\/14\/25",52.42,46.71,51.91,62.68],["03\/18\/25",52.13,46.25,51.39,63.19],["03\/21\/25",52.62,46.44,52.79,61.93],["03\/25\/25",51.99,46.29,51.24,62.9],["03\/28\/25",52.23,47.41,51.37,62.47],["04\/01\/25",52.64,46.34,50.68,66.73],["04\/04\/25",53.11,46.3,51.44,67.24],["04\/08\/25",52.78,46.08,50.9,67.21],["04\/11\/25",53,46.32,51.6,66.5],["04\/15\/25",53.18,46.43,52.19,65.92],["04\/18\/25",52.77,46.02,51.64,66.04],["04\/22\/25",52.89,46.02,52.24,65.29],["04\/25\/25",53.15,46.09,52.01,67.13],["04\/29\/25",53.83,45.64,53.51,67.39],["05\/02\/25",54.52,46.71,54.43,66.71],["05\/06\/25",54.33,46.41,54.25,66.78],["05\/09\/25",54.44,46.57,53.89,68.39],["05\/13\/25",54.26,46.55,54.26,66.53],["05\/16\/25",54.06,47.33,53.63,66.21],["05\/20\/25",51.93,41.36,53.48,64.97],["05\/23\/25",52.38,42.68,53.56,64.82],["05\/27\/25",52.31,43.33,53.61,63.43],["05\/30\/25",51.32,41.87,52.65,63.16],["06\/03\/25",51.26,41.58,52.67,63.23],["06\/06\/25",51.37,41.5,52.9,63.27],["06\/10\/25",50.83,41.51,51.92,63.23],["06\/13\/25",50.5,42.13,51.21,62.58],["06\/17\/25",50.45,41.04,51.65,62.75],["06\/20\/25",49.73,41.56,50.29,62.12],["06\/24\/25",49.77,40.62,50.89,62.36],["06\/27\/25",50.62,41.73,52.18,61.33],["07\/01\/25",49.69,40.95,51.02,60.86],["07\/04\/25",51.65,41.38,51.43,68.03],["07\/08\/25",50.73,40.92,51.65,64.42],["07\/11\/25",50.85,41.3,52.09,63.42],["07\/15\/25",50.4,40.88,52.48,60.11],["07\/18\/25",52.11,40.88,53.67,65.49],["07\/22\/25",51.28,40.85,52.49,64.6],["07\/25\/25",50.99,40.51,52.87,62.91],["07\/29\/25",52.13,44.94,52.76,62.45],["08\/01\/25",52.62,45.22,53.61,62.24],["08\/05\/25",51.13,40.05,53.56,62.74],["08\/08\/25",51.16,40.28,54.31,60.63],["08\/12\/25",51.22,40.32,54.53,60.29],["08\/15\/25",51.76,40.47,55.84,59.18],["08\/22\/25",50.93,39.76,54.97,58.4],["08\/29\/25",51.76,43.23,54.55,58.28],["09\/05\/25",51.71,42.65,55.35,56.88],["09\/12\/25",52.32,43.44,54.38,62.42],["09\/19\/25",52.79,41.87,55.18,64.65],["09\/26\/25",52.3,42.76,53.68,64.72],["10\/03\/25",53.37,42.27,56.47,63.85],["10\/10\/25",53.18,42.4,55.14,65.7],["10\/17\/25",53.44,42.31,55.53,65.97],["10\/24\/25",53.24,42.06,55.46,65.74],["10\/31\/25",53.74,42.72,55.36,67.13],["11\/07\/25",54.41,43.09,56.34,67.09],["11\/14\/25",54.19,42.92,56.65,65.92],["11\/21\/25",54.12,42.23,56.53,66.89],["11\/28\/25",53.61,43.32,54.33,68.02],["12\/05\/25",54.12,42.91,55.61,68.04],["12\/12\/25",53.8,43.43,55.8,65.37],["12\/19\/25",55.03,42.98,57.14,68.06],["12\/26\/25",56.53,43.31,58.74,71.84],["01\/02\/26",56.47,43.24,59.41,70.16],["01\/09\/26",55.89,42.69,58.67,69.87],["01\/16\/26",56.46,43.3,58.71,71.68],["01\/23\/26",55.76,43.35,58.15,70.05],["01\/30\/26",56.18,43.43,58.36,71.08],["02\/06\/26",57.96,43.45,61.53,71.56],["02\/13\/26",57.97,43.98,61.14,71.66],["02\/20\/26",57.49,43.76,60.41,71.47],["02\/27\/26",55.99,43.6,59.02,68.27],["03\/06\/26",56.57,42.91,59.04,72.97],["03\/13\/26",56.06,43.87,58.05,71.83],["03\/20\/26",54.94,42.93,56.91,70.82],["03\/27\/26",54.47,42.42,56.95,69.27],["04\/03\/26",53.92,42.47,56.67,66.31],["04\/10\/26",55.1,42.83,58.63,66.51],["04\/17\/26",56.46,43.09,58.25,73.25],["04\/24\/26",56.69,43.46,58.93,72.23],["05\/01\/26",56.1,43.86,58.1,71.2],["05\/08\/26",56.18,43.37,58.25,71.7],["05\/15\/26",56.8,44.6,58.67,72.43],["05\/22\/26",56.85,44.81,58.83,71.38],["05\/29\/26",56.99,44.15,59.94,70.44],["06\/05\/26",56.73,44.07,59.44,70.87],["06\/12\/26",56.58,44.05,59.77,69.38],["06\/19\/26",56.58,44.37,58.61,72.35],["06\/26\/26",57.55,47.41,58.98,71.86],["07\/03\/26",55.31,43.52,56.65,72.32],["07\/10\/26",56.17,44.13,58.46,70.81],["07\/17\/26",55.24,44.49,57.4,68.93],["07\/24\/26",54.65,44.06,56.93,67.53],["07\/31\/26",55.05,43.66,56.87,70.53],["08\/07\/26",56.08,43.71,58.47,71.77],["08\/14\/26",55.36,43.55,57.72,70.45],["08\/21\/26",54.49,43.48,57.84,65.11],["08\/28\/26",54.16,43.45,57.01,65.47],["09\/04\/26",54.9,43.66,57.9,66.26],["09\/11\/26",54.44,43.08,57,67.95],["09\/18\/26",54.11,42.97,57.17,65.67],["09\/25\/26",53.99,44.28,55.51,67.4],["10\/02\/26",53.94,43.44,55.22,69.38],["10\/09\/26",54.16,43.91,54.4,71.86],["10\/16\/26",52.88,43.59,53.3,68.17]],"cabeceras":[["﻿Semanas","SBN","BPP","BPE","BO"]],"drilldown":"","columnas":[],"operacion_al_agrupar":"suma","quiebre_del_filtro":7,"stacked_column":"","epoch":true,"filtrar_repetidos":false,"remover_codigo_bancario":false,"ordenar_alfabeticamente":false,"generar_sin_precompilar":false,"series":"series: [],","series_var":[],"grafica_filtro":"","grafica_subfiltro":"","grafica_columna_subfiltro":""};
+</script>
+ <script type="text/javascript">
+     var actualizado_liquidez = [
+        ['10/16/26'],    ];
+
+     var data_sbn_front = [
+        ['09/18/26', 54.11],['09/25/26', 53.99],['10/02/26', 53.94],['10/09/26', 54.16],['10/16/26', 52.88],    ];
+var data_bpp_front = [
+        ['09/18/26', 42.97],['09/25/26', 44.28],['10/02/26', 43.44],['10/09/26', 43.91],['10/16/26', 43.59],    ];
+    var data_bpe_front = [
+        ['09/18/26', 57.17],['09/25/26', 55.51],['10/02/26', 55.22],['10/09/26', 54.40],['10/16/26', 53.30],    ];
+    var data_bo_front = [
+        ['09/18/26', 65.67],['09/25/26', 67.40],['10/02/26', 69.38],['10/09/26', 71.86],['10/16/26', 68.17],    ];
+
+      Highcharts.chart('sbn', {
+    chart: {
+        height:200,
+        type: 'line'
+    },
+    title:{
+    text: 'SBN',
+    },
+       subtitle: {
+        text: 'Período:<br>' + actualizado_liquidez,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+    legend: {
+    enabled:false,
+    },
+    credits: {
+        text: 'Fuente: Sistema Bancario Nacional',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+        min:0,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+
+                     exporting: {
+        enabled: false
+    },
+
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                 style: {
+                    
+                    fontSize: '9px',
+                }
+            },
+             
+        }
+    },
+
+    series: [{
+    name:'SBN',
+    color: '#002060',
+         data: data_sbn_front
+    }]
+});
+
+     Highcharts.chart('bpp', {
+    chart: {
+        type: 'line',
+        height:200,
+    },
+    title:{
+    text: 'BPP',
+    },
+        subtitle: {
+        text: 'Período:<br>' + actualizado_liquidez,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+    legend: {
+    enabled:false,
+    },
+
+                     exporting: {
+        enabled: false
+    },
+    credits: {
+        text: 'Fuente: Bancos de la Banca Panameña Privada',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+       
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                 style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'BPP',
+    color: '#002060',
+         data: data_bpp_front
+    }]
+});
+
+     Highcharts.chart('bpe', {
+    chart: {
+        type: 'line',
+        height:200,
+    },
+    title:{
+    text: 'BPE',
+    },
+        subtitle: {
+        text: 'Período:<br>' + actualizado_liquidez,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+    legend: {
+    enabled:false,
+    },
+
+                     exporting: {
+        enabled: false
+    },
+     credits: {
+        text: 'Fuente: Bancos de la Banca Extranjera Privada',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+
+    series: [{
+    name:'BPE',
+    color: '#002060',
+         data: data_bpe_front
+    }]
+});
+
+     Highcharts.chart('bo', {
+    chart: {
+        type: 'line',
+        height:200,
+    },
+    title:{
+    text: 'BO',
+    },
+        subtitle: {
+        text: 'Período:<br>' + actualizado_liquidez,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:false,
+    },
+     credits: {
+        text: 'Fuente: Bancos Oficiales',
+        href: 'http://www.superbancos.gob.pa'
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '9px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'BO',
+    color:'#002060',
+         data: data_bo_front
+    }]
+});
+
+ </script>
+
+ <script type="text/javascript">var datos = {"id":"sbp6af1d571dda8d","path_csv":"data\/indicadores\/","csv":"indicadores_rentabilidad_banca.csv","delimitador":",","columna":"","fecha":"","columna_filtro":"","filtro":"","title":"","fecha_reciente":"","custom":"","chart_type":"column","general_custom":"","chart":".chart","json_file":"","json_file_path":"..\/..\/json\/","json_formatear_para_mapa":false,"datos":[["2018-01",1.54,"1.60%",12.83,"2.48%",1.53,"1.60%",13.47,"2.69%","1.54%","1.63%","17.20%","2.97%","1.56%","1.65%","17.22%","2.68%","1.50%","1.54%","10.62%","2.62%","1.61%","1.64%","10.36%","1.43%"],["2018-02",1.55,"1.61%",12.87,"2.50%",1.55,"1.62%",13.59,"2.70%","1.52%","1.61%","16.84%","2.99%","1.57%","1.66%","17.32%","2.69%","1.54%","1.58%","10.84%","2.63%","1.57%","1.59%","10.06%","1.44%"],["2018-03",1.54,"1.60%",12.73,"2.51%",1.54,"1.60%",13.44,"2.72%","1.52%","1.62%","16.83%","3.01%","1.52%","1.61%","16.73%","2.70%","1.55%","1.59%","10.90%","2.65%","1.56%","1.58%","9.97%","1.45%"],["2018-04",1.56,"1.61%",12.85,"2.52%",1.55,"1.62%",13.59,"2.72%","1.50%","1.59%","16.58%","3.00%","1.53%","1.62%","16.78%","2.71%","1.59%","1.63%","11.18%","2.66%","1.56%","1.59%","9.97%","1.47%"],["2018-05",1.54,"1.60%",12.74,"2.55%",1.53,"1.60%",13.38,"2.75%","1.65%","1.75%","18.10%","3.17%","1.52%","1.61%","16.70%","2.72%","1.51%","1.54%","10.57%","2.67%","1.60%","1.62%","10.20%","1.49%"],["2018-06",1.54,"1.60%",12.72,"2.57%",1.54,"1.60%",13.38,"2.77%","1.65%","1.75%","17.96%","3.20%","1.50%","1.58%","16.40%","2.71%","1.54%","1.57%","10.76%","2.70%","1.58%","1.60%","10.07%","1.50%"],["2018-07",1.52,"1.58%",12.56,"2.58%",1.52,"1.58%",13.19,"2.78%","1.61%","1.72%","17.52%","3.19%","1.46%","1.54%","15.94%","2.71%","1.54%","1.58%","10.77%","2.72%","1.57%","1.60%","10.03%","1.51%"],["2018-08",1.54,"1.60%",12.67,"2.59%",1.52,"1.58%",13.18,"2.79%","1.66%","1.77%","18.04%","3.18%","1.45%","1.53%","15.89%","2.72%","1.53%","1.57%","10.70%","2.73%","1.65%","1.68%","10.56%","1.55%"],["2018-09",1.52,"1.58%",12.56,"2.62%",1.49,"1.56%",12.98,"2.81%","1.67%","1.78%","18.17%","3.18%","1.45%","1.53%","15.87%","2.73%","1.48%","1.52%","10.33%","2.78%","1.69%","1.71%","10.81%","1.58%"],["2018-10",1.52,"1.58%",12.57,"2.63%",1.49,"1.55%",13,"2.81%","1.65%","1.76%","18.05%","3.19%","1.41%","1.49%","15.52%","2.72%","1.51%","1.55%","10.61%","2.79%","1.68%","1.70%","10.76%","1.60%"],["2018-11",1.54,"1.60%",12.78,"2.63%",1.48,"1.54%",12.92,"2.82%","1.68%","1.79%","18.59%","3.21%","1.47%","1.55%","16.04%","2.72%","1.43%","1.47%","10.06%","2.79%","1.90%","1.93%","12.22%","1.62%"],["2018-12",1.55,"1.60%",12.8,"2.65%",1.49,"1.55%",13.01,"2.83%","1.78%","1.89%","19.64%","3.25%","1.42%","1.50%","15.52%","2.72%","1.47%","1.50%","10.33%","2.80%","1.88%","1.91%","11.92%","1.64%"],["2019-01",1.52,"1.58%",12.58,"2.65%",1.49,"1.55%",12.95,"2.83%","1.72%","1.83%","18.96%","3.26%","1.42%","1.50%","15.38%","2.72%","1.48%","1.52%","10.44%","2.82%","1.75%","1.78%","11.00%","1.64%"],["2019-02",1.5,"1.56%",12.33,"2.65%",1.47,"1.53%",12.76,"2.83%","1.74%","1.86%","19.11%","3.29%","1.41%","1.49%","15.25%","2.71%","1.45%","1.48%","10.15%","2.82%","1.69%","1.72%","10.52%","1.64%"],["2019-03",1.5,"1.56%",12.31,"2.66%",1.47,"1.53%",12.73,"2.84%","1.77%","1.89%","19.39%","3.30%","1.41%","1.49%","15.21%","2.71%","1.44%","1.47%","10.07%","2.82%","1.71%","1.73%","10.53%","1.65%"],["2019-04",1.5,"1.56%",12.2,"2.66%",1.46,"1.52%",12.6,"2.84%","1.79%","1.91%","19.51%","3.33%","1.40%","1.48%","14.96%","2.71%","1.42%","1.46%","9.96%","2.83%","1.72%","1.75%","10.55%","1.64%"],["2019-05",1.5,"1.56%",12.14,"2.65%",1.46,"1.53%",12.58,"2.82%","1.63%","1.74%","17.74%","3.19%","1.38%","1.47%","14.74%","2.70%","1.49%","1.53%","10.37%","2.84%","1.69%","1.72%","10.28%","1.63%"],["2019-06",1.47,"1.53%",11.88,"2.65%",1.43,"1.49%",12.25,"2.83%","1.57%","1.68%","17.08%","3.16%","1.37%","1.45%","14.55%","2.75%","1.44%","1.48%","10.01%","2.82%","1.72%","1.75%","10.36%","1.63%"],["2019-07",1.58,"1.65%",12.74,"2.65%",1.43,"1.50%",12.26,"2.83%","1.58%","1.69%","17.28%","3.15%","1.38%","1.47%","14.58%","2.75%","1.44%","1.48%","9.97%","2.82%","2.48%","2.52%","14.75%","1.62%"],["2019-08",1.57,"1.64%",12.56,"2.64%",1.43,"1.50%",12.2,"2.82%","1.49%","1.59%","16.37%","3.10%","1.39%","1.47%","14.52%","2.75%","1.46%","1.50%","10.06%","2.81%","2.40%","2.43%","14.05%","1.58%"],["2019-09",1.58,"1.65%",12.61,"2.62%",1.46,"1.53%",12.36,"2.80%","1.44%","1.53%","15.86%","3.07%","1.38%","1.47%","14.41%","2.74%","1.53%","1.57%","10.51%","2.79%","2.35%","2.39%","13.60%","1.55%"],["2019-10",1.58,"1.65%",12.48,"2.61%",1.45,"1.52%",12.22,"2.80%","1.40%","1.49%","15.46%","3.03%","1.42%","1.51%","14.71%","2.74%","1.49%","1.53%","10.13%","2.78%","2.37%","2.41%","13.57%","1.53%"],["2019-11",1.51,"1.58%",11.85,"2.60%",1.41,"1.47%",11.79,"2.78%","1.38%","1.47%","15.26%","2.97%","1.35%","1.44%","13.92%","2.74%","1.46%","1.51%","9.88%","2.77%","2.14%","2.17%","12.13%","1.50%"],["2019-12",1.52,"1.58%",11.86,"2.58%",1.36,"1.42%",11.36,"2.77%","1.25%","1.33%","13.98%","2.92%","1.32%","1.41%","13.58%","2.73%","1.42%","1.46%","9.55%","2.76%","2.48%","2.52%","13.89%","1.47%"],["2020-01",1.5,"1.57%",11.68,"2.57%",1.34,"1.41%",11.2,"2.76%","1.30%","1.38%","14.50%","2.91%","1.32%","1.41%","13.53%","2.73%","1.38%","1.42%","9.20%","2.74%","2.46%","2.49%","13.61%","1.44%"],["2020-02",1.54,"1.61%",11.91,"2.56%",1.34,"1.41%",11.16,"2.75%","1.27%","1.35%","14.24%","2.89%","1.29%","1.38%","13.17%","2.73%","1.41%","1.45%","9.39%","2.73%","2.73%","2.77%","14.95%","1.42%"],["2020-03",1.49,"1.55%",11.49,"2.55%",1.29,"1.35%",10.74,"2.74%","1.23%","1.30%","13.74%","2.87%","1.22%","1.30%","12.46%","2.75%","1.38%","1.42%","9.17%","2.70%","2.68%","2.72%","14.50%","1.38%"],["2020-04",1.4,"1.46%",10.82,"2.51%",1.2,"1.26%",10.04,"2.71%","1.19%","1.25%","13.48%","2.80%","1.11%","1.19%","11.42%","2.73%","1.29%","1.33%","8.61%","2.66%","2.60%","2.64%","13.92%","1.33%"],["2020-05",1.37,"1.43%",10.66,"2.48%",1.18,"1.24%",9.93,"2.68%","1.17%","1.23%","13.48%","2.71%","1.14%","1.22%","11.73%","2.72%","1.22%","1.26%","8.21%","2.63%","2.56%","2.60%","13.56%","1.28%"],["2020-06",1.29,"1.34%",10.04,"2.43%",1.08,"1.14%",9.18,"2.63%","1.04%","1.10%","12.27%","2.65%","1.03%","1.10%","10.67%","2.68%","1.14%","1.18%","7.74%","2.57%","2.55%","2.59%","13.41%","1.24%"],["2020-07",1.15,"1.20%",8.99,"2.40%",1.05,"1.11%",9,"2.60%","1.08%","1.13%","12.88%","2.69%","0.98%","1.05%","10.20%","2.67%","1.11%","1.14%","7.60%","2.52%","1.72%","1.75%","8.96%","1.19%"],["2020-08",1.1,"1.15%",8.71,"2.37%",1.01,"1.06%",8.69,"2.56%","1.00%","1.05%","12.18%","2.57%","0.96%","1.02%","9.93%","2.67%","1.06%","1.09%","7.34%","2.47%","1.71%","1.73%","8.77%","1.16%"],["2020-09",1.04,"1.09%",8.3,"2.33%",0.94,"0.99%",8.2,"2.52%","0.89%","0.94%","11.24%","2.43%","0.88%","0.94%","9.14%","2.67%","1.01%","1.05%","7.11%","2.43%","1.71%","1.73%","8.68%","1.13%"],["2020-10",0.95,"1.00%",7.62,"2.29%",0.85,"0.89%",7.45,"2.48%","0.84%","0.88%","10.85%","2.32%","0.79%","0.85%","8.27%","2.66%","0.90%","0.93%","6.36%","2.39%","1.65%","1.67%","8.29%","1.09%"],["2020-11",0.9,"0.94%",7.25,"2.26%",0.79,"0.83%",7.03,"2.45%","0.80%","0.84%","10.54%","2.24%","0.69%","0.74%","7.29%","2.65%","0.87%","0.90%","6.24%","2.36%","1.62%","1.64%","8.06%","1.05%"],["2020-12",0.79,"0.83%",6.41,"2.21%",0.72,"0.75%",6.42,"2.39%","0.75%","0.78%","10.14%","2.15%","0.64%","0.69%","6.77%","2.62%","0.77%","0.79%","5.54%","2.31%","1.30%","1.32%","6.39%","1.01%"],["2021-01",0.75,"0.79%",6.13,"2.17%",0.66,"0.70%",6.01,"2.35%","0.65%","0.68%","9.04%","2.04%","0.57%","0.62%","6.12%","2.59%","0.74%","0.77%","5.39%","2.28%","1.35%","1.37%","6.55%","0.98%"],["2021-02",0.64,"0.67%",5.3,"2.13%",0.63,"0.66%",5.8,"2.30%","0.60%","0.62%","8.62%","1.95%","0.58%","0.62%","6.22%","2.56%","0.69%","0.71%","5.06%","2.24%","0.73%","0.73%","3.46%","0.95%"],["2021-03",0.67,"0.70%",5.54,"2.09%",0.65,"0.68%",5.99,"2.26%","0.56%","0.58%","8.24%","1.87%","0.60%","0.64%","6.47%","2.51%","0.72%","0.74%","5.32%","2.23%","0.83%","0.84%","3.89%","0.94%"],["2021-04",0.72,"0.76%",5.99,"2.08%",0.71,"0.74%",6.57,"2.24%","0.53%","0.55%","7.89%","1.84%","0.69%","0.74%","7.48%","2.51%","0.78%","0.81%","5.87%","2.21%","0.84%","0.85%","3.86%","0.92%"],["2021-05",0.71,"0.74%",5.89,"2.06%",0.69,"0.73%",6.44,"2.22%","0.52%","0.54%","7.77%","1.81%","0.64%","0.68%","6.90%","2.49%","0.80%","0.83%","5.97%","2.19%","0.86%","0.87%","3.88%","0.91%"],["2021-06",0.74,"0.78%",6.15,"2.06%",0.73,"0.77%",6.83,"2.21%","0.62%","0.65%","9.45%","1.82%","0.67%","0.72%","7.35%","2.47%","0.81%","0.85%","6.10%","2.19%","0.83%","0.84%","3.70%","0.91%"],["2021-07",0.73,"0.77%",6.06,"2.05%",0.72,"0.75%",6.7,"2.20%","0.55%","0.58%","8.45%","1.73%","0.69%","0.73%","7.54%","2.46%","0.80%","0.83%","5.97%","2.19%","0.86%","0.87%","3.78%","0.92%"],["2021-08",0.76,"0.80%",6.31,"2.04%",0.74,"0.78%",6.94,"2.20%","0.64%","0.67%","9.80%","1.76%","0.69%","0.74%","7.61%","2.44%","0.81%","0.85%","6.08%","2.20%","0.93%","0.94%","4.04%","0.90%"],["2021-09",0.81,"0.85%",6.69,"2.06%",0.79,"0.83%",7.42,"2.21%","0.69%","0.72%","10.39%","1.80%","0.76%","0.81%","8.39%","2.44%","0.85%","0.89%","6.40%","2.21%","0.94%","0.96%","4.09%","0.89%"],["2021-10",0.88,"0.92%",7.26,"2.07%",0.86,"0.91%",8.1,"2.22%","0.69%","0.72%","10.31%","1.82%","0.81%","0.87%","9.07%","2.45%","0.96%","1.00%","7.22%","2.22%","0.99%","1.02%","4.33%","0.89%"],["2021-11",0.95,"1.00%",7.87,"2.08%",0.92,"0.97%",8.68,"2.24%","0.68%","0.71%","10.12%","1.84%","0.88%","0.94%","9.85%","2.45%","1.04%","1.09%","7.86%","2.25%","1.16%","1.18%","5.02%","0.92%"],["2021-12",0.98,"1.03%",8.14,"2.10%",0.97,"1.02%",9.11,"2.26%","0.66%","0.69%","9.68%","1.85%","0.96%","1.02%","10.77%","2.48%","1.09%","1.14%","8.23%","2.26%","1.10%","1.12%","4.75%","0.93%"],["2022-01",1,"1.05%",8.32,"2.11%",1,"1.05%",9.44,"2.27%","0.66%","0.68%","9.58%","1.85%","1.01%","1.08%","11.38%","2.51%","1.12%","1.17%","8.51%","2.25%","1.03%","1.06%","4.47%","0.94%"],["2022-02",1.08,"1.13%",8.93,"2.11%",0.97,"1.02%",9.15,"2.27%","0.66%","0.69%","9.63%","1.85%","1.00%","1.07%","11.30%","2.52%","1.06%","1.10%","8.06%","2.26%","1.88%","1.93%","8.16%","0.96%"],["2022-03",1.12,"1.17%",9.31,"2.13%",1.02,"1.07%",9.69,"2.29%","0.67%","0.70%","9.74%","1.86%","1.09%","1.16%","12.30%","2.55%","1.11%","1.15%","8.48%","2.27%","1.83%","1.87%","7.98%","0.98%"],["2022-04",1.14,"1.19%",9.52,"2.14%",1.04,"1.09%",9.94,"2.30%","0.68%","0.70%","9.87%","1.86%","1.10%","1.18%","12.55%","2.57%","1.14%","1.18%","8.75%","2.27%","1.85%","1.89%","8.10%","1.02%"],["2022-05",1.18,"1.23%",9.89,"2.17%",1.09,"1.14%",10.39,"2.32%","0.69%","0.72%","10.14%","1.90%","1.15%","1.22%","13.07%","2.61%","1.19%","1.24%","9.21%","2.28%","1.85%","1.90%","8.21%","1.06%"],["2022-06",1.22,"1.27%",10.24,"2.18%",1.13,"1.19%",10.89,"2.34%","0.69%","0.72%","10.08%","1.91%","1.21%","1.28%","13.80%","2.62%","1.24%","1.29%","9.72%","2.30%","1.80%","1.85%","8.09%","1.10%"],["2022-07",1.25,"1.31%",10.62,"2.21%",1.17,"1.23%",11.31,"2.36%","0.75%","0.78%","10.93%","1.98%","1.27%","1.35%","14.57%","2.65%","1.26%","1.31%","9.91%","2.32%","1.83%","1.87%","8.29%","1.16%"],["2022-08",1.27,"1.32%",10.78,"2.25%",1.19,"1.24%",11.53,"2.39%","0.76%","0.79%","11.02%","2.05%","1.34%","1.43%","15.48%","2.69%","1.24%","1.29%","9.85%","2.33%","1.82%","1.86%","8.26%","1.23%"],["2022-09",1.24,"1.29%",10.57,"2.28%",1.14,"1.20%",11.17,"2.41%","0.80%","0.83%","11.50%","2.10%","1.36%","1.45%","15.84%","2.71%","1.13%","1.17%","9.02%","2.33%","1.89%","1.93%","8.58%","1.32%"],["2022-10",1.25,"1.31%",10.77,"2.31%",1.16,"1.21%",11.38,"2.44%","0.86%","0.89%","12.34%","2.17%","1.41%","1.50%","16.54%","2.74%","1.10%","1.14%","8.93%","2.35%","1.92%","1.95%","8.70%","1.42%"],["2022-11",1.28,"1.33%",11.03,"2.35%",1.2,"1.25%",11.78,"2.47%","0.92%","0.96%","13.23%","2.24%","1.48%","1.58%","17.42%","2.78%","1.11%","1.15%","9.04%","2.35%","1.87%","1.90%","8.51%","1.50%"],["2022-12",1.39,"1.45%",12.01,"2.41%",1.3,"1.36%",12.8,"2.52%","1.02%","1.07%","14.67%","2.35%","1.59%","1.69%","18.68%","2.82%","1.21%","1.25%","9.88%","2.39%","2.05%","2.08%","9.33%","1.62%"],["2023-01",1.41,"1.47%",12.2,"2.47%",1.31,"1.37%",12.91,"2.57%","1.14%","1.19%","16.09%","2.49%","1.63%","1.74%","19.15%","2.86%","1.17%","1.21%","9.58%","2.42%","2.13%","2.17%","9.77%","1.73%"],["2023-02",1.52,"1.59%",13.12,"2.52%",1.42,"1.49%",13.95,"2.62%","1.25%","1.32%","17.46%","2.63%","1.69%","1.80%","19.77%","2.91%","1.31%","1.36%","10.75%","2.45%","2.24%","2.28%","10.28%","1.83%"],["2023-03",1.51,"1.58%",13.02,"2.58%",1.4,"1.47%",13.73,"2.66%","1.31%","1.38%","18.11%","2.73%","1.67%","1.78%","19.47%","2.95%","1.27%","1.31%","10.40%","2.47%","2.31%","2.35%","10.60%","1.95%"],["2023-04",1.58,"1.65%",13.59,"2.62%",1.46,"1.53%",14.24,"2.70%","1.39%","1.47%","19.06%","2.82%","1.74%","1.85%","20.10%","2.98%","1.31%","1.36%","10.77%","2.50%","2.45%","2.50%","11.34%","2.06%"],["2023-05",1.63,"1.70%",13.93,"2.66%",1.5,"1.57%",14.56,"2.73%","1.45%","1.53%","19.50%","2.89%","1.77%","1.88%","20.36%","3.01%","1.36%","1.41%","11.09%","2.52%","2.55%","2.60%","11.74%","2.16%"],["2023-06",1.71,"1.79%",14.58,"2.70%",1.58,"1.65%",15.21,"2.76%","1.48%","1.57%","19.69%","2.96%","1.83%","1.95%","20.90%","3.04%","1.45%","1.51%","11.87%","2.54%","2.70%","2.76%","12.37%","2.25%"],["2023-07",1.77,"1.85%",14.99,"2.72%",1.62,"1.70%",15.6,"2.78%","1.49%","1.58%","19.60%","2.99%","1.87%","1.99%","21.14%","3.06%","1.52%","1.58%","12.42%","2.55%","2.83%","2.88%","12.85%","2.33%"],["2023-08",1.8,"1.88%",15.21,"2.75%",1.65,"1.73%",15.77,"2.79%","1.50%","1.59%","19.66%","3.02%","1.87%","1.98%","20.97%","3.07%","1.57%","1.63%","12.76%","2.56%","2.91%","2.97%","13.23%","2.42%"],["2023-09",1.87,"1.96%",15.8,"2.77%",1.73,"1.81%",16.41,"2.81%","1.53%","1.62%","19.77%","3.07%","1.90%","2.02%","21.15%","3.09%","1.69%","1.75%","13.69%","2.56%","2.97%","3.03%","13.58%","2.47%"],["2023-10",1.88,"1.97%",15.82,"2.77%",1.73,"1.82%",16.35,"2.81%","1.51%","1.60%","19.44%","3.08%","1.90%","2.02%","20.97%","3.10%","1.70%","1.77%","13.74%","2.56%","3.02%","3.08%","13.88%","2.52%"],["2023-11",1.93,"2.02%",16.21,"2.78%",1.78,"1.87%",16.7,"2.81%","1.58%","1.67%","20.09%","3.08%","1.92%","2.05%","21.03%","3.11%","1.75%","1.82%","14.15%","2.55%","3.11%","3.17%","14.40%","2.55%"],["2023-12",1.91,"2.00%",16,"2.77%",1.75,"1.84%",16.4,"2.80%","1.57%","1.67%","19.93%","3.07%","1.82%","1.93%","19.78%","3.10%","1.77%","1.84%","14.25%","2.55%","3.10%","3.16%","14.46%","2.55%"],["2024-01",1.96,"2.05%",16.43,"2.77%",1.81,"1.90%",16.88,"2.79%","1.58%","1.68%","19.98%","3.07%","1.84%","1.96%","20.01%","3.10%","1.85%","1.93%","14.93%","2.54%","3.13%","3.19%","14.69%","2.56%"],["2024-02",1.95,"2.05%",16.41,"2.76%",1.8,"1.89%",16.83,"2.79%","1.58%","1.67%","20.00%","3.03%","1.86%","1.98%","20.09%","3.11%","1.84%","1.91%","14.83%","2.53%","3.13%","3.19%","14.76%","2.57%"],["2024-03",1.97,"2.06%",16.52,"2.75%",1.82,"1.91%",16.93,"2.78%","1.62%","1.72%","20.53%","3.08%","1.88%","2.00%","20.20%","3.10%","1.84%","1.92%","14.84%","2.52%","3.14%","3.20%","14.91%","2.54%"],["2024-04",1.96,"2.06%",16.46,"2.75%",1.82,"1.91%",16.88,"2.78%","1.69%","1.78%","21.28%","3.13%","1.87%","1.99%","19.99%","3.10%","1.83%","1.90%","14.72%","2.50%","3.11%","3.17%","14.75%","2.54%"],["2024-05",1.99,"2.08%",16.66,"2.75%",1.84,"1.94%",17.09,"2.78%","1.68%","1.78%","21.14%","3.14%","1.91%","2.03%","20.29%","3.11%","1.86%","1.93%","14.95%","2.49%","3.14%","3.19%","14.93%","2.54%"],["2024-06",1.98,"2.07%",16.6,"2.75%",1.84,"1.93%",16.98,"2.78%","1.69%","1.78%","21.19%","3.12%","1.91%","2.03%","20.23%","3.12%","1.84%","1.92%","14.80%","2.49%","3.14%","3.20%","15.06%","2.56%"],["2024-07",1.98,"2.07%",16.56,"2.75%",1.84,"1.93%",16.9,"2.77%","1.71%","1.80%","21.22%","3.13%","1.93%","2.05%","20.30%","3.12%","1.83%","1.90%","14.65%","2.48%","3.12%","3.18%","15.10%","2.57%"],["2024-08",1.99,"2.08%",16.57,"2.75%",1.85,"1.94%",16.89,"2.77%","1.70%","1.79%","20.90%","3.12%","1.93%","2.06%","20.22%","3.13%","1.84%","1.92%","14.73%","2.48%","3.14%","3.20%","15.22%","2.56%"],["2024-09",1.97,"2.06%",16.35,"2.73%",1.84,"1.93%",16.75,"2.76%","1.69%","1.78%","20.73%","3.05%","1.94%","2.06%","20.13%","3.13%","1.83%","1.90%","14.59%","2.47%","3.03%","3.08%","14.61%","2.55%"],["2024-10",1.99,"2.08%",16.49,"2.72%",1.86,"1.95%",16.9,"2.74%","1.71%","1.79%","20.94%","3.02%","1.97%","2.09%","20.28%","3.13%","1.85%","1.92%","14.72%","2.45%","3.06%","3.12%","14.70%","2.54%"],["2024-11",1.96,"2.05%",16.17,"2.71%",1.84,"1.92%",16.61,"2.73%","1.65%","1.72%","19.94%","3.00%","1.98%","2.11%","20.36%","3.13%","1.81%","1.89%","14.43%","2.45%","2.98%","3.03%","14.24%","2.52%"],["2024-12",1.96,"2.04%",16.16,"2.69%",1.84,"1.93%",16.69,"2.72%","1.62%","1.69%","19.58%","2.96%","2.03%","2.16%","20.87%","3.13%","1.81%","1.89%","14.43%","2.43%","2.90%","2.95%","13.83%","2.51%"],["2025-01",1.95,"2.03%",16.09,"2.67%",1.84,"1.92%",16.61,"2.70%","1.57%","1.64%","18.99%","2.90%","2.02%","2.14%","20.67%","3.12%","1.82%","1.89%","14.50%","2.42%","2.89%","2.94%","13.76%","2.49%"],["2025-02",1.84,"1.92%",15.19,"2.66%",1.83,"1.91%",16.47,"2.68%","1.53%","1.60%","18.40%","2.88%","2.01%","2.14%","20.63%","3.10%","1.81%","1.88%","14.42%","2.40%","1.99%","2.03%","9.49%","2.47%"],["2025-03",1.84,"1.92%",15.17,"2.64%",1.83,"1.91%",16.47,"2.67%","1.52%","1.58%","18.06%","2.84%","2.02%","2.15%","20.64%","3.09%","1.82%","1.89%","14.48%","2.40%","1.94%","1.97%","9.33%","2.46%"],["2025-04",1.82,"1.90%",15.02,"2.62%",1.81,"1.90%",16.29,"2.64%","1.43%","1.49%","16.95%","2.76%","1.99%","2.12%","20.37%","3.08%","1.83%","1.90%","14.52%","2.39%","1.89%","1.92%","9.26%","2.42%"],["2025-05",1.82,"1.89%",15.09,"2.61%",1.81,"1.90%",16.25,"2.63%","1.39%","1.45%","16.43%","2.71%","2.05%","2.18%","20.89%","3.07%","1.81%","1.88%","14.36%","2.39%","1.85%","1.88%","9.48%","2.39%"],["2025-06",1.8,"1.87%",15.01,"2.59%",1.79,"1.88%",16.05,"2.61%","1.36%","1.42%","15.99%","2.69%","2.05%","2.19%","20.84%","3.04%","1.78%","1.85%","14.14%","2.37%","1.81%","1.84%","9.73%","2.37%"],["2025-07",1.8,"1.88%",15.15,"2.57%",1.8,"1.88%",16.07,"2.60%","1.33%","1.38%","15.57%","2.66%","2.03%","2.16%","20.46%","3.03%","1.82%","1.89%","14.39%","2.37%","1.82%","1.85%","10.25%","2.35%"],["2025-08",1.8,"1.88%",15.21,"2.56%",1.8,"1.88%",16.01,"2.59%","1.30%","1.35%","15.20%","2.66%","2.02%","2.16%","20.28%","3.02%","1.83%","1.90%","14.43%","2.36%","1.80%","1.83%","10.72%","2.32%"],["2025-09",1.84,"1.92%",15.62,"2.56%",1.83,"1.92%",16.26,"2.59%","1.32%","1.37%","15.30%","2.69%","2.04%","2.18%","20.37%","3.02%","1.87%","1.94%","14.77%","2.35%","1.88%","1.91%","11.82%","2.32%"],["2025-10",1.85,"1.93%",15.79,"2.57%",1.85,"1.93%",16.28,"2.60%","1.30%","1.35%","14.97%","2.70%","2.05%","2.18%","20.25%","3.03%","1.89%","1.97%","14.92%","2.35%","1.91%","1.94%","12.69%","2.32%"],["2025-11",1.83,"1.91%",15.67,"2.56%",1.84,"1.92%",16.13,"2.59%","1.29%","1.35%","14.79%","2.70%","2.01%","2.15%","19.82%","3.02%","1.89%","1.97%","14.87%","2.35%","1.80%","1.82%","12.64%","2.32%"],["2025-12",1.89,"1.97%",16.13,"2.56%",1.89,"1.97%",16.43,"2.59%","1.35%","1.41%","15.23%","2.71%","2.06%","2.20%","20.14%","3.00%","1.94%","2.02%","15.14%","2.35%","1.88%","1.91%","14.01%","2.30%"],["2026-01",1.88,"1.96%",16.12,"2.55%",1.88,"1.96%",16.28,"2.58%","1.37%","1.42%","15.23%","2.73%","2.04%","2.18%","19.87%","2.99%","1.93%","2.00%","15.01%","2.34%","1.88%","1.91%","14.93%","2.29%"],["2026-02",1.84,"1.92%",15.86,"2.55%",1.84,"1.92%",15.86,"2.59%","1.39%","1.45%","15.27%","2.77%","2.03%","2.17%","19.68%","2.99%","1.86%","1.93%","14.42%","2.34%","1.86%","1.89%","15.85%","2.29%"],["2026-03",1.86,"1.94%",16.05,"2.55%",1.86,"1.94%",15.94,"2.59%","1.39%","1.45%","15.01%","2.77%","2.06%","2.20%","19.89%","3.00%","1.88%","1.95%","14.50%","2.33%","1.88%","1.91%","17.01%","2.29%"],["2026-04",1.85,"1.92%",15.96,"2.56%",1.84,"1.93%",15.73,"2.59%","1.39%","1.45%","14.86%","2.80%","2.10%","2.23%","20.11%","3.01%","1.83%","1.90%","14.11%","2.33%","1.87%","1.90%","18.07%","2.30%"],["2026-05",1.82,"1.90%",15.69,"2.54%",1.81,"1.90%",15.43,"2.58%","1.39%","1.44%","14.71%","2.81%","2.03%","2.17%","19.43%","3.01%","1.81%","1.88%","13.94%","2.32%","1.87%","1.90%","18.06%","2.23%"],["2026-06",1.83,"1.91%",15.67,"2.55%",1.82,"1.90%",15.38,"2.59%","1.35%","1.41%","14.25%","2.81%","2.02%","2.15%","19.02%","3.01%","1.84%","1.90%","14.08%","2.32%","1.91%","1.94%","18.42%","2.27%"],["2026-07",1.83,"1.90%",15.57,"2.55%",1.82,"1.90%",15.3,"2.59%","1.33%","1.39%","13.92%","2.81%","2.00%","2.14%","18.64%","3.01%","1.85%","1.92%","14.16%","2.32%","1.87%","1.90%","18.10%","2.27%"]],"cabeceras":[["﻿Fecha","ROA-CBI","ROAA-CBI","ROE-CBI","MIN-CBI","ROA-SBN","ROAA-SBN","ROE-SBN","MIN-SBN","ROA-BO","ROAA-BO","ROE-BO","MIN-BO","ROA-BPP","ROAA-BPP","ROE-BPP","MIN-BPP","ROA-BPE","ROAA-BPE","ROE-BPE","MIN-BPE","ROA-BI","ROAA-BI","ROE-BI","MIN-BI"]],"drilldown":"","columnas":[],"operacion_al_agrupar":"suma","quiebre_del_filtro":7,"stacked_column":"","epoch":true,"filtrar_repetidos":false,"remover_codigo_bancario":false,"ordenar_alfabeticamente":false,"generar_sin_precompilar":false,"series":"series: [],","series_var":[],"grafica_filtro":"","grafica_subfiltro":"","grafica_columna_subfiltro":""};
+</script> <script type="text/javascript">
+      var actualizado_indicadores = [
+        ['2026-07'],    ];
+      var data_roa_cbi_front = [
+        ['2026-03', 1.86],['2026-04', 1.85],['2026-05', 1.82],['2026-06', 1.83],['2026-07', 1.83],    ];
+ var data_roe_cbi_front = [
+        ['2026-03', 16.05],['2026-04', 15.96],['2026-05', 15.69],['2026-06', 15.67],['2026-07', 15.57],    ];
+    var data_roa_sbn_front = [
+        ['2026-03', 1.86],['2026-04', 1.84],['2026-05', 1.81],['2026-06', 1.82],['2026-07', 1.82],    ];
+    var data_roe_sbn_front = [
+        ['2026-03', 15.94],['2026-04', 15.73],['2026-05', 15.43],['2026-06', 15.38],['2026-07', 15.30],    ];
+
+     Highcharts.chart('roa', {
+    chart: {
+        type: 'column',
+        height:250,
+    },
+    title:{
+    text: 'ROA',
+    },
+        subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_indicadores,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+  
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:true,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '7px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'CBI',
+    color:'#002060',
+    data: data_roa_cbi_front
+    }, 
+    {
+    name:'SBN',
+    color:'#2E75B6',
+         data: data_roa_sbn_front
+    }
+    ]
+});
+
+       Highcharts.chart('roe', {
+    chart: {
+        type: 'column',
+        height:250,
+    },
+    title:{
+    text: 'ROE',
+    },
+      subtitle: {
+        text: 'Actualizado al: <br>' + actualizado_indicadores,
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+
+                     exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:true,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:.2f}%</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                
+                format: '{y} %',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '7px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'CBI',
+    color:'#002060',
+         data: data_roe_cbi_front
+    }, 
+    {
+    name:'SBN',
+    color:'#2E75B6',
+         data: data_roe_sbn_front
+    }
+    ],
+
+});
+ </script>
+
+
+ <script type="text/javascript">var datos = {"id":"sbp6af1d571de42d","path_csv":"data\/balance\/","csv":"balance_banca.csv","delimitador":",","columna":"","fecha":"","columna_filtro":"","filtro":"","title":"","fecha_reciente":"2026-08","custom":"","chart_type":"column","general_custom":"","chart":".chart","json_file":"","json_file_path":"..\/..\/json\/","json_formatear_para_mapa":false,"datos":[["Centro Bancario Internacional",169433441829.84],["Sistema Bancario Nacional",150333936054.32],["Banca Oficial",19964326307.51],["Banca Privada Panameña",44233574584.600006],["Banca Privada Extranjera",86136035162.20999],["Banca Lic. Internacional",19099505775.52]],"cabeceras":[["﻿Tipo_Banca","Total de activos (netos)"]],"drilldown":"","columnas":[0,1,2,3],"operacion_al_agrupar":"suma","quiebre_del_filtro":7,"stacked_column":"","epoch":true,"filtrar_repetidos":false,"remover_codigo_bancario":false,"ordenar_alfabeticamente":false,"generar_sin_precompilar":false,"series":"series: [],","series_var":[],"grafica_filtro":"","grafica_subfiltro":"","grafica_columna_subfiltro":""};
+</script> <script type="text/javascript">
+     
+      var data_activo_sbn_front = [
+        ['Sistema Bancario Nacional', 150333936054.32],    ];
+     var data_activo_cbi_front = [
+        ['Centro Bancario Internacional', 169433441829.84],    ];
+ 
+
+     Highcharts.chart('activos', {
+    chart: {
+        type: 'column',
+        height:250,
+    },
+    title:{
+    text: 'Total de activos',
+    },
+        subtitle: {
+        text: 'Actualizado al: <br> 2026-08',
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+  
+    exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:true,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:,.2f}</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: 'B/. {point.y:,.2f}',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '10px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'CBI',
+    color:'#002060',
+    data: data_activo_cbi_front
+    }, 
+    {
+    name:'SBN',
+    color:'#2E75B6',
+         data: data_activo_sbn_front
+    }
+    ]
+});
+
+     
+ </script>
+
+
+ <script type="text/javascript">var datos = {"id":"sbp6af1d571e3601","path_csv":"data\/estado\/","csv":"estado_banca_acumulado.csv","delimitador":",","columna":"","fecha":"","columna_filtro":"","filtro":"","title":"","fecha_reciente":"2026-08","custom":"","chart_type":"column","general_custom":"","chart":".chart","json_file":"","json_file_path":"..\/..\/json\/","json_formatear_para_mapa":false,"datos":[["Centro Bancario Internacional",1972919311.8],["Sistema Bancario Nacional",1747035115.73],["Banca Oficial",185843749.25],["Banca Privada Panameña",543076871.26],["Banca Privada Extranjera",1018114495.22],["Banca Lic. Internacional",225884196.07]],"cabeceras":[["﻿Tipo_Banca","Resultado neto"]],"drilldown":"","columnas":[0,1,24],"operacion_al_agrupar":"suma","quiebre_del_filtro":7,"stacked_column":"","epoch":true,"filtrar_repetidos":false,"remover_codigo_bancario":false,"ordenar_alfabeticamente":false,"generar_sin_precompilar":false,"series":"series: [],","series_var":[],"grafica_filtro":"","grafica_subfiltro":"","grafica_columna_subfiltro":""};
+</script> <script type="text/javascript">
+    
+      var data_estado_sbn_front = [
+        ['Sistema Bancario Nacional', 1747035115.73],    ];
+     var data_estado_cbi_front = [
+        ['Centro Bancario Internacional', 1972919311.8],    ];
+ 
+
+     Highcharts.chart('estado', {
+    chart: {
+        type: 'column',
+        height:250,
+    },
+    title:{
+    text: 'Utilidad del período',
+    },
+        subtitle: {
+        text: 'Actualizado al: <br> 2026-08',
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+  
+    exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:true,
+    },
+    tooltip: {
+        
+        pointFormat: '<span> {series.name}</span>: <b>{point.y:,.2f}</b>'
+        },
+    xAxis: {
+        
+        visible:false,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: 'B/. {point.y:,.2f}',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '10px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'CBI',
+    color:'#002060',
+    data: data_estado_cbi_front
+    }, 
+    {
+    name:'SBN',
+    color:'#2E75B6',
+         data: data_estado_sbn_front
+    }
+    ]
+});
+
+     
+ </script>
+
+ <script type="text/javascript">
+    
+      var num_bancos = [
+        [63],    ];
+
+      var bancos = [
+        ['Oficiales', 2],['Extranjeros Lic. General', 25],['Panameños Privados Lic. General', 12],['Licencia Internacional', 14],['Representación', 10],    ];
+   
+
+ 
+
+     Highcharts.chart('cantidad-bancos', {
+    chart: {
+        type: 'column',
+        height:220,
+    },
+    title:{
+      useHTML:'true',
+    text: '',
+    },
+        subtitle: {
+        text: '',
+          style: { 
+                    fontSize: '8px',
+                }
+        
+    },
+  
+    exporting: {
+        enabled: false
+    },
+    legend: {
+    enabled:true,
+    align: 'center',
+        verticalAlign: 'top',
+        layout: 'horizontal',
+       
+    },
+   
+    tooltip: {
+        
+        pointFormat: '<b>{point.y}</b>'
+        },
+    xAxis: {
+        categories:['Oficiales','Extranjeros Lic. General','Panameños Privados Lic. General','Licencia Internacional','Representación',],
+        visible:true,
+    },
+yAxis:{ 
+     gridLineWidth: 0,
+     minorGridLineWidth: 0,
+      visible:false,
+},
+    plotOptions: {
+         series: {
+            dataLabels: {
+                enabled: true,
+                format: '{point.y}',
+                 color: '#BF9000',
+                  style: {
+                    
+                    fontSize: '10px',
+                }
+            }
+        }
+    },
+
+    series: [{
+    name:'Total de bancos: ' +  num_bancos,
+    color:'#002060',
+    data: bancos,
+    },
+    
+    ],
+    caption: {
+        useHTML:true,
+        verticalAlign:'bottom',
+        text:  '<a href="/analitica/data/otros/bancos_es.xlsx" target="_blank"> <div class="div_descargar" style="background:#002060; color:#fff; padding: 2px;"><span>&darr; XLSX </span></div> </a>'
+    }
+ 
+});
+
+    
+ </script>
+
+<style type="text/css">
+  .div_descargar:hover span:after {
+    content: '- descargar lista completa';
+  }
+</style>
+
+</div>
+
+
+</div>
+
+
+  </div>
+<!--<button class='btn_close_data bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 m-2 border border-gray-400 rounded shadow' id='btn_close_data'  onclick='cerrar(this)'>Ocultar datos</button>-->
+
+</section>
+
+
+</div>
+<footer>
+
+<!--
+<button id="btn_ocultar_data" class=' bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-2 m-2 border border-gray-400 rounded shadow' id='btn_close_data'  onclick='cerrar(this)' style='position: fixed;bottom: 0px;left: 0px; z-index: 9999; display:none'>Ocultar datos</button>-->
+
+
+<div class="flex md:flex flex-wrap   ">
+
+ <div class="w-full sm:w-10/12">
+
+<p align="center"> &copy; 2026  Superintendencia de Bancos de Panamá <br /> 
+ Recomendado para Firefox 5, Opera 12, Safari 5 o superiores y Chrome </p>
+</div>
+
+<div  class="w-full flex  flex-wrap  sm:w-2/12 ">
+
+<div class=" w-1/4"> <a href="https://www.linkedin.com/company/superintendencia-de-bancos-de-panam%C3%A1/" title="LinkedIn" target="_blank"> <img src="images/linkedin.png?v=1.01"/> </a> </div>
+
+<div class=" w-1/4"><a href="http://twitter.com/Superbancos_Pa" title="Twitter" target="_blank"> <img src="images/twitter_32.png?v=1.01"/> </a> </div>
+
+<div class=" w-1/4"><a href="http://www.youtube.com/user/SuperbancosPa" title="YouTube" target="_blank"> <img src="images/youtube_32.png"/> </a> </div>
+
+<div class=" w-1/4"> <a href="http://www.facebook.com/pages/Superintendencia-de-Bancos-de-Panam%C3%A1/321577037877089" title="Facebook" target="_blank"> <img src="images/facebook_32.png?v=1.01"/> </a> </div>
+
+</div>
+</div>
+
+
+</footer>
+<div class="navegacion">
+
+
+<div id="navegacion-container" class="navegacion-container">
+
+
+<div class="flex content-center flex-wrap ">
+  <div class="w-full md:w-1/3 p-16">
+    
+<div id="navegacion_item_1" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(1)"><h2 class="text-white bold center">ESTADO DE SITUACIÓN</h2><div class="w-full"><img class="w-" src="images/balance.jpg"></div></div><div id="navegacion_item_2" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(2)"><h2 class="text-white bold center">ESTADO DE RESULTADOS</h2><div class="w-full"><img class="w-" src="images/estado.jpg"></div></div><div id="navegacion_item_3" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(3)"><h2 class="text-white bold center">INDICADORES</h2><div class="w-full"><img class="w-" src="images/indicadores.jpg"></div></div>
+  </div>
+   
+   <div class="w-full md:w-1/3 p-16">
+     <div id="navegacion_item_4" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(4)"><h2 class="text-white bold center">CRÉDITO</h2><div class="w-full"><img class="w-" src="images/credito.jpg"></div></div><div id="navegacion_item_5" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(5)"><h2 class="text-white bold center">DEPÓSITOS</h2><div class="w-full"><img class="w-" src="images/depositos.jpg"></div></div>     <div id="navegacion_item_6" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(6)"><h2 class="text-white bold center">INVERSIONES</h2><div class="w-full"><img class="w-" src="images/inversiones.jpg"></div></div>   </div>
+   
+   <div class="w-full md:w-1/3 p-16">
+     <div id="navegacion_item_7" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(7)"><h2 class="text-white bold center">LIQUIDEZ</h2><div class="w-full"><img class="w-" src="images/liquidez.jpg"></div></div>     <div id="navegacion_item_8" class="navegacion_item w-full  center shadow bg-blue-800 rounded p-2 mb-6 hover:bg-blue-700" onclick="abrir_grafica(8)"><h2 class="text-white bold center">TASAS</h2><div class="w-full"><img class="w-" src="images/tasas.jpg"></div></div>   </div>
+   
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="burger" onclick="open_navegacion()">
+<img src="images/burger_menu.png" style="width:40px">
+</div>
+
+<img class="btn-close" onclick="close_navegacion()" src="images/close.png" style="width:40px">
+
+
+</div>
+
+
+<script>
+
+function open_navegacion(){
+
+  $('.navegacion').addClass('navegacion-on');
+  
+  setTimeout(function(){ $('#navegacion_item_1').addClass('navegacion_item_on'); }, 900);
+
+  setTimeout(function(){ $('#navegacion_item_2').addClass('navegacion_item_on'); }, 1000);
+
+  setTimeout(function(){ $('#navegacion_item_3').addClass('navegacion_item_on'); }, 1100);
+
+  setTimeout(function(){ $('#navegacion_item_4').addClass('navegacion_item_on'); }, 1200);
+
+  setTimeout(function(){ $('#navegacion_item_5').addClass('navegacion_item_on'); }, 1300);
+
+  setTimeout(function(){ $('#navegacion_item_6').addClass('navegacion_item_on'); }, 1400);
+
+  setTimeout(function(){ $('#navegacion_item_7').addClass('navegacion_item_on'); }, 1500);
+
+  setTimeout(function(){ $('#navegacion_item_8').addClass('navegacion_item_on'); }, 1600);
+
+  setTimeout(function(){ $('#navegacion_item_9').addClass('navegacion_item_on'); }, 1700);
+
+  setTimeout(function(){ $('#navegacion_item_10').addClass('navegacion_item_on'); }, 1800);
+
+    
+}
+
+function close_navegacion(){
+
+  $('.navegacion').removeClass('navegacion-on');
+  $('.navegacion_item_on').removeClass('navegacion_item_on');
+}
+
+function abrir_grafica(grafica_id){
+  $("#container-central").html('<div class="spinner"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>');
+close_navegacion();
+
+if(grafica_id==1){
+  
+        $("#container-central").load('setting/balance/balance.php');
+           
+        return false;
+}
+ if (grafica_id==2) {
+        
+        $("#container-central").load('setting/estado/estado.php');
+        return false;
+
+}
+if (grafica_id==3) {
+        
+        $("#container-central").load('setting/indicadores/indicadores.php');
+        return false;
+
+}
+
+ if (grafica_id==4) {
+        
+        $("#container-central").load('setting/credito/credito.php');
+        return false;
+
+}
+
+
+
+if (grafica_id==5) {
+        
+        $("#container-central").load('setting/deposito/deposito.php');
+        return false;
+
+}
+if (grafica_id==6) {
+        
+        $("#container-central").load('setting/inversiones/inversiones.php');
+        return false;
+
+}
+
+if (grafica_id==7) {
+        
+        $("#container-central").load('setting/liquidez/liquidez.php');
+        return false;
+
+}
+
+if (grafica_id==8) {
+        
+        $("#container-central").load('setting/tasas/tasas.php');
+        return false;
+
+}
+
+}
+
+</script>
+
+<style>
+
+
+.navegacion-container{
+  width:90vw;
+  height: 90vh;
+  position: absolute;
+  top:5vh;
+  left:5vw;
+
+}
+
+
+.navegacion{
+  width:100vw;
+  height: 100vh;
+  position: fixed;
+  top:0px;
+  left:-100vw;
+  background-color: rgba(48,48,48,0.95);
+  z-index: 51;
+  transition: 1s ease-in-out all;
+}
+
+.navegacion-on{
+  left:0vw;
+}
+
+
+.btn-close{
+position: absolute;
+top: 5vh;
+cursor:pointer;cursor:hand;
+right: 5vw;
+}
+
+
+
+.burger{
+  cursor:pointer;cursor:hand;
+  position: absolute;
+  top:45vh;
+   background-color: rgba(48,48,48,0.95);
+  right:-40px;
+ 
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transition: 0.2s all;
+  opacity: 1;
+}
+
+.navegacion-on .burger{
+  opacity: 0;
+}
+
+.navegacion_item{
+  transition: 2s opacity;
+  transition: 1.5s margin-top;
+  opacity: 0;
+  margin-top:20px;
+  cursor:pointer;cursor:hand;
+  text-align: center;
+}
+
+.navegacion_item_on{
+  opacity: 1;
+  margin-top:0;
+}
+
+
+@media (max-width: 700px) { 
+
+.navegacion-container{
+  overflow: scroll;
+}
+
+ }
+
+
+  </style>
+
+
+   
+<script type="text/javascript">
+   $( document ).ready(function() {
+    //abrir_grafica(7);
+    
+});
+</script>
+ <div id ="advertencia-legal" class="advertencia-legal advertencia-legal-off shadow">
+	<div class="advertencia-legal-titulo" onclick="revisar_advertencia()">
+	Advertencia legal
+	</div>
+	<div class="advertencia-legal-parrafo">
+		<div>
+	La Superintendencia de Bancos de Panamá, publica información estadística de las entidades bancarias supervisadas y fiscalizadas, así como realiza el análisis financiero agregado de la actividad bancaria de manera mensual. </br></br>
+		La compilación de esta información, que está sujeta a cambios, es suministrada únicamente para usos informativos.</br></br>
+		Es obtenida exclusivamente de los datos suministrados por los bancos por lo que la Superintendencia no se hace responsable por errores, omisiones, evaluaciones, análisis o juicios que terceras personas emitan en base a la información estadística divulgada.</br></br>
+		Las opiniones formales de la Superintendencia se compilan en los informes oficiales que se publican, periódicamente, en esta página electrónica.
+			</div>
+		<div class="advertencia-legal-cerrar" onclick="revisar_advertencia()">
+			Cerrar		</div>
+	</div>
+</div>
+<style type="text/css">
+	.advertencia-legal {
+		width: 250px;
+		position: fixed;
+		left: 0px;
+		bottom: 0px;
+		z-index: 1000;
+		transition: 1s all;
+
+	}
+	.advertencia-legal-off {
+		bottom: -300px;
+	}
+
+
+
+	.advertencia-legal-titulo {
+		background-color: #05346c;
+		height: 25px;
+		width: 100%;
+		color: #fff;
+		padding-top: 5px;
+		font-size: 12px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		text-align: center;
+		padding-bottom: 5px;
+		cursor: pointer; cursor: hand;
+	}
+	.advertencia-legal-parrafo {
+		background-color: #05346c;
+		height: 300px;
+		width: 100%;
+		padding: 15px;
+		font-size: 10px;
+
+	}
+	.advertencia-legal-parrafo div {
+		background-color:#143D8D;
+		color: #fff;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		height: 250px;
+		padding: 15px;
+	}
+
+	.advertencia-legal-cerrar{
+	color:#FFF;
+	font-size: 12px;
+	text-align: center;
+	background-color: #05346c !important;
+	cursor: pointer; cursor: hand;
+}
+</style>
+<script type="text/javascript">
+	function revisar_advertencia(){
+		if ($("#advertencia-legal").hasClass("advertencia-legal-off")) {
+			$("#advertencia-legal").removeClass("advertencia-legal-off");
+		}else {
+			$("#advertencia-legal").addClass("advertencia-legal-off");
+		}
+	}
+
+
+
+
+</script>
+
+</body>
+</html>

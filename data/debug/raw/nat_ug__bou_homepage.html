@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+
+    // Check for existing consent cookie
+    function getInitialConsent() {
+      try {
+        const nameEQ = "bou_cookie_consent=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) === 0) {
+            const value = JSON.parse(decodeURIComponent(c.substring(nameEQ.length, c.length)));
+            return value.preferences || {};
+          }
+        }
+      } catch (e) { }
+      return null;
+    }
+
+    const savedPrefs = getInitialConsent();
+
+    // Default GA consent to denied or saved preferences
+    gtag('consent', 'default', {
+      'analytics_storage': savedPrefs && savedPrefs.analytics ? 'granted' : 'denied',
+      'ad_storage': savedPrefs && savedPrefs.marketing ? 'granted' : 'denied',
+      'wait_for_update': 500
+    });
+
+    gtag("js", new Date());
+    gtag("config", "G-ZD5HZC7H9S");
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZD5HZC7H9S"></script>
+  <!-- Mobile console inspect -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script> -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank of Uganda</title>
+  <link rel="icon" type="image/webp" href="/assets/logo.ico" />
+
+
+  <link rel="preconnect" href="https://cdn.botpress.cloud" crossorigin />
+  <link rel="preconnect" href="https://files.bpcontent.cloud" crossorigin />
+  <script type="module" crossorigin src="/assets/index-B2Dn-qUe.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-9LMcLMHS.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <div class="p-0 m-0" id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: "en",
+          autoDisplay: false,
+        },
+        "google_translate_element",
+      );
+    }
+  </script>
+
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async
+    defer></script>
+
+
+  <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/08/25/10/20250825100945-NRCNRCY5.js" defer></script>
+
+  <!-- <script
+      src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"
+      defer
+    ></script>
+    <script
+      src="https://files.bpcontent.cloud/2026/04/29/03/20260429032309-IT5MXFQF.js"
+      defer
+    ></script> -->
+
+
+  <!-- Want help label -->
+  <div id="help-label">Need Help?</div>
+
+  <a id="create-label" href="https://bankofuganda.zohodesk.com/portal/" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" viewBox="0 0 24 30" fill="none">
+      <path
+        d="M0.879521 30C0.713961 30 0.538054 29.9483 0.393189 29.8551C0.10346 29.6689 -0.041405 29.3274 0.0103324 28.9859L2.52477 13.5357C2.65929 12.7078 3.08353 11.9627 3.71473 11.4246C4.34593 10.8865 5.16338 10.5864 5.99118 10.5864H16.349L16.9285 7.03691H15.9558C15.5212 7.03691 15.1177 6.85064 14.8383 6.51949C14.5589 6.18834 14.4347 5.76406 14.5072 5.33977L15.1694 1.23146C15.2832 0.51742 15.8937 0 16.618 0H20.4776C21.5124 0 22.4851 0.455329 23.1576 1.24181C23.8302 2.02829 24.12 3.06313 23.9544 4.08762L22.4023 13.6495C22.3298 14.0635 22.0919 14.436 21.7297 14.6637L13.0585 20.0138C12.5308 20.3346 11.8582 20.3036 11.3719 19.9103L7.33635 16.692C6.95349 16.3919 6.89141 15.833 7.20183 15.4605C7.50191 15.0776 8.06067 15.0155 8.43318 15.326L12.3135 18.4201L20.6949 13.2252L22.2264 3.79786C22.3092 3.29079 22.1643 2.77337 21.8332 2.38013C21.5021 1.98689 21.0157 1.75923 20.4983 1.75923H16.8871L16.318 5.27768H17.2803C17.7149 5.27768 18.1184 5.46395 18.3978 5.7951C18.6772 6.12625 18.8014 6.55053 18.7289 6.97482L18.0563 11.1038C17.9425 11.8179 17.332 12.3353 16.6077 12.3353H5.99118C5.12199 12.3353 4.39766 12.9562 4.2528 13.8151L2.04879 27.3612L5.14268 25.4467C5.37033 25.3018 5.63936 25.2294 5.91874 25.2294H17.2492C18.1184 25.2294 18.8427 24.6085 18.9876 23.7496L19.6912 19.4136C19.774 18.9376 20.219 18.6064 20.6949 18.6892C21.1709 18.772 21.5021 19.217 21.4193 19.693L20.7156 24.029C20.5811 24.8568 20.1569 25.6019 19.5257 26.14C18.8945 26.6782 18.077 26.9783 17.2492 26.9783H5.99118L1.33481 29.8655C1.20029 29.9586 1.03473 30 0.879521 30Z"
+        fill="white" />
+    </svg>
+    <span> Help Desk</span>
+  </a>
+
+  <style>
+    #help-label {
+      position: fixed;
+      right: 5px;
+      color: #333;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 99;
+      bottom: 70px;
+      /* default for small/medium screens */
+    }
+
+    /* For large screens (≥1024px) */
+    @media (min-width: 1024px) {
+      #help-label {
+        bottom: 70px;
+      }
+    }
+
+    #create-label {
+      position: fixed;
+      right: 100px;
+      color: #ffff !important;
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 99;
+      bottom: 30px;
+      background-color: #089949;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      /* Start hidden & slightly lowered */
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+      pointer-events: none;
+      /* Prevent clicks when hidden */
+    }
+
+    #create-label.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      /* Enable clicks when visible */
+    }
+
+    #create-label:hover {
+      transform: scale(1.08);
+      /* smooth zoom */
+      background-color: #23a75e;
+    }
+
+    /* For small screens: move to top instead of bottom */
+    @media (max-width: 640px) {
+      #create-label {
+        top: 110px;
+        bottom: auto;
+        right: 20px;
+        /* optional: bring closer for mobile */
+        transform: translateY(-20px);
+        /* adjust animation for top */
+      }
+
+      #create-label.show {
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    function detectChatOpen() {
+      const iframe = document.querySelector("iframe[name='webchat']");
+      const createLabel = document.getElementById("create-label");
+
+      if (!iframe) {
+        return setTimeout(detectChatOpen, 300);
+      }
+
+      // Observe changes to the iframe itself (class changes)
+      const observer = new MutationObserver(() => {
+        const classList = iframe.className;
+
+        if (classList.includes("bpOpen")) {
+          createLabel.classList.add("show");
+        } else if (classList.includes("bpClose")) {
+          createLabel.classList.remove("show");
+        }
+      });
+
+      observer.observe(iframe, {
+        attributes: true,
+        attributeFilter: ["class"], // only watch class changes
+      });
+
+      // Initial state
+      const initialClass = iframe.className;
+      if (initialClass.includes("bpOpen")) {
+        createLabel.classList.add("show");
+      } else {
+        createLabel.classList.remove("show");
+      }
+    }
+
+    detectChatOpen();
+  </script>
+</body>
+
+</html>

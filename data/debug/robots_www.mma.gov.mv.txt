@@ -1,0 +1,5 @@
+# Target: Allow access ONLY to the home page, deny all other paths
+
+User-agent: *
+Allow: /$
+Disallow: /

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Dokumen Bantuan. e-Licensing Bank Indonesia</title>
+    
+    <link href="/elicensing/Content/kendo/kendo.common-bootstrap.min.css" rel="stylesheet"/>
+<link href="/elicensing/Content/kendo/kendo.bootstrap-main.min.css" rel="stylesheet"/>
+<link href="/elicensing/Content/kendo/kendo.bootstrap.min.css" rel="stylesheet"/>
+
+    <link href="/elicensing/Content/bootstrap.css" rel="stylesheet"/>
+<link href="/elicensing/Content/site.css" rel="stylesheet"/>
+
+    <script src="/elicensing/Scripts/jquery-1.10.2.js"></script>
+<script src="/elicensing/Scripts/jquery-1.12.4.js"></script>
+<script src="/elicensing/Scripts/jquery-3.6.0.js"></script>
+<script src="/elicensing/Scripts/moment.js"></script>
+
+    <script src="/elicensing/Scripts/kendo/kendo.all.min.js"></script>
+<script src="/elicensing/Scripts/kendo/kendo.aspnetmvc.min.js"></script>
+
+    <script src="/elicensing/Scripts/modernizr-2.6.2.js"></script>
+<script src="/elicensing/Scripts/modernizr-2.8.3.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="/elicensing/favicon.ico">
+    <link href="/elicensing/Content/dashboard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/elicensing/Content/custom.css" />
+    <link rel="stylesheet" href="/elicensing/Content/Ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+
+    
+    <style>
+        .close {
+            color: #fff;
+            opacity: 1;
+        }
+
+        .float {
+            position: sticky;
+            bottom: 40px;
+            left: 83vw;
+            background-color: #2f85d1;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .my-float {
+            margin-top: 22px;
+        }
+
+        body {
+            padding-bottom: 0px !important;
+        }
+    </style>
+
+    
+</head>
+<body onload="CheckFragment()">
+    <div class="header-wrapper navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/elicensing/" class="navbar-brand">
+                    <img src="/elicensing/Content/images/elic_white.svg" />
+                    
+                </a>
+                
+
+
+
+            </div>
+            <div class="navbar-collapse collapse menu-responsive">
+                
+        <ul class="nav navbar-nav navbar-right">
+            
+            <li><a href="/elicensing/Account/Out_Services">Konsultasi Awal</a> </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bantuan <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="/elicensing/Help">Daftar Dokumen Bantuan</a> </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/elicensing/Account/Redirect_New" id="registerLink">Registrasi</a>
+            </li>
+            <li><a href="/elicensing/Account/Login" id="loginLink">Log in</a></li>
+        </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    
+<div class="container body-content">
+    
+
+
+<h3>Daftar Dokumen Bantuan</h3>
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <table class="table table-sm table-striped">
+                <thead>
+                    <tr>
+                        <th width="5%">No.</th>
+                        <th width="95%">Nama Dokumen</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td style="cursor:pointer;">
+                            <a href="/elicensing/helps/Buku FAQ Perizinan Terpadu BI melalui FO Perizinan.pdf" target="_blank">Buku FAQ Perizinan Terpadu BI melalui FO Perizinan</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td style="cursor:pointer;">
+                            <a href="/elicensing/helps/Petunjuk Penggunaan Aplikasi e-Licensing.pdf" target="_blank">Petunjuk Teknis Penggunaan</a>
+                        </td>
+                    </tr>
+                    <tr id="row3">
+                        <td>3</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse3" aria-expanded="false">Ketentuan Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan</a>
+                            <ul class="collapse" id="collapse3">
+                                <li><a href="/elicensing/helps/PBI 22.8.PBI.2020 - Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan.pdf" target="_blank">PBI 22.8.PBI.2020 – Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan</a></li>
+                                <li><a href="/elicensing/helps/PADG 22.12.PADG.2020 - Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan.pdf" target="_blank">PADG 22.12.PADG.2020 - Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    
+					<tr>
+                        <td>4</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse4" aria-expanded="false">Ketentuan Sistem Pembayaran</a>
+                            <ul class="collapse" id="collapse4">
+                                <li><a href="/elicensing/helps/PBI_222320 Sistem Pembayaran.pdf" target="_blank">PBI_222320 Sistem Pembayaran</a></li>
+                                <li><a href="/elicensing/helps/PBI_230621 Penyedia Jasa Pembayaran.pdf" target="_blank">PBI_230621 Penyedia Jasa Pembayaran</a></li>
+								<li><a href="/elicensing/helps/PBI_230721 Penyelenggara Infrastruktur Sistem Pembayaran.pdf" target="_blank">PBI_230721 Penyelenggara Infrastruktur Sistem Pembayaran</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+					<tr id="row5">
+                        <td>5</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse5" aria-expanded="false">Dokumen Persyaratan Perizinan Penyedia Jasa Pembayaran (PJP) dan Penetapan Penyelenggara infrastruktur Sistem Pembayaran (PIP)</a>
+                            <ul class="collapse" id="collapse5">
+                                <li><a href="/elicensing/helps/Dokumen Persyaratan Izin Penyedia Jasa Pembayaran - Bank ver 1.1.pdf" target="_blank">Dokumen Persyaratan Izin Penyedia Jasa Pembayaran (PJP) - Bank</a></li>
+                                <li><a href="/elicensing/helps/Dokumen Persyaratan Izin Penyedia Jasa Pembayaran - Lembaga Selain Bank versi 1.1.pdf" target="_blank">Dokumen Persyaratan Izin Penyedia Jasa Pembayaran (PJP) - Lembaga Selain Bank</a></li>
+								<li><a href="/elicensing/helps/Dokumen Persyaratan Penetapan PIP - Bank ver 1.0.pdf" target="_blank">Dokumen Persyaratan Penetapan Penyelenggara Infrastruktur Sistem Pembayaran (PIP) - Bank</a></li>
+                                <li><a href="/elicensing/helps/Dokumen Persyaratan Penetapan PIP - Lembaga Selain Bank ver 1.0.pdf" target="_blank">Dokumen Persyaratan Penetapan Penyelenggara Infrastruktur Sistem Pembayaran (PIP) - Lembaga Selain Bank</a></li>
+							</ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse6" aria-expanded="false">Dokumen Pedoman dan Persyaratan Permohonan Persetujuan dan Pelaporan SP Ritel</a>
+                            <ul class="collapse" id="collapse6">
+                                <li><a href="/elicensing/helps/a. Pedoman - Tabel Persyaratan Dokumen Persetujuan Pengembangan Aktivitas Produk Kerja Sama.pdf" target="_blank">Pedoman Persyaratan Dokumen Persetujuan dan Pelaporan Pengembangan Aktivitas, Produk dan/atau kerja sama;</a></li>
+                                <li><a href="/elicensing/helps/b. Surat Pernyataan Asesmen Risiko.docx" target="_blank">Surat Pernyataan Asesmen Risiko;</a></li>
+                                <li><a href="/elicensing/helps/c. Form Matriks dan Katalog Simulasi Self-Assessment Risiko.xlsx" target="_blank">Matriks dan Katalog Self-Assessment Risiko;</a></li>
+                                <li><a href="/elicensing/helps/d. Matriks Penjelasan Kategori Risiko Rendah.docx" target="_blank">Matriks Penjelasan Kategori Risiko Rendah;</a></li>
+                                <li><a href="/elicensing/helps/e. Matriks Penjelasan Kategori Risiko Sedang Pengembangan Produk dan Aktivitas.docx" target="_blank">Matriks Penjelasan Kategori Risiko Sedang Pengembangan Aktivitas dan/atau Produk;</a></li>
+                                <li><a href="/elicensing/helps/f. Matriks Penjelasan Kategori Risiko Sedang Pengembangan Kerja Sama.docx" target="_blank">Matriks Penjelasan Kategori Risiko Sedang Pengembangan Kerja Sama;</a></li>
+                                <li><a href="/elicensing/helps/g. Matriks Penjelasan Kategori Risiko Sedang Pengembangan Produk dan Aktivitas dan Kerja Sama.docx" target="_blank">Matriks Penjelasan Kategori Risiko Sedang Pengembangan Aktivitas, Produk dan/atau Kerja Sama;</a></li>
+                                <li><a href="/elicensing/helps/h. Matriks Penjelasan Kategori Risiko Tinggi Pengembangan Produk dan Aktivitas.docx" target="_blank">Matriks Penjelasan Kategori Risiko Tinggi Pengembangan Aktivitas dan/atau Produk;</a></li>
+                                <li><a href="/elicensing/helps/i. Matriks Penjelasan Kategori Risiko Tinggi Pengembangan Produk dan Aktivitas dan Kerja Sama.docx" target="_blank">Matriks Penjelasan Kategori Risiko Tinggi Pengembangan Aktivitas, Produk dan/atau Kerja Sama.</a></li>
+                                <li><a href="/elicensing/helps/j. Matriks Tambahan Dokumen Pengembangan QRIS.docx" target="_blank">Matriks Dokumen Tambahan untuk Pengembangan QRIS.</a></li>
+								<li><a href="https://www.youtube.com/watch?v=AES6tQt-qYU" target="_blank">Video Tata Cara Pengajuan Permohonan Persetujuan /Pelaporan SP Ritel</a></li>
+								<li><a href="https://www.youtube.com/watch?v=go5tnKm7a7s" target="_blank">Video Penjelasan Matriks Self-Assessment Risiko dan Pre-Consultative Meeting</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr id="row7">
+                        <td>7</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse7" aria-expanded="false">Teknologi Finansial</a>
+                            <ul class="collapse" id="collapse7">
+                                <li><a href="/elicensing/helps/PBI TEKFIN.pdf" target="_blank">PBI Penyelenggaraan TekFin</a></li>
+                                <li><a href="/elicensing/helps/FAQ PBI.pdf" target="_blank">FAQ PBI Penyelenggaraan TekFin</a></li>
+                                <li><a href="/elicensing/helps/PADG TEKFIN.pdf" target="_blank">PADG Tata Cara Pendaftaran TekFin</a></li>
+                                <li><a href="/elicensing/helps/FAQ PADG.pdf" target="_blank">FAQ PADG Tata Cara Pendaftaran TekFin</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse8" aria-expanded="false">Regulatory Sandbox</a>
+                            <ul class="collapse" id="collapse8">
+                                <li><a href="/elicensing/helps/PADG REGSAND.pdf" target="_blank">PADG Regulatory Sandbox</a></li>
+                                <li><a href="/elicensing/helps/FAQ REGSAND.pdf" target="_blank">FAQ PADG Regulatory Sandbox</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse9" aria-expanded="false">Penyelenggara Pemrosesan Transaksi Pembayaran (Payment Gateway, Dompet Elektronik, dan Switching)</a>
+                            <ul class="collapse" id="collapse9">
+                                <li><a href="/elicensing/helps/PBI 18 40 DKSP - PPTP.pdf" target="_blank">PBI 18 40 DKSP - Penyelenggaraan Pemrosesan Transaksi Pembayaran</a></li>
+                                <li><a href="/elicensing/helps/SE 18 41 16 - PPTP.pdf" target="_blank">SE 18 41 16 - Penyelenggaraan Pemrosesan Transaksi Pembayaran</a></li>
+                                <li><a href="/elicensing/helps/SE 18 41 16 - PPTP (Lampiran).pdf" target="_blank">SE 18 41 16 - Penyelenggaraan Pemrosesan Transaksi Pembayaran (Lampiran)</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse10" aria-expanded="false">Ketentuan APMK</a>
+                            <ul class="collapse" id="collapse10">
+                                <li><a href="/elicensing/helps/PBI 11.11.2009 - APMK.pdf" target="_blank">PBI 11.11.2009 - APMK</a></li>
+                                <li><a href="/elicensing/helps/PBI 14.2.2012 - APMK.pdf" target="_blank">PBI 14.2.2012 - APMK</a></li>
+                                <li><a href="/elicensing/helps/SEkstern 11.10.2009 - APMK.pdf" target="_blank">SEkstern 11.10.2009 - APMK</a></li>
+                                <li><a href="/elicensing/helps/SEkstern 14.17.2012 - APMK.pdf" target="_blank">SEkstern 14.17.2012 - APMK</a></li>
+                                <li><a href="/elicensing/helps/SEkstern 17.51.2015 - APMK.pdf" target="_blank">SEkstern 17.51.2015 - APMK</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse11" aria-expanded="false">Ketentuan Uang Elektronik</a>
+                            <ul class="collapse" id="collapse11">
+                                <li><a href="/elicensing/helps/PBI_111209-Emoney.pdf" target="_blank">PBI_111209-Emoney</a></li>
+                                <li><a href="/elicensing/helps/PBI_160814-Emoney.pdf" target="_blank">PBI_160814-Emoney</a></li>
+                                <li><a href="/elicensing/helps/PBI_181716-Emoney.pdf" target="_blank">PBI_181716-Emoney</a></li>
+                                <li><a href="/elicensing/helps/SE_161114-Emoney.pdf" target="_blank">SE_161114-Emoney</a></li>
+                                <li><a href="/elicensing/helps/SE_182116-Emoney.pdf" target="_blank">SE_182116-Emoney</a></li>
+                                <li><a href="/elicensing/helps/Lampiran Bab I Bab II SEBI Emoney.pdf" target="_blank">Lampiran Bab I Bab II SEBI Uang Elektronik 16.11.DKSP 2014 Final</a></li>
+                                <li><a href="/elicensing/helps/Lampiran Bab III Bab IV SEBI Emoney.pdf" target="_blank">Lampiran Bab III Bab IV SEBI Uang Elektronik 16.11.DKSP 2014 Final</a></li>
+                                <li><a href="/elicensing/helps/Lampiran Bab V SEBI Emoney.pdf" target="_blank">Lampiran Bab V SEBI Uang Elektronik 16.11.DKSP 2014 Final</a></li>
+                                <li><a href="/elicensing/helps/Lampiran Bab VI SEBI Emoney.pdf" target="_blank">Lampiran Bab VI SEBI Uang Elektronik 16.11.DKSP 2014 Final</a></li>
+                                <li><a href="/elicensing/helps/List of docs - E-money issuer.pdf" target="_blank">List of docs - E-money issuer</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse12" aria-expanded="false">Ketentuan KUPVA BB</a>
+                            <ul class="collapse" id="collapse12">
+                                <li><a href="/elicensing/helps/PBI 1820 KUPVA 2016.pdf" target="_blank">PBI 18 20  PBI 2016 – Kegiatan Usaha Penukaran Valuta Asing Bukan Bank</a></li>
+                                <li><a href="/elicensing/helps/SE_184216 - KUPVA.pdf" target="_blank">SEBI 18 42 DKSP - Kegiatan Usaha Penukaran Valuta Asing Bukan Bank</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse13" aria-expanded="false">Ketentuan Transfer Dana</a>
+                            <ul class="collapse" id="collapse13">
+                                <li><a href="/elicensing/helps/PBI 14.23.2012 - Transfer Dana.pdf" target="_blank">PBI 14.23.2012 - Transfer Dana</a></li>
+                                <li><a href="/elicensing/helps/SEBI 15.23.2013 - Transfer Dana.pdf" target="_blank">SEBI 15.23.2013 - Transfer Dana</a></li>
+                                <li><a href="/elicensing/helps/SEBI 15.23.2013 - Transfer Dana (Lampiran).pdf" target="_blank">SEBI 15.23.2013 - Transfer Dana (Lampiran)</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse14" aria-expanded="false">Ketentuan UKA</a>
+                            <ul class="collapse" id="collapse14">
+                                <li><a href="/elicensing/helps/PBI 19.7.2017 - Pembawaan UKA.pdf" target="_blank">PBI 19.7.2017 - Pembawaan UKA</a></li>
+                                <li><a href="/elicensing/helps/PBI 20.2.2018 - Perubahan Pembawaan UKA.pdf" target="_blank">PBI 20.2.2018 - Perubahan Pembawaan UKA</a></li>
+                                <li><a href="/elicensing/helps/PADG 20.12.2018 Pembawaan UKA.pdf" target="_blank">PADG 20.12.2018 Pembawaan UKA</a></li>
+                                <li><a href="/elicensing/helps/PADG 20.12.2018 Pembawaan UKA (Lampiran).pdf" target="_blank">PADG 20.12.2018 Pembawaan UKA (Lampiran)</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse15" aria-expanded="false">Ketentuan Perizinan/Persetujuan Pasar Keuangan</a>
+                            <ul class="collapse" id="collapse15">
+                                <li><a data-toggle="collapse" href="#collapse15a" aria-expanded="false" style="font-style: italic">Negotiable Certificate of Depocit (NCD)/Sertifikat Deposito</></li>
+                                <ul class="collapse" id="collapse15a">
+                                    <li><a href="/elicensing/helps/19_2_PBI_2017 - NCD.pdf" target="_blank">PBI: 19/2/PBI/2017 - (Penerbit, Perantara Pelaksanaan, Penatausahaan (kustodian))</a></li>
+                                    <li><a href="/elicensing/helps/19_7_PADG_2017 - NCD.pdf" target="_blank">PADG No.19/7/PADG/2017  - (Penerbit, Perantara Pelaksanaan, Penatausahaan (kustodian))</a></li>
+                                </ul>
+                                <li><a data-toggle="collapse" href="#collapse15b" aria-expanded="false">Surat Berharga Komersil</a></li>
+                                <ul class="collapse" id="collapse15b">
+                                    <li><a href="/elicensing/helps/19_9_PBI_2017 - SBK.pdf" target="_blank">PBI: 19/9/PBI/2017 - (Penerbit SBK dan Lembaga Pendukung)</a></li>
+                                    <li><a href="/elicensing/helps/20_1_PADG_2018 - SBK Penerbit.pdf" target="_blank">PADG No.20/1/PADG/2018 - (Penerbit SBK)</a></li>
+                                    <li><a href="/elicensing/helps/19_9_PADG_2017 - SBK Lembaga Pendukung.pdf" target="_blank">PADG No.19/9/PADG/2017 (Lembaga pendukung)</a></li>
+                                </ul>
+                                <li><a data-toggle="collapse" href="#collapse15c" aria-expanded="false">Market Operator</a></li>
+                                <ul class="collapse" id="collapse15c">
+                                    <li><a href="/elicensing/helps/21_5_PBI_2019 - Market Operator.pdf" target="_blank">PBI: 21/5/PBI/2019 - (Pialang Pasar Uang, Systematic Internalisers, dan Penyedia ETP)</a></li>
+                                    <li><a href="/elicensing/helps/21_17_PADG_2019 - Market Operator PPU.pdf" target="_blank">PADG No.21/17/PADG/2019 - (Pialang Pasar Uang (PPU) Rupiah & Valuta Asing (VA))</a></li>
+                                    <li><a href="/elicensing/helps/21_20_PADG_2019 - Market Operator Sistem internalisers.pdf" target="_blank">PADG No.21/20/PADG/2019 (Systematic Internalisers)</a></li>
+                                    <li><a href="/elicensing/helps/21_19_PADG_2019 - Market Operator ETP.pdf" target="_blank">PADG No.21/19/PADG/2019 (Penyedia Electronic Trading Platform (ETP))</a></li>
+                                </ul>
+                                <li><a data-toggle="collapse" href="#collapse15d" aria-expanded="false">Lembaga Sertifikasi</a></li>
+                                <ul class="collapse" id="collapse15d">
+                                    <li><a href="/elicensing/helps/19_5_PBI_2017 - Lembaga Sertifikasi.pdf" target="_blank">PBI: 19/5/PBI/2017 - (Lembaga Sertifikasi Profesi)</a></li>
+                                    <li><a href="/elicensing/helps/19_5_PADG_2017 - Lembaga Sertifikasi.pdf" target="_blank">PADG No.19/5/PADG/2017 - (Lembaga Sertifikasi Profesi)</a></li>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse16" aria-expanded="false">Ketentuan Perizinan/Persetujuan Keuangan Syariah</a>
+                            <ul class="collapse" id="collapse16">
+                                <li><a href="/elicensing/helps/20_9_PBI_2018 - DEKS.pdf" target="_blank">PBI No.20/9/PBI/2018 - Sertifikat Deposito Syariah</a></li>
+                                <li><a href="/elicensing/helps/20_27_PADG_2018 - DEKS.pdf" target="_blank">PADG No.20/27/PADG/2018 - Sertifikat Deposito Syariah</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse17" aria-expanded="false">Ketentuan Perizinan/Persetujuan Pengelolaan Uang</a>
+                            <ul class="collapse" id="collapse17">
+                                <li><a href="/elicensing/helps/21_10_PBI_2019 - DPU.pdf" target="_blank">PBI No.21/10/PBI/2019 - Pengelolaan Uang Rupiah (PUR)</a></li>
+                                
+                                <li><a data-toggle="collapse" href="#collapse17a" aria-expanded="false">PADG No.22/6/PADG/2020 - Penyelenggaran Jasa Pengelolaan Uang Rupiah (PJPUR)</a></li>
+                                <ul class="collapse" id="collapse17a">
+                                    <li><a href="/elicensing/helps/PADG_220620.pdf" target="_blank">PADG No.22/6/PADG/2020 - Penyelenggaran Jasa Pengelolaan Uang Rupiah (PJPUR)</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran I PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Prinsip PJPUR.pdf" target="_blank">Lampiran I PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Prinsip PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/LAMPIRAN II PADG No.22_6_PADG_2020 ttg PJPUR- dokumen persyaratan penilaian kemampuan  kepatutan.pdf" target="_blank">Lampiran II PADG No.22_6_PADG_2020 ttg PJPUR- dokumen persyaratan penilaian kemampuan  kepatutan</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran III PADG No.22_6_PADG_2020 ttg PJPUR - Standarisasi sarana  Prasarana  Kapasitas.pdf" target="_blank">Lampiran III PADG No.22_6_PADG_2020 ttg PJPUR - Standarisasi sarana  Prasarana  Kapasitas</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran IV PADG No.22_6_PADG_2020_tentang PJPUR - Surat Pernyataan Laporan Keuangan.pdf" target="_blank">Lampiran IV PADG No.22_6_PADG_2020_tentang PJPUR - Surat Pernyataan Laporan Keuangan</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran V PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Izin Operasional PJPUR.pdf" target="_blank">Lampiran V PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Izin Operasional PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran VI PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Perpanjangan Izin PJPUR.pdf" target="_blank">Lampiran VI PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Perpanjangan Izin PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran VII PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Izin Prinsip Kantor Cabang PJPUR.pdf" target="_blank">Lampiran VII PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Izin Prinsip Kantor Cabang PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran VIII PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Operasional Kantor Cabang PJPUR.pdf" target="_blank">Lampiran VIII PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Operasional Kantor Cabang PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran IX PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Identitas.pdf" target="_blank">Lampiran IX PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Identitas</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran X PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Kepemilikan Saham Mayoritas.pdf" target="_blank">Lampiran X PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Kepemilikan Saham Mayoritas</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XI PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Pengurus.pdf" target="_blank">Lampiran XI PADG No.22_6_PADG_2020 ttg PJPUR - Surat Perubahan Pengurus</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XII PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Perubahan Alamat.pdf" target="_blank">Lampiran XII PADG No.22_6_PADG_2020 ttg PJPUR - Surat Permohonan Perubahan Alamat</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XIII PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Prinsip Perubahan Status Kantor PJPUR.pdf" target="_blank">Lampiran XIII PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan Izin Prinsip Perubahan Status Kantor PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XIV PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan izin penggabungan  Peleburan.pdf" target="_blank">Lampiran XIV PADG No.22_6_PADG_2020 ttg PJPUR- Surat Permohonan izin penggabungan  Peleburan</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XV PADG No.22_6_PADG_2020 ttg PJPUR - format laporan.pdf" target="_blank">Lampiran XV PADG No.22_6_PADG_2020 ttg PJPUR - format laporan</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XVI PADG No.22_6_PADG_2020 ttg PJPUR - Informasi Perusahaan PJPUR.pdf" target="_blank">Lampiran XVI PADG No.22_6_PADG_2020 ttg PJPUR - Informasi Perusahaan PJPUR</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XVII - Surat Penghentian Kegiatan operasional Kantor Pusat.pdf" target="_blank">Lampiran XVII - Surat Penghentian Kegiatan operasional Kantor Pusat</a></li>
+                                    <li><a href="/elicensing/helps/Lampiran XVIII - Surat Penutupan Kantor Cabang.pdf" target="_blank">Lampiran XVIII - Surat Penutupan Kantor Cabang</a></li>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse18" aria-expanded="false">Ketentuan Permohonan Utang Luar Negeri</a>
+                            <ul class="collapse" id="collapse18">
+                                <li><a href="/elicensing/helps/21_1_PBI2019 - DSSK.pdf" target="_blank">PBI No.21/1/PBI/2019 - Utang Luar Negeri Bank</a></li>
+                                <li><a href="/elicensing/helps/21_3_PADG_2019 - DSSK.pdf" target="_blank">PADG No.21/3/PADG/2019 - Utang Luar Negeri Bank</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse19" aria-expanded="false">Ketentuan Perizinan/Persetujuan Pengelolaan Moneter</a>
+                            <ul class="collapse" id="collapse19">
+                                
+                                <li><a href="/elicensing/helps/PBI_221420.pdf" target="_blank">PBI No. 22/14/PBI/2020 – Tentang Operasi Moneter</a></li>
+                                <li><a href="/elicensing/helps/PADG_222620.pdf" target="_blank">PADG No. 22/26/PADG/2020 – Tentang Kepesertaan Operasi Moneter</a></li>
+                                <li><a href="/elicensing/helps/PADG Kepesertaan OM - Lampiran I.pdf" target="_blank">LAMPIRAN I PADG No. 22/26/PADG/2020 – Tentang Kepesertaan Operasi Moneter</a></li>
+                                <li><a href="/elicensing/helps/PADG Kepesertaan OM - Lampiran II.pdf" target="_blank">LAMPIRAN II PADG No. 22/26/PADG/2020 – Tentang Kepesertaan Operasi Moneter</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse20" aria-expanded="false">Nasabah Bank Indonesia</a>
+                            <ul class="collapse" id="collapse20">
+                                
+                                <li><a href="/elicensing/helps/PBI 23_15_2021 LAYANAN KEBANKSENTRALAN.pdf" target="_blank">Layanan Kebanksentralan</a></li>
+                                <li><a href="/elicensing/helps/PADG 23_18_2021 PERATURAN PELAKSANAAN LAYANAN KEBANKSENTRALAN.pdf" target="_blank">Peraturan Pelaksanaan Layanan Kebanksentralan</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr id="row21">
+                        <td>21</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse21" aria-expanded="false">Video Tutorial Penggunaan Aplikasi</a>
+                            <ul class="collapse" id="collapse21">
+                                <li><a href="https://youtu.be/Q5GSiNyMIms" target="_blank">Registrasi</a></li>
+                                <li><a href="https://youtu.be/KrGsnd2vZgs" target="_blank">Profil Pemohon</a></li>
+                                <li><a href="https://youtu.be/PLrjuhDXaOE" target="_blank">Izin Prinsip Penyelenggaraan Jasa Pengelolaan Uang Rupiah</a></li>
+                                <li><a href="https://youtu.be/nd9tSeRmgzo" target="_blank">Izin Operasional Penyelenggaraan Jasa Pengelolaan Uang Rupiah</a></li>
+                                <li><a href="https://youtu.be/_TM3-E5LVdg" target="_blank">Izin Prinsip Pembukaan Kantor Cabang PJPUR</a></li>
+                                <li><a href="https://youtu.be/qYxXeYqm-II" target="_blank">Izin Operasional Pembukaan Kantor Cabang PJPUR</a></li>
+                                <li><a href="https://youtu.be/Jb8arONjNRg" target="_blank">Pendaftaran PJPUR yang melakukan kegiatan pembawaan uang kertas asing (UKA)</a></li>
+                                <li><a href="https://youtu.be/d5BjwnSq93M" target="_blank">Perubahan Dewan Komisaris dan atau Direksi</a></li>
+                                <li><a href="https://youtu.be/hXD2dBkG_Jg" target="_blank">Perubahan Nama Perseroan Terbatas</a></li>
+                                <li><a href="https://youtu.be/MaRRsqoe-Xg" target="_blank">Perubahan Alamat Kantor Pusat PJPUR</a></li>
+                                <li><a href="https://youtu.be/_kwqxj9s7cI" target="_blank">Perubahan Alamat Kantor Cabang PJPUR</a></li>
+                                <li><a href="https://youtu.be/v02XdZ__h3s" target="_blank">Penghentian Kegiatan Usaha Kantor Pusat</a></li>
+                                <li><a href="https://youtu.be/hZQolUnPTl0" target="_blank">Penutupan Kantor Cabang</a></li>
+                                <li><a href="https://youtu.be/A_XCiFe3tvg" target="_blank">Perizinan atau Persetujuan menjadi Nasabah Bank Indonesia</a></li>
+                                <li><a href="https://youtu.be/tJm1dWtq4XA" target="_blank">Permohonan Persetujuan Masuk Pasar ULN</a></li>
+                                <li><a href="https://youtu.be/9TMtPZMJa0U" target="_blank">Permohonan Izin sebagai Penerbit Sertifikat Deposito Syariah yang ditransaksikan di Pasar Uang</a></li>
+                                <li><a href="https://youtu.be/_HRDVZsC_14" target="_blank">Pendaftaran Lembaga Pendukung Penatausahaan dan Penyelesaiaan Transaksi Sertifikat Deposito menjadi Lembaga Pendukung Penatausahaan dan Penyelesaiaan Transaksi Sertifikat Deposito Syariah</a></li>
+                                <li><a href="https://youtu.be/PJGXtsGXzeU" target="_blank">Pendaftaran Lembaga Pendukung Penatausahaan dan Penyelesaiaan Transaksi Sertifikat Deposito Syariah</a></li>
+                                <li><a href="https://youtu.be/1t4N7uZgqvU" target="_blank">Pendaftaran Lembaga Pendukung Transaksi Sertifikat Deposito menjadi Lembaga Pendukung Transaksi Sertifikat Deposito Syariah</a></li>
+                                <li><a href="https://youtu.be/4D3PiS1Dj84" target="_blank">Pendaftaran Lembaga Pendukung Transaksi Sertifikat Deposito Syariah</a></li>
+                                <li><a href="https://youtu.be/Y3_M7B_sgjE" target="_blank">Permohonan Penyelenggara APMK - Kartu ATM</a></li>
+                                <li><a href="https://youtu.be/mcml27jL7-0" target="_blank">Permohonan Penyelenggara APMK - Kartu Debit</a></li>
+                                <li><a href="https://youtu.be/_rTkQBqUCzw" target="_blank">Permohonan Penyelenggara APMK - Kartu Kredit</a></li>
+                                <li><a href="https://youtu.be/kuAaaoJGli0" target="_blank">Permohonan Penyelenggara Dompet Elektronik</a></li>
+                                <li><a href="https://youtu.be/ayEOVCYNGUo" target="_blank">Permohonan Penyelenggara Switching</a></li>
+                                <li><a href="https://youtu.be/kPMTLfYcaKE" target="_blank">Permohonan Penyelenggara Transfer Dana dengan Fitur Uang Elektronik</a></li>
+                                <li><a href="https://youtu.be/zahw5EXXf8k" target="_blank">Permohonan Penyelenggara Uang Elektronik</a></li>
+                                <li><a href="https://youtu.be/zc7drZJewEc" target="_blank">Perizinan Sebagai Peserta Dalam Operasi Moneter (OM) Konvensional dalam Rupiah</a></li>
+                                <li><a href="https://youtu.be/F92oYtASEDQ" target="_blank">Perizinan Sebagai Peserta Dalam Operasi Moneter (OM) Konvensional dalam Valas </a></li>
+                                <li><a href="https://youtu.be/Osxa1fODPSI" target="_blank">Perizinan Sebagai Peserta Dalam Operasi Moneter (OM) Syariah dalam Rupiah</a></li>
+                                <li><a href="https://youtu.be/TdhOGLHroBc" target="_blank">Perizinan Sebagai Peserta Dalam Operasi Moneter (OM) Syariah dalam Valas</a></li>
+                                <li><a href="https://youtu.be/6kGjh8Lbndg" target="_blank">Perizinan Lembaga Perantara OPT Konvensional dan Syariah dalam Rupiah bagi Pialang Pasar Uang </a></li>
+                                <li><a href="https://youtu.be/S6y01icqBq4" target="_blank">Perizinan Sebagai Lembaga Perantara Dalam Operasi Pasar Terbuka (OPT) Konvensional Bagi Perusahaan Efek dalam Rupiah</a></li>
+                                <li><a href="https://youtu.be/eZ3xv7bCGf0" target="_blank">Perizinan Sebagai Lembaga Perantara Dalam Operasi Pasar Terbuka (OPT) Syariah Bagi Perusahaan Efek dalam Rupiah</a></li>
+                                <li><a href="https://youtu.be/PdgMqfyM7Wo" target="_blank">Perizinan Lembaga Perantara OPT Konvensional dan Syariah dalam Valas bagi Pialang Pasar Uang </a></li>
+                                <li><a href="https://youtu.be/xHk1iCoBWO0" target="_blank">Kustodian Sertifikat Deposito</a></li>
+                                <li><a href="https://youtu.be/e3D1xnYs0a4" target="_blank">Penerbit Sertifikat Deposito Yang Akan Ditransaksikan di Pasar Uang</a></li>
+                                <li><a href="https://youtu.be/7mEOL-ymJx4" target="_blank">Pendaftaran Penerbitan Surat Berharga Komersial (SBK)</a></li>
+                                <li><a href="https://youtu.be/6J8lqQTTVU4" target="_blank">Lembaga Pendukung Transaksi SBK</a></li>
+                                <li><a href="https://youtu.be/m4SBneRLjGo" target="_blank">Lembaga pendukung penatausahaan dan penyelesaian transaksi SBK</a></li>
+                                <li><a href="https://youtu.be/0_cG1dfBDRU" target="_blank">Perantara Pelaksanaan Transaksi Sertifikat Deposito</a></li>
+                                <li><a href="https://youtu.be/VNQ0Fn8ZymQ" target="_blank">Lembaga Sertifikasi Profesi</a></li>
+                                <li><a href="https://youtu.be/20nAbR4kEkI" target="_blank">Persetujuan Prinsip Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                <li><a href="https://youtu.be/kmBVO3Uic9g" target="_blank">Izin usaha Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                <li><a href="https://youtu.be/qQr1umZAtGQ" target="_blank">Perubahan Operasional Perusahaan Pialang Pasar Uang dan/atau Pasar Valuta Asing</a></li>
+                                <li><a href="https://youtu.be/TK8rh5eDEH0" target="_blank">Permohonan izin Aksi Korporasi PPU (Penggabungan, Peleburan, Pengambilalihan, dan/atau Pemisahan)</a></li>
+                                <li><a href="https://youtu.be/c7tHKDVOHFU" target="_blank">Lembaga Pendukung Penerbitan SBK</a></li>
+                                <li><a href="https://youtu.be/CJ9JJVQkfKg" target="_blank">Penyedia Electronic Trading Platform (ETP) – Aksi Korporasi</a></li>
+                                <li><a href="https://youtu.be/jm3QMX1p1JA" target="_blank">Systematic Internaliser – Perubahan</a></li>
+                                <li><a href="https://youtu.be/45iIC7sHzvo" target="_blank">Penyedia Electronic Trading Platform (ETP) - Izin Prinsip</a></li>
+                                <li><a href="https://youtu.be/IsEFi9AWViw" target="_blank">Penyedia Electronic Trading Platform (ETP) - Izin Usaha</a></li>
+                                <li><a href="https://youtu.be/-_a7n_rST38" target="_blank">Penyedia Electronic Trading Platform (ETP) - Perubahan</a></li>
+                                <li><a href="https://youtu.be/eD0eh8pECKQ" target="_blank">Systematic Internaliser - Izin Operasional</a></li>
+                                <li><a href="https://youtu.be/8xp4ULwnxlw" target="_blank">Peleburan PJPUR</a></li>
+                                <li><a href="https://youtu.be/N1GzETXf9K0" target="_blank">Pemisahan PJPUR</a></li>
+                                <li><a href="https://youtu.be/TsW9a-XbaWY" target="_blank">Penggabungan PJPUR</a></li>
+                                <li><a href="https://youtu.be/jAt0yRGJLTU" target="_blank">Perubahan Komposisi Saham</a></li>
+                                <li><a href="https://youtu.be/YTsF9kOx6ow" target="_blank">Pengambilalihan PJPUR</a></li>
+                                <li><a href="https://youtu.be/3_Mxof46EAo" target="_blank">Perubahan Status Kantor PJPUR</a></li>
+                                <li><a href="https://youtu.be/mUBbXYo3POU" target="_blank">Perpanjangan Izin Operasional Penyelenggaraan Jasa Pengelolaan Uang Rupiah</a></li>
+                                <li><a href="https://youtu.be/L4aJYfvxGzA" target="_blank">Perubahan Jenis Kategori Kegiatan PJPUR</a></li>
+                                <li><a href="https://youtu.be/gbC5RUYqxfE" target="_blank">Perubahan Logo Perseroan Terbatas</a></li>
+                                <li><a href="https://youtu.be/1BpdTZYNdFw" target="_blank">Pencabutan Permohonan Penyelenggara APMK - Kartu Kredit</a></li>
+                                <li><a href="https://youtu.be/xVvArW_Qx6o" target="_blank">PPTBU Aksi Korporasi - Perizinan Sebagai Peserta Dalam Operasi Moneter (OM) Konvensional dalam Rupiah</a></li>
+                                <li><a href="https://youtu.be/GwBbcgVMhpQ" target="_blank">PPTBU Penyampaian Informasi Perubahan Pemegang Saham Pengendali Bank</a></li>
+                                <li><a href="https://youtu.be/i5VuzLjWFk8" target="_blank">PPTBU Penyampaian Rencana Aksi Korporasi</a></li>
+                                <li><a href="https://youtu.be/lWYuuUxuEmo" target="_blank">Profil - Bank</a></li>
+                                <li><a href="https://youtu.be/-PuQKSV2k3g" target="_blank">Profil - Non Bank</a></li>
+                                <li><a href="https://youtu.be/xbQtL2lFZZA" target="_blank">Registrasi - Bank</a></li>
+                                <li><a href="https://youtu.be/8IvpgsubvCA" target="_blank">Registrasi - Non Bank</a></li>
+                                <a data-toggle="collapse" href="#collapse21a" aria-expanded="false">KUPVA BB</a>
+                                <ul class="collapse" id="collapse21a">
+                                    <li><a href="https://youtu.be/UP8OKLXWgCU" target="_blank">Registrasi KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/_-PfMDgPB9o" target="_blank">Permohonan Izin Baru KUPVA BB </a></li>
+                                    <li><a href="https://youtu.be/8q2oyAOzGwo" target="_blank">Pencabutan KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/7GxdXnnxU3I" target="_blank">Perpanjangan KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/3AByVacAJ7s" target="_blank">Perubahan Nama KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/-RKUJJRht8g" target="_blank">Perubahan Pengurus KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/8x1Y8pHqD6c" target="_blank">Perubahan Modal Dasar KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/0uxERLEOu-g" target="_blank">Pembukaan Kantor Cabang KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/fyVfRSKrebg" target="_blank">Perubahan Alamat Kantor Cabang KUPVA BB</a></li>
+                                    <li><a href="https://youtu.be/4n0W0zw6Ogk" target="_blank">Pemberhentian Kantor Cabang KUPVA BB</a></li>
+                                </ul>
+                                <br />
+                                <a data-toggle="collapse" href="#collapse21b" aria-expanded="false">PTD BB dan PTD UE</a>
+                                <ul class="collapse" id="collapse21b">
+                                    <li><a href="https://youtu.be/fx_uZOK9p1g" target="_blank">Permohonan Izin Baru PTD BB</a></li>
+                                    <li><a href="https://youtu.be/khF62I02L3k" target="_blank">Pencabutan PTD BB</a></li>
+                                    <li><a href="https://youtu.be/u9M5tAbL6zA" target="_blank">Pengambilalihan PTD BB</a></li>
+                                    <li><a href="https://youtu.be/K9hwCJ-rfuI" target="_blank">Perubahan Nama PTD BB</a></li>
+                                    <li><a href="https://youtu.be/eHh-G3xOiWE" target="_blank">Perubahan Pengurus PTD BB</a></li>
+                                    <li><a href="https://youtu.be/W0T5OKk5BZ8" target="_blank">Perubahan Alamat PTD BB</a></li>
+                                    <li><a href="https://youtu.be/WkFahY0bfDI" target="_blank">Permohonan Izin Baru PTD UE</a></li>
+                                    <li><a href="https://youtu.be/fLIs4y9g0zQ" target="_blank">Pencabutan PTD UE</a></li>
+                                </ul>
+                                <br />
+                                <a data-toggle="collapse" href="#collapse21c" aria-expanded="false">UKA</a>
+                                <ul class="collapse" id="collapse21c">
+                                    <li><a href="https://youtu.be/KzXw1DB_mKc" target="_blank">Input Persetujuan Kuota Pembawaan UKA</a></li>
+                                    <li><a href="https://youtu.be/nLg2Wi4SPYU" target="_blank">Izin Baru Pembawaan UKA</a></li>
+                                    <li><a href="https://youtu.be/tKtwARaeQFY" target="_blank">Perpanjangan Izin Pembawaan UKA</a></li>
+                                    <li><a href="https://youtu.be/XHGcwqJ90P8" target="_blank">Realisasi Pembawaan UKA Penumpang</a></li>
+                                    <li><a href="https://youtu.be/er1-JkddQck" target="_blank">Realisasi Pembawaan UKA Kargo</a></li>
+                                </ul>
+                                <br />
+                                <a data-toggle="collapse" href="#collapse21d" aria-expanded="false">DPPK</a>
+                                <ul class="collapse" id="collapse21d">
+                                    <a data-toggle="collapse" href="#collapse21d1" aria-expanded="false">BANK</a>
+                                    <ul class="collapse" id="collapse21d1">
+                                        <li><a href="https://youtu.be/_iICsRMIn9A" target="_blank">Izin Baru Izin usaha Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                        <li><a href="https://youtu.be/yHBWQz4ygLc" target="_blank">Izin Baru Kustodian Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/p7To6XffPH4" target="_blank">Izin Baru Lembaga Pendukung Penatausahaan dan Penyelesaian Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/0L84PlpBybU" target="_blank">Izin Baru Lembaga Pendukung Penerbitan SBK</a></li>
+                                        <li><a href="https://youtu.be/Ai6m8HPq2LE" target="_blank">Izin Baru Penerbit Sertifikat Deposito Yang Akan Ditransaksikan di Pasar Uang</a></li>
+                                        <li><a href="https://youtu.be/qUbHmrh03rQ" target="_blank">Izin Baru Systematic Internaliser - Izin Operasional</a></li>
+                                        <li><a href="https://youtu.be/u-wFOoLnJ4g" target="_blank">Izin Baru Systematic Internaliser - Perubahan</a></li>
+                                        <li><a href="https://youtu.be/YcBQL7MEN-w" target="_blank">Pencabutan Izin usaha Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                        <li><a href="https://youtu.be/Nmjw14NfRvU" target="_blank">Pencabutan Kustodian Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/kqyKuEygfuM" target="_blank">Pencabutan Lembaga Pendukung Penatausahaan dan Penyelesaian Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/0jQ1IcWyzig" target="_blank">Pencabutan Lembaga Pendukung Penerbitan SBK</a></li>
+                                        <li><a href="https://youtu.be/UDoO6N-DGiM" target="_blank">Pencabutan Penerbit Sertifikat Deposito Yang Akan Ditransaksikan di Pasar Uang</a></li>
+                                        <li><a href="https://youtu.be/2zgGMsdj-so" target="_blank">Pencabutan Systematic Internaliser – Izin Operasional</a></li>
+                                    </ul>
+                                    <br />
+                                    <a data-toggle="collapse" href="#collapse21d2" aria-expanded="false">NON BANK</a>
+                                    <ul class="collapse" id="collapse21d2">
+                                        <li><a href="https://youtu.be/zPnoLiEDJd4" target="_blank">Izin Baru Aksi Korporasi untuk Transaksi Derivatif Suku Bunga dan Nilai Tukar Over-the-counter (CCP SBNT)</a></li>
+                                        <li><a href="https://youtu.be/pV6IDyeI5h4" target="_blank">Izin Baru Izin Usaha untuk Transaksi Derivatif Suku Bunga dan Nilai Tukar Over-the-counter (CCP SBNT)</a></li>
+                                        <li><a href="https://youtu.be/eXV31kanNfE" target="_blank">Izin Baru Izin Usaha Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                        <li><a href="https://youtu.be/RE8y9ukU17Q" target="_blank">Izin Baru Konektivitas atas Inisiatif CCP SBNT</a></li>
+                                        <li><a href="https://youtu.be/9foDgqk7BZ4" target="_blank">Izin Baru Kustodian Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/iuRoZMWcDek" target="_blank">Izin Baru Lembaga Pendukung Penatausahaan dan Penyelesaian Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/Vr5i9voCwEs" target="_blank">Izin Baru Lembaga Pendukung Penerbitan SBK</a></li>
+                                        <li><a href="https://youtu.be/vuB-sQP6ugs" target="_blank">Izin Baru Lembaga Pendukung Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/uV-NCevS-9s" target="_blank">Izin Baru Lembaga Sertifikasi Profesi</a></li>
+                                        <li><a href="https://youtu.be/rq7X_Q5-dGk" target="_blank">Izin Baru Pendaftaran Penerbitan SBK</a></li>
+                                        <li><a href="https://youtu.be/HlUu80_agOU" target="_blank">Izin Baru Penyedia ETP - Izin Usaha</a></li>
+                                        <li><a href="https://youtu.be/S2TxRQkYmHM" target="_blank">Izin Baru Penyedia ETP - Perubahan</a></li>
+                                        <li><a href="https://youtu.be/RTkyLgV_a7c" target="_blank">Izin Baru Penyedia ETP - Aksi Korporasi</a></li>
+                                        <li><a href="https://youtu.be/rReS1CYh7wE" target="_blank">Izin Baru Penyedia ETP- Izin Prinsip</a></li>
+                                        <li><a href="https://youtu.be/Br90o7X5xGM" target="_blank">Izin Baru Perantara Pelaksanaan Transaksi Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/Ffc5FAAvPFA" target="_blank">Izin Baru Permohonan Izin Aksi Korporasi PPU</a></li>
+                                        <li><a href="https://youtu.be/b7QlzC2C5v0" target="_blank">Izin Baru Persetujuan Prinsip - CCP untuk Transaksi Derivatif Suku Bunga dan Nilai Tukar Over-the-counter</a></li>
+                                        <li><a href="https://youtu.be/QmuU83w0zuI" target="_blank">Izin Baru Persetujuan Prinsip bagi  Pialang Pasar Uang Rupiah dan Valas</a></li>
+                                        <li><a href="https://youtu.be/8jmfgZrLGgc" target="_blank">Izin Baru Perubahan Komisaris Independen dan atau Direktur CCP SBNT</a></li>
+                                        <li><a href="https://youtu.be/-BIx3VyFW5o" target="_blank">Izin Baru Perubahan Operasional Perusahaan Pialang Pasar Uang dan atau Pasar Valuta Asing</a></li>
+                                        <li><a href="https://youtu.be/XsT27X18Rr8" target="_blank">Pencabutan Izin Usaha untuk Transaksi Derivatif Suku Bunga dan Nilai Tukar Over-the-counter (CCP SBNT)</a></li>
+                                        <li><a href="https://youtu.be/dvQop6Mo0sg" target="_blank">Pencabutan Izin Usaha Bagi Perusahaan Pialang Pasar Uang Rupiah dan Valuta Asing</a></li>
+                                        <li><a href="https://youtu.be/Lmniz8bkPYQ" target="_blank">Pencabutan Kustodian Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/FE_azJcZT20" target="_blank">Pencabutan Lembaga Pendukung Penatausahaan dan Penyelesaian Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/P4Q8kikq3qg" target="_blank">Pencabutan Lembaga Pendukung Penerbitan SBK</a></li>
+                                        <li><a href="https://youtu.be/f6bn_rrDplM" target="_blank">Pencabutan Lembaga Pendukung Transaksi SBK</a></li>
+                                        <li><a href="https://youtu.be/hKdD600Tf18" target="_blank">Pencabutan Lembaga Sertifikasi Profesi</a></li>
+                                        <li><a href="https://youtu.be/L00xKu1MnWA" target="_blank">Pencabutan Perantara Pelaksanaan Transaksi Sertifikat Deposito</a></li>
+                                        <li><a href="https://youtu.be/8CHfzww60Fg" target="_blank">Penundaan Pendaftaran Penerbitan SBK</a></li>
+                                    </ul>
+                                </ul>
+                                <br />
+                                <a data-toggle="collapse" href="#collapse21e" aria-expanded="false">Kas Titipan</a>
+                                <ul class="collapse" id="collapse21e">
+                                    <a data-toggle="collapse" href="#collapse21e1" aria-expanded="false">BANK PENGELOLA</a>
+                                    <ul class="collapse" id="collapse21e1">
+                                        <li><a href="https://youtu.be/ei5Q9mgbwgU" target="_blank">Pengajuan Izin Baru Kas Titipan - Bank Pengelola</a></li>
+                                        <li><a href="https://youtu.be/YLTpf9XcHzc" target="_blank">Pengalihan Kerjasama Kas Titipan - Bank Pengelola</a></li>
+                                        <li><a href="https://youtu.be/a4NdscTUHvc" target="_blank">Penghentian Sementara Kas Titipan - Bank Pengelola</a></li>
+                                        <li><a href="https://youtu.be/VbQvfUQPNsI" target="_blank">Penutupan Kas Titipan - Bank Pengelola</a></li>
+                                        <li><a href="https://youtu.be/JeEmaLuTJYw" target="_blank">Perpanjangan Kas Titipan - Bank Pengelola</a></li>
+                                        <li><a href="https://youtu.be/75tmOOqPQ5I" target="_blank">Perubahan Dokumen Izin Baru Kas Titipan - Bank Pengelola</a></li>
+                                    </ul>
+                                    <br />
+                                    <a data-toggle="collapse" href="#collapse21e2" aria-expanded="false">BANK PESERTA</a>
+                                    <ul class="collapse" id="collapse21e2">
+                                        <li><a href="https://youtu.be/KTpp-tJu0ZY" target="_blank">Pengajuan Izin Baru Kas Titipan - Bank Peserta</a></li>
+                                        <li><a href="https://youtu.be/H0UblR4-oRE" target="_blank">Pengalihan Kerjasama Kas Titipan - Bank Peserta</a></li>
+                                        <li><a href="https://youtu.be/0yepYWsLYz44" target="_blank">Penghentian Sementara Kas Titipan - Bank Peserta</a></li>
+                                        <li><a href="https://youtu.be/qVXSJ2OWao8" target="_blank">Penutupan Kas Titipan - Bank Peserta</a></li>
+                                        <li><a href="https://youtu.be/jRuN_OInPdE" target="_blank">Perpanjangan Kas Titipan - Bank Peserta</a></li>
+                                    </ul>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td style="cursor:pointer;">
+                            <a href="https://youtu.be/68fmssFvYCw" target="_blank">Video Edukasi Perizinan Terpadu Bank Indonesia melalui Front Office Perizinan</a>
+                        </td>
+                    </tr>
+					 <tr>
+                        <td>23</td>
+                        <td style="cursor:pointer;">
+                            <a data-toggle="collapse" href="#collapse23" aria-expanded="false">Standar Nasional Open API Pembayaran (SNAP)</a>
+                            <ul class="collapse" id="collapse23">
+                                <li><a href="/elicensing/helps/PADG_231521_SNAP.pdf" target="_blank">PADG No. 23/15/PADG/2021 perihal Implementasi Standar Nasional Open Application Programming Interface Pembayaran</a></li>
+                                <li><a href="/elicensing/helps/Guideline Verifikasi.pdf" target="_blank">Guideline pengajuan verifikasi</a></li>
+								<li><a href="/elicensing/helps/Matriks Self Assesment.pdf" target="_blank">Matriks Penjelasan Kelengkapan Dokumen Pengajuan Verifikasi Implementasi Standar Nasional Open API Pembayaran (SNAP)</a></li>
+								<li><a href="/elicensing/helps/Berita Acara Uji Fungsional.pdf" target="_blank">Berita Acara Uji Fungsional</a></li>
+								<li><a href="/elicensing/helps/Skenario Functional Test_v.2810.xlsx" target="_blank">Skenario Pengujian</a></li>
+								<li><a href="/elicensing/helps/Surat Pernyataan Kebenaran dan Kesesuaian Informasi.pdf" target="_blank">Surat Pernyataan Kebenaran dan Kesesuaian Informasi</a></li>
+								<li><a href="/elicensing/helps/Petunjuk Penggunaan Aplikasi e-Licensing (untuk pengajuan verifikasi).pdf" target="_blank">Petunjuk teknis penggunaan e-Licensing untuk pengajuan verifikasi</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+        </form>
+    </div>
+</div>
+
+    <div id="loadingProgress" style="display:none">
+        <img src="/elicensing/Content/images/loader.gif" />
+        <br />
+        <label>Silahkan tunggu...</label>
+    </div>
+
+        <div id="disclaimer" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-info">
+                    <div id="disclaimer-message">
+                        
+                        <p>
+                            File tidak dapat ter-unggah karena melebihi kapasitas 10Mb <br /><br />
+                            Dikarenakan terbatasnya 1 slot file: 10MB, silakan mengunggah pada slot yang masih sama <br /> dengan konteksnya,
+                            atau lakukan pengkompresan data ketika hanya terdapat 1 slot file.
+                        </p>
+
+                    </div><br />
+                    <button type="button" class="btn btn-default" value="Ya" onclick="$('#disclaimer').modal('hide')" id="tutup">Ya</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="info-dialog" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-blue alert-dismissable">
+                    <button type='button' class='close' onclick="$('#info-dialog').modal('hide')">&times;</button><h4><i class='icon fa fa-warning'></i>&nbsp;Info!</h4>
+                    <div id="info-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="error-dialog" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-blue alert-dismissable">
+                    <button type='button' class='close' onclick="$('#error-dialog').modal('hide')">&times;</button><h4><i class='icon fa fa-warning'></i>&nbsp;Error!</h4>
+                    <div id="error-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="success-dialog" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-success alert-dismissable">
+                    <button type='button' class='close' onclick="$('#success-dialog').modal('hide')">&times;</button><h4><i class='icon fa fa-check-circle'></i>&nbsp;Berhasil</h4>
+                    <div id="success-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="success-sent" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-success alert-dismissable">
+                    <div>
+                        <p><button type="button" class="close" onclick="location.href='/elicensing/Elicensing'">&times;</button><h4><i class='icon fa fa-check-circle'></i>&nbsp;Berhasil</h4></p>
+                        <p>Data permohonan berhasil dikirim.</p>
+                    </div><br />
+
+                </div>
+            </div>
+        </div>
+
+        <div id="success-sentPJPPIP" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-success alert-dismissable">
+                    <div>
+                        <p><h4><i class='icon fa fa-check-circle'></i>&nbsp;Berhasil</h4></p>
+                        <p>Data permohonan berhasil dikirim.</p>
+                    </div><br />
+                </div>
+            </div>
+        </div>
+
+        <div id="success-sent-precons" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-success alert-dismissable">
+                    <div>
+                        <p><button type="button" class="close" onclick="location.href='/elicensing/PreConsultative'">&times;</button><h4><i class='icon fa fa-check-circle'></i>&nbsp;Berhasil</h4></p>
+                        <font size="2">Permintaan jadwal Konsultasi Awal telah dikirim. Selanjutnya kami akan menginformasikan tanggal dan tempat pelaksanaan Konsultasi Awal pada kesempatan pertama.</font>
+                        <hr />
+                        <p><button type="button" class="btn btn-primary pull-right" onclick="location.href='/elicensing/'">OK</button></p>
+                        <br /><br />
+                    </div><br />
+
+                </div>
+            </div>
+        </div>
+
+        <div id="success-message-djbc" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="alert alert-success alert-dismissable">
+                    <div>
+                        <p><button type="button" class="close" onclick="location.href='/elicensing/UKA/DJBC'">&times;</button><h4><i class='icon fa fa-check-circle'></i>&nbsp;Berhasil</h4></p>
+                        <p>Realisasi telah disimpan.</p>
+                    </div><br />
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted" style="background-color: rgb(248, 249, 250);font-size: 10px;">
+    <hr />
+    <!-- Section: Links  -->
+    <section class="">
+        <div class="container text-center text-md-start mt-5" style="text-align:left">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mb-4">
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <p>
+                        Perizinan KUPVA BB, PTD BB dan Pembawaan UKA di Proses oleh Kantor Perwakilan Bank Indonesia di masing-masing wilayah.
+                        <a href="https://www.bi.go.id/id/tentang-bi/profil/organisasi/Default.aspx#floating-2" target="_blank">Link</a>
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <p>
+                        <b>Front Office Perizinan Bank Indonesia:</b>
+                        <br />Departemen Jasa Perbankan, Perizinan, dan Operasional Treasuri
+                    </p>
+                    <p>
+                        <i class="ion ion-clock"></i>  08.00 s.d 16.00 WIB <br />
+                        Senin s.d Jumat (kecuali hari libur nasional)
+                    </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <p><i class="ion ion-location"></i> Jl. MH. Thamrin No. 2 Jakarta 10350 Indonesia</p>
+                    <p> <i class="ion ion-android-call"></i>  131 (pulsa lokal) </p>
+                    <p> <i class="ion ion-android-call"></i>  1500131 (dari luar negeri) </p>
+                    <p> <i class="ion ion-email"></i>  <a href="mailto:cs_perizinan@bi.go.id"><font color="#0072bc">cs_perizinan@bi.go.id</font></a> </p>
+                </div>
+                <!-- Grid column -->
+                <!-- Grid column -->
+                <div class="col-md-1 col-lg-1 col-xl-1 mx-auto mb-4">
+                </div>
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+    </section>
+    <!-- Section: Links  -->
+    <!-- Copyright -->
+        <button class="btn btn-sm btn-primary float" onclick="window.open('https://www.bi.go.id/wbsbi/disclaimer1.aspx', '_blank'); return false;" style="margin-right: 30px;">
+            <img src="/elicensing/Content/images/wsb_white.png" alt="icon-wsb">
+            Pengaduan
+        </button>
+
+    <div class="text-center" style="padding: 16px; border-top: 1.2px solid #eee; margin-top: 20px">
+        © 2026 <a href="https://www.bi.go.id/id/default.aspx" target="_blank" style="text-decoration:none"><b>Bank Indonesia.</b></a>
+    </div>
+    <!-- Copyright -->
+
+
+</footer>
+<!-- Footer -->
+    <script>
+        $.rootDir = '/elicensing/';
+        $(document).ajaxStart(function () {
+            if ($('#loadingProgress').length > 0)
+                $.blockUI({
+                    message: $('#loadingProgress'), css: {
+                        border: 'none',
+                        padding: '15px',
+                        backgroundColor: 'transparent',
+                        '-webkit-border-radius': '10px',
+                        '-moz-border-radius': '10px',
+                        color: '#fff',
+                        fontSize: '14px',
+                        fontFamily: 'Verdana,Arial',
+                        fontWeight: 50,
+                    }
+                });
+        });
+
+        $(document).ajaxStop(function () {
+            $.unblockUI();
+        });
+
+        $(document).ajaxError(function (event, request, options) {
+            //console.log(arguments);
+            if (request.status == 401) {
+                alert("Session Anda telah habis. Silahkan Anda login");
+                window.location.href = $.rootDir + "Account/Login";
+            }
+        });
+
+        //spel 4129 // SIT Security tahap 3
+        function CheckFragment() {
+            if (window.location.hash) {
+                if (/javascript:|alert[(]/.test(window.location.hash.substr(1).toLowerCase()))
+                    window.location.href = $.rootDir + "Error/Error500.cshtml";
+            }
+        }
+
+        $(document).ready(function () {
+            // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+            $('div#noti_Counter')
+                .css({ opacity: 0 })
+               // .text('70')  // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+                .css({ top: '-10px' })
+                .animate({ top: '-2px', opacity: 1 }, 550);
+        });
+    </script>
+
+
+    <script src="/elicensing/Scripts/bootstrap.js"></script>
+<script src="/elicensing/Scripts/daterangepicker.js"></script>
+<script src="/elicensing/Scripts/respond.js"></script>
+
+    <script src="/elicensing/Scripts/knockout-3.5.1.js"></script>
+<script src="/elicensing/Scripts/knockout-bindinghandlers.js"></script>
+<script src="/elicensing/Scripts/knockout.validation.js"></script>
+
+    <script src="/elicensing/Scripts/solinmenu.js"></script>
+
+    <script src="/elicensing/Scripts/jquery.blockUI.js"></script>
+
+    
+</body>
+</html>
