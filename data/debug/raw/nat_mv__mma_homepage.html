@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mma" ng-controller="Ctrl">
+
+<head>
+    <base href="#/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title ng-bind="ngMeta.title">Maldives Monetary Authority - Central Bank of Maldives</title>
+
+    <!-- <link rel="preload" crossorigin="anonymous" as="font" type="font/woff2" href="fonts/RobotoCondensed-Regular.woff2"> -->
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" as="style">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="description"
+        content="The Maldives Monetary Authority (MMA) is the central bank of the Republic of Maldives, responsible for monetary policy, financial stability, currency issuance, and regulation of the financial sector.">
+    <meta name="keywords" content="{{ngMeta.keywords}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mma.gov.mv/">
+    <!-- <meta name="theme-color" content="#2c343b" /> -->
+
+    <meta property="og:url" content="https://mma.gov.mv" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Maldives Monetary Authority" />
+    <meta property="og:description"
+        content="Maldives Monetary Authority - The Central Bank of the Republic of Maldives" />
+    <meta property="og:image" content="https://mma.gov.mv/images/meta/mma_card.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MMA_Maldives">
+    <meta name="twitter:creator" content="@MMA_Maldives">
+    <meta name="twitter:title" content="Maldives Monetary Authority">
+    <meta name="twitter:description"
+        content="Maldives Monetary Authority - The Central Bank of the Republic of Maldives">
+    <meta name="twitter:image" content="https://mma.gov.mv/images/meta/mma_card.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentOrganization",
+      "name": "Maldives Monetary Authority",
+      "alternateName": "MMA",
+      "url": "https://mma.gov.mv",
+      "logo": "https://mma.gov.mv/images/meta/mma_card.png",
+      "description": "The Maldives Monetary Authority (MMA) is the central bank of the Republic of Maldives, responsible for monetary policy, financial stability, currency issuance, and regulation of the financial sector.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MV",
+        "addressLocality": "Malé"
+      },
+      "sameAs": [
+        "https://twitter.com/MMA_Maldives"
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://use.typekit.net/ovs3iub.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="fontawesome-free-5.8.0-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.8.0-web/css/v4-shims.min.css">
+    <link rel="stylesheet" href="css/angular-datepicker.min.css" />
+    <link rel="stylesheet" href="css/style.brand.css?v=20260716" />
+
+    <!-- NOTE: Universal Analytics (UA-67694646-1) was shut down by Google on July 1, 2023.
+         This script no longer collects data. Replace with Google Analytics 4 (GA4) gtag.js snippet. -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-67694646-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <header id="page-headernew">
+        <div class="container" style="padding: 8px">
+            <div class="row">
+                <a href="#/" id="home-link">
+                    <div class="col-sm-1 col-xs-1" style="padding-left: 0; padding-right: 0;">
+                        <img id="title-logo" src="images/mmalogo-dark.svg" alt="MMA" width="100%" />
+                    </div>
+                    <div class="col-sm-5 col-xs-10 header-wrapper">
+                        <h1 id="title" class="header-text">Maldives Monetary Authority</h1>
+                    </div>
+                </a>
+                <div class="col-sm-1 col-xs-1 header-wrapper">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar"
+                        aria-expanded="false" aria-controls="navbar">
+                        <i id="navtoggle-bars" class="fa fa-bars header-text" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="col-sm-5 hidden-xs" style="font-size: 50%;">
+                    <div class="row">
+                        <div class="pull-right" id="top-link-wrapper">
+                            <a class="top-link" href="https://cib.gov.mv/home">CREDIT INFORMATION BUREAU</a> &nbsp;
+                            <a class="top-link" href="#laws">LAWS &amp; REGULATIONS</a>
+                        </div>
+                    </div>
+                    <div class="row" id="search-container">
+                        <form class="form-inline" ng-controller="SearchCtrl as searchCtrl">
+                            <div class="autocomplete">
+                                <input type="text" style="width: 72%;" class="form-control input-sm pull-right"
+                                    ng-model="searchCtrl.model.title" ng-model-options="{debounce: 100}"
+                                    placeholder="Search">
+                                <div class="autocomplete-items ng-cloak" ng-show="searchCtrl.model.title">
+                                    <div
+                                        ng-repeat="c in filteredData = (searchCtrl.searchData | filter:searchCtrl.model | orderBy: [searchCtrl.rank, '-year', 'title'] | limitTo: 7)">
+                                        <a class="autocomplete-links" ng-href="{{searchCtrl.getUrl(c)}}">{{c.title}}
+                                            <span ng-show="c.language">({{c.language}})</span></a>
+                                    </div>
+                                    <div class="ng-cloak" ng-show="!filteredData.length">
+                                        No results found for "{{searchCtrl.model.title}}"
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-bar" style="margin-bottom: 2px;">
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/about')">
+                                    <a class="menuheading  hidden-xs" href="#about" data-toggle="dropdown">MMA</a>
+                                    <a class="menuheading visible-xs" href="#about" data-toggle="dropdown">MMA</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#about">About MMA</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#about/boardofdirectors#board">Board of Directors</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#about/executivecommittee">Executive Committee</a></li>
+                                                <!-- <li class="dropdown-header"><a href="#about/advisors">Advisors</a></li> -->
+                                                <li class="dropdown-header"><a href="#about/seniormanagement">Senior
+                                                        Management</a></li>
+                                                <li class="dropdown-header"><a href="#about/shariahcouncil">Shariah
+                                                        Council</a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#about">About MMA</a></li>
+                                                <li class="submenu"><a href="#about/functions">Functions</a></li>
+                                                <li class="submenu"><a href="#about/governance">Governance</a></li>
+                                                <li class="submenu"><a href="#about/boardofdirectors#board">Board of
+                                                        Directors</a></li>
+                                                <li class="submenu"><a
+                                                        href="#about/seniorexecutiveteam#executive">Senior Executive
+                                                        Team</a></li>
+                                                <li class="submenu"><a href="#about/ostructure#structure">Organizational
+                                                        Structure</a></li>
+                                                <li class="submenu"><a href="#about/salary">Salary Structure</a></li>
+                                            </ul>
+                                        </li> -->
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#about/ostructure#structure">Organizational Structure</a>
+                                                </li>
+                                                <li class="dropdown-header"><a href="#about/salary">Salary Structure</a>
+                                                </li>
+                                                <li class="dropdown-header"><a href="#about/history">History of MMA</a>
+                                                </li>
+                                                <li class="submenu"><a
+                                                        href="#/about/history/governors&vicegovernors">Past Governors
+                                                        and Vice Governors</a></li>
+                                                <li class="submenu"><a href="#/about/history/pastboarddirectors">Past
+                                                        Board Members</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="strategicplan/">Strategic Plan</a>
+                                                </li>
+                                                <li class="dropdown-header"><a href="#about/gallery">Gallery</a></li>
+                                                <li class="dropdown-header"><a href="#about/contactinformation">Contact
+                                                        Us</a></li>
+                                                <li class="dropdown-header"><a href="#about/bankholidays">Bank
+                                                        Holidays</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="https://careers.mma.gov.mv">Careers</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/monetarypolicy')">
+                                    <a class="menuheading  hidden-xs" href="#monetarypolicy"
+                                        data-toggle="dropdown">Monetary Policy</a>
+                                    <a class="menuheading visible-xs" href="#monetarypolicy"
+                                        data-toggle="dropdown">Monetary Policy</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#monetarypolicy">Monetary
+                                                        Policy</a></li>
+                                                <li class="submenu"><a href="#monetarypolicy#framework">Framework</a>
+                                                </li>
+                                                <li class="submenu"><a href="#monetarypolicy/policyInstruments">Policy
+                                                        Instruments</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/monetarypolicy/monetaryoperations">Monetary
+                                                        Operations</a></li>
+                                                <li class="submenu"><a href="#/monetarypolicy/monetaryoperations">Open
+                                                        Market Operations</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/monetarypolicy/monetaryoperations/foreignexchangeswap">Foreign
+                                                        Exchange Swap Facility</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/monetarypolicy/monetaryoperations/standingfacilities">Standing
+                                                        Facilities</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/monetarypolicy/foreignexchange">Foreign Exchange</a>
+                                                </li>
+                                                <li class="submenu"><a
+                                                        href="#/monetarypolicy/foreignexchange#exchangemarket">Intervention
+                                                        in the Domestic Foreign Exchange Market</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/monetarypolicy/foreignexchange#reservemanagement">Reserve
+                                                        Management</a></li>
+                                                <li class="submenu"><a
+                                                        href="files/monetaryPolicy/money changers list_20260909.pdf">Money
+                                                        Changers</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/financialstability')">
+                                    <a class="menuheading  hidden-xs" href="#financialstability"
+                                        data-toggle="dropdown">Financial Stability</a>
+                                    <a class="menuheading visible-xs" href="#financialstability"
+                                        data-toggle="dropdown">Financial Stability</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#financialstability">Financial
+                                                        Stability</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#financialstability/bankingsector">Banking Sector</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/regulatoryframework">Banks'
+                                                        Regulatory Framework</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/bankLicensing">Bank
+                                                        Licensing</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/depositIsurance">Deposit
+                                                        Insurance</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/dormant">Dormant
+                                                        Account Holders of Banks</a></li>
+                                                <!-- <li class="submenu"><a
+														href="#/financialstability/bankingsector/bcciundrawn">BCCI
+														Undrawn Fund Depositors</a></li> -->
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/bankrates?v=20260329">Banks’
+                                                        Rates & Fees</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/registerofbanks">Register
+                                                        of Banks</a></li>
+                                                <li class="submenu"><a
+                                                        href="files/financialstability/Consolidated-Financial-Statements-of-Banks.pdf?v=20260924">Consolidated
+                                                        Financials of Banks</a></li>
+                                                <!-- <li class="submenu"><a
+                                                        href="#/financialstability/bankingsector/circulars">Circulars</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#financialstability/insurancesector/insurance">Insurance
+                                                        Sector</a></li>
+                                                <li class="submenu"><a
+                                                        href="#financialstability/insurancesector/regulatoryframework">Regulatory
+                                                        Framework</a></li>
+                                                <li class="submenu"><a
+                                                        href="#financialstability/insurancesector/insuranceproviders">Register
+                                                        of Insurance Providers</a></li>
+                                                <li class="submenu"><a
+                                                        href="files/financialstability/insurance-brokers.pdf?v=20260719">Register
+                                                        of Insurance Brokers</a></li>
+                                                <li class="submenu"><a
+                                                        href="files/financialstability/Insurance%20Agents.pdf?v=20260820">Authorized
+                                                        Insurance Agents</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#financialstability/otherfinancialinstitutionssector">Other
+                                                        Financial Institutions Sector</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/otherfinancialinstitutionssector#housingfinance">Housing
+                                                        Finance</a></li>
+                                                <!-- <li class="submenu"><a href="#/financialstability/otherfinancialinstitutionssector#leasingfinance">Leasing Finance</a></li> -->
+                                                <li class="submenu"><a
+                                                        href="#/financialstability/otherfinancialinstitutionssector#financingbusiness">Financing
+                                                        Business</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments#paymentsystems">Payment Systems</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4" style="padding-top: 0px;">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/financialstability/offshore">Offshore Financial
+                                                        Services</a></li>
+                                                <li class="submenu"><a
+                                                        href="#financialstability/offshore#licensing">Licensing</a></li>
+                                                <!-- <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments#paymentsystems">Payment Systems</a>
+                                                </li> -->
+                                                <!-- <li class="submenu"><a href="#financialstability/paymentsystems#interbank">Interbank Payments</a></li>
+												<li class="submenu"><a href="#financialstability/paymentsystems#MR">Money Remittance</a></li>
+												<li class="submenu"><a href="#financialstability/paymentsystems#mobile">Mobile Payments</a></li>
+												<li class="submenu"><a href="#financialstability/paymentsystems#card">Card Payment Acquiring Services</a></li> -->
+                                            </ul>
+                                            <ul>
+                                                <li class="dropdown-header">
+                                                    <a href="#/monetarypolicy/foreignexchange">Money Changers</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <a href="files/monetaryPolicy/money changers list_20260909.pdf">List of authorized Money Changers</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <!-- <a href="https://extranet.mma.gov.mv/x/money-changers/">Money Changer Licensing</a> -->
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large">
+                                    <a class="menuheading  hidden-xs" href="#currency"
+                                        data-toggle="dropdown">Currency</a>
+                                    <a class="menuheading visible-xs" href="#currency"
+                                        data-toggle="dropdown">Currency</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#currency">Currency</a></li>
+                                                <li class="submenu"><a href="#/currency/notesincirculation">Currency in
+                                                        Circulation</a></li>
+                                                <li class="submenu"><a href="#/currency/randhihafaheh">Ran
+                                                        Dhihafaheh</a></li>
+                                                <li class="submenu"><a href="#/currency/withdrawnbanknotes">Withdrawn
+                                                        Banknotes</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/currency/securityfeatures">Features</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/currency/securityfeatures#sfeatures">Security
+                                                        Features</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/currency/securityfeatures#primaryFeatures">Primary
+                                                        Features</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header">
+                                                    <a href="#/currency/handling">Handling Polymer Banknotes</a </li>
+                                                <li class="dropdown-header">
+                                                    <a href="#/currency/numismatic">Numismatic Currency</a>
+                                                </li>
+                                                <li class="dropdown-header">
+                                                    <a href="#/currency/currencyhistory">Currency History</a>
+                                                </li>
+                                                <li class="dropdown-header">
+                                                    <a href="#/currency/currencysymbol">Currency Symbol</a>
+                                                </li>
+                                                <li class="dropdown-header">
+                                                    <a href="#/currency/usingimages">Using Images of Banknotes and
+                                                        Coins</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/banking')">
+                                    <a class="menuheading  hidden-xs" href="#/bankingandpayments"
+                                        data-toggle="dropdown">Banking and Payments</a>
+                                    <a class="menuheading visible-xs" href="#/bankingandpayments"
+                                        data-toggle="dropdown">Banking and Payments</a>
+
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments#banking">Banking</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments#cashservices">Cash Services</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments#paymentsystems">Payment Systems</a>
+                                                </li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/bankingandpayments/paymentservices">Payment Services</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header">
+                                                    <a href="#statistics/exchangerates"></a>
+                                                </li>
+                                                <li class="dropdown-header">
+                                                    <a href="#publicationlist/Balance Sheets"></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li>
+                                                    <a href="#nonbankfinancialsector"></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/research')">
+                                    <a class="menuheading  hidden-xs" href="#research"
+                                        data-toggle="dropdown">Research</a>
+                                    <a class="menuheading visible-xs" href="#research"
+                                        data-toggle="dropdown">Research</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#research">Research</a></li>
+                                                <li class="dropdown-header"><a href="#research/publication">Research
+                                                        Publications</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/eu/Economic Update">Economic
+                                                        Update</a></li>
+                                                <!--<li class="submenu"><a href="#/research/publication/reports/mer/Monthly Economic Review">Monthly Economic Review</a></li>-->
+                                                <!--<li class="submenu"><a href="#/research/publication/reports/ir/Iqthisaadhee Review">Iqthisaadhee Review </a></li>-->
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/qeb/Quarterly Economic Bulletin">Quarterly
+                                                        Economic Bulletin</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/ar/Annual Report">Annual
+                                                        Report </a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/reports/rpnotes/Research and Policy Notes">Research
+                                                        and Policy Notes</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/rp/Research Papers">MMA
+                                                        Research Papers </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#/research/survey">Surveys</a></li>
+                                                <li class="submenu"><a
+                                                        href="{{DevelopmentOfInclusiveInsuranceAndRiskFinancing.url}}">Development
+                                                        of Inclusive Insurance and Risk Financing</a></li>
+                                                <li class="submenu"><a
+                                                        href="{{nationalFinancialInclusionSurvey.url}}">National
+                                                        Financial Inclusion Survey</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/qbs/Quarterly Business Survey">Quarterly
+                                                        Business Survey</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/publication/reports/mtas/Maldivians Travelling Abroad Survey">Maldivians
+                                                        Travelling Abroad Survey</a></li>
+                                                <li class="dropdown-header"><a href="#/research/researchfund">MMA
+                                                        Research Fund</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/research/statisticalPublications">Statistical
+                                                        Publications</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/statisticalPublications/mstat/Monthly%20Statistics">Monthly
+                                                        Statistics</a></li>
+                                                <li class="submenu"><a
+                                                        href="#/research/statisticalPublications/pb/Payments%20Bulletin">Payments
+                                                        Bulletin</a></li>
+                                                <!-- <li class="dropdown-header"><a href="#/research/reports/workingpapers/Working%20Papers">Working Papers</a></li> -->
+                                            </ul>
+                                            <ul>
+                                                <li class="dropdown-header">
+                                                    <a href="">Other Publications</a>
+                                                </li>
+                                                <li class="submenu"><a
+                                                        href="documents/Other Publications/PIR-SA.pdf">Payment
+                                                        Innovations and Risks In South Asia</a></li>
+                                                <li class="submenu"><a
+                                                        href="documents/Other Publications/misfidoc-2025.pdf?v=20260809">Maldives
+                                                        Islamic Finance Initiative (MISFI)</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/statistics')">
+                                    <a class="menuheading  hidden-xs" href="#statistics"
+                                        data-toggle="dropdown">Statistics</a>
+                                    <a class="menuheading visible-xs" href="#statistics"
+                                        data-toggle="dropdown">Statistics</a>
+
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="https://database.mma.gov.mv/mosac/latest/1.xlsx">Key
+                                                        Economic Indicators</a></li>
+                                                <!-- <li class="dropdown-header"><a
+                                                        href="files/Monthly Statistics/Selected Economic Indicators/1.xlsx?v=20250430">Key
+                                                        Economic Indicators</a></li> -->
+                                                <li class="dropdown-header"><a href="#statistics/realsector">Real
+                                                        Sector</a></li>
+                                                <li class="dropdown-header"><a href="#statistics/fiscalsector">Fiscal
+                                                        Sector</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#statistics/financialsector">Financial Sector</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#/statistics/externalsector">External Sector</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/statistics/exchangerates">Exchange Rates</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/statistics/reports/bs/Balance Sheets">MMA's Statement of
+                                                        Financial Position</a></li>
+                                                <!-- <li class="dropdown-header"><a href="#/educationandoutreach/resources/apps">MMA 'Viya' App</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a
+                                                        href="#statistics/advancereleasecalendar">Advance Release
+                                                        Calendar</a></li>
+                                                <li class="dropdown-header"><a
+                                                        href="#/research/statisticalPublications/mstat/Monthly Statistics">Monthly
+                                                        Statistics</a></li>
+                                                <li class="dropdown-header"><a href="https://database.mma.gov.mv">MMA
+                                                        Statistics Database</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown dropdown-large" ng-class="activeClass('/pressrelease')">
+                                    <a class="menuheading  hidden-xs" href="#pressrelease"
+                                        data-toggle="dropdown">Media</a>
+                                    <a class="menuheading visible-xs" href="#pressrelease"
+                                        data-toggle="dropdown">Media</a>
+                                    <ul class="dropdown-menu dropdown-menu-large row">
+                                        <li class="col-sm-4">
+                                            <ul>
+                                                <li class="dropdown-header"><a href="#pressrelease">Press Release</a>
+                                                </li>
+                                                <!-- <li class="dropdown-header"><a href="#medianews">News</a></li> -->
+                                                <li class="dropdown-header"><a href="#speeches">Speeches</a></li>
+                                                <li class="dropdown-header"><a href="#jobs">Jobs</a></li>
+                                                <li class="dropdown-header"><a href="#procurement">Procurement</a>
+                                                <li class="dropdown-header"><a href="#educationandoutreach">Education &
+                                                        Outreach</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-large visible-xs">
+                                    <a class="menuheading  hidden-xs" href="https://cib.gov.mv/home">CREDIT INFORMATION
+                                        BUREAU</a>
+                                    <a class="menuheading visible-xs" href="https://cib.gov.mv/home">CREDIT INFORMATION
+                                        BUREAU</a>
+                                </li>
+                                <!-- <li class="dropdown dropdown-large visible-xs">
+                                    <a class="menuheading  hidden-xs" href="strategicplan/">STRATEGIC PLAN 2025</a>
+                                    <a class="menuheading visible-xs" href="strategicplan/">STRATEGIC PLAN 2025</a>
+                                </li>
+                                <li class="dropdown dropdown-large visible-xs">
+                                    <a class="menuheading  hidden-xs" href="mmarc/">RESEARCH CONFERENCE</a>
+                                    <a class="menuheading visible-xs" href="mmarc/">RESEARCH CONFERENCE</a>
+                                </li>
+                                <li class="dropdown dropdown-large visible-xs"
+                                    ng-class="activeClass('/educationandoutreach')">
+                                    <a class="menuheading  hidden-xs" href="#educationandoutreach"
+                                        data-toggle="dropdown">EDUCATION & OUTREACH</a>
+                                    <a class="menuheading visible-xs" href="#educationandoutreach"
+                                        data-toggle="dropdown">EDUCATION & OUTREACH</a>
+                                </li> -->
+                                <li class="dropdown dropdown-large visible-xs" ng-class="activeClass('/laws')">
+                                    <a class="menuheading  hidden-xs" href="#laws" data-toggle="dropdown">LAWS</a>
+                                    <a class="menuheading visible-xs" href="#laws" data-toggle="dropdown">LAWS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div>
+        <div class="page-content">
+            <div class="main-content" ng-view autoscroll></div>
+        </div>
+    </div>
+    <div class="page-footer">
+        <nav class="navbar navbar-default">
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">About MMA</h4>
+                        <ul class="footer-links">
+                            <li><a href="#about">About MMA</a></li>
+                            <li><a href="#about/history">History of MMA</a></li>
+                            <li><a href="#about/gallery">Gallery</a></li>
+                            <li><a href="#about/contactinformation">Contact Us</a></li>
+                            <li><a href="#about/bankholidays">Bank Holidays</a></li>
+                            <li><a href="https://careers.mma.gov.mv">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">Monetary Policy</h4>
+                        <ul class="footer-links">
+                            <li><a href="#monetarypolicy">Monetary Policy</a></li>
+                            <li><a href="#/monetarypolicy/monetaryoperations">Monetary Operations</a></li>
+                            <li><a href="#/monetarypolicy/foreignexchange">Foreign Exchange</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">Financial Stability</h4>
+                        <ul class="footer-links">
+                            <li><a href="#financialstability">Financial Stability</a></li>
+                            <li><a href="#financialstability/bankingsector">Banking Sector</a></li>
+                            <li><a href="#financialstability/insurancesector/insurance">Insurance Sector</a></li>
+                            <li><a href="#financialstability/otherfinancialinstitutionssector">Other Financial
+                                    Institutions Sector</a></li>
+                            <li><a href="#financialstability/paymentsystems">Payment Systems</a></li>
+                            <li><a href="#/financialstability/offshore">Offshore Financial Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">Currency</h4>
+                        <ul class="footer-links">
+                            <li><a href="#currency">Currency</a></li>
+                            <li><a href="#/currency/securityfeatures">Features</a></li>
+                            <li><a href="#/currency/handling">Handling Polymer Banknotes</a></li>
+                            <li><a href="#/currency/numismatic">Numismatic Currency</a></li>
+                            <li><a href="#/currency/currencyhistory">Currency History</a></li>
+                            <li><a href="#/currency/currencysymbol">Currency Symbol</a></li>
+                            <li><a href="#/currency/usingimages">Using images of banknotes and coins</a></li>
+
+                        </ul>
+                        <h4 class="footer-headings">Banking and Payments</h4>
+                        <ul class="footer-links">
+                            <li><a href="#/bankingandpayments#banking">Banking</a></li>
+                            <li><a href="#/bankingandpayments#cashservices">Cash Services</a></li>
+                            <li><a href="#/bankingandpayments#paymentsystems">Payment Systems</a></li>
+                            <li><a href="#/bankingandpayments/paymentservices">Payment Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">Research</h4>
+                        <ul class="footer-links">
+                            <li><a href="#/research/publication">Research Publications</a></li>
+                            <li><a href="#/research/survey">Surveys</a></li>
+                            <li><a href="#/research/reports/rpnotes/Research and Policy Notes">Research and Policy
+                                    Notes</a></li>
+                            <li><a href="#/research/statisticalPublications">Statistical Publications</a></li>
+                        </ul>
+                        <h4 class="footer-headings">Media</h4>
+                        <ul class="footer-links">
+                            <li><a href="#pressrelease">Press Release</a></li>
+                            <!-- <li><a href="#medianews">News</a></li> -->
+                            <li><a href="#speeches">Speeches</a></li>
+                            <li><a href="#jobs">Jobs</a></li>
+                            <li><a href="#announcements">Announcements</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="footer-headings">Statistics</h4>
+                        <ul class="footer-links">
+                            <li><a href="https://database.mma.gov.mv/mosac/latest/1.xlsx">Key
+                                    Economic Indicators</a></li>
+                            <li><a href="#statistics/realsector">Real Sector</a></li>
+                            <li><a href="#statistics/fiscalsector">Fiscal Sector</a></li>
+                            <li><a href="#statistics/financialsector">Financial Sector</a></li>
+                            <li><a href="#/statistics/externalsector">External Sector</a></li>
+                            <li><a href="#/statistics/exchangerates">Exchange Rates</a></li>
+                            <li><a href="#/statistics/reports/bs/Balance Sheets">MMA's Statement of Financial
+                                    Position</a></li>
+                            <!-- <li><a href="#/educationandoutreach/resources/apps">MMA 'Viya' App</a></li> -->
+                            <li><a href="#statistics/advancereleasecalendar">Advance Release Calendar</a></li>
+                            <li><a href="#/research/statisticalPublications/mstat/Monthly Statistics">Monthly
+                                    Statistics</a></li>
+                            <li><a href="https://database.mma.gov.mv">MMA Statistics Database</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <br />
+            </div>
+            <div class="page-bottom">
+                <div class="container">
+                    <div class="row row-sm-flex-center">
+                        <div class="col-xs-12 col-sm-4 text-center-xs text-left-sm"
+                            style="margin-top: 10px; margin-bottom: 10px;">
+                            &copy; 2001 - {{currentYear}} Maldives Monetary Authority
+                        </div>
+                        <div class="col-xs-12 col-sm-4 text-center-xs social-distance"
+                            style="padding-left: 0; padding-right: 0;">
+                            <a href="https://www.facebook.com/MaldivesMonetaryAuthority/">
+                                <img src="images/site/fb.png" alt="Facebook" class="img-circle" width="22px"
+                                    style="margin-right: 10px" />
+                            </a>
+                            <a href="https://twitter.com/mma_maldives">
+                                <img src="images/site/twitter.png" alt="Twitter" class="img-circle" width="22px" />
+                            </a>
+                            <a href="https://www.youtube.com/user/maldivescentralbank/">
+                                <img src="images/site/youtube.png" alt="YoutTube" class="img-circle" width="22px"
+                                    style="margin-left: 10px" />
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 text-center-xs text-right-sm"
+                            style="margin-top: 10px; margin-bottom: 10px; padding-left: 0;">
+                            <span class="hidden-xs" style="padding-right: 10px;">Viya App</span>
+                            <a href="https://database.mma.gov.mv/viya">
+                                <img src="images/publications/Viya App Icon.png" width="32px" alt="Viya App"
+                                    style="margin-right: 3px" />
+                            </a>
+                            <!-- <span style="margin-right: 4px; color: #1c2f67"><strong>|</strong></span>
+							<a href="https://itunes.apple.com/us/app/viya-raajjeyge-iqthisaadhu/id1064365693?mt=8" >
+							<a href="https://viya.mma.gov.mv/" >
+								<img src="images/site/appstore.png" width="100px" width="22px" alt="" style="margin-right: -10px;"/>
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=mv.gov.mma.viya">
+							<a href="https://viya.mma.gov.mv/">
+								<img src="images/site/playstore.png" width="100px" width="22px" alt=""/>
+							</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script src="js/vendor.js"></script>
+    <script src="js/app.js?v=20261109"></script>
+    <script src="js/services.js?v=202611091"></script>
+    <script src="js/controller.js?v=202610201"></script>
+</body>
+
+</html>

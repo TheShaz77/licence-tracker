@@ -1,0 +1,627 @@
+
+<!doctype html>
+<html lang="sr">
+<!--[if IE 7]><html lang="sr" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="sr" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="sr" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html lang="sr"><![endif]-->
+<!--[if !IE]><html lang="sr"><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Međunarodne rezerve - CBCG</title>
+	<meta name="description" content="CBCG">
+	<meta property="og:title" content="Međunarodne rezerve - CBCG" />
+	<meta property="og:site_name" content="CBCG"/>
+	<meta property='og:image' content='https://www.cbcg.me/' />
+	<meta property="og:url" content="https://www.cbcg.me" />
+	<meta property="og:type" content="article" />
+	<meta property="fb:app_id" content="267368873636411"/>
+	<meta property="og:description" content="CBCG" />
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="/css/flaticon/flaticon.css">
+		<link rel="stylesheet" href="/css/main.css?ver=0.8">
+</head>
+<body>
+<style>
+   .cookies-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background: #f0f0f0;
+      color: #0f0f0f;
+      z-index: 55;
+
+      transform: translateY(100%);
+      transition: all .3s ease;
+   }
+
+   .cookies-footer.show {
+      transform: translateY(0);
+   }
+
+   .cookies-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15px;
+   }
+
+   .cookies-content p {
+      line-height: 1.2;
+   }
+
+   @media(max-width: 767px) {
+      .cookies-content {
+         flex-direction: column;
+         padding: 12px;
+      }
+
+      .cookies-buttons-wrapper {
+         margin-top: 15px;
+      }
+   }
+
+   .cookies-buttons-wrapper {
+      display: flex;
+   }
+
+   .cookies-btn {
+      background: #f0f0f0;
+      border: 2px solid #003b7d;
+      padding: 3px 12px;
+      margin-left: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      color: #003b7d;
+      cursor: pointer;
+   }
+
+   .accept-cookies {
+      background-color: #003b7d;
+      color: white;
+      margin-left: 20px;
+   }
+</style>
+<div class="cookies-footer" id="cookies-footer">
+	<div class="cookies-content">
+      <p>Ova stranica koristi kolačiće kako bi vam osigurala najbolje iskustvo korišćenja.</p>
+		<div class="cookies-buttons-wrapper">
+			<div class="cookies-btn accept-cookies" id="accept-cookies">Razumijem</div>
+			<a href="/me/javnost-rada/informacije/pristup-informacijama" class="cookies-btn accept">Više informacija</a>
+		</div>
+	</div>
+</div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function(){
+      var closeBtn = document.getElementById('accept-cookies');
+      var cookiesFooter = document.getElementById('cookies-footer');
+      if ( !localStorage.getItem('cookies_accepted') ) {
+         cookiesFooter.classList.add('show');
+         closeBtn.addEventListener('click', function() {
+            localStorage.setItem('cookies_accepted', true);
+            cookiesFooter.classList.remove('show');
+         });	
+      }
+   });
+</script>
+
+
+<nav class="navbar navbar-expand-lg">
+  <div class="w-100 h-100">
+    <div class="col-12 nav-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <a class="navbar-brand" href="/me"><img src="/images/nav-logo-me2.svg" alt="CBCG Logo - Montenegro" width='170px'></a>
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        
+          <div class="nav-search nav-right  d-none d-lg-flex align-items-center justify-content-end">
+       
+
+            <ul class='helper-links d-none list-unstyled d-lg-flex align-items-center'>
+              <li><a href='/me/o-nama/kontakti'>Kontakti</a></li><li><a href='/me/mapa-sajta'>Mapa sajta</a></li><li><a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja'>Najčešće postavljena pitanja</a></li><li><a href='/me/javnost-rada/informacije/pristup-informacijama'>Pristup informacijama</a></li>            </ul>
+
+            <ul class="d-flex list-unstyled m-0 ml-3 social-links">
+<li>
+                <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin.svg" width="24" height="24" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+
+            
+              <li>
+                <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-youtube.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+  <li>
+                <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+  <li>
+                <a href="https://x.com/Centralnabanka" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+
+            </ul>
+
+                      
+            <a href="/me/pretraga" class='search-form'>
+	    	<span>Pretraga</span>
+              	<img src="/images/icon-search.svg" width="40px" height="40px" alt="Search" class="search-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 nav-bottom">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-mega-menu">
+            <li class='nav-item mr-md-1' data-id=''><a href='/me' class='nav-link top-nav-link px-0'><i class='flaticon-home'></i></a></li><li class='nav-item  dropdown' data-parentId='18'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/o-nama'
+                  id='nav_18' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>O nama
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/o-nama'>O nama</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_18' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_18'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/istorijat-ciljevi-i-funkcije' 
+                            class='mega-menu-heading'>Istorijat, ciljevi i funkcije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-149'></span></div><ul class='nav flex-column' id='subnav-149'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/istorijat'>Istorijat</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/ciljevi-i-funkcije'>Ciljevi i funkcije</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/nezavisnost-i-transparentnost'>Nezavisnost i transparentnost</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/politika-za-ostvarivanje-ciljeva-i-izvrsavanje-funkcija'>Politika za ostvarivanje ciljeva i izvršavanje funkcija</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/cbcg-i-klimatske-promjene'>CBCG i klimatske promjene</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/istorijat-ciljevi-i-funkcije/preporuke-vladi-za-vodjenje-ekonomske-politike'>Preporuke Vladi za vođenje ekonomske politike</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija' 
+                            class='mega-menu-heading'>Upravljanje, rukovođenje i organizacija
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-26'></span></div><ul class='nav flex-column' id='subnav-26'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/upravljanje'>Upravljanje</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/rukovodjenje'>Rukovođenje</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/stalna-tijela-savjeta'>Stalna tijela Savjeta</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/unutrasnja-organizacija'>Unutrašnja organizacija</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/radna-tijela'>Radna tijela</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-rukovodjenje-i-organizacija/strateski-plan-20252028'>Strateški plan 2025-2028</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/regulativa' 
+                            class='mega-menu-heading'>Regulativa
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-112'></span></div><ul class='nav flex-column' id='subnav-112'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/regulativa/ustav-crne-gore'>Ustav Crne Gore</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/regulativa/zakoni'>Zakoni</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/regulativa/statut'>Statut</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/regulativa/podzakonski-akti'>Podzakonski akti</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/sprecavanje-korupcije-i-zastita-integriteta' 
+                            class='mega-menu-heading'>Sprečavanje korupcije i zaštita integriteta
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1074'></span></div><ul class='nav flex-column' id='subnav-1074'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/sprecavanje-korupcije-i-zastita-integriteta/sprecavanje-korupcije'>Sprečavanje korupcije</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/sprecavanje-korupcije-i-zastita-integriteta/zastita-integriteta'>Zaštita integriteta</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/interna-revizija' 
+                            class='mega-menu-heading'>Interna revizija
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/revizija-od-strane-drzavne-revizorske-institucije' 
+                            class='mega-menu-heading'>Revizija od strane Državne revizorske institucije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/saradnja-cbcg-sa-drzavnim-organima-i-organizacijama' 
+                            class='mega-menu-heading'>Saradnja CBCG sa državnim organima i organizacijama
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/medjunarodna-saradnja' 
+                            class='mega-menu-heading'>Međunarodna saradnja
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-28'></span></div><ul class='nav flex-column' id='subnav-28'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/medjunarodna-saradnja/medjunarodne-institucije'>Međunarodne institucije</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/medjunarodna-saradnja/saradnja-sa-institucijama-eu'>Saradnja sa institucijama EU</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/medjunarodna-saradnja/tehnicka-saradnja'>Tehnička saradnja</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/upravljanje-operativnim-rizikom' 
+                            class='mega-menu-heading'>Upravljanje operativnim rizikom
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2277'></span></div><ul class='nav flex-column' id='subnav-2277'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-operativnim-rizikom/osnovni-principi'>Osnovni principi</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-operativnim-rizikom/metodoloski-okvir'>Metodološki okvir</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-operativnim-rizikom/bezbjednost-informacija-i-kontinuitet-poslovanja'>Bezbjednost informacija i kontinuitet poslovanja</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/upravljanje-operativnim-rizikom/komitet-za-upravljanje-operativnim-rizikom-bezbjednoscu-informacija-i-kontinuitetom-poslovanja'>Komitet za upravljanje operativnim rizikom, bezbjednošću informacija i kontinuitetom poslovanja</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/finansijsko-poslovanje' 
+                            class='mega-menu-heading'>Finansijsko poslovanje
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2590'></span></div><ul class='nav flex-column' id='subnav-2590'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/finansijsko-poslovanje/finansijski-plan'>Finansijski plan</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/finansijsko-poslovanje/pravilnik-o-racunovodstvu'>Pravilnik o računovodstvu</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/finansijsko-poslovanje/smjernice-za-izbor-nezavisnog-spoljnog-revizora'>Smjernice za izbor nezavisnog spoljnog revizora</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/finansijsko-poslovanje/godisnji-finansijski-izvjestaji-sa-izvjestajem-nezavisnog-revizora'>Godišnji finansijski izvještaji sa izvještajem nezavisnog revizora</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/drustvena-odgovornost' 
+                            class='mega-menu-heading'>Društvena odgovornost
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-153'></span></div><ul class='nav flex-column' id='subnav-153'><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/finansijska-edukacija'>Finansijska edukacija</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/stimulisanje-naucne-misli'>Stimulisanje naučne misli</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/stipendije-za-studente'>Stipendije za studente</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/women-on-boards'>Women on Boards</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/we-finance-code'>WE Finance Code</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/ocuvanje-kulturne-i-istorijske-bastine'>Očuvanje kulturne i istorijske baštine</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/donacije-i-humanitarne-aktivnosti'>Donacije i humanitarne aktivnosti</a></li><li class='nav-item'><a class='nav-link active' href='/me/o-nama/drustvena-odgovornost/odgovoran-odnos-prema-zivotnoj-sredini'>Odgovoran odnos prema životnoj sredini</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/o-nama/kontakti' 
+                            class='mega-menu-heading'>Kontakti
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='19'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/kljucne-funkcije'
+                  id='nav_19' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Ključne funkcije
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/kljucne-funkcije'>Ključne funkcije</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_19' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_19'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/monetarna-politika' 
+                            class='mega-menu-heading'>Monetarna politika
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-35'></span></div><ul class='nav flex-column' id='subnav-35'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/monetarna-politika/ciljevi'>Ciljevi</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/monetarna-politika/eurizacija'>Eurizacija</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/monetarna-politika/instrumenti'>Instrumenti</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/finansijska-stabilnost' 
+                            class='mega-menu-heading'>Finansijska stabilnost
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-118'></span></div><ul class='nav flex-column' id='subnav-118'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijska-stabilnost/uloga-i-aktivnosti-cbcg'>Uloga i aktivnosti CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijska-stabilnost/finansijski-sistem-crne-gore'>Finansijski sistem Crne Gore</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijska-stabilnost/pokazatelji-i-izvjestaji'>Pokazatelji i izvještaji</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere'>Makroprudencijalne mjere</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijska-stabilnost/nadgledanje-platnih-sistema'>Nadgledanje platnih sistema</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/kontrolna-funkcija' 
+                            class='mega-menu-heading'>Kontrolna funkcija
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-36'></span></div><ul class='nav flex-column' id='subnav-36'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/bankarski-sistem'>Bankarski sistem</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/bilansi-stanja-i-bilansi-uspjeha-banaka'>Bilansi stanja i bilansi uspjeha banaka</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-izvjestaji-banaka'>Finansijski izvještaji banaka</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/ppks-aktivnih-kredita-po-bankama'>PPKS aktivnih kredita po bankama</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga'>Pružaoci finansijskih usluga</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga'>Finansijski iskazi pružalaca finansijskih usluga</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/usluge-kreditnog-registra'>Usluge kreditnog registra</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/priznate-rejting-agencije'>Priznate rejting agencije</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/restriktivne-mjere'>Restriktivne mjere</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/aqr'>AQR</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/kontrolna-funkcija/sporazumi-o-saradnji'>Sporazumi o saradnji</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije' 
+                            class='mega-menu-heading'>Finansijske i bankarske operacije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-37'></span></div><ul class='nav flex-column' id='subnav-37'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/medjunarodne-rezerve'>Međunarodne rezerve</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/platni-promet-sa-inostranstvom'>Platni promet sa inostranstvom</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/obavezna-rezerva'>Obavezna rezerva</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi'>Fiskalni agent - Državni zapisi</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/stopa-zatezne-kamate'>Stopa zatezne kamate</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/kursna-lista'>Kursna lista</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/sporazumi-o-saradnji'>Sporazumi o saradnji</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/platni-promet' 
+                            class='mega-menu-heading'>Platni promet
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-38'></span></div><ul class='nav flex-column' id='subnav-38'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/registri'>Registri</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/instant-placanja-tips-clone'>Instant plaćanja (TIPS Clone)</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/platni-sistemi'>Platni sistemi</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/pregled-tarife-centralne-banke-crne-gore'>Pregled tarife Centralne banke Crne Gore</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/finansijski-izvjestaji-platnih-institucija-i-institucija-za-elektronski-novac'>Finansijski izvještaji platnih institucija i institucija za elektronski novac</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/naknade-za-usluge-povezane-sa-racunom-za-placanje-potrosaca'>Naknade za usluge povezane sa računom za plaćanje potrošača</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/racun-za-placanje-sa-osnovnim-uslugama'>Račun za plaćanje sa osnovnim uslugama</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/statistika-platnog-prometa'>Statistika platnog prometa</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/centralni-registar-transakcionih-racuna-pravnih-lica-i-preduzetnika'>Centralni registar transakcionih računa pravnih lica i preduzetnika</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/prinudna-naplata'>Prinudna naplata</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/platni-promet/sporazumi-o-saradnji'>Sporazumi o saradnji</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija' 
+                            class='mega-menu-heading'>Sanacija kreditnih institucija
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1934'></span></div><ul class='nav flex-column' id='subnav-1934'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/ciljevi-sanacije'>Ciljevi sanacije</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/kljucne-funkcije-kreditnih-institucija'>Ključne funkcije kreditnih institucija</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/instrumenti-sanacije'>Instrumenti sanacije</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sanacioni-fond'>Sanacioni fond</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/mrel'>MREL</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/nezavisni-procjenjivaci'>Nezavisni procjenjivači</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sazeta-informacija-o-sadrzini-internih-akata-iz-oblasti-sanacije-kreditnih-institucija'>Sažeta informacija o sadržini internih akata iz oblasti sanacije kreditnih institucija</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sporazum-o-saradnji-sa-jedinstvenim-odborom-za-sanaciju-eu'>Sporazum o saradnji sa Jedinstvenim odborom za sanaciju EU</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/istrazivanje-i-prognoze' 
+                            class='mega-menu-heading'>Istraživanje i prognoze
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2062'></span></div><ul class='nav flex-column' id='subnav-2062'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/istrazivanje-i-prognoze/centar-za-makroekonomska-i-finansijska-istrazivanja-i-prognoze'>Centar za makroekonomska i finansijska istraživanja i prognoze</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/istrazivanje-i-prognoze/prognoze-inflacije'>Prognoze inflacije</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/istrazivanje-i-prognoze/projekcija-bdpa'>Projekcija BDP-a</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava' 
+                            class='mega-menu-heading'>Nadzor usaglašenosti poslovanja i zaštita prava
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2440'></span></div><ul class='nav flex-column' id='subnav-2440'><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/nadzor-u-oblasti-sprecavanja-pranja-novca-i-finansiranja-terorizma'>Nadzor u oblasti sprečavanja pranja novca i finansiranja terorizma</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga'>Zaštita prava klijenata kreditnih institucija i korisnika finansijskih usluga</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/prosjecna-ponderisana-efektivna-kamatna-stopa-i-najvisa-dozvoljena-efektivna-kamatna-stopa-na-potrosacke-kredite'>Prosječna ponderisana efektivna kamatna stopa i najviša dozvoljena efektivna kamatna stopa na potrošačke kredite</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/evidencija-kreditnih-posrednika'>Evidencija kreditnih posrednika</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/registar-kreditnih-posrednika-koji-pruzaju-usluge-posredovanja-pri-stambenom-kreditiranju'>Registar kreditnih posrednika koji pružaju usluge posredovanja pri stambenom kreditiranju</a></li><li class='nav-item'><a class='nav-link active' href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/sporazumi-o-saradnji'>Sporazumi o saradnji</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='93'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/novac'
+                  id='nav_93' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Novac
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/novac'>Novac</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_93' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_93'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/novac-u-opticaju' 
+                            class='mega-menu-heading'>Novac u opticaju
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-175'></span></div><ul class='nav flex-column' id='subnav-175'><li class='nav-item'><a class='nav-link active' href='/me/novac/novac-u-opticaju/novcanice'>Novčanice</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/novac-u-opticaju/kovani-novac'>Kovani novac</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/eurozona' 
+                            class='mega-menu-heading'>Eurozona
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/zastita-euro-novcanica-i-kovanog-novca-od-falsifikovanja' 
+                            class='mega-menu-heading'>Zaštita euro novčanica i kovanog novca od falsifikovanja
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-463'></span></div><ul class='nav flex-column' id='subnav-463'><li class='nav-item'><a class='nav-link active' href='/me/novac/zastita-euro-novcanica-i-kovanog-novca-od-falsifikovanja/zastitni-elementi-novca'>Zaštitni elementi novca</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/zastita-euro-novcanica-i-kovanog-novca-od-falsifikovanja/spisak-uspjesno-testiranih-uredjaja'>Spisak uspješno testiranih uređaja</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/zamjena-novca-nepodobnog-za-opticaj' 
+                            class='mega-menu-heading'>Zamjena novca nepodobnog za opticaj
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/jubilarni-novac' 
+                            class='mega-menu-heading'>Jubilarni novac
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/novac/muzej-novca' 
+                            class='mega-menu-heading'>Muzej novca
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-101'></span></div><ul class='nav flex-column' id='subnav-101'><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/o-muzeju'>O Muzeju</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/novac-u-crnoj-gori-kroz-istoriju'>Novac u Crnoj Gori kroz istoriju</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/aktuelnosti'>Aktuelnosti</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/stalne-postavke'>Stalne postavke</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/izlozbe-i-ostali-dogadjaji'>Izložbe i ostali događaji</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/publikacije'>Publikacije</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/galerija-multimedija'>Galerija/Multimedija</a></li><li class='nav-item'><a class='nav-link active' href='/me/novac/muzej-novca/kontakt'>Kontakt</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='21'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/statistika'
+                  id='nav_21' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Statistika
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/statistika'>Statistika</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_21' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_21'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/statistika/nadleznost-centralne-banke-za-statistiku' 
+                            class='mega-menu-heading'>Nadležnost Centralne banke za statistiku
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/me/statistika/unaprijedjeni-opsti-sistem-za-diseminaciju-podataka-egdds' 
+                            class='mega-menu-heading'>Unaprijeđeni Opšti sistem za diseminaciju podataka (e-GDDS)
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/me/statistika/kalendar-objavljivanja-statistike' 
+                            class='mega-menu-heading'>Kalendar objavljivanja statistike
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/me/statistika/sporazumi-o-saradnji' 
+                            class='mega-menu-heading'>Sporazumi o saradnji
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/statistika/statisticki-podaci' 
+                            class='mega-menu-heading'>Statistički podaci
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1283'></span></div><ul class='nav flex-column' id='subnav-1283'><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/monetarna-i-finansijska-statistika'>Monetarna i finansijska statistika</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/indikatori-finansijske-stabilnosti'>Indikatori finansijske stabilnosti</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/kamatne-stope'>Kamatne stope</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/statistika-emitovanih-drzavnih-zapisa'>Statistika emitovanih državnih zapisa</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/trziste-kapitala'>Tržište kapitala</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/ekonomski-odnosi-sa-inostranstvom'>Ekonomski odnosi sa inostranstvom</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/platni-promet'>Platni promet</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/realni-sektor'>Realni sektor</a></li><li class='nav-item'><a class='nav-link active' href='/me/statistika/statisticki-podaci/fiskalni-sektor'>Fiskalni sektor</a></li></ul></div></div></div></li><li class='nav-item  dropdown' data-parentId='20'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/publikacije'
+                  id='nav_20' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Publikacije
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/publikacije'>Publikacije</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_20' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_20'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/publikacije/redovne-publikacije' 
+                            class='mega-menu-heading'>Redovne publikacije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-474'></span></div><ul class='nav flex-column' id='subnav-474'><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/kalendar'>Kalendar</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-guvernerke-o-sprovodjenju-politike-cbcg'>Izvještaj guvernerke o sprovođenju politike CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-o-radu-cbcg'>Izvještaj o radu CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-o-stabilnosti-finansijskog-sistema'>Izvještaj o stabilnosti finansijskog sistema</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/makroprudencijalna-analiza-i-politika'>Makroprudencijalna analiza i politika</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-o-kretanju-stabilnosti-cijena'>Izvještaj o kretanju/stabilnosti cijena</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/bilten-cbcg'>Bilten CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/makroekonomski-izvjestaj-cbcg'>Makroekonomski izvještaj CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-o-rezultatima-ankete-o-kreditnoj-aktivnosti-banaka'>Izvještaj o rezultatima ankete o kreditnoj aktivnosti banaka</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/redovne-publikacije/izvjestaj-sa-medjunarodnog-finansijskog-trzista'>Izvještaj sa međunarodnog finansijskog tržišta</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/publikacije/ostale-publikacije' 
+                            class='mega-menu-heading'>Ostale publikacije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-286'></span></div><ul class='nav flex-column' id='subnav-286'><li class='nav-item'><a class='nav-link active' href='/me/publikacije/ostale-publikacije/izvjestaj-o-rezultatima-analize-makroekonomskih-rizika'>Izvještaj o rezultatima analize makroekonomskih rizika</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/ostale-publikacije/radne-studije'>Radne studije</a></li><li class='nav-item'><a class='nav-link active' href='/me/publikacije/ostale-publikacije/nase-knjige'>Naše knjige</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='22'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/javnost-rada'
+                  id='nav_22' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Javnost rada
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/javnost-rada'>Javnost rada</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_22' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_22'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/aktuelno' 
+                            class='mega-menu-heading'>Aktuelno
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-518'></span></div><ul class='nav flex-column' id='subnav-518'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/aktuelno/saopstenja'>Saopštenja</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/aktuelno/dogadjaji'>Događaji</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/izlaganja-i-obracanja' 
+                            class='mega-menu-heading'>Izlaganja i obraćanja
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-482'></span></div><ul class='nav flex-column' id='subnav-482'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/izlaganja-i-obracanja/intervjui-i-autorski-tekstovi'>Intervjui i autorski tekstovi</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/izlaganja-i-obracanja/govori'>Govori</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/blog' 
+                            class='mega-menu-heading'>Blog
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/multimedija' 
+                            class='mega-menu-heading'>Multimedija
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-290'></span></div><ul class='nav flex-column' id='subnav-290'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/multimedija/video'>Video</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/multimedija/audio'>Audio</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/tenderi-i-oglasi' 
+                            class='mega-menu-heading'>Tenderi i oglasi
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-31'></span></div><ul class='nav flex-column' id='subnav-31'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/tenderi-i-oglasi/oglas-za-prijem-u-radni-odnos'>Oglas za prijem u radni odnos</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/informacije' 
+                            class='mega-menu-heading'>Informacije
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-522'></span></div><ul class='nav flex-column' id='subnav-522'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja'>Najčešće postavljena pitanja</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/informacije/pristup-informacijama'>Pristup informacijama</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/informacije/putni-nalozi'>Putni nalozi</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/informacije/radni-dani'>Radni dani</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/informacije/korisni-linkovi'>Korisni linkovi</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/javnost-rada/elektronski-servisi' 
+                            class='mega-menu-heading'>Elektronski servisi
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-114'></span></div><ul class='nav flex-column' id='subnav-114'><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/servis-za-pristup-aukcijskoj-platformi-centralne-banke'>Servis za pristup Aukcijskoj platformi Centralne banke</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/servis-za-izvjestavanje-rezidenata'>Servis za izvještavanje rezidenata</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/servis-za-pristup-podacima-iz-sistema-prinudne-naplate'>Servis za pristup podacima iz Sistema prinudne naplate</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/servis-za-pristup-podacima-iz-centralnog-registra-transakcionih-racuna'>Servis za pristup podacima iz Centralnog registra transakcionih računa</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/vebservis-pretraga-pravnih-lica-i-preduzetnika-u-ispn-i-crtru'>Veb-servis Pretraga pravnih lica i preduzetnika u ISPN i CRTR-u</a></li><li class='nav-item'><a class='nav-link active' href='/me/javnost-rada/elektronski-servisi/pki-certifikati-za-napredni-elektronski-pecat-za-ucesnike-u-platnom-sistemu'>PKI - Certifikati za napredni elektronski pečat za učesnike u Platnom sistemu</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='2541'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/me/zurnal'
+                  id='nav_2541' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Žurnal
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/me/zurnal'>Žurnal</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_2541' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_2541'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/me/zurnal/journal-of-central-banking-theory-and-practice' 
+                            class='mega-menu-heading'>Journal of Central Banking Theory and Practice
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-121'></span></div><ul class='nav flex-column' id='subnav-121'><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/posljednji-broj'>Posljednji broj</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/arhiva'>Arhiva</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/ciljevi-i-djelokrug'>Ciljevi i djelokrug</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/uputstvo-za-autore'>Uputstvo za autore</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/redakcija-casopisa'>Redakcija časopisa</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/indexing'>Indexing</a></li><li class='nav-item'><a class='nav-link active' href='/me/zurnal/journal-of-central-banking-theory-and-practice/kontakt'>Kontakt</a></li></ul><div class='border-bottom '></div></div></div></div></div></li>          </ul>
+          
+          <ul class='navbar-nav ml-auto'>
+	<li class='nav-item d-flex d-lg-none'>
+	<a href="/me/pretraga" class='top-nav-link pr-0'>Pretraga</a>
+</li>
+            <li class='nav-item '>
+              <a href='/en/core-functions/financial-and-banking-operations/international-reserves' class='top-nav-link pr-0'>ENG</a>            </li>
+            <li class='nav-item d-flex d-lg-none'>
+              <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" style='width: auto' class="top-nav-link pr-0" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin-blue.svg" width="27" height="27" />
+              </a>
+              <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook-blue.svg" width="27" height="27"/>
+              </a>
+	      <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA"  target="_blank" style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+	          <img src="/images/icon-youtube-blue.svg" width="27" height="27" />
+	      </a>
+              <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank"  style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram-blue.svg" width="25" height="25"/>
+              </a>
+              <a href="https://x.com/Centralnabanka" target="_blank"  style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x-blue.svg" width="24" height="24"/>
+              </a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- col12 -->
+  </div> <!-- row -->
+</nav>
+<div class="bg-nav"></div>
+<main id="page-content">
+	<div class="container pt-4 pb-5">
+	<div class="row">
+		<div class="col-md-12 mb-5 breadcrumbs">
+			<a href='/me'>Home</a><i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/me/kljucne-funkcije'>Ključne funkcije</a> <i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije'>Finansijske i bankarske operacije</a> <i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/medjunarodne-rezerve'>Međunarodne rezerve</a>		</div>
+		<div class="col-lg-3 mb-4">
+	
+			<a href='#mobile-multi-level-nav' class='h4 multi-nav-title d-block collapsed' data-toggle='collapse'>Ključne funkcije <i class='mobile-nav-icon flaticon-arrow-down-sign-to-navigate'></i></a><div class='collapse' id='mobile-multi-level-nav'><div id="sidebar" class='multi-level-nav'>
+	<div class="list-group panel" id='multi-level-nav'>
+		<div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/monetarna-politika/' class='d-inline-block parent-link'>Monetarna politika</a><a href='#menu_35' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_35'><div class='list-group-item'><a href='/me/kljucne-funkcije/monetarna-politika/ciljevi' class=' parent-link full'>Ciljevi</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/monetarna-politika/eurizacija' class=' parent-link full'>Eurizacija</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/monetarna-politika/instrumenti' class='d-inline-block parent-link'>Instrumenti</a><a href='#submenu_40' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_35' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_40'><div class='list-group-item'><a href='/me/kljucne-funkcije/monetarna-politika/instrumenti/operacije-na-otvorenom-trzistu' class=' parent-link full'>Operacije na otvorenom tržištu</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/monetarna-politika/instrumenti/kreditni-poslovi' class=' parent-link full'>Kreditni poslovi</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/monetarna-politika/instrumenti/obavezna-rezerva' class=' parent-link full'>Obavezna rezerva</a></div></div></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/finansijska-stabilnost/' class='d-inline-block parent-link'>Finansijska stabilnost</a><a href='#menu_118' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_118'><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/uloga-i-aktivnosti-cbcg' class=' parent-link full'>Uloga i aktivnosti CBCG</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/finansijski-sistem-crne-gore' class=' parent-link full'>Finansijski sistem Crne Gore</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/pokazatelji-i-izvjestaji' class=' parent-link full'>Pokazatelji i izvještaji</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere' class='d-inline-block parent-link'>Makroprudencijalne mjere</a><a href='#submenu_163' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_118' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_163'><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere/bafer-za-ocuvanje-kapitala' class=' parent-link full'>Bafer za očuvanje kapitala</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere/kontraciklicni-bafer-kapitala' class=' parent-link full'>Kontraciklični bafer kapitala</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere/bafer-za-strukturni-sistemski-rizik' class=' parent-link full'>Bafer za strukturni sistemski rizik</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere/sistemski-vazne-kreditne-institucije' class=' parent-link full'>Sistemski važne kreditne institucije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/makroprudencijalne-mjere/ostale-mjere' class=' parent-link full'>Ostale mjere</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijska-stabilnost/nadgledanje-platnih-sistema' class=' parent-link full'>Nadgledanje platnih sistema</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/kontrolna-funkcija/' class='d-inline-block parent-link'>Kontrolna funkcija</a><a href='#menu_36' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_36'><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/kontrolna-funkcija/bankarski-sistem' class='d-inline-block parent-link'>Bankarski sistem</a><a href='#submenu_44' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_44'><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/bankarski-sistem/registar-banaka' class=' parent-link full'>Registar banaka</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/bankarski-sistem/banke-nad-kojima-je-pokrenut-stecajni-postupak' class=' parent-link full'>Banke nad kojima je pokrenut stečajni postupak</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/bankarski-sistem/statisticki-podaci' class=' parent-link full'>Statistički podaci</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/bilansi-stanja-i-bilansi-uspjeha-banaka' class=' parent-link full'>Bilansi stanja i bilansi uspjeha banaka</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-izvjestaji-banaka' class=' parent-link full'>Finansijski izvještaji banaka</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/ppks-aktivnih-kredita-po-bankama' class=' parent-link full'>PPKS aktivnih kredita po bankama</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga' class='d-inline-block parent-link'>Pružaoci finansijskih usluga</a><a href='#submenu_436' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_436'><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga/lizing-drustva' class=' parent-link full'>Lizing društva</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga/faktoring-drustva' class=' parent-link full'>Faktoring društva</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga/drustva-za-otkup-potrazivanja' class=' parent-link full'>Društva za otkup potraživanja</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga/mikrokreditne-finansijske-institucije' class=' parent-link full'>Mikrokreditne finansijske institucije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/pruzaoci-finansijskih-usluga/kreditnogarantni-fondovi' class=' parent-link full'>Kreditno-garantni fondovi</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga' class='d-inline-block parent-link'>Finansijski iskazi pružalaca finansijskih usluga</a><a href='#submenu_3027' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_3027'><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga/mikrokreditne-finansijske-insitucije' class=' parent-link full'>Mikrokreditne finansijske insitucije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga/lizing-drustva' class=' parent-link full'>Lizing društva</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga/drustva-za-otkup-potrazivanja' class=' parent-link full'>Društva za otkup potraživanja</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/finansijski-iskazi-pruzalaca-finansijskih-usluga/faktoring-drustva' class=' parent-link full'>Faktoring društva</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/usluge-kreditnog-registra' class=' parent-link full'>Usluge kreditnog registra</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/priznate-rejting-agencije' class=' parent-link full'>Priznate rejting agencije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/restriktivne-mjere' class=' parent-link full'>Restriktivne mjere</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/kontrolna-funkcija/aqr' class='d-inline-block parent-link'>AQR</a><a href='#submenu_1649' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_1649'><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/aqr/smjernice-za-selekciju-portfolija' class=' parent-link full'>Smjernice za selekciju portfolija</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/aqr/najcesce-postavljena-pitanja-radni-blok-2' class=' parent-link full'>Najčešće postavljena pitanja - Radni blok 2</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/aqr/najcesce-postavljena-pitanja-radni-blok-3' class=' parent-link full'>Najčešće postavljena pitanja - Radni blok 3</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/kontrolna-funkcija/sporazumi-o-saradnji' class=' parent-link full'>Sporazumi o saradnji</a></div></div></div><div class='list-group-item'><div class='d-flex active'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/' class='d-inline-block parent-link'>Finansijske i bankarske operacije</a><a href='#menu_37' class='d-inline-block nav-arrow '  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse show' id='menu_37'><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/medjunarodne-rezerve' class='active parent-link full'>Međunarodne rezerve</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/platni-promet-sa-inostranstvom' class='d-inline-block parent-link'>Platni promet sa inostranstvom</a><a href='#submenu_1297' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_37' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_1297'><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/platni-promet-sa-inostranstvom/kliring-medjunarodnih-placanja' class=' parent-link full'>Kliring međunarodnih plaćanja</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/obavezna-rezerva' class=' parent-link full'>Obavezna rezerva</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi' class='d-inline-block parent-link'>Fiskalni agent - Državni zapisi</a><a href='#submenu_113' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_37' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_113'><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2023-godina' class=' parent-link full'>Arhiva 2023. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2022-godina' class=' parent-link full'>Arhiva 2022. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2020-godina' class=' parent-link full'>Arhiva 2020. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2019-godina' class=' parent-link full'>Arhiva 2019. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2018-godina' class=' parent-link full'>Arhiva 2018. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2017-godina' class=' parent-link full'>Arhiva 2017. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2016-godina' class=' parent-link full'>Arhiva 2016. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2015-godina' class=' parent-link full'>Arhiva 2015. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2014-godina' class=' parent-link full'>Arhiva 2014. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2013-godina' class=' parent-link full'>Arhiva 2013. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2012-godina' class=' parent-link full'>Arhiva 2012. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2011-godina' class=' parent-link full'>Arhiva 2011. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2010-godina' class=' parent-link full'>Arhiva 2010. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2009-godina' class=' parent-link full'>Arhiva 2009. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2008-godina' class=' parent-link full'>Arhiva 2008. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2007-godina' class=' parent-link full'>Arhiva 2007. godina</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/fiskalni-agent-drzavni-zapisi/arhiva-2006-godina' class=' parent-link full'>Arhiva 2006. godina</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/stopa-zatezne-kamate' class=' parent-link full'>Stopa zatezne kamate</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/kursna-lista' class=' parent-link full'>Kursna lista</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/finansijske-i-bankarske-operacije/sporazumi-o-saradnji' class=' parent-link full'>Sporazumi o saradnji</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/' class='d-inline-block parent-link'>Platni promet</a><a href='#menu_38' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_38'><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/registri' class='d-inline-block parent-link'>Registri</a><a href='#submenu_60' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_60'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/registri/registar-platnih-sistema' class=' parent-link full'>Registar platnih sistema</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/registri/registar-platnih-institucija-i-njihovih-agenata' class=' parent-link full'>Registar platnih institucija i njihovih agenata</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/registri/registar-institucija-za-elektronski-novac-i-njihovih-agenata' class=' parent-link full'>Registar institucija za elektronski novac i njihovih agenata</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/registri/spisak-platnih-institucija-i-institucija-za-elektronski-novac-kojima-je-oduzeto-odobrenje' class=' parent-link full'>Spisak platnih institucija i institucija za elektronski novac kojima je oduzeto odobrenje</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/instant-placanja-tips-clone' class='d-inline-block parent-link'>Instant plaćanja (TIPS Clone)</a><a href='#submenu_3083' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_3083'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/instant-placanja-tips-clone/odgovori-na-najcesce-postavljena-pitanja' class=' parent-link full'>Odgovori na najčešće postavljena pitanja</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/instant-placanja-tips-clone/video-uputstva-banaka' class=' parent-link full'>Video uputstva banaka</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/platni-sistemi' class='d-inline-block parent-link'>Platni sistemi</a><a href='#submenu_56' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_56'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/platni-sistemi/rtgs-sistem' class=' parent-link full'>RTGS sistem</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/platni-sistemi/dns-sistem' class=' parent-link full'>DNS sistem</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/platni-sistemi/ips-sistem' class=' parent-link full'>IPS sistem</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/pregled-tarife-centralne-banke-crne-gore' class=' parent-link full'>Pregled tarife Centralne banke Crne Gore</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/finansijski-izvjestaji-platnih-institucija-i-institucija-za-elektronski-novac' class='d-inline-block parent-link'>Finansijski izvještaji platnih institucija i institucija za elektronski novac</a><a href='#submenu_3074' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_3074'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/finansijski-izvjestaji-platnih-institucija-i-institucija-za-elektronski-novac/platne-institucije' class=' parent-link full'>Platne institucije</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/naknade-za-usluge-povezane-sa-racunom-za-placanje-potrosaca' class=' parent-link full'>Naknade za usluge povezane sa računom za plaćanje potrošača</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/racun-za-placanje-sa-osnovnim-uslugama' class=' parent-link full'>Račun za plaćanje sa osnovnim uslugama</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/statistika-platnog-prometa' class='d-inline-block parent-link'>Statistika platnog prometa</a><a href='#submenu_62' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_62'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/statistika-platnog-prometa/statistika-platnih-sistema-centralne-banke-crne-gore' class=' parent-link full'>Statistika Platnih sistema Centralne banke Crne Gore</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/statistika-platnog-prometa/podaci-o-platnim-uslugama-i-elektronskom-novcu' class=' parent-link full'>Podaci o platnim uslugama i elektronskom novcu</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/centralni-registar-transakcionih-racuna-pravnih-lica-i-preduzetnika' class=' parent-link full'>Centralni registar transakcionih računa pravnih lica i preduzetnika</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata' class='d-inline-block parent-link'>Prinudna naplata</a><a href='#submenu_61' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_61'><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/pretraga-duznika-u-prinudnoj-naplati' class=' parent-link full'>Pretraga dužnika u prinudnoj naplati</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/pretraga-blokiranih-pravnih-lica-i-preduzetnika' class=' parent-link full'>Pretraga blokiranih pravnih lica i preduzetnika</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/podaci-o-blokiranim-pravnim-licima-i-preduzetnicima' class=' parent-link full'>Podaci o blokiranim pravnim licima i preduzetnicima</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/pokazatelji-prinudne-naplate' class=' parent-link full'>Pokazatelji prinudne naplate</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/arhiva' class=' parent-link full'>Arhiva</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/prinudna-naplata/potvrde-i-pregledi-na-zahtjev-klijenata' class=' parent-link full'>Potvrde i pregledi na zahtjev klijenata</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/platni-promet/sporazumi-o-saradnji' class=' parent-link full'>Sporazumi o saradnji</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/' class='d-inline-block parent-link'>Sanacija kreditnih institucija</a><a href='#menu_1934' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_1934'><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/ciljevi-sanacije' class=' parent-link full'>Ciljevi sanacije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/kljucne-funkcije-kreditnih-institucija' class=' parent-link full'>Ključne funkcije kreditnih institucija</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/instrumenti-sanacije' class=' parent-link full'>Instrumenti sanacije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sanacioni-fond' class=' parent-link full'>Sanacioni fond</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/mrel' class=' parent-link full'>MREL</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/nezavisni-procjenjivaci' class=' parent-link full'>Nezavisni procjenjivači</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sazeta-informacija-o-sadrzini-internih-akata-iz-oblasti-sanacije-kreditnih-institucija' class=' parent-link full'>Sažeta informacija o sadržini internih akata iz oblasti sanacije kreditnih institucija</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/sanacija-kreditnih-institucija/sporazum-o-saradnji-sa-jedinstvenim-odborom-za-sanaciju-eu' class=' parent-link full'>Sporazum o saradnji sa Jedinstvenim odborom za sanaciju EU</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/istrazivanje-i-prognoze/' class='d-inline-block parent-link'>Istraživanje i prognoze</a><a href='#menu_2062' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_2062'><div class='list-group-item'><a href='/me/kljucne-funkcije/istrazivanje-i-prognoze/centar-za-makroekonomska-i-finansijska-istrazivanja-i-prognoze' class=' parent-link full'>Centar za makroekonomska i finansijska istraživanja i prognoze</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/istrazivanje-i-prognoze/prognoze-inflacije' class=' parent-link full'>Prognoze inflacije</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/istrazivanje-i-prognoze/projekcija-bdpa' class=' parent-link full'>Projekcija BDP-a</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/' class='d-inline-block parent-link'>Nadzor usaglašenosti poslovanja i zaštita prava</a><a href='#menu_2440' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_2440'><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/nadzor-u-oblasti-sprecavanja-pranja-novca-i-finansiranja-terorizma' class=' parent-link full'>Nadzor u oblasti sprečavanja pranja novca i finansiranja terorizma</a></div><div class='list-group-item'><div class='d-flex '><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga' class='d-inline-block parent-link'>Zaštita prava klijenata kreditnih institucija i korisnika finansijskih usluga</a><a href='#submenu_2442' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_2440' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_2442'><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/politika-centralne-banke-u-oblasti-zastite-potrosaca' class=' parent-link full'>Politika Centralne banke u oblasti zaštite potrošača</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/statistika-izvrsene-kontrole-razmotreni-prigovori-i-izrecene-mjere' class=' parent-link full'>Statistika: izvršene kontrole, razmotreni prigovori i izrečene mjere</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/pravo-na-prigovor' class=' parent-link full'>Pravo na prigovor</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/sta-treba-da-znate-prije-i-nakon-zakljucivanja-ugovora-o-potrosackom-kreditu' class=' parent-link full'>Šta treba da znate prije i nakon zaključivanja ugovora o potrošačkom kreditu?</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/informativna-lista-ponude-potrosackih-kredita' class=' parent-link full'>Informativna lista ponude potrošačkih kredita</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/pregled-ponuda-snizenih-kamatnih-stopa-kreditnih-institucija' class=' parent-link full'>Pregled ponuda sniženih kamatnih stopa kreditnih institucija</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/zastita-prava-klijenata-kreditnih-institucija-i-korisnika-finansijskih-usluga/aktivnosti-na-unapredjenju-prava-potrosaca' class=' parent-link full'>Aktivnosti na unapređenju prava potrošača</a></div></div></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/prosjecna-ponderisana-efektivna-kamatna-stopa-i-najvisa-dozvoljena-efektivna-kamatna-stopa-na-potrosacke-kredite' class=' parent-link full'>Prosječna ponderisana efektivna kamatna stopa i najviša dozvoljena efektivna kamatna stopa na potrošačke kredite</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/evidencija-kreditnih-posrednika' class=' parent-link full'>Evidencija kreditnih posrednika</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/registar-kreditnih-posrednika-koji-pruzaju-usluge-posredovanja-pri-stambenom-kreditiranju' class=' parent-link full'>Registar kreditnih posrednika koji pružaju usluge posredovanja pri stambenom kreditiranju</a></div><div class='list-group-item'><a href='/me/kljucne-funkcije/nadzor-usaglasenosti-poslovanja-i-zastita-prava/sporazumi-o-saradnji' class=' parent-link full'>Sporazumi o saradnji</a></div></div></div>	
+	</div>
+</div>
+</div>			
+		</div>
+		<div class="col-lg-9 pl-lg-5">
+			<div class='page-text'>
+				<div class='d-flex'>
+					<h1>Međunarodne rezerve</h1>
+									</div> <!-- clearfix -->
+				<hr class='heading-hr'>
+
+					
+	
+							
+				<p style="text-align: justify;">Upravljanje sredstvima međunarodnih rezervi na računima u inostranstvu obavlja se u skladu sa <a href="/slike_i_fajlovi/fajlovi/fajlovi_brzi_linkovi/propisi/zakoni/zakon_o_cbcg_125-23.pdf" rel="noopener noreferrer" target="_blank"><em>Zakonom o Centralnoj banci</em><em> Crne Gore</em></a><strong>,</strong> a saglasno opredjeljenjima definisanim aktima koje je donio Savjet Centralne banke: <a href="/me/o-nama/istorijat-ciljevi-i-funkcije/politika-za-ostvarivanje-ciljeva-i-izvrsavanje-funkcija" rel="noopener noreferrer" target="_blank"><em>Politika za ostvarivanje ciljeva i izvršavanje funkcija Centralne banke Crne Gore</em></a>, <a href="/slike_i_fajlovi/fajlovi/fajlovi_brzi_linkovi/propisi/upr_medj_rez/odluka_o_upravljanju_medjunarodnim_rezervama_116-24.pdf" rel="noopener noreferrer" target="_blank"><em>Odluka o upravljanju međunarodnim rezervama</em></a> i <em>Smjernice o investicionoj strategiji za upravljanje međunarodnim rezervama</em>.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;">Centralna banka upravlja međunarodnim rezervama na način koji je usklađen sa monetarnom politikom. U obavljanju ovih poslova prioritet je dat principu sigurnosti investiranja, uz obezbjeđivanje likvidnosti u tekućim plaćanjima sa inostranstvom. Poštujući ovo opredjeljenje kontinuirano se prate <a href="/me/publikacije/redovne-publikacije/izvjestaj-sa-medjunarodnog-finansijskog-trzista" rel="noopener noreferrer" target="_blank"><em>kretanja na međunarodnom finansijskom tržištu</em></a> i rizici vezani za portfolio međunarodnih rezervi i vrše analize sa ciljem boljeg prilagođavanja uslovima na tržištu. </p><p style="text-align: justify;"><br></p><p style="text-align: justify;">Radi obezbjeđivanja integriteta, ograničavanja rizika i efikasne kontrole pri upravljanju međunarodnim rezervama u Centralnoj banci uspostavljena je podjela odgovornosti po hijerarhijskoj organizacionoj strukturi koju čine: </p><p style="text-align: justify;"><br></p><ul type="disc"><li style="text-align: justify;">Savjet Centralne banke - koji usvaja investicionu strategiju za upravljanje međunarodnim rezervama;</li><li style="text-align: justify;">Guvernerka - koja daje bliže smjernice za preduzimanje pojedinih aktivnosti u upravljanju međunarodnim rezervama u okviru parametara utvrđenih strategijom;</li><li style="text-align: justify;"><a href="/uploads/invest_komitet.pdf" rel="noopener noreferrer" target="_blank"><em>Investicioni komitet</em></a><em> </em>koji formira guvernerka,kao stručno-savjetodavno tijelo koje razmatra investicionu strategiju za upravljanje međunarodnim rezervama u okvirima odobrenim strategijom i predlaže taktički okvir za upravljanje međunarodnim rezervama;</li><li style="text-align: justify;">Dnevne aktivnosti upravljanja međunarodnim rezervama obavljaju zaposleni iz nekoliko organizaciono razdvojenih dijelova, preciznije iz Odjeljenja za upravljanje međunarodnim rezervama (Front Office), Odjeljenja za upravljanje rizicima međunarodnih rezervi (Middle Office) i Odjeljenja za platni promet sa inostranstvom i korespondentske odnose (Back Office).</li></ul><p style="text-align: justify;"><br></p><p style="text-align: justify;">Međunarodne rezerve na računima u inostranstvu dijele se po tranšama na likvidnu, investicionu i posebnu tranšu. Namjena likvidne tranše je da se obezbijedi nivo likvidnih sredstava dovoljan da se ispune zahtjevi za nesmetano ispunjavanje obaveza Crne Gore u inostranstvu. Sredstva se drže kod centralnih banaka, kao i kod poslovnih banaka odgovarajućeg rejtinga, a ulažu se u oročene depozite i državne hartije od vrijednosti originalnog roka dospijeća do godinu dana. Investiciona tranša se investira na rok duži od godinu dana. Ukupna investiciona tranša se sastoji od investicionog portfolija raspoloživog za prodaju, investicionog portfolija do dospijeća, kao i operativnog portfolija. Ova sredstva su investirana u hartije od vrijednosti država, pokrajina, vladinih agencija, supranacionalnih institucija, u njemačke pokrivene obveznice, kao i korporativne hartije finansijskog sektora. Posebnu tranšu čine sredstva kod MMF-a, koja se odnose na članstvo Crne Gore u ovoj međunarodnoj finansijskoj instituciji i ostala sredstva kojima se aktivno ne upravlja.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;">U procesu upravljanja portfoliom međunarodnih rezervi prate se:</p><p style="text-align: justify;"><br></p><ul type="disc"><li style="text-align: justify;">Kamatni rizik, kao izloženost mogućnosti gubitka uslijed promjena kamatnih stopa. Upravljanje kamatnim rizikom postiže se određivanjem optimalne osjetljivosti cijena obveznica na promjenu stopa prinosa.</li><li style="text-align: justify;">Kreditni rizik kao izloženost mogućnosti gubitka uslijed neispunjenja finansijske obaveze izdavaoca hartija od vrijednosti, finansijske institucije ili zemlje. Upravljanje kreditnim rizikom postiže se postavljanjem minimalnog kreditnog rejtinga za hartije od vrijednosti u koje se ulaže i za banke kod kojih Centralna banka plasira sredstva, kao i drugih ograničenja izloženosti kreditnom riziku. Limiti se postavljaju na osnovu informacija vodećih rejting agencija, finansijskih pokazatelja, tržišnih indikatora i drugih raspoloživih informacija.</li><li style="text-align: justify;">Rizik likvidnosti kao izloženost riziku gubitka uslijed nemogućnosti da se, radi blagovremenog izmirenja svih dospjelih obaveza, u kratkom roku izvrši prodaja hartija od vrijednosti uz minimalne troškove transakcije. Upravljanje rizikom likvidnosti postiže se izborom kvalitetnih i likvidnih hartija od vrijednosti kojima se svakodnevno i u velikom obimu trguje na finansijskim tržištima, čime se ovaj rizik svodi na najmanju moguću mjeru.</li></ul><p style="text-align: justify;"><br></p><p style="text-align: justify;">Dodatno, analize (<em>ex post</em> i <em>ex ante</em>) koje se koriste, obuhvataju apsolutne i relativne mjere rizika (<em>VaR</em>, <em>Tracking Error</em>, <em>Sharpe ratio </em>i druge). Pored ovih analiza, sprovode se i dnevna mjerenja performansa portfolija u odnosu na izabrani benčmark. Izbor odgovarajućeg benčmarka je ključan kako bi se pravilno ocijenio performans portfolija i donijele pravovremene odluke u vezi sa portfolijom i njegovom strukturom. Izabrani benčmarci za ovu svrhu su adekvatni indeksi od ICE provajdera indeksa.</p><p style="text-align: justify;"><br></p><p style="text-align: justify;">Centralna banka na godišnjem nivou, kroz <a href="/me/publikacije/redovne-publikacije/izvjestaj-o-radu-cbcg" rel="noopener noreferrer" target="_blank"><em>Izvještaj o radu</em></a> i <a href="/me/o-nama/finansijsko-poslovanje/godisnji-finansijski-izvjestaji-sa-izvjestajem-nezavisnog-revizora" rel="noopener noreferrer" target="_blank"><em>Finansijski izvještaj sa izvještajem nezavisnog revizora</em></a> objavljuje detaljnije informacije o upravljanju međunarodnim rezervama u dijelu strukture i kretanja nivoa rezervi, ostvarenih prihoda i performansa pojedinih portfolija u odnosu na izabrane benčmarke, kao i o rizicima koji se prate.</p>			</div>
+			
+		</div>
+	</div>
+</div>
+
+</main>
+
+ 	<footer>
+		<div class="top bg-light-primary">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-9">
+							
+						<h2 class='t-gray'>Najčešće postavljena pitanja</h2>
+						<hr class="heading-hr bg-gray">
+						<ul class='faq-list mt-4'>
+							<li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja?accordion-open=537#open-537'>Kako možete dobiti potvrdu da Vaša firma nije u blokadi?</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja?accordion-open=2429#open-2429'>Deset savjeta za bezbjednu online trgovinu</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja?accordion-open=2223#open-2223'>Šta treba da znate prije i nakon zaključivanja ugovora o potrošačkom kreditu?</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja?accordion-open=2355#open-2355'>Vodič za trgovce – Zakon o međubankarskim naknadama</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja?accordion-open=1945#open-1945'>Pitanja i odgovori u vezi sa načinom primjene Zakona o kreditnim institucijama i podzakonskih propisa donesenih na osnovu tog zakona</a>
+										</li>						</ul>
+
+						<a href='/me/javnost-rada/informacije/najcesce-postavljena-pitanja' class='btn-arrow-right mt-auto pt-2'>
+							<span>Op&scaron;irnije</span> 
+							<img src='/images/icon-arrow-right.svg' width="25" height="29" />
+						</a>
+					</div>
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</div> <!-- top -->
+
+		<div class="middle">
+			<div class="container">
+				<div class="row">
+				<div class='col-md-3 mt-3 mt-md-0 footer-text'><h4>CENTRALNA BANKA CRNE GORE</h4><p>Bulevar Svetog Petra Cetinjskog br. 6</p><p>81000 Podgorica</p><p>Radno vrijeme od 08:00 do 16:00&nbsp;</p><p class='mt-3'>
+										<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map1'>
+											Lokacija
+										</a>
+									</p><div class='modal fade modal-map modal-clean' id='modal-map1' role='dialog'>
+										<div class='modal-dialog' role='document'>
+											<div class='modal-header'>
+												<i class='flaticon-multiply'></i>
+											</div>
+											<div class='modal-content'>
+												<div id='gmap1' class='g-maps' data-lat='42.439483' 
+												data-lng='19.261337'></div>
+											</div>
+										</div>
+									</div></div><div class='col-md-3 mt-4 mt-md-0 footer-text'><h4><br></h4><p>Novaka Miloševa bb</p><p>81000 Podgorica</p><p>Radno vrijeme od 08:00 do 16:00&nbsp;</p><p class='mt-3'>
+									<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map2'>
+										Lokacija
+									</a>
+								</p><div class='modal fade modal-map modal-clean' id='modal-map2' role='dialog'>
+									<div class='modal-dialog' role='document'>
+										<div class='modal-header'>
+											<i class='flaticon-multiply'></i>
+										</div>
+										<div class='modal-content'>
+											<div id='gmap2' class='g-maps' data-lat='42.440445' 
+											data-lng='19.265778'></div>
+										</div>
+									</div>
+								</div></div><div class='col-md-3 mt-4 mt-md-0 footer-text'><h4>MUZEJ NOVCA</h4><p>Njegoševa br. 122</p><p>41000 Cetinje</p><p>Radno vrijeme od 08:00 do 16:00</p><p class='mt-3'>
+									<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map3'>
+										Lokacija
+									</a>
+								</p><div class='modal fade modal-map modal-clean' id='modal-map3' role='dialog'>
+									<div class='modal-dialog' role='document'>
+										<div class='modal-header'>
+											<i class='flaticon-multiply'></i>
+										</div>
+										<div class='modal-content'>
+											<div id='gmap3' class='g-maps' data-lat='42.390481' 
+											data-lng='18.923086'></div>
+										</div>
+									</div>
+								</div></div>
+					<div class='col-md-3 mt-4 mt-md-0 footer-text'>
+
+						<ul class="d-flex list-unstyled m-0 social-links">
+
+
+
+<li>
+                <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin.svg" width="24" height="24" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+
+            
+              <li>
+                <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-youtube.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+  <li>
+                <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+	  <li>
+                <a href="https://x.com/Centralnabanka" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+
+
+
+
+						</ul>	
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class="container">
+				<div class="d-flex">
+					<div class="d-block d-lg-inline mr-auto">
+						<a href="/me"><img src='/images/nav-logo-me.svg' class='footer-logo d-block d-lg-inline' /></a> 
+						2026 CBCG</a> | Sva prava zadržana.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKundjTbXSHAOy4wqmD7IDBtTh3-zvFTw"></script>
+	<script src='/js/scripts.js'></script>
+	<script src='/js/main.js?ver=0.2'></script>
+</body>
+</html>

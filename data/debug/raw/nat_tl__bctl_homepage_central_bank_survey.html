@@ -1,0 +1,3083 @@
+
+<!DOCTYPE html>
+<html lang="TLS">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="Banco Central de Timor-Leste">
+  <meta name="keywords" content="Banco Central de Timor-Leste">
+  <meta name="description"
+    content="Banco Central de Timor-Leste conduz políticas com o objectivo de alcançar e manter a estabilidade interna dos preços. ">
+  
+  
+  <title>CENTRAL BANK SURVEY</title>
+  
+  <link rel="shortcut icon" href="/static/assets/public/img/logo_bctl.png">
+  <!-- Bootstrap 5 -->
+  <link href="/static/assets/public/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="/static/assets/public/css/app.css" rel="stylesheet">
+  <link href="/static/assets/public/css/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Inter (UI) + Source Serif 4 (editorial headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/htmx.org@2.0.4" defer></script>
+  <script src="https://unpkg.com/htmx-ext-preload@2.1.1/preload.js" defer></script>
+</head>
+<div id="page-loading" class="page-loader">
+  <!-- <div class="loader-card"> -->
+  <div class="loader-circle">
+    <img src="/static/assets/public/img/logo_bctl.png" class="loader-logo" alt="BCTL">
+  </div>
+
+  <!-- <p class="mt-3 mb-0 fw-semibold">
+      Loading...
+    </p> -->
+  <!-- </div> -->
+</div>
+
+
+  <body hx-ext="preload">
+    
+
+    <!-- ===================== HEADER ===================== -->
+    
+
+<header class="site-header">
+    <div class="wrap header-wrap">
+
+        <a class="brand" href="/" id="brandLink" aria-label="Banco Central de Timor-Leste — Home">
+            <span class="emblem" aria-hidden="true">
+                <img src="/static/assets/public/img/logo_bctl.png" width="50" alt="">
+            </span>
+            <span class="brand-text"><strong>BANCO CENTRAL</strong><span>De Timor-Leste</span></span>
+        </a>
+
+        <div class="header-right">
+            <div class="header-top">
+                <div class="utility">
+                    <div class="search-box" id="searchBox">
+                        <a class="search-link" href="#" id="searchBtn" aria-label="Search">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="11" cy="11" r="7" />
+                                <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                            </svg>
+                        </a>
+                        <form class="search-dropdown" action="/search/" method="GET">
+                            <input type="search" name="q" placeholder="Search..." autocomplete="off">
+                            <button type="submit" aria-label="Submit search">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <line x1="16.5" y1="16.5" x2="21" y2="21" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="pills">
+                        <a class="pill" href="/administrator/" target="_blank">Login</a>
+                    </div>
+                    <div class="util-links">
+                        <span class="lang">
+                            <a href="/lang/en/"
+                                class="" data-no-loader>EN</a>
+                            <span>·</span>
+                            <a href="/lang/pt/"
+                                class="" data-no-loader>PT</a>
+                            <span>·</span>
+                            <a href="/lang/tet/"
+                                class="" data-no-loader>TET</a>
+                        </span>
+                    </div>
+                    <button class="burger" id="burger" aria-label="Menu">☰</button>
+                </div>
+
+                <div class="main-nav-row">
+                    <ul class="main-nav" id="mainNav">
+                        <li class="has-mega">
+                            <a href="#" class="">
+                                
+                                About BCTL
+                                
+                            </a>
+                            <div class="mega">
+                                <div class="wrap">
+                                    <div class="mega-grid">
+                                        <div class="mega-col">
+                                            <h6><br></h6>
+                                            <ul>
+                                                <li><a href="/about/inst/"><i class="bi bi-building"></i>
+                                                        
+                                                        Instituition
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/m_v/"><i class="bi bi-eye"></i>
+                                                        
+                                                        Vision, Mission & Values
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col">
+                                            <h6><br></h6>
+                                            <ul>
+                                                <li><a href="/about/mandate/"><i
+                                                            class="bi bi-file-earmark-text"></i>
+                                                        
+                                                        Mandate
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/governorp/"><i class="bi bi-person-badge"></i>
+                                                        
+                                                        Governor
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/boarddir/"><i class="bi bi-people"></i>
+                                                        
+                                                        Board of Directors
+                                                        
+                                                    </a></li>
+                                                <!-- <li><a href="#">BCTL Offices</a></li> -->
+
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col">
+                                            <h6><br></h6>
+                                            <ul>
+                                                <!-- <li><a href="#">BCTL Offices</a></li> -->
+                                                <li><a href="/about/org/"><i class="bi bi-diagram-3"></i>
+                                                        
+                                                        Organization Structure
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/dep/"><i class="bi bi-building-gear"></i>
+                                                        
+                                                        Departments
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/career/"><i class="bi bi-briefcase"></i>
+                                                        
+                                                        Careers
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col">
+                                            <h6><br></h6>
+                                            <ul>
+
+                                                <li><a href="/about/procurement/"><i class="bi bi-cart"></i>
+                                                        
+                                                        Procurement
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/strategic_plan/"><i class="bi bi-map"></i>
+                                                        
+                                                        Strategic Plan
+                                                        
+                                                    </a></li>
+                                                <li><a href="/contact/"><i class="bi bi-envelope"></i>
+                                                        
+                                                        Contact
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col mega-feature">
+                                            <a href="/about/inst/" class="mega-feature-card">
+                                                <i class="bi bi-bank"></i>
+                                                <strong>
+                                                    
+                                                    About BCTL
+                                                    
+                                                </strong>
+                                                <span>
+                                                    
+                                                    Learn who we are and what we stand for
+                                                    
+                                                </span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="has-mega">
+                            <a href="#" class="">Publications</a>
+                            <div class="mega">
+                                <div class="wrap">
+                                    <!-- TOMBOL TAB -->
+                                    <div class="mega-tabs" style="margin: auto;">
+                                        <button class="mega-tab active" data-tab="laws" style="font-size: 16px;">
+
+                                            
+                                            Laws and Others Instrument
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="keyreport" style="font-size: 16px;">
+                                            
+                                            Key Report
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="keypub" style="font-size: 16px;">
+
+                                            
+                                            Key Publication
+                                            
+                                        </button>
+                                    </div>
+
+                                    <!-- ISI TAB 1: laws and others instruments -->
+                                    <div class="mega-panel active" data-panel="laws">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Laws
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/laws_np/"><i
+                                                                class="bi bi-file-earmark-ruled"></i>
+                                                            
+                                                            Law of the National Parliament
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/laws_govtl/"><i
+                                                                class="bi bi-file-earmark-text"></i>
+                                                            
+                                                            Decree-Law of The Government
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Regulatory Instruments issued by BCTL
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/regulation/"><i
+                                                                class="bi bi-journal-text"></i>
+                                                            
+                                                            Regulation
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/instruction/"><i
+                                                                class="bi bi-list-check"></i>
+                                                            
+                                                            Instruction
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/circular/"><i
+                                                                class="bi bi-envelope-paper"></i>
+                                                            
+                                                            Circular
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/order/"><i
+                                                                class="bi bi-exclamation-diamond"></i>
+                                                            
+                                                            Order
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/rules/"><i class="bi bi-book"></i>
+                                                            
+                                                            Rules
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/other_rules/"><i class="bi bi-files"></i>
+                                                            
+                                                            Other Regulatory Instruments
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/publication/laws_np/" class="mega-feature-card">
+                                                    <i class="bi bi-file-earmark-lock"></i>
+                                                    <strong>
+                                                        
+                                                        Laws & Instruments
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Access the legal framework governing BCTL
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--  TAB 1: laws and others instruments -->
+                                    <div class="mega-panel " data-panel="keyreport">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Key Report
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/bctl_ann_rep/"><i
+                                                                class="bi bi-file-earmark-bar-graph"></i>
+                                                            
+                                                            BCTL Annual Report
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/pf_rep/"><i class="bi bi-droplet"></i>
+                                                            
+                                                            Petroleum Fund Report
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/m_pro_for_bsh/"><i
+                                                                class="bi bi-calculator"></i>
+                                                            
+                                                            Monthly Pro Forma Balance Sheet
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/fin_inc_rep/"><i
+                                                                class="bi bi-graph-up-arrow"></i>
+                                                            
+                                                            Financial Inclusion Report
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/publication/bctl_ann_rep/" class="mega-feature-card">
+                                                    <i class="bi bi-journal-richtext"></i>
+                                                    <strong>
+                                                        
+                                                        Annual Report
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Read our latest yearly performance report
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- TAB 1: laws and others instruments -->
+                                    <div class="mega-panel " data-panel="keypub">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Plans & Strategy
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/master_plan/"><i
+                                                                class="bi bi-signpost-split"></i>
+                                                            
+                                                            Master Plan
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/corp_plan/"><i class="bi bi-diagram-2"></i>
+                                                            
+                                                            Corporate Plan
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/str_nat_pay_sys/"><i
+                                                                class="bi bi-credit-card"></i>
+                                                            
+                                                            Strategy for National Payments System
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/nat_str_fin_inc/"><i
+                                                                class="bi bi-people-fill"></i>
+                                                            
+                                                            National Strategy for Financial Inclusion
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Quarterly Statistics
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/quert_eco_bull/"><i
+                                                                class="bi bi-newspaper"></i>
+                                                            
+                                                            Quarterly Economic Bulletin
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/quert_bop_iip_sts/"><i
+                                                                class="bi bi-globe"></i>
+                                                            
+                                                            Quarterly BOP and IIP Statistics
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/quert_cons_fin_stat/"><i
+                                                                class="bi bi-file-spreadsheet"></i>
+                                                            
+                                                            Quarterly Consolidated Financial Statements
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/pay_stats/"><i
+                                                                class="bi bi-credit-card-2-front"></i>
+                                                            
+                                                            Payments Statistics
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Reports & Papers
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/publication/interest_rate_byb/"><i
+                                                                class="bi bi-percent"></i>
+                                                            
+                                                            Interest Rate by Banks
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/papers/"><i class="bi bi-file-earmark"></i>
+                                                            
+                                                            Papers
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/inv_adv_bor_min/"><i
+                                                                class="bi bi-clipboard-data"></i>
+                                                            
+                                                            Investment Advisory Board minutes
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/publication/fiu_rep/"><i class="bi bi-shield-check"></i>
+                                                            
+                                                            FIU Report
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/publication/master_plan/" class="mega-feature-card">
+                                                    <i class="bi bi-journals"></i>
+                                                    <strong>
+                                                        
+                                                        Key Publications
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Explore our plans, strategies and statistical reports
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="has-mega">
+                            <a href="#" class="active">Mission and tasks</a>
+                            <div class="mega">
+                                <div class="wrap">
+                                    <!-- TOMBOL TAB -->
+                                    <div class="mega-tabs" style="margin: auto;">
+                                        <button class="mega-tab active" data-tab="currency" style="font-size: 18px;">
+                                            
+                                            Currency
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="banksuper" style="font-size: 16px;">
+                                            
+                                            Banking Supervision
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="paysys" style="font-size: 16px;">
+                                            
+                                            Payment System
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="stats" style="font-size: 16px;">
+                                            
+                                            Statistics
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="petfund" style="font-size: 16px;">
+                                            
+                                            Petroleum Fund
+                                            
+                                        </button>
+                                        <button class="mega-tab" data-tab="finsys" style="font-size: 16px;">
+                                            
+                                            Financial System
+                                            
+                                        </button>
+                                        <!-- <a href="https://resplendent-longma-7ec845.netlify.app/" id="edu_fin_btn"
+                                            class="mega-tab" style="font-size:16px;">
+                                            Financial Education
+                                        </a> -->
+                                        <button class="mega-tab" data-tab="edu_fin" style="font-size: 16px;">
+                                            Financial Education
+                                        </button>
+                                    </div>
+
+                                    <!--  TAB 1: Currency -->
+                                    <div class="mega-panel active" data-panel="currency">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Currency in Circulation
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/currency/b_in_c/"><i class="bi bi-cash-stack"></i>
+                                                            
+                                                            Banknotes in Circulation
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/co_in_c/"><i class="bi bi-coin"></i>
+                                                            
+                                                            Coins in Circulation
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/com_co/"><i class="bi bi-award"></i>
+                                                            
+                                                            Commemorative Coins
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/num_co/"><i class="bi bi-gem"></i>
+                                                            
+                                                            Numismatic Coins
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Banknotes
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/currency/den_b/"><i class="bi bi-cash"></i>
+                                                            
+                                                            Denomination Banknotes
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/fe_bank/"><i class="bi bi-search"></i>
+                                                            
+                                                            Features of Banknotes
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/exc_usd_b/"><i
+                                                                class="bi bi-arrow-left-right"></i>
+                                                            
+                                                            Exchange USD Banknotes
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/b_pay/"><i class="bi bi-wallet2"></i>
+                                                            
+                                                            Banknotes as Means of Payment
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Coins
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/currency/de_co/"><i class="bi bi-coin"></i>
+                                                            
+                                                            Denomination Coins
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/fe_co/"><i class="bi bi-search"></i>
+                                                            
+                                                            Features of Coins
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/exc_co/"><i
+                                                                class="bi bi-arrow-left-right"></i>
+                                                            
+                                                            Exchange Coins (Centavos)
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Currency Design
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/currency/sec_fe/"><i class="bi bi-shield-lock"></i>
+                                                            
+                                                            Security Features
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/charac/"><i class="bi bi-info-circle"></i>
+                                                            
+                                                            Characteristics
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Know Your Money
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/currency/leg_tender/"><i
+                                                                class="bi bi-patch-check"></i>
+                                                            
+                                                            Legal Tender
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/counter_detec/"><i class="bi bi-eye"></i>
+                                                            
+                                                            Counterfeit Detection
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/anti_counter/"><i
+                                                                class="bi bi-shield-exclamation"></i>
+                                                            
+                                                            Anti-Counterfeiting
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/currency/download/"><i class="bi bi-download"></i>
+                                                            
+                                                            Downloads
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/currency/know_ym/" class="mega-feature-card">
+                                                    <i class="bi bi-cash-coin"></i>
+                                                    <strong>
+                                                        
+                                                        Know Your Money
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Learn to identify genuine Timor-Leste currency
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: Payment System -->
+                                    <div class="mega-panel" data-panel="paysys">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Payment System
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/nat_pay_sys_str/"><i
+                                                                class="bi bi-diagram-3"></i>
+                                                            
+                                                            National Payment System Strategy
+                                                            
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="/stats/iban/"><i class="bi bi-credit-card"></i>
+                                                            
+                                                            Timor-Leste IBAN
+                                                            
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="/stats/r-timor/"><i
+                                                                class="bi bi-arrow-left-right"></i>
+                                                            
+                                                            Real-Time Transfer Network (R-TiMOR)
+                                                            
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="/stats/nc-ms/"><i class="bi bi-credit-card"></i>
+                                                            
+                                                            National Card and Mobile Switch
+                                                            
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="/stats/bctl-fc/"><i class="bi bi-cash-stack"></i>
+                                                            
+                                                            BCTL Fees and Charges
+                                                            
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>P24</h6>
+                                                <ul>
+                                                    <li><a href="/stats/p24sys_serv/"><i
+                                                                class="bi bi-credit-card"></i>
+                                                            
+                                                            P24 System Services
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>FinTech</h6>
+                                                <ul>
+                                                    <li><a href="/stats/dig_wallet/"><i class="bi bi-wallet2"></i>
+                                                            
+                                                            Digital Wallet
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/publication/str_nat_pay_sys/" class="mega-feature-card">
+                                                    <i class="bi bi-credit-card-2-front"></i>
+                                                    <strong>
+                                                        
+                                                        Payment Systems
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Explore Timor-Leste's payment systems infrastructure
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: Banking Supervision -->
+                                    <div class="mega-panel" data-panel="banksuper">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Banking Supervision
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/con_protect/"><i
+                                                                class="bi bi-shield-check"></i>
+                                                            
+                                                            Consumer Protection
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/bank_sys/"><i class="bi bi-bank"></i>
+                                                            
+                                                            Banking System
+                                                            
+                                                        </a></li>
+                                                    <!-- <li><a href="/stats/fin_sys_net/">
+                                                            
+                                                            Financial System Networks
+                                                            
+                                                        </a></li> -->
+                                                    <li><a href="/stats/acc_fin_indicator/"><i
+                                                                class="bi bi-graph-up"></i>
+                                                            
+                                                            Access to Finance Indicator
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/stats/con_protect/" class="mega-feature-card">
+                                                    <i class="bi bi-shield-check"></i>
+                                                    <strong>
+                                                        
+                                                        Banking Supervision
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Ensuring a safe and sound banking system
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: statistics -->
+                                    <div class="mega-panel" data-panel="stats">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Statistics
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/export_data/"><i class="bi bi-file-earmark-excel"></i>
+                                                            
+                                                            Export Data
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/economic/"><i class="bi bi-graph-up"></i>
+                                                            
+                                                            Economic Statistics
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/interest_rate/"><i
+                                                                class="bi bi-percent"></i>
+                                                            
+                                                            Interest Rate
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/exchange_rate/"><i
+                                                                class="bi bi-arrow-left-right"></i>
+                                                            
+                                                            Exchange Rate
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/inflation/"><i
+                                                                class="bi bi-arrow-up-right-circle"></i>
+                                                            
+                                                            Inflation
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/gdp/"><i class="bi bi-bar-chart"></i>
+                                                            
+                                                            GDP
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/public_fin/"><i
+                                                                class="bi bi-cash-stack"></i>
+                                                            
+                                                            Public Finance Statistics
+                                                            
+                                                        </a></li>
+                                                    <!-- <li><a href="">
+                                                            
+                                                            Banking Statistics
+                                                            
+                                                        </a></li> -->
+                                                    <!-- <li><a href="/stats/export_import_data/">
+                                                            
+                                                            Export and Import Data
+                                                            
+                                                        </a></li> -->
+                                                    <!-- <li><a href="">
+                                                            
+                                                            Access to Finance Indicator
+                                                            
+                                                        </a></li> -->
+                                                    <li><a href="/stats/pf_keynu/"><i class="bi bi-droplet"></i>
+                                                            
+                                                            Petroleum Fund Key Number
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Monetary Aggregates
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/m_aggregates/"><i class="bi bi-stack"></i>
+                                                            
+                                                            Monetary Aggregates
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/m_sup_deter/"><i
+                                                                class="bi bi-currency-exchange"></i>
+                                                            
+                                                            Money Supply & Determinants
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/m_survey_assets/"><i
+                                                                class="bi bi-list-ul"></i>
+                                                            
+                                                            Monetary Survey Assets
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/m_survey_liabilities/"><i
+                                                                class="bi bi-clipboard-data"></i>
+                                                            
+                                                            Monetary Survey Liabilities
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Deposit & Bank Surveys
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/dep_corp_survey/"><i class="bi bi-bank"></i>
+                                                            
+                                                            Depository Corporation Survey
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/ot_dep_corp_survey/"><i
+                                                                class="bi bi-building"></i>
+                                                            
+                                                            Other Depository Corporation Survey
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/cent_b_survey/"><i class="bi bi-bank2"></i>
+                                                            
+                                                            Central Bank Survey
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/tot_dep_m_b/"><i
+                                                                class="bi bi-piggy-bank"></i>
+                                                            
+                                                            Total Deposit Money Bank by Type & Sector
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    External Sector
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/balance_pay/"><i class="bi bi-globe2"></i>
+                                                            
+                                                            Balance of Payments
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/inter_invest_p/"><i class="bi bi-globe"></i>
+                                                            
+                                                            International Investment Position
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/external_debt/"><i
+                                                                class="bi bi-exclamation-circle"></i>
+                                                            
+                                                            External Debt
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/export_import_data/"><i
+                                                                class="bi bi-box-seam"></i>
+                                                            
+                                                            Export & Import Data
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/reer/"><i
+                                                                class="bi bi-arrow-left-right"></i>
+                                                            
+                                                            REER
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Financial System Networks
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/fin_ind/"><i
+                                                                class="bi bi-graph-up-arrow"></i>
+                                                            
+                                                            Financial Indicators
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/b_net/"><i class="bi bi-diagram-3"></i>
+                                                            
+                                                            Bank's Network
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/insurance/"><i class="bi bi-umbrella"></i>
+                                                            
+                                                            Insurance
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/atm_net/"><i class="bi bi-credit-card"></i>
+                                                            
+                                                            ATM's Networks
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/eftpos_net/"><i
+                                                                class="bi bi-credit-card-2-front"></i>
+                                                            
+                                                            EFTPOS Networks
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/agents_net/"><i class="bi bi-people"></i>
+                                                            
+                                                            Agents Networks
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/stats/economic/" class="mega-feature-card">
+                                                    <i class="bi bi-bar-chart-line"></i>
+                                                    <strong>
+                                                        
+                                                        Statistics
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Access comprehensive economic and monetary statistics
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: Petroleum Fund -->
+                                    <div class="mega-panel" data-panel="petfund">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    
+                                                    Petroleum Fund
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/about_pf/"><i class="bi bi-info-circle"></i>
+                                                            
+                                                            About Petroleum Fund
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/pf_cons_council/"><i
+                                                                class="bi bi-people"></i>
+                                                            
+                                                            Consultive Council
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/pf_invst_adv_bo/"><i
+                                                                class="bi bi-clipboard-data"></i>
+                                                            
+                                                            Investment Advisory Board
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/pf_bo_sch/"><i class="bi bi-calendar3"></i>
+                                                            
+                                                            Advisory Board Schedule
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/stats/about_pf/" class="mega-feature-card">
+                                                    <i class="bi bi-droplet"></i>
+                                                    <strong>
+                                                        
+                                                        Petroleum Fund
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Learn about Timor-Leste's Petroleum Fund management
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: Financial System -->
+                                    <div class="mega-panel" data-panel="finsys">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+
+                                                    
+                                                    Financial System
+                                                    
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/stats/fin_inst/"><i class="bi bi-bank"></i>
+                                                            
+                                                            Financial Instituition
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/lic_app/"><i
+                                                                class="bi bi-file-earmark-check"></i>
+                                                            
+                                                            License Application
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/fin_sec_dev/"><i class="bi bi-graph-up"></i>
+                                                            
+                                                            Financial Sector Development
+                                                            
+                                                        </a></li>
+                                                    <li><a href="/stats/cris/"><i class="bi bi-database"></i>
+                                                            
+                                                            Credit Registry System - CRIS
+                                                            
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="mega-col mega-feature">
+                                                <a href="/stats/fin_inst/" class="mega-feature-card">
+                                                    <i class="bi bi-bank2"></i>
+                                                    <strong>
+                                                        
+                                                        Financial System
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Discover financial institutions and services in Timor-Leste
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ISI TAB 2: Financial System -->
+                                    <div class="mega-panel" data-panel="edu_fin">
+                                        <div class="mega-grid">
+                                            <div class="mega-col">
+                                                <h6>
+                                                    Financial Education
+                                                </h6>
+                                                <ul>
+                                                    <li><a href="/under_dev/"
+                                                            target="_blank"><i class="bi bi-bank"></i>
+                                                            Financial Education
+                                                        </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- <div class="mega-col mega-feature">
+                                                <a href="/stats/fin_inst/" class="mega-feature-card">
+                                                    <i class="bi bi-bank2"></i>
+                                                    <strong>
+                                                        
+                                                        Financial System
+                                                        
+                                                    </strong>
+                                                    <span>
+                                                        
+                                                        Discover financial institutions and services in Timor-Leste
+                                                        
+                                                    </span>
+                                                </a>
+                                            </div> -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <li class="has-mega"><a href="#" class="">Media</a>
+                            <div class="mega">
+                                <div class="wrap">
+                                    <div class="mega-grid">
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                News &amp; Press Releases
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/news/mews/all/"><i class="bi bi-newspaper"></i>
+                                                        
+                                                        Latest News
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/bctl/"><i class="bi bi-megaphone"></i>
+                                                        
+                                                        Press Releases
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/public-advisories/"><i
+                                                            class="bi bi-exclamation-triangle"></i>
+                                                        
+                                                        Public Advisories
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Speeches &amp; Statements
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/news/governor/"><i class="bi bi-person-badge"></i>
+                                                        
+                                                        Governor
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/deputy-governor-speeches/"><i
+                                                            class="bi bi-person-vcard"></i>
+                                                        
+                                                        Deputy Governors
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/bmp/"><i class="bi bi-people"></i>
+                                                        
+                                                        Board Members
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Events
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/news/events/"><i class="bi bi-calendar3"></i>
+                                                        
+                                                        Event Calendar
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/events/upcoming/"><i
+                                                            class="bi bi-calendar-plus"></i>
+                                                        
+                                                        Upcoming Events
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/events/past/"><i
+                                                            class="bi bi-calendar-check"></i>
+                                                        
+                                                        Past Events
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Multimedia
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/news/media-photo-gallery/"><i
+                                                            class="bi bi-images"></i>
+                                                        
+                                                        Photo Gallery
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/media-video-gallery/"><i
+                                                            class="bi bi-camera-reels"></i>
+                                                        
+                                                        Video Gallery
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Press Room
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/news/press-contacts/"><i class="bi bi-telephone"></i>
+                                                        
+                                                        Media Contacts
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/press-photos/"><i class="bi bi-camera"></i>
+                                                        
+                                                        Press Photos
+                                                        
+                                                    </a></li>
+                                                <li><a href="/news/media-resources/"><i
+                                                            class="bi bi-folder2-open"></i>
+                                                        
+                                                        Media Resources
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col mega-feature">
+                                            <a href="/news/mews/all/" class="mega-feature-card">
+                                                <i class="bi bi-newspaper"></i>
+                                                <strong>
+                                                    
+                                                    Media Center
+                                                    
+                                                </strong>
+                                                <span>
+                                                    
+                                                    Stay updated with press releases and announcements
+                                                    
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="has-mega"><a href="#" class="">Museum</a>
+                            <div class="mega">
+                                <div class="wrap">
+                                    <div class="mega-grid">
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Currency Collection
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/about/bank_notes/"><i class="bi bi-cash-stack"></i>
+                                                        
+                                                        Bank Notes
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/coins/"><i class="bi bi-coin"></i>
+                                                        
+                                                        Coins
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/num_coins/"><i class="bi bi-gem"></i>
+                                                        
+                                                        Numismatic Coins
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col">
+                                            <h6>
+                                                
+                                                Explore &amp; Learn
+                                                
+                                            </h6>
+                                            <ul>
+                                                <li><a href="/about/minting_pro/"><i
+                                                            class="bi bi-gear-wide-connected"></i>
+                                                        
+                                                        Minting Process
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/photo_gallery/"><i class="bi bi-images"></i>
+                                                        
+                                                        Photos Characteristic Coins
+                                                        
+                                                    </a></li>
+                                                <li><a href="/about/videos/"><i class="bi bi-play-circle-fill"></i>
+                                                        
+                                                        Videos
+                                                        
+                                                    </a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="mega-col mega-feature">
+                                            <a href="/about/photo_gallery/" class="mega-feature-card">
+                                                <i class="bi bi-bank2"></i>
+                                                <strong>
+                                                    
+                                                    BCTL Museum
+                                                    
+                                                </strong>
+                                                <span>
+                                                    
+                                                    Discover our numismatic heritage
+                                                    
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu mobile">
+    <div class="drawer-head"><strong>BCTL</strong><button class="icon-btn" id="drawerClose" aria-label="Taka">✕</button>
+    </div>
+    <div id="maccWrap"></div>
+    <div class="drawer-foot">
+        <a href="/administrator/" style="font-weight:100;color:var(--navy)" target="_blank">Login</a> <br>
+        <br>
+        <span class="lang-mobile">
+            <a href="/lang/en/"
+                class="">EN</a><span>·</span>
+            <a href="/lang/pt/"
+                class="">PT</a><span>·</span>
+            <a href="/lang/tet/"
+                class="">TET</a></span>
+    </div>
+</aside>
+
+<!-- ============ HOME HERO (only in home-mode) ============ -->
+<section class="home-hero" id="homeHero">
+    <div id="heroSlides" style="height: -90px;">
+
+    </div>
+    <div class="hero-inner">
+        <div class="hero-cap cap-fade" id="heroCap"></div>
+
+        <div class="hero-chart-widget" aria-hidden="true">
+            <div class="hcw-head">
+                <span class="hcw-icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <i class="hcw-ping"></i>
+                </span>
+                <div class="hcw-head-text">
+                    <span class="hcw-label">
+                        Market Pulse
+                    </span>
+                    <span class="hcw-live"><i></i>LIVE</span>
+                </div>
+            </div>
+            <div class="hcw-chart">
+                <svg viewBox="0 0 240 84" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="hcwFill" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" style="stop-color:var(--hcw-accent, #cdb87a); stop-opacity:.5" />
+                            <stop offset="100%" style="stop-color:var(--hcw-accent, #cdb87a); stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <path class="hcw-grid" d="M0,21 H240 M0,42 H240 M0,63 H240" />
+                    <path class="hcw-area"
+                        d="M0,56 L20,50 L40,54 L60,40 L80,44 L100,28 L120,34 L140,20 L160,26 L180,14 L200,22 L220,10 L240,16 L240,84 L0,84 Z"
+                        fill="url(#hcwFill)" />
+                    <path class="hcw-line" id="hcwLine"
+                        d="M0,56 L20,50 L40,54 L60,40 L80,44 L100,28 L120,34 L140,20 L160,26 L180,14 L200,22 L220,10 L240,16"
+                        fill="none" />
+                    <circle class="hcw-dot" cx="240" cy="16" r="4"></circle>
+                </svg>
+            </div>
+            <div class="hcw-stats">
+                
+                
+            </div>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="wrap">
+            <div class="dots" id="heroDots"></div>
+            <div class="upnext" id="heroUpnext"></div>
+        </div>
+    </div>
+</section>
+<script>
+    document.querySelectorAll('.mega-tabs').forEach(tabBar => {
+        const mega = tabBar.closest('.mega');
+        tabBar.querySelectorAll('.mega-tab').forEach(tab => {
+            tab.addEventListener('click', e => {
+                e.preventDefault();
+                const target = tab.dataset.tab;
+
+                tabBar.querySelectorAll('.mega-tab').forEach(t => t.classList.remove('active'));
+                mega.querySelectorAll('.mega-panel').forEach(p => p.classList.remove('active'));
+
+                tab.classList.add('active');
+                mega.querySelector(`.mega-panel[data-panel="${target}"]`).classList.add('active');
+            });
+        });
+    });
+
+    if (!window.__subToggleBound) {
+        window.__subToggleBound = true;
+
+        document.addEventListener('click', function (e) {
+            var toggle = e.target.closest('.sub-toggle');
+            if (!toggle) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var parent = toggle.closest('.has-sub');
+            if (parent) parent.classList.toggle('open');
+        });
+    }
+
+    // Troka ho hover banhira kursor iha leten
+    document.addEventListener('mouseover', function (e) {
+        var tab = e.target.closest('.mega-tab');
+        if (!tab) return;
+
+        var mega = tab.closest('.mega');
+        var target = tab.dataset.tab;
+
+        // kalau udah aktif, gak usah ngapa-ngapain
+        if (tab.classList.contains('active')) return;
+
+        mega.querySelectorAll('.mega-tab').forEach(function (t) { t.classList.remove('active'); });
+        mega.querySelectorAll('.mega-panel').forEach(function (p) { p.classList.remove('active'); });
+
+        tab.classList.add('active');
+        var panel = mega.querySelector('.mega-panel[data-panel="' + target + '"]');
+        if (panel) panel.classList.add('active');
+    });
+
+    document.getElementById("edu_fin_btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        window.open("https://resplendent-longma-7ec845.netlify.app/", "_blank");
+    });
+
+</script>
+
+    <!-- ===================== HERO ===================== -->
+    
+<div class="wrap page-pad">
+    <nav class="crumbs" id="crumbs" aria-label="breadcrumb">
+       <a href="/" data-home="1" style="color: #cdb87a;">
+            <i class="bi bi-bank" style="color: #c9a227;"></i></a><span class="sep">/</span>
+        <a href="#" data-home="1">Central Bank Survey</a>
+    </nav>
+    <p class="page-title" id="pageTitle">Central Bank Survey</p>
+    <div class="layout">
+        
+<aside class="sidebar stats-sidebar" id="statsSidebar">
+    <div class="m-sidebar">
+
+        <div class="side-group">
+            <div class="side-head"><i class="lead">📊</i>
+                Statistics
+                <span class="chev">▶</span></div>
+            <ul class="side-sub">
+                <li><a href="/stats/export_data/" class="">Export Data</a></li>
+                <li><a href="/stats/economic/" class="">Economic Statistics</a></li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="interest_rate">
+                    <a href="/stats/interest_rate/" class="">Interest Rate</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="exchange_rate">
+                    <a href="/stats/exchange_rate/" class="">Exchange Rate</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="inflation">
+                    <a href="/stats/inflation/" class="">Inflation</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="gdp">
+                    <a href="/stats/gdp/" class="">GDP</a>
+                </li>
+                <li><a href="/stats/public_fin/" class="">Public Finance Statistics</a></li>
+                <li><a href="/stats/pf_keynu/" class="">Petroleum Fund Key Number</a></li>
+            </ul>
+        </div>
+
+        <div class="side-group">
+            <div class="side-head"><i class="lead">🏦</i>
+                Monetary Aggregates
+                <span class="chev">▶</span></div>
+            <ul class="side-sub">
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="m_aggregates">
+                    <a href="/stats/m_aggregates/" class="">Monetary Aggregates</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="m_sup_deter">
+                    <a href="/stats/m_sup_deter/" class="">Money Supply & Determinants</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="m_survey_assets">
+                    <a href="/stats/m_survey_assets/" class="">Monetary Survey Assets</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="m_survey_liabilities">
+                    <a href="/stats/m_survey_liabilities/" class="">Monetary Survey Liabilities</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="side-group open">
+            <div class="side-head"><i class="lead">🏛</i>
+                Deposit & Bank Surveys
+                <span class="chev">▶</span></div>
+            <ul class="side-sub">
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="dep_corp_survey">
+                    <a href="/stats/dep_corp_survey/" class="">Depository Corporation Survey</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="ot_dep_corp_survey">
+                    <a href="/stats/ot_dep_corp_survey/" class="">Other Depository Corporation Survey</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="cent_b_survey">
+                    <a href="/stats/cent_b_survey/" class="active">Central Bank Survey</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="tot_dep_m_b">
+                    <a href="/stats/tot_dep_m_b/" class="">Total Deposit Money Bank</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="side-group">
+            <div class="side-head"><i class="lead">🌐</i>
+                External Sector
+                <span class="chev">▶</span></div>
+            <ul class="side-sub">
+                <li><a href="/stats/balance_pay/" class="">Balance of Payments</a></li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="inter_invest_p">
+                    <a href="/stats/inter_invest_p/" class="">International Investment Position</a>
+                </li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="external_debt">
+                    <a href="/stats/external_debt/" class="">External Debt</a>
+                </li>
+                <li><a href="/stats/export_import_data/" class="">Export & Import Data</a></li>
+                <li class="side-pickable">
+                    <input type="checkbox" class="side-pick" value="reer">
+                    <a href="/stats/reer/" class="">REER</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="side-group">
+            <div class="side-head"><i class="lead">🔗</i>
+                Financial System Networks
+                <span class="chev">▶</span></div>
+            <ul class="side-sub">
+                <li><a href="/stats/fin_ind/" class="">Financial Indicators</a></li>
+                <li><a href="/stats/b_net/" class="">Bank's Network</a></li>
+                <li><a href="/stats/insurance/" class="">Insurance</a></li>
+                <li><a href="/stats/atm_net/" class="">ATM's Networks</a></li>
+                <li><a href="/stats/eftpos_net/" class="">EFTPOS Networks</a></li>
+                <li><a href="/stats/agents_net/" class="">Agents Networks</a></li>
+            </ul>
+        </div>
+
+    </div>
+</aside>
+
+<div class="side-pick-bar" id="sidePickBar">
+    <span><strong id="sidePickCount">0</strong>
+        selected</span>
+    <a href="/stats/export_data/" id="sidePickGo" class="side-pick-btn">
+        <i class="bi bi-printer"></i>
+        View &amp; Print
+    </a>
+</div>
+
+<style>
+    .side-pickable { display: flex; align-items: center; gap: 8px; }
+    .side-pickable .side-pick { width: 15px; height: 15px; accent-color: var(--gold); cursor: pointer; margin-left: 14px; flex-shrink: 0; }
+    .side-pickable a { flex: 1; }
+    .side-sub li.side-pickable a { padding-left: 6px; }
+
+    .side-pick-bar {
+        display: none;
+        align-items: center;
+        gap: 14px;
+        position: fixed;
+        left: 24px;
+        bottom: 24px;
+        z-index: 500;
+        background: rgba(21, 49, 92, .82);
+        backdrop-filter: blur(10px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%);
+        color: #fff;
+        padding: 10px 12px 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,.12);
+        box-shadow: 0 14px 34px rgba(10,26,51,.35);
+        font-size: 13.5px;
+        opacity: 0;
+        transform: translateY(10px) scale(.96);
+        transition: opacity .22s ease, transform .22s ease;
+        pointer-events: none;
+    }
+    .side-pick-bar.show { display: flex; opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .side-pick-bar strong { color: var(--gold); font-size: 15px; }
+    .side-pick-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: linear-gradient(180deg, #C9A227, #A8811E);
+        color: #fff;
+        font-weight: 700;
+        padding: 8px 18px;
+        border-radius: 999px;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(168,129,30,.4);
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .side-pick-btn:hover { color: #fff; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(168,129,30,.5); }
+
+    @media (max-width: 768px) {
+        .side-pick-bar { left: 12px; right: 12px; bottom: 12px; }
+    }
+</style>
+
+<script>
+    (function () {
+        var STORE_KEY = "bctl_stats_pick";
+        var checks = document.querySelectorAll("#statsSidebar .side-pick");
+        var bar = document.getElementById("sidePickBar");
+        var countEl = document.getElementById("sidePickCount");
+        var goBtn = document.getElementById("sidePickGo");
+        var baseUrl = goBtn.getAttribute("href");
+
+        function getStored() {
+            try { return JSON.parse(sessionStorage.getItem(STORE_KEY)) || []; }
+            catch (e) { return []; }
+        }
+        function setStored(list) {
+            try { sessionStorage.setItem(STORE_KEY, JSON.stringify(list)); } catch (e) { }
+        }
+
+        function refresh() {
+            var picked = Array.prototype.slice.call(checks).filter(function (c) { return c.checked; }).map(function (c) { return c.value; });
+            setStored(picked);
+            countEl.textContent = picked.length;
+            bar.classList.toggle("show", picked.length > 0);
+            goBtn.setAttribute("href", picked.length ? (baseUrl + "?items=" + picked.join(",")) : baseUrl);
+        }
+
+        var stored = getStored();
+        checks.forEach(function (c) {
+            if (stored.indexOf(c.value) !== -1) c.checked = true;
+            c.addEventListener("change", refresh);
+        });
+
+        refresh();
+    })();
+</script>
+
+
+
+        <main>
+            <div class="panel chart-card" style="padding: 5px;">
+                <div class="chart-top">
+                    <div class="row" style="width: 100%;">
+                        <div class="col-md-12">
+                            <div class="row g-3 align-items-end p-3">
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Start Year</label>
+                                    <select class="form-select" id="startYear">
+                                        <option value="">All</option>
+                                        
+                                        <option value="2025">2025</option>
+                                        
+                                        <option value="2026">2026</option>
+                                        
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">End Year</label>
+                                    <select class="form-select" id="endYear">
+                                        <option value="">All</option>
+                                        
+                                        <option value="2025">2025</option>
+                                        
+                                        <option value="2026">2026</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">Chart Type</label>
+                                    <select class="form-select" id="chartType">
+                                        <option value="line" selected>Line</option>
+                                        <option value="bar">Bar</option>
+                                        <option value="area">Spline Area</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary w-100" id="btnFilter">
+                                        <i class="ri-filter-3-line me-1"></i>
+                                        Filter
+                                    </button>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button class="btn btn-light border w-100" id="btnReset">
+                                        <i class="ri-refresh-line me-1"></i>
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats" id="interestrateSummary" style="margin:0 16px 16px;">
+                    <div class="stat">
+                        <div class="lab"><i class="bi bi-calendar3"></i> Latest (<span id="sumLatestLabel">-</span>)
+                        </div>
+                        <div class="fig" id="sumLatest">-</div>
+                    </div>
+                    <div class="stat">
+                        <div class="lab"><i class="bi bi-arrow-left-right"></i> Change vs Previous</div>
+                        <div class="fig" id="sumChange">-</div>
+                    </div>
+                    <div class="stat">
+                        <div class="lab"><i class="bi bi-graph-up-arrow"></i> Highest (<span id="sumHighLabel">-</span>)
+                        </div>
+                        <div class="fig" id="sumHigh">-</div>
+                    </div>
+                    <div class="stat">
+                        <div class="lab"><i class="bi bi-graph-down-arrow"></i> Lowest (<span id="sumLowLabel">-</span>)
+                        </div>
+                        <div class="fig" id="sumLow">-</div>
+                    </div>
+                </div>
+
+                <div class="chartbox">
+                    <div id="cbsurveyChart" style="height:500px;"></div>
+                </div>
+
+                
+                <div class="fx-foot" style="margin-top:12px;">
+                    <span>Download the full Central Bank Survey report.</span>
+                    <div class="fx-foot-links">
+                        
+                        
+                        <a href="/stats/cbsurveydoc/download/c4ca4238a0b923820dcc509a6f75849b/"
+                            download="Table 7.Central Bank Survey.xlsx">+ Excel</a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </main>
+    </div>
+</div>
+
+
+    <!-- ===================== FOOTER ===================== -->
+    
+<footer class="footer">
+
+  <div class="wrap">
+
+    <div class="footer-top">
+
+      <!-- Brand -->
+
+      <div class="footer-brand">
+
+        <img src="/static/assets/public/img/logo_bctl.png" class="footer-logo">
+
+        <div>
+
+          <h2>Banco Central de Timor-Leste</h2>
+
+          <p>
+            Stability • Integrity • Financial Development
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- Navigation columns -->
+
+      <div class="footer-nav-grid">
+
+        <div class="footer-nav-col">
+
+          <h6>About BCTL</h6>
+
+          <ul>
+            <li><a href="/about/inst/">Institution</a></li>
+            <li><a href="/news/governor/">Governor</a></li>
+            <li><a href="/about/boarddir/">Board of Directors</a></li>
+            <li><a href="/about/career/">Careers</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-nav-col">
+
+          <h6>Publications</h6>
+
+          <ul>
+            <li><a href="/publication/laws_np/">Laws &amp; Instruments</a></li>
+            <li><a href="/publication/bctl_ann_rep/">Annual Report</a></li>
+            <li><a href="/publication/quert_eco_bull/">Economic Bulletin</a></li>
+            <li><a href="/news/mews/all/">News &amp; Media</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-nav-col">
+
+          <h6>Statistics</h6>
+
+          <ul>
+            <li><a href="/stats/inflation/">Inflation</a></li>
+            <li><a href="/stats/gdp/">GDP</a></li>
+            <li><a href="/stats/interest_rate/">Interest Rate</a></li>
+            <li><a href="/stats/reer/">REER</a></li>
+          </ul>
+
+        </div>
+
+        <div class="footer-nav-col">
+
+          <h6>Get in Touch</h6>
+
+          <ul>
+            <li><a href="/contact/">Contact Us</a></li>
+            <!-- <li><a href="/search/">Search</a></li> -->
+            <li><a href="/administrator/" target="_blank">Login</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- Subscribe -->
+
+    <div class="footer-subscribe">
+
+      <div class="subscribe-left">
+
+        <div class="subscribe-icon">
+
+          <i class="bi bi-envelope-paper-fill" style="color: #fff;"></i>
+
+        </div>
+
+        <div>
+
+          <h3>Subscribe to Updates</h3>
+
+          <p>
+            Receive monetary policy announcements,
+            exchange rates and publications.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="subscribe-right">
+
+        <form id="subscribe-form" hx-post="/about/subscribe/" hx-target="#subscribe-message" hx-swap="innerHTML"
+          hx-indicator="#subscribe-loading" hx-disabled-elt="find button">
+
+          <input type="hidden" name="csrfmiddlewaretoken" value="XtuYWhYqpdHtRXrsS9yBZZmmRh3XjShi1GlA9rSkshVDqQtleihKHKpSeCEIDkEx">
+
+          <input type="email" name="email" placeholder="Enter your email address" required>
+
+          <!-- Honeypot: hidden from real visitors, bots tend to fill every field. -->
+          <input type="text" name="hp_website" tabindex="-1" autocomplete="off"
+            style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" aria-hidden="true">
+
+          <button type="submit" class="btn btn-primary">
+
+            Subscribe
+
+          </button>
+
+        </form>
+
+        <div id="subscribe-loading" class="subscribe-loading htmx-indicator">
+          <span class="subscribe-spinner"></span> Subscribing...
+        </div>
+
+        <div id="subscribe-message"
+          hx-on::after-swap="if (this.querySelector('.subscribe-result--success, .subscribe-result--info')) { document.getElementById('subscribe-form').reset(); }"></div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <!-- Bottom -->
+
+    <div class="footer-bottom">
+
+      <div class="footer-links">
+
+        <a href="">Privacy Policy</a>
+
+        <a href="">Accessibility</a>
+
+        <a href="">Terms of Use</a>
+
+        <a href="">Sitemap</a>
+
+      </div>
+
+      <div class="footer-social">
+
+        <span>Follow Us</span>
+        
+        <a href="https://www.facebook.com/bancocentraldetimorleste" target="_blank"><i class="bi bi-facebook" style="color: #fff;"></i></i></a>
+
+        <a href="https://www.linkedin.com/company/banco-central-de-timor-leste/" target="_blank"><i class="bi bi-linkedin" style="color: #fff;"></i></a>
+
+        <a href="https://youtube.com/@bancocentraldetimor-leste5185?si=af3cw8fISaU9Yt-M" target="_blank"><i class="bi bi-youtube" style="color: #fff;"></i></a>
+
+        <!-- <a href="#"><i class="bi bi-twitter-x" style="color: #fff;"></i></a> -->
+        
+      </div>
+
+    </div>
+
+    <div class="footer-copy">
+
+      © 2026 Banco Central de Timor-Leste
+
+    </div>
+
+  </div>
+
+</footer>
+    <!-- Modal Podcast -->
+    <!-- <div class="mas-back-to-top p-x:m mas-back-to-top--custom">
+      <div class="mas-back-to-top__wrap">
+        <button class="mas-back-to-top__button" aria-label="Back to top"><i
+            class="mas-back-to-top__icon mas-glyphs mas-glyphs-back-to-top"></i></button>
+      </div>
+    </div> -->
+    <div class="podcast-modal" id="podcastModal">
+      <div class="podcast-backdrop" id="podcastBackdrop"></div>
+      <div class="podcast-box">
+        <button class="podcast-close" id="podcastClose">✕</button>
+        <div class="podcast-video" id="podcastVideo"></div>
+      </div>
+    </div>
+
+    <!-- ===================== CHATBOT ===================== -->
+    
+
+<div class="chatbot" id="chatbot"
+  data-welcome-url="/chatbot/welcome/"
+  data-msg-error="Connection error — please try again."
+  data-msg-welcome="Hello! How can I help you today?">
+
+  <button class="chatbot-toggle" id="chatbotToggle" type="button" aria-expanded="false" aria-controls="chatbotWindow"
+    aria-label="Open chat assistant">
+    <i class="bi bi-chat-dots-fill" id="chatbotIconOpen"></i>
+    <i class="bi bi-x-lg" id="chatbotIconClose"></i>
+    <span class="chatbot-badge" id="chatbotBadge" aria-hidden="true">1</span>
+  </button>
+
+  <div class="chatbot-teaser" id="chatbotTeaser" hidden>
+    <button type="button" class="chatbot-teaser-close" id="chatbotTeaserClose" aria-label="Dismiss">✕</button>
+    Need help? Ask me about today's exchange rates.
+  </div>
+
+  <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-label="BCTL chat assistant">
+
+    <div class="chatbot-head">
+      <div class="chatbot-avatar-wrap">
+        <img src="/static/assets/public/img/logo_bctl.png" alt="" class="chatbot-avatar">
+        <span class="chatbot-online" aria-hidden="true"></span>
+      </div>
+      <div class="chatbot-title">
+        <strong>BCTL Assistant</strong>
+        <span>Online · replies instantly</span>
+      </div>
+      <button type="button" class="chatbot-icon-btn" id="chatbotReset"
+        title="New conversation"
+        aria-label="New conversation">
+        <i class="bi bi-arrow-counterclockwise"></i>
+      </button>
+      <button type="button" class="chatbot-icon-btn" id="chatbotClose" aria-label="Close chat">
+        <i class="bi bi-chevron-down"></i>
+      </button>
+    </div>
+
+    <div class="chatbot-body" id="chatbotBody" aria-live="polite"></div>
+
+    <form class="chatbot-input" id="chatbotForm" action="/chatbot/message/">
+      <input type="hidden" name="csrfmiddlewaretoken" value="XtuYWhYqpdHtRXrsS9yBZZmmRh3XjShi1GlA9rSkshVDqQtleihKHKpSeCEIDkEx">
+      <input type="text" name="message" id="chatbotInput" maxlength="300" autocomplete="off" required
+        placeholder="Type your question…">
+      <button type="submit" aria-label="Send message">
+        <i class="bi bi-send-fill"></i>
+      </button>
+    </form>
+    <div class="chatbot-foot">
+      Automated assistant · please don't share personal data
+    </div>
+
+  </div>
+
+</div>
+
+
+
+    <script>
+      /* ---------- Sidebar accordion ---------- */
+      document.querySelectorAll('.side-head').forEach(h => h.addEventListener('click', () => {
+        const grp = h.parentElement, was = grp.classList.contains('open');
+        document.querySelectorAll('.side-group').forEach(x => x.classList.remove('open'));
+        if (!was) grp.classList.add('open');
+      }));
+    </script>
+    <script src="/static/assets/public/js/bctl.js"></script>
+    <script src="/static/assets/public/js/chatbot.js"></script>
+    <script>
+      const body = document.body;
+
+      /* ---------- HERO CAROUSEL ---------- */
+      const slides = [
+        
+        ];
+      function extractYouTubeId(url) {
+        if (!url) return null;
+        const m = url.match(/(?:youtu\.be\/|watch\?v=|embed\/|v\/)([\w-]{11})/);
+        return m ? m[1] : null;
+      }
+      slides.forEach(s => { s.videoId = s.cate === "News" ? null : extractYouTubeId(s.url); });
+
+      let cur = 0, timer = null;
+      const slidesEl = document.getElementById('heroSlides');
+      const dotsEl = document.getElementById('heroDots');
+      const capEl = document.getElementById('heroCap');
+      const upEl = document.getElementById('heroUpnext');
+      // only the first slide's image loads eagerly; the rest are fetched in the
+      // background shortly after so they don't compete with initial page load
+      slidesEl.innerHTML = slides.map((s, i) => `<div class="hero-slide${i === 0 ? ' active' : ''}" data-i="${i}" data-bg="${s.img}" style="${i === 0 ? `background-image:url('${s.img}')` : ''}"></div>`).join('');
+      dotsEl.innerHTML = slides.map((s, i) => `<button class="dot${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Slide ${i + 1}"></button>`).join('');
+
+      slidesEl.querySelectorAll('.hero-slide:not(.active)').forEach((el, idx) => {
+        const bg = el.dataset.bg;
+        setTimeout(() => { el.style.backgroundImage = `url('${bg}')`; }, 600 + idx * 500);
+      });
+
+      let capReady = false;
+      function setCap(html) {
+        const swap = () => {
+          capEl.innerHTML = html;
+          requestAnimationFrame(() => requestAnimationFrame(() => capEl.classList.remove('cap-fade')));
+        };
+        if (!capReady) {
+          capReady = true;
+          swap();
+          return;
+        }
+        capEl.classList.add('cap-fade');
+        setTimeout(swap, 260);
+      }
+
+      /* ---------- HERO podcast preview (short muted video clip on the active slide) ---------- */
+      let videoTimer = null, videoEl = null, videoMaskEl = null;
+      function clearHeroVideo() {
+        clearTimeout(videoTimer);
+        if (videoEl) { videoEl.remove(); videoEl = null; }
+        if (videoMaskEl) { videoMaskEl.remove(); videoMaskEl = null; }
+      }
+      function maybePlayHeroVideo(i) {
+        clearHeroVideo();
+        const s = slides[i];
+        if (!s.videoId) return;
+        const slideEl = slidesEl.querySelector(`.hero-slide[data-i="${i}"]`);
+        if (!slideEl) return;
+        const iframe = document.createElement('iframe');
+        iframe.className = 'hero-video';
+        iframe.src = `https://www.youtube.com/embed/${s.videoId}?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&disablekb=1`;
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('title', 'Podcast preview');
+        slideEl.appendChild(iframe);
+        videoEl = iframe;
+        // YouTube always centers its own play/pause button inside the iframe; since it's
+        // cross-origin we can't remove it, so we mask that spot instead of hiding the button.
+        const mask = document.createElement('div');
+        mask.className = 'hero-video-mask';
+        slideEl.appendChild(mask);
+        videoMaskEl = mask;
+        setTimeout(() => {
+          if (iframe === videoEl) iframe.classList.add('show');
+          if (mask === videoMaskEl) mask.classList.add('show');
+        }, 1800);
+        videoTimer = setTimeout(clearHeroVideo, 8000);
+      }
+
+      function render(i) {
+        const s = slides[i];
+
+        let btn = "";
+
+        if (s.cate === "News") {
+          btn = `<a href="/news/public/detail/${s.id}/" class="hero-btn">${s.btn}</a>`;
+        } else {
+          btn = `<button class="hero-btn podcast-open" data-url="${s.url}">Podcast</button>`;
+        }
+
+        setCap(`
+        <div class="eyebrow">
+            ${s.cat} <b>${s.date}</b>
+        </div>
+        <h2>${s.title}</h2>
+        <div class="sub">${s.sub}</div>
+        ${btn}
+    `);
+
+        const n = slides[(i + 1) % slides.length];
+
+        upEl.innerHTML = `
+        <div class="nx-meta">
+            <span class="lab">Up Next</span>
+            <div class="nx-date">${n.date}</div>
+            <div class="nx-title">${n.title}</div>
+        </div>
+        <span class="arrow">→</span>
+    `;
+
+        slidesEl.querySelectorAll(".hero-slide")
+          .forEach(e => e.classList.toggle("active", +e.dataset.i === i));
+
+        dotsEl.querySelectorAll(".dot")
+          .forEach(e => e.classList.toggle("active", +e.dataset.i === i));
+
+        cur = i;
+        maybePlayHeroVideo(i);
+      }
+
+
+      function go(i) {
+        render((i + slides.length) % slides.length); restart();
+      }
+      function restart() {
+        clearInterval(timer); timer = setInterval(() => go(cur + 1), 7000);
+      }
+      dotsEl.addEventListener('click', e => {
+        const d = e.target.closest('.dot'); if (d) go(+d.dataset.i);
+      });
+      upEl.addEventListener('click', () => go(cur + 1));
+      if (slides.length) { render(0); restart(); }
+
+      /* ---------- HOME / INTERIOR SWITCHING ---------- */
+      const titleMap = {
+        "Osan": "Osan", "Osan Tahan & Centavos": "Osan Tahan & Centavos", "Proteksaun Konsumidor": "Proteksaun Konsumidor",
+        "Publikasaun sira": "Publikasaun sira", "Edukasaun Finanseira": "Edukasaun Finanseira", "E-Learning": "E-Learning",
+        "Lia-Tatoli": "Lia-Tatoli", "Mozeu": "Mozeu", "Kontatu": "Kontatu"
+      };
+      function goHome() {
+        body.classList.add('home-mode');
+        restart();
+        window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+        onScroll();
+      }
+
+      /* ---------- scroll solidify header (home) ---------- */
+      function onScroll() { body.classList.toggle('scrolled', window.scrollY > 120); }
+      window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+      /* ---------- FX table (home page only) ---------- */
+      const fxDataEl = document.getElementById("fx-data");
+      const fxBody = document.getElementById("fxBody");
+      let fx = [];
+
+      if (fxDataEl && fxBody) {
+        fx = JSON.parse(fxDataEl.textContent);
+
+        fxBody.innerHTML = fx.map((r, i) => {
+          const d = r.today - r.yesterday;
+          const up = d >= 0;
+          const pct = (d / r.yesterday) * 100;
+          // rates are quoted per 1 USD, so big-number currencies (IDR, VND, KRW)
+          // do not need 4 decimals
+          const dec = Math.abs(r.today) >= 100 ? 2 : 4;
+
+          return `
+    <tr>
+        <td class="cur">
+            <span class="ccode">
+                <img class="fg" src="https://flagcdn.com/40x30/${r.flag}.png">
+                ${r.code}
+            </span>
+        </td>
+        <td><span class="count-up" data-target="${r.today}" data-decimals="${dec}">0</span></td>
+        <td>${r.yesterday.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec })}</td>
+        <td class="chg ${up ? 'up' : 'down'}">
+            ${up ? '▲' : '▼'} ${Math.abs(pct).toFixed(2)}%
+        </td>
+    </tr>`;
+        }).join("");
+      }
+
+      document.querySelectorAll('.has-mega > a').forEach(link => {
+
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const parent = this.parentElement;
+
+          document.querySelectorAll('.has-mega')
+            .forEach(item => {
+              if (item !== parent) {
+                item.classList.remove('active');
+              }
+            });
+
+          parent.classList.toggle('active');
+        });
+
+      });
+
+
+      // modal video
+      const modal = document.getElementById('podcastModal');
+      const videoBox = document.getElementById('podcastVideo');
+
+      function openPodcast(url) {
+        const videoId = extractYouTubeId(url);
+
+        if (!videoId) {
+          window.open(url, '_blank');
+          return;
+        }
+
+        const embed = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;
+        console.log('URL embed:', embed);
+
+        videoBox.innerHTML = `<iframe src="${embed}" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen></iframe>`;
+        modal.classList.add('open');
+      }
+
+      function closePodcast() {
+        modal.classList.remove('open');
+        videoBox.innerHTML = '';
+      }
+
+      document.addEventListener('click', e => {
+        const openBtn = e.target.closest('.podcast-open');
+        if (openBtn) {
+          e.preventDefault();
+          openPodcast(openBtn.dataset.url);
+        }
+      });
+
+      document.getElementById('podcastClose').addEventListener('click', closePodcast);
+      document.getElementById('podcastBackdrop').addEventListener('click', closePodcast);
+
+    </script>
+    <script>
+      /* ---------- Search box (runs on every page, independent of home-only hero script) ---------- */
+      var sBox = document.getElementById('searchBox');
+      var sBtn = document.getElementById('searchBtn');
+
+      if (sBox && sBtn) {
+        sBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          sBox.classList.toggle('open');
+          if (sBox.classList.contains('open')) {
+            sBox.querySelector('input').focus();
+          }
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('#searchBox')) sBox.classList.remove('open');
+        });
+      }
+    </script>
+    <script src="/static/assets/js/echarts.min.js"></script>
+    <!-- page loading  -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+
+        const loader = document.getElementById("page-loading");
+        let showTimer = null;
+        let safetyTimer = null;
+
+        function showLoader() {
+          // small delay so instant navigations don't flash the overlay
+          showTimer = setTimeout(function () {
+            loader.classList.add("show");
+          }, 150);
+
+          // safety net in case a navigation stalls or fails
+          safetyTimer = setTimeout(function () {
+            loader.classList.remove("show");
+          }, 8000);
+        }
+
+        function cancelLoader() {
+          clearTimeout(showTimer);
+          clearTimeout(safetyTimer);
+          loader.classList.remove("show");
+        }
+
+        document.addEventListener("click", function (e) {
+          const link = e.target.closest("a[href]");
+          if (!link) return;
+          // a script already handled this click (lightbox, modal...) - no navigation
+          if (e.defaultPrevented) return;
+
+          if (
+            link.hasAttribute("hx-get") ||
+            link.hasAttribute("hx-post") ||
+            link.hasAttribute("hx-put") ||
+            link.hasAttribute("hx-delete") ||
+            link.hasAttribute("hx-patch") ||
+            link.hasAttribute("data-no-loader")
+          ) {
+            return;
+          }
+
+          const href = link.getAttribute("href");
+
+          if (
+            link.target === "_blank" ||
+            link.hasAttribute("download") ||
+            href.startsWith("#") ||
+            href.startsWith("javascript:")
+          ) {
+            return;
+          }
+
+          showLoader();
+        });
+
+        // restore from browser back/forward cache without a stuck overlay
+        window.addEventListener("pageshow", function (e) {
+          if (e.persisted) cancelLoader();
+        });
+
+      });
+    </script>
+
+    
+<script>
+    /* =====================================================================
+   createMultiLineChart(config)
+   ---------------------------------------------------------------------
+   Multi-series line chart (CPI Index / NEER / REER) for BCTL dashboards.
+   Same visual language as createReerChart: gold + ink + claret, Segoe UI,
+   cream dataZoom slider, nice-number axis ticks, null-safe rendering.
+ 
+   config = {
+     elementId : "reerChart",
+     api       : "/bank/api/reer-chart/",
+     title     : "Real Effective Exchange Rate",
+     subtitle  : "Index, December each year (base 2015 = 100)",
+     leftAxis  : "Index",
+     baseline  : 100,          // optional horizontal reference line
+     zeroBased : false,        // true -> left axis starts at 0
+     smooth    : true,
+     series: [
+       { field: "cpi_index", name: "CPI Index" },
+       { field: "neer",      name: "NEER"      },
+       { field: "reer",      name: "REER", area: true },
+       // optional per-series: color, axis:"right", dashed:true, decimals:2, suffix:"%"
+     ],
+     onData: function (summary) { ... }   // optional
+   }
+   ===================================================================== */
+ 
+function createMultiLineChart(config) {
+ 
+    const el = document.getElementById(config.elementId);
+    if (!el) {
+        console.error("createMultiLineChart: element #" + config.elementId + " not found");
+        return null;
+    }
+ 
+    const chart = echarts.init(el);
+ 
+    /* ---------------- tokens (shared with createReerChart) -------------- */
+    const GOLD = "#B68A35";
+    const GOLD_D = "#7A5A1F";
+    const INK = "#1F3A5F";
+    const LINE = "#2F5AA8";
+    const CLARET = "#D14343";
+    const TEAL = "#2E8B74";
+    const PLUM = "#7C5295";
+    const MUTED = "#667085";
+    const GRID = "#E6EAF0";
+    const BG = "#fff";
+    const FONT = "'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
+ 
+    const PALETTE = [GOLD, LINE, GOLD_D];
+ 
+    const seriesCfg = (config.series || []).map(function (s, i) {
+        return {
+            field: s.field,
+            name: s.name || s.field,
+            color: s.color || PALETTE[i % PALETTE.length],
+            axis: s.axis === "right" ? 1 : 0,
+            area: !!s.area,
+            dashed: !!s.dashed,
+            width: s.width || 2.6,
+            decimals: s.decimals === undefined ? 1 : s.decimals,
+            suffix: s.suffix || "",
+            connectNulls: s.connectNulls !== false
+        };
+    });
+ 
+    if (!seriesCfg.length) {
+        console.error("createMultiLineChart: config.series is empty");
+        return null;
+    }
+ 
+    chart.showLoading({
+        text: "Loading data...",
+        color: GOLD,
+        textColor: "#6B7A8C",
+        fontSize: 13,
+        maskColor: "rgba(255,255,255,.92)"
+    });
+ 
+    function showMessage(msg, color) {
+        chart.hideLoading();
+        chart.setOption({
+            title: {
+                text: config.title,
+                subtext: msg,
+                left: "center",
+                top: "40%",
+                textStyle: { fontSize: 17, fontWeight: 700, color: INK, fontFamily: FONT },
+                subtextStyle: { fontSize: 12.5, color: color || MUTED, fontFamily: FONT }
+            }
+        }, true);
+    }
+ 
+    /* ---------------------------- helpers ------------------------------ */
+    function clean(values) {
+        return values.filter(function (v) { return v !== null && v !== undefined && !isNaN(v); });
+    }
+ 
+    function niceNum(raw) {
+        if (raw <= 0 || !isFinite(raw)) return 1;
+        const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+        const frac = raw / mag;
+        let nice;
+        if (frac <= 1) nice = 1;
+        else if (frac <= 2) nice = 2;
+        else if (frac <= 2.5) nice = 2.5;
+        else if (frac <= 5) nice = 5;
+        else nice = 10;
+        return nice * mag;
+    }
+ 
+    // Index series (NEER/REER/CPI) sit far from zero, so the axis is padded
+    // around the data instead of being forced down to 0.
+    function niceAxis(values, zeroBased, baseline) {
+        const c = clean(values);
+        if (!c.length) return { min: 0, max: 1, interval: 1 };
+ 
+        let max = Math.max.apply(null, c);
+        let min = Math.min.apply(null, c);
+ 
+        if (baseline !== undefined && baseline !== null) {
+            max = Math.max(max, baseline);
+            min = Math.min(min, baseline);
+        }
+        if (zeroBased) min = Math.min(0, min);
+ 
+        const span = (max - min) || Math.abs(max) || 1;
+        const pad = span * 0.15;
+ 
+        max = max + pad;
+        min = (zeroBased && min >= 0) ? 0 : min - pad;
+ 
+        const step = niceNum((max - min) / 5);
+        return {
+            min: Math.floor(min / step) * step,
+            max: Math.ceil(max / step) * step,
+            interval: step
+        };
+    }
+ 
+    function fmtNum(v, decimals, suffix) {
+        if (v === null || v === undefined || isNaN(v)) return "-";
+        const txt = Math.abs(v).toLocaleString("en-US", {
+            minimumFractionDigits: decimals,
+            maximumFractionDigits: decimals
+        });
+        return (v < 0 ? "\u2212" : "") + txt + (suffix || "");
+    }
+ 
+    /* ----------------------------- fetch -------------------------------- */
+    fetch(config.api, { headers: { "X-Requested-With": "XMLHttpRequest" } })
+        .then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            return res.json();
+        })
+        .then(function (data) {
+ 
+            const categories = data.categories || [];
+            seriesCfg.forEach(function (s) { s.data = data[s.field] || []; });
+ 
+            const hasAny = seriesCfg.some(function (s) { return clean(s.data).length > 0; });
+            if (!categories.length || !hasAny) {
+                showMessage("No data available for this period.");
+                if (typeof config.onData === "function") config.onData(null);
+                return;
+            }
+ 
+            chart.hideLoading();
+ 
+            /* ------------------- live summary per series ------------------ */
+            if (typeof config.onData === "function") {
+                const summary = {};
+                seriesCfg.forEach(function (s) {
+                    const c = clean(s.data);
+                    let li = s.data.length - 1;
+                    while (li >= 0 && (s.data[li] === null || isNaN(s.data[li]))) li--;
+ 
+                    let pi = li - 1;
+                    while (pi >= 0 && (s.data[pi] === null || isNaN(s.data[pi]))) pi--;
+ 
+                    const max = c.length ? Math.max.apply(null, c) : null;
+                    const min = c.length ? Math.min.apply(null, c) : null;
+                    const latest = li >= 0 ? s.data[li] : null;
+                    const prev = pi >= 0 ? s.data[pi] : null;
+ 
+                    summary[s.field] = {
+                        name: s.name,
+                        latest: latest,
+                        latestLabel: li >= 0 ? categories[li] : "-",
+                        previous: prev,
+                        change: (latest !== null && prev !== null) ? latest - prev : null,
+                        changePct: (latest !== null && prev) ? ((latest - prev) / Math.abs(prev)) * 100 : null,
+                        highest: max,
+                        highestLabel: max !== null ? categories[s.data.indexOf(max)] : "-",
+                        lowest: min,
+                        lowestLabel: min !== null ? categories[s.data.indexOf(min)] : "-"
+                    };
+                });
+                summary.categories = categories;
+                config.onData(summary);
+            }
+ 
+            /* ---------------------------- axes --------------------------- */
+            const leftVals = [];
+            const rightVals = [];
+            seriesCfg.forEach(function (s) {
+                (s.axis === 1 ? rightVals : leftVals).push.apply(
+                    s.axis === 1 ? rightVals : leftVals, s.data
+                );
+            });
+ 
+            const usesRight = seriesCfg.some(function (s) { return s.axis === 1; });
+            const leftR = niceAxis(leftVals, config.zeroBased, config.baseline);
+            const rightR = usesRight ? niceAxis(rightVals, config.rightZeroBased) : null;
+ 
+            const manyCategories = categories.length > 12;
+            const chartKind = config.chartType === "bar" ? "bar" : "line";
+            const isAreaMode = config.chartType === "area";
+            const smooth = chartKind !== "line" ? false : (isAreaMode ? true : (config.smooth === false ? false : 0.3));
+ 
+            /* --------------------------- series -------------------------- */
+            const echartsSeries = seriesCfg.map(function (s) {
+                return {
+                    name: s.name,
+                    type: chartKind,
+                    data: s.data,
+                    yAxisIndex: s.axis,
+                    color: s.color,
+                    smooth: smooth,
+                    connectNulls: s.connectNulls,
+                    symbol: "circle",
+                    symbolSize: manyCategories ? 7 : 10,
+                    showSymbol: chartKind === "line",
+                    barMaxWidth: 28,
+                    lineStyle: chartKind === "line" ? {
+                        width: s.width,
+                        color: s.color,
+                        type: s.dashed ? "dashed" : "solid",
+                        shadowBlur: 10,
+                        shadowColor: "rgba(31,58,95,.12)",
+                        shadowOffsetY: 3
+                    } : undefined,
+                    itemStyle: {
+                        color: s.color,
+                        borderColor: "#FFFFFF",
+                        borderWidth: chartKind === "line" ? (manyCategories ? 2 : 3) : 0
+                    },
+                    areaStyle: (chartKind === "line" && (s.area || isAreaMode)) ? {
+                        opacity: 1,
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                            { offset: 0, color: echarts.color.modifyAlpha(s.color, 0.28) },
+                            { offset: 1, color: echarts.color.modifyAlpha(s.color, 0.02) }
+                        ])
+                    } : undefined,
+                    label: {
+                        show: !manyCategories && seriesCfg.length <= 2,
+                        position: "top",
+                        fontSize: 10.5,
+                        fontWeight: 600,
+                        color: "#6B7A8C",
+                        formatter: function (p) { return fmtNum(p.value, s.decimals, s.suffix); }
+                    },
+                    emphasis: {
+                        focus: "series",
+                        scale: true,
+                        itemStyle: {
+                            borderColor: "#FFFFFF",
+                            borderWidth: 4,
+                            shadowBlur: 18,
+                            shadowColor: echarts.color.modifyAlpha(s.color, 0.55)
+                        }
+                    },
+                    endLabel: {
+                        show: config.endLabels === true,
+                        formatter: function (p) { return p.seriesName; },
+                        fontSize: 11,
+                        fontWeight: 600,
+                        color: s.color,
+                        offset: [6, 0]
+                    }
+                };
+            });
+ 
+            // baseline (e.g. index base year = 100) attached to the first series
+            if (config.baseline !== undefined && config.baseline !== null) {
+                echartsSeries[0].markLine = {
+                    symbol: "none",
+                    silent: true,
+                    lineStyle: { color: "#98A2B3", type: "dashed", width: 1.2 },
+                    label: {
+                        show: true,
+                        position: "insideEndTop",
+                        formatter: config.baselineLabel || String(config.baseline),
+                        fontSize: 10,
+                        color: MUTED
+                    },
+                    data: [{ yAxis: config.baseline }]
+                };
+            }
+ 
+            /* --------------------------- option ------------------------- */
+            const option = {
+                backgroundColor: BG,
+                animationDuration: 1100,
+                animationEasing: "cubicOut",
+                textStyle: { fontFamily: FONT },
+                color: PALETTE,
+ 
+                title: {
+                    text: config.title,
+                    subtext: config.subtitle || "",
+                    left: 20,
+                    top: 12,
+                    itemGap: 4,
+                    textStyle: { fontSize: 16, fontWeight: 600, color: LINE },
+                    subtextStyle: { fontSize: 11.5, color: MUTED }
+                },
+ 
+                legend: {
+                    top: 44,
+                    left: "center",
+                    icon: "roundRect",
+                    itemWidth: 18,
+                    itemHeight: 8,
+                    itemGap: 22,
+                    data: seriesCfg.map(function (s) { return s.name; }),
+                    textStyle: { fontSize: 12.5, color: "#4B5563" }
+                },
+ 
+                // toolbox: {
+                //     right: 14,
+                //     top: 10,
+                //     itemSize: 15,
+                //     iconStyle: { borderColor: "#9AA6B2" },
+                //     emphasis: { iconStyle: { borderColor: GOLD } },
+                //     feature: {
+                //         magicType: { type: ["line", "bar"] },
+                //         dataZoom: { yAxisIndex: "none" },
+                //         restore: {},
+                //         saveAsImage: { name: config.elementId, backgroundColor: BG, pixelRatio: 2 }
+                //     }
+                // },
+ 
+                tooltip: {
+                    trigger: "axis",
+                    axisPointer: {
+                        type: "cross",
+                        label: { backgroundColor: LINE, fontSize: 11 },
+                        crossStyle: { color: "#9AA6B2", type: "dashed" }
+                    },
+                    backgroundColor: "#FFFFFF",
+                    borderColor: "#E5E5E5",
+                    borderWidth: 1,
+                    borderRadius: 3,
+                    padding: [12, 16],
+                    extraCssText: "box-shadow:0 8px 30px rgba(0,0,0,.12)",
+                    textStyle: { color: "#333", fontSize: 12, fontFamily: FONT },
+                    formatter: function (params) {
+                        let html = '<div style="font-weight:600;margin-bottom:8px;letter-spacing:.04em">'
+                            + params[0].axisValue + '</div>';
+                        params.forEach(function (p) {
+                            if (p.value === null || p.value === undefined || isNaN(p.value)) return;
+                            const s = seriesCfg[p.seriesIndex] || {};
+                            html += '<div style="display:flex;justify-content:space-between;gap:24px;margin:3px 0">'
+                                + '<span>' + p.marker + ' ' + p.seriesName + '</span>'
+                                + '<span style="font-weight:700;font-variant-numeric:tabular-nums;color:' + INK + '">'
+                                + fmtNum(p.value, s.decimals, s.suffix)
+                                + '</span></div>';
+                        });
+                        return html;
+                    }
+                },
+ 
+                grid: {
+                    left: 66,
+                    right: usesRight ? 66 : (config.endLabels ? 84 : 28),
+                    top: 96,
+                    bottom: manyCategories ? 78 : 52
+                },
+ 
+                dataZoom: manyCategories ? [
+                    { type: "inside", zoomOnMouseWheel: true, moveOnMouseMove: true },
+                    {
+                        type: "slider",
+                        height: 16,
+                        bottom: 14,
+                        borderColor: "transparent",
+                        backgroundColor: "#F5F2EA",
+                        fillerColor: "rgba(199,159,93,.25)",
+                        dataBackground: {
+                            lineStyle: { color: "#D6CDB8", width: 1 },
+                            areaStyle: { color: "#F0EBDF" }
+                        },
+                        selectedDataBackground: {
+                            lineStyle: { color: GOLD },
+                            areaStyle: { color: "rgba(199,159,93,.3)" }
+                        },
+                        handleStyle: { color: GOLD, borderColor: GOLD_D },
+                        moveHandleSize: 0,
+                        brushSelect: false,
+                        textStyle: { color: MUTED, fontSize: 10 }
+                    }
+                ] : [
+                    { type: "inside", zoomOnMouseWheel: true, moveOnMouseMove: true }
+                ],
+ 
+                xAxis: {
+                    type: "category",
+                    data: categories,
+                    boundaryGap: false,
+                    axisLine: { lineStyle: { color: "#C9C2B0" } },
+                    axisTick: { show: false },
+                    axisLabel: {
+                        color: "#5B6672",
+                        fontSize: 11.5,
+                        margin: 12,
+                        hideOverlap: true
+                    },
+                    axisPointer: {
+                        type: "shadow",
+                        shadowStyle: { color: "rgba(199,159,93,.07)" }
+                    }
+                },
+ 
+                yAxis: [
+                    {
+                        type: "value",
+                        name: config.leftAxis || "Index",
+                        nameTextStyle: { color: MUTED, fontSize: 11 },
+                        min: leftR.min,
+                        max: leftR.max,
+                        interval: leftR.interval,
+                        axisLabel: {
+                            color: "#5B6672",
+                            fontSize: 11,
+                            formatter: function (v) {
+                                return v.toLocaleString("en-US", { maximumFractionDigits: 1 });
+                            }
+                        },
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        splitLine: { lineStyle: { color: GRID, type: [4, 5] } }
+                    },
+                    usesRight ? {
+                        type: "value",
+                        name: config.rightAxis || "",
+                        nameTextStyle: { color: MUTED, fontSize: 11 },
+                        min: rightR.min,
+                        max: rightR.max,
+                        interval: rightR.interval,
+                        axisLabel: { color: "#5B6672", fontSize: 11 },
+                        axisLine: { show: false },
+                        axisTick: { show: false },
+                        splitLine: { show: false }
+                    } : { show: false }
+                ],
+ 
+                series: echartsSeries
+            };
+ 
+            chart.setOption(option, true);
+ 
+            if (typeof ResizeObserver !== "undefined") {
+                new ResizeObserver(function () { chart.resize(); }).observe(el);
+            } else {
+                window.addEventListener("resize", function () { chart.resize(); });
+            }
+        })
+        .catch(function (err) {
+            console.error("createMultiLineChart [" + config.elementId + "]:", err);
+            showMessage("Failed to load chart data. Please refresh the page.", CLARET);
+        });
+ 
+    return chart;
+}
+</script>
+
+<script>
+    let cbsurveyChart = null;
+
+    window.addEventListener("DOMContentLoaded", function () {
+
+        loadChart();
+
+        document.getElementById("btnFilter").addEventListener("click", function (e) {
+            e.preventDefault();
+            loadChart();
+        });
+
+        document.getElementById("btnReset").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.getElementById("startYear").value = "";
+            document.getElementById("endYear").value = "";
+            document.getElementById("chartType").value = "line";
+
+            loadChart();
+        });
+
+        document.getElementById("chartType").addEventListener("change", function () {
+            loadChart();
+        });
+
+    });
+
+    function loadChart() {
+
+        const start = document.getElementById("startYear").value;
+        const end = document.getElementById("endYear").value;
+        const chartType = document.getElementById("chartType").value;
+
+        const el = document.getElementById("cbsurveyChart");
+        const existing = echarts.getInstanceByDom(el);
+        if (existing) existing.dispose();
+
+        cbsurveyChart = createMultiLineChart({
+
+            elementId: "cbsurveyChart",
+
+            api: `/stats/api/cb_survey/chart/?start_year=${start}&end_year=${end}`,
+
+            title: "Central Bank Survey (million USD)",
+
+            subtitle: "",
+
+            leftAxis: "Index",
+            baseline: 100,
+            chartType: chartType,
+
+            series: [
+                { field: "net_for_assets", name: "Net Foreign Assets" },
+                { field: "net_clm_cgov", name: "Net Claims on Central Government" },
+                { field: "m_base", name: "Monetary Base", area: true, width: 3 }
+            ],
+
+            onData: updateSummary
+
+        });
+
+    }
+
+    function updateSummary(s) {
+        if (!s) {
+            ["sumLatest", "sumChange", "sumHigh", "sumLow"].forEach(function (id) {
+                document.getElementById(id).textContent = "-";
+            });
+            ["sumLatestLabel", "sumHighLabel", "sumLowLabel"].forEach(function (id) {
+                document.getElementById(id).textContent = "-";
+            });
+            return;
+        }
+
+        const reer = s.net_for_assets;
+
+        document.getElementById("sumLatestLabel").textContent = reer.latestLabel;
+        document.getElementById("sumLatest").textContent = reer.latest !== null ? reer.latest.toFixed(2) : "-";
+
+        const chEl = document.getElementById("sumChange");
+        if (reer.change !== null) {
+            const up = reer.change >= 0;
+            chEl.textContent = (up ? "▲ +" : "▼ −") + Math.abs(reer.change).toFixed(2);
+            chEl.style.color = up ? "#7A5A1F" : "#D14343";
+        } else {
+            chEl.textContent = "-";
+            chEl.style.color = "";
+        }
+
+        document.getElementById("sumHighLabel").textContent = reer.highestLabel;
+        document.getElementById("sumHigh").textContent = reer.highest !== null ? reer.highest.toFixed(2) : "-";
+
+        document.getElementById("sumLowLabel").textContent = reer.lowestLabel;
+        document.getElementById("sumLow").textContent = reer.lowest !== null ? reer.lowest.toFixed(2) : "-";
+    }
+</script>
+
+
+
+  </body>
+
+</html>

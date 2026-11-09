@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Central Bank of Seychelles">
+        <meta name="author" content="Central Bank Of Seychelles">
+        <meta name="keyword" content="CBS, Central Bank Of Seychelles, Central Bank, Bank, Seychelles">
+        <title>Central Bank Of Seychelles | Home</title>
+        <link rel="stylesheet" href="scripts/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="scripts/ionicons/css/ionicons.min.css">
+        <link rel="stylesheet" href="scripts/toast/jquery.toast.min.css">
+        <link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="scripts/owlcarousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="scripts/magnific-popup/dist/magnific-popup.css">
+        <link rel="stylesheet" href="scripts/sweetalert/dist/sweetalert.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/skins/all.css">
+        <link rel="stylesheet" href="css/demo.css">
+        <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/gallery.css">
+        <link rel="stylesheet" href="css/index.css"  type="text/css"/>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L1VRQJN742"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-L1VRQJN742');
+        </script>
+
+    </head>
+
+    <body class="skin-orange" ng-app="app">
+        <header class="primary">
+            <div class="firstbar">
+                <div class="container">
+                    <div class="row" id="banner-img">
+                        <div class="col-md-3 col-sm-12">
+                            <div class="brand">
+                                <a href="../index.html">
+                                    <div style="width: 150px; height: 150px"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="for-desktop" ng-include="'../Menu/uppertoplinkmenuNew.html'"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start nav -->
+            <div ng-include="'../Menu/menu.html'"></div>
+            <!-- End nav -->
+        </header>
+
+        <section class="home" ng-controller="Indexpage" ng-init="MRR()">
+            <div class="container">
+                
+                <div class="row">
+                    <marquee>
+                        <strong>Our Vision :</strong> To contribute towards inclusive growth and development of Seychelles &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+                        <strong>Our Mission :</strong> To promote price and financial system stability
+                    </marquee>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div id="featured">
+                            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                                <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                                    <article class="featured">
+                                        <div class="overlay"></div>
+                                        <figure>
+                                            <img ng-src="{{slide.image}}" alt="Sample Article">
+                                        </figure>
+                                        <div class="details text-left">
+                                            <div class="category"><a href="{{slide.link}}" style="background-image:none" target="_blank">{{slide.Category}}</a></div>
+                                            <h1><a href="{{slide.link}}" style="background-image:none; padding-left: 0px;" target="_blank">{{slide.text}} </a></h1>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 col-sm-6 col-xs-12">
+
+                                <article class="article " style="padding-top:10px">
+                                    <h5 style="text-align:center">Monetary Policy Rate : <a style="color:goldenrod">1.75%</a> </h5>
+                                    <div id="interestRateChart" style="width:auto;max-width: 450px; height: 300px; margin: 0 auto">Chart Div</div>
+                                </article>
+                            </div>
+                            <div class="col-md-5 col-sm-6 col-xs-12">
+                                <h6 style = "color: black;padding-top:5px"><u>Other Rates</u> </h6>
+                                <div class="aside-body" style="padding-top:5px">
+                                    <article class="article-mini">
+                                        <div class="inner">
+                                            <figure>
+                                                <a>
+                                                    <img src="images/logoexchangerates5.png" alt="Sample Article">
+                                                </a>
+                                            </figure>
+                                            <div class="padding">
+                                                <h1><a href="marketinfo/CAR.html">Consolidated Average Exchange Rates of Authorised Dealers</a></h1>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="article-mini">
+                                        <div class="inner">
+                                            <figure>
+                                                <a>
+                                                    <img src="images/lendingrate.jpg" alt="Sample Article"/>
+                                                </a>
+                                            </figure>
+                                            <div class="padding">
+                                                <h1>Average Interbank Lending Rate For The Week Of <br> <a style="color:goldenrod">{{lendingrate.weekEndingDate}}</a> is <a style="color:goldenrod">{{lendingrate.rate}} %</a></h1>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="article-mini">
+                                        <div class="inner">
+                                            <figure>
+                                                <a>
+                                                    <img src="images/inflation1.jpg" alt="Sample Article"/>
+                                                </a>
+                                            </figure>
+                                            <div class="padding">
+                                                <h1><a href="marketinfo/Inflation.html" uib-popover-template="inflationRatePopoverTemplate" popover-title="Inflation Rate for {{prevInflationRate.month}} {{prevInflationRate.year}}" popover-trigger="'mouseenter'">Inflation Rate for {{prevInflationRate.month}} {{prevInflationRate.year}}</a></h1>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article class="article-mini">
+                                        <div class="inner">
+                                            <figure>
+                                                <a>
+                                                    <img src="images/T-Bill.jpg" alt="Sample Article" />
+                                                </a>
+                                            </figure>
+                                            <div class="padding">
+                                                <h1><a href="marketinfo/TBILL.html" uib-popover-template="TBillAverageRatePopoverTemplate" popover-title="Average Interest Rates on T-Bills as at {{tBillRate.date}}" popover-trigger="'mouseenter'">Average Interest Rates on T-Bills as at {{tBillRate.date}}</a></h1>
+                                            </div>
+                                        </div>
+
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="padding-bottom: 30px;padding-top: 10px">
+                                <img alt="Progress" src="images/progress.gif" id="imgProg" visible="false" style="margin-left: 150px; display: none;"/>
+                                <h5>Other Key Indicators</h5>
+                                <select class="select" ng-model="table.type" ng-dropdown ng-init="table.type = 'C5'"  name="country" size="1" >
+                                    <option ng-selected="selected" value="C5">CBS External Reserves Position - US$ million</option>
+                                    <option value="C2">Average Rates of Authorised Dealers</option>
+                                </select>
+                                <br/>
+                                <br/>
+                                <div id="state">
+                                    <div ng-include="'ReserveTable.html'"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div ng-include="'goDigital.html'"></div>
+                        </div>
+                        <!--                        <div class="col-md-12">
+                                                    <h5>Release Calendar</h5>
+                                                    <hr>
+                                                    <div class="row">
+                                                        <div class="col-md-8 col-sm-8">
+                                                            <h6 class="col-md-8" style="text-align: left;color: #360000">Event Name</h6>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4">
+                                                            <h6 style="color: #360000;text-align: center" class="col-md-4">Release Date </h6>
+                                                        </div>
+                                                    </div>
+                                                    <div ng-repeat="result in releasecalendar" class="row tBill-Table files2">
+                                                        <div class="col-md-8 col-sm-8">
+                                                            <p style="font-size:11px;text-align: left;font-weight: 400;color:#550000">{{result.displayname}}</p>
+                                                        </div>
+                                                        <div class="col-md-4 col-sm-4">
+                                                            <a style="color: #815555">{{result.releasedate| date : "dd MMM, yyyy"}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <p style="padding-top: 50px;text-align: right">
+                                                        <a href="/MediaCenter/ReleaseCalendar.html" style="padding-top: 50px;font-weight: 400">
+                                                            <img src="../images/releaseCal.png" alt="Survey" style="height:60px; width:50px; padding-right:5px ;padding-top:10px" /> See All Upcoming Events
+                                                        </a>
+                                                    </p>
+                                                </div>
+                        <!--                        <div class="best-of-the-week">
+                                                    <div style="padding-bottom:5px">
+                                                        <h1>
+                                                            <div class="text">Central Bank Gallery </div>
+                                                            <div class="carousel-nav" id="best-of-the-week-nav">
+                                                                <div class="prev" ng-disabled="{{galleryprevDisabled}}" ng-click="gprevPage()">
+                                                                    <i class="ion-ios-arrow-left" ng-disabled="{{galleryprevDisabled}}"></i>
+                                                                </div>
+                                                                <div class="next" ng-disabled="{{gallerynextDisabled}}" ng-click="gnextPage()">
+                                                                    <i class="ion-ios-arrow-right" ng-disabled="{{gallerynextDisabled}}"></i>
+                                                                </div>
+                                                            </div>
+                                                        </h1>
+                                                    </div>
+                                                    <div class="row gallery-grid" data-magnific="gallery" style="padding-bottom:10px">
+                                                        <div ng-repeat="image in images.slice(((gallerycurrentPage - 1) * galleryitemsPerPage), (galleryitemsPerPage * (gallerycurrentPage)))" class="gallery-thumbnail col-md-3 col-xs-2">
+                                                            <a href="{{image.url}}"><img src="{{image.url}}" alt="{{image.text}}" /></a>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                    </div>
+                    <div class="col-xs-6 col-md-4 sidebar" id="sidebar">
+                        <!--<aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+                            <div class="row for-desktop">
+                                <a href="TemporaryClosure/BankReOpening.html"class="col-md-12">
+                                    <img style="max-width: 100%; max-height: 100%;" src="../images/cbsReopening.png" alt="Reopening of the CBS Building" style=" width:360px; margin-left:20px;">
+                                </a>
+                            </div>
+                        </aside>-->
+
+                        <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+                            <div class="row">
+                                <a href= "../AccessToInfo/accessToInformation.html" class="col-md-12" target ="_blank" style=" text-decoration: none; background: none;">
+                                    <img src="../images/accessToInfo.jpg" alt="Access to Information" style="height:80px; ">
+                                </a>
+                            </div>
+                        </aside>
+
+                        <!-- <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+                            <div class="row">
+                                <a href= "../newsletter/subscribe.html" class="col-md-12" target ="_blank" style=" text-decoration: none; background: none;">
+                                    <img src="../images/newsletter.png" alt="InVision Newsletter" style="height:80px; ">
+                                </a>
+                            </div>
+                        </aside> -->
+
+
+                        <!-- 	<aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+            <div class="row">
+                <a href= "../Events/FinEdMSME/FinEdMSME.html" class="col-md-12" target ="_blank" style=" text-decoration: none; background: none;">
+                    <img src="../images/FinEdMSME.jpg" alt="FinEDMSME" style="height:80px; ">
+                </a>
+            </div>
+        </aside> -->
+                        <!--
+                        <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+    <div class="row">
+        <a href= "../Events/capacityBuilding.html" class="col-md-12" target ="_blank" style=" text-decoration: none; background: none;">
+            <img src="../images/capacityBuilding.jpg" alt="Capacity Building" style="height:80px; ">
+        </a>
+    </div>
+</aside>
+                        <!--
+                        <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+   <div class="row">
+       <a href= "Downloads/Home/Application Form for Youth Ambassador.pdf" target ="_blank" style=" text-decoration: none; background: none;">
+           <img src="../images/finedAmbassador.jpg" alt="FinEd Youth Ambassador" style="height:80px; ">
+       </a>
+   </div>
+                       </aside>
+               
+                       <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+   <div class="row for-desktop">
+       <a href="Downloads/Home/Application Form for Youth Ambassador.pdf" target ="_blank" style="font-weight: bold">
+          Click here to download the Application Form for Youth Ambassador 
+       </a>
+   </div>
+</aside>
+                        -->
+
+                        <div class="sidebar-title for-tablet">Sidebar</div>
+                        <aside style = "background-color:snow; margin-bottom:0px;">
+                            <div class="aside-body">
+                                <div class="featured-author">
+                                    <h1 class="title-col"><br>
+                                        &nbsp; Recent Updates
+                                        <div class="carousel-nav" id="hot-news-nav">
+                                            <button class="prev" ng-disabled="{{prevDisabled}}" ng-click="prevPage()">
+                                                <i class="ion-ios-arrow-left" ng-disabled="{{prevDisabled}}"></i>
+                                            </button>
+                                            <button class="next" ng-disabled="{{nextDisabled}}" ng-click="nextPage()">
+                                                <i class="ion-ios-arrow-right" ng-disabled="{{nextDisabled}}"></i>
+                                            </button>
+                                        </div>
+                                    </h1>
+                                    <div class="body-col vertical-slider" data-max="4" data-nav="#hot-news-nav" data-item="article">
+                                        <article class="article-mini article-spacing" ng-repeat="recentupdate in recentupdates.slice(((currentPage - 1) * itemsPerPage), (itemsPerPage * (currentPage)))">
+                                            <div class="inner">
+                                                <figure>
+                                                    <!--                                                <a href="#" >-->
+                                                    <img src='images/{{recentupdate.type}}.png' alt="{{recentupdate.tooltip}}" uib-tooltip="{{recentupdate.tooltip}}" style = "height:60px; width:70px; padding-left:10px;" />
+                                                    </a>
+                                                </figure>
+                                                <div class="padding">
+                                                    <p>{{recentupdate.displayName}}</p>
+                                                    <div class="detail">
+                                                        <div class="category"><a href="{{recentupdate.filePath}}" target="_blank">read more..</a></div>
+                                                        <div class="time">{{recentupdate.currentDate| date : "MMMM dd, yyyy"}}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside style="margin-bottom:20px;padding-left:0px;background-color:snow;">
+                            <!--
+        <div class="row">
+            <a href= "https://fintechseychelles.sc/" target ="_blank">
+                <img src="../images/Seychelles Pic - Copy (2).jpg" alt="FinTech Seychelles" style="height:80px; width:360px; margin-left:20px;">
+            </a>
+        </div>
+                            -->
+
+                            <div class="row">
+                                <a href= "FinEd/fined.html" target ="_blank">
+                                    <div id="sb-FinEd" class="Side-Banner" ></div>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href= "Procurement/Procurement.html" target ="_blank">
+                                    <div id="sb-Procurement" class="Side-Banner" ></div>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href= "../monetary/MPDFiles.html" target ="_blank">
+                                    <div id="sb-MonetaryPolicy" class="Side-Banner" ></div>
+                                </a>
+                            </div>
+                            <div class="row">
+                                <a href= "Statistics/Survey.html" target ="_blank">
+                                    <div id="sb-Survey" class="Side-Banner" ></div>
+                                </a>
+                            </div>
+
+                            <div class="row">
+                                <a href= "Scholarship.html" target ="_blank">
+                                    <div id="sb-Scholarship" class="Side-Banner" ></div>
+                                </a>
+                            </div>
+                        </aside>
+                        <aside style = "background-color:snow; margin-top:0px;;margin-bottom:10px">
+                            <div class="col-md-7 col-sm-6 col-xs-12" style="padding-bottom:0px">
+                                <div class="row">
+                                    <article class="article articlebottom col-md-12" style="padding-left:0px;padding-bottom:0px">
+                                        <div class="advertright" style="padding-left:0px;padding-bottom:0px">
+
+                                            <table class="greenTable" style="width:370px;border: none;padding-left:0px;padding-bottom:0px;height:450px">
+                                                <thead>
+                                                    <tr>
+                                                        <th colspan="2" style="text-align: center;border: none;font-size: 14px">Aggregate Liquidity Condition</th>
+                                                    </tr>
+                                                    <tr><th colspan="2"></th></tr>
+                                                    <tr><th colspan="2"></th></tr>
+                                                    <tr style="border: none">
+                                                        <th colspan="2" style="text-align: center;border: none;font-size: 12px">SCR Million</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th style="color: darkblue;border: none;font-size: 12px">Minimum Reserve Requirement (MRR) Maintenance Period</th>
+                                                        <!-- <td style="color: darkblue;font-weight: 500;font-size: 11px">{{(empArr.startdate) | date : "dd MMM yyyy" }} - {{empArr.enddate| date : "dd MMM yyyy" }}</td> -->
+                                                        <td style="color: darkblue;font-weight: 500;font-size: 11px">09 Sep 2026 - {{empArr.enddate| date : "dd MMM yyyy" }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;border: none;font-size: 12px;padding-left: 10px;">SCR Minimum Reserve Requirement </th>
+                                                        <td style="color: darkblue;border: none">{{empArr.avgmrr| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;text-align: left;border: none;font-size: 12px;padding-left: 10px;">Closing figures as at</th>
+                                                        <td style="color: darkblue;font-weight: 500;font-size: 11px">{{empArr.figurespreviousdate| date : "dd MMM yyyy"}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Average Reserves Held</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.avgaggreserves| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Average Excess / <a style="color: red;text-decoration:none">(Deficiency)</a></th>
+                                                        <td style="color: darkblue;border: none">
+                                                            <span ng-if="empArr.avgaggexcess > 0" >{{empArr.avgaggexcess| number:2}}</span>
+                                                            <span ng-if="empArr.avgaggexcess < 0" ng-class="{'color-red': empArr.avgaggexcess < 0}" >({{empArr.avgaggexcess| number:2}})</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Aggregate Reserves<sup>1</sup></th>
+                                                        <td style="color: darkblue;border: none">{{empArr.actaggreserves| number:2 | replace: '-':''}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Stock of DAA</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.stockDAA| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Stock of RRA</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.stockRRA| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Volume of Standing Deposit Facility</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.volumeSDF| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Volume of Standing Credit Facility</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.volumeSCF| number:2}}</td>
+                                                    </tr>
+                                                       <tr>
+                                                        <th style="color: darkblue;font-weight: normal;padding-left:20px;text-align: left;border: none">Total Excess Liquidity</th>
+                                                        <td style="color: darkblue;border: none">{{empArr.totalExcessLiquidity| number:2}}</td>
+                                                    </tr>
+                                                    
+													<!--
+                                                    <tr>
+                                                        <th style="font-weight: normal;padding-left:20px;text-align: left;border: none">Aggregate Excess / <a style="color: red;text-decoration:none">(Deficiency)</a></th>
+                                                        <td style="border: none">
+                                                            <span ng-if="empArr.actaggexcess > 0" >{{empArr.actaggexcess| number:2}}</span>
+                                                            <span ng-if="empArr.actaggexcess < 0" ng-class="{'color-red': empArr.actaggexcess < 0}" >({{empArr.actaggexcess| number:2 |replace: '-':''}})</span>
+                                                        </td>
+                                                        <!-- <td style="color: red;"></td>
+                                                    </tr>
+													-->
+													
+													
+													<tr style="height: 10px">
+													<td colspan="2" style="border: none"></td>
+													</tr>
+
+
+													<tr>
+                                                        <th style="color: goldenrod;border: none;font-size: 12px">Minimum Reserve Requirement (MRR) Maintenance Period</th>
+                                                        <td style="color: goldenrod;font-weight: 500;font-size: 11px">{{(empArr.avgStartDate) | date : "dd MMM yyyy" }} - {{empArr.avgEndDate| date : "dd MMM yyyy" }}</td>
+                                                    </tr>
+													<tr>
+                                                        <th style="color: goldenrod;border: none;font-size: 12px; padding-left: 10px;">Average SCR MRR to be maintained</th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.avgScrMRR| number:2}}</td>
+                                                    </tr>													
+                                                    <tr>
+                                                        <th style="color: goldenrod;text-align: left;border: none;font-size: 12px; padding-left: 10px;">Forecast for the maintenance period</th>
+                                                        <!-- <td style="color: goldenrod;font-weight: 500;font-size: 11px">{{empArr.forecastcurrentdate| date : "dd MMM yyyy"}}</td> -->
+                                                        <td style="color: goldenrod;font-weight: 500;font-size: 11px"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: goldenrod;font-weight: normal;padding-left:20px;text-align: left;border: none">Total Maturities and Interest payments (DAA, T-Bills, Bonds) </th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.volmaturities| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: goldenrod;font-weight: normal;padding-left:20px;text-align: left;border: none">Total Issuance of Securities (T-Bills, Bonds)<sup>2</sup></th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.volissuances| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: goldenrod;font-weight: normal;padding-left:20px;text-align: left;border: none">Total Foreign Exchange Auction inflow / outflow<sup>3</sup></th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.totalFeaFlowAmount| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: goldenrod;font-weight: normal;padding-left:20px;text-align: left;border: none">Net change in autonomous factor (CIC)</th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.netCIC| number:2}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th style="color: goldenrod;font-weight: normal;padding-left:20px;text-align: left;border: none">Estimated range of weekly DAA issuance<sup>4</sup></th>
+                                                        <td style="color: goldenrod;border: none">{{empArr.weeklyInsuanceDAA}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan='2' style="color:black;border: none;text-align: left"><sup>1</sup> Total SCR current account holdings</td>
+                                                        </tr>
+                                                         <tr>
+                                                        <td colspan='2' style="color:black;border: none;text-align: left"><sup>2,3,4</sup> Indicative amount may change depending on market conditions</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside style="margin-top:0px;margin-bottom:0px">
+                            <div class="aside-body">
+                                <div class="featured-author">
+                                    <div class="featured-author-inner">
+                                        <div class="featured-author-cover" style="background-image: url('images/DSC_7897.jpg');">
+                                            <div class="badges">
+                                                <div class="badge-item"><i class="ion-star"></i> Featured</div>
+                                            </div>
+                                        </div>
+                                        <div class="featured-author-body">
+                                            <div class="featured-author-count"></div>
+                                            <div  class="featured-author-quote">
+                                                "Pictures of Notes and Coins in circulation"
+                                            </div>
+                                            <div class="block">
+                                                <div class="block-body">
+                                                    <ul class="item-list-round" data-magnific="gallery">
+                                                        <li><a href="images/13 New Seychelles-500-(July-2016)-front@600dpi.jpg" style="background-image: url('images/13 New Seychelles-500-(July-2016)-front@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/15 New Seychelles-500-(July-2016)-back@600dpi.jpg" style="background-image: url('images/15 New Seychelles-500-(July-2016)-back@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/09 New Seychelles-100-(July-2016)-front@600dpi.jpg" style="background-image: url('images/09 New Seychelles-100-(July-2016)-front@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/11 New Seychelles-100-(July-2016)-back@600dpi.jpg" style="background-image: url('images/11 New Seychelles-100-(July-2016)-back@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/05 New Seychelles-50-(July-2016)-front@600dpi.jpg" style="background-image: url('05 New Seychelles-50-(July-2016)-front@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/07 New Seychelles-50-(July-2016)-back@600dpi.jpg" style="background-image: url('images/07 New Seychelles-50-(July-2016)-back@600dpi.jpg');"></a></li>
+                                                        <li><a href="images/01 New Seychelles-25-(June-2016)-front@300dpi.jpg" style="background-image: url('images/01 New Seychelles-25-(June-2016)-front@300dpi.jpg');"><div class="more">+15</div></a></li>
+                                                        <li class="hidden"><a href="images/03 New Seychelles-25-(June-2016)-back@300dpi.jpg" style="background-image: url('images/03 New Seychelles-25-(June-2016)-back@300dpi.jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 10r rev (3).jpg" style="background-image: url('images/seychelles 10r rev (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 10r obv (3).jpg" style="background-image: url('images/seychelles 10r obv (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 5r rev (3).jpg" style="background-image: url('images/seychelles 5r rev (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 5r obv (3).jpg" style="background-image: url('images/seychelles 5r obv (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 1r rev (3).jpg" style="background-image: url('images/seychelles 1r rev (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 1r obv (3).jpg" style="background-image: url('images/seychelles 1r obv (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 25c rev (3).jpg" style="background-image: url('images/seychelles 25c rev (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 25c obv (3).jpg" style="background-image: url('images/seychelles 25c obv (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 10c rev (3).jpg" style="background-image: url('images/seychelles 10c rev (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 10c obv (3).jpg" style="background-image: url('images/seychelles 10c obv (3).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 5c rev.jpg" style="background-image: url('images/seychelles 5c rev.jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 5c obv.jpg" style="background-image: url('images/seychelles 5c obv.jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 1c rev (2).jpg" style="background-image: url('images/seychelles 1c rev (2).jpg');"></a></li>
+                                                        <li class="hidden"><a href="images/seychelles 1c obv (2).jpg" style="background-image: url('images/seychelles 1c obv (2).jpg');"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="featured-author-footer">
+                                                <a href="Currency/NotesAndCoins.html"> Notes and Coins</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+
+
+                        <aside style="background-color: snow;margin-top:0px">
+                            <div class="row">
+                                <a href= "../Downloads/FORM FOR THE EXCHANGE OF WITHDRAWN BANKNOTES.pdf" target ="_blank" style="padding: 0px; background: none;" >
+                                    <img src="../images/Demonetisation.png" alt="Demonetisation" style="height:80px; width:360px; margin-left:20px;">
+                                </a>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Start footer -->
+        <footer class="footer">
+            <div ng-include="'../Menu/footer.html'"></div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- JS -->
+        <script src="js/jquery.js"></script>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-animate.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="js/ui-bootstrap-tpls.min.js"></script>
+        <script src="scripts/highcharts.js"></script>
+        <script src="js/chartFunctions.js"></script>
+        <script src="js/app-index.js"></script>
+
+
+        <script src="js/jquery.migrate.js"></script>
+        <script src="scripts/bootstrap/bootstrap.min.js"></script>
+        <script>
+                var $target_end = $(".best-of-the-week");
+        </script>
+        <script type="text/ng-template" id="InflationRateTemplate.html">
+            <div class="row">
+            <div class="col-md-4 popover-header">Year on Year</div>
+            <div class="col-md-4 popover-header">12 Month Average</div>
+            <div class="col-md-4 popover-header">Month on Month</div>
+            </div>
+            <div>
+            <div class="col-md-4">
+            <font style="color:#74653D">{{prevInflationRate.yearonyear}} %</font>
+            </div>
+            <div class="col-md-4">
+            <font style="color:#74653D">{{prevInflationRate.twelvemonthav}} %</font>
+            </div>
+            <div class="col-md-4">
+            <font style="color:#74653D">{{prevInflationRate.monthonmonth}} %</font>
+            </div>
+            </div>
+            <div class="row"></div>
+        </script>
+        <script type="text/ng-template" id="TBillAverageRateTemplate.html">
+            <div class="row">
+            <div class="col-md-4 text-center">91-day</div>
+            <div class="col-md-4 text-center">182-day</div>
+            <div class="col-md-4 text-center">365-day</div>
+            <div class="col-md-4 text-center">
+            <font style="color:#74653D">{{(!tBillRate.rate1)? '-':tBillRate.rate1}} %</font>
+            </div>
+            <div class="col-md-4 text-center">
+            <font style="color:#74653D">{{(!tBillRate.rate2)? '-':tBillRate.rate2}} %</font>
+            </div>
+            <div class="col-md-4 text-center">
+            <font style="color:#74653D">{{(!tBillRate.rate3)? '-':tBillRate.rate3}} %</font>
+            </div>
+            </div>
+        </script>
+        <script src="scripts/jquery-number/jquery.number.min.js"></script>
+        <script src="scripts/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+        <script src="scripts/easescroll/jquery.easeScroll.js"></script>
+        <script src="scripts/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="scripts/toast/jquery.toast.min.js"></script>
+        <script src="js/demo.js"></script>
+        <script src="js/e-magz.js"></script>
+    </body>
+</html>

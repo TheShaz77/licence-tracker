@@ -1,0 +1,4120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META http-equiv="pragma" content="no-cache" />
+<META http-equiv="cache-control" content="no-cache" />
+<META http-equiv="Expires" content="-1" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<meta name="description" content="" />
+   <meta name="keywords"  content="" />
+   
+<!-- Naslov u zavisnosti od lokala -->
+<title>НБС | Имплементација МСФИ 9 у банкама</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/gallery/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/gallery/favicon/site.webmanifest">
+<link rel="mask-icon" href="/gallery/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="/gallery/favicon.svg">
+<link rel="icon" type="image/png" href="/gallery/favicon.png">
+<link href="/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/sitenew.css" rel="stylesheet"/>
+<link href="/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/media.css" rel="stylesheet"/>
+   
+
+<link href="/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/sitenew1.css" rel="stylesheet" />
+<script src="/export/system/modules/rs.nbs.opencms.template/resources/resources2/js/newjs.js"></script>
+
+	<script src="https://kit.fontawesome.com/689c311ae2.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+<link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+
+<meta property='og:type' content="website" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@nbs" />
+<meta property="og:image:width" content="504" />
+<meta property="og:image:height" content="264" />
+
+<meta property='og:title' content="Имплементација МСФИ 9 у банкама"/>
+
+<meta property='twitter:title' content="Имплементација МСФИ 9 у банкама" />
+
+<!--Image-->
+
+<meta property='og:image' content="https://nbs.rs/export/sites/NBS_site/gallery/slike_1/default_logo.jpg" />
+<meta property='twitter:image' content="https://nbs.rs/export/sites/NBS_site/gallery/slike_1/default_logo.jpg"/>
+<!--Description-->
+
+<meta property='og:description' content="Банке у Републици Србији имају обавезу, утврђену одредбама Закона о банкама („Службени гласник РС“, бр. 107/2005, 91/2010 и 14/2015), да при састављању годишњих финансијских извештаја примењују Међународне стандарде финансијског извештавања (у даљем тексту: МСФИ) од дана који је надлежно међународно..."/>
+<meta property='twitter:description' content="Банке у Републици Србији имају обавезу, утврђену одредбама Закона о банкама („Службени гласник РС“, бр. 107/2005, 91/2010 и 14/2015), да при састављању годишњих финансијских извештаја примењују Међународне стандарде финансијског извештавања (у даљем тексту: МСФИ) од дана који је надлежно међународно..." />
+</head>
+
+
+
+
+<body>
+
+
+
+
+<div class="background_mobile hidden-print">
+ 
+   <div class="container ">
+<div class="row head_img"   >
+
+
+
+
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lang_search ">
+
+<div class=" pull-right hidden-print lang_marg"  >
+<div class="list_clear"  >
+<ul class="">
+
+<li>
+ <div>
+
+<div class="input-group-btn">
+	
+       <ul>
+	
+	
+	   <!--  <li><a href="#">Ћир</a></li>-->
+		
+		
+		<a href="#"> <button  class="btn btn-default" target="_blank" type="submit"> Ћир</button></a>
+    <a href="/sr/finansijske-institucije/banke/msfi/index.html"><button  class="btn btn-default" target="_blank" type="submit"> Lat</button></a>
+	 <a href="/en/finansijske-institucije/banke/msfi/index.html"><button  class="btn btn-default" target="_blank" type="submit"> Eng</button></a>
+	 </ul> </div> 
+		</div>
+		 
+<script>
+
+function submit() {
+// for IE fix
+    $("form['form-btn']").submit();
+}
+</script>
+</li>
+<li>
+ 
+
+
+
+
+
+
+
+
+
+<!--<form class="navbar-form" role="search" method="post">-->
+  <div class="navbar-form">
+    <div class="input-group add on">
+      <input class="form-control"  id="pretraga"  type="text" onkeydown = "if (event.keyCode == 13)
+                        document.getElementById('btnSearch').click()" placeholder='Претражи' >  
+      <div class="input-group-btn">
+	 
+       <button class="btn btn-default" type="submit" onclick="Pretraga()"><i class="fas fa-search" id="btnSearch"></i> </button>
+      </div>
+    </div>
+	  </div>
+  <!--</form>-->
+
+
+<script>
+function Pretraga() {
+ 
+var vredPretraga = encodeURI(document.getElementById('pretraga').value);
+
+if ("sr_RS" =="en") {
+  var urlPretraga = '/sr_RS/scripts/search/index.html?q='.concat(vredPretraga);
+} else {
+		var urlPretraga = '/sr_RS/scripts/pretraga/index.html?q='.concat(vredPretraga);
+	}
+
+window.location.replace(urlPretraga);
+}
+</script>
+</li>
+
+     <div style="clear: both;"></div> 
+  </ul>
+  
+</div>
+</div>
+
+<div class="pull-left_logo" >
+ <div>
+
+ <a id="divToPrint" href="/sr_RS/indeks/" >  
+<img   alt="Народна банка Србије" style="display:inline;" width="189px" height="109px" 
+src="/export/system/modules/rs.nbs.opencms.template/resources/resources2/img/logo_e.svg">
+</a>
+
+</div>
+</div>  
+      </div>
+</div>
+</div> 
+</div> 
+<!--header-->
+        
+
+
+<div class="row hidden-print">
+<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>      
+        </div>
+		
+		<div class="navbar navbar-default navigation_left">
+		<div id="navbar-collapse-grid" class="navbar-collapse collapse">
+		 
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+	<ul class="nav navbar-nav">
+	
+		<li class="dropdown navigation_left_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">О НБС</a>
+			
+			<ul class="dropdown-menu">
+			<li class="main_menu">
+
+			<div class="row row-flex top_padding">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			
+			<!-- Biranje tipa -->
+			
+			
+			
+	
+			
+			
+			
+			
+						
+			
+
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+		<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/polozaj/"target="" >Положај, овлашћења и организација Народне банке Србије</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/rukovodstvo/"target="" >Руководство</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/savet-guvernera/"target="" >Савет гувернера</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/organizaciona-sema/"target="" >Организациона шема</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/poslovanje/"target="" >Пословање</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+		
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/drustvena-odgovornost/"target="" >Друштвена одговорност</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+		<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/istorijat-NBS/" target="">Историјат</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/arhiv-i-biblioteka/" target="">Архив и библиотека</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/centar-za-posetioce/" target="">Центар за посетиоце</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/kontakti-prema-organizacionoj-strukturi/" target="">Контакти према организационој структури</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/radno-vreme-i-neradni-dani/" target="">Нерадни дани </a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/o_nbs/pitanja" target="">Поставите питањe Народној банци Србије</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-6 col-md-6 col-sm-12">
+			<div class="flexin"> 
+			 <div class="line_top"></div> 
+
+			<div class="img_menu_text">
+			
+			<div class="col-lg-12 col-md-12 col-sm-6 img_tex_pad" >
+			<img src="https://www.nbs.rs/gallery/pics/meni_foto.svg"   width=""height="" class="img_menu img-responsive" style="max-width: 100%;
+    height: auto;" />
+ 			</div>
+			
+			 
+			
+			<div class="col-lg-12 col-md-12 col-sm-6 img_tex_pad"><h4><a href="/sr_RS/drugi-nivo-navigacije/pres/foto-galerija/" target="_blank"> Фото-галерија</a></h4>
+			
+			<p>
+			Палата Народне банке, изграђена у стилу неоренесансног академизма, представља једно од највећих и најлепших остварења у Београду у 19. веку, због чега је сврстана у споменике културе под заштитом државе...
+			</p>
+			  </div>
+			 
+			
+			</div>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+		
+	
+		<li class="dropdown navigation_left_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">ЦИЉЕВИ И ФУНКЦИЈЕ</a>
+			
+			<ul class="dropdown-menu">
+			<li class="main_menu">
+
+			<div class="row row-flex top_padding">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/ciljevi-i-funkcije/ciljevi/" target="">Циљеви Народне банке Србије</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/" target="">Монетарна политика</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/inflacija/" target="">Циљање инфлације</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/proces-odlucivanja/" target="">Процес одлучивања о монетарној политици</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/sednica-izvrsnog-odbora/" target="">Седнице Извршног одбора и промене референтне каматне стопе</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/instumenti-monetarne-politike/" target="">Инструменти монетарне политике</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/kamatne-stope/" target="">Каматне стопе</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/nacin-delovanja-monetarne-politike/" target="">Начин деловања монетарне политике</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/dinarizacija/" target="">Динаризација</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/" target="" class="">Монетарна политика</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/inflacija/" target="">Циљање инфлације</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/proces-odlucivanja/" target="">Процес одлучивања о монетарној политици</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/sednica-izvrsnog-odbora/" target="">Седнице Извршног одбора и промене референтне каматне стопе</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/instumenti-monetarne-politike/" target="">Инструменти монетарне политике</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/kamatne-stope/" target="">Каматне стопе</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/nacin-delovanja-monetarne-politike/" target="">Начин деловања монетарне политике</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/monetarna-politika/dinarizacija/" target="">Динаризација</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/" target="">Финансијска стабилност</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/finansijska-stabilnost/" target="">Макропруденцијални оквир</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/zastitni_slojevi_kapitala/" target="">Заштитни слојеви капитала</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/pokazatelji/" target="">Показатељи финансијске стабилности</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/restrrukturiranje-banaka/" target="">Реструктурирање банака</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/" target="" class="">Финансијска стабилност</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/finansijska-stabilnost/" target="">Макропруденцијални оквир</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/zastitni_slojevi_kapitala/" target="">Заштитни слојеви капитала</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/pokazatelji/" target="">Показатељи финансијске стабилности</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/finansijska-stabilnost/restrrukturiranje-banaka/" target="">Реструктурирање банака</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/ciljevi-i-funkcije/prinudna-naplata/" target="">Принудна наплата</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/ciljevi-i-funkcije/poslovi-s-gotovinom/" target="">Послови с готовином</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/ciljevi-i-funkcije/medjunarodna-saradnja/" target="">Међународна сарадња</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/" target="">Платни систем</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/evidencija" target="">Евиденција платних система</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/nbs-operator/" target="">Народна банка Србије као оператор платних система</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/new_htmlredirect" target="">Систем за инстант плаћања – IPS НБС систем</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/nadgledanje/" target="">Надгледање платних система</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/statistika/" target="">Статистика платног система</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/naknade_ps/" target="">Накнаде за услуге платног система</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/" target="" class="">Платни систем</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/evidencija" target="">Евиденција платних система</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/nbs-operator/" target="">Народна банка Србије као оператор платних система</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/new_htmlredirect" target="">Систем за инстант плаћања – IPS НБС систем</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/nadgledanje/" target="">Надгледање платних система</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/statistika/" target="">Статистика платног система</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/platni-sistem/naknade_ps/" target="">Накнаде за услуге платног система</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/" target="" >Надзор над финансијским институцијама</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-kontrola-banaka" target="">Контрола банака</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-nadzor-osiguranja" target="">Надзор у области осигурања</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-penz-fond" target="">Надзор над друштвима за управљање добровољним пензијским фондовима</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-lizing" target="">Надзор у области финансијског лизинга</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-piiel" target="">Надзор над пословањем платних институција и институција електронског новца</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/sprecavanje-pranja-novca/" target="">Спречавање прања новца и финансирања тероризма</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/supervizija-sis/" target="">Супервизија информационих система финансијских институција</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/e-dostavljanje-podataka/" target="">Електронско достављање података</a></li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/" target="">Дигитална имовина</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/" target="" class="">Надзор над финансијским институцијама</a>
+				
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-kontrola-banaka" target="">Контрола банака</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-nadzor-osiguranja" target="">Надзор у области осигурања</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-penz-fond" target="">Надзор над друштвима за управљање добровољним пензијским фондовима</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-lizing" target="">Надзор у области финансијског лизинга</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/redirect-piiel" target="">Надзор над пословањем платних институција и институција електронског новца</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/sprecavanje-pranja-novca/" target="">Спречавање прања новца и финансирања тероризма</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/supervizija-sis/" target="">Супервизија информационих система финансијских институција</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/e-dostavljanje-podataka/" target="">Електронско достављање података</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/" target="">Дигитална имовина</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/ciljevi-i-funkcije/zastita-korisnika/" target="">Заштита корисника</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+		
+	
+		<li class="dropdown navigation_left_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">ФИНАНСИЈСКО ТРЖИШТЕ</a>
+			
+			<ul class="dropdown-menu">
+			<li class="main_menu">
+
+			<div class="row row-flex top_padding">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/aukcije-hov/" target="">Операције на отвореном тржишту</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/devizne-svop-aukcije/" target="">Операције на девизном тржишту</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/medjubankarsko-devizno-trziste/" target="">Међубанкарско девизно тржиште</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/devizne-rezerve/" target="">Девизне резерве</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/dnevni-pregled-kamatnih-stopa" target="_blank">Дневни преглед каматних стопа</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/istorijski-pregled-kamatnih-stopa" target="_blank">Историјски преглед каматних стопа на тржишту новца и тржишту државних хартија од вредности</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/trziste-drzavnih-hartija-od-vrednosti/" target="">Тржиште државних хартија од вредности</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/dnevna-likvidnost" target="_blank">Дневна ликвидност банкарског сектора</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/ft-beonia" target="_blank">BEONIA</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/mnt" target="_blank">Међубанкарскo новчано тржиште и репо</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/stope-zatezna-kamate" target="">Стопе затезне камате у складу са Законом о затезној камати</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/devizni-hedging/" target="">Девизни хеџинг</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/informacije-za-investitore-i-analiticare/" target="">Информације за инвеститоре и аналитичаре</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/pristup-servisima-narodne-banke-srbije-na-bulmbergu-i-rojtersu/" target="">Приступ сервисима Народне банке Србије на Блумбергу и Ројтерсу</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/finansijsko_trziste/minimalni-i-maksimalni-iznosi-po-menjackim-poslovima-banaka/" target="">Минимални и максимални износи по мењачким пословима банака</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+		
+	
+		<li class="dropdown navigation_left_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">ФИНАНСИЈСКЕ ИНСТИТУЦИЈЕ</a>
+			
+			<ul class="dropdown-menu">
+			<li class="main_menu">
+
+			<div class="row row-flex top_padding">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/finansijske-institucije/banke/" target="">Банке</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/spisak-banaka" target="_blank">Списак банака</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/bilans-stanja" target="_blank">Биланс стања/успеха банака</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/osnivanje-i-saglasnosti/" target="">Оснивање банке, дозволе за рад и осталe сагласности</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/upravljanje-rizicima/" target="">Управљање ризицима</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/banke-ino-spisak/" target="">Банке овлашћене за пословање са иностранством</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/predstavnistva/" target="">Представништва страних банака</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/msfi/" target="">Имплементација МСФИ 9 у банкама</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/izvestaji-i-analize/" target="">Извештаји и анализе</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/finansijske-institucije/banke/" target="" class="">Банке</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/spisak-banaka" target="_blank">Списак банака</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/bilans-stanja" target="_blank">Биланс стања/успеха банака</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/osnivanje-i-saglasnosti/" target="">Оснивање банке, дозволе за рад и осталe сагласности</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/upravljanje-rizicima/" target="">Управљање ризицима</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/banke-ino-spisak/" target="">Банке овлашћене за пословање са иностранством</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/predstavnistva/" target="">Представништва страних банака</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/msfi/" target="">Имплементација МСФИ 9 у банкама</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/banke/izvestaji-i-analize/" target="">Извештаји и анализе</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/finansijske-institucije/osiguranje/" target="">Осигурање</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/ucesnici" target="_blank">Учесници на тржишту осигурања</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/poslovanje/" target="">Подаци о пословању друштава за осигурање</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/izvestaj/" target="">Извештаји о пословима надзора над обављањем делатности осигурања</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/solventnost/" target="">Имплементација Солвентности II у Србији</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/aktuari/" target="">Информације за актуаре</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/posrednici-zastupnici/" target="">Информације за посреднике и заступнике у осигурању</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/finansijske-institucije/osiguranje/" target="" class="">Осигурање</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/ucesnici" target="_blank">Учесници на тржишту осигурања</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/poslovanje/" target="">Подаци о пословању друштава за осигурање</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/izvestaj/" target="">Извештаји о пословима надзора над обављањем делатности осигурања</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/solventnost/" target="">Имплементација Солвентности II у Србији</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/aktuari/" target="">Информације за актуаре</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/osiguranje/posrednici-zastupnici/" target="">Информације за посреднике и заступнике у осигурању</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/finansijske-institucije/penzijski-fondovi/" target="">Пензијски фондови</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/dpf" target="">Друштва за управљање добровољним пензијским фондовима</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/informacije/" target="">Информације за учеснике у систему</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/fondex-ij" target="">FONDex и вредност инвестиционих јединица</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/o_fondexu/" target="">Шта је FONDex</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/izvestaji/" target="">Извештај о пословању друштава за управљање добровољним пензијским фондовима и добровољних пензијских фондова</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/finansijske-institucije/penzijski-fondovi/" target="" class="">Пензијски фондови</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/dpf" target="">Друштва за управљање добровољним пензијским фондовима</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/informacije/" target="">Информације за учеснике у систему</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/fondex-ij" target="">FONDex и вредност инвестиционих јединица</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/o_fondexu/" target="">Шта је FONDex</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/penzijski-fondovi/izvestaji/" target="">Извештај о пословању друштава за управљање добровољним пензијским фондовима и добровољних пензијских фондова</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/finansijske-institucije/lizing/" target="">Лизинг</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/lizing/davaoci-fl" target="">Даваоци финансијског лизинга</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/lizing/poslovanje-dfl/" target="">Пословање друштава-давалаца финансијског лизинга</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+			
+			
+			
+				
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/finansijske-institucije/lizing/" target="" class="">Лизинг</a>
+				
+			<ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/lizing/davaoci-fl" target="">Даваоци финансијског лизинга</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/lizing/poslovanje-dfl/" target="">Пословање друштава-давалаца финансијског лизинга</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+				<div class="row top_padding hidden-lg  hidden-md hidden-sm">
+				<div class="col-xs-12">
+				<li class="dropdown sub"> 
+				<a href="/sr_RS/finansijske-institucije/pi-ien/" target="" >Платне институције и институције електронског новца</a>
+
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"></a>
+				  <div class="dropdown-menu menu_item"> 
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-pi" target="_blank">Регистар платних институција</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-ien" target="_blank">Регистар институција електронског новца</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-jpoo" target="_blank">Регистар заступника јавног поштанског оператора</a></li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/lista-ientd" target="_blank">Листа институција електронског новца из трећих држава</a></li>   
+			
+			</ul>
+			</div>
+			</li>
+			</div>
+			</div>
+				<li class="hidden-xs"> 
+				<a href="/sr_RS/finansijske-institucije/pi-ien/" target="" class="">Платне институције и институције електронског новца</a>
+				
+				  <ul class="">
+			
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-pi" target="_blank">Регистар платних институција</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-ien" target="_blank">Регистар институција електронског новца</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/registar-jpoo" target="_blank">Регистар заступника јавног поштанског оператора</a> </li>   
+			
+			
+			<li ><a href="/sr_RS/finansijske-institucije/pi-ien/lista-ientd" target="_blank">Листа институција електронског новца из трећих држава</a> </li>   
+			
+			</ul>
+			</li>
+			
+			
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+		
+	
+		<li class="dropdown navigation_left_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">НОВАЦ И ПЛАЋАЊА</a>
+			
+			<ul class="dropdown-menu">
+			<li class="main_menu">
+
+			<div class="row row-flex top_padding">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+			
+		
+			
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/novcanice/" target="">Новчанице у оптицају</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/kovanice/" target="">Ковани новац у оптицају</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/zastitni-elementi/" target="">Заштитни елементи новца</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/zamena-novca/" target="">Замена новчаница и кованог новца неподобних за оптицај</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/numizmatika/" target="">Нумизматички новац и комерцијална паковања оптицајног кованог новца</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/info_kupci/" target="">Информације за купце и контакти</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/numizmatika_str/" target="">Нумизматика</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+		
+			 
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/platne-usluge/" target="">Платне услуге</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/htmlredirect-02" target="">Платни систем у РС</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/htmlredirect-03" target="">Инстант плаћања</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/qr-validacija-generisanje" target="_blank">IPS QR кôд – генератор и валидатор</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/htmlredirect" target="">DinaCard</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+				
+				<li class="menu_level_link" ><a href="/sr_RS/novac-i-placanja/e-novac-detaljnije/" target="">Електронски новац</a>
+				
+				</li>
+				
+		
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-3 col-sm-6">
+			
+			
+			
+			
+			<div class="flexin">
+			<ul>
+			
+			
+			
+			
+			
+			
+			
+			<div class="flexin">
+			
+			<img src="https://www.nbs.rs/gallery/pics/ips_logo.svg" width="" height="" class="img_menu img-rensponsive" style="max-width: 100%;
+    height: auto;"/>
+			</div>
+			 
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+	
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+		
+	
+
+</ul></div>
+		</div>
+		
+		<div class="navbar navbar-default navigation_right">
+		<div id="navbar-collapse-grid2" class="navbar-collapse collapse">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav navbar-nav navbar-right">
+
+	
+	
+		
+	
+	<li class="dropdown navigation_right_01">
+		<a href="/sr_RS/drugi-nivo-navigacije/statistika/" >СТАТИСТИКА</a>
+	
+	
+		
+			
+			<ul class="dropdown-menu grid2">
+			<li class="main_menu2">
+
+			<div class="row top_padding2">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+		
+		
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/statistika-n/" target="">Надлежност Народне банке Србије у области статистике</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/mon_stat/" target="">Монетарна статистика</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/detaljni_depozit/" target="">Детаљнији приказ депозита</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/detaljni_potrazivanja/" target="">Детаљнији приказ потраживања</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/ks_stat/" target="">Каматне стопе и преглед кретања курса динара</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/kurs-99-01/" target="">Званични и тржишни курсеви у периоду 1990-2001. </a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/platni_bilans/" target="">Платни биланс</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/mip/" target="">Међународна инвестициона позиција РС</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/spoljni_dug/" target="">Спољни дуг РС</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			
+			
+			 
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/metod_objasnjenja/" target="">Kалендар објављивања података</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/sekt_klasifikacija/" target="">Прописи из области статистике државних финансија и секторска класификација</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/e-GDDS/" target="">Проширени општи систем за дисеминацију података (e-GDDS)</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/statistika/poverljivost_podataka/" target="">Поверљивост података и захтев за подацима</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+	
+	
+
+	
+	
+	
+	
+	
+		
+	
+	<li class="dropdown navigation_right_01">
+		<a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/" >ПУБЛИКАЦИЈЕ И ИСТРАЖИВАЊА</a>
+	
+	
+		
+			
+			<ul class="dropdown-menu grid2">
+			<li class="main_menu2">
+
+			<div class="row top_padding2">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+		
+		
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/IOI/" target="">Извештај о инфлацији</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/SB/" target="">Статистички билтен</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/GIOPRR/" target="">Годишњи извештај о пословању и резултатима рада</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/IMP/" target="">Извештај о монетарној политици</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/GISFS/" target="">Годишњи извештај о стабилности финансијског система</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/anketa-inflaciona-ocekivanja/" target="">Извештај о резултатима анкете о инфлационим очекивањима</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/anketa-kreditna-aktivnost/" target="">Извештај о резултатима анкете о кредитној активности банака</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/trendovi-kreditna-aktivnost/" target="">Трендови у кредитној активности</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/dinarizacija/" target="">Извештај о динаризацији финансијског система Србије</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			
+			
+			 
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/analiza_idds/" target="">Анализа исплативости динарске и девизне штедње</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/seminari/" target="">Београдски истраживачки семинар</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/strucni-radovi/" target="">Стручни радови</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/zbornik/" target="">Зборник радова</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/seemhn/" target="">Научна мрежа за монетарну историју југоисточне Европе (SEEMHN)</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/konferencije/" target="">Одржане конференције и истраживачки курсеви</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/publikacije-i-istrazivanja/linkovi/" target="">Корисни линкови</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+	
+	
+
+	
+	
+	
+	
+	
+		
+	
+	<li class="dropdown navigation_right_01">
+		<a href="/sr_RS/drugi-nivo-navigacije/propisi/" >ПРОПИСИ</a>
+	
+	
+		
+			
+			<ul class="dropdown-menu grid2">
+			<li class="main_menu2">
+
+			<div class="row top_padding2">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+		
+		
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+	
+	
+
+	
+	
+	
+	
+	
+		
+	
+	<li class="dropdown navigation_right_01">
+		<a href="/sr_RS/drugi-nivo-navigacije/pres/" >ПРЕС</a>
+	
+	
+		
+			
+			<ul class="dropdown-menu grid2">
+			<li class="main_menu2">
+
+			<div class="row top_padding2">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+		
+		
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			
+			
+			 
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+	
+	
+
+	
+	
+	
+	
+	
+		
+		
+	<li class="dropdown navigation_right_01">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">СЕРВИСИ</a>
+	
+	
+		
+			
+			<ul class="dropdown-menu grid2">
+			<li class="main_menu2">
+
+			<div class="row top_padding2">
+			
+			
+			
+			
+			
+			
+			
+			
+			
+				
+			
+			
+			
+			
+		
+		
+			<!-- Biranje tipa -->
+			
+			
+			
+			
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/htmlredirect" target="_blank">ЦЕНТАР ЗА МЕЊАЧКЕ ПОСЛОВЕ</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/centar-rp/" target="">ЦЕНТАР ЗА РАЗМЕНУ ПОДАТАКА</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/sistem-veb-servisa-NBS/" target="">СИСТЕМ ВЕБ-СЕРВИСА</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/rir" target="_blank">Јединствени регистар рачуна</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/duznici-dupn" target="_blank">Претраживање дужника у принудној наплати</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/reg_men" target="_blank">Претраживање Регистра меница и овлашћења</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/reg_resenja" target="_blank">Упит у регистар примљених решења</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/htmlredirect-00001" target="_blank">Потврде и остали подаци на захтев странака</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			 
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/sifarnik-placanja/" target="">Шифре плаћања за домаћи и девизни платни промет</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/sifarnik" target="_blank">Шифарници земаља и валута</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+				<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/sifarnik-mfo/" target="">Шифарник међународних организација</a>
+				</li>
+				
+		
+		
+			
+			
+			
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			<div class="col-lg-3 col-md-6 col-sm-6">
+			<div class="flexin"> 
+			
+			
+			
+			
+			
+			<ul>
+			
+			
+			
+			
+			
+			 
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/sifarnik-sektora/" target="">Шифарник институционалних сектора за резиденте и нерезиденте</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/cene-efektivnog-snb" target="_blank">Цене ефективног страног новца за банке</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			<li class="menu_level_link" ><a href="/sr_RS/drugi-nivo-navigacije/servisi/taho" target="_blank">Важећа цена картица за тахограф</a>
+			
+			<ul class="">
+			
+			
+			</ul>
+			</li>
+			
+			
+			
+			
+			</ul>
+			</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+	</div>
+			
+	</li>
+	</ul>
+		
+	
+		
+	</li>
+	
+	
+
+	
+	
+	
+	
+
+</ul>
+</div>
+		</div>
+
+</div>
+	<!--navigacija-->	
+	
+	
+	<div class="section">
+<div class="container">
+<div class="row">
+<div class="col-lg-12 col-md-12 col-sm-12 hidden-print">
+<div class="social_links_top" > 
+
+
+
+
+
+
+
+
+<script>
+function doFacebookPost() {
+ 
+ var fullPath =  window.location;
+ var titleFacebook= document.title;
+
+  var urlFacebook = 'https://www.facebook.com/share.php?u='.concat(fullPath,"&title=",titleFacebook);
+
+
+
+  window.open(urlFacebook,"_newtab");
+ 
+}
+
+function doTwitterPost() {
+ 
+ var fullPathTwitter =  window.location;
+ var titleTwitter= document.querySelector("meta[property='twitter:title']").getAttribute('content');
+ 
+ titleTwitter = titleTwitter + "&url=" + fullPathTwitter + "&via=SrbNarodnabanka";
+ var urlTwitter = 'https://twitter.com/intent/tweet?text='.concat(titleTwitter);
+
+
+
+ window.open(urlTwitter,"_newtab");
+ 
+}
+</script>
+
+
+<script>
+
+	
+function printing(){
+		
+ try{ 
+ 
+		var oIframe = document.getElementById("frameId");
+		
+		if(oIframe != null){
+		var newWin=window.open('','','width=1500,height=1200,scrollbars=yes');
+		
+		
+		var titleId = $("#titleId").html();
+        var oContent = document.getElementById('divToPrint').innerHTML;
+		var oFooter = document.getElementById('footerToPrint').innerHTML;
+		
+		var arr = document.querySelectorAll('[id^="content-container"]');
+        var oDoc = (oIframe.contentWindow || oIframe.contentDocument);
+        if (oDoc.document) oDoc = oDoc.document;
+        var oOldContentHTML=oDoc.body.innerHTML;
+  
+				
+        newWin.document.write("<html>");
+        newWin.document.write("<head>");
+        newWin.document.write("<title>NBS</title>");
+		newWin.document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/sitenew.css\"></link>"); 
+		newWin.document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/sitenew.css\"></link>"); 
+		newWin.document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css\"></link>");
+		newWin.document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"/export/system/modules/rs.nbs.opencms.template/resources/resources2/fontawesome-free-5.15.3-web/css/all.min.css\"></link>"); 
+	    newWin.document.write("<link  rel=\"stylesheet\" type=\"text/css\" href=\"/system/shared/static_css/static_css.css\"></link>");
+		newWin.document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"/export/system/modules/rs.nbs.opencms.template/resources/resources2/css2/print.css\"></link>"); 
+
+
+  	    newWin.document.write("</head>");
+	
+		newWin.document.write("<body onload='this.focus();this.print();'>");
+	    
+		newWin.document.write(oContent);
+		if (titleId != undefined){
+		newWin.document.write("<h1>");
+		newWin.document.write(titleId);
+		newWin.document.write("</h1>");
+		}
+	
+		newWin.document.write(oOldContentHTML);
+		
+		for(var i = 0; i < arr.length; i++) {
+		var elem = arr[i].innerHTML;
+		
+		if(elem != '' && elem.indexOf("frameId") == -1){
+		newWin.document.write(elem);
+		}
+
+		}
+  		
+		
+		newWin.document.write("<div style='text-align:center;'>");
+		newWin.document.write(oFooter);
+		newWin.document.write("</div>");
+		newWin.document.write("</body></html>");	
+		
+		newWin.document.close(); 
+		
+	}	
+	else{
+		window.focus();
+		window.print();
+		
+	
+	}
+   }
+     
+    catch(e){
+	    window.print();
+    }
+}
+
+</script>
+
+
+<div class="share">
+  <!-- facebook -->
+  <a class="facebook"  title="Facebook" onclick=doFacebookPost();>
+ <i class="fab fa-facebook-f"></i>
+</a>
+  		
+	
+  <!-- twitter -->
+ 			 <a class="twitter" title="Twitter" onclick=doTwitterPost();><i class="fa-brands fa-square-x-twitter"></i></a>
+
+    		<a class="mail" title="Share this page" href="#" onclick="javascript:window.location='mailto:?subject='+document.title;+'&body=' + window.location;" target="blank"><i class="fas fa-share-alt"></i></a>
+			
+			<a class="printer" title="Print this page" href="#" onclick="printing()"><i class="fas fa-print"></i></a>
+			
+			
+
+			
+			</div> 
+
+
+
+
+
+
+<ol class="breadcrumb">
+
+
+
+	
+
+        
+		
+		
+		
+		
+		
+				
+				
+
+
+					<li class="breadcrumb-item" style="color: #777;">
+
+                   				
+					
+					 
+					
+					
+					ФИНАНСИЈСКЕ ИНСТИТУЦИЈЕ
+					
+					
+					
+					 
+					
+					
+					
+
+
+				   </li>
+
+							  
+							  
+
+				   
+		 
+		 
+		 
+		 
+	   
+		
+		
+		
+		
+				
+				
+
+
+					<li class="breadcrumb-item" style="color: #777;">
+
+                   				
+					
+					 
+					
+					
+					<a href="/sr_RS/finansijske-institucije/banke/">Банке</a>
+					
+					 
+					
+					
+					
+
+
+				   </li>
+
+							  
+							  
+
+				   
+		 
+		 
+		 
+		 
+	   
+		
+		
+		
+		
+				
+				
+							  
+							<li class="breadcrumb-item active">Имплементација МСФИ 9 у банкама</li>
+
+
+				   
+
+				   
+		 
+		 
+		 
+		 
+	   
+      
+	  </ol>
+</div>
+</div>
+<!--social-->	
+
+
+<div class="col-lg-12 col-md-12 box_heading">
+<h1  id="titleId"> Имплементација МСФИ 9 у банкама</h1>
+</div>
+<div id="list_sec" class="number_list pj">
+	
+<div class="hideDiv">
+	<div  id="content-container7" class="col-lg-12 col-md-12 basic_box_12 hideContent" ></div></div>
+<div class="row"> 
+<div class="hideDiv">
+	<div  id="content-container13" class="col-lg-4 col-md-4 basic_box hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container14" class="col-lg-4 col-md-4 basic_box hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container15" class="col-lg-4 col-md-4 basic_box hideContent" ></div></div></div>
+<div class="row">
+<div class="hideDiv">
+	<div  id="content-container2" class="col-lg-6 col-md-6 basic_box pres_news_1 hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container3" class="col-lg-6 col-md-6 basic_box pres_news_2 hideContent" ></div></div>
+
+</div>
+<div class="row">
+<div class="col-lg-8 col-md-8 hideDiv">
+
+<div  id="content-container1" class="hideContent basic_box" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="margin-bottom-30">
+
+
+		<div class="row">
+			
+			<div class="col-xs-12">
+			
+
+				
+			<div ><p>Банке у Републици Србији имају обавезу, утврђену одредбама Закона о банкама („Службени гласник РС“, бр. 107/2005, 91/2010 и 14/2015), да при састављању годишњих финансијских извештаја примењују Међународне стандарде финансијског извештавања (у даљем тексту: МСФИ) од дана који је надлежно међународно тело одредило као дан почетка њихове примене. Одбор за међународне рачуноводствене стандарде објавио је да се МСФИ 9 –&nbsp;<em>Финансијски инструменти</em>&nbsp;примењује од 1. јануара 2018. године када уједно престаје примена Међународног рачуноводственог стандарда 39 – Финансијски инструменти: признавање и одмеравање. Значај почетка примене МСФИ 9 произилази из промене начина класификације, вредновања и обрачуна умањења вредности финансијских инструмената и за банке представља важан заокрет у погледу признавања и исказивања кредитних губитака, будући да уместо концепта насталих кредитних губитака уводи концепт очекиваних кредитних губитака који, између осталог, укључује и макроекономске моделе приликом вршења њихове процене и обрачуна.</p>
+<p>У складу са стратешким опредељењем да континуирано унапређује правни оквир у складу са прописима Европске уније, међународним стандардима и најбољом праксом на начин који обезбеђује очување и јачање стабилности банкарског и финансијског система, уз уважавање специфичности домаћих прописа и тржишта, Народна банка Србије је током 2017. године интензивно радила на утврђивању неопходних измена прописа ради омогућавања примене МСФИ 9 у банкама од дана почетка његове примене. Поред тога, имајући у виду промене у пословању и финансијском извештавању банака услед почетка примене новог стандарда, Народна банка је, у складу са својим надлежностима, током 2017. године спроводила активности праћења припреме банака за почетак примене МСФИ 9. Упитници о активностима банака у вези са имплементацијом МСФИ 9 имали су за циљ анализу квалитативне оспособљености појединачних банака и банкарског сектора у целини за примену МСФИ 9, модела које банке планирају да користе за обрачун обезвређења у складу са новим стандардом и процену очекиваних ефеката почетка примене МСФИ 9 на износ обезвређења финансијских инструмената и капитал банке. Најважнији закључци анализа показују да се услед примене МСФИ 9 очекује смањење показатеља адекватности капитала за око 0,39 п.п, што не утиче на способност банкарског сектора да апсорбује све потенцијалне губитке, имајући у виду да је и након очекиваног смањења, адекватност капитала значајно изнад прописаног минимума (прописано је 8%, а просечна вредност крајем септембра 2017. године је износила 22,46%). Закључци анализа садржани су у оквиру презентације&nbsp;<strong>Реализација пројекта имплементације МСФИ 9</strong>&nbsp;која је представљена на саветовању&nbsp;<em>Годишњи рачун – Прва примена МСФИ 9</em>, децембра 2017. године на Палићу.</p>
+<p>Ради остваривања транспарентног дијалога, правовремене укључености свих заинтересованих страна и обезбеђивања потребних информација o имплементацији МСФИ 9 у пракси, активности праћења припрема банака за примену МСФИ 9 и утврђивања неопходних измена прописа одвијале су се под окриљем у те сврхе формиране радне групе у чијем саставу су, поред запослених Народне банке Србије били и представници банака, Удружења банака Србије и спољних ревизора. Након спроведене јавне расправе, усвојен је сет прописа (објављених у „Службеном гласнику РС” бр. 101/2017 од 10. новембра 2017. године), којим је омогућена примена МСФИ 9 у банкама од 1. јануара 2018. године, и то:</p>
+<ul>
+<li>Одлука о обрасцима и садржини позиција у обрасцима финансијских извештаја за банке;</li>
+<li>Одлука о изменама и допунама Одлуке о Контном оквиру и садржини рачуна у Контном оквиру за банке;</li>
+<li>Одлукa о прикупљању, обради и достављању података о стању и структури рачуна из Контног оквира;</li>
+<li>Одлука о изменама и допунама Одлуке о извештавању банака;</li>
+<li>Одлука о изменама и допунама Одлуке о класификацији билансне активе и ванбилансних ставки банке.</li>
+</ul>
+<p>Кратак приказ новина у&nbsp; регулаторном оквиру за банке које су последица усвајања наведеног сета подзаконских аката дат је у оквиру презентације&nbsp;<strong>Нова подзаконска регулатива у циљу имплементације МСФИ 9</strong>. У циљу омогућавањa свим заинтересованим лицима да се упознају са ставовима Народне банке Србије о конкретним питањима у вези са применом нових прописа, а у складу са успостављеном праксом, Народна банка Србије је објавила&nbsp;Одговорe на најчешће постављана питања у вези са првом применом МСФИ 9. Спроведене активности одражавају опредељење Народне банке Србије да подстакне прудентну примену МСФИ 9 у домаћем банкарском сектору, омогући повећање транспарентности финансијских извештаја банака са аспекта начина вредновања билансних позиција и ојача поверење у финансијску позицију банака. Активности Народне банке Србије у вези са применом новог стандарда се настављају, нарочито имајући у виду да се прва примена и имплементација новог стандарда у банкарском сектору Републике Србије одвија истовремено са истим процесом у другим земљама које примењују МСФИ, као и то да се још увек у домаћој и међународној пракси нису идентификовала питања и проблеми који су последица његове примене у пракси. Народна банка Србије ће пажљиво анализирати укупне евидентиране ефекте у пословним књигама банака и настојаће да и у наредном периоду, уз помоћ стечених искустава из процеса праћења почетка примене МСФИ 9 у банкама, сва сазнања искористи у правцу даљег унапређења регулаторног и супервизорског оквира, као и побољшања квалитета финансијског извештавања банака. С тим у вези, у складу са својим надлежностима, Народна банка Србије ће наставити дијалог са банкама у оквиру редовних контролних активности, и сарађивати са спољним ревизорима на тему праћења примене МСФИ 9 у банкама.</p></div>
+				
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div><div  id="content-container8" class="hideContent basic_box" ></div><div  id="content-container40" class="hideContent basic_box" ></div><div  id="content-container11" class="col-lg-6 col-md-6 col-sm-6 box_double hideContent" ></div><div  id="content-container12" class="col-lg-6 col-md-6 col-sm-6 box_double2 hideContent" ></div></div>
+<div class="col-lg-4 col-md-4 hideDiv">
+
+<div  id="content-container41" class="basic_box hideContent " >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="linkseqh3">
+
+
+	
+		
+		
+				
+				<div class="list_sub">
+   
+				
+				
+				
+				
+				
+				<ul>
+				
+				
+				
+				
+				
+				
+				
+			
+			
+				
+				
+				
+				<li><a href="https://www.nbs.rs/export/sites/NBS_site/documents/banke/MSFI-9_realizacija.pdf">
+				
+				
+				
+				Реализација пројекта имплементације МСФИ 9
+				
+				</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+				
+				
+				
+				<li><a href="https://www.nbs.rs/export/sites/NBS_site/documents/banke/MSFI-9_regulativa.pdf">
+				
+				
+				
+				Нова подзаконска регулатива у циљу имплементације МСФИ 9
+				
+				</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+				
+				
+				
+				<li><a href="https://www.nbs.rs/export/sites/NBS_site/documents/banke/MSFI9_QA.pdf">
+				
+				
+				
+				Одговори на најчешће постављана питања у вези са првом применом МСФИ 9
+				
+				</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</ul>
+		
+			
+		
+</div>
+	
+
+</div></div><div  id="content-container4" class="basic_box hideContent " >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="linkseqh3">
+
+
+	
+		
+		
+				
+				<div class="list_sub">
+   
+				
+				<h3>
+				Смернице
+				</h3>
+				
+				
+				
+				
+				
+				<ul>
+				
+				
+				
+				
+				
+				
+				
+			
+			
+				
+				
+				
+				<li><a href="https://www.nbs.rs/export/sites/NBS_site/documents/kontrola-banaka/smernice/smernice_MRS39.pdf">
+				
+				
+				
+				Смернице за примену МРС 39 - Умањење вредности и ненаплативост пласмана који се накнадно вреднују по амортизованој вредности
+				
+				</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+			
+				
+				
+				
+				<li><a href="https://www.nbs.rs/export/sites/NBS_site/documents/kontrola-banaka/smernice/smernice_podaci_kvalitet_aktive.pdf">
+				
+				
+				
+				Смернице за објављивање података и информација банке који се односе на квалитет активе 
+				
+				</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				</ul>
+		
+			
+		
+</div>
+	
+
+</div></div><div  id="content-container5" class="basic_box hideContent " ></div><div  id="content-container6" class="basic_box hideContent " ></div></div>
+</div>
+
+
+<!-- Dodaje se klasa hideDiv za divove koje je potrebno sakriti ukoliko u okviru njega ima prazan container, ili hideContent ukoliko se stave prazni -->
+
+<div class="row">
+<div class="hideDiv">
+	<div  id="content-container9" class="col-lg-12 col-md-12 basic_box hideContent" ></div></div>
+
+<div class="col-lg-4 col-md-4 hideDiv">
+
+
+<div  id="content-container33" class="basic_box hideContent " ></div><div  id="content-container34" class="basic_box hideContent " ></div><div  id="content-container35" class="basic_box hideContent " ></div></div>
+
+
+
+
+<div class="col-lg-8 col-md-8 hideDiv">
+
+<div  id="content-container36" class="hideContent basic_box" ></div><div  id="content-container37" class="hideContent basic_box" ></div><div  id="content-container38" class="col-lg-6 col-md-6 col-sm-6 box_double2 hideContent" ></div><div  id="content-container39" class="col-lg-6 col-md-6 col-sm-6 box_double hideContent" ></div></div>
+</div>
+
+<div class="row">
+
+<div class="hideDiv">
+	<div  id="content-container21" class="col-lg-3 col-md-3 basic_box hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container22" class="col-lg-3 col-md-3 basic_box hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container23" class="col-lg-3 col-md-3 basic_box hideContent" ></div></div>
+<div class="hideDiv">
+	<div  id="content-container24" class="col-lg-3 col-md-3 basic_box hideContent" ></div></div>
+
+</div>
+
+<a id="top" title="Back to top" class="hidden-print" href="#"><i class="fas fa-angle-up"></i></a>
+</div>
+	
+<script>
+
+    if( $('div.hideContent:empty')){
+	 $('div.hideContent:empty').css("display", "none");
+    if ($('div.hideDiv').find($('div.hideContent:empty')).length == $(".hideDiv").find(".hideContent").length){
+			
+		$('div.hideDiv').css("display", "none");
+	 }
+}
+
+ </script>
+ </div>
+</div>
+</div>
+<!--FOOTER-->
+<div class="row footer hidden-print">
+<div class="container">
+ 
+
+
+
+
+
+
+
+ <input type="hidden" id="title"  value="&#1055;&#1088;&#1080;&#1082;&#1072;&#1079; &#1074;&#1077;&#1089;&#1090;&#1080;">
+
+
+
+
+
+
+
+<div class="box list_clear" style="position:relative;">
+ 
+
+
+
+<div id="SCREEN_VIEW_CONTAINER" class="col-lg-4 col-md-4 col-sm-6 foot_col">
+<ul>
+<li><a href="/sr_RS/o_nbs/kontakti-prema-organizacionoj-strukturi/">Контакт</a></li>
+<li><a href="/sr_RS/info_centar/index.html">Инфо-центар 0800 111 110</a></li>
+<li><a href="/sr_RS/pomoc/index.html">Информације о сајту</a></li>
+</ul>
+</div>
+<div id="SCREEN_VIEW_CONTAINER" class="col-lg-4 col-md-4 col-sm-6 foot_col">
+<ul>
+<li><a href="/sr_RS/mapa_sajta/index.html">Мапа сајта</a></li>
+<li><a href="/sr_RS/copyright/"> Заштита података о личности</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+<div id="SCREEN_VIEW_CONTAINER" class="col-lg-4 col-md-4 col-sm-12 social"><a href="https://www.nbs.rs/sr_RS/o_nbs/indeks/index.html">
+<img src="/export/system/modules/rs.nbs.opencms.template/resources/resources2/img/logo_footer.svg" class="logo_footer img-responsive"> 
+</a><h4>Пратите нас на друштвеним мрежама</h4>
+<ul class="soc">
+
+<li><a href="/external-links/twitter" target="blank"><i class="fa-brands fa-square-x-twitter"></i></a></li>
+<li><a href="/external-links/facebook" target="blank"><i class="fab fa-facebook-square"></i></a></li>
+<li><a href="/external-links/youtube" target="blank"><i class="fab fa-youtube"></i></a></li>
+<li><a href="/external-links/linkedin" target="blank"><i class="fab fa-linkedin"></i></a></li>
+</ul>
+</div>  
+<div class="col-lg-12 col-md-12 col-sm-12 copyright" style="text-align:center;margin:10px 0;" id="footerToPrint" ><a href="/sr_RS/copyright/index.html" style="color:#fff;">Copyright</a>  ©  2001-2026, НБС  &nbsp;
+ 
+  
+
+ </div>      
+</div> 
+</div>
+</div>
+
+   <script>
+$('.scrolling-item .heading').on('click', function(e) {
+    e.preventDefault();
+
+    // Add the correct active class
+    if($(this).closest('.scrolling-item').hasClass('active')) {
+        // Remove active classes
+        $('.scrolling-item').removeClass('active');
+    } else {
+        // Remove active classes
+        $('.scrolling-item').removeClass('active');
+
+        // Add the active class
+        $(this).closest('.scrolling-item').addClass('active');
+		
+    }
+
+    // Show the content
+    var $content = $(this).next();
+    $content.slideToggle(800);
+    $('.scrolling-item .content').not($content).slideUp('fast');
+});
+</script> 
+
+
+
+</body>
+
+
+
+
+
+</html>
