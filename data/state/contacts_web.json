@@ -6039,6 +6039,16 @@
 "phone_from": "firm website",
 "website": "https://bokotech.net"
 },
+"site:bollywood-video.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.bollywood-video.co.uk"
+},
 "site:boltcard.com.br": {
 "checked": "2026-11-08",
 "email": "",
@@ -6568,6 +6578,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.brit-fx.co.uk"
+},
+"site:britannicplace.co.uk": {
+"checked": "2026-11-09",
+"email": "info@britannicplace.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01905419890",
+"phone_from": "firm website",
+"website": "https://www.britannicplace.co.uk"
 },
 "site:britanniia.co.uk": {
 "checked": "2026-11-07",
@@ -18099,6 +18119,16 @@
 "phone_from": "firm website",
 "website": "https://harthing.com"
 },
+"site:hartsfield.co.uk": {
+"checked": "2026-11-09",
+"email": "enquiries@hartsfield.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "08006126633",
+"phone_from": "firm website",
+"website": "https://www.hartsfield.co.uk"
+},
 "site:harzer-volksbank.de": {
 "checked": "2026-11-07",
 "email": "info@harzer-volksbank.de",
@@ -25909,6 +25939,16 @@
 "phone_from": "firm website",
 "website": "https://www.moneyroyal.com"
 },
+"site:moneysavingexpert.com": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.moneysavingexpert.com"
+},
 "site:moneystop.ca": {
 "checked": "2026-11-06",
 "email": "money@moneystop.ca",
@@ -26578,6 +26618,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://muxxus.com"
+},
+"site:mvam.com": {
+"checked": "2026-11-09",
+"email": "enquiries@mvam.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01306776999",
+"phone_from": "firm website",
+"website": "https://mvam.com"
 },
 "site:mvb.de": {
 "checked": "2026-11-07",
@@ -31949,6 +31999,16 @@
 "phone_from": "firm website",
 "website": "https://www.photonpay.com/uk"
 },
+"site:phunkmedia.co.uk": {
+"checked": "2026-11-09",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 404",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "http://www.phunkmedia.co.uk/contact_us.php"
+},
 "site:picar.live": {
 "checked": "2026-11-06",
 "email": "",
@@ -34739,6 +34799,16 @@
 "phone_from": "firm website",
 "website": "http://Regalfastmove.co.uk"
 },
+"site:regisbentley.com": {
+"checked": "2026-11-09",
+"email": "info@regisbentley.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "02380171070",
+"phone_from": "firm website",
+"website": "https://www.regisbentley.com"
+},
 "site:regular.eu": {
 "checked": "2026-11-08",
 "email": "contact@regular.eu",
@@ -36609,6 +36679,16 @@
 "phone_from": "firm website",
 "website": "https://sedelcapital.com"
 },
+"site:sedulowealth.co.uk": {
+"checked": "2026-11-09",
+"email": "hello@sedulowealth.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 2,
+"phone": "03332224445",
+"phone_from": "firm website",
+"website": "https://www.sedulowealth.co.uk"
+},
 "site:seeligerbank.de": {
 "checked": "2026-11-07",
 "email": "",
@@ -37038,6 +37118,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "http://www.shell.co.uk"
+},
+"site:sheratonfp.co.uk": {
+"checked": "2026-11-09",
+"email": "advice@sheratonfp.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "441329800540",
+"phone_from": "firm website",
+"website": "https://www.sheratonfp.co.uk"
 },
 "site:shieldpay.com": {
 "checked": "2026-11-07",
@@ -37608,6 +37698,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://smartenergypay.com"
+},
+"site:smarterfinancialplanning.co.uk": {
+"checked": "2026-11-09",
+"email": "jon@smarterfinancialplanning.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "01494911700",
+"phone_from": "firm website",
+"website": "https://www.smarterfinancialplanning.co.uk"
 },
 "site:smartfintech.digital": {
 "checked": "2026-11-06",
@@ -43308,6 +43408,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.totipay.ca"
+},
+"site:townclose.money": {
+"checked": "2026-11-09",
+"email": "advice@townclose.money",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "07379246440",
+"phone_from": "firm website",
+"website": "https://www.townclose.money"
 },
 "site:tpicap.com": {
 "checked": "2026-11-08",
