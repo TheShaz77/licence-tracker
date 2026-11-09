@@ -1987,3 +1987,32 @@ def test_national_probe_follow_and_status(tmp_path):
     assert st["gone"] == "HTTP 404" and st["menu"].startswith("probe saved") and "1 linked" in st["menu"]
     saved = sorted(p.name for p in (tmp_path / "debug" / "raw").iterdir())
     assert len(saved) == 2 and any("payment_institutions" in n for n in saved)
+
+
+def test_raw_html_regex_cards():
+    from regtracker.sources.national import parse_file
+    html = b'''<div class="inner"><a href="/x"><h3 class="header-inner-2">12 HRS MONEY EXCHANGER</h3></a>
+      <div class="category"><ul><li><a class="FilterCategory" href="#">Money-changing Licensee</a></li></ul></div>
+      <td><a class="font-resize" href="tel:65 62586526">65 62586526</a></td></div>
+      <div class="inner"><a href="/y"><h3 class="header-inner-2">ALPHA PAY PTE. LTD.</h3></a>
+      <div class="category"><ul><li><a class="FilterCategory" href="#">Major Payment Institution</a></li></ul></div></div>'''
+    spec = {"url": "u", "format": "text_regex", "raw_html": True,
+            "row_regex": r'header-inner-2">(?P<name>[^<]+)</h3>.*?FilterCategory"[^>]*>(?P<type>[^<]+)</a>',
+            "type_patterns": {"payment": "Major payment institution", "money-chang": "Money changer"}}
+    recs, _ = parse_file(html, spec, "SG", "MAS")
+    assert {(r.name, r.licence_type) for r in recs} == {("12 HRS MONEY EXCHANGER", "Money changer"),
+                                                        ("ALPHA PAY PTE. LTD.", "Major payment institution")}
+
+
+def test_all_tables_positional_columns():
+    from regtracker.sources.national import parse_file
+    html = b"""<h3>B. MOBILE MONEY OPERATOR LICENCE CATEGORY</h3><table><tr><th>S/N</th><th>LICENCE</th></tr>
+    <tr><td>1.</td><td>Abeg Technologies Limited</td></tr></table>
+    <h3>C. SWITCHING &amp; PROCESSING LICENCE CATEGORY</h3><table><tr><th>S/N</th><th>LICENCEE</th></tr>
+    <tr><td>1.</td><td>Arca Payments Company Limited</td></tr></table>"""
+    recs, _ = parse_file(html, {"url": "u", "format": "html_table", "all_tables": True, "columns": ["No", "Name"],
+                                "type_column": "section", "type_patterns": {"mobile money": "Mobile money operator",
+                                                                            "switching": "Switching and processing"}},
+                         "NG", "CBN")
+    assert {r.name: r.licence_type for r in recs} == {"Abeg Technologies Limited": "Mobile money operator",
+                                                      "Arca Payments Company Limited": "Switching and processing"}

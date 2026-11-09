@@ -20,18 +20,7 @@ from .store import record_row, sort_records
 
 ROWS_PER_REQUEST = 4000   # keeps each request well under Google's size limit
 
-COUNTRY_NAMES = {
-    "AT": "Austria", "BE": "Belgium", "BG": "Bulgaria", "CY": "Cyprus", "CZ": "Czechia",
-    "DE": "Germany", "DK": "Denmark", "EE": "Estonia", "ES": "Spain", "FI": "Finland",
-    "FR": "France", "GR": "Greece", "HR": "Croatia", "HU": "Hungary", "IE": "Ireland",
-    "IT": "Italy", "LT": "Lithuania", "LU": "Luxembourg", "LV": "Latvia", "MT": "Malta",
-    "NL": "Netherlands", "PL": "Poland", "PT": "Portugal", "RO": "Romania", "SE": "Sweden",
-    "SI": "Slovenia", "SK": "Slovakia", "IS": "Iceland", "LI": "Liechtenstein", "NO": "Norway",
-    "GB": "United Kingdom", "CH": "Switzerland", "GI": "Gibraltar", "JE": "Jersey",
-    "GG": "Guernsey", "IM": "Isle of Man", "SG": "Singapore", "HK": "Hong Kong",
-    "AE": "United Arab Emirates", "AU": "Australia", "CA": "Canada", "US": "United States",
-    "NZ": "New Zealand", "JP": "Japan", "ZA": "South Africa", "MU": "Mauritius",
-}
+from .countries import COUNTRY_NAMES  # noqa: E402
 FIXED_TABS = ["Summary", "Changes", "Licences"]
 OTHER_TAB = "Other"
 

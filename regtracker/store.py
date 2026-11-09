@@ -44,6 +44,8 @@ def record_row(r: dict) -> list:
     for k in ("phone", "email", "ch_sro", "pix_status"):  # some sources keep these in extra
         if not r.get(k) and extra.get(k):
             r[k] = extra[k]
+    from .countries import COUNTRY_NAMES
+    r["country"] = COUNTRY_NAMES.get((r.get("jurisdiction") or "").upper(), r.get("jurisdiction") or "")
     return [str(r.get(k, "") or "") for k, _ in SHEET_COLUMNS]
 
 

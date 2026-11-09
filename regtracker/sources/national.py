@@ -241,6 +241,14 @@ def read_text_regex(raw: bytes, spec: dict) -> tuple:
     """Rows from page/PDF text with a regex that has named groups (name, and optionally id,
     date, city, address, type, website, email, phone). Optional 'between': [start, end]
     regexes cut the text to the part that holds the list."""
+    if spec.get("raw_html"):          # match against the page's HTML itself (cards/lists that aren't tables)
+        import html as htmlmod
+        rx = re.compile(spec["row_regex"], re.I | re.S)
+        groups = list(rx.groupindex)
+        names = {"id": "reference"}
+        rows = [[re.sub(r"\s+", " ", htmlmod.unescape(re.sub(r"<[^>]+>", " ", m.group(g) or ""))).strip()
+                 for g in groups] for m in rx.finditer(decode_bytes(raw))]
+        return [names.get(g, g) for g in groups], rows
     lines = page_text_lines(raw)
     if spec.get("between"):
         start, end = spec["between"]
@@ -371,6 +379,11 @@ def read_html_table(raw: bytes, spec: dict) -> tuple:
         if skip and (skip.search(head) or skip.search(sec)):
             continue
         if spec.get("all_tables"):
+            if spec.get("columns"):     # tables with differently worded headers: line up by position
+                cols = list(spec["columns"])
+                mhead = cols + ["section"]
+                merged += [(r + [""] * len(cols))[:len(cols)] + [sec] for r in t[1:]]
+                continue
             mhead = mhead or t[0] + ["section"]
             merged += [_align(r, t[0], mhead[:-1]) + [sec] for r in t[1:]]
             continue
@@ -478,7 +491,7 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         headers, rows = read_text_regex(raw, spec)
     else:
         headers, rows = read_table(raw, spec.get("sheets", "first"))
-    if spec.get("columns"):            # a table without a header row: name the columns here
+    if spec.get("columns") and not spec.get("all_tables"):   # a table without a header row: name the columns here
         rows = [headers] + rows
         headers = list(spec["columns"]) + [""] * max(0, len(headers) - len(spec["columns"]))
     elif spec.get("name_column") and _col(headers, [], spec["name_column"]) is None:
@@ -772,6 +785,56 @@ def fetch_codes(ctx: Context, url: str) -> dict:
         return {}
 
 
+_BUNDLES = {}
+
+
+def _chain_bundle(url: str):
+    """A CA bundle (certifi + the site's missing intermediate certificates, fetched from the
+    'CA Issuers' address in its certificate), or None if that can't be done."""
+    import ssl
+    import tempfile
+    from urllib.parse import urlparse
+    host = urlparse(url).hostname
+    if host in _BUNDLES:
+        return _BUNDLES[host]
+    _BUNDLES[host] = None
+    try:
+        import certifi
+        import requests
+        from cryptography import x509
+        from cryptography.hazmat.primitives.serialization import Encoding
+        from cryptography.x509.oid import AuthorityInformationAccessOID, ExtensionOID
+        pem = ssl.get_server_certificate((host, urlparse(url).port or 443), timeout=20)
+        cert = x509.load_pem_x509_certificate(pem.encode())
+        extra = []
+        for _ in range(3):   # walk up at most three issuers
+            try:
+                aia = cert.extensions.get_extension_for_oid(ExtensionOID.AUTHORITY_INFORMATION_ACCESS).value
+            except x509.ExtensionNotFound:
+                break
+            urls = [d.access_location.value for d in aia
+                    if d.access_method == AuthorityInformationAccessOID.CA_ISSUERS]
+            if not urls:
+                break
+            data = requests.get(urls[0], timeout=20).content
+            try:
+                cert = x509.load_der_x509_certificate(data)
+            except ValueError:
+                cert = x509.load_pem_x509_certificate(data)
+            extra.append(cert.public_bytes(Encoding.PEM).decode())
+            if cert.issuer == cert.subject:
+                break
+        if not extra:
+            return None
+        f = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
+        f.write(open(certifi.where()).read() + "\n" + "\n".join(extra))
+        f.close()
+        _BUNDLES[host] = f.name
+    except Exception:
+        return None
+    return _BUNDLES[host]
+
+
 def quick_session(base):
     """Same headers as the main session, but one retry and no long waits: these are many small
     government sites, and a dead one must not hold up the run."""
@@ -791,7 +854,16 @@ def quick_session(base):
 
     def request(method, url, **kw):
         kw.setdefault("timeout", (15, 90))
-        return orig(method, url, **kw)
+        try:
+            return orig(method, url, **kw)
+        except requests.exceptions.SSLError:
+            # many government sites don't send their intermediate certificate; fetch it from the
+            # address in the site certificate (AIA) and verify again with it - verification stays on
+            bundle = _chain_bundle(url)
+            if not bundle:
+                raise
+            kw["verify"] = bundle
+            return orig(method, url, **kw)
     s.request = request
     return s
 
@@ -822,7 +894,7 @@ def write_status(ctx: Context, country: str, status: dict):
     p.write_text(json.dumps(d, indent=1, sort_keys=True, ensure_ascii=False))
 
 
-FOLLOW_BUDGET = {"left": 400}   # linked pages fetched per run across all probes (the rest wait for the next run)
+FOLLOW_BUDGET = {"left": 600}   # linked pages fetched per run across all probes (the rest wait for the next run)
 
 
 def probed_recently(ctx: Context, name: str, label: str, days: int = 6) -> bool:

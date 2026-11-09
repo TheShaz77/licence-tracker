@@ -7,6 +7,7 @@ from dataclasses import asdict, dataclass, field
 # Column order used for the CSV export and the "Licences" sheet tab.
 SHEET_COLUMNS = [
     ("jurisdiction", "Jurisdiction"),
+    ("country", "Country"),
     ("regulator", "Regulator"),
     ("name", "Firm name"),
     ("licence_type", "Licence type"),
