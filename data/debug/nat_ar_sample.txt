@@ -1,5 +1,5 @@
 url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=1
-bytes: 68406  starts: b'<!DOCTYP'
+bytes: 69093  starts: b'<!DOCTYP'
 error: RuntimeError('no matching table on the page; table headers were: []')
 columns used: None
 headers: None
