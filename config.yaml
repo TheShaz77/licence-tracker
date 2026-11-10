@@ -257,17 +257,13 @@ national:
         aggregator: Payment terminal service aggregator (CBN)
         card|scheme: Card / payment scheme (CBN)
         payment solution: Payment solution services (CBN)
-    - label: CBN financial institutions (banks
-      BDCs): null
-      url: https://cbn.gov.ng/Supervision/AllFinInstitutions.asp
-      probe: true
-      follow: export|excel|xls|deposit money|bureau|list of
-      follow_max: 10
     - label: CBN deposit money banks
-      page: https://cbn.gov.ng/Supervision/AllFinInstitutions.asp
-      link_pattern: deposit money
-      format: html_table
-      licence_type: Bank (deposit money bank)
+      format: pdf_table
+      licence_type: 'Bank (CBN licensed: commercial, merchant or non-interest)'
+      url: https://www.cbn.gov.ng/Out/2024/CCD/LIST OF DEPOSIT MONEY BANKS AS AT 26TH APRIL, 2024 (1).pdf
+      name_column: NAME OF INSTITUTION
+      address_column: HEAD OFFICE ADDRESS
+      name_exclude: holdings|\bgroup\b|financial holding
     - label: SEC digital asset operators (ARIP)
       regulator: SEC
       url: https://sec.gov.ng/fintech-and-innovation-hub-finport/registered-fintech-operators/
@@ -394,6 +390,16 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: BNM principal MSB licensees
+      url: https://www.bnm.gov.my/principal-msb-licensees
+      format: html_table
+      name_column: Company Name
+      licence_type: Money services business (principal licensee)
+    - label: BNM approved payment system operators
+      url: https://www.bnm.gov.my/regulations/fsp-directory?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_approved_payment_system_operators
+      format: html_table
+      name_column: Company Name
+      licence_type: Payment system operator (BNM approved)
   AU:
     regulator: APRA
     files:
@@ -532,6 +538,10 @@ national:
       probe: true
       follow: 가상자산|사업자|신고|VASP
       follow_max: 10
+    - label: FSS banks
+      url: https://www.fss.or.kr/eng/fncco/engCoreMngmt/fisisBank.do?menuNo=400114
+      format: html_table
+      licence_type: Bank (FSS supervised)
   TW:
     regulator: FSC
     files:
@@ -616,9 +626,10 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
-    - label: เช็กข้อมูลผู้ประกอบธุรกิจการซื้อและขายธนบัตรต่างปร
+    - label: BOT money changers
       url: https://www.bot.or.th/content/dam/bot/documents/th/our-roles/financial-markets/foreign-exchange-regulations/foreign-exchange-business/money-changer/listauthorized.pdf
       format: pdf_table
+      licence_type: Money changer / FX business (BoT authorised)
     - label: ธุรกิจสินทรัพย์ดิจิทัล
       url: https://www.bot.or.th/th/financial-innovation/resilient-regulation/digital-asset.html
       probe: true
@@ -713,37 +724,61 @@ national:
     regulator: BCRA
     files:
     - label: BCRA payment account providers
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=1
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
       licence_type: PSP – payment account provider (e-wallet)
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=1
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA payment initiators
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=2
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=2&lang=es
       licence_type: PSP – payment initiator
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=2
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA EFT networks
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=4
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=4&lang=es
       licence_type: PSP – electronic funds transfer network
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=4
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA acceptors
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=5
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=5&lang=es
       licence_type: PSP – acceptor
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=5
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA acquirers
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=6
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=6&lang=es
       licence_type: PSP – acquirer
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=6
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA aggregators
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=7
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
       licence_type: PSP – payment aggregator
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=7
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA collection services
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=8
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=8&lang=es
       licence_type: PSP – non-bank collection
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=8
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA QR administrators
-      url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=9
-      format: html_table
+      url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=9&lang=es
       licence_type: PSP – QR code administrator
+      register_url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=9
+      name_column: denominacion_pj
+      id_column: cuit
+      address_column: domicilio
     - label: BCRA homepage
       url: https://www.bcra.gob.ar/sistema-financiero/
       probe: true
@@ -759,9 +794,6 @@ national:
       url: https://www.cnv.gov.ar/SitioWeb/
       probe: true
       follow: psav|activos virtuales
-    - label: BCRA PSP app script
-      url: https://www.bcra.gob.ar/wp-content/themes/Divi-BCRA/js/proveedores-psp-app.js?ver=1.0.0
-      probe: true
   CL:
     regulator: CMF
     files:
@@ -835,6 +867,16 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: BCU banks
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
+      format: html_table
+      name_column: RAZÓN SOCIAL
+      licence_type: Bank
+    - label: BCU institution lists
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
+      probe: true
+      follow: Instituciones_Lst|dinero electr|pago|cambio|activos virtuales|remes
+      follow_max: 10
   EC:
     regulator: BCE
     files:
@@ -1080,6 +1122,11 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: GFSC banks
+      url: https://www.gfsc.gg/industry-sectors/banking/regulated-entities
+      format: html_table
+      name_column: Name
+      licence_type: Bank (GFSC licensed)
   IM:
     regulator: IOMFSA
     files:
@@ -1279,6 +1326,10 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: BoM banks
+      url: https://www.mongolbank.mn/en/p/1463
+      format: html_table
+      licence_type: Bank
   BD:
     regulator: BB
     files:
@@ -1290,6 +1341,10 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: BB mobile financial services providers
+      url: https://www.bb.org.bd/en/index.php/financialactivity/paysystems
+      format: html_table
+      licence_type: Mobile financial services provider (Bangladesh Bank)
   LK:
     regulator: CBSL
     files:
@@ -1402,6 +1457,11 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: NBE banks
+      url: https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/
+      format: html_table
+      name_column: Name of Bank
+      licence_type: Bank
   MW:
     regulator: RBM
     files:

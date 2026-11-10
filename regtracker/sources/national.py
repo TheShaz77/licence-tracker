@@ -58,10 +58,10 @@ ID_COLS = ["relation number", "relatienummer", "registration number", "register 
 LEI_COLS = ["lei", "lei code", "lei-code", "ENT_COD_LEI", "ENT_LEI"]
 WEB_COLS = ["website", "web site", "web", "url", "website address", "homepage", "ホームページ"]
 EMAIL_COLS = ["email", "e-mail", "email address"]
-PHONE_COLS = ["phone", "telephone", "phone number", "telephone number", "tel", "tel no", "電話番号"]
+PHONE_COLS = ["phone", "telephone", "phone number", "telephone number", "tel", "tel no", "電話番号", "telefono", "teléfono"]
 ADDRESS_COLS = ["address", "local address", "local_address", "head office", "business address",
                 "registered address", "本店所在地", "所在地", "本店等所在地", "主たる営業所の所在地"]
-CITY_COLS = ["city", "town", "place", "plaats", "vestigingsplaats", "miestas", "municipality",
+CITY_COLS = ["city", "town", "place", "localidad", "ciudad", "municipio", "ville", "plaats", "vestigingsplaats", "miestas", "municipality",
              "ENT_TOW_CIT_RES", "obec", "mesto"]
 END_COLS = ["valid till", "valid to", "valid until", "end date", "expiry date", "withdrawn", "date of withdrawal"]
 DATE_COLS = ["valid from", "start date", "registration date", "date of registration", "licence date",
@@ -205,12 +205,16 @@ def read_pdf_table(raw: bytes, spec: dict) -> tuple:
     import pdfplumber
     allrows = []
     with pdfplumber.open(io.BytesIO(raw)) as pdf:
-        for page in pdf.pages:
-            for t in page.extract_tables() or []:
-                for r in t:
-                    cells = [re.sub(r"\s+", " ", c or "").strip() for c in r]
-                    if any(cells):
-                        allrows.append(cells)
+        for settings in (None, {"vertical_strategy": "text", "horizontal_strategy": "text"}):
+            # ruled tables first; tables without grid lines are found from text alignment
+            for page in pdf.pages:
+                for t in (page.extract_tables(settings) if settings else page.extract_tables()) or []:
+                    for r in t:
+                        cells = [re.sub(r"\s+", " ", c or "").strip() for c in r]
+                        if any(cells):
+                            allrows.append(cells)
+            if allrows:
+                break
     extra = (spec["name_column"],) if spec.get("name_column") else ()
     h, rows = _header_split(allrows, extra)
     hk = [hkey(x) for x in h]
@@ -540,6 +544,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     type_values = {}
     for row in rows:
         name = get(row, "name")
+        if name and spec.get("name_exclude") and re.search(spec["name_exclude"], name, re.I):
+            continue                      # e.g. holding companies listed alongside banks
         if not name or len(name) < 3 or not re.search(r"[^\W\d_]{2}", name) or re.fullmatch(r"\(?[a-zçğışöü]\)?", name):
             continue                      # blank, sub-header rows such as "(a)", or numbers only
         raw_type = get(row, "type")
