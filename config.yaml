@@ -1683,6 +1683,8 @@ cfd:
     files:
     - label: FSC register of licensees - investment dealers
       url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page={page}
+      fallback_urls:
+      - https://fscmauritius.org/en/supervision/register-of-licensees?page={page}
       paginate: {start: 1, step: 1, max: 220, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
       format: html_table
       name_column: Name of Licensee
@@ -1692,6 +1694,118 @@ cfd:
       type_patterns:
         INVESTMENT DEALER: Investment dealer (FSC)
       register_url: https://www.fscmauritius.org/en/supervision/register-of-licensees
+    - label: GLEIF - Mauritius companies named 'markets'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=markets&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'fx'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=fx&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'forex'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=forex&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'broker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=broker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'prime'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=prime&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'securities'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=securities&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'liquidity'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=liquidity&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Mauritius companies named 'cfd'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MU&filter%5Bfulltext%5D=cfd&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Mauritius company (name suggests trading; FSC licence not checked)
+      register_url: https://search.gleif.org/
   SC:
     regulator: FSA
     files:
@@ -1699,9 +1813,10 @@ cfd:
       url: https://fsaseychelles.sc/regulated-entities/capital-markets
       format: text_regex
       raw_html: true
-      row_regex: id="heading-(?P<type>[a-z0-9-]+?)-\d+"(?:(?!id="heading-).)*?<h5>(?P<name>[^<]+)</h5>(?P<address>(?:(?!<p).)*)(?:(?!id="heading-).)*?Date of Approval:</spanl>\s*(?P<date>[\d-]*)(?:(?!id="heading-).)*?Status:</spanl>\s*(?P<status>[A-Za-z ]*)
+      row_regex: 'id="heading-(?P<type>[a-z0-9-]+?)-\d+"(?:(?!id="heading-).)*?<div class="card-body">\s*<h5>\s*(?P<name>[^<]+?)\s*</h5>(?:(?:(?!id="heading-).)*?fa-map"></span>(?P<address>[^<]*))?(?:(?:(?!id="heading-).)*?href="tel:(?P<phone>[^"]*)")?(?:(?:(?!id="heading-).)*?href="mailto:(?P<email>[^"]*)")?(?:(?:(?!id="heading-).)*?fa-globe"></span>\s*<a href="(?P<website>[^"]*)")?'
       type_patterns:
-        'dealer(?!s?-?rep)': Securities dealer (FSA)
+        '^securities-dealer$': Securities dealer (FSA)
+      register_url: https://fsaseychelles.sc/regulated-entities/capital-markets
   BS:
     regulator: SCB
     files:
@@ -1723,7 +1838,11 @@ cfd:
       - https://data.gov.au/data/dataset/asic-afs-licensee
       - https://data.gov.au/data/dataset/asic-afs-licensee/resource/d98a113d-6b50-40e6-b65f-2612efc877f4
       - https://www.data.gov.au/data/dataset/asic-afs-licensee/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc
+      - https://data.gov.au/data/api/3/action/package_show?id=asic-afs-licensee
       link_pattern: afs_lic_\d{6}\.(csv|tsv)
+      fallback_urls:     # last known copies, used if no newer link can be found
+      - https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/d98a113d-6b50-40e6-b65f-2612efc877f4/download/afs_lic_202602.csv
+      - https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv
       name_column: AFS_LIC_NAME
       id_column: AFS_LIC_NUM
       date_column: AFS_LIC_START_DT
@@ -1743,6 +1862,118 @@ cfd:
       row_regex: '^(?P<name>[^,]{3,150}?)(?:\s*\([^)]*\))?,\s*(?:(?P<id>FSP\d+),\s*)?[^.]{0,200}?derivatives issuer'
       licence_type: Licensed derivatives issuer (FMA)
       register_url: https://www.fma.govt.nz/business/licensed-providers/
+    - label: GLEIF - New Zealand companies named 'markets'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=markets&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'fx'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=fx&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'forex'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=forex&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'broker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=broker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'prime'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=prime&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'securities'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=securities&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'liquidity'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=liquidity&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - New Zealand companies named 'cfd'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=NZ&filter%5Bfulltext%5D=cfd&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: New Zealand company (name suggests trading; FMA licence not checked)
+      register_url: https://search.gleif.org/
   CH:
     regulator: FINMA
     files:
@@ -1756,36 +1987,312 @@ cfd:
       register_url: https://www.finma.ch/en/finma-public/authorised-institutions-individuals-and-products/
   VG:
     regulator: GLEIF (no BVI licence list found)
+    min_hours: 168
     files:
-    - label: GLEIF - BVI companies whose names suggest trading / brokerage
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 200, marker: '"id"\s*:\s*"([A-Z0-9]{20})"'}
-      name_column: attributes.entity.legalName.name
-      id_column: attributes.lei
-      lei_column: attributes.lei
-      city_column: attributes.entity.legalAddress.city
-      status_column: attributes.entity.status
-      date_column: attributes.registration.initialRegistrationDate
-      require_column: attributes.entity.legalName.name
-      require_pattern: markets?\b|trad(e|er|ers|ing)\b|\bfx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd
-      name_exclude: \bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance|re-?insurance
+    - label: GLEIF - BVI companies named 'markets'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=markets&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
       licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'trading'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=trading&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'fx'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=fx&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'forex'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=forex&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'broker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=broker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'prime'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=prime&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'securities'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=securities&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'liquidity'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=liquidity&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'trade'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=trade&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - BVI companies named 'cfd'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&filter%5Bfulltext%5D=cfd&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+    - label: BVI FSC regulated entities - investment business (probe)
+      url: https://www.bvifsc.vg/
+      probe: true
+      follow: regulated|entit|investment|licensee
+  BM:
+    regulator: GLEIF (BMA register blocks automated access)
+    min_hours: 168
+    files:
+    - label: GLEIF - Bermuda companies named 'markets'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=markets&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'trading'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=trading&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'fx'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=fx&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'forex'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=forex&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'broker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=broker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'prime'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=prime&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'securities'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=securities&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'liquidity'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=liquidity&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'trade'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=trade&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Bermuda companies named 'cfd'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=BM&filter%5Bfulltext%5D=cfd&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)\b|fx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance'
+      licence_type: Bermuda company (name suggests trading; BMA licence not checked)
       register_url: https://search.gleif.org/
   VC:
     regulator: GLEIF (SVG FSA does not license brokers)
+    min_hours: 72
     files:
     - label: GLEIF - St Vincent companies whose names suggest trading / brokerage
       url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VC&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 50, marker: '"id"\s*:\s*"([A-Z0-9]{20})"'}
-      name_column: attributes.entity.legalName.name
-      id_column: attributes.lei
-      lei_column: attributes.lei
-      city_column: attributes.entity.legalAddress.city
-      status_column: attributes.entity.status
-      date_column: attributes.registration.initialRegistrationDate
-      require_column: attributes.entity.legalName.name
-      require_pattern: markets?\b|trad(e|er|ers|ing)\b|\bfx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd
-      name_exclude: \bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance
+      paginate: {start: 1, step: 1, max: 60, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'markets?\b|trad(e|er|ers|ing)|fx|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|cfd|financial|capital|invest|xchange|wealth|fintech|quotes|\bindex\b|\betp\b'
+      name_exclude: 'propert|real estate|shipping|energy|insurance|\btrust\b|\bfund\b'
       licence_type: St Vincent company (name suggests trading; SVG does not license brokers)
       register_url: https://search.gleif.org/
 

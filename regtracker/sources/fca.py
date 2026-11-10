@@ -96,6 +96,11 @@ class FCAClient:
     def get(self, path: str):
         """GET an API path. Returns the 'Data' payload, None when the firm
         doesn't exist, or raises after repeated errors."""
+        body = self.get_body(path)
+        return (body.get("Data") or None) if isinstance(body, dict) else None
+
+    def get_body(self, path: str):
+        """GET an API path and return the whole JSON body (Data plus ResultInfo for searches)."""
         for attempt in range(6):
             self.rl.wait()
             try:
@@ -130,8 +135,7 @@ class FCAClient:
                 raise SourceNotReady(
                     f"FCA API rejected the email/key ({code}: {body.get('Message', '')}). "
                     "Check the FCA_API_EMAIL and FCA_API_KEY secrets.")
-            data = body.get("Data")
-            return data or None
+            return body
         self.errors += 1
         raise RuntimeError(f"FCA {path} failed repeatedly")
 
@@ -461,6 +465,10 @@ def seed(ctx: Context, hours: float) -> dict:
         return st
     client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
     client.verify()
+    if cs is not None and not (st.get("cfd_search") or {}).get("done"):
+        # quick pass first: firms whose names look like CFD / FX brokers (see CFD_SEARCH_TERMS)
+        cfd_search(client, st, ctx, time.monotonic() + hours * 3600 * 0.6, int(cfg.get("parallel_requests", 8)),
+                   (cfg.get("cfd") or {}).get("search_terms"))
     if sd.get("done"):
         deadline = time.monotonic() + hours * 3600
         run_cfd_seed(client, st, cs, ctx, deadline, int(cfg.get("parallel_requests", 8)))
@@ -588,6 +596,66 @@ def run_cfd_seed(client, st: dict, cs: dict, ctx, deadline: float, workers: int)
     save_state(ctx, st)
 
 
+# Firm-name words that CFD / FX brokers, market makers and prime brokers commonly use, plus well-known
+# brand names. Searching the register for these finds most UK CFD firms in hours instead of the days the
+# full FRN scan takes; the FRN scan still runs afterwards to catch firms with unusual names.
+CFD_SEARCH_TERMS = [
+    "markets", "trading", "trade", "fx", "forex", "currency", "currencies", "spread", "cfd", "derivatives",
+    "brokers", "broker", "brokerage", "securities", "prime", "liquidity", "capital markets", "global markets",
+    "index", "futures", "commodities", "investments", "invest", "financial", "capital", "wealth", "exchange",
+    "ig ", "cmc", "plus500", "city index", "gain capital", "saxo", "interactive brokers", "oanda", "pepperstone",
+    "ic markets", "admiral", "etoro", "xtb", "tickmill", "fxcm", "fxpro", "avatrade", "swissquote", "spreadex",
+    "finalto", "lmax", "marex", "stonex", "trading 212", "capital.com", "skilling", "hycm", "blackbull",
+    "darwinex", "equiti", "cityindex", "ayondo", "infinox", "vantage", "ig index", "ebc", "ads securities",
+    "sucden", "amana", "atfx", "fxtm", "forextime", "hantec", "alpari", "exness", "thinkmarkets", "naga",
+]
+
+
+def cfd_search(client, st: dict, ctx, deadline: float, workers: int, terms: list | None = None) -> None:
+    """Search the register by firm-name words, then check the permissions of every authorised firm found."""
+    from urllib.parse import quote
+    ss = st.setdefault("cfd_search", {"terms_done": [], "checked": [], "done": False})
+    checked = set(ss.get("checked") or [])
+    for term in terms or CFD_SEARCH_TERMS:
+        if term in ss["terms_done"]:
+            continue
+        if time.monotonic() > deadline:
+            return
+        frns, first_page_refs = set(), None
+        for page in range(1, 400):
+            body = client.get_body(f"/Search?q={quote(term)}&type=firm&pgnp={page}") or {}
+            data = body.get("Data") or [] if isinstance(body, dict) else []
+            refs = []
+            for d in data if isinstance(data, list) else []:
+                ref = str(tolerant_get(d, "Reference Number") or "").strip()
+                status = str(tolerant_get(d, "Status") or "").lower()
+                if ref.isdigit():
+                    refs.append(int(ref))
+                    if status.startswith("authorised") or status.startswith("eea authorised"):
+                        frns.add(int(ref))
+            if not refs or refs == first_page_refs:
+                break               # past the end (or the API ignored the page number)
+            if page == 1:
+                first_page_refs = refs
+            info = body.get("ResultInfo") or {}
+            try:
+                if page * int(info.get("per_page") or 20) >= int(info.get("total_count") or 0):
+                    break
+            except (TypeError, ValueError):
+                pass
+        todo = sorted(f for f in frns if f not in checked)
+        if todo:
+            cfd_scan(client, st, todo, ctx, workers)
+            checked |= set(todo)
+        ss["terms_done"].append(term)
+        ss["checked"] = sorted(checked)
+        save_state(ctx, st)
+        ctx.log.info("FCA CFD search %r: %d authorised firms checked, %d CFD/FX providers so far",
+                     term, len(todo), len(st.get("cfd", {})))
+    ss["done"] = True
+    save_state(ctx, st)
+
+
 def cfd_progress(st: dict) -> str:
     cs = st.get("cfd_seed")
     if not cs:
@@ -600,7 +668,10 @@ def cfd_progress(st: dict) -> str:
         elif i == cs["range_index"]:
             done += max(0, min(cs["cursor"], hi + 1) - lo)
     pct = 100.0 * done / total if total else 100.0
-    return f"CFD scan {'complete' if cs.get('done') else f'{pct:.1f}% done'}, {len(st.get('cfd', {}))} CFD/FX providers"
+    srch = st.get("cfd_search") or {}
+    s_txt = "name search done" if srch.get("done") else f"name search {len(srch.get('terms_done') or [])}/{len(CFD_SEARCH_TERMS)} terms"
+    return (f"CFD scan {'complete' if cs.get('done') else f'{pct:.1f}% done'} ({s_txt}), "
+            f"{len(st.get('cfd', {}))} CFD/FX providers")
 
 
 def _intersect(a: list, b: list) -> list:

@@ -667,6 +667,7 @@ class NationalSource(Source):
         import hashlib
         import json
         self.fingerprint = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()[:16]
+        self.min_hours = (cfg or {}).get("min_hours")
 
     prefix = "nat"
     vertical = None
@@ -675,11 +676,11 @@ class NationalSource(Source):
         return {**spec, "_prefix": self.prefix, "_vertical": self.vertical}
 
     @staticmethod
-    def _get(ctx: Context, url: str) -> bytes:
+    def _get(ctx: Context, url: str, accept: str = "") -> bytes:
         r = ctx.session.get(url, timeout=(15, 90), headers={
             "User-Agent": "Mozilla/5.0 (compatible; licence-tracker)",
-            "Accept": "text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,"
-                      "application/json,text/html,*/*"})
+            "Accept": accept or "text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,"
+                                "application/json,text/html,*/*"})
         r.raise_for_status()
         return r.content
 
@@ -689,6 +690,15 @@ class NationalSource(Source):
         Returns (records, info, error or None, last raw page)."""
         from ..http import robots_allowed
         import hashlib
+        if spec.get("paginate"):
+            last = ([], {}, RuntimeError("no address"), b"")
+            for url in [spec["url"]] + list(spec.get("fallback_urls") or []):
+                last = self._paginate(ctx, {**spec, "url": url}, label, status)
+                if last[2] is None:
+                    if url != spec["url"]:
+                        status[label] += " (fallback address)"
+                    return last
+            return last
         if spec.get("fallback_urls"):
             last_err, raw = None, b""
             for url in [spec["url"]] + list(spec["fallback_urls"]):
@@ -696,7 +706,7 @@ class NationalSource(Source):
                     last_err = RuntimeError(f"{url} is disallowed by robots.txt")
                     continue
                 try:
-                    raw = self._get(ctx, url)
+                    raw = self._get(ctx, url, _accept(spec))
                     got, info = parse_file(raw, self._spec({**spec, "url": url}), self.country, self.regulator)
                     if got:
                         status[label] = f"ok: {len(got)} firms" + (" (fallback address)" if url != spec["url"] else "")
@@ -705,6 +715,11 @@ class NationalSource(Source):
                 except Exception as e:
                     last_err = e
             return [], {}, last_err, raw
+        return [], {}, RuntimeError("nothing to fetch"), b""
+
+    def _paginate(self, ctx: Context, spec: dict, label: str, status: dict) -> tuple:
+        from ..http import robots_allowed
+        import hashlib
         pg = spec["paginate"]
         start, step, most = int(pg.get("start", 1)), int(pg.get("step", 1)), int(pg.get("max", 200))
         marker = re.compile(pg["marker"], re.I | re.S) if pg.get("marker") else None
@@ -715,13 +730,15 @@ class NationalSource(Source):
         for n in range(most):
             url = spec["url"].replace("{page}", str(start + n * step))
             try:
-                raw = self._get(ctx, url)
+                raw = self._get(ctx, url, _accept(spec))
             except Exception as e:
                 if pages:
                     break           # past the last page
                 return [], {}, e, b""
             pages += 1
-            marks = set(marker.findall(decode_bytes(raw))) if marker else {hashlib.sha1(raw).hexdigest()}
+            marks = set(marker.findall(decode_bytes(raw))) if marker else set()
+            if not marks:
+                marks = {hashlib.sha1(raw).hexdigest()}
             if not marks - seen:
                 quiet += 1          # nothing new on this page: the end of the list (or a repeat)
                 if quiet >= 2:
@@ -765,9 +782,14 @@ class NationalSource(Source):
                 try:
                     spec = {**spec, "url": find_link(ctx, spec)}
                 except Exception as e:
-                    problems.append(f"{label}: {e}")
-                    failed.add(label)
-                    continue
+                    if spec.get("fallback_urls"):      # a known copy of the file, used when no newer link is found
+                        ctx.log.info("%s: %s; using the fallback address", self.name, _short_error(e))
+                        spec = {**spec, "url": spec["fallback_urls"][0], "fallback_urls": spec["fallback_urls"][1:]}
+                    else:
+                        problems.append(f"{label}: {e}")
+                        status[label] = "file link not found: " + _short_error(e)[:200]
+                        failed.add(label)
+                        continue
             if spec.get("paginate") or spec.get("fallback_urls"):
                 got, info, err, raw = self._fetch_multi(ctx, spec, label, status)
                 if err is not None:
@@ -785,7 +807,7 @@ class NationalSource(Source):
                     failed.add(label)
                     continue
                 try:
-                    raw = self._get(ctx, spec["url"])
+                    raw = self._get(ctx, spec["url"], _accept(spec))
                     if spec.get("join"):
                         j = spec["join"]
                         jh, jrows = read_table(self._get(ctx, j["url"]))
@@ -886,6 +908,15 @@ def _date_key(url: str) -> tuple:
     return (int(m.group(1)), 0, 0) if m else (0, 0, 0)
 
 
+def _accept(spec: dict) -> str:
+    """Ask for HTML when an HTML page is wanted (some sites answer 404/406 to a CSV-first Accept)."""
+    if spec.get("accept"):
+        return spec["accept"]
+    if spec.get("format") in ("html_table", "text_regex") or spec.get("probe"):
+        return "text/html,application/xhtml+xml,*/*;q=0.8"
+    return ""
+
+
 def find_link(ctx: Context, spec: dict) -> str:
     """The file linked from spec['page'] whose address or link text matches spec['link_pattern'];
     the newest by the date in its name when several match (or the first, with link_pick: first)."""
@@ -912,6 +943,10 @@ def find_link(ctx: Context, spec: dict) -> str:
                 u = urljoin(page, href)
                 if u not in [f[0] for f in found]:
                     found.append((u, text))
+        if not found:      # JSON / API pages (e.g. a CKAN package_show): addresses in plain text
+            for u in re.findall(r"""https?://[^\s"'<>\\]+""", r.text):
+                if rx.search(u) and u not in [f[0] for f in found]:
+                    found.append((u, ""))
     if not found:
         raise RuntimeError(f"no link matching {spec['link_pattern']!r} on {', '.join(pages)}"
                            + (f" ({'; '.join(errors)})" if errors else ""))

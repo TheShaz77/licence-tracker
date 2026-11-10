@@ -79,3 +79,32 @@ def test_join_two_files():
             "_join": (["Account Number", "Account Name"], {"1": ["1", "Acme Ltd"], "2": ["2", "Hall Ltd"]}, "Account Number")}
     recs, _ = parse_file(lic, spec, "GB", "UKGC")
     assert [(r.name, r.licence_type) for r in recs] == [("Acme Ltd", "B2B + B2C")]
+
+
+def test_cfd_name_search(tmp_path):
+    import logging, time
+    from regtracker.sources.base import Context
+    (tmp_path / "state").mkdir()
+    ctx = Context(config={}, session=None, today="2026-11-10", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+    perms = {"Dealing in Investments as Principal": [{"Customer Type": ["Retail"]},
+                                                     {"Investment Type": ["Contracts for Differences"]}]}
+
+    class Client:
+        exclude = ()
+        def get_body(self, path):
+            page = int(path.rsplit("pgnp=", 1)[1])
+            if page > 1:
+                return {"Data": []}
+            return {"Data": [{"Reference Number": "195355", "Status": "Authorised", "Name": "IG Markets"},
+                             {"Reference Number": "111", "Status": "No longer authorised", "Name": "Old Markets"}],
+                    "ResultInfo": {"page": "1", "per_page": "20", "total_count": "2"}}
+        def firm(self, frn):
+            return {"Organisation Name": "IG Markets Limited", "Status": "Authorised"}
+        def get(self, path):
+            return perms
+        def address(self, frn):
+            return {}
+    st = {"seed": {}, "tracked": {}}
+    fca.cfd_search(Client(), st, ctx, time.monotonic() + 60, 2, ["markets"])
+    assert list(st["cfd"]) == ["195355"] and st["cfd_search"]["done"]

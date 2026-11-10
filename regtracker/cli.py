@@ -135,6 +135,8 @@ def cmd_run(args, cfg, data_dir) -> int:
             vert = not src.name.startswith("nat_")
             conf = {**conf, "min_hours": cfg.get("vertical_min_hours" if vert else "national_min_hours",
                                                  cfg.get("cfd_min_hours", 24) if vert else 12)}
+        if getattr(src, "min_hours", None):
+            conf = {**conf, "min_hours": src.min_hours}       # set in the country's own config block
         min_hours = float(conf.get("min_hours", 0) or 0)
         fp_now = getattr(src, "fingerprint", None)
         fp_saved = data_dir / "snapshots" / f"{src.name}.settings"
