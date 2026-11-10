@@ -19289,6 +19289,16 @@
 "phone_from": "firm website",
 "website": "http://www.hdh-voba.de"
 },
+"site:heartofengland.coop": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.heartofengland.coop"
+},
 "site:hedefyatirimbankasi.com.tr": {
 "checked": "2026-11-09",
 "email": "",
@@ -20988,6 +20998,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.infocorpnow.com"
+},
+"site:infotrack.co.uk": {
+"checked": "2026-11-10",
+"email": "sales@infotrack.co.uk",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "02071868090",
+"phone_from": "firm website",
+"website": "https://www.infotrack.co.uk"
 },
 "site:ing.be": {
 "checked": "2026-11-07",
@@ -45189,6 +45209,16 @@
 "phone_from": "firm website",
 "website": "https://www.theprogressive.com"
 },
+"site:therange.co.uk": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.therange.co.uk"
+},
 "site:theremitfirm.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -51708,6 +51738,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.wegopayglobal.com"
+},
+"site:wellington-wealth.com": {
+"checked": "2026-11-10",
+"email": "hello@wellington-wealth.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+441412213222",
+"phone_from": "firm website",
+"website": "https://www.wellington-wealth.com"
 },
 "site:wellingtonfx.com": {
 "checked": "2026-11-06",
