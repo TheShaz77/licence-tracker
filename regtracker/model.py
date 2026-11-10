@@ -166,12 +166,14 @@ def guess_igaming_type(name: str, licence: str = "", website: str = "") -> str:
     """Affiliate / PSP / crypto casino from the name (and website); otherwise operator when the
     licence covers offering gambling to players, platform / game provider when it is a B2B one."""
     lic = re.sub(r"\(guess\)", "", licence or "")
-    if _IG_AFF.search(name or ""):
+    if _IG_AFF.search(name or "") or re.search(r"affiliate|marketing", lic, re.I):
         return "Affiliate (guess)"
     if _IG_PSP.search(name or ""):
         return "PSP (guess)"
     if _IG_CRYPTO.search(f"{name} {website}"):
         return "Crypto casino (guess)"
+    if re.search(r"vendor|support services", lic, re.I) and not _IG_B2C.search(lic):
+        return "Supplier / service provider (guess)"
     if _IG_B2C.search(lic):
         return "Operator - casino / sportsbook (guess)"
     if _IG_B2B.search(f"{name} {lic}"):

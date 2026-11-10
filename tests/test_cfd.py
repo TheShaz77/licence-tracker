@@ -108,3 +108,9 @@ def test_cfd_name_search(tmp_path):
     st = {"seed": {}, "tracked": {}}
     fca.cfd_search(Client(), st, ctx, time.monotonic() + 60, 2, ["markets"])
     assert list(st["cfd"]) == ["195355"] and st["cfd_search"]["done"]
+
+
+def test_igaming_supplier_and_affiliate_licences():
+    from regtracker.model import guess_business_type as g
+    assert g("Tipico Services Limited", "Marketing / affiliate services licence", "iGaming") == "Affiliate (guess)"
+    assert g("Geocomply Inc.", "Internet gaming vendor registration", "iGaming").startswith("Supplier")

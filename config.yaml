@@ -2353,6 +2353,10 @@ igaming:
       table_headers: software provider
       name_column: CASINO SOFTWARE
       licence_type: Casino Software Provider Authorization - B2B (Kahnawake)
+    - label: Ontario registered internet gaming operators (probe)
+      url: https://www.agco.ca/en/lottery-and-gaming/list-registered-internet-gaming-operators
+      probe: true
+      follow: igamingontario|operator|directory|regulated
   GG:
     regulator: AGCC (Alderney)
     files:
@@ -2391,34 +2395,418 @@ igaming:
       link_pattern: \.csv
       keep_all: true
       register_url: https://www.grai.ie/register
-  MT:
-    regulator: MGA
+
+  GI:
+    regulator: Gibraltar Gambling Division
     files:
-    - label: MGA licensee register (probe)
-      url: https://www.mga.org.mt/licensee-hub/licensee-register/
-      probe: true
-      follow: 'licensee|register|download|csv|xlsx|api'
-  CW:
-    regulator: Curacao Gaming Authority
+    - label: Gibraltar licence holders (B2C, B2B, support services)
+      url: https://gamblingdivision.gov.gi/licence-holders
+      format: html_table
+      all_tables: true
+      name_column: Company
+      type_from_row: true
+      exclude_column: section
+      exclude_pattern: non-remote|land-based
+      type_patterns:
+        'affiliate|marketing': Marketing / affiliate services licence (Gibraltar)
+        'support service': Gambling operator support services licence (Gibraltar)
+        'B2B|business-to-business': B2B remote gambling licence (Gibraltar)
+        '.': B2C remote gambling licence (Gibraltar)
+      register_url: https://gamblingdivision.gov.gi/licence-holders
+  BR:
+    regulator: SPA (Ministry of Finance)
     files:
-    - label: CGA licence register (probe)
-      url: https://www.gamingcontrolcuracao.org/en/133i348441001
-      probe: true
-      follow: 'licen|register|certificate|portal'
-  DK:
-    regulator: Spillemyndigheden
-    files:
-    - label: Danish licensed gambling providers overview (probe)
-      url: https://www.spillemyndigheden.dk/nyheder/se-oversigt-over-spilleverandoerer-med-tilladelse
-      probe: true
-      follow: 'oversigt|tilladelse|licens|xlsx|csv'
+    - label: Brazil - companies authorised for fixed-odds betting and online games (SPA)
+      page:
+      - https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/lista-de-empresas
+      - https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/lista-de-empresas/confira-a-lista-de-empresas-autorizadas-a-ofertar-apostas-de-quota-fixa-em-2025
+      link_pattern: (lista|planilha)[^/]*autoriza[^/]*\.pdf
+      fallback_urls:
+      - https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/lista-de-empresas/ListadeAutorizaes12.08.25.5.pdf
+      format: pdf_table
+      name_column: DENOMINA
+      id_column: CNPJ
+      website_column: DOM
+      licence_type: Fixed-odds betting / online games authorisation (SPA, Brazil)
+      register_url: https://www.gov.br/pt-br/servicos/consultar-as-empresas-autorizadas-a-operar-apostas-de-quota-fixa
   ES:
     regulator: DGOJ
     files:
-    - label: DGOJ licensed operators search (probe)
-      url: https://ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores
+    - label: Spain - DGOJ licensed gambling operators
+      url: https://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores?title=&licences=All&order=title&sort=asc&page={page}
+      fallback_urls:
+      - https://ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores?title=&licences=All&order=title&sort=asc&page={page}
+      paginate: {start: 0, step: 1, max: 30, marker: 'operadores-licencia/operadores/([a-z0-9-]+)'}
+      format: html_table
+      name_column: Operador
+      website_column: Lista de dominios
+      licence_type: Online gambling licence (DGOJ, Spain)
+      register_url: https://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores
+  FR:
+    regulator: ANJ
+    files:
+    - label: France - ANJ licensed online operators
+      url: https://anj.fr/offre-de-jeu-et-marche/operateurs-agrees
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?P<name>[^\n:]{2,100})\n+\s*Noms? d(?:u|es) sites?\s*:?\s*\n?\s*(?P<website>[^\n]+)\n+\s*Cat[ée]gories?\s*:?\s*\n?\s*(?P<type>[^\n]+)'
+      licence_type: Online betting / poker licence (ANJ, France)
+      register_url: https://anj.fr/offre-de-jeu-et-marche/operateurs-agrees
+  DE:
+    regulator: GGL
+    files:
+    - label: Germany - GGL whitelist (online sports betting, slots, poker, casino)
+      url: https://www.gluecksspiel-behoerde.de/de/fuer-spielende/uebersicht-erlaubter-anbieter-whitelist
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?P<name>[^\n]{3,120}?)\n+\s*(?P<type>Sportwetten|Virtuelle Automatenspiele|Online-Poker|Online-Casinospiele|Online-Casino[^\n]*|Gewerbliche Spielvermittlung)\s*$'
+      type_patterns:
+        'Sportwetten': Online sports betting permit (GGL, Germany)
+        'Automatenspiele': Virtual slot games permit (GGL, Germany)
+        'Poker': Online poker permit (GGL, Germany)
+        'Casino': Online casino permit (GGL, Germany)
+        'Spielvermittlung': Commercial gambling broker permit (GGL, Germany)
+      register_url: https://www.gluecksspiel-behoerde.de/de/fuer-spielende/uebersicht-erlaubter-anbieter-whitelist
+  DK:
+    regulator: Spillemyndigheden
+    files:
+    - label: Denmark - licensed gambling operators
+      url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
+      format: html_table
+      keep_all: true
+      default_type: Gambling licence (Spillemyndigheden, Denmark)
+      register_url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
+    - label: Denmark - licence holder pages (probe)
+      url: https://spillemyndigheden.dk/tilladelsesindehavere?field_license_type_target_id=All
       probe: true
-      follow: 'operador|licencia|csv|xlsx'
+      follow: tilladelse|spiludbyder|licens
+  IT:
+    regulator: ADM
+    files:
+    - label: Italy - ADM remote gaming concessionaires
+      url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari
+      format: html_table
+      keep_all: true
+      default_type: Remote gaming concession (ADM, Italy)
+      register_url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari
+  CW:
+    regulator: Curacao Gaming Authority
+    files:
+    - label: Curacao - CGA online gaming licence registry (PDF)
+      page:
+      - https://www.gamingcontrolcuracao.org/en/133i348441001
+      - https://www.cga.cw/
+      link_pattern: license_registry[^"]*\.pdf|ogl[^"]*registry[^"]*\.pdf
+      fallback_urls:
+      - https://gamingcontrol.spin-cdn.com/media/license_registry/20260916_20260916_ogl_license_registry.pdf
+      format: pdf_table
+      keep_all: true
+      default_type: Online gaming licence (CGA, Curacao)
+      register_url: https://www.gamingcontrolcuracao.org/en/133i348441001
+    - label: GLEIF - Curacao companies named 'casino'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=casino&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'bet'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bet&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'gaming'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=gaming&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'games'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=games&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'poker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=poker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'slots'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=slots&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'bingo'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bingo&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'lotto'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=lotto&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'sportsbook'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=sportsbook&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Curacao companies named 'jackpot'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=jackpot&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Curacao company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+  MT:
+    regulator: MGA
+    min_hours: 72
+    files:
+    - label: MGA licensee register (probe - app loads by script)
+      url: https://mgalicenseeregister.mga.org.mt/
+      probe: true
+      follow: api|licensee|register|\.json|\.csv
+    - label: GLEIF - Malta companies named 'casino'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=casino&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'bet'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=bet&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'gaming'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=gaming&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'games'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=games&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'poker'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=poker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'slots'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=slots&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'bingo'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=bingo&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'lotto'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=lotto&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'sportsbook'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=sportsbook&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+    - label: GLEIF - Malta companies named 'jackpot'
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=jackpot&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
+      name_column: Entity.LegalName
+      id_column: LEI
+      lei_column: LEI
+      city_column: Entity.LegalAddress.City
+      status_column: Entity.EntityStatus
+      date_column: Registration.InitialRegistrationDate
+      require_column: Entity.LegalName
+      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
+      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
+      licence_type: Malta company (name suggests gambling; licence not checked)
+      register_url: https://search.gleif.org/
+  KM:
+    regulator: Anjouan Gaming
+    files:
+    - label: Anjouan licence register (probe - table loads by script)
+      url: https://anjouangaming.com/public-register/license-register/
+      probe: true
+      follow: licen|register|verify|json|api
+  US:
+    regulator: New Jersey DGE
+    files:
+    - label: New Jersey internet gaming vendors incl. affiliates and payment firms (DGE list dated March 2020)
+      url: https://www.nj.gov/lps/ge/docs/InternetGaming/AncillaryCompaniesVendor.pdf
+      format: text_regex
+      row_regex: '^\s*(?P<id>\d{4,6})\s+(?P<name>[A-Za-z0-9].{2,150}?)\s*$'
+      licence_type: Internet gaming vendor registration (NJ DGE; list last updated March 2020)
+      register_url: https://www.nj.gov/lps/ge/docs/InternetGaming/AncillaryCompaniesVendor.pdf
 
 contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
