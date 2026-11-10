@@ -1,0 +1,33 @@
+url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi
+bytes: 10903  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'Name', 'type': None, 'id': 'Registration number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Registration number', '']
+data rows: 6  kept: 6
+type values: [('', 6)]
+first lines:
+'<!doctype html>'
+'<html lang="en">'
+'<head>'
+'    <meta cha!importantmportantset="utf-8" />'
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'
+'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'<title>Center for Public Web Applications - Register of payment institutions</title>'
+'<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
+
+url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-ien
+bytes: 10490  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'Name', 'type': None, 'id': 'Registration number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Registration number', '']
+data rows: 5  kept: 5
+type values: [('', 5)]
+first lines:
+'<!doctype html>'
+'<html lang="en">'
+'<head>'
+'    <meta cha!importantmportantset="utf-8" />'
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'
+'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'<title>Center for Public Web Applications - Register of electronic money institutions</title>'
+'<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'

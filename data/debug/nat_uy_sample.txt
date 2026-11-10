@@ -1,7 +1,7 @@
 url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
 bytes: 128181  starts: b'\r\n<!DOCT'
 error: None
-columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['', 'RAZÓN SOCIAL', 'DIRECCIÓN', 'TELÉFONO', 'FAX']
 data rows: 13  kept: 11
 type values: [('', 11)]
@@ -14,3 +14,20 @@ first lines:
 '    Páginas'
 '    - '
 '\tInstituciones'
+
+url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_cambio.aspx
+bytes: 132911  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['RAZÓN SOCIAL', 'DIRECCIÓN', 'TELÉFONO', 'FAX']
+data rows: 30  kept: 30
+type values: [('', 30)]
+first lines:
+''
+'<!DOCTYPE html >'
+'<html dir="ltr" lang="es-ES">'
+'    <head><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta name="viewport" content="width=device-width, initial-scale=1" /><'
+'\t'
+'    Páginas'
+'    - '
+'\tCasas de cambio'

@@ -1,0 +1,16 @@
+url: https://fsaseychelles.sc/vasp/licensed-vasps
+bytes: 164022  starts: b'\n<!docty'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['type', 'name']
+data rows: 19  kept: 9
+type values: [('virtual-asset-exchange-assessment', 9), ('wallet-service-provider-assessment', 5), ('virtual-asset-broking-assessment', 4), ('investment-provider-assessment', 1)]
+first lines:
+''
+'<!doctype html>'
+'<html lang="en-gb" dir="ltr">'
+'    <head>'
+'        <meta charset="utf-8">'
+'        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
+'        <link rel="canonical" href="https://fsaseychelles.sc/vasp/licensed-vasps">'
+'        <meta charset="utf-8">'

@@ -1,0 +1,16 @@
+url: https://www.rbf.gov.fj/core-functions/financial-stability/licensing/
+bytes: 428159  starts: b'<style>#'
+error: None
+columns used: {'name': 'Name', 'type': 'Activity', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
+headers: ['Name', 'Country of incorporation', 'Country of ownership', 'Activity', 'section']
+data rows: 140  kept: 22
+type values: [('', 111), ('a) Account Issuance; b) Domestic Money Transfer; c) Cross border money transfer d) Merchant Acquisition; and e) E-money issuance', 2), ('Merchant acquisition service', 2), ('ANZBFJFX', 1), ('BARBFJFJ', 1), ('BOSPFJFJ', 1), ('BREDFJFJ', 1), ('HFCLFJFJ', 1), ('WPACFJFX', 1), ('a) Account Issuance; b) Domestic Money Transfer; c) Cross border money Transfer d) Merchant Acquisition; and e) E-money issuance', 1)]
+first lines:
+'<style>#Wrapper, #Content {'
+'\tbackground-color: #ffffff;'
+'\tbackground-image: url(https://www.rbf.gov.fj/wp-content/uploads/2020/03/Landing-Page-Background4.png);'
+'\tbackground-size: cover;'
+'\tbackground-position: center;'
+'}'
+'</style>'
+'<!DOCTYPE html>'

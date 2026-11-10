@@ -1,0 +1,16 @@
+url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
+bytes: 731994  starts: b'\r\n\r\n<!DO'
+error: None
+columns used: {'name': 'Company Name', 'type': 'Category', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'Status', 'website': None, 'email': 'Email', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No', 'Company Name', 'Location', 'Category', 'Status', 'Permission/Approval Number', 'Permission/Approval Date', 'Email', 'Action']
+data rows: 10  kept: 10
+type values: [('Non Bank Money Changer Operators', 9), ('Payment Service Provider - License Category 3', 1)]
+first lines:
+''
+''
+'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
+'<html dir="ltr" lang="en-US">'
+''
+'    <head><meta name="keywords" content="Bank Indonesia, BI, Rupiah, kurs BI, kurs tengah BI, kalkulator kurs, inflasi, kurs transaksi, JISDOR, PINTAR BI, BI Fast, bank sentral, QRIS, uang Rupiah, SIMODIS, Sobat Rupiah, Cadangan Devisa, Gubernur Bank Indonesia, uang, bank, CBP, Cinta Bangga Rupiah, '
+''
+'<!-- meta tags -->'

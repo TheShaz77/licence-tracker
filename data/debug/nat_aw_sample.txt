@@ -1,0 +1,16 @@
+url: https://www.cbaruba.org/financial-institutions-under-supervision-of-the-central-bank/
+bytes: 48266  starts: b'\n<!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 43  kept: 12
+type values: [('', 14)]
+first lines:
+''
+'<!DOCTYPE html>'
+'<html class="not-ie" xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">'
+'<!-- Get list of categories if present for body name -->'
+'<head>'
+'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<meta name="author" content="informationcenter@cbaruba.org" />'
