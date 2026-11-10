@@ -42,6 +42,7 @@
   "date": "2026-11-10"
  },
  "AU (CFD)": {
+  "ASIC AFS licensees that make a market in derivatives / FX": "read failed: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt",
   "date": "2026-11-10"
  },
  "AW": {
@@ -91,6 +92,19 @@
   "date": "2026-11-09",
   "www.bma.bm homepage": "blocked by robots.txt"
  },
+ "BM (CFD)": {
+  "GLEIF - Bermuda companies named 'broker'": "ok: 1 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'cfd'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Bermuda companies named 'forex'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Bermuda companies named 'fx'": "ok: 2 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'liquidity'": "ok: 1 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'markets'": "ok: 18 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'prime'": "ok: 4 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'securities'": "ok: 14 firms from 4 pages",
+  "GLEIF - Bermuda companies named 'trade'": "read failed: no firms matched on 4 pages",
+  "GLEIF - Bermuda companies named 'trading'": "ok: 33 firms from 4 pages",
+  "date": "2026-11-10"
+ },
  "BN": {
   "BDCB licensed institutions": "HTTP 404",
   "date": "2026-11-10",
@@ -124,6 +138,12 @@
   "Payment Service Providers": "probe saved earlier this week",
   "date": "2026-11-10",
   "www.centralbank.org.bz homepage": "probe saved earlier this week"
+ },
+ "CA (iGaming)": {
+  "Kahnawake casino software provider authorizations": "ok: 2 firms",
+  "Kahnawake client provider authorizations (operators and their sites)": "ok: 53 firms",
+  "Ontario registered internet gaming operators (probe)": "probe saved (456883 bytes, 10 linked pages)",
+  "date": "2026-11-10"
  },
  "CD": {
   "BCC financial intermediaries": "probe waiting for the next run (page budget used up)",
@@ -215,6 +235,10 @@
   "BEAC payment institutions (CEMAC)": "DNS: no such site",
   "date": "2026-11-09"
  },
+ "GB (iGaming)": {
+  "UKGC register - remote and B2B gambling licences": "SSL error",
+  "date": "2026-11-10"
+ },
  "GE": {
   "NBG VASP registry": "probe saved earlier this week",
   "NBG payment service providers": "probe saved earlier this week",
@@ -290,6 +314,10 @@
   "IOMFSA register search": "probe saved earlier this week",
   "Legislation & Guidance": "probe saved earlier this week",
   "Trust and Corporate Service Providers (\"TCSPs\")": "probe saved earlier this week",
+  "date": "2026-11-10"
+ },
+ "IM (iGaming)": {
+  "Isle of Man online gambling (OGRA) licence holders": "ok: 49 firms",
   "date": "2026-11-10"
  },
  "IN": {
@@ -449,6 +477,14 @@
  },
  "MU (CFD)": {
   "FSC register of licensees - investment dealers": "read failed: 404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page=1",
+  "GLEIF - Mauritius companies named 'broker'": "ok: 5 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'cfd'": "ok: 2 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'forex'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Mauritius companies named 'fx'": "ok: 1 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'liquidity'": "ok: 1 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'markets'": "ok: 102 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'prime'": "ok: 14 firms from 4 pages",
+  "GLEIF - Mauritius companies named 'securities'": "ok: 31 firms from 4 pages",
   "date": "2026-11-10"
  },
  "MV": {
@@ -515,6 +551,14 @@
  },
  "NZ (CFD)": {
   "FMA licensed derivatives issuers": "read failed: 403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0",
+  "GLEIF - New Zealand companies named 'broker'": "read failed: no firms matched on 3 pages",
+  "GLEIF - New Zealand companies named 'cfd'": "read failed: no firms matched on 3 pages",
+  "GLEIF - New Zealand companies named 'forex'": "ok: 3 firms from 4 pages",
+  "GLEIF - New Zealand companies named 'fx'": "ok: 6 firms from 4 pages",
+  "GLEIF - New Zealand companies named 'liquidity'": "read failed: no firms matched on 3 pages",
+  "GLEIF - New Zealand companies named 'markets'": "ok: 25 firms from 4 pages",
+  "GLEIF - New Zealand companies named 'prime'": "ok: 4 firms from 4 pages",
+  "GLEIF - New Zealand companies named 'securities'": "ok: 20 firms from 4 pages",
   "date": "2026-11-10"
  },
  "OM": {
@@ -565,7 +609,7 @@
  "RS": {
   "NBS banks": "HTTP 404",
   "NBS e-money institutions": "HTTP 404",
-  "NBS payment institutions": "disconnected",
+  "NBS payment institutions": "HTTP 404",
   "NBS virtual asset service providers": "HTTP 404",
   "date": "2026-11-10",
   "nbs.rs homepage": "probe saved earlier this week"
@@ -586,7 +630,7 @@
   "date": "2026-11-10"
  },
  "SC (CFD)": {
-  "FSA capital markets - securities dealers": "read failed: no firms matched",
+  "FSA capital markets - securities dealers": "ok: 231 firms",
   "date": "2026-11-10"
  },
  "SG": {
@@ -728,11 +772,21 @@
   "Уз": "probe saved (124214 bytes, 6 linked pages)"
  },
  "VC (CFD)": {
-  "GLEIF - St Vincent companies whose names suggest trading / brokerage": "read failed: no firms matched on 2 pages",
+  "GLEIF - St Vincent companies whose names suggest trading / brokerage": "ok: 246 firms from 8 pages",
   "date": "2026-11-10"
  },
  "VG (CFD)": {
-  "GLEIF - BVI companies whose names suggest trading / brokerage": "read failed: no firms matched on 2 pages",
+  "BVI FSC regulated entities - investment business (probe)": "HTTP 403",
+  "GLEIF - BVI companies named 'broker'": "read failed: no firms matched on 3 pages",
+  "GLEIF - BVI companies named 'cfd'": "read failed: no firms matched on 3 pages",
+  "GLEIF - BVI companies named 'forex'": "read failed: no firms matched on 4 pages",
+  "GLEIF - BVI companies named 'fx'": "ok: 9 firms from 4 pages",
+  "GLEIF - BVI companies named 'liquidity'": "ok: 8 firms from 4 pages",
+  "GLEIF - BVI companies named 'markets'": "ok: 26 firms from 4 pages",
+  "GLEIF - BVI companies named 'prime'": "ok: 54 firms from 4 pages",
+  "GLEIF - BVI companies named 'securities'": "ok: 104 firms from 4 pages",
+  "GLEIF - BVI companies named 'trade'": "ok: 210 firms from 5 pages",
+  "GLEIF - BVI companies named 'trading'": "ok: 631 firms from 8 pages",
   "date": "2026-11-10"
  },
  "VU": {

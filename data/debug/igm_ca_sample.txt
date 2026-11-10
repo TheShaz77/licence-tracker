@@ -1,0 +1,33 @@
+url: https://gamingcommission.ca/interactive-gaming/permit-holders/
+bytes: 151067  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'OPERATOR', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'URL', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['OPERATOR', 'URL']
+data rows: 218  kept: 53
+type values: [('', 218)]
+first lines:
+'<!doctype html>'
+'<html lang="en-US">'
+'  <head>'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1">'
+'    <title>Permit Holders - Kahnawà:ke Gaming Commission</title>'
+''
+'<!-- The SEO Framework by Sybre Waaijer -->'
+
+url: https://gamingcommission.ca/interactive-gaming/permit-holders/
+bytes: 151067  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'CASINO SOFTWARE PROVIDER AUTHORIZATION HOLDER', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['CASINO SOFTWARE PROVIDER AUTHORIZATION HOLDER']
+data rows: 2  kept: 2
+type values: [('', 2)]
+first lines:
+'<!doctype html>'
+'<html lang="en-US">'
+'  <head>'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1">'
+'    <title>Permit Holders - Kahnawà:ke Gaming Commission</title>'
+''
+'<!-- The SEO Framework by Sybre Waaijer -->'

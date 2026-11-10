@@ -1,0 +1,9 @@
+url: https://isleofmangsc.com/media/wjon3xj2/26-10-28-current-ogra-licence-holders.xlsx
+bytes: 13726  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: None
+columns used: {'name': 'Name', 'type': 'Licence Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Firm Status', 'Initial Licence Date', 'Licence Type']
+data rows: 49  kept: 49
+type values: [('Software Supply', 28), ('Full', 14), ('Network Services', 7)]
+first lines:
+'(binary)'

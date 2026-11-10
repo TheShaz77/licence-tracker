@@ -1,0 +1,9 @@
+url: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/d98a113d-6b50-40e6-b65f-2612efc877f4/download/afs_lic_202602.csv
+bytes: 0  starts: b''
+error: RuntimeError('https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+''
