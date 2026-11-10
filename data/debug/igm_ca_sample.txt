@@ -1,5 +1,5 @@
 url: https://gamingcommission.ca/interactive-gaming/permit-holders/
-bytes: 151067  starts: b'<!doctyp'
+bytes: 151066  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'OPERATOR', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'URL', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['OPERATOR', 'URL']
@@ -16,7 +16,7 @@ first lines:
 '<!-- The SEO Framework by Sybre Waaijer -->'
 
 url: https://gamingcommission.ca/interactive-gaming/permit-holders/
-bytes: 151067  starts: b'<!doctyp'
+bytes: 151066  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'CASINO SOFTWARE PROVIDER AUTHORIZATION HOLDER', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['CASINO SOFTWARE PROVIDER AUTHORIZATION HOLDER']

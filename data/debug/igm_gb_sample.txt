@@ -1,0 +1,16 @@
+url: https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv
+bytes: 499815  starts: b'Account '
+error: None
+columns used: {'name': '(guessed) Licence Account Name', 'type': 'Type', 'id': 'Account Number', 'lei': None, 'city': None, 'date': 'Start Date', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'End Date', 'exclude': None, 'require': None}
+headers: ['Account Number', 'Licence Number', 'Status', 'Type', 'Activity', 'Start Date', 'End Date', 'Account Number', 'Licence Account Name']
+data rows: 4599  kept: 2337
+type values: [('Non-Remote', 2444), ('Remote', 1619), ('Ancillary Remote', 534)]
+first lines:
+'Account Number,Licence Number,Status,Type,Activity,Start Date,End Date'
+'"102","000102-N-000000-000","Pending","Non-Remote","Bingo",,'
+'"102","000102-N-317976-011","Active","Non-Remote","Bingo","2026-04-14T00:00:00.000Z",'
+'"102","000102-N-317976-011","Active","Non-Remote","Gaming Machine General Adult Gaming Centre","2014-03-12T00:00:00.000Z",'
+'"102","000102-A-342261-001","Active","Ancillary Remote","Bingo","2026-04-14T00:00:00.000Z",'
+'"103","000103-N-102731-018","Active","Non-Remote","Gaming Machine General Adult Gaming Centre","2009-01-01T00:00:00.000Z",'
+'"103","000103-N-102731-018","Active","Non-Remote","Linked Gaming Machine Technical Supplier","2010-07-26T00:00:00.000Z",'
+'"104","000104-N-100087-014","Active","Non-Remote","General Betting Limited","2009-01-01T00:00:00.000Z",'

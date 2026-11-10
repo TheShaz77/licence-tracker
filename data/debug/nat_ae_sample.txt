@@ -1,7 +1,7 @@
 url: https://www.vara.ae/en/licenses-and-register/public-register/
 bytes: 768294  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'VASP Name', 'type': 'Licence Type', 'id': 'Reference', 'lei': None, 'city': None, 'date': 'Licence Issued', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'VASP Name', 'type': 'Licence Type', 'id': 'Reference', 'lei': None, 'city': None, 'date': 'Licence Issued', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['VASP Name', 'Licence Type', 'Reference', 'Licensed Activities', 'Licence Issued', 'Status', 'CMA Registration Number']
 data rows: 60  kept: 60
 type values: [('VASP Licence', 60)]
@@ -18,7 +18,7 @@ first lines:
 url: https://www.centralbank.ae/media/lmbpqcll/cb-register-sept-2026.pdf
 bytes: 626493  starts: b'%PDF-1.6'
 error: None
-columns used: {'name': 'Institution Name', 'type': 'License Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'Head office', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Institution Name', 'type': 'License Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'Head office', 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Institution Name', 'License Type', 'License Category', 'Head office', 'Identification Number', 'ﺮﻘﻤﻟا ﻲﺴﯿﺋﺮﻟا', 'ﺔ ﺼﺧﺮﻟا ﺔﺌﻓ', 'عﻮﻧ ﺔ ﺼﺧﺮﻟا', 'ﺔ ﺴﺳﺆﻤﻟا ﻢﺳا', 'ﻢ ﻗﺮﻟا']
 data rows: 348  kept: 242
 type values: [('Exchange Business', 62), ('National Company', 62), ('Representative Office', 53), ('Foreign Bank', 38), ('National Bank', 25), ('National Finance Company', 19), ('License Type', 6), ('', 2), ('Foreign Finance Company', 1)]
