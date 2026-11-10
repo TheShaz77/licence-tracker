@@ -1,0 +1,9 @@
+url: https://www.fma.govt.nz/business/licensed-providers/?start={page}
+bytes: 0  starts: b''
+error: HTTPError('403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+''

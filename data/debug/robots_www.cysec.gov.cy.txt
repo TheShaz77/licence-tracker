@@ -1,0 +1,60 @@
+User-agent: *
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+Disallow: /Admin/
+Disallow: /App_Code/
+Disallow: /App_Themes/
+Disallow: /CMSDesk/
+Disallow: /CMSHelp/
+Disallow: /CMSSitemanager/
+Disallow: /CMSScripts/
+Disallow: /CMSTransformations/
+Disallow: /CMSWebParts/
+Disallow: /CMSCSSStylesheets/
+Disallow: /CMSAPIExamples/
+Disallow: /CMSAdminControls/
+Disallow: /CMSInlineControls/
+Disallow: /CMSMessages/
+Disallow: /CMSModules/
+Disallow: /CMSTemplates/
+Disallow: /cmsctx/
+
+Disallow: /WebResource.axd
+Disallow: /ScriptResource.axd
+Disallow: /*?beginswith=
+Disallow: /*?bw
+Disallow: /*?ltr
+
+Crawl-delay: 15
+
+User-agent: Bingbot
+Allow: /
+
+Disallow: /Admin/
+Disallow: /App_Code/
+Disallow: /App_Themes/
+Disallow: /CMSDesk/
+Disallow: /CMSHelp/
+Disallow: /CMSSitemanager/
+Disallow: /CMSScripts/
+Disallow: /CMSTransformations/
+Disallow: /CMSWebParts/
+Disallow: /CMSCSSStylesheets/
+Disallow: /CMSAPIExamples/
+Disallow: /CMSAdminControls/
+Disallow: /CMSInlineControls/
+Disallow: /CMSMessages/
+Disallow: /CMSModules/
+Disallow: /CMSTemplates/
+Disallow: /cmsctx/
+
+Disallow: /WebResource.axd
+Disallow: /ScriptResource.axd
+Disallow: /*?beginswith=
+Disallow: /*?bw
+Disallow: /*?ltr
+
+Crawl-delay: 30

@@ -1,0 +1,16 @@
+url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20on%20own%20account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+bytes: 3652099  starts: b'{\n  "res'
+error: None
+columns used: {'name': 'ae_entityName', 'type': 'entity_type', 'id': 'ae_lei', 'lei': 'ae_lei', 'city': None, 'date': 'ae_authorisationNotificationDateStr', 'status': 'ae_status', 'website': 'ae_website', 'email': None, 'phone': None, 'country': 'ae_homeMemberState', 'regulator': 'ae_competentAuthority', 'address': 'ae_headOfficeAddress', 'end': None, 'exclude': 'ae_officeType', 'require': None}
+headers: ['id', 'ae_entityTypeCode', 'ae_lastUpdate', 'ae_lastUpdateStr', 'ae_lei', 'ae_headOfficeLei', 'ae_entityName', 'collectorParent', 'ae_officeType', 'ae_competentAuthority', 'ae_homeMemberState', 'ae_hostMemberState', 'ae_headOfficeAddress', 'ae_branchAddress', 'ae_comment', 'ae_status', 'ae_authorisationNotificationDate', 'ae_authorisationNotificationDateStr', 'ae_authorisationWithdrawalEndDateStr', 'entity_type', 'type_s', 'ae_entityTypeLabel', '_root_', 'ae_dbId', 'ae_website', 'ae_commercialName', 'ae_legalform', '_version_', 'timestamp', 'ae_hostMemberStates']
+data rows: 2992  kept: 2737
+type values: [('ae', 2991)]
+first lines:
+'{'
+'  "responseHeader":{'
+'    "status":0,'
+'    "QTime":59,'
+'    "params":{'
+'      "q":"{!parent which=\\"type_s:parent\\"}(+ac_serviceName:\\"Dealing on own account\\")",'
+'      "fq":"ae_entityTypeCode:MIF",'
+'      "rows":"20000",'

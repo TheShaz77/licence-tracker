@@ -41,6 +41,9 @@
   "AUSTRAC digital currency exchange register": "timeout",
   "date": "2026-11-10"
  },
+ "AU (CFD)": {
+  "date": "2026-11-10"
+ },
  "AW": {
   "CBA supervised institutions": "HTTP 404",
   "Commercial banks": "probe saved earlier this week",
@@ -101,6 +104,10 @@
   "www.centralbankbahamas.com homepage": "probe saved earlier this week",
   "www.scb.gov.bs homepage": "probe saved earlier this week"
  },
+ "BS (CFD)": {
+  "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
+  "date": "2026-11-10"
+ },
  "BT": {
   "RMA licensed institutions": "SSL error",
   "date": "2026-11-10"
@@ -121,6 +128,10 @@
  "CD": {
   "BCC financial intermediaries": "probe waiting for the next run (page budget used up)",
   "date": "2026-11-09"
+ },
+ "CH (CFD)": {
+  "FINMA securities firms": "ok: 77 firms",
+  "date": "2026-11-10"
  },
  "CL": {
   "Buscador de entidades supervisadas": "HTTP 404",
@@ -155,6 +166,10 @@
   "date": "2026-11-09",
   "www.centralbank.cw homepage": "HTTP 403"
  },
+ "CY (CFD)": {
+  "CySEC Cyprus Investment Firms (CIFs)": "blocked by robots.txt",
+  "date": "2026-11-10"
+ },
  "DJ": {
   "BCD homepage": "probe saved earlier this week",
   "date": "2026-11-10"
@@ -187,6 +202,10 @@
   "NBE payment instrument issuers": "HTTP 404",
   "date": "2026-11-10",
   "nbe.gov.et homepage": "probe saved earlier this week"
+ },
+ "EU (CFD)": {
+  "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2737 firms",
+  "date": "2026-11-10"
  },
  "FJ": {
   "RBF licensing": "probe saved earlier this week",
@@ -428,6 +447,10 @@
   "www.bom.mu homepage": "SSL error",
   "www.fscmauritius.org homepage": "probe saved earlier this week"
  },
+ "MU (CFD)": {
+  "FSC register of licensees - investment dealers": "read failed: 404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page=1",
+  "date": "2026-11-10"
+ },
  "MV": {
   "MMA homepage": "probe saved earlier this week",
   "date": "2026-11-10"
@@ -490,6 +513,10 @@
   "RBNZ registered banks": "HTTP 403",
   "date": "2026-11-09"
  },
+ "NZ (CFD)": {
+  "FMA licensed derivatives issuers": "read failed: 403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0",
+  "date": "2026-11-10"
+ },
  "OM": {
   "CBO licensed institutions": "HTTP 404",
   "cbo.gov.om homepage": "probe saved earlier this week",
@@ -538,7 +565,7 @@
  "RS": {
   "NBS banks": "HTTP 404",
   "NBS e-money institutions": "HTTP 404",
-  "NBS payment institutions": "HTTP 404",
+  "NBS payment institutions": "disconnected",
   "NBS virtual asset service providers": "HTTP 404",
   "date": "2026-11-10",
   "nbs.rs homepage": "probe saved earlier this week"
@@ -556,6 +583,10 @@
   "Hire Purchase and Credit Sales": "probe saved earlier this week",
   "Insurance": "probe saved earlier this week",
   "International Trade Zone": "probe saved earlier this week",
+  "date": "2026-11-10"
+ },
+ "SC (CFD)": {
+  "FSA capital markets - securities dealers": "read failed: no firms matched",
   "date": "2026-11-10"
  },
  "SG": {
@@ -695,6 +726,14 @@
   "Special regime participants registry in the field ": "probe saved (159429 bytes, 6 linked pages)",
   "date": "2026-11-09",
   "Уз": "probe saved (124214 bytes, 6 linked pages)"
+ },
+ "VC (CFD)": {
+  "GLEIF - St Vincent companies whose names suggest trading / brokerage": "read failed: no firms matched on 2 pages",
+  "date": "2026-11-10"
+ },
+ "VG (CFD)": {
+  "GLEIF - BVI companies whose names suggest trading / brokerage": "read failed: no firms matched on 2 pages",
+  "date": "2026-11-10"
  },
  "VU": {
   "RBV licensed institutions": "SSL error",

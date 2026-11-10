@@ -1,7 +1,7 @@
 url: https://www.apra.gov.au/register-of-authorised-deposit-taking-institutions
-bytes: 404322  starts: b'<!DOCTYP'
+bytes: 404326  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'Entity Name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Entity Name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Entity Name', 'section']
 data rows: 126  kept: 126
 type values: [('Australian-owned authorised deposit-taking institutions', 66), ('Branches of foreign banks', 49), ('Foreign subsidiary banks', 9), ('Providers of purchased payment facilities', 2)]

@@ -1,0 +1,16 @@
+url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VC&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+bytes: 307397  starts: b'"LEI","E'
+error: RuntimeError('no firms matched on 2 pages')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'"LEI","Entity.LegalName","Entity.LegalName.xmllang","Entity.OtherEntityNames.OtherEntityName.1","Entity.OtherEntityNames.OtherEntityName.1.xmllang","Entity.OtherEntityNames.OtherEntityName.1.type","Entity.OtherEntityNames.OtherEntityName.2","Entity.OtherEntityNames.OtherEntityName.2.xmllang","Entity'
+'"529900SBHSN29CZH2781","TECHINVEST INC.","en-VC","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en-VC","Trust House, 112 Bonadie Street","","","","","","","Kingstown","VC-04","VC","","de-LI","Poststrasse 2","","","","","","","Schaan","LI-07","LI","9494",""'
+'"213800R3IY74VWTLSJ54","EBC FINANCIAL GROUP (SVG) LLC","en","EBC GROUP LLC","en","PREVIOUS_LEGAL_NAME","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","C/O EURO-CARIBBEAN TRUSTEES LTD.","","","","FIRST FLOOR, FIRST ST VINCENT BANK LTD BUILDING","JAMES STREET",""'
+'"254900GXQBFVZ5HGOB94","Aqua Index Llc","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","Financial Services Centre, Stoney Ground","","","","","","","Kingstown","","VC","","en","Financial Services Centre, Stoney Ground","","","","","","","Kingstown'
+'"254900T7EKDYYHTCQ004","Samtrade Custodian Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","First Floor, First St. Vincent Bank Ltd Building","","","","James Street, Kingstown","","","Kingstown","VC-01","VC","VC0100","en","First Floor, Fir'
+'"254900WZWDR5YZQE6L98","Gohn & Gohl Global Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","First Floor, First St. Vincent Bank Ltd Building","","","","James Street, Kingstown","","","Kingstown","VC-01","VC","VC0100","en","First Floor, Fir'
+'"549300YKM1113C8WVQ92","Royal ETP LLC","en","ONEROYAL","en","TRADING_OR_OPERATING_NAME","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","C/O Wilfred Services Ltd.","","","","Suite 305","Griffith Corporate Centre","Beachmont","Kingstown","VC-04","VC","VC0100","en'
+'"254900L2HAQ016DVKJ63","Trading 257 Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o Wilfred Services Ltd.","","","","Suite 305, Griffith Corporate Centre","P.O. Box 1510","Beachmont","Kingstown","","VC","","en","Suite 305, Griffith Co'

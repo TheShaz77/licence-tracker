@@ -1,0 +1,16 @@
+url: https://fsaseychelles.sc/regulated-entities/capital-markets
+bytes: 1062878  starts: b'\n<!docty'
+error: RuntimeError('no firms matched')
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': 'date', 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'address', 'end': None, 'exclude': None, 'require': None}
+headers: ['type', 'name', 'address', 'date', 'status']
+data rows: 0  kept: 0
+type values: []
+first lines:
+''
+'<!doctype html>'
+'<html lang="en-gb" dir="ltr">'
+'    <head>'
+'        <meta charset="utf-8">'
+'        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
+'        <link rel="canonical" href="https://fsaseychelles.sc/regulated-entities/capital-markets">'
+'        <meta charset="utf-8">'

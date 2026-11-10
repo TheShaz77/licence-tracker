@@ -1,0 +1,9 @@
+url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page={page}
+bytes: 0  starts: b''
+error: HTTPError('404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page=1')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+''

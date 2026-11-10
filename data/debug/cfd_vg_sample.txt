@@ -1,0 +1,16 @@
+url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+bytes: 309191  starts: b'"LEI","E'
+error: RuntimeError('no firms matched on 2 pages')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'"LEI","Entity.LegalName","Entity.LegalName.xmllang","Entity.OtherEntityNames.OtherEntityName.1","Entity.OtherEntityNames.OtherEntityName.1.xmllang","Entity.OtherEntityNames.OtherEntityName.1.type","Entity.OtherEntityNames.OtherEntityName.2","Entity.OtherEntityNames.OtherEntityName.2.xmllang","Entity'
+'"2549008M7OMH8BTZ1311","Gobi Desert Investments Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o ILS Fiduciary (BVI) Limited","","","","Mill Mall, Suite 6","Wickhams Cay 1","P.O. Box 3085, Tortola","Road Town","","VG","VG1110","en","11'
+'"2549000IMC5UZDCA3Y50","Maple Crest Investments Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o ILS Fiduciary (BVI) Limited","","","","Mill Mall, Suite 6","Wickhams Cay 1","P.O. Box 3085, Tortola","Road Town","","VG","VG1110","en","11'
+'"25490085LHKA0F9SJT70","Flower Garden One Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o ILS Fiduciary (BVI) Limited","","","","Mill Mall, Suite 6","Wickhams Cay 1","P.O. Box 3085, Tortola","Road Town","","VG","VG1110","en","118 Rue '
+'"25490069ZY33IULNIH74","Bloomington Park Investments Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o ILS Fiduciary (BVI) Limited","","","","Mill Mall, Suite 6","Wickhams Cay 1","P.O. Box 3085, Tortola","Road Town","","VG","VG1110","en'
+'"254900MZLC9NGGJCE768","Khan Private Investments Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","c/o ILS Fiduciary (BVI) Limited","","","","Mill Mall, Suite 6","Wickhams Cay 1","P.O. Box 3085, Tortola","Road Town","","VG","VG1110","en","1'
+'"391200FWPBZR4XIB7J49","Small Wonder International Limited","en","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","Vistra Corporate Services Centre Wickhams Cay II Road Town","","","","","","","Tortola","","VG","VG1110","en","Vistra Corporate Services Ce'
+'"3912001020PFQ65E2M44","Nory Corporation","de","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","en","John\'s Hole, Road Town","","c/o Arias, Fabrega & Fabrega Trust Co. BVI Limited","P.O. Box 985","","","","Tortola","","VG","VG1110","de","9-11 rue du Prince",'
