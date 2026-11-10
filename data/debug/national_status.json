@@ -247,11 +247,11 @@
  },
  "HK": {
   "Customs money service operators": "ok: 614 firms",
-  "HKMA SVF licensees": "ok: 11 firms",
-  "HKMA banks": "ok: 164 firms",
+  "HKMA SVF licensees": "connection failed",
+  "HKMA banks": "HTTP 405",
   "SFC crypto platform applicants": "ok: 6 firms",
   "SFC licensed crypto platforms": "ok: 14 firms",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "HN": {
   "CNBS supervised institutions": "probe saved earlier this week",
