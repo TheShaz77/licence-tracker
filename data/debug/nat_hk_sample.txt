@@ -1,7 +1,7 @@
 url: https://api.hkma.gov.hk/public/bank-svf-info/register-svf-licensees?lang=en&segment=SVFLic&offset=0
 bytes: 2765  starts: b'{"header'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': 'licence_no', 'lei': None, 'city': None, 'date': 'effective_date', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'local_address', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'name', 'type': None, 'id': 'licence_no', 'lei': None, 'city': None, 'date': 'effective_date', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'local_address', 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'local_address', 'licence_no', 'effective_date', 'latitude', 'longitude']
 data rows: 11  kept: 11
 type values: [('', 11)]
@@ -11,7 +11,7 @@ first lines:
 url: https://api.hkma.gov.hk/public/bank-svf-info/register-ais-lros?lang=en&pagesize=1000&offset=0
 bytes: 70599  starts: b'{"header'
 error: None
-columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'local_address', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'local_address', 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'local_address', 'principle_address', 'type', 'secstaff_reg_url', 'latitude', 'longitude']
 data rows: 202  kept: 164
 type values: [('Licensed Bank', 147), ('Local Representative Office', 27), ('Restricted Licence Bank', 17), ('Deposit-taking Company', 11)]
@@ -19,26 +19,26 @@ first lines:
 '{"header":{"success":true,"err_code":"0000","err_msg":"No error found"},"result":{"datasize":202,"records":[{"name":"ABC BANKING CORPORATION LTD","local_address":"9/F, SIBERIAN BUILDING, 29 DES VOEUX ROAD, CENTRAL, HONG KONG","principle_address":"7 DUKE OF EDINBURGH AVENUE, PLACE D\' ARMES, 11328, PO'
 
 url: https://eservices.customs.gov.hk/MSOS/wsrh/003s1?request_locale=en&format=csv
-bytes: 228028  starts: b'\xef\xbb\xbfName '
+bytes: 228025  starts: b'\xef\xbb\xbfName '
 error: None
-columns used: {'name': 'Name of Licensee (English)', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Name of Licensee (English)', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name of Licensee (English)', 'Name of Licensee (Chinese)', 'Branch Name (English)', 'Branch Name (Chinese)', 'Address (English only)', 'Address Type (English)', 'Address Type (Chinese)', 'As at (Date)']
 data rows: 1071  kept: 614
 type values: [('', 1071)]
 first lines:
 'Name of Licensee (English),Name of Licensee (Chinese),Branch Name (English),Branch Name (Chinese),Address (English only),Address Type (English),Address Type (Chinese),As at (Date)'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"SHOP 3B, MTR/F, ISQUARE, 63 NATHAN ROAD, TSIM SHA TSUI, KOWLOON",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"UNIT KP-39B, KOWLOON POINT FERRY PIER, STAR FERRY, TSIM SHA TSUI, KOWLOON",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. MKK VEM 3, CONCOURSE LEVEL, MTR MONG KOK EAST STATION, MONG KOK, KOWLOON",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. SHT VEM2, CONCOURSE LEVEL, MTR SHA TIN STATION, SHA TIN, NEW TERRITORIES",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. HUH VEM 1, WALKWAY LEVEL, MTR HUNG HOM STATION, HUNG HOM, KOWLOON",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"MTR INTEGRATED ENTRANCE, FESTIVAL WALK 80 TAT CHEE AVENUE, KOWLOON TONG, KOWLOON",Specified Premises,指明處所,09/11/2026'
-'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"HOTEL LOBBY, WHARNEY HOTEL, 57-73 LOCKHART ROAD, WAN CHAI, HONG KONG",Specified Premises,指明處所,09/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"SHOP 3B, MTR/F, ISQUARE, 63 NATHAN ROAD, TSIM SHA TSUI, KOWLOON",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"UNIT KP-39B, KOWLOON POINT FERRY PIER, STAR FERRY, TSIM SHA TSUI, KOWLOON",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. MKK VEM 3, CONCOURSE LEVEL, MTR MONG KOK EAST STATION, MONG KOK, KOWLOON",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. SHT VEM2, CONCOURSE LEVEL, MTR SHA TIN STATION, SHA TIN, NEW TERRITORIES",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"VENDING MACHINE SITE NO. HUH VEM 1, WALKWAY LEVEL, MTR HUNG HOM STATION, HUNG HOM, KOWLOON",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"MTR INTEGRATED ENTRANCE, FESTIVAL WALK 80 TAT CHEE AVENUE, KOWLOON TONG, KOWLOON",Specified Premises,指明處所,10/11/2026'
+'2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"HOTEL LOBBY, WHARNEY HOTEL, 57-73 LOCKHART ROAD, WAN CHAI, HONG KONG",Specified Premises,指明處所,10/11/2026'
 
 url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
 bytes: 127099  starts: b'\r\n\r\n\r\n<!'
 error: None
-columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': 'CE Reference', 'lei': None, 'city': None, 'date': 'Date of licence', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': 'CE Reference', 'lei': None, 'city': None, 'date': 'Date of licence', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['CE Reference', 'Company name of virtual asset trading platform operator', 'Virtual asset trading platform', 'Date of licence']
 data rows: 14  kept: 14
 type values: [('', 14)]
@@ -55,7 +55,7 @@ first lines:
 url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
 bytes: 127099  starts: b'\r\n\r\n\r\n<!'
 error: None
-columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': 'Date of submission of licence application*', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': 'Date of submission of licence application*', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Company name of virtual asset trading platform operator', 'Virtual asset trading platform', 'Date of submission of licence application*']
 data rows: 6  kept: 6
 type values: [('', 6)]

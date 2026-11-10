@@ -1,7 +1,7 @@
 url: https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Temel+Faaliyetler/Odeme+Hizmetleri/Elektronik+Para+Kuruluslari
 bytes: 162449  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'Kuruluş Unvanı', 'type': None, 'id': 'Kuruluş Kodu', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Kuruluş Unvanı', 'type': None, 'id': 'Kuruluş Kodu', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Sıra', 'Kuruluş Kodu', 'Kuruluş Unvanı', "6493 sayılı Kanun'un 12 nci Maddesinin Birinci Fıkrasında Belirtilen Ödeme Hizmetleri", "6493 sayılı Kanun'un 18 inci Maddesinin İkinci Fıkrası"]
 data rows: 56  kept: 55
 type values: [('', 55)]
@@ -18,7 +18,7 @@ first lines:
 url: https://www.tcmb.gov.tr/wps/wcm/connect/TR/TCMB+TR/Main+Menu/Temel+Faaliyetler/Odeme+Hizmetleri/Odeme+Kuruluslari
 bytes: 82893  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'Kuruluş Unvanı', 'type': None, 'id': 'Kuruluş Kodu', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Kuruluş Unvanı', 'type': None, 'id': 'Kuruluş Kodu', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Sıra', 'Kuruluş Kodu', 'Kuruluş Unvanı', "6493 sayılı Kanun'un 12 nci Maddesinin Birinci Fıkrasında Belirtilen Ödeme Hizmetleri"]
 data rows: 21  kept: 20
 type values: [('', 20)]
@@ -33,9 +33,9 @@ first lines:
 '        <title>TCMB - Ödeme Kuruluşları</title>'
 
 url: https://spk.gov.tr/kurumlar/kripto-varlik-hizmet-saglayicilar/faaliyette-bulunanlar-listesi
-bytes: 36183  starts: b'\n<!docty'
+bytes: 36259  starts: b'\n<!docty'
 error: None
-columns used: {'name': '(guessed) Güncel Ünvan', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': '(guessed) Güncel Ünvan', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Güncel Ünvan', 'Eski Ünvan (Varsa)']
 data rows: 48  kept: 48
 type values: [('', 48)]
@@ -50,12 +50,12 @@ first lines:
 '    <meta http-equiv="X-UA-Compatible" content="IE=edge" />'
 
 url: https://www.bddk.org.tr/Kurulus/Liste/77
-bytes: 200164  starts: b'\r\n\r\n<!DO'
+bytes: 198111  starts: b'\r\n\r\n<!DO'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': 'phone', 'address': 'address', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': 'address', 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'phone', 'address', 'website']
-data rows: 67  kept: 67
-type values: [('', 67)]
+data rows: 66  kept: 66
+type values: [('', 66)]
 first lines:
 ''
 ''
