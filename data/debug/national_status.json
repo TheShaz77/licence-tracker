@@ -10,7 +10,7 @@
   "CBUAE register": "ok: 242 firms",
   "DFSA firms": "probe saved earlier this week",
   "VARA register page": "ok: 60 firms",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "AL": {
   "BoA licensed entities": "probe saved earlier this week",
@@ -70,7 +70,7 @@
   "www.centralbank.org.bb homepage": "probe saved earlier this week"
  },
  "BD": {
-  "BB payment system operators": "DNS: no such site",
+  "BB payment system operators": "HTTP 404",
   "date": "2026-11-10",
   "www.bb.org.bd homepage": "probe saved earlier this week"
  },
@@ -386,8 +386,8 @@
  },
  "MC": {
   "AMAF members (Monaco banks)": "ok: 68 firms",
-  "AMAF members page": "probe waiting for the next run (page budget used up)",
-  "date": "2026-11-09"
+  "AMAF members page": "probe saved (50821 bytes, 3 linked pages)",
+  "date": "2026-11-10"
  },
  "MD": {
   "NBM payment service providers": "HTTP 404",
