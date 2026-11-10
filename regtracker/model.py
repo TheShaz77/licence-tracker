@@ -129,8 +129,12 @@ _INST = re.compile(r"\bprime\b|liquidity|institutional|\bLP\b|market ?maker|\bcl
                    re.I)
 
 
-def guess_business_type(name: str, licence: str = "") -> str:
-    """'Retail broker', 'Institutional / prime broker or LP' or 'Prop trading firm', each marked as a guess."""
+def guess_business_type(name: str, licence: str = "", vertical: str = "CFD", website: str = "") -> str:
+    """CFD: 'Retail broker', 'Institutional / prime broker or LP' or 'Prop trading firm'.
+    iGaming: 'Crypto casino', 'PSP', 'Platform / game provider', 'Affiliate' or 'Operator'.
+    Each is marked as a guess."""
+    if vertical == "iGaming":
+        return guess_igaming_type(name, licence, website)
     if _PROP.search(name or ""):
         return "Prop trading firm (guess)"
     lic = licence or ""
@@ -140,3 +144,36 @@ def guess_business_type(name: str, licence: str = "") -> str:
     if _INST.search(name or "") and not re.search(r"retail clients", licence or "", re.I):
         return "Institutional / prime broker or liquidity provider (guess)"
     return "Retail broker (guess)"
+
+
+_IG_AFF = re.compile(r"affiliat|\bmedia\b|marketing|\bleads?\b|traffic|\bads\b|advertis|\bseo\b|"
+                     r"publishing|comparison|reviews?\b|tipster", re.I)
+_IG_PSP = re.compile(r"\bpay|payment|processing|merchant|e-?wallet|\bpsp\b|acquir|skrill|neteller|trustly|"
+                     r"paysafe|nuvei|worldpay|ecommpay|muchbetter|astropay|jeton", re.I)
+_IG_B2B = re.compile(r"software|supply|supplier|\bb2b\b|gaming machine technical|host(ing)?\b|network services|"
+                     r"critical|associate|core service|casino software provider|category 2\b|\(2\)|"
+                     r"\bstudios?\b|\bgames\b|technolog|platform|solutions|\btech\b|systems|"
+                     r"aggregat|live dealer|game provider", re.I)
+_IG_CRYPTO = re.compile(r"crypto|\bcoin|bitcoin|\bbtc|\beth\b|stake\.|bc\.game|blockchain|\bchain|satoshi|doge|"
+                        r"usdt|tether|\btoken|web3|defi\b", re.I)
+
+
+_IG_B2C = re.compile(r"casino(?! software)|\bbet|betting|bingo|lotter|category 1|licence - full|client provider|\bb2c\b|"
+                     r"sportsbook|poker", re.I)
+
+
+def guess_igaming_type(name: str, licence: str = "", website: str = "") -> str:
+    """Affiliate / PSP / crypto casino from the name (and website); otherwise operator when the
+    licence covers offering gambling to players, platform / game provider when it is a B2B one."""
+    lic = re.sub(r"\(guess\)", "", licence or "")
+    if _IG_AFF.search(name or ""):
+        return "Affiliate (guess)"
+    if _IG_PSP.search(name or ""):
+        return "PSP (guess)"
+    if _IG_CRYPTO.search(f"{name} {website}"):
+        return "Crypto casino (guess)"
+    if _IG_B2C.search(lic):
+        return "Operator - casino / sportsbook (guess)"
+    if _IG_B2B.search(f"{name} {lic}"):
+        return "Platform / game provider (guess)"
+    return "Operator - casino / sportsbook (guess)"

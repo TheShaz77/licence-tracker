@@ -1683,7 +1683,7 @@ cfd:
     files:
     - label: FSC register of licensees - investment dealers
       url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page={page}
-      paginate: {start: 1, step: 1, max: 150, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
+      paginate: {start: 1, step: 1, max: 220, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
       format: html_table
       name_column: Name of Licensee
       type_column: Type of Licence
@@ -1788,6 +1788,130 @@ cfd:
       name_exclude: \bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance
       licence_type: St Vincent company (name suggests trading; SVG does not license brokers)
       register_url: https://search.gleif.org/
+
+# -------------------------------------------------------------------------- iGaming vertical ---
+# Crypto casinos, PSPs, platform / game providers and affiliates (OpenPayd crypto on/off-ramp and
+# named vIBAN leads). Same reader options as cfd: above; firms go to "Country (iGaming)" tabs and
+# "iGaming (all countries)", with a business-type column that is a guess from name + licence.
+# Probes only save the page (data/debug/raw) so a reader can be written once its layout is known.
+igaming:
+  GB:
+    regulator: Gambling Commission
+    files:
+    - label: UKGC register - remote and B2B gambling licences
+      url: https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv
+      join: {url: 'https://www.gamblingcommission.gov.uk/downloads/business-licence-register-businesses.csv', 'on': Account Number}
+      name_column: Account Name
+      id_column: Account Number
+      type_from_row: true
+      type_patterns:
+        'gambling software': Gambling software - B2B supplier (UKGC)
+        'remote[^,]*gaming machine technical|host': Remote gaming machine technical / host - B2B (UKGC)
+        'remote[^,]*casino': Remote casino (UKGC)
+        'remote[^,]*bet': Remote betting (UKGC)
+        'remote[^,]*bingo': Remote bingo (UKGC)
+        'remote[^,]*lotter': Remote lottery (UKGC)
+      register_url: https://www.gamblingcommission.gov.uk/public-register/businesses
+  IM:
+    regulator: GSC
+    files:
+    - label: Isle of Man online gambling (OGRA) licence holders
+      page:
+      - https://isleofmangsc.com/gambling/supervision/online-gambling-licensee-register/
+      - https://www.isleofmangsc.com/gambling/supervision/online-gambling-licensee-register/
+      link_pattern: ogra-licence-holders\.xlsx
+      name_column: Company Name
+      type_column: OGRA Licence type
+      status_column: Licence Status
+      date_column: Licence valid From
+      website_column: Website Domain
+      type_patterns:
+        full: Online gambling licence - full (GSC)
+        network: Network services licence (GSC)
+        software: Software supply licence - B2B (GSC)
+      register_url: https://www.isleofmangsc.com/gambling/supervision/online-gambling-licensee-register/
+  CA:
+    regulator: Kahnawake Gaming Commission
+    files:
+    - label: Kahnawake client provider authorizations (operators and their sites)
+      url: https://gamingcommission.ca/interactive-gaming/permit-holders/
+      format: html_table
+      table_headers: operator
+      name_column: OPERATOR
+      website_column: URL
+      licence_type: Client Provider Authorization (Kahnawake)
+    - label: Kahnawake casino software provider authorizations
+      url: https://gamingcommission.ca/interactive-gaming/permit-holders/
+      format: html_table
+      table_headers: software provider
+      name_column: CASINO SOFTWARE
+      licence_type: Casino Software Provider Authorization - B2B (Kahnawake)
+  GG:
+    regulator: AGCC (Alderney)
+    files:
+    - label: Alderney eGambling licensees
+      url: https://www.gamblingcontrol.org/applications-guidance/egambling-licensees
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*\((?P<type>1\s*&\s*2|1|2)\)'
+      type_patterns:
+        '1\s*&\s*2': eGambling licence - category 1 & 2, B2C + B2B (AGCC)
+        '^1$': eGambling licence - category 1, B2C (AGCC)
+        '^2$': eGambling licence - category 2, B2B (AGCC)
+    - label: Alderney temporary eGambling licensees
+      url: https://www.gamblingcontrol.org/temporary-egambling-licensees
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      licence_type: Temporary eGambling licence (AGCC)
+    - label: Alderney core service provider associates
+      url: https://www.gamblingcontrol.org/core-service-provider-associates
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      licence_type: Core service provider associate - B2B (AGCC)
+    - label: Alderney category 1 and 2 associate certificates
+      url: https://www.gamblingcontrol.org/category-1-and-2-associate-certificates
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      licence_type: Category 1/2 associate certificate - B2B (AGCC)
+  IE:
+    regulator: GRAI
+    files:
+    - label: Gambling Regulatory Authority of Ireland register
+      page: https://www.grai.ie/register
+      link_pattern: \.csv
+      keep_all: true
+      register_url: https://www.grai.ie/register
+  MT:
+    regulator: MGA
+    files:
+    - label: MGA licensee register (probe)
+      url: https://www.mga.org.mt/licensee-hub/licensee-register/
+      probe: true
+      follow: 'licensee|register|download|csv|xlsx|api'
+  CW:
+    regulator: Curacao Gaming Authority
+    files:
+    - label: CGA licence register (probe)
+      url: https://www.gamingcontrolcuracao.org/en/133i348441001
+      probe: true
+      follow: 'licen|register|certificate|portal'
+  DK:
+    regulator: Spillemyndigheden
+    files:
+    - label: Danish licensed gambling providers overview (probe)
+      url: https://www.spillemyndigheden.dk/nyheder/se-oversigt-over-spilleverandoerer-med-tilladelse
+      probe: true
+      follow: 'oversigt|tilladelse|licens|xlsx|csv'
+  ES:
+    regulator: DGOJ
+    files:
+    - label: DGOJ licensed operators search (probe)
+      url: https://ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores
+      probe: true
+      follow: 'operador|licencia|csv|xlsx'
 
 contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run

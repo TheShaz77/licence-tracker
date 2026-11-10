@@ -18,7 +18,7 @@ from collections import Counter, defaultdict
 
 from .diff import CHANGE_COLUMNS
 from .model import CFD_COLUMNS, SHEET_COLUMNS
-from .store import cfd_row, is_cfd, record_row, sort_records
+from .store import cfd_row, record_row, sort_records
 
 ROWS_PER_REQUEST = 4000   # keeps each request well under Google's size limit
 
@@ -31,7 +31,12 @@ def enabled() -> bool:
     return bool(os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON") and os.environ.get("SHEET_ID"))
 
 
+VERTICAL_NAMES = ("CFD", "iGaming")
 CFD_ALL_TAB = "CFD (all countries)"
+
+
+def vertical_of(r: dict) -> str:
+    return (r.get("extra") or {}).get("vertical") or ""
 
 
 def merge_cfd(records: list) -> list:
@@ -56,9 +61,9 @@ def merge_cfd(records: list) -> list:
     return out
 
 
-def cfd_tab(code: str) -> str:
+def cfd_tab(code: str, vertical: str = "CFD") -> str:
     code = (code or "").strip().upper()
-    return f"{COUNTRY_NAMES.get(code, code or 'Other')} (CFD)"
+    return f"{COUNTRY_NAMES.get(code, code or 'Other')} ({vertical})"
 
 
 def country_tab(code: str) -> str:
@@ -127,9 +132,10 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     tabs["Changes"] = [[h for _, h in CHANGE_COLUMNS]] + list(reversed(change_rows))  # newest first
     for title, rows in (extra_tabs or {}).items():
         tabs[title] = rows
-    # CFD brokers / LPs / prop firms have their own tabs ("United Kingdom (CFD)"), not the licence tabs
-    cfd = merge_cfd([r for r in ordered if is_cfd(r)])
-    ordered = [r for r in ordered if not is_cfd(r)]
+    # lead-generation verticals (CFD brokers, iGaming firms) have their own tabs ("United Kingdom (CFD)",
+    # "Malta (iGaming)"), not the licence tabs
+    verticals = {v: merge_cfd([r for r in ordered if vertical_of(r) == v]) for v in VERTICAL_NAMES}
+    ordered = [r for r in ordered if not vertical_of(r)]
     tabs["Licences"] = [header] + [record_row(r) for r in ordered]
 
     if per_country:
@@ -138,14 +144,16 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
             by_tab[country_tab(r.get("jurisdiction", ""))].append(record_row(r))
         for title in sorted(by_tab, key=lambda t: (t == OTHER_TAB, t)):
             tabs[title] = [header] + by_tab[title]
-    if cfd:
-        cfd_header = [h for _, h in CFD_COLUMNS]
-        tabs[CFD_ALL_TAB] = [cfd_header] + [cfd_row(r) for r in cfd]
+    for vertical, recs in verticals.items():
+        if not recs:
+            continue
+        vheader = [h for _, h in CFD_COLUMNS]
+        tabs[f"{vertical} (all countries)"] = [vheader] + [cfd_row(r) for r in recs]
         by_tab = defaultdict(list)
-        for r in cfd:
-            by_tab[cfd_tab(r.get("jurisdiction", ""))].append(cfd_row(r))
+        for r in recs:
+            by_tab[cfd_tab(r.get("jurisdiction", ""), vertical)].append(cfd_row(r))
         for title in sorted(by_tab):
-            tabs[title] = [cfd_header] + by_tab[title]
+            tabs[title] = [vheader] + by_tab[title]
     return tabs
 
 
@@ -194,7 +202,7 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     for title, sid in existing.items():
         if title in tabs:
             continue
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\(([A-Z]{2}|CFD)\)$", title) or title == CFD_ALL_TAB:
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\(([A-Z]{2}|CFD|iGaming)\)$", title) or title.endswith("(all countries)"):
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 

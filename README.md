@@ -328,6 +328,15 @@ CFD / FX firms go to their own tabs, "Country (CFD)" (e.g. "United Kingdom (CFD)
   clients only), always marked "(guess)". Nobody has checked it.
 - Each market's last read is in `data/debug/national_status.json` under "XX (CFD)".
 
+## iGaming vertical (crypto casinos, PSPs, platform providers, affiliates)
+
+Same idea as the CFD vertical: firms go to "Country (iGaming)" tabs and "iGaming (all countries)",
+configured under `igaming:` in config.yaml. The business-type column (affiliate, PSP, crypto casino,
+platform / game provider, operator) is a guess from the name, website and licence, marked "(guess)".
+Entries marked `probe: true` only save the regulator's page for now (data/debug/raw), so a reader can
+be written once its layout is known. Option `join` adds the columns of a second file matched on a
+shared column (the UK Gambling Commission publishes licences and businesses as separate files).
+
 ## Telegram notifications
 
 Every run that finds new licences, registrations or applications (new EMIs,

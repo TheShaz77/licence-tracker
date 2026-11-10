@@ -526,6 +526,13 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
             if _col(r, [], spec["name_column"]) is not None:
                 headers, rows = r, allrows[i + 1:]
                 break
+    if spec.get("_join"):              # add the columns of a second file, matched on a shared column
+        jheaders, jmap, on = spec["_join"]
+        k = _col(headers, [], on)
+        if k is None:
+            raise RuntimeError(f"join column {on!r} not in {headers}")
+        headers = list(headers) + list(jheaders)
+        rows = [list(r) + list(jmap.get(norm_key(r[k] if k < len(r) else ""), [""] * len(jheaders))) for r in rows]
     if spec.get("squeeze"):            # PDFs with merged cells: drop the empty cells and line up by position
         headers = [h for h in headers if h.strip()]
         rows = [[x for x in r if x.strip()] for r in rows]
@@ -585,7 +592,7 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
                 continue
         ltype = fixed_type
         if patterns:
-            hay = raw_type or " ".join(row)
+            hay = " ".join(row) if spec.get("type_from_row") else (raw_type or " ".join(row))
             ltype = next((t for p, t in patterns if p.search(hay)), None) if not fixed_type else fixed_type
         if not fixed_type and not patterns:
             # a mixed list with no mapping given: keep the regulator's own type, minus clearly
@@ -622,12 +629,17 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
             r = out[key]
             types = sorted(set(r.licence_type.split(" + ")) | {ltype})
             r.licence_type = " + ".join(types)
+            r.active = r.active or active
+            if vertical:
+                from ..model import guess_business_type
+                r.extra["business_type"] = guess_business_type(r.name, r.licence_type, vertical, r.website)
             continue
         extra = {k: v for k, v in (("phone", get(row, "phone")), ("address", get(row, "address"))) if v}
         if vertical:
             from ..model import guess_business_type
             extra["vertical"] = vertical
-            extra["business_type"] = guess_business_type(name, " ".join((ltype, raw_type, get(row, "require")[:5000])))
+            extra["business_type"] = guess_business_type(name, " ".join((ltype, raw_type, get(row, "require")[:5000])),
+                                                         vertical, get(row, "website"))
         out[key] = Record(
             key=key, source=f"{prefix}_{country.lower()}", jurisdiction=jur,
             regulator=get(row, "regulator") or spec.get("regulator") or regulator,
@@ -774,6 +786,13 @@ class NationalSource(Source):
                     continue
                 try:
                     raw = self._get(ctx, spec["url"])
+                    if spec.get("join"):
+                        j = spec["join"]
+                        jh, jrows = read_table(self._get(ctx, j["url"]))
+                        ji = _col(jh, [], j["on"])
+                        if ji is None:
+                            raise RuntimeError(f"join file has no {j['on']!r} column ({jh})")
+                        spec = {**spec, "_join": (jh, {norm_key(r[ji]): r for r in jrows if ji < len(r)}, j["on"])}
                 except Exception as e:
                     problems.append(f"{label}: {e}")
                     status[label] = _short_error(e)
@@ -857,6 +876,9 @@ def _date_key(url: str) -> tuple:
     m = re.search(r"(?i)\b(" + "|".join(months) + r")[a-z]*[\s_.-]*(20\d{2})", u)
     if m:
         return int(m.group(2)), months.index(m.group(1).lower()[:3]) + 1, 0
+    m = re.search(r"/(\d{2})-(0[1-9]|1[0-2])-([0-3]\d)-[^/]*$", u)    # .../26-10-28-current-list.xlsx
+    if m:
+        return 2000 + int(m.group(1)), int(m.group(2)), int(m.group(3))
     m = re.search(r"(?<!\d)(20\d{2})(0[1-9]|1[0-2])(?!\d)", u)       # 202602
     if m:
         return int(m.group(1)), int(m.group(2)), 0
@@ -1133,25 +1155,37 @@ def write_diagnostics(ctx: Context, name: str, notes: list):
         ctx.log.warning("%s diagnostics not written: %s", name, e)
 
 
-class CFDSource(NationalSource):
-    """CFD / FX brokers, liquidity providers and prop firms in one market (config.yaml 'cfd:').
-    Same reader as the national registers; the firms go to the "Country (CFD)" tabs."""
-    prefix = "cfd"
-    vertical = "CFD"
+# Lead-generation verticals with their own config section, source-name prefix and sheet tabs
+# ("United Kingdom (CFD)", "Malta (iGaming)"). Same reader as the national registers.
+VERTICALS = {"cfd": ("cfd", "CFD", "CFD providers"),
+             "igaming": ("igm", "iGaming", "iGaming firms")}
 
-    def __init__(self, country: str, cfg: dict):
+
+class VerticalSource(NationalSource):
+    def __init__(self, country: str, cfg: dict, section: str):
         super().__init__(country, cfg)
-        self.name = f"cfd_{self.country.lower()}"
-        self.label = f"{self.country} CFD providers ({self.regulator})"
+        self.prefix, self.vertical, what = VERTICALS[section]
+        self.name = f"{self.prefix}_{self.country.lower()}"
+        self.label = f"{self.country} {what} ({self.regulator})"
+
+
+class CFDSource(VerticalSource):
+    def __init__(self, country: str, cfg: dict):
+        super().__init__(country, cfg, "cfd")
+
+
+def vertical_sources(cfg: dict) -> dict:
+    out = {}
+    for section in VERTICALS:
+        for country, c in (cfg.get(section) or {}).items():
+            if (c or {}).get("enabled", True):
+                s = VerticalSource(country, c, section)
+                out[s.name] = s
+    return out
 
 
 def cfd_sources(cfg: dict) -> dict:
-    out = {}
-    for country, c in (cfg.get("cfd") or {}).items():
-        if (c or {}).get("enabled", True):
-            s = CFDSource(country, c)
-            out[s.name] = s
-    return out
+    return {k: v for k, v in vertical_sources(cfg).items() if k.startswith("cfd_")}
 
 
 def national_sources(cfg: dict) -> dict:

@@ -57,3 +57,25 @@ def test_cfd_tabs_are_separate():
     assert len(tabs["Licences"]) == 2 and len(tabs["United Kingdom (GB)"]) == 2
     assert len(tabs["United Kingdom (CFD)"]) == 2          # the two CFD records merged into one row
     assert "CFD + Other" in tabs["United Kingdom (CFD)"][1]
+
+
+def test_igaming_type_guess_and_tabs():
+    from regtracker.model import guess_business_type as g
+    assert g("Affiliate Media Ltd", "associate", "iGaming") == "Affiliate (guess)"
+    assert g("Paysafe Payment Solutions", "", "iGaming") == "PSP (guess)"
+    assert g("Spin Ltd", "Remote casino", "iGaming", "bitcoincasino.io") == "Crypto casino (guess)"
+    assert g("Relax Gaming Ltd", "Casino Software Provider Authorization - B2B", "iGaming").startswith("Platform")
+    assert g("Bet Co", "Remote betting + Gambling software", "iGaming").startswith("Operator")
+    recs = [{"name": "Bet Co", "jurisdiction": "MT", "active": True, "source": "igm_mt", "licence_type": "B2C",
+             "extra": {"vertical": "iGaming", "business_type": "Operator (guess)"}}]
+    tabs = sheets.build_tabs(recs, [], {})
+    assert "Malta (iGaming)" in tabs and "iGaming (all countries)" in tabs and len(tabs["Licences"]) == 1
+
+
+def test_join_two_files():
+    lic = b"Account Number,Activity\n1,Remote Casino\n1,Gambling Software\n2,Bingo\n"
+    spec = {"url": "x", "name_column": "Account Name", "id_column": "Account Number", "type_from_row": True,
+            "type_patterns": {"software": "B2B", "remote casino": "B2C"}, "_prefix": "igm", "_vertical": "iGaming",
+            "_join": (["Account Number", "Account Name"], {"1": ["1", "Acme Ltd"], "2": ["2", "Hall Ltd"]}, "Account Number")}
+    recs, _ = parse_file(lic, spec, "GB", "UKGC")
+    assert [(r.name, r.licence_type) for r in recs] == [("Acme Ltd", "B2B + B2C")]

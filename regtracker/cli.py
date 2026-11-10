@@ -26,7 +26,7 @@ from .http import make_session
 from .sources import ALL_SOURCES
 from .sources.base import Context, SourceNotReady
 from .sources import fca as fca_mod
-from .sources.national import cfd_sources, national_sources
+from .sources.national import national_sources, vertical_sources
 from .sources.usstates import us_state_sources
 from .store import (append_changes_csv, load_snapshot, recent_changes,
                     save_snapshot, write_licences_csv)
@@ -50,7 +50,7 @@ def make_context(cfg: dict, data_dir: Path) -> Context:
 
 def all_sources(cfg: dict) -> dict:
     """Built-in sources plus the national registers configured in config.yaml."""
-    return {**ALL_SOURCES, **national_sources(cfg), **cfd_sources(cfg), **us_state_sources(cfg)}
+    return {**ALL_SOURCES, **national_sources(cfg), **vertical_sources(cfg), **us_state_sources(cfg)}
 
 
 # national registers inside the EU/EEA are compared with the EU (EBA) copy; others aren't
@@ -74,7 +74,7 @@ def enabled_sources(cfg: dict, only: str | None) -> list:
     known = all_sources(cfg)
     names = [n.strip() for n in only.split(",")] if only else [
         n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) and n != "us_states"
-    ] + list(national_sources(cfg)) + list(cfd_sources(cfg)) + list(us_state_sources(cfg))
+    ] + list(national_sources(cfg)) + list(vertical_sources(cfg)) + list(us_state_sources(cfg))
     names = list(dict.fromkeys(names))   # nat_* can appear both here (for min_hours) and under national:
     unknown = [n for n in names if n not in known]
     if unknown:
@@ -131,9 +131,10 @@ def cmd_run(args, cfg, data_dir) -> int:
     for src in enabled_sources(cfg, args.sources):
         log.info("── %s", src.label)
         conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
-        if src.name.startswith(("nat_", "cfd_")) and "min_hours" not in conf:
-            conf = {**conf, "min_hours": cfg.get("cfd_min_hours" if src.name.startswith("cfd_") else "national_min_hours",
-                                                 24 if src.name.startswith("cfd_") else 12)}
+        if src.name.startswith(("nat_", "cfd_", "igm_")) and "min_hours" not in conf:
+            vert = not src.name.startswith("nat_")
+            conf = {**conf, "min_hours": cfg.get("vertical_min_hours" if vert else "national_min_hours",
+                                                 cfg.get("cfd_min_hours", 24) if vert else 12)}
         min_hours = float(conf.get("min_hours", 0) or 0)
         fp_now = getattr(src, "fingerprint", None)
         fp_saved = data_dir / "snapshots" / f"{src.name}.settings"

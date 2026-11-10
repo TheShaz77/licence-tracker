@@ -232,6 +232,8 @@ def telegram_messages(events: list, sheet_url: str) -> list:
             src = str(e.get("source") or "")
             if src.startswith("cfd_") or src == "fca_cfd":
                 what = f"CFD: {what or ''}"
+            elif src.startswith("igm_"):
+                what = f"iGaming: {what or ''}"
             name = esc(e.get("name") or "")
             link = e.get("register_url") or ""
             name = f'<a href="{esc(link)}">{name}</a>' if link.startswith("http") else name
