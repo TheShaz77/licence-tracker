@@ -2,7 +2,7 @@ name: Daily licence check   # runs every 2 hours despite the name
 
 on:
   schedule:
-    - cron: "17 */2 * * *"   # every 2 hours, at :17 past
+        - cron: "17 */6 * * *"   # every 6 hours, at :17 past
   workflow_dispatch:
     inputs:
       sources:
