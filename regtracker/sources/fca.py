@@ -623,7 +623,15 @@ def cfd_search(client, st: dict, ctx, deadline: float, workers: int, terms: list
             return
         frns, first_page_refs = set(), None
         for page in range(1, 400):
-            body = client.get_body(f"/Search?q={quote(term)}&type=firm&pgnp={page}") or {}
+            try:
+                body = client.get_body(f"/Search?q={quote(term)}&type=firm&pgnp={page}") or {}
+            except Exception as e:
+                # the register's search fails (HTTP 500) for some very common words; skip the word,
+                # keep what earlier pages gave - the full FRN scan still covers these firms
+                ctx.log.warning("FCA CFD search %r page %d failed (%s); skipping the rest of this word",
+                                term, page, str(e)[:120])
+                ss.setdefault("failed_terms", []).append(term)
+                break
             data = body.get("Data") or [] if isinstance(body, dict) else []
             refs = []
             for d in data if isinstance(data, list) else []:

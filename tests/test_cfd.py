@@ -222,3 +222,21 @@ def test_flag_rows_turn_red():
     reqs = calls[0]["requests"]
     assert [list(r)[0] for r in reqs] == ["deleteConditionalFormatRule", "deleteConditionalFormatRule", "addConditionalFormatRule"]
     assert reqs[2]["addConditionalFormatRule"]["rule"]["booleanRule"]["condition"]["values"][0]["userEnteredValue"] == '=$E2<>""'
+
+
+def test_cfd_search_skips_failing_word(tmp_path):
+    import logging, time
+    from regtracker.sources.base import Context
+    (tmp_path / "state").mkdir()
+    ctx = Context(config={}, session=None, today="2026-11-10", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+
+    class Client:
+        def get_body(self, path):
+            if "q=financial" in path:
+                raise RuntimeError("FCA /Search?q=financial failed repeatedly")
+            return {"Data": []}
+    st = {"seed": {}, "tracked": {}}
+    fca.cfd_search(Client(), st, ctx, time.monotonic() + 60, 2, ["financial", "markets"])
+    assert st["cfd_search"]["done"] and st["cfd_search"]["failed_terms"] == ["financial"]
+    assert st["cfd_search"]["terms_done"] == ["financial", "markets"]
