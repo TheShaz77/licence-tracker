@@ -8729,6 +8729,16 @@
 "phone_from": "firm website",
 "website": "https://www.cashminute.com"
 },
+"site:cashmobile.net": {
+"checked": "2026-11-10",
+"email": "support@cashmobile.net",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "+14385588260",
+"phone_from": "firm website",
+"website": "https://cashmobile.net"
+},
 "site:cashpoint.ca": {
 "checked": "2026-11-06",
 "email": "info@cashpoint.ca",
@@ -22269,6 +22279,16 @@
 "phone_from": "firm website",
 "website": "https://ipayapp.io"
 },
+"site:ipayappfinance.com": {
+"checked": "2026-11-10",
+"email": "info@ipayappfinance.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://ipayappfinance.com"
+},
 "site:ipaylinks.com": {
 "checked": "2026-11-07",
 "email": "hr@ipaylinks.com",
@@ -22628,6 +22648,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://jappotransfer.com"
+},
+"site:javasglobal.com": {
+"checked": "2026-11-10",
+"email": "info@javasglobal.com",
+"email_from": "firm website",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.javasglobal.com"
 },
 "site:jcb.com": {
 "checked": "2026-11-07",
@@ -24799,6 +24829,16 @@
 "phone_from": "firm website",
 "website": "https://www.kuberawealth.co.uk"
 },
+"site:kuberpays.com": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://kuberpays.com"
+},
 "site:kucoin.eu": {
 "checked": "2026-11-08",
 "email": "api@kucoin.com",
@@ -26878,6 +26918,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.mastercard.com/UK/open-finance"
+},
+"site:masterremit.com": {
+"checked": "2026-11-10",
+"email": "customerservice@masterremit.com",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.masterremit.com"
 },
 "site:mastertransfer.co.uk": {
 "checked": "2026-11-07",
@@ -37739,6 +37789,16 @@
 "phone_from": "firm website",
 "website": "https://www.remesasvzla.com"
 },
+"site:remi.ae": {
+"checked": "2026-11-10",
+"email": "hello@remi.ae",
+"email_from": "firm website",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://www.remi.ae"
+},
 "site:remiflow.com": {
 "checked": "2026-11-06",
 "email": "",
@@ -40088,6 +40148,16 @@
 "phone": "+44 758 499 9966",
 "phone_from": "firm website",
 "website": "https://www.shamshadservicesltd.co.uk"
+},
+"site:shanchie.ca": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://shanchie.ca"
 },
 "site:shares.io": {
 "checked": "2026-11-08",
@@ -47749,6 +47819,16 @@
 "phone_from": "firm website",
 "website": "https://TrulyFinancial.com"
 },
+"site:trust-pay.ca": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://trust-pay.ca"
+},
 "site:trustbank.sg": {
 "checked": "2026-11-09",
 "email": "",
@@ -48808,6 +48888,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.uqpay.com/en-SG"
+},
+"site:uqualify.co": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://uqualify.co/canada"
 },
 "site:urbned.com": {
 "checked": "2026-11-06",
@@ -53958,6 +54048,16 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.xe.com"
+},
+"site:xellar.co": {
+"checked": "2026-11-10",
+"email": "",
+"email_from": "firm website",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"website": "https://xellar.co"
 },
 "site:xendit.co": {
 "checked": "2026-11-09",
