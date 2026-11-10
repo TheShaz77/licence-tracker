@@ -1,0 +1,16 @@
+url: https://www.mongolbank.mn/en/p/1463
+bytes: 81369  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Банкны нэр', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['№', 'Банкны нэр', 'Гэрчилгээний дугаар', 'Бүртгэлийн дугаар', 'Олгосон огноо']
+data rows: 12  kept: 12
+type values: [('', 12)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+''
+'<head>'
+'    <title>Banking license</title>'
+'    <meta charset="utf-8"/>'
+'    <meta name="viewport" content="width=device-width, initial-scale=1"/>'
+'    <meta name="description" content="1. Банкны зөвшөөрлийн гэрчилгээний мэдээлэл: № Банкны нэр Гэрчилгээний дугаар Бүртгэлийн дугаар Олгосон огноо 1 ХААН банк 02 06 1991.12.05 2 ..."/>'

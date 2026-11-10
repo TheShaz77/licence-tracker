@@ -1,0 +1,16 @@
+url: https://www.gfsc.gg/industry-sectors/banking/regulated-entities
+bytes: 95794  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['GFSC Ref.', 'Name', 'Licence(s)', 'Filters', '']
+data rows: 10  kept: 10
+type values: [('', 10)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">'
+'  <head>'
+'    <meta charset="utf-8" />'
+'<noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>'
+'</noscript><meta name="robots" content="noodp,noydir" />'
+'<link rel="canonical" href="https://www.gfsc.gg/industry-sectors/banking/regulated-entities" />'
+'<meta name="twitter:card" content="summary" />'

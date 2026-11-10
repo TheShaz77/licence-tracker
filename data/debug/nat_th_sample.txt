@@ -1,5 +1,5 @@
 url: https://www.bot.or.th/th/our-roles/payment-systems/payment-act-oversight/business-provider.html
-bytes: 447626  starts: b'\n<!DOCTY'
+bytes: 447637  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'รายชื่อผู้ประกอบธุรกิจ', 'type': 'ประเภทธุรกิจ', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['รายชื่อผู้ประกอบธุรกิจ', 'ประเภทธุรกิจ', 'วันที่อนุญาต']

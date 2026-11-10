@@ -16,7 +16,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory/msb-licensees
-bytes: 892844  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 890775  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Licensee', 'type': 'Type of money services business', 'id': 'Business Registration Number', 'lei': None, 'city': None, 'date': None, 'status': 'State', 'website': None, 'email': None, 'phone': None, 'address': 'Full Address', 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Licensee', 'Business Registration Number', 'Full Address', 'State', 'Premises', 'Status of premises', 'Type of money services business']
@@ -33,7 +33,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory
-bytes: 302346  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 300277  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
@@ -68,3 +68,37 @@ data rows: 27  kept: 27
 type values: [('', 27)]
 first lines:
 '(binary)'
+
+url: https://www.bnm.gov.my/principal-msb-licensees
+bytes: 216311  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'Company Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
+data rows: 15  kept: 15
+type values: [('', 15)]
+first lines:
+''
+''
+''
+''
+''
+''
+''
+''
+
+url: https://www.bnm.gov.my/regulations/fsp-directory?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_approved_payment_system_operators
+bytes: 217405  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'Company Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
+data rows: 15  kept: 15
+type values: [('', 15)]
+first lines:
+''
+''
+''
+''
+''
+''
+''
+''

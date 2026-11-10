@@ -1,135 +1,79 @@
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=1
-bytes: 69093  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
+bytes: 81053  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
+data rows: 239  kept: 238
+type values: [('', 239)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":1,"tipo_psp_nombre":"Proveedor de Servicio de Pago que ofrece Cuenta de Pago","lang":"es","total":239,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), C'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=2
-bytes: 69093  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=2&lang=es
+bytes: 1644  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 5  kept: 5
+type values: [('', 5)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":2,"tipo_psp_nombre":"Iniciador","lang":"es","total":5,"proveedores":[{"codigo":34648,"denominacion_pj":"BINDX SA","denominacion":"BINDX","cuit":30717447286,"domicilio":"MAIPU 1210- PISO 11<br>CABA (CP: C1006ACS), CABA","localidad":"CABA","provincia":"CABA","codigo_postal":'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=4
-bytes: 68396  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=4&lang=es
+bytes: 1036  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 3  kept: 3
+type values: [('', 3)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":4,"tipo_psp_nombre":"Red de Transferencia Electrónica de Fondos","lang":"es","total":3,"proveedores":[{"codigo":34707,"denominacion_pj":"COMPENSADORA ELECTRONICA S.A","denominacion":"COELSA","cuit":30692264785,"domicilio":"Avda. Eduardo Madero 1020, Piso 18<br>Retiro (CP: '
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=5
-bytes: 68404  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=5&lang=es
+bytes: 21805  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoCCT', 'id_proveedor']
+data rows: 67  kept: 67
+type values: [('', 67)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":5,"tipo_psp_nombre":"Aceptador","lang":"es","total":67,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=6
-bytes: 69093  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=6&lang=es
+bytes: 4735  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 15  kept: 15
+type values: [('', 15)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":15,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=7
-bytes: 69093  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
+bytes: 29033  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 95  kept: 95
+type values: [('', 95)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":7,"tipo_psp_nombre":"Agregador","lang":"es","total":95,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=8
-bytes: 69093  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=8&lang=es
+bytes: 6905  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 23  kept: 23
+type values: [('', 23)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":8,"tipo_psp_nombre":"Cobranza extrabancaria","lang":"es","total":23,"proveedores":[{"codigo":34630,"denominacion_pj":"Adelantos Pay S.A.","denominacion":"Adelantos Pay","cuit":30718438906,"domicilio":"Sarmiento 848, piso 6°<br>Ciudad de Buenos Aire (CP: C1041AAR), CABA","l'
 
-url: https://www.bcra.gob.ar/registro-de-proveedores-de-servicios-de-pago-resultados-por-tipo/?tipoPSP=9
-bytes: 68402  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=9&lang=es
+bytes: 1214  starts: b'{"succes'
+error: None
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
+data rows: 4  kept: 4
+type values: [('', 4)]
 first lines:
-'<!DOCTYPE html>'
-'<html lang="es-ES" prefix="og: https://ogp.me/ns#">'
-'<head>'
-'\t<meta charset="UTF-8" />'
-'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'\t<link rel="pingback" href="https://www.bcra.gob.ar/xmlrpc.php" />'
-''
-'\t<script type="text/javascript">'
+'{"success":true,"tipo_psp":9,"tipo_psp_nombre":"Administrador QR","lang":"es","total":4,"proveedores":[{"codigo":34618,"denominacion_pj":"BANELSIP S.A.","denominacion":"Banelsip","cuit":30710903812,"domicilio":"Lavardén 247<br>CABA (CP: C1437FBE), CABA","localidad":"CABA","provincia":"CABA","codigo_'

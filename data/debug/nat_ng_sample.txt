@@ -32,6 +32,16 @@ first lines:
 '\t\t  z = document.getElementsByTagName("*");'
 '\t\t  for (i = 0; i < z.length; i++) {'
 
+url: https://www.cbn.gov.ng/Out/2024/CCD/LIST OF DEPOSIT MONEY BANKS AS AT 26TH APRIL, 2024 (1).pdf
+bytes: 43310  starts: b'%PDF-1.6'
+error: None
+columns used: {'name': 'NAME OF INSTITUTION', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'STATE', 'website': None, 'email': None, 'phone': None, 'address': 'HEAD OFFICE ADDRESS', 'end': None, 'exclude': None, 'require': None}
+headers: ['SN', 'NAME OF INSTITUTION', 'HEAD OFFICE ADDRESS', 'STATE']
+data rows: 50  kept: 39
+type values: [('', 39)]
+first lines:
+'(binary)'
+
 url: https://sec.gov.ng/fintech-and-innovation-hub-finport/registered-fintech-operators/
 bytes: 137140  starts: b'\n<!DOCTY'
 error: None

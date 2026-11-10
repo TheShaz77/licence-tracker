@@ -14,3 +14,20 @@ first lines:
 '<link rel="stylesheet" href="/static/eng/css/new/sub.css" />'
 '    <link rel="stylesheet" href="/static/eng/css/new/sub_new.css" />'
 '    <link rel="stylesheet" href="/static/eng/css/new/sub_new1.css" />'
+
+url: https://www.fss.or.kr/eng/fncco/engCoreMngmt/fisisBank.do?menuNo=400114
+bytes: 180752  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': '(guessed) Category', 'type': 'Category', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Category', 'Basic Financial Information', 'Key Management Indicators']
+data rows: 21  kept: 21
+type values: [('Total Assets', 1), ('Busan Bank Co., Ltd.', 1), ('Citibank Korea', 1), ('Industrial Bank of Korea', 1), ('Jeju Bank', 1), ('Jeonbuk Bank', 1), ('K bank', 1), ('KEB Hana Bank', 1), ('KakaoBank of Korea Corp.', 1), ('Kookmin Bank', 1), ('Korea Development Bank', 1), ('Kwangju Bank', 1), ('Kyongnam Bank Co.,Ltd', 1), ('NongHyup Bank', 1), ('Shinhan Bank', 1), ('Standard Chartered Bank Korea Limited', 1), ('Suhyup Bank', 1), ('Toss Bank', 1), ('Woori Bank', 1), ('iM Bank', 1), ('Domestic Banks', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<title>Banks | Key Statistics by Financial Industry | Financial Statistics | </title>'
+'<link rel="stylesheet" href="/static/eng/css/new/sub.css" />'
+'    <link rel="stylesheet" href="/static/eng/css/new/sub_new.css" />'
+'    <link rel="stylesheet" href="/static/eng/css/new/sub_new1.css" />'

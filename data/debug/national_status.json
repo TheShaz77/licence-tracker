@@ -23,16 +23,15 @@
   "www.cba.am homepage": "probe saved earlier this week"
  },
  "AR": {
-  "BCRA EFT networks": "read failed: no matching table on the page; table headers were: []",
-  "BCRA PSP app script": "probe saved earlier this week",
-  "BCRA QR administrators": "read failed: no matching table on the page; table headers were: []",
-  "BCRA acceptors": "read failed: no matching table on the page; table headers were: []",
-  "BCRA acquirers": "read failed: no matching table on the page; table headers were: []",
-  "BCRA aggregators": "read failed: no matching table on the page; table headers were: []",
-  "BCRA collection services": "read failed: no matching table on the page; table headers were: []",
+  "BCRA EFT networks": "ok: 3 firms",
+  "BCRA QR administrators": "ok: 4 firms",
+  "BCRA acceptors": "ok: 67 firms",
+  "BCRA acquirers": "ok: 15 firms",
+  "BCRA aggregators": "ok: 95 firms",
+  "BCRA collection services": "ok: 23 firms",
   "BCRA homepage": "probe saved earlier this week",
-  "BCRA payment account providers": "read failed: no matching table on the page; table headers were: []",
-  "BCRA payment initiators": "read failed: no matching table on the page; table headers were: []",
+  "BCRA payment account providers": "ok: 238 firms",
+  "BCRA payment initiators": "ok: 5 firms",
   "CNV homepage": "probe saved earlier this week",
   "CNV virtual asset service providers": "HTTP 404",
   "date": "2026-11-10"
@@ -70,6 +69,7 @@
   "www.centralbank.org.bb homepage": "probe saved earlier this week"
  },
  "BD": {
+  "BB mobile financial services providers": "ok: 14 firms",
   "BB payment system operators": "HTTP 404",
   "date": "2026-11-10",
   "www.bb.org.bd homepage": "probe saved earlier this week"
@@ -183,6 +183,7 @@
   "date": "2026-11-09"
  },
  "ET": {
+  "NBE banks": "ok: 33 firms",
   "NBE payment instrument issuers": "HTTP 404",
   "date": "2026-11-10",
   "nbe.gov.et homepage": "probe saved earlier this week"
@@ -202,6 +203,7 @@
   "nbg.gov.ge homepage": "probe saved earlier this week"
  },
  "GG": {
+  "GFSC banks": "ok: 10 firms",
   "GFSC regulated entities": "probe saved earlier this week",
   "Registered Entities": "probe saved earlier this week",
   "Registered Entities (2)": "probe saved earlier this week",
@@ -333,6 +335,7 @@
   "date": "2026-11-10"
  },
  "KR": {
+  "FSS banks": "ok: 21 firms",
   "FSS financial institutions directory": "ok: 10 firms",
   "FSS-Supervised Financial Institutions": "probe saved earlier this week",
   "KoFIU (Korean) VASP reports": "probe saved earlier this week",
@@ -411,6 +414,7 @@
  "MN": {
   "Banking license": "probe saved earlier this week",
   "BoM banking supervision": "probe saved earlier this week",
+  "BoM banks": "ok: 12 firms",
   "Difference Between Central Bank and Commercial Ban": "probe saved earlier this week",
   "FRC homepage": "probe saved earlier this week",
   "Licensed Entities": "probe saved earlier this week",
@@ -449,9 +453,11 @@
   "BNM B2B remittance": "ok: 27 firms",
   "BNM FSP directory (banks)": "ok: 55 firms",
   "BNM MSB licensees": "ok: 252 firms",
+  "BNM approved payment system operators": "ok: 15 firms",
   "BNM digital MSB channels": "ok: 37 firms",
   "BNM non-bank e-money issuers": "ok: 49 firms",
   "BNM payment system regulatees": "probe saved earlier this week",
+  "BNM principal MSB licensees": "ok: 15 firms",
   "Principal Money Services Business Licensees": "probe saved earlier this week",
   "SC registered digital asset exchanges": "probe saved earlier this week",
   "date": "2026-11-10"
@@ -468,7 +474,7 @@
   "www.bon.com.na homepage": "probe saved earlier this week"
  },
  "NG": {
-  "CBN financial institutions (banks": "HTTP 404",
+  "CBN deposit money banks": "ok: 39 firms",
   "CBN licensed payment service providers": "ok: 194 firms",
   "CBN money transfer operators": "ok: 108 firms",
   "SEC digital asset operators (ARIP)": "ok: 2 firms",
@@ -599,13 +605,13 @@
  },
  "TH": {
   "1) Depositary Corporations   For example: commerci": "probe saved earlier this week",
+  "BOT money changers": "ok: 1946 firms",
   "BOT payment business providers": "ok: 144 firms",
   "Digital Asset Businesses": "probe saved earlier this week",
   "SEC digital asset operators": "HTTP 403",
   "date": "2026-11-10",
   "www.sec.or.th homepage": "HTTP 403",
-  "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved earlier this week",
-  "เช็กข้อมูลผู้ประกอบธุรกิจการซื้อและขายธนบัตรต่างปร": "ok: 1946 firms"
+  "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved earlier this week"
  },
  "TJ": {
   "NBT payment organizations": "HTTP 404",
@@ -670,6 +676,8 @@
   "date": "2026-11-09"
  },
  "UY": {
+  "BCU banks": "ok: 11 firms",
+  "BCU institution lists": "probe saved (128181 bytes, 10 linked pages)",
   "BCU payment and e-money institutions": "HTTP 404",
   "BCU virtual asset service providers": "HTTP 404",
   "date": "2026-11-10",
