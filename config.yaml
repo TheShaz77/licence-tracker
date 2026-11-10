@@ -490,6 +490,15 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: RBI scheduled commercial banks
+      url: https://www.rbi.org.in/scripts/bs_viewcontent.aspx?Id=3657
+      format: html_table
+      all_tables: true
+      columns:
+      - 'No'
+      - Name
+      name_exclude: ^name of (the )?(bank|rrb)$
+      licence_type: Scheduled commercial bank (RBI)
   TR:
     regulator: CBRT
     files:
@@ -605,6 +614,16 @@ national:
       probe: true
       follow: daftar|penyelenggara|uang elektronik|PJP|transfer dana
       follow_max: 10
+    - label: BI licensed payment system institutions
+      url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
+      format: html_table
+      keep_all: true
+      default_type: Payment system provider (BI)
+    - label: BI licensed institutions (probe)
+      url: https://www.bi.go.id/en/layanan/informasi-perizinan/default.aspx
+      probe: true
+      follow: sistem-pembayaran|payment|money changer|kupva|penyelenggara|\.xlsx?|\.pdf
+      follow_max: 12
   TH:
     regulator: BOT
     files:
@@ -676,6 +695,12 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: CBO licensed money exchange companies
+      url: https://cbo.gov.om/Pages/MoneyExchangeCompanies.aspx
+      format: text_names
+      name_regex: (exchange|unimoni|money|remit|forex)\b[^,]{0,25}$
+      name_exclude: central bank|money exchange companies$|^money exchange
+      licence_type: Money exchange company (CBO)
   EG:
     regulator: CBE
     files:
@@ -731,6 +756,15 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: BoN authorised dealers with limited authority (bureaux de change)
+      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealer-in-Foreign-Exchange-with-Limited.aspx
+      format: text_names
+      licence_type: Authorised dealer in foreign exchange with limited authority (BoN)
+      name_exclude: \bbank\b
+    - label: BoN authorised dealers in foreign exchange (banks)
+      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealers-in-Foreign-Exchange.aspx
+      format: text_names
+      licence_type: Bank - authorised dealer in foreign exchange (BoN)
   AR:
     regulator: BCRA
     files:
@@ -841,6 +875,36 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: SFC establecimientos bancarios
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=10916
+      keep_all: true
+      licence_type: Bank (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
+    - label: SFC compañías de financiamiento
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=10911
+      keep_all: true
+      licence_type: Financing company (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
+    - label: SFC cooperativas financieras
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=10912
+      keep_all: true
+      licence_type: Financial cooperative (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
+    - label: SFC corporaciones financieras
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=10913
+      keep_all: true
+      licence_type: Financial corporation (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
+    - label: SFC SEDPE (e-money / electronic deposits and payments)
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=1028765
+      keep_all: true
+      licence_type: SEDPE - electronic deposits and payments company (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
+    - label: SFC low-value payment system operators
+      url: https://www.superfinanciera.gov.co/loader.php?lServicio=Tools2&lTipo=descargas&lFuncion=descargar&idFile=10904
+      keep_all: true
+      licence_type: Low-value payment system operator (SFC)
+      register_url: https://www.superfinanciera.gov.co/publicaciones/13067
   PE:
     regulator: SBS
     files:
@@ -888,6 +952,11 @@ national:
       probe: true
       follow: Instituciones_Lst|dinero electr|pago|cambio|activos virtuales|remes
       follow_max: 10
+    - label: BCU exchange houses
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_cambio.aspx
+      format: html_table
+      name_column: RAZÓN SOCIAL
+      licence_type: Exchange house (BCU)
   EC:
     regulator: BCE
     files:
@@ -1000,6 +1069,15 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: CBA financial institutions under supervision (names)
+      url: https://www.cbaruba.org/financial-institutions-under-supervision-of-the-central-bank/
+      format: text_names
+      name_exclude: insurance|assurance|pension|verzeker|stichting|reinsur|trust company|central bank|reserve bank|leven|schade|life\b|seguros|nagico|assurant|insur|trust|management|living|union caribe|aresta|mahalaxmi
+      type_from_row: true
+      type_patterns:
+        \bbank\b|banco|bancorp: Bank (CBA)
+        moneygram|western union|money|transfer|remit|cambio|exchange: Money transfer company (CBA)
+        .: Supervised financial institution (CBA)
   TC:
     regulator: FSC
     files:
@@ -1017,6 +1095,10 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: TCI FSC licensed money transmitters (names)
+      url: https://www.tcifsc.tc/money-transmitters-licensed-money-transmitters
+      format: text_names
+      licence_type: Money transmitter (TCI FSC)
   BZ:
     regulator: CBB
     files:
@@ -1033,6 +1115,11 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: CBB payment service providers (names)
+      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
+      format: text_names
+      name_exclude: development finance|insurance|assurance|pension|verzeker|stichting|reinsur|trust company|central bank|reserve bank
+      licence_type: Payment service provider (Central Bank of Belize)
   LC:
     regulator: ECCB
     files:
@@ -1245,6 +1332,21 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: NBS register of payment institutions
+      url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi
+      format: html_table
+      keep_all: true
+      default_type: Payment institution (NBS)
+    - label: NBS register of e-money institutions
+      url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-ien
+      format: html_table
+      keep_all: true
+      default_type: Electronic money institution (NBS)
+    - label: NBS payment/e-money registers (probe)
+      url: https://nbs.rs/en/finansijske-institucije/pi-ien/
+      probe: true
+      follow: registar|lista|\.pdf|\.xlsx?
+      follow_max: 8
   ME:
     regulator: CBCG
     files:
@@ -1278,6 +1380,16 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: BNM register of e-money issuers
+      url: https://www.bnm.md/print/content/registrul-societatilor-emitente-de-moneda-electronica-1
+      format: html_table
+      keep_all: true
+      default_type: E-money issuer (BNM)
+    - label: BNM registers (probe)
+      url: https://bnm.md/en/print/node/54787
+      probe: true
+      follow: regist|prestator|plat|moneda|payment|e-money
+      follow_max: 8
   XK:
     regulator: CBK
     files:
@@ -1303,6 +1415,20 @@ national:
       probe: true
       follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
       follow_max: 15
+    - label: NBG registered payment service providers
+      url: https://nbg.gov.ge/en/payment-system/providers
+      format: html_table
+      keep_all: true
+      default_type: Payment service provider (NBG)
+    - label: NBG payment service providers (names)
+      url: https://nbg.gov.ge/en/payment-system/providers
+      format: text_names
+      licence_type: Payment service provider (NBG)
+    - label: NBG VASP supervision (probe)
+      url: https://nbg.gov.ge/en/page/virtual-asset-service-providers-vasps
+      probe: true
+      follow: regist|list|vasp|\.pdf|\.xlsx?
+      follow_max: 8
   MN:
     regulator: BoM
     files:
@@ -1416,6 +1542,24 @@ national:
       probe: true
       follow: licens|list|bank|remit|money|payment|foreign exchange|\.pdf
       follow_max: 15
+    - label: RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)
+      url: https://www.rbf.gov.fj/core-functions/financial-stability/licensing/
+      format: html_table
+      all_tables: true
+      columns:
+      - Name
+      - Country of incorporation
+      - Country of ownership
+      - Activity
+      name_exclude: ^institution name$
+      type_from_row: true
+      exclude_column: section
+      exclude_pattern: insurance|capital markets
+      type_patterns:
+        payment service: Payment service provider (RBF)
+        foreign exchange|money changer: Restricted foreign exchange dealer / money changer (RBF)
+        \b[A-Z]{4}FJ[A-Z0-9]{2}\b: Bank (RBF)
+        .: Credit institution (RBF)
   WS:
     regulator: CBS
     files:
@@ -1443,6 +1587,20 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: NRBT licensed institutions (names)
+      url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
+      format: text_names
+      type_from_row: true
+      name_exclude: about the reserve
+      type_patterns:
+        \bbank\b: Bank (NRBT)
+        microfinance|mincrofinance: Microfinance institution (NRBT)
+        .: Foreign exchange dealer / money transfer (NRBT)
+    - label: NRBT licensed foreign exchange dealers (names)
+      url: https://www.reservebank.to/index.php/news/updated-list-of-the-licensed-foreign-exchange-dealers
+      format: text_names
+      licence_type: Foreign exchange dealer / money transfer (NRBT)
+      name_exclude: \bbank\b
   SB:
     regulator: CBSI
     files:
@@ -1506,6 +1664,22 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: RBM list of licensed and registered financial institutions (PDF)
+      url: https://www.rbm.mw/Home/GetContentFile/?ContentID=63841
+      format: pdf_sections
+      name_column: name
+      type_column: section
+      type_patterns:
+        \bBANKS\b: Bank (RBM)
+        DISCOUNT HOUSE: Discount house (RBM)
+        NON-DEPOSIT TAKING MICROFINANCE: Non-deposit-taking microfinance institution (RBM)
+        DEPOSIT TAKING MICROFINANCE: Deposit-taking microfinance institution (RBM)
+        MICROFINANCE|MICROCREDIT: Microfinance institution (RBM)
+        FINANCE COMPAN: Finance company (RBM)
+        FINANCIAL COOPERATIVE: Financial cooperative / SACCO (RBM)
+        DEVELOPMENT FINANCE: Development finance institution (RBM)
+        PAYMENT|E-MONEY|MOBILE MONEY|REMITT: Payment / e-money / remittance provider (RBM)
+        FOREX|FOREIGN EXCHANGE|EXCHANGE BUREAU|BUREAU DE CHANGE: Foreign exchange bureau (RBM)
   SZ:
     regulator: CBE
     files:
@@ -1570,6 +1744,14 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: FSA licensed VASPs
+      url: https://fsaseychelles.sc/vasp/licensed-vasps
+      format: text_regex
+      raw_html: true
+      row_regex: id="heading-(?P<type>[a-z0-9-]+?)-\d+"(?:(?!id="heading-).)*?<h5>(?P<name>[^<]+)</h5>
+      type_patterns:
+        assessment: VASP applicant under assessment (FSA)
+        .: Virtual asset service provider (FSA)
   CV:
     regulator: BCV
     files:
@@ -1603,6 +1785,20 @@ national:
       probe: true
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
+    - label: CBG finance companies and microfinance (VISACAs)
+      url: https://www.cbg.gm/list-of-licensed-microfinance-institutions
+      format: html_table
+      all_tables: true
+      columns:
+      - Name
+      - Address
+      - Contact
+      name_strip: \s*Status\s*:\s*\w+\s*$
+      name_exclude: ^(finance company|visaca)$
+      type_from_row: true
+      type_patterns:
+        visaca: Village savings and credit association (CBG)
+        .: Finance company / microfinance (CBG)
   LR:
     regulator: CBL
     files:
@@ -1640,9 +1836,44 @@ national:
       probe: true
       follow: institui|supervis|lista|bancos|autoriz
       follow_max: 12
-# Contact details (website / email / phone). Only fills blanks; a value the
-# register itself gives is never overwritten. The "Contact found via" column
-# says where each one came from.
+
+  SA:
+    regulator: SAMA
+    files:
+    - label: SAMA licensed payment service providers (EMIs and PIs)
+      url: https://www.sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
+      format: html_table
+      name_column: Entity Name
+      type_column: Activity
+      id_column: Unified Number
+      type_patterns:
+        EMI|e-?money|electronic money: Electronic money institution (SAMA)
+        .: Payment institution (SAMA)
+    - label: SAMA licensed entities (probe)
+      url: https://www.sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
+      probe: true
+      follow: LicenseEntities|licensed|money exchange|finance compan|fintech|bank
+      follow_max: 15
+# Do-not-contact list and OpenPayd competitors (flags/do_not_contact.txt, flags/groups.yaml).
+# Flagged firms are coloured red on every tab, with the reason in "Flag reason". Each run also looks
+# up related entities (parents / subsidiaries) of listed companies in GLEIF and Wikidata, a slice
+# at a time, and re-checks each company monthly.
+flags:
+  enabled: true
+  seconds_per_run: 900
+  refresh_days: 30
+
+# Banks (and other financial firms) for countries with no readable official list (or a regulator that blocks automated
+# access): Wikidata (CC0) entities that are banks there, plus Wikipedia's "List of banks in ...".
+# Labelled "licence not checked"; banks an official list already has are left out of the sheet.
+wiki_banks:
+  min_hours: 72
+  countries: [AD, AG, AI, AR, AW, BD, BH, BJ, BM, BN, BS, BT, BZ, CG, CI, CL, CN, CO, CR, CV, CW, DJ, DM, DO, DZ, EC, EG, ER, FM, GA, GD, GE, GI, GQ, GT, GY, HN, ID, IL, IM, JE, KI, KM, KN, KY, LC, LK, LR, LS, MD, ME, MG, MH, MK, MO, MR, MS, MU, MV, MX, NA, NE, NR, NZ, OM, PE, PH, PR, PW, PY, QA, RS, RW, SA, SB, SC, SL, SM, SR, ST, SV, SX, SZ, TD, TG, TH, TL, TO, TV, TW, VA, VC, WS, XK, ZM]
+  # payment / e-money / money transfer / FX / crypto firms (all countries outside the UK, EU/EEA,
+  # Switzerland, the US and Canada, which have their own registers)
+  fi_countries: [AD, AE, AG, AI, AR, AU, AW, BD, BH, BJ, BM, BN, BR, BS, BT, BZ, CG, CI, CL, CN, CO, CR, CV, CW, DJ, DM, DO, DZ, EC, EG, ER, ET, FJ, FM, GA, GD, GE, GG, GI, GM, GQ, GT, GY, HK, HN, ID, IL, IM, IN, JE, KI, KM, KN, KR, KY, LC, LK, LR, LS, MC, MD, ME, MG, MH, MK, MN, MO, MR, MS, MU, MV, MW, MX, MY, NA, NE, NG, NR, NZ, OM, PE, PH, PR, PW, PY, QA, RS, RW, SA, SB, SC, SG, SL, SM, SR, ST, SV, SX, SZ, TC, TD, TG, TH, TL, TO, TR, TV, TW, UY, VA, VC, WS, XK, ZA, ZM]
+  pages: {}
+
 # ----------------------------------------------------------------------------- CFD vertical ---
 # Retail CFD/FX brokers, institutional / prime brokers, liquidity providers and prop firms.
 # Same reader options as national: above; firms go to "Country (CFD)" tabs and the
@@ -2808,6 +3039,9 @@ igaming:
       licence_type: Internet gaming vendor registration (NJ DGE; list last updated March 2020)
       register_url: https://www.nj.gov/lps/ge/docs/InternetGaming/AncillaryCompaniesVendor.pdf
 
+# Contact details (website / email / phone). Only fills blanks; a value the
+# register itself gives is never overwritten. The "Contact found via" column
+# says where each one came from.
 contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
   parallel_sites: 24   # firm websites read at once by the contacts job (each is a different site)

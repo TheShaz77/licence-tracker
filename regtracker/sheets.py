@@ -157,6 +157,34 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     return tabs
 
 
+FLAG_HEADER = "Do not contact / competitor"
+
+
+def highlight_flags(sh, tabs: dict, existing: dict) -> None:
+    meta = sh.fetch_sheet_metadata({"fields": "sheets(properties(sheetId,title),conditionalFormats)"})
+    rules = {s["properties"]["sheetId"]: len(s.get("conditionalFormats") or []) for s in meta.get("sheets", [])}
+    reqs = []
+    for title, rows in tabs.items():
+        if not rows or FLAG_HEADER not in rows[0]:
+            continue
+        sid = existing[title]
+        for i in reversed(range(rules.get(sid, 0))):        # replace the rule written last run
+            reqs.append({"deleteConditionalFormatRule": {"sheetId": sid, "index": i}})
+        col = rows[0].index(FLAG_HEADER)
+        letter = ""
+        n = col + 1
+        while n:
+            n, rem = divmod(n - 1, 26)
+            letter = chr(65 + rem) + letter
+        reqs.append({"addConditionalFormatRule": {"index": 0, "rule": {
+            "ranges": [{"sheetId": sid, "startRowIndex": 1, "endRowIndex": max(len(rows), 2),
+                        "startColumnIndex": 0, "endColumnIndex": max(len(r) for r in rows)}],
+            "booleanRule": {"condition": {"type": "CUSTOM_FORMULA", "values": [{"userEnteredValue": f'=${letter}2<>""'}]},
+                            "format": {"backgroundColor": {"red": 0.96, "green": 0.6, "blue": 0.6}}}}}})
+    if reqs:
+        sh.batch_update({"requests": reqs})
+
+
 def _a1(title: str, row: int) -> str:
     return "'" + title.replace("'", "''") + f"'!A{row}"
 
@@ -218,6 +246,12 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
                 data, size = [], 0
     if data:
         sh.values_batch_update(body={"valueInputOption": "RAW", "data": data})
+
+    # 4. rows flagged "do not contact" / competitor turn red (one conditional-format rule per tab)
+    try:
+        highlight_flags(sh, tabs, existing)
+    except Exception as e:
+        log.warning("Could not colour flagged rows red: %s", e)
 
     n_country = len(tabs) - len(FIXED_TABS) - len(extra_tabs or {})
     log.info("Google Sheet updated: %d licences, %d country tabs, %d change rows",

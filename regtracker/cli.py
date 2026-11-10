@@ -50,7 +50,16 @@ def make_context(cfg: dict, data_dir: Path) -> Context:
 
 def all_sources(cfg: dict) -> dict:
     """Built-in sources plus the national registers configured in config.yaml."""
-    return {**ALL_SOURCES, **national_sources(cfg), **vertical_sources(cfg), **us_state_sources(cfg)}
+    return {**ALL_SOURCES, **national_sources(cfg), **vertical_sources(cfg), **us_state_sources(cfg),
+            **wiki_bank_sources(cfg)}
+
+
+def wiki_bank_sources(cfg: dict) -> dict:
+    wb = cfg.get("wiki_banks") or {}
+    if not wb.get("countries") or not wb.get("enabled", True):
+        return {}
+    from .sources.wiki_banks import WikiBanksSource
+    return {"wiki_banks": WikiBanksSource(wb)}
 
 
 # national registers inside the EU/EEA are compared with the EU (EBA) copy; others aren't
@@ -74,7 +83,8 @@ def enabled_sources(cfg: dict, only: str | None) -> list:
     known = all_sources(cfg)
     names = [n.strip() for n in only.split(",")] if only else [
         n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) and n != "us_states"
-    ] + list(national_sources(cfg)) + list(vertical_sources(cfg)) + list(us_state_sources(cfg))
+    ] + list(national_sources(cfg)) + list(vertical_sources(cfg)) + list(us_state_sources(cfg)) + list(
+        wiki_bank_sources(cfg))
     names = list(dict.fromkeys(names))   # nat_* can appear both here (for min_hours) and under national:
     unknown = [n for n in names if n not in known]
     if unknown:
@@ -95,6 +105,16 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
         if name == "eba":  # national register replaces the EU copy where we have one
             snap = [r for r in snap if r.get("jurisdiction") not in covered]
         records.extend(snap)
+    # Wikidata / Wikipedia banks only fill gaps: drop any the country's official lists already have
+    if any(r.get("source") == "wiki_banks" for r in records):
+        from .sources.national import match_name
+        official = {((r.get("jurisdiction") or "").upper(), match_name(r.get("name", "")))
+                    for r in records if r.get("source") != "wiki_banks"}
+        before = len(records)
+        records = [r for r in records if r.get("source") != "wiki_banks"
+                   or ((r.get("jurisdiction") or "").upper(), match_name(r.get("name", ""))) not in official]
+        if before != len(records):
+            log.info("wiki_banks: %d banks already on official lists left out", before - len(records))
     # While the one-off FCA scan is running, show the UK firms found so far.
     # They are not diffed (no alerts) until the scan completes.
     if not load_snapshot(data_dir, "fca"):
@@ -109,6 +129,8 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
     if any(r.get("source") in ("fincen", "fincen_os") or str(r.get("source", "")).startswith("us_") for r in records):
         log.info("US MSB/state licence linking: %s",
                  usa.link(records, contacts.load(data_dir, contacts.WEB_STATE)))
+    from . import flags
+    log.info("Do-not-contact / competitor flags: %d firms flagged", flags.annotate(records, data_dir))
     return records
 
 
@@ -131,6 +153,8 @@ def cmd_run(args, cfg, data_dir) -> int:
     for src in enabled_sources(cfg, args.sources):
         log.info("── %s", src.label)
         conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
+        if src.name == "wiki_banks" and "min_hours" not in conf:
+            conf = {**conf, "min_hours": (cfg.get("wiki_banks") or {}).get("min_hours", 72)}
         if src.name.startswith(("nat_", "cfd_", "igm_")) and "min_hours" not in conf:
             vert = not src.name.startswith("nat_")
             conf = {**conf, "min_hours": cfg.get("vertical_min_hours" if vert else "national_min_hours",
@@ -206,6 +230,13 @@ def cmd_run(args, cfg, data_dir) -> int:
     if all_events:
         append_changes_csv(data_dir, all_events)
 
+    fl = cfg.get("flags") or {}
+    if fl.get("enabled", False) and not args.sources:
+        try:      # related entities of do-not-contact companies and competitors (GLEIF / Wikidata)
+            from . import flags
+            flags.expand(ctx, float(fl.get("seconds_per_run", 900)), int(fl.get("refresh_days", 30)))
+        except Exception:
+            log.exception("Do-not-contact related-entity lookup failed (flags from the lists still apply)")
     covered = covered_countries(cfg, data_dir)
     records = assemble(cfg, data_dir, ctx, covered)
     if (cfg.get("contacts") or {}).get("enabled", True) and not args.sources \

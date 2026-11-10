@@ -114,3 +114,111 @@ def test_igaming_supplier_and_affiliate_licences():
     from regtracker.model import guess_business_type as g
     assert g("Tipico Services Limited", "Marketing / affiliate services licence", "iGaming") == "Affiliate (guess)"
     assert g("Geocomply Inc.", "Internet gaming vendor registration", "iGaming").startswith("Supplier")
+
+
+def test_wiki_banks_parsing_and_fetch(tmp_path):
+    import logging
+    from regtracker.sources.base import Context
+    from regtracker.sources.wiki_banks import WikiBanksSource, parse_wikitext
+    text = """Intro about [[Banking in Thailand]].
+== Central bank ==
+* [[Bank of Thailand]]
+== Commercial banks ==
+{| class="wikitable"
+! Name !! Owner
+|-
+| [[Bangkok Bank]] || [[Sophonpanich family]]
+|-
+| [[Kasikornbank|Kasikorn Bank]] || listed
+|-
+| [[Krung Thai Bank]] || [[Ministry of Finance (Thailand)|Ministry of Finance]]
+|}
+* Thai Credit Bank
+== See also ==
+* [[List of banks in Asia]]
+"""
+    names = [n for n, _ in parse_wikitext(text, "Thailand")]
+    assert names == ["Bangkok Bank", "Kasikorn Bank", "Krung Thai Bank", "Thai Credit Bank"]
+
+    class Resp:
+        def __init__(self, j): self.j = j
+        def raise_for_status(self): pass
+        def json(self): return self.j
+
+    class Sess:
+        def get(self, url, params=None, **kw):
+            if "sparql" in url:
+                return Resp({"results": {"bindings": [
+                    {"item": {"value": "http://www.wikidata.org/entity/Q1"}, "itemLabel": {"value": "Bangkok Bank"},
+                     "website": {"value": "https://www.bangkokbank.com"}},
+                    {"item": {"value": "http://www.wikidata.org/entity/Q2"}, "itemLabel": {"value": "Q2"}}]}})
+            if params and params.get("action") == "parse":
+                return Resp({"parse": {"title": "List of banks in Thailand", "wikitext": text}})
+            return Resp({"entities": {}})
+    ctx = Context(config={}, session=Sess(), today="2026-11-10", data_dir=tmp_path, excluded_countries={"KP"},
+                  log=logging.getLogger("t"))
+    recs = WikiBanksSource({"countries": ["TH", "KP"]}).fetch(ctx)
+    assert sorted(r.name for r in recs) == ["Bangkok Bank", "Kasikorn Bank", "Krung Thai Bank", "Thai Credit Bank"]
+    assert next(r for r in recs if r.name == "Bangkok Bank").website == "https://www.bangkokbank.com"
+
+
+def test_wiki_other_fis(tmp_path):
+    import logging
+    from regtracker.sources.base import Context
+    from regtracker.sources.wiki_banks import WikiBanksSource
+
+    class Resp:
+        def __init__(self, j): self.j = j
+        def raise_for_status(self): pass
+        def json(self): return self.j
+
+    class Sess:
+        def get(self, url, params=None, **kw):
+            q = (params or {}).get("query", "")
+            if "rdfs:label" in q:
+                return Resp({"results": {"bindings": [
+                    {"item": {"value": "http://www.wikidata.org/entity/Q9"}, "itemLabel": {"value": "Bitkub"},
+                     "lbl": {"value": "cryptocurrency exchange", "xml:lang": "en"}},
+                    {"item": {"value": "http://www.wikidata.org/entity/Q8"}, "itemLabel": {"value": "TrueMoney"},
+                     "lbl": {"value": "mobile payment"}}]}})
+            return Resp({"results": {"bindings": []}, "entities": {}})
+    ctx = Context(config={}, session=Sess(), today="2026-11-10", data_dir=tmp_path, excluded_countries=set(),
+                  log=logging.getLogger("t"))
+    recs = WikiBanksSource({"fi_countries": ["TH"]}).fetch(ctx)
+    assert {r.name: r.licence_type.split(" (")[0] for r in recs} == {
+        "Bitkub": "Crypto / virtual asset service provider", "TrueMoney": "Payment / e-money company"}
+
+
+def test_do_not_contact_and_competitor_flags(tmp_path):
+    from regtracker.flags import COMP, DNC, Flagger, annotate
+    (tmp_path / "flags").mkdir()
+    (tmp_path / "flags" / "do_not_contact.txt").write_text("Account Name\nPay Perform OU\nGlobal Re LLC\nCapital.com\nMonex Ltd S.R.O.\n")
+    (tmp_path / "flags" / "groups.yaml").write_text(
+        "dnc_groups:\n  Bitstamp:\n    match: ['\\bbitstamp\\b']\n    owners: [Robinhood Markets, Inc.]\n"
+        "competitors:\n  Modulr: {match: ['^modulr\\b']}\n")
+    f = Flagger(None, root=tmp_path / "flags")
+    assert f.flag("Pay Perform Limited")[0] == DNC
+    assert f.flag("Global Reach Financial Solutions") is None          # whole words only
+    assert f.flag("Capital Com SV Investments Ltd")[0] == DNC
+    assert f.flag("Capital Computer Bureau") is None
+    assert "different legal form" in f.flag("Monex Inc")[1]
+    assert f.flag("Bitstamp Europe S.A.")[0] == DNC
+    assert f.flag("ROBINHOOD MARKETS INC")[1].startswith("Owns Bitstamp")
+    assert f.flag("Modulr FS Limited") == (COMP, "OpenPayd competitor (Modulr)")
+    assert f.flag("Wise Payments Limited") is None
+
+
+def test_flag_rows_turn_red():
+    from regtracker import sheets
+    calls = []
+
+    class Sh:
+        def fetch_sheet_metadata(self, params):
+            return {"sheets": [{"properties": {"sheetId": 1, "title": "Licences"}, "conditionalFormats": [{}, {}]}]}
+        def batch_update(self, body):
+            calls.append(body)
+    tabs = {"Licences": [["Jurisdiction", "Country", "Regulator", "Firm name", "Do not contact / competitor"], ["GB"] * 5]}
+    sheets.highlight_flags(Sh(), tabs, {"Licences": 1})
+    reqs = calls[0]["requests"]
+    assert [list(r)[0] for r in reqs] == ["deleteConditionalFormatRule", "deleteConditionalFormatRule", "addConditionalFormatRule"]
+    assert reqs[2]["addConditionalFormatRule"]["rule"]["booleanRule"]["condition"]["values"][0]["userEnteredValue"] == '=$E2<>""'

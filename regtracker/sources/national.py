@@ -241,6 +241,67 @@ def page_text_lines(raw: bytes) -> list:
     return [re.sub(r"[ \t\xa0]+", " ", l).strip() for l in text.split("\n") if l.strip()]
 
 
+LEGAL_SUFFIX = re.compile(
+    r"(\b(Ltd|Limited|LLC|L\.L\.C|Inc|Incorporated|Company|Corporation|Corp|JSC|PJSC|CJSC|LLP|Pte|PLC|GmbH|SRL|"
+    r"SARL|SAS|SpA|S\.p\.A|B\.V|N\.V|AG|SAL|OOO|Sh\.p\.k|d\.o\.o|a\.d|SAC|EIRL|Bhd|Berhad|Tbk|Co|"
+    r"S\.A\.?C?|SA|S\.R\.L|Lda|Ltda|PT|CV|WLL|W\.L\.L|BSC|QSC|QPSC|SAOG|SAOC|KSC|PSC|FZ-?LLC|FZE|FZCO|"
+    r"Limitada|Sociedad An[oó]nima|S\.A\.S|Cia|Cooperative|Bank|Banque|Banco)\b\.?|\)\s*Ltd\.?|"
+    r"(股份)?有限公司|公司|株式会社|주식회사|銀行|银行)\s*$", re.I)
+
+
+def read_text_names(raw: bytes, spec: dict) -> tuple:
+    """Firm names from a page/PDF that just lists them (one per line), e.g. a regulator's 'licensed
+    money transmitters' page: lines ending in a legal form (Ltd, LLC, S.A., ...), or matching
+    spec['name_regex']; 'between': [start, end] cuts the text to the list. Rows are (name,)."""
+    lines = page_text_lines(raw)
+    if spec.get("between"):
+        start, end = spec["between"]
+        i = next((k for k, l in enumerate(lines) if re.search(start, l, re.I)), 0)
+        j = next((k for k, l in enumerate(lines[i + 1:], i + 1) if end and re.search(end, l, re.I)), len(lines))
+        lines = lines[i:j]
+    rx = re.compile(spec["name_regex"], re.I) if spec.get("name_regex") else LEGAL_SUFFIX
+    rows, seen = [], set()
+    for l in lines:
+        l = re.sub(r"^\s*(\d{1,4}[.)]|[•·*\-–])\s*", "", l).strip()
+        if 3 <= len(l) <= 120 and rx.search(l) and l.lower() not in seen and not re.search(
+                r"central bank|reserve bank|monetary authority|copyright|all rights|about the bank|of the bank\b|"
+                r"^(list of|history|board|roles?|part [a-z0-9]+|governance|the external)\b|"
+                r"^(the )?bank$|careers|privacy|cookie", l, re.I):
+            seen.add(l.lower())
+            rows.append([l])
+    return ["name"], rows
+
+
+def read_pdf_sections(raw: bytes, spec: dict) -> tuple:
+    """Numbered lists under capitalised headings, as in central-bank press releases that list
+    licensed institutions ("BANKS / 1. X Bank Limited / 2. ..."), laid out in 'columns' text columns
+    per page. Returns rows of (section, name)."""
+    import io
+    import pdfplumber
+    ncol = int(spec.get("columns_count", 2))
+    heading = re.compile(spec.get("heading_regex") or r"^[A-Z][A-Z0-9 &,'’()/.\-]{3,}$")
+    item = re.compile(r"^\s*(\d{1,3})[.)]\s+(.+)$")
+    rows, section, cur = [], "", None
+    with pdfplumber.open(io.BytesIO(raw)) as pdf:
+        for page in pdf.pages:
+            w = page.width
+            for c in range(ncol):
+                part = page.crop((w * c / ncol, 0, w * (c + 1) / ncol, page.height))
+                for line in (part.extract_text() or "").splitlines():
+                    line = line.strip()
+                    if not line:
+                        continue
+                    m = item.match(line)
+                    if m:
+                        cur = [section, m.group(2).strip()]
+                        rows.append(cur)
+                    elif heading.match(line) and not re.search(r"\b(LIMITED|PLC|LTD|BANK)\b\.?$", line):
+                        section, cur = (section + " " + line).strip() if cur is None and section else line, None
+                    elif cur is not None and len(cur[1]) < 120 and not re.search(r"^(page|\d+$)", line, re.I):
+                        cur[1] = (cur[1] + " " + line).strip()     # a name wrapped onto the next line
+    return ["section", "name"], rows
+
+
 def read_text_regex(raw: bytes, spec: dict) -> tuple:
     """Rows from page/PDF text with a regex that has named groups (name, and optionally id,
     date, city, address, type, website, email, phone). Optional 'between': [start, end]
@@ -514,6 +575,10 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         headers, rows = read_pdf_table(raw, spec)
     elif fmt == "text_regex":
         headers, rows = read_text_regex(raw, spec)
+    elif fmt == "text_names":
+        headers, rows = read_text_names(raw, spec)
+    elif fmt == "pdf_sections":
+        headers, rows = read_pdf_sections(raw, spec)
     else:
         headers, rows = read_table(raw, spec.get("sheets", "first"))
     if spec.get("columns") and not spec.get("all_tables"):   # a table without a header row: name the columns here
@@ -577,6 +642,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     type_values = {}
     for row in rows:
         name = get(row, "name")
+        if spec.get("name_strip"):          # e.g. "Bayba Financial Services LtdStatus: Active"
+            name = re.sub(spec["name_strip"], "", name, flags=re.I).strip()
         if name and spec.get("name_exclude") and re.search(spec["name_exclude"], name, re.I):
             continue                      # e.g. holding companies listed alongside banks
         if not name or len(name) < 3 or not re.search(r"[^\W\d_]{2}", name) or re.fullmatch(r"\(?[a-zçğışöü]\)?", name):
@@ -796,7 +863,7 @@ class NationalSource(Source):
                     problems.append(f"{label}: {err}")
                     failed.add(label)
                     if raw:
-                        save_raw(ctx, self.name, label, raw)
+                        save_raw(ctx, self.name, label, raw, spec.get("url", ""))
                     status.setdefault(label, "read failed: " + str(err)[:200])
                     notes.append((spec["url"], raw or b"", info, err))
                     continue
@@ -824,7 +891,7 @@ class NationalSource(Source):
                 if spec.get("probe"):
                     # not read yet: just keep a copy of the page (and of the pages it links to that look like
                     # registers) so a reader can be written for it
-                    save_raw(ctx, self.name, label, raw)
+                    save_raw(ctx, self.name, label, raw, spec.get("url", ""))
                     n = follow_links(ctx, self.name, label, spec, raw) if spec.get("follow") else 0
                     status[label] = f"probe saved ({len(raw)} bytes, {n} linked pages)"
                     ctx.log.info("%s: %s saved for inspection (probe, %d linked pages)", self.name, label, n)
@@ -837,7 +904,7 @@ class NationalSource(Source):
                     err = e
                     problems.append(f"{label}: {e}")
                     failed.add(label)
-                    save_raw(ctx, self.name, label, raw)
+                    save_raw(ctx, self.name, label, raw, spec.get("url", ""))
                     status[label] = "read failed: " + str(e)[:200]
             notes.append((spec["url"], raw, info, err))
             if got:
@@ -1128,14 +1195,14 @@ def follow_links(ctx: Context, name: str, label: str, spec: dict, raw: bytes) ->
                 continue
             r = ctx.session.get(u, timeout=(15, 90))
             if r.status_code == 200:
-                save_raw(ctx, name, f"{label} > {text[:40] or href[-40:]}", r.content)
+                save_raw(ctx, name, f"{label} > {text[:40] or href[-40:]}", r.content, u)
                 n += 1
         except Exception as e:
             ctx.log.info("%s: follow %s failed: %s", name, u, e)
     return n
 
 
-def save_raw(ctx: Context, name: str, label: str, raw: bytes):
+def save_raw(ctx: Context, name: str, label: str, raw: bytes, url: str = ""):
     """A copy of a downloaded page/file (first 800 KB) in data/debug/raw/, for writing or fixing its
     reader. Refreshed at most once a week per file, to keep the repository small."""
     try:
@@ -1161,6 +1228,12 @@ def save_raw(ctx: Context, name: str, label: str, raw: bytes):
         for old in p.parent.glob(f"{name}__{slug}.*"):
             old.unlink()
         p.write_bytes(raw[:800_000])
+        if url:            # which address each saved copy came from, for writing readers later
+            import json
+            ip = p.parent.parent / "raw_urls.json"
+            idx = json.loads(ip.read_text()) if ip.exists() else {}
+            idx[p.name] = url
+            ip.write_text(json.dumps(idx, indent=0, sort_keys=True))
     except Exception as e:
         ctx.log.warning("%s: raw copy not saved: %s", name, e)
 

@@ -1,0 +1,373 @@
+# Researched company groups for the "Do not contact / competitor" flag.
+#
+# dnc_groups: brands on the do-not-contact list (do_not_contact.txt) whose other entities trade under
+#   different legal names. "match" are regular expressions tried against firm names (lower case);
+#   "owners" are parent companies / shareholders that own a listed company (they are flagged too);
+#   "note" is shown in the sheet's "Flag reason" column.
+# competitors: OpenPayd competitors (banking-as-a-service, embedded accounts / vIBANs, FX and
+#   cross-border payment infrastructure, fiat rails for crypto firms).
+#
+# On top of this file, each run looks up every listed company in GLEIF (the global LEI register's
+# parent / subsidiary data) and Wikidata (parent organisation / subsidiary / owned by), and flags the
+# related entities it finds (data/state/flag_entities.json).
+
+dnc_groups:
+  Bitstamp:
+    match: ['\bbitstamp\b', '^robinhood\b']
+    owners: [Robinhood Markets, Inc.]
+    note: Bitstamp has been owned by Robinhood since June 2025
+  OKX:
+    match: ['\bokx\b', '\bokcoin\b', '^okg\b', '^ok group\b', 'aux cayes fintech', '^oklink\b']
+  Bybit:
+    match: ['\bbybit\b']
+  Exness:
+    match: ['\bexness\b', '^nymstar\b']
+  Deriv:
+    match: ['^deriv\b', '\bbinary\.com\b', '^binary (investments|\(europe\))']
+  IC Markets:
+    match: ['\bic markets\b', '^raw trading\b', '^international capital markets pty']
+  Vantage:
+    match: ['^vantage (global|markets|international|prime|fx)\b']
+  XM (Trading Point):
+    match: ['^xm (global|trading|tradingpoint)\b', '^trading point (of financial instruments|holdings|mena)\b']
+  Exinity / FXTM:
+    match: ['\bexinity\b', '\bforextime\b', '\bfxtm\b']
+  Alpari:
+    match: ['\balpari\b']
+  Nexo:
+    match: ['^nexo (services|ag|capital|financial|limited|ltd|inc|holdings)\b', '^nexo$']
+  Xapo:
+    match: ['^xapo\b']
+  B2C2:
+    match: ['^b2c2\b']
+    owners: [SBI Holdings, Inc.]
+    note: B2C2 is owned by Japan's SBI Holdings (since 2020)
+  Wintermute:
+    match: ['^wintermute\b']
+  Keyrock:
+    match: ['^keyrock\b']
+  Tether / Bitfinex:
+    match: ['^tether (international|holdings|operations|limited)', '^ifinex\b', '\bbitfinex\b', '^bfxww\b']
+    note: Tether and Bitfinex share the iFinex group
+  Circle:
+    match: ['^circle internet (financial|group|holdings)', '^circle (bermuda|france)\b']
+  Coinbase:
+    match: ['^coinbase\b']
+  Galaxy Digital:
+    match: ['^galaxy digital\b', '^galaxy bahamas\b']
+  FalconX:
+    match: ['^falconx\b']
+  Gate.io:
+    match: ['^gate (technology|global|digital)\b', '\bgate\.io\b']
+  BTSE:
+    match: ['^btse\b']
+  CEX.IO:
+    match: ['\bcex\.?io\b']
+  MoonPay:
+    match: ['^moonpay\b']
+  Transak:
+    match: ['^transak\b']
+  Banxa:
+    match: ['^banxa\b']
+  Ramp:
+    match: ['^ramp (swaps|network)\b']
+  Uphold:
+    match: ['^uphold (europe|hq|inc|ltd|limited|sa)\b', '^uphold$']
+  Wirex:
+    match: ['^wirex\b']
+  Bitpanda:
+    match: ['^bitpanda\b']
+  SwissBorg:
+    match: ['^swissborg\b']
+  Kinesis:
+    match: ['^kinesis (money|ag|ltd|limited|exchange)\b', '^allocated bullion exchange\b', '^abx\b']
+  Zonda (BitBay):
+    match: ['^zonda (global|crypto|exchange)?\b', '^bitbay\b']
+  Coinify:
+    match: ['^coinify\b']
+    owners: [Marketcom Software]
+    note: Coinify was bought by Marketcom Software
+  Coinmetro:
+    match: ['^coinmetro\b']
+  Iconomi:
+    match: ['^iconomi\b']
+  Wert (SHA2 Solutions):
+    match: ['^sha2 solutions\b', '^wert\b']
+  Switchere:
+    match: ['^switchere\b']
+  Mt Pelerin:
+    match: ['^mt ?pelerin\b']
+  Bitrefill:
+    match: ['^bitrefill\b', '^airfill prepaid\b']
+  Safello:
+    match: ['^safello\b']
+  CoinJar:
+    match: ['^coinjar\b']
+  Independent Reserve:
+    match: ['^independent reserve\b']
+  Mudrex:
+    match: ['^mudrex\b']
+  Bankera:
+    match: ['^bankera\b']
+  Robinhood:
+    match: ['^robinhood\b']
+  Alameda / FTX:
+    match: ['^alameda research\b', '^ftx (trading|europe|digital|japan|australia)\b']
+  Enigma Securities:
+    match: ['^enigma securities\b']
+  Zumo:
+    match: ['^zumo (financial|markets)?\b']
+  Relai:
+    match: ['^relai\b']
+  DFX:
+    match: ['^dfx (ag|swiss)?\b']
+  Confirmo:
+    match: ['^confirmo\b']
+  Xsolla:
+    match: ['^xsolla\b']
+  Flutterwave:
+    match: ['^flutterwave\b']
+  PayRetailers:
+    match: ['^payretailers\b']
+  Praxis:
+    match: ['^praxis (tech|cashier|payments)\b']
+  Global66:
+    match: ['^global ?66\b']
+  PXP:
+    match: ['^pxp (financial|solutions|accept|group)\b']
+  payabl. (Powercash21):
+    match: ['^payabl\b', '^powercash ?21\b']
+  AstroPay:
+    match: ['^astropay\b']
+  Tranglo:
+    match: ['^tranglo\b']
+    owners: [Ripple Labs Inc.]
+    note: Ripple holds a 40% stake in Tranglo
+  Taptap Send:
+    match: ['^taptap send\b']
+  Yapily:
+    match: ['^yapily\b']
+  Yaspa:
+    match: ['^yaspa\b']
+  Clearpay (Afterpay):
+    match: ['^clearpay (finance|limited|ltd)\b', '^afterpay\b']
+    owners: [Block, Inc.]
+    note: Clearpay is Afterpay's UK brand, owned by Block, Inc.
+  Stenn:
+    match: ['^stenn\b']
+  Sonovate:
+    match: ['^sonovate\b']
+  Mondu:
+    match: ['^mondu\b']
+  Wagestream:
+    match: ['^wagestream\b']
+  Lanistar:
+    match: ['^lanistar\b']
+  Paywiser:
+    match: ['^paywiser\b']
+  Payset:
+    match: ['^pay ?set\b']
+  Emerald24:
+    match: ['^emerald ?24\b']
+  Eurowag:
+    match: ['^eurowag\b', '^w\.?a\.?g\.? payment solutions\b']
+  Capital.com:
+    match: ['^capital\.com\b', '^capital com (sv|uk|cy|au|mena)\b']
+  Trading 212:
+    match: ['^trading ?212\b']
+  Hargreaves Lansdown:
+    match: ['^hargreaves lansdown\b']
+  Tiger Brokers (UP Fintech):
+    match: ['^tiger brokers\b', '^up fintech\b', '^tiger fintech\b']
+  Finalto:
+    match: ['^finalto\b']
+  EightCap:
+    match: ['^eightcap\b']
+  Axi:
+    match: ['^axi ?(corp|trader)\b', '^axicorp\b', '^axitrader\b']
+  FP Markets:
+    match: ['^first prudential markets\b', '^fp markets\b']
+  BlackBull Markets:
+    match: ['^black ?bull (markets|group)\b']
+  IFC Markets:
+    match: ['^ifc ?m(arkets)?\b', '^ifcm\b']
+  FxPro:
+    match: ['^fxpro\b']
+  FXOpen:
+    match: ['^fxopen\b']
+  Orbex:
+    match: ['^orbex\b']
+  Libertex / Forex Club:
+    match: ['^libertex\b', '^forex club\b', '^indication investments\b']
+  Olymp Trade:
+    match: ['^olymp ?trade\b', '^saledo global\b']
+  RoboForex / RoboMarkets:
+    match: ['^robo ?forex\b', '^robo ?markets\b']
+  Errante:
+    match: ['^errante\b', '^notely trading\b']
+  Valutrades:
+    match: ['^valutrades\b']
+  Infinox:
+    match: ['^infinox\b', '^ix prime\b']
+  MultiBank Group:
+    match: ['^mex (atlantic|exchange|global|australia|securities)\b', '^multibank (group|fx|exchange)\b']
+  Doo Prime / Doo Group:
+    match: ['^d ?prime (vanuatu|limited|ltd)\b', '^doo (prime|financial|group|clearing|technology|exchange)\b']
+  PU Prime:
+    match: ['^pu prime\b']
+  EBC Financial Group:
+    match: ['^ebc (financial|group|fintech|global)\b']
+  CPT Markets:
+    match: ['^cpt markets\b']
+  Key to Markets:
+    match: ['^key to markets\b']
+  Blackwell Global:
+    match: ['^blackwell global\b']
+  TioMarkets:
+    match: ['^tio ?markets\b', '^t\.?i\.?o\.? group\b']
+  JustMarkets:
+    match: ['^just ?(markets|global markets|forex)\b']
+  XS.com:
+    match: ['^xs\.com\b', '^xs (ltd|limited|markets)\b']
+  Fortune Prime Global:
+    match: ['^fortune prime\b']
+  Trive:
+    match: ['^trive (financial|capital|group|markets)\b']
+  Tradeview:
+    match: ['^tradeview\b']
+  FIBO Group:
+    match: ['^fibo group\b']
+  Quantfury:
+    match: ['^quantfury\b']
+  iForex:
+    match: ['^iforex\b', '^formula investment house\b']
+  TigerWit:
+    match: ['^tigerwit\b']
+  Zenfinex:
+    match: ['^zenfinex\b', '^zfn europe\b']
+  iQuoto:
+    match: ['^iquoto\b']
+  William Hill / Evoke:
+    match: ['^william hill\b', '^mr ?green\b', '^evoke (plc|gaming)\b', '^888 (holdings|uk|spain|italia)\b']
+    owners: [evoke plc]
+    note: William Hill and Mr Green belong to evoke plc (formerly 888 Holdings)
+  Lottoland:
+    match: ['^lottoland\b', '^eu lotto\b', '^european lotto and betting\b']
+    note: EU Lotto Limited operates Lottoland
+  1xBet:
+    match: ['^1x ?bet\b']
+  Stake (Easygo):
+    match: ['^easygo\b', '^stake\.com\b', '^medium rare n\.?v\.?']
+  Soft2Bet:
+    match: ['^soft2bet\b']
+  Digitain:
+    match: ['^digitain\b']
+  OnlyFans:
+    match: ['^onlyfans\b', '^only fans\b', '^fenix international\b']
+  Telegram:
+    match: ['^telegram (messenger|group|fz|ltd|limited)\b', '^telegram$']
+  Shein:
+    match: ['^shein\b', '^roadget business\b', '^zoetop business\b']
+  Porsche:
+    match: ['^porsche (ag|financial services|bank|holding|se)\b', '^dr\.? ing\.? h\.?c\.? f\.? porsche\b']
+  Sable International:
+    match: ['^sable international\b']
+  SafetyWing:
+    match: ['^safetywing\b']
+  Sweatcoin:
+    match: ['^sweatco\b', '^sweatcoin\b']
+  GetGround:
+    match: ['^getground\b']
+  OpenRent:
+    match: ['^openrent\b']
+  Hnry:
+    match: ['^hnry\b']
+  Callsign:
+    match: ['^callsign\b']
+  Veve:
+    match: ['^veve\b', '^ecomi\b']
+  Agribank:
+    match: ['^agribank\b']
+  Amina Bank:
+    match: ['^amina (bank|group|ag)\b', '^seba bank\b']
+    note: AMINA Bank was formerly SEBA Bank
+  Bank Frick:
+    match: ['^bank frick\b']
+  Deltec Bank:
+    match: ['^deltec (bank|international)\b']
+  Turicum:
+    match: ['^turicum\b']
+  Iberbanco:
+    match: ['^iberbanco\b']
+  EqiBank:
+    match: ['^eqibank\b']
+  Flow Bank:
+    match: ['^flowbank\b', '^flow bank\b']
+
+competitors:
+  ClearBank: {match: ['^clear ?bank\b']}
+  Modulr: {match: ['^modulr\b']}
+  Banking Circle: {match: ['^banking circle\b', '^saxo payments\b']}
+  Railsr / PayrNet: {match: ['^railsr\b', '^railsbank\b', '^payrnet\b']}
+  Currencycloud (Visa): {match: ['^currency ?cloud\b']}
+  Airwallex: {match: ['^airwallex\b']}
+  Wise: {match: ['^(trans)?wise (payments|europe|us|australia|asia|nz|new zealand|canada|brasil|brazil|india|assets|japan|singapore|platform|malaysia)\b', '^transferwise\b']}
+  Nium: {match: ['^nium\b', '^instarem\b']}
+  Rapyd: {match: ['^rapyd\b']}
+  Thunes: {match: ['^thunes\b']}
+  Payoneer: {match: ['^payoneer\b']}
+  Clear Junction: {match: ['^clear ?junction\b']}
+  BCB Group: {match: ['^bcb (group|payments|blockchain|digital|prime|europe|holdings)\b', '^blockchain banking\b']}
+  Ebury: {match: ['^ebury\b']}
+  Corpay: {match: ['^corpay\b', '^cambridge (global payments|mercantile)\b']}
+  Convera: {match: ['^convera\b']}
+  WorldFirst: {match: ['^world ?first\b']}
+  iBanFirst: {match: ['^ibanfirst\b']}
+  Kantox: {match: ['^kantox\b']}
+  Equals: {match: ['^equals (money|connect|group|payments)\b', '^spectrum payment services\b', '^fairfx\b']}
+  Paynetics: {match: ['^paynetics\b']}
+  Transact Payments: {match: ['^transact payments\b']}
+  Moorwand: {match: ['^moorwand\b']}
+  Vitesse: {match: ['^vitesse (psp|payments)\b']}
+  Weavr: {match: ['^weavr\b']}
+  Swan: {match: ['^swan( sas)?$']}
+  Treezor: {match: ['^treezor\b']}
+  Mangopay: {match: ['^mango ?pay\b']}
+  Lemonway: {match: ['^lemon ?way\b']}
+  Solaris: {match: ['^solaris ?(se|bank|digital assets)\b', '^solarisbank\b']}
+  Unlimit: {match: ['^unlimint?\b']}
+  Fiat Republic: {match: ['^fiat republic\b']}
+  Satchel: {match: ['^satchel (payments|europe|uab)\b', '^satchel$']}
+  Intergiro: {match: ['^intergiro\b']}
+  Griffin: {match: ['^griffin (bank|financial technology)\b']}
+  LHV Bank: {match: ['^lhv (bank|pank|group)\b']}
+  Cross River Bank: {match: ['^cross river bank\b']}
+  Column: {match: ['^column (n\.?a|national)\b']}
+  Customers Bank: {match: ['^customers bank\b']}
+  Evolve Bank & Trust: {match: ['^evolve bank\b']}
+  Lead Bank: {match: ['^lead bank\b']}
+  Stripe (incl. Bridge stablecoin rails): {match: ['^stripe (payments|technology|inc|treasury|financial)\b', '^stripe$']}
+  Zero Hash: {match: ['^zero ?hash\b']}
+  Paxos: {match: ['^paxos\b']}
+  Fireblocks: {match: ['^fireblocks\b']}
+  Januar: {match: ['^januar\b']}
+  Token.io: {match: ['^token\.io\b', '^token io\b']}
+  Tink: {match: ['^tink( ab| financial)?$']}
+  ConnectPay: {match: ['^connectpay\b']}
+  Edenred Payment Solutions: {match: ['^edenred payment\b']}
+  bunq: {match: ['^bunq\b']}
+  Qonto: {match: ['^qonto\b']}
+  Revolut: {match: ['^revolut\b']}
+  Paysafe: {match: ['^paysafe\b', '^skrill\b', '^neteller\b']}
+  Mercuryo: {match: ['^mercuryo\b']}
+  Unit: {match: ['^unit finance\b']}
+  Toqio: {match: ['^toqio\b']}
+  Bankable: {match: ['^bankable\b']}
+  Codego: {match: ['^codego\b']}
+  NovoPayment: {match: ['^novopayment\b']}
+  Zum Rails: {match: ['^zum rails\b']}
+  Keel: {match: ['^keel (financial|payments|technologies)\b']}
+  Paysend: {match: ['^paysend\b']}
+  PPRO: {match: ['^ppro\b']}
+  dLocal: {match: ['^dlocal\b']}
+  Aion / Vodeno: {match: ['^vodeno\b', '^aion bank\b']}

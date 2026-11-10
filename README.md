@@ -337,6 +337,29 @@ Entries marked `probe: true` only save the regulator's page for now (data/debug/
 be written once its layout is known. Option `join` adds the columns of a second file matched on a
 shared column (the UK Gambling Commission publishes licences and businesses as separate files).
 
+## Banks for countries without a readable official list ("wiki_banks")
+
+Where a regulator publishes no bank list a program can read (or blocks automated access), banks come
+from Wikidata (CC0: entities that are banks in that country, with their websites) and Wikipedia's
+"List of banks in ..." articles. These rows say "licence not checked", and any bank an official list
+already has is left out. The countries are listed under `wiki_banks:` in config.yaml; the UK, EU/EEA
+and Switzerland are not included. Saved copies of regulator pages now record where they came from in
+`data/debug/raw_urls.json`, so readers can be written for them.
+
+## Do-not-contact list and competitors
+
+`flags/do_not_contact.txt` is the do-not-contact list (one company per line) and `flags/groups.yaml`
+holds researched groups: other entities and brands of listed companies, the companies that own them,
+and OpenPayd's competitors. Every tab has a "Do not contact / competitor" column and a "Flag reason"
+column next to the firm name, and flagged rows are coloured red.
+
+A firm is flagged when its name (ignoring Ltd, Inc, GmbH and so on) matches a listed company, starts
+with a listed company's full name (whole words, e.g. "Pay Perform" matches "Pay Perform OU"), matches
+a group pattern in groups.yaml, or is a parent / subsidiary of a listed company in GLEIF or Wikidata.
+The GLEIF / Wikidata lookups run for 15 minutes per run (`flags:` in config.yaml) and are kept in
+`data/state/flag_entities.json`; each company is re-checked monthly. To add a company, add a line to
+do_not_contact.txt; to add a competitor or a brand's other names, edit groups.yaml.
+
 ## Telegram notifications
 
 Every run that finds new licences, registrations or applications (new EMIs,
