@@ -41,6 +41,17 @@ sources:
     frontier_back_weekly: 25000   # weekly wider re-scan
     full_recheck_weekday: 6       # 0=Mon ... 6=Sun: also re-check inactive firms
     track_services: false
+    # CFD vertical: the same scan also looks at each authorised firm's permissions and lists the
+    # firms allowed to deal in / arrange CFDs, spread bets or rolling spot forex in the
+    # "United Kingdom (CFD)" tab. FRNs the payment scan has already passed, plus the older range
+    # below, are re-checked once for this by the UK scan workflow (it keeps running until done).
+    cfd:
+      enabled: true
+      extra_ranges:
+        - [100000, 499999]        # long-established brokers (IG, CMC, City Index ...)
+
+  fca_cfd:        # UK CFD / FX providers found by the FCA scan above (shown in "United Kingdom (CFD)")
+    enabled: true
 
   pra:            # UK: banks and building societies (PRA monthly lists)
     enabled: false   # banks no longer tracked
@@ -1632,6 +1643,152 @@ national:
 # Contact details (website / email / phone). Only fills blanks; a value the
 # register itself gives is never overwritten. The "Contact found via" column
 # says where each one came from.
+# ----------------------------------------------------------------------------- CFD vertical ---
+# Retail CFD/FX brokers, institutional / prime brokers, liquidity providers and prop firms.
+# Same reader options as national: above; firms go to "Country (CFD)" tabs and the
+# "CFD (all countries)" tab, with a business-type column that is a guess from the name and licence.
+# The UK comes from the FCA scan (sources: fca: cfd:).
+cfd_min_hours: 24
+cfd:
+  EU:
+    regulator: ESMA register
+    files:
+    - label: ESMA register - investment firms dealing on own account (all EEA)
+      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20on%20own%20account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      fallback_urls:
+      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20On%20Own%20Account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7Dac_serviceName%3A*own%5C%20account*&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      name_column: ae_entityName
+      id_column: ae_lei
+      lei_column: ae_lei
+      country_column: ae_homeMemberState
+      regulator_column: ae_competentAuthority
+      address_column: ae_headOfficeAddress
+      website_column: ae_website
+      status_column: ae_status
+      date_column: ae_authorisationNotificationDateStr
+      exclude_column: ae_officeType
+      exclude_pattern: branch
+      licence_type: Investment firm - dealing on own account (MiFID)
+      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
+  CY:
+    regulator: CySEC
+    files:
+    - label: CySEC Cyprus Investment Firms (CIFs)
+      url: https://www.cysec.gov.cy/en-GB/entities/investment-firms/cypriot/
+      format: html_table
+      licence_type: Cyprus Investment Firm (CySEC)
+  MU:
+    regulator: FSC
+    files:
+    - label: FSC register of licensees - investment dealers
+      url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page={page}
+      paginate: {start: 1, step: 1, max: 150, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
+      format: html_table
+      name_column: Name of Licensee
+      type_column: Type of Licence
+      date_column: Date of Licence
+      status_column: Annotations
+      type_patterns:
+        INVESTMENT DEALER: Investment dealer (FSC)
+      register_url: https://www.fscmauritius.org/en/supervision/register-of-licensees
+  SC:
+    regulator: FSA
+    files:
+    - label: FSA capital markets - securities dealers
+      url: https://fsaseychelles.sc/regulated-entities/capital-markets
+      format: text_regex
+      raw_html: true
+      row_regex: id="heading-(?P<type>[a-z0-9-]+?)-\d+"(?:(?!id="heading-).)*?<h5>(?P<name>[^<]+)</h5>(?P<address>(?:(?!<p).)*)(?:(?!id="heading-).)*?Date of Approval:</spanl>\s*(?P<date>[\d-]*)(?:(?!id="heading-).)*?Status:</spanl>\s*(?P<status>[A-Za-z ]*)
+      type_patterns:
+        'dealer(?!s?-?rep)': Securities dealer (FSA)
+  BS:
+    regulator: SCB
+    files:
+    - label: SCB registered securities firms (SIA) - dealing / CFD trading
+      page: https://www.scb.gov.bs/registrant-licensee-search/
+      link_pattern: SIA-Firms
+      format: pdf_table
+      name_column: LICENSEE
+      type_column: CATEGORIES
+      address_column: ADDRESS
+      type_patterns:
+        CFD: Securities firm - CFD trading (SCB)
+        dealing: Securities firm - dealing as agent or principal (SCB)
+  AU:
+    regulator: ASIC
+    files:
+    - label: ASIC AFS licensees that make a market in derivatives / FX
+      page:
+      - https://data.gov.au/data/dataset/asic-afs-licensee
+      - https://data.gov.au/data/dataset/asic-afs-licensee/resource/d98a113d-6b50-40e6-b65f-2612efc877f4
+      - https://www.data.gov.au/data/dataset/asic-afs-licensee/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc
+      link_pattern: afs_lic_\d{6}\.(csv|tsv)
+      name_column: AFS_LIC_NAME
+      id_column: AFS_LIC_NUM
+      date_column: AFS_LIC_START_DT
+      city_column: AFS_LIC_ADD_LOCAL
+      require_column: AFS_LIC_CONDITION
+      require_pattern: '^(?=.*make a market)(?=.*(derivative|foreign exchange)).*'
+      name_exclude: energy|power|electric|\bgas\b|hydro|\bwater\b|grain|agri|mining|resources|superannuation|insurance|\bfuel|petroleum|\boil\b
+      licence_type: AFS licence - market maker in derivatives / FX (ASIC)
+      register_url: https://connectonline.asic.gov.au/RegistrySearch/
+  NZ:
+    regulator: FMA
+    files:
+    - label: FMA licensed derivatives issuers
+      url: https://www.fma.govt.nz/business/licensed-providers/?start={page}
+      paginate: {start: 0, step: 15, max: 30, marker: 'Displaying page \d+'}
+      format: text_regex
+      row_regex: '^(?P<name>[^,]{3,150}?)(?:\s*\([^)]*\))?,\s*(?:(?P<id>FSP\d+),\s*)?[^.]{0,200}?derivatives issuer'
+      licence_type: Licensed derivatives issuer (FMA)
+      register_url: https://www.fma.govt.nz/business/licensed-providers/
+  CH:
+    regulator: FINMA
+    files:
+    - label: FINMA securities firms
+      url: https://www.finma.ch/en/~/media/finma/dokumente/bewilligungstraeger/csv/uid.csv
+      name_column: Name
+      type_column: AuthorisationTypeEN
+      id_column: UID
+      type_patterns:
+        securities (firm|dealer): Securities firm (FINMA)
+      register_url: https://www.finma.ch/en/finma-public/authorised-institutions-individuals-and-products/
+  VG:
+    regulator: GLEIF (no BVI licence list found)
+    files:
+    - label: GLEIF - BVI companies whose names suggest trading / brokerage
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VG&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 200, marker: '"id"\s*:\s*"([A-Z0-9]{20})"'}
+      name_column: attributes.entity.legalName.name
+      id_column: attributes.lei
+      lei_column: attributes.lei
+      city_column: attributes.entity.legalAddress.city
+      status_column: attributes.entity.status
+      date_column: attributes.registration.initialRegistrationDate
+      require_column: attributes.entity.legalName.name
+      require_pattern: markets?\b|trad(e|er|ers|ing)\b|\bfx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd
+      name_exclude: \bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance|re-?insurance
+      licence_type: BVI company (name suggests trading; BVI licence not checked)
+      register_url: https://search.gleif.org/
+  VC:
+    regulator: GLEIF (SVG FSA does not license brokers)
+    files:
+    - label: GLEIF - St Vincent companies whose names suggest trading / brokerage
+      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=VC&page%5Bsize%5D=200&page%5Bnumber%5D={page}
+      paginate: {start: 1, step: 1, max: 50, marker: '"id"\s*:\s*"([A-Z0-9]{20})"'}
+      name_column: attributes.entity.legalName.name
+      id_column: attributes.lei
+      lei_column: attributes.lei
+      city_column: attributes.entity.legalAddress.city
+      status_column: attributes.entity.status
+      date_column: attributes.registration.initialRegistrationDate
+      require_column: attributes.entity.legalName.name
+      require_pattern: markets?\b|trad(e|er|ers|ing)\b|\bfx\b|forex|broker|securities|\bprime\b|liquidity|funded|\bprop\b|\bcfd
+      name_exclude: \bfund\b|holding|\btrust\b|propert|real estate|shipping|energy|insurance
+      licence_type: St Vincent company (name suggests trading; SVG does not license brokers)
+      register_url: https://search.gleif.org/
+
 contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
   parallel_sites: 24   # firm websites read at once by the contacts job (each is a different site)

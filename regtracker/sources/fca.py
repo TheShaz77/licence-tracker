@@ -14,12 +14,13 @@ State lives in data/state/fca.json and is committed back to the repo.
 from __future__ import annotations
 
 import json
+import re
 import os
 import time
 from pathlib import Path
 
 from ..http import RateLimiter
-from ..model import Record, tolerant_get
+from ..model import Record, guess_business_type, tolerant_get
 from .base import Context, Source, SourceNotReady
 
 API = "https://register.fca.org.uk/services/V0.1"
@@ -90,6 +91,7 @@ class FCAClient:
         self.crypto = set(crypto_frns(ctx))
         self.exclude = tuple((ctx.source_config("fca").get("exclude_types")) or ("RAISP",))
         self.agents = tuple(ctx.source_config("fca").get("agents", ["emd", "psd"]) or ())
+        self.cfd = cfd_enabled(ctx)
 
     def get(self, path: str):
         """GET an API path. Returns the 'Data' payload, None when the firm
@@ -280,6 +282,109 @@ def record_from_firm(frn: int, firm: dict, address: dict | None = None, crypto_f
     )
 
 
+# ---------------------------------------------------------------- CFD providers ---
+# FCA permissions list the investment types a firm may deal in. A firm that may deal in contracts
+# for differences, spread bets or rolling spot forex is a CFD/FX provider (retail broker, prime
+# broker or liquidity provider). Only authorised firms are checked (one extra call each).
+CFD_RX = re.compile(r"contracts?\W{0,3}for\W{0,3}differences?|spread\W?bet|rolling spot forex", re.I)
+CFD_TYPE = "CFD / FX provider (FCA permission to deal in CFDs)"
+
+
+def cfd_enabled(ctx_or_cfg) -> bool:
+    cfg = ctx_or_cfg if isinstance(ctx_or_cfg, dict) else ctx_or_cfg.source_config("fca")
+    return bool((cfg.get("cfd") or {}).get("enabled", False))
+
+
+def needs_cfd_check(firm: dict) -> bool:
+    status = str(tolerant_get(firm, "Status")).strip().lower()
+    return status.startswith("authorised") or status == "eea authorised"
+
+
+DEALING_PERMS = re.compile(r"dealing in investments as (principal|agent)|arranging \(?bringing about\)? deals|"
+                           r"making arrangements with a view to transactions|operating an? (multilateral|organised) trading",
+                           re.I)
+
+
+def _perm_dict(perms):
+    """The permissions as {permission name: details} (the API gives a dict or a list of dicts)."""
+    data = perms.get("Data", perms) if isinstance(perms, dict) else perms
+    if isinstance(data, list) and data and all(isinstance(x, dict) for x in data):
+        merged = {}
+        for x in data:
+            merged.update(x)
+        data = merged
+    return data
+
+
+def cfd_kinds(perms) -> list:
+    """Which CFD-type investments the firm may deal in or arrange (CFDs under 'Managing
+    investments' alone, as at many fund managers, don't count)."""
+    data = _perm_dict(perms)
+    if isinstance(data, dict) and data:
+        text = json.dumps({k: v for k, v in data.items() if DEALING_PERMS.search(str(k))}, ensure_ascii=False)
+    else:
+        text = json.dumps(perms, ensure_ascii=False) if perms else ""
+    text = re.sub(r"\(\s*excluding[^)]*\)", "", text, flags=re.I)   # "CFDs (excluding spread bets ...)"
+    found = []
+    for label, rx in (("CFDs", r"contracts?\W{0,3}for\W{0,3}differences?"), ("spread bets", r"spread\W?bet"),
+                      ("rolling spot forex", r"rolling spot forex")):
+        if re.search(rx, text, re.I):
+            found.append(label)
+    return found
+
+
+def cfd_clients(perms) -> str:
+    """'retail clients' when a dealing/arranging permission covers retail customers, else
+    'professional clients only' (or '' when the permissions don't say)."""
+    data = _perm_dict(perms)
+    if not isinstance(data, dict):
+        return ""
+    text = json.dumps({k: v for k, v in data.items() if DEALING_PERMS.search(str(k))}, ensure_ascii=False)
+    if not re.search(r"customer type", text, re.I):
+        return ""
+    return "retail clients" if re.search(r"\bretail\b|\"all\"", text, re.I) else "professional clients only"
+
+
+def cfd_record(frn: int, firm: dict, kinds: list, address: dict | None = None, clients: str = "") -> dict:
+    address = address or {}
+    status = str(tolerant_get(firm, "Status")).strip()
+    return Record(
+        key=f"fca_cfd:{frn}", source="fca_cfd", jurisdiction="GB", regulator="FCA",
+        name=str(tolerant_get(firm, "Organisation Name", "Name")).strip(),
+        licence_type=CFD_TYPE, active=True,
+        status_detail=f"FCA {status}; may deal in " + ", ".join(kinds) + (f" ({clients})" if clients else ""),
+        status_date=str(tolerant_get(firm, "Status Effective Date"))[:10], reference=str(frn),
+        city=str(tolerant_get(address, "Town")), website=str(tolerant_get(address, "Website Address", "Website")),
+        email=_email_from(address) or _email_from(firm), register_url=SEARCH_URL.format(frn=frn),
+        extra={"vertical": "CFD", "business_type": guess_business_type(str(tolerant_get(firm, "Organisation Name", "Name")),
+                                                                     " ".join(kinds) + " " + clients),
+               "clients": clients,
+               "phone": str(tolerant_get(address, "Phone Number")),
+               "postcode": str(tolerant_get(address, "Postcode")),
+               "companies_house": str(tolerant_get(firm, "Companies House Number"))},
+    ).to_dict()
+
+
+def _apply_cfd(client, st: dict, frn: int, firm, perms) -> None:
+    """Update st['cfd'] for one firm from its prefetched permissions (perms=None: not checked)."""
+    if perms is None:
+        return
+    kinds = cfd_kinds(perms) if firm else []
+    key = str(frn)
+    if kinds:
+        prev = st.setdefault("cfd", {}).get(key)
+        addr = None if prev and prev.get("_enriched") else client.address(frn)
+        d = cfd_record(frn, firm, kinds, addr, cfd_clients(perms))
+        if addr is None and prev:
+            for k in ("city", "website", "email"):
+                d[k] = prev.get(k, "")
+            d["extra"] = {**prev.get("extra", {}), **{k: v for k, v in d["extra"].items() if v}}
+        d["_enriched"] = True
+        st["cfd"][key] = d
+    elif key in st.get("cfd", {}):
+        st["cfd"].pop(key)       # no longer authorised for CFDs
+
+
 # ---------------------------------------------------------------- state ---
 
 def state_path(ctx: Context) -> Path:
@@ -350,11 +455,17 @@ def seed(ctx: Context, hours: float) -> dict:
     sd = st["seed"]
     if replan(st, cfg, ctx.log):
         save_state(ctx, st)
-    if sd.get("done"):
+    cs = cfd_seed_state(st, cfg)
+    if sd.get("done") and (cs is None or cs.get("done")):
         ctx.log.info("FCA seed already complete (%d firms tracked)", len(st["tracked"]))
         return st
     client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
     client.verify()
+    if sd.get("done"):
+        deadline = time.monotonic() + hours * 3600
+        run_cfd_seed(client, st, cs, ctx, deadline, int(cfg.get("parallel_requests", 8)))
+        ctx.log.info("FCA seed progress: %s", seed_progress(st))
+        return st
     enrich = bool(cfg.get("enrich_address", True))
     dropped = [f for f, r in st["tracked"].items()
                if r.get("licence_type") in client.exclude]
@@ -401,8 +512,95 @@ def seed(ctx: Context, hours: float) -> dict:
             ctx.log.info("FCA seed: at FRN %d, %d payment firms found so far",
                          batch[-1], len(st["tracked"]))
     save_state(ctx, st)
+    if cs is not None and sd.get("done") and time.monotonic() < deadline:
+        run_cfd_seed(client, st, cs, ctx, deadline, workers)
     ctx.log.info("FCA seed progress: %s", seed_progress(st))
     return st
+
+
+def cfd_seed_state(st: dict, cfg: dict) -> dict | None:
+    """The CFD sub-scan: FRNs the payment scan has already passed (checked without CFD permissions)
+    plus the older range 100000-499999 where long-established brokers sit. FRNs the payment scan
+    still has to cover get their CFD check there, inline."""
+    if not cfd_enabled(cfg):
+        return None
+    cs = st.get("cfd_seed")
+    if cs is None:
+        sd = st["seed"]
+        extra = [list(map(int, r)) for r in ((cfg.get("cfd") or {}).get("extra_ranges") or [[100000, 499999]])]
+        payment_left = [] if sd.get("done") else [list(r) for r in sd["ranges"][sd["range_index"]:]]
+        if payment_left:
+            payment_left[0] = [max(payment_left[0][0], sd["cursor"]), payment_left[0][1]]
+        everything = extra + [list(map(int, r)) for r in (sd.get("config_ranges") or sd["ranges"])]
+        ranges = [r for r in _subtract(everything, payment_left) if r[0] <= r[1]]
+        cs = st["cfd_seed"] = {"ranges": ranges or [[0, -1]], "range_index": 0,
+                               "cursor": (ranges or [[0]])[0][0], "checked": 0, "done": not ranges}
+    return cs
+
+
+def cfd_scan(client, st: dict, frns: list, ctx, workers: int = 8):
+    """CFD-only lookups (firm + permissions for authorised firms); the payment index is untouched."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    def fetch(frn):
+        try:
+            firm = client.firm(frn)
+            perms = None
+            if firm and needs_cfd_check(firm):
+                perms = client.get(f"/Firm/{frn}/Permissions") or {}
+            return frn, firm, perms, None
+        except SourceNotReady:
+            raise
+        except Exception as e:
+            return frn, None, None, e
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        for frn, firm, perms, err in pool.map(fetch, frns):
+            if err is not None:
+                ctx.log.warning("FCA CFD FRN %s skipped: %s", frn, err)
+                continue
+            _apply_cfd(client, st, frn, firm, perms)
+
+
+def run_cfd_seed(client, st: dict, cs: dict, ctx, deadline: float, workers: int):
+    since_save = 0
+    while time.monotonic() < deadline and not cs.get("done"):
+        ri = cs["range_index"]
+        if ri >= len(cs["ranges"]):
+            cs["done"] = True
+            break
+        lo, hi = cs["ranges"][ri]
+        start = max(cs["cursor"], lo)
+        if start > hi:
+            cs["range_index"] = ri + 1
+            if cs["range_index"] < len(cs["ranges"]):
+                cs["cursor"] = cs["ranges"][cs["range_index"]][0]
+            continue
+        batch = list(range(start, min(hi, start + BATCH - 1) + 1))
+        cfd_scan(client, st, batch, ctx, workers)
+        cs["cursor"] = batch[-1] + 1
+        cs["checked"] = cs.get("checked", 0) + len(batch)
+        since_save += len(batch)
+        if since_save >= 2000:
+            save_state(ctx, st)
+            since_save = 0
+            ctx.log.info("FCA CFD scan: at FRN %d, %d CFD/FX providers found so far", batch[-1], len(st.get("cfd", {})))
+    save_state(ctx, st)
+
+
+def cfd_progress(st: dict) -> str:
+    cs = st.get("cfd_seed")
+    if not cs:
+        return ""
+    total = sum(max(0, hi - lo + 1) for lo, hi in cs["ranges"])
+    done = 0
+    for i, (lo, hi) in enumerate(cs["ranges"]):
+        if i < cs["range_index"]:
+            done += hi - lo + 1
+        elif i == cs["range_index"]:
+            done += max(0, min(cs["cursor"], hi + 1) - lo)
+    pct = 100.0 * done / total if total else 100.0
+    return f"CFD scan {'complete' if cs.get('done') else f'{pct:.1f}% done'}, {len(st.get('cfd', {}))} CFD/FX providers"
 
 
 def _intersect(a: list, b: list) -> list:
@@ -502,8 +700,11 @@ def seed_progress(st: dict) -> str:
         elif i == sd["range_index"]:
             done += max(0, min(sd["cursor"], hi + 1) - lo)
     pct = 100.0 * done / total if total else 100.0
-    return (f"{'complete' if sd.get('done') else f'{pct:.1f}% scanned'}; "
-            f"{len(st['tracked'])} payment/e-money firms found")
+    cs = st.get("cfd_seed")
+    both_done = sd.get("done") and (not cs or cs.get("done"))
+    pay = "payment scan done" if sd.get("done") else f"{pct:.1f}% scanned"
+    return (f"{'complete' if both_done else pay}; {len(st['tracked'])} payment/e-money firms found"
+            + (f"; {cfd_progress(st)}" if cs else ""))
 
 
 BATCH = 200
@@ -516,22 +717,32 @@ def check_many(client, st, frns, enrich, ctx, workers: int = 8) -> dict:
     main thread. Returns {frn: result}."""
     from concurrent.futures import ThreadPoolExecutor
 
+    check_cfd = getattr(client, "cfd", False)
+
     def fetch(frn):
         try:
-            return frn, client.firm(frn), None
+            firm = client.firm(frn)
+            perms = None
+            if check_cfd and firm and needs_cfd_check(firm):
+                perms = client.get(f"/Firm/{frn}/Permissions") or {}
+            elif check_cfd and str(frn) in st.get("cfd", {}):
+                perms = {}            # was a CFD firm, now not authorised: drop it
+            return frn, firm, perms, None
         except SourceNotReady:
             raise
         except Exception as e:
-            return frn, None, e
+            return frn, None, None, e
 
     results = {}
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        for frn, firm, err in pool.map(fetch, [int(f) for f in frns]):
+        for frn, firm, perms, err in pool.map(fetch, [int(f) for f in frns]):
             if err is not None:
                 ctx.log.warning("FCA FRN %s skipped: %s", frn, err)
                 results[frn] = "error"
                 continue
             try:
+                if check_cfd:
+                    _apply_cfd(client, st, frn, firm, perms)
                 results[frn] = _check_frn(client, st, frn, enrich, firm=firm)
             except SourceNotReady:
                 raise
@@ -634,4 +845,47 @@ class FCASource(Source):
         for d in st["tracked"].values():
             d = {k: v for k, v in d.items() if not k.startswith("_") and k != "status"}
             recs.append(Record(**d))
+        return recs
+
+
+class FCACFDSource(Source):
+    """UK CFD / FX providers found by the FCA scan (firms permitted to deal in CFDs, spread bets or
+    rolling spot forex). Shown in the 'United Kingdom (CFD)' tab."""
+    name = "fca_cfd"
+    label = "UK FCA CFD / FX providers"
+    removal_is_event = True
+
+    def fetch(self, ctx: Context) -> list:
+        cfg = ctx.source_config("fca")
+        if not cfd_enabled(cfg):
+            err = SourceNotReady("CFD checks are off (fca: cfd: enabled: false)")
+            err.quiet = True
+            raise err
+        st = load_state(ctx)
+        cs = st.get("cfd_seed") or {}
+        scanning = not (st["seed"].get("done") and cs.get("done"))
+        # while the scan is still finding firms, every run is a quiet new baseline (no flood of
+        # "new licence" alerts); once complete, changes are reported normally
+        self.fingerprint = (f"fca-cfd-scanning-{len(st.get('cfd', {}))}-{cs.get('cursor', 0)}"
+                            if scanning else "fca-cfd-v1")
+        if not scanning:
+            import datetime as dt
+            weekday = int(cfg.get("full_recheck_weekday", 6))
+            if dt.date.fromisoformat(ctx.today).weekday() == weekday and st.get("last_cfd_recheck") != ctx.today:
+                client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
+                client.verify()
+                frns = sorted(int(f) for f in st.get("cfd", {}))
+                ctx.log.info("FCA CFD: weekly re-check of %d firms", len(frns))
+                for i in range(0, len(frns), 500):
+                    cfd_scan(client, st, frns[i:i + 500], ctx, int(cfg.get("parallel_requests", 8)))
+                st["last_cfd_recheck"] = ctx.today
+                save_state(ctx, st)
+        recs = []
+        for d in st.get("cfd", {}).values():
+            d = {k: v for k, v in d.items() if not k.startswith("_") and k != "status"}
+            recs.append(Record(**d))
+        if not recs:
+            err = SourceNotReady("FCA CFD scan has not found any firms yet: " + seed_progress(st))
+            err.quiet = True
+            raise err
         return recs

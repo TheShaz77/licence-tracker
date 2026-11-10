@@ -35,6 +35,30 @@ SHEET_COLUMNS = [
     ("last_changed", "Last changed"),
 ]
 
+# Columns of the "Country (CFD)" tabs.
+CFD_COLUMNS = [
+    ("country", "Country"),
+    ("regulator", "Regulator"),
+    ("name", "Firm name"),
+    ("business_type", "Business type (guess from name + licence, unverified)"),
+    ("licence_type", "Licence / permission"),
+    ("status", "Status"),
+    ("status_detail", "Status detail"),
+    ("status_date", "Status / authorisation date"),
+    ("reference", "Reference no."),
+    ("lei", "LEI"),
+    ("city", "City"),
+    ("address", "Address"),
+    ("website", "Website"),
+    ("email", "Email"),
+    ("phone", "Phone"),
+    ("contact_source", "Contact found via"),
+    ("register_url", "Register link"),
+    ("source", "Source"),
+    ("first_seen", "First seen"),
+    ("last_changed", "Last changed"),
+]
+
 
 @dataclass
 class Record:
@@ -93,3 +117,26 @@ def join(v, sep=" | "):
     if isinstance(v, list):
         return sep.join(str(x) for x in v if x not in (None, ""))
     return "" if v is None else str(v)
+
+
+# --------------------------------------------------- CFD business type ---
+# A best guess from the firm's name and licence wording only. Shown as "(guess)" on the sheet;
+# nobody has checked it against the firm's actual business.
+_PROP = re.compile(r"\bprop(rietary)?\b|\bfunded\b|funding\b|\bprop ?firm|trader challenge|ftmo|\bevaluation", re.I)
+_INST = re.compile(r"\bprime\b|liquidity|institutional|\bLP\b|market ?maker|\bclearing\b|\bbank\b|\bbanque\b|\bbanca\b|"
+                   r"\bAG & co\b|capital markets|\bglobal markets\b|securities (europe|international)|trading (house|firm)\b|"
+                   r"jane street|citadel|virtu|optiver|susquehanna|xtx|jump trading|flow traders|hudson river|tower research",
+                   re.I)
+
+
+def guess_business_type(name: str, licence: str = "") -> str:
+    """'Retail broker', 'Institutional / prime broker or LP' or 'Prop trading firm', each marked as a guess."""
+    if _PROP.search(name or ""):
+        return "Prop trading firm (guess)"
+    lic = licence or ""
+    if re.search(r"professional clients only|wholesale clients only", lic, re.I) or (
+            re.search(r"wholesale clients", lic, re.I) and not re.search(r"retail", lic, re.I)):
+        return "Institutional / prime broker or liquidity provider (guess)"
+    if _INST.search(name or "") and not re.search(r"retail clients", licence or "", re.I):
+        return "Institutional / prime broker or liquidity provider (guess)"
+    return "Retail broker (guess)"

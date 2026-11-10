@@ -17,8 +17,8 @@ import os
 from collections import Counter, defaultdict
 
 from .diff import CHANGE_COLUMNS
-from .model import SHEET_COLUMNS
-from .store import record_row, sort_records
+from .model import CFD_COLUMNS, SHEET_COLUMNS
+from .store import cfd_row, is_cfd, record_row, sort_records
 
 ROWS_PER_REQUEST = 4000   # keeps each request well under Google's size limit
 
@@ -29,6 +29,36 @@ OTHER_TAB = "Other"
 
 def enabled() -> bool:
     return bool(os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON") and os.environ.get("SHEET_ID"))
+
+
+CFD_ALL_TAB = "CFD (all countries)"
+
+
+def merge_cfd(records: list) -> list:
+    """One row per firm and country when several sources list it (e.g. the ESMA register and
+    CySEC's own list): licences and sources are combined, the first record's details kept."""
+    from .sources.national import match_name
+    out, seen = [], {}
+    for r in records:
+        k = ((r.get("jurisdiction") or "").upper(), match_name(r.get("name", "")) or r.get("lei") or r.get("key"))
+        if k in seen:
+            first = seen[k]
+            for f, sep in (("licence_type", " + "), ("source", ", "), ("regulator", ", ")):
+                vals = [v for v in (first.get(f) or "").split(sep) if v]
+                if r.get(f) and r[f] not in vals:
+                    first[f] = sep.join(vals + [r[f]])
+            for f in ("website", "email", "lei", "city", "reference"):
+                first[f] = first.get(f) or r.get(f, "")
+            continue
+        r = dict(r)
+        seen[k] = r
+        out.append(r)
+    return out
+
+
+def cfd_tab(code: str) -> str:
+    code = (code or "").strip().upper()
+    return f"{COUNTRY_NAMES.get(code, code or 'Other')} (CFD)"
 
 
 def country_tab(code: str) -> str:
@@ -97,6 +127,9 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     tabs["Changes"] = [[h for _, h in CHANGE_COLUMNS]] + list(reversed(change_rows))  # newest first
     for title, rows in (extra_tabs or {}).items():
         tabs[title] = rows
+    # CFD brokers / LPs / prop firms have their own tabs ("United Kingdom (CFD)"), not the licence tabs
+    cfd = merge_cfd([r for r in ordered if is_cfd(r)])
+    ordered = [r for r in ordered if not is_cfd(r)]
     tabs["Licences"] = [header] + [record_row(r) for r in ordered]
 
     if per_country:
@@ -105,6 +138,14 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
             by_tab[country_tab(r.get("jurisdiction", ""))].append(record_row(r))
         for title in sorted(by_tab, key=lambda t: (t == OTHER_TAB, t)):
             tabs[title] = [header] + by_tab[title]
+    if cfd:
+        cfd_header = [h for _, h in CFD_COLUMNS]
+        tabs[CFD_ALL_TAB] = [cfd_header] + [cfd_row(r) for r in cfd]
+        by_tab = defaultdict(list)
+        for r in cfd:
+            by_tab[cfd_tab(r.get("jurisdiction", ""))].append(cfd_row(r))
+        for title in sorted(by_tab):
+            tabs[title] = [cfd_header] + by_tab[title]
     return tabs
 
 
@@ -153,7 +194,7 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     for title, sid in existing.items():
         if title in tabs:
             continue
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\([A-Z]{2}\)$", title):
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\(([A-Z]{2}|CFD)\)$", title) or title == CFD_ALL_TAB:
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 

@@ -310,6 +310,24 @@ every 60 days): Swiss firms already in the sheet from other registers get a
 **Swiss SRO** value, and names you add to `data/ch_sro_watch.txt` (one per line)
 appear as rows on the Switzerland tab once FINMA shows them as SRO members.
 
+## CFD vertical (brokers, liquidity providers, prop firms)
+
+CFD / FX firms go to their own tabs, "Country (CFD)" (e.g. "United Kingdom (CFD)"), plus a
+"CFD (all countries)" tab. They are not mixed into the Licences tab or the normal country tabs.
+
+- **UK**: the FCA scan also reads each authorised firm's permissions and lists firms allowed to deal
+  in or arrange CFDs, spread bets or rolling spot forex (CFDs held only under "managing investments",
+  as at fund managers, don't count). The UK scan workflow keeps running until this check has also
+  covered the FRNs it had already passed and the older range 100000-499999 (`sources: fca: cfd:`).
+  Until then the tab fills up gradually and no alerts are sent for it.
+- **Other markets** are under `cfd:` in config.yaml, with the same options as `national:`, plus
+  `paginate` (lists over numbered pages), `fallback_urls`, `require_pattern`, `country_column` and
+  `regulator_column`. They are re-read every `cfd_min_hours` (24).
+- **Business type** ("Retail broker", "Institutional / prime broker or liquidity provider", "Prop trading
+  firm") is a guess from the firm's name and licence wording (e.g. FCA permissions for professional
+  clients only), always marked "(guess)". Nobody has checked it.
+- Each market's last read is in `data/debug/national_status.json` under "XX (CFD)".
+
 ## Telegram notifications
 
 Every run that finds new licences, registrations or applications (new EMIs,

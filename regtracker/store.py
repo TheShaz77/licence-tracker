@@ -49,6 +49,25 @@ def record_row(r: dict) -> list:
     return [str(r.get(k, "") or "") for k, _ in SHEET_COLUMNS]
 
 
+def cfd_row(r: dict) -> list:
+    from .model import CFD_COLUMNS
+    r = dict(r)
+    r["status"] = "Active" if r.get("active") else "Inactive"
+    extra = r.get("extra") or {}
+    for k in ("phone", "email", "business_type", "address"):
+        if not r.get(k) and extra.get(k):
+            r[k] = extra[k]
+    if not r.get("address") and extra.get("postcode"):
+        r["address"] = extra["postcode"]
+    from .countries import COUNTRY_NAMES
+    r["country"] = COUNTRY_NAMES.get((r.get("jurisdiction") or "").upper(), r.get("jurisdiction") or "")
+    return [str(r.get(k, "") or "") for k, _ in CFD_COLUMNS]
+
+
+def is_cfd(r: dict) -> bool:
+    return (r.get("extra") or {}).get("vertical") == "CFD"
+
+
 def write_licences_csv(data_dir: Path, records: list):
     p = data_dir / "licences.csv"
     with open(p, "w", newline="", encoding="utf-8") as f:

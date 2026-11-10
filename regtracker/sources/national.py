@@ -480,6 +480,27 @@ def parse_nbs_psd2(raw: bytes, spec: dict, country: str, regulator: str) -> tupl
 CODES_ALL = {"AISP", "APS", "B", "EM", "EUAISP", "EUB", "EUEM", "EUPI", "PI", "PZB", "PZPI"}
 
 
+_COUNTRY_ALIASES = {"czech republic": "CZ", "slovak republic": "SK", "the netherlands": "NL", "holland": "NL",
+                    "great britain": "GB", "united kingdom": "GB", "uk": "GB", "republic of ireland": "IE",
+                    "luxemburg": "LU", "liechstenstein": "LI", "russian federation": "RU", "korea": "KR",
+                    "republic of korea": "KR", "usa": "US", "united states of america": "US", "hellas": "GR"}
+
+
+def country_code(value: str) -> str:
+    """ISO-2 code from a code or an English country name ("IRELAND", "Czechia", "IE")."""
+    from ..countries import COUNTRY_NAMES
+    v = re.sub(r"\s+", " ", (value or "").strip())
+    if len(v) == 2 and v.isalpha():
+        return v.upper()
+    low = v.lower()
+    if low in _COUNTRY_ALIASES:
+        return _COUNTRY_ALIASES[low]
+    for code, name in COUNTRY_NAMES.items():
+        if name.lower() == low:
+            return code
+    return ""
+
+
 def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     """Return (records, info) for one downloaded file."""
     if spec.get("format") == "nbs_psd2":
@@ -512,13 +533,15 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         "name": _col(headers, NAME_COLS, spec.get("name_column")),
         "type": _col(headers, TYPE_COLS, spec.get("type_column")),
         "id": _col(headers, ID_COLS, spec.get("id_column")),
-        "lei": _col(headers, LEI_COLS),
-        "city": _col(headers, CITY_COLS),
-        "date": _col(headers, DATE_COLS),
-        "status": _col(headers, STATUS_COLS),
-        "website": _col(headers, WEB_COLS),
-        "email": _col(headers, EMAIL_COLS),
-        "phone": _col(headers, PHONE_COLS),
+        "lei": _col(headers, LEI_COLS, spec.get("lei_column")),
+        "city": _col(headers, CITY_COLS, spec.get("city_column")),
+        "date": _col(headers, DATE_COLS, spec.get("date_column")),
+        "status": _col(headers, STATUS_COLS, spec.get("status_column")),
+        "website": _col(headers, WEB_COLS, spec.get("website_column")),
+        "email": _col(headers, EMAIL_COLS, spec.get("email_column")),
+        "phone": _col(headers, PHONE_COLS, spec.get("phone_column")),
+        "country": _col(headers, [], spec.get("country_column")) if spec.get("country_column") else None,
+        "regulator": _col(headers, [], spec.get("regulator_column")) if spec.get("regulator_column") else None,
         "address": _col(headers, ADDRESS_COLS, spec.get("address_column")),
         "end": _col(headers, END_COLS),
         "exclude": _col(headers, [], spec.get("exclude_column")) if spec.get("exclude_column") else None,
@@ -539,6 +562,9 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     patterns = [(re.compile(p, re.I), t) for p, t in (spec.get("type_patterns") or {}).items()]
     fixed_type = spec.get("licence_type")
     exclude = re.compile(spec["exclude_pattern"], re.I) if spec.get("exclude_pattern") else None
+    require = re.compile(spec["require_pattern"], re.I | re.S) if spec.get("require_pattern") else None
+    prefix = spec.get("_prefix") or "nat"
+    vertical = spec.get("_vertical")
     codes = spec.get("_codes") or {}
     out = {}
     type_values = {}
@@ -573,11 +599,19 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
                 break
         if not ltype:
             continue
-        if c["require"] is not None and not get(row, "require"):
+        if require is not None:
+            if not require.search(get(row, "require") if c["require"] is not None else " ".join(row)):
+                continue  # e.g. an Australian licence that doesn't cover market making in derivatives
+        elif c["require"] is not None and not get(row, "require"):
             continue  # e.g. no Lithuanian company code = foreign firm passporting in
+        jur = country
+        if c["country"] is not None:
+            jur = country_code(get(row, "country")) or ""
+            if not jur:
+                continue
         ref = get(row, "id")
         name = re.sub(r"(\s*([\^#*]+|※\d*|\(\d\)|\[\d+\]))+$", "", name).strip()   # footnote marks: "^", "#", "※1"
-        key = f"nat_{country.lower()}:{ref or norm_key(name) or hkey(name)}"
+        key = f"{prefix}_{country.lower()}:{ref or norm_key(name) or hkey(name)}"
         status = get(row, "status")
         active = not (status and INACTIVE_RE.search(status))
         end = _iso(get(row, "end"))
@@ -589,15 +623,20 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
             types = sorted(set(r.licence_type.split(" + ")) | {ltype})
             r.licence_type = " + ".join(types)
             continue
+        extra = {k: v for k, v in (("phone", get(row, "phone")), ("address", get(row, "address"))) if v}
+        if vertical:
+            from ..model import guess_business_type
+            extra["vertical"] = vertical
+            extra["business_type"] = guess_business_type(name, " ".join((ltype, raw_type, get(row, "require")[:5000])))
         out[key] = Record(
-            key=key, source=f"nat_{country.lower()}", jurisdiction=country,
-            regulator=spec.get("regulator") or regulator,
+            key=key, source=f"{prefix}_{country.lower()}", jurisdiction=jur,
+            regulator=get(row, "regulator") or spec.get("regulator") or regulator,
             name=name, licence_type=ltype, active=active,
             status_detail=" / ".join(x for x in (raw_type, get(row, "exclude"), status) if x) or f"{regulator} register",
             status_date=_iso(get(row, "date")) or get(row, "date")[:10], reference=ref, lei=get(row, "lei"),
             city=get(row, "city"), register_url=spec.get("register_url") or spec["url"],
             website=get(row, "website"), email=get(row, "email").lower(),
-            extra={k: v for k, v in (("phone", get(row, "phone")), ("address", get(row, "address"))) if v},
+            extra=extra,
         )
     info["type_values"] = sorted(type_values.items(), key=lambda kv: -kv[1])[:40]
     info["kept"] = len(out)
@@ -616,6 +655,79 @@ class NationalSource(Source):
         import hashlib
         import json
         self.fingerprint = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode()).hexdigest()[:16]
+
+    prefix = "nat"
+    vertical = None
+
+    def _spec(self, spec: dict) -> dict:
+        return {**spec, "_prefix": self.prefix, "_vertical": self.vertical}
+
+    @staticmethod
+    def _get(ctx: Context, url: str) -> bytes:
+        r = ctx.session.get(url, timeout=(15, 90), headers={
+            "User-Agent": "Mozilla/5.0 (compatible; licence-tracker)",
+            "Accept": "text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,"
+                      "application/json,text/html,*/*"})
+        r.raise_for_status()
+        return r.content
+
+    def _fetch_multi(self, ctx: Context, spec: dict, label: str, status: dict) -> tuple:
+        """Lists spread over numbered pages ('paginate': {start, step, max, marker}; the url holds
+        {page}), or several addresses tried in turn until one gives firms ('fallback_urls').
+        Returns (records, info, error or None, last raw page)."""
+        from ..http import robots_allowed
+        import hashlib
+        if spec.get("fallback_urls"):
+            last_err, raw = None, b""
+            for url in [spec["url"]] + list(spec["fallback_urls"]):
+                if not robots_allowed(ctx.session, url):
+                    last_err = RuntimeError(f"{url} is disallowed by robots.txt")
+                    continue
+                try:
+                    raw = self._get(ctx, url)
+                    got, info = parse_file(raw, self._spec({**spec, "url": url}), self.country, self.regulator)
+                    if got:
+                        status[label] = f"ok: {len(got)} firms" + (" (fallback address)" if url != spec["url"] else "")
+                        return got, info, None, raw
+                    last_err = RuntimeError("no firms matched")
+                except Exception as e:
+                    last_err = e
+            return [], {}, last_err, raw
+        pg = spec["paginate"]
+        start, step, most = int(pg.get("start", 1)), int(pg.get("step", 1)), int(pg.get("max", 200))
+        marker = re.compile(pg["marker"], re.I | re.S) if pg.get("marker") else None
+        out, info, seen, raw, pages, quiet = {}, {}, set(), b"", 0, 0
+        first_url = spec["url"].replace("{page}", str(start))
+        if not robots_allowed(ctx.session, first_url):
+            return [], {}, RuntimeError(f"{first_url} is disallowed by robots.txt"), b""
+        for n in range(most):
+            url = spec["url"].replace("{page}", str(start + n * step))
+            try:
+                raw = self._get(ctx, url)
+            except Exception as e:
+                if pages:
+                    break           # past the last page
+                return [], {}, e, b""
+            pages += 1
+            marks = set(marker.findall(decode_bytes(raw))) if marker else {hashlib.sha1(raw).hexdigest()}
+            if not marks - seen:
+                quiet += 1          # nothing new on this page: the end of the list (or a repeat)
+                if quiet >= 2:
+                    break
+                continue
+            quiet = 0
+            seen |= marks
+            try:
+                got, info = parse_file(raw, self._spec({**spec, "url": url}), self.country, self.regulator)
+            except Exception:
+                got = []        # a page with none of the wanted licence types
+            for rec in got:
+                out.setdefault(rec.key, rec)
+        if not out:
+            return [], info, RuntimeError(f"no firms matched on {pages} pages"), raw
+        status[label] = f"ok: {len(out)} firms from {pages} pages"
+        return list(out.values()), {**info, "pages": pages}, None, raw
+
 
     def fetch(self, ctx: Context) -> list:
         from ..http import robots_allowed
@@ -644,45 +756,51 @@ class NationalSource(Source):
                     problems.append(f"{label}: {e}")
                     failed.add(label)
                     continue
-            if not robots_allowed(ctx.session, spec["url"]):
-                problems.append(f"{label}: disallowed by the site's robots.txt")
-                status[label] = "blocked by robots.txt"
-                failed.add(label)
-                continue
-            try:
-                r = ctx.session.get(spec["url"], timeout=(15, 90), headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; licence-tracker)",
-                    "Accept": "text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,"
-                              "application/json,text/html,*/*"})
-                r.raise_for_status()
-            except Exception as e:
-                problems.append(f"{label}: {e}")
-                status[label] = _short_error(e)
-                failed.add(label)
-                continue
-            raw = r.content
-            err, info, got = None, {}, []
-            if spec.get("probe"):
-                # not read yet: just keep a copy of the page (and of the pages it links to that look like
-                # registers) so a reader can be written for it
-                save_raw(ctx, self.name, label, raw)
-                n = follow_links(ctx, self.name, label, spec, raw) if spec.get("follow") else 0
-                status[label] = f"probe saved ({len(raw)} bytes, {n} linked pages)"
-                ctx.log.info("%s: %s saved for inspection (probe, %d linked pages)", self.name, label, n)
-                continue
-            try:
-                got, info = parse_file(raw, spec, self.country, self.regulator)
-                if not got:
-                    raise RuntimeError("no firms matched")
-            except Exception as e:
-                err = e
-                problems.append(f"{label}: {e}")
-                failed.add(label)
-                save_raw(ctx, self.name, label, raw)
-                status[label] = "read failed: " + str(e)[:200]
+            if spec.get("paginate") or spec.get("fallback_urls"):
+                got, info, err, raw = self._fetch_multi(ctx, spec, label, status)
+                if err is not None:
+                    problems.append(f"{label}: {err}")
+                    failed.add(label)
+                    if raw:
+                        save_raw(ctx, self.name, label, raw)
+                    status.setdefault(label, "read failed: " + str(err)[:200])
+                    notes.append((spec["url"], raw or b"", info, err))
+                    continue
+            else:
+                if not robots_allowed(ctx.session, spec["url"]):
+                    problems.append(f"{label}: disallowed by the site's robots.txt")
+                    status[label] = "blocked by robots.txt"
+                    failed.add(label)
+                    continue
+                try:
+                    raw = self._get(ctx, spec["url"])
+                except Exception as e:
+                    problems.append(f"{label}: {e}")
+                    status[label] = _short_error(e)
+                    failed.add(label)
+                    continue
+                err, info, got = None, {}, []
+                if spec.get("probe"):
+                    # not read yet: just keep a copy of the page (and of the pages it links to that look like
+                    # registers) so a reader can be written for it
+                    save_raw(ctx, self.name, label, raw)
+                    n = follow_links(ctx, self.name, label, spec, raw) if spec.get("follow") else 0
+                    status[label] = f"probe saved ({len(raw)} bytes, {n} linked pages)"
+                    ctx.log.info("%s: %s saved for inspection (probe, %d linked pages)", self.name, label, n)
+                    continue
+                try:
+                    got, info = parse_file(raw, self._spec(spec), self.country, self.regulator)
+                    if not got:
+                        raise RuntimeError("no firms matched")
+                except Exception as e:
+                    err = e
+                    problems.append(f"{label}: {e}")
+                    failed.add(label)
+                    save_raw(ctx, self.name, label, raw)
+                    status[label] = "read failed: " + str(e)[:200]
             notes.append((spec["url"], raw, info, err))
             if got:
-                status[label] = f"ok: {len(got)} firms"
+                status.setdefault(label, f"ok: {len(got)} firms")
             for rec in got:
                 rec.extra["file"] = label
                 if rec.key in recs:
@@ -694,7 +812,7 @@ class NationalSource(Source):
                 else:
                     recs[rec.key] = rec
         write_diagnostics(ctx, self.name, notes)
-        write_status(ctx, self.country, status)
+        write_status(ctx, self.country if self.prefix == "nat" else f"{self.country} ({self.vertical})", status)
         for p in problems:
             ctx.log.warning("%s: %s", self.name, p)
         if not recs and not problems:
@@ -739,6 +857,9 @@ def _date_key(url: str) -> tuple:
     m = re.search(r"(?i)\b(" + "|".join(months) + r")[a-z]*[\s_.-]*(20\d{2})", u)
     if m:
         return int(m.group(2)), months.index(m.group(1).lower()[:3]) + 1, 0
+    m = re.search(r"(?<!\d)(20\d{2})(0[1-9]|1[0-2])(?!\d)", u)       # 202602
+    if m:
+        return int(m.group(1)), int(m.group(2)), 0
     m = re.search(r"(20\d{2})", u)
     return (int(m.group(1)), 0, 0) if m else (0, 0, 0)
 
@@ -749,22 +870,29 @@ def find_link(ctx: Context, spec: dict) -> str:
     import html as htmlmod
     from urllib.parse import urljoin
     from ..http import robots_allowed
-    page = spec["page"]
-    if not robots_allowed(ctx.session, page):
-        raise RuntimeError(f"{page} is disallowed by robots.txt")
-    r = ctx.session.get(page, timeout=90, headers={"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)"})
-    r.raise_for_status()
+    pages = spec["page"] if isinstance(spec["page"], list) else [spec["page"]]
     rx = re.compile(spec["link_pattern"], re.I)
-    found = []
-    for href, text in re.findall(r"""<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", r.text, re.I | re.S):
-        href = htmlmod.unescape(href.strip())
-        text = re.sub(r"<[^>]+>|\s+", " ", htmlmod.unescape(text)).strip()
-        if rx.search(href) or rx.search(text):
-            u = urljoin(page, href)
-            if u not in [f[0] for f in found]:
-                found.append((u, text))
+    found, errors = [], []
+    for page in pages:            # several pages may link to the file; the newest link wins
+        if not robots_allowed(ctx.session, page):
+            errors.append(f"{page} is disallowed by robots.txt")
+            continue
+        try:
+            r = ctx.session.get(page, timeout=90, headers={"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)"})
+            r.raise_for_status()
+        except Exception as e:
+            errors.append(f"{page}: {_short_error(e)}")
+            continue
+        for href, text in re.findall(r"""<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", r.text, re.I | re.S):
+            href = htmlmod.unescape(href.strip())
+            text = re.sub(r"<[^>]+>|\s+", " ", htmlmod.unescape(text)).strip()
+            if rx.search(href) or rx.search(text):
+                u = urljoin(page, href)
+                if u not in [f[0] for f in found]:
+                    found.append((u, text))
     if not found:
-        raise RuntimeError(f"no link matching {spec['link_pattern']!r} on {page}")
+        raise RuntimeError(f"no link matching {spec['link_pattern']!r} on {', '.join(pages)}"
+                           + (f" ({'; '.join(errors)})" if errors else ""))
     if spec.get("link_pick") == "first":
         return found[0][0]
     return max(found, key=lambda f: max(_date_key(f[0]), _date_key(f[1])))[0]
@@ -1003,6 +1131,27 @@ def write_diagnostics(ctx: Context, name: str, notes: list):
         p.write_text("\n".join(out), encoding="utf-8")
     except Exception as e:
         ctx.log.warning("%s diagnostics not written: %s", name, e)
+
+
+class CFDSource(NationalSource):
+    """CFD / FX brokers, liquidity providers and prop firms in one market (config.yaml 'cfd:').
+    Same reader as the national registers; the firms go to the "Country (CFD)" tabs."""
+    prefix = "cfd"
+    vertical = "CFD"
+
+    def __init__(self, country: str, cfg: dict):
+        super().__init__(country, cfg)
+        self.name = f"cfd_{self.country.lower()}"
+        self.label = f"{self.country} CFD providers ({self.regulator})"
+
+
+def cfd_sources(cfg: dict) -> dict:
+    out = {}
+    for country, c in (cfg.get("cfd") or {}).items():
+        if (c or {}).get("enabled", True):
+            s = CFDSource(country, c)
+            out[s.name] = s
+    return out
 
 
 def national_sources(cfg: dict) -> dict:

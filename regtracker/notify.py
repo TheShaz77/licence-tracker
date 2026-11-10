@@ -229,6 +229,9 @@ def telegram_messages(events: list, sheet_url: str) -> list:
             if shown >= TG_MAX_LINES:
                 break
             what = e.get("event_label") if e.get("event_label") not in ("New licence", "") else e.get("licence_type")
+            src = str(e.get("source") or "")
+            if src.startswith("cfd_") or src == "fca_cfd":
+                what = f"CFD: {what or ''}"
             name = esc(e.get("name") or "")
             link = e.get("register_url") or ""
             name = f'<a href="{esc(link)}">{name}</a>' if link.startswith("http") else name

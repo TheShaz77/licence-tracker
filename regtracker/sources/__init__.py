@@ -2,7 +2,7 @@ from .boc import BoCSource
 from .brazil import BrazilSource
 from .eba import EBASource
 from .ecb import ECBSource
-from .fca import FCASource
+from .fca import FCACFDSource, FCASource
 from .finma import FINMASource
 from .fincen import FinCENSource
 from .fintrac import FINTRACSource
@@ -13,6 +13,6 @@ from .swiss_sro import CHSROSource
 from .za_wiki import ZABanksWikiSource
 from .pra import PRASource
 
-ALL_SOURCES = {s.name: s for s in (FCASource(), PRASource(), EBASource(), ECBSource(), FINMASource(),
+ALL_SOURCES = {s.name: s for s in (FCASource(), FCACFDSource(), PRASource(), EBASource(), ECBSource(), FINMASource(),
                                      FINTRACSource(), BoCSource(), FinCENSource(), OpenSanctionsMSBSource(), MiCASource(), CHSROSource(), ZABanksWikiSource(),
                                      *ZA_SOURCES, BrazilSource())}
