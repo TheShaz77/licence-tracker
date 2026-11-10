@@ -139,12 +139,12 @@
   "date": "2026-11-10"
  },
  "CR": {
-  "Datos sobre Entidades Fiscalizadas": "probe saved (127493 bytes, 2 linked pages)",
-  "Entidades Supervisadas": "probe saved (130059 bytes, 2 linked pages)",
-  "Entidades Supervisadas (2)": "probe saved (130048 bytes, 2 linked pages)",
+  "Datos sobre Entidades Fiscalizadas": "probe saved earlier this week",
+  "Entidades Supervisadas": "probe saved earlier this week",
+  "Entidades Supervisadas (2)": "probe saved earlier this week",
   "SUGEF exchange houses": "ok: 1 firms",
   "SUGEF supervised entities list": "ok: 18 firms",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "CV": {
   "BCV homepage": "probe saved earlier this week",
@@ -196,8 +196,8 @@
   "date": "2026-11-09"
  },
  "GE": {
-  "NBG VASP registry": "HTTP 500",
-  "NBG payment service providers": "HTTP 500",
+  "NBG VASP registry": "probe saved (5121 bytes, 0 linked pages)",
+  "NBG payment service providers": "probe saved (5121 bytes, 0 linked pages)",
   "date": "2026-11-10",
   "nbg.gov.ge homepage": "probe saved earlier this week"
  },
@@ -225,10 +225,10 @@
  "GM": {
   "CBG approved bureaus": "ok: 82 firms",
   "CBG licensed banks": "ok: 11 firms",
-  "CBG mobile money": "probe waiting for the next run (page budget used up)",
-  "List of Licensed Microfinance Institutions": "probe waiting for the next run (page budget used up)",
-  "List of Participants in The Payment System": "probe waiting for the next run (page budget used up)",
-  "date": "2026-11-09"
+  "CBG mobile money": "probe saved (41746 bytes, 10 linked pages)",
+  "List of Licensed Microfinance Institutions": "probe saved (52437 bytes, 6 linked pages)",
+  "List of Participants in The Payment System": "probe saved (43294 bytes, 6 linked pages)",
+  "date": "2026-11-10"
  },
  "GN": {
   "BCRG banks": "read failed: no matching table on the page; table headers were: []",
@@ -272,13 +272,13 @@
   "date": "2026-11-10"
  },
  "IN": {
-  "List of Agency Banks": "probe saved (67875 bytes, 1 linked pages)",
-  "List of Approved/Authorised Entities - Payment Sys": "probe saved (211376 bytes, 5 linked pages)",
-  "List of Banks Permitted to Provide Mobile Banking ": "probe saved (1069080 bytes, 5 linked pages)",
+  "List of Agency Banks": "probe saved earlier this week",
+  "List of Approved/Authorised Entities - Payment Sys": "probe saved earlier this week",
+  "List of Banks Permitted to Provide Mobile Banking ": "probe saved earlier this week",
   "RBI authorised payment system operators": "ok: 144 firms",
-  "RBI banks in India": "probe saved (65664 bytes, 2 linked pages)",
+  "RBI banks in India": "probe saved earlier this week",
   "RBI banks permitted to issue prepaid instruments": "ok: 63 firms",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "JE": {
   "Digital asset funds": "probe saved earlier this week",
@@ -334,11 +334,11 @@
  },
  "KR": {
   "FSS financial institutions directory": "ok: 10 firms",
-  "FSS-Supervised Financial Institutions": "probe saved (177243 bytes, 6 linked pages)",
-  "KoFIU (Korean) VASP reports": "probe saved (48472 bytes, 0 linked pages)",
+  "FSS-Supervised Financial Institutions": "probe saved earlier this week",
+  "KoFIU (Korean) VASP reports": "probe saved earlier this week",
   "KoFIU homepage": "probe saved earlier this week",
-  "Table of FSS-Supervised Financial Institutions": "probe saved (174237 bytes, 6 linked pages)",
-  "date": "2026-11-09"
+  "Table of FSS-Supervised Financial Institutions": "probe saved earlier this week",
+  "date": "2026-11-10"
  },
  "KY": {
   "CIMA entity search": "probe saved earlier this week",
@@ -444,17 +444,17 @@
   "www.cnbv.gob.mx homepage": "probe saved earlier this week"
  },
  "MY": {
-  "Approved Money Services Business Agents": "probe saved (858270 bytes, 6 linked pages)",
-  "Approved Payment System Operators": "probe saved (212150 bytes, 6 linked pages)",
+  "Approved Money Services Business Agents": "probe saved earlier this week",
+  "Approved Payment System Operators": "probe saved earlier this week",
   "BNM B2B remittance": "ok: 27 firms",
   "BNM FSP directory (banks)": "ok: 55 firms",
   "BNM MSB licensees": "ok: 252 firms",
   "BNM digital MSB channels": "ok: 37 firms",
   "BNM non-bank e-money issuers": "ok: 49 firms",
   "BNM payment system regulatees": "probe saved earlier this week",
-  "Principal Money Services Business Licensees": "probe saved (218380 bytes, 6 linked pages)",
+  "Principal Money Services Business Licensees": "probe saved earlier this week",
   "SC registered digital asset exchanges": "probe saved earlier this week",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "MZ": {
   "Banco de Mocambique homepage": "probe saved earlier this week",
@@ -473,7 +473,7 @@
   "CBN money transfer operators": "ok: 108 firms",
   "SEC digital asset operators (ARIP)": "ok: 2 firms",
   "SEC regulatory incubation participants": "ok: 7 firms",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "NI": {
   "SIBOIF supervised institutions": "ok: 8 firms",
@@ -555,8 +555,8 @@
  "SG": {
   "MAS directory cards": "ok: 4 firms",
   "MAS directory export": "ok: 687 firms",
-  "Print/Download List": "probe saved (2836 bytes, 0 linked pages)",
-  "date": "2026-11-09"
+  "Print/Download List": "probe saved earlier this week",
+  "date": "2026-11-10"
  },
  "SL": {
   "BSL licensed institutions": "DNS: no such site",
@@ -592,19 +592,19 @@
   "date": "2026-11-10"
  },
  "TC": {
-  "AML/CFT Regulated Entities": "probe saved (275124 bytes, 6 linked pages)",
+  "AML/CFT Regulated Entities": "probe saved earlier this week",
   "TCI FSC licensed banks": "ok: 6 firms",
-  "TCI FSC money transmitters": "probe saved (358681 bytes, 7 linked pages)",
-  "date": "2026-11-09"
+  "TCI FSC money transmitters": "probe saved earlier this week",
+  "date": "2026-11-10"
  },
  "TH": {
-  "1) Depositary Corporations   For example: commerci": "probe saved (91744 bytes, 6 linked pages)",
+  "1) Depositary Corporations   For example: commerci": "probe saved earlier this week",
   "BOT payment business providers": "ok: 144 firms",
-  "Digital Asset Businesses": "probe saved (87374 bytes, 6 linked pages)",
+  "Digital Asset Businesses": "probe saved earlier this week",
   "SEC digital asset operators": "HTTP 403",
-  "date": "2026-11-09",
+  "date": "2026-11-10",
   "www.sec.or.th homepage": "HTTP 403",
-  "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved (188051 bytes, 6 linked pages)",
+  "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved earlier this week",
   "เช็กข้อมูลผู้ประกอบธุรกิจการซื้อและขายธนบัตรต่างปร": "ok: 1946 firms"
  },
  "TJ": {
@@ -638,7 +638,7 @@
   "CBRT payment institutions": "ok: 20 firms",
   "SPK crypto asset service providers": "ok: 48 firms",
   "SPK crypto list page": "probe saved earlier this week",
-  "date": "2026-11-09"
+  "date": "2026-11-10"
  },
  "TT": {
   "CBTT approved PSPs, EMIs and PSOs": "HTTP 404",

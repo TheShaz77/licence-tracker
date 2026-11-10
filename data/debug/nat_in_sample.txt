@@ -16,7 +16,7 @@ first lines:
 '     <title>Publications | Official Website of Reserve Bank of India </title>'
 
 url: https://rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2491
-bytes: 77836  starts: b'\r\n<!DOCT'
+bytes: 76277  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'Name of the Banks', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S No.', 'Name of the Banks']
