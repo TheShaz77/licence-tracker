@@ -2056,3 +2056,13 @@ def test_fca_daily_check_keeps_to_time_budget(tmp_path, monkeypatch):
     calls.clear()
     fca.FCASource().fetch(ctx)                  # same day again: active firms already done today
     assert not [c for c in calls if c < 900019]  # only the frontier above the newest FRN is looked at
+
+
+def test_fsca_list_link_takes_newest_edition():
+    from regtracker.sources.southafrica import fsca_list_link
+    page = ('<a href="/Regulatory%20Frameworks/Documents/List%20of%20approved%20crypto%20asset%20service%20'
+            'providers%20April%202024.pdf">Approved list of crypto asset service providers April 2024</a>'
+            '<a href="/_api/cr3ad_regulatoryframes(x)/cr3ad_document/$value">Approved list of crypto asset '
+            'service providers (CASPs) December 2025</a>')
+    assert fsca_list_link(page).endswith("cr3ad_document/$value")
+    assert fsca_list_link("<p>no list here</p>") == ""

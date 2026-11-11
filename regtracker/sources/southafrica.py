@@ -461,16 +461,26 @@ FSCA_HOME = "https://www.fsca.co.za/"
 
 def fsca_list_link(page: str) -> str:
     """The FSCA site links its current CASP list from a news item; the address
-    (an _api/... document link) changes with each update."""
+    (an _api/... document link) changes with each update. The page can list several
+    editions, so the newest one (by the year and month in its link or label) is taken."""
+    months = ["january", "february", "march", "april", "may", "june", "july", "august",
+              "september", "october", "november", "december"]
+    best, best_key = "", (-1, -1)
     for m in re.finditer(r"""<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""", page, re.I | re.S):
         before = re.sub(r"<[^>]+>", " ", page[max(0, m.start() - 600):m.start()])
         label = re.sub(r"<[^>]+>", " ", m.group(2))
         ctxt = (before + " " + label).lower()
-        if ("crypto asset service provider" in ctxt and re.search(r"approved|licensed|list", ctxt)
-                and re.search(r"_api/|\.pdf|\.xlsx", m.group(1), re.I)
-                and "news" not in m.group(1).lower() and "press" not in label.lower()):
-            return urljoin(FSCA_HOME, htmlmod.unescape(m.group(1)))
-    return ""
+        href = htmlmod.unescape(m.group(1))
+        if not ("crypto asset service provider" in ctxt and re.search(r"approved|licensed|list", ctxt)
+                and re.search(r"_api/|\.pdf|\.xlsx", href, re.I)
+                and "news" not in href.lower() and "press" not in label.lower()):
+            continue
+        blob = (href + " " + label).lower().replace("%20", " ")
+        year = max([int(y) for y in re.findall(r"(20\d{2})", blob)] or [0])
+        month = max([months.index(mo) + 1 for mo in months if mo in blob] or [0])
+        if (year, month) > best_key or (best_key == (-1, -1)):
+            best, best_key = urljoin(FSCA_HOME, href), (year, month)
+    return best
 
 
 class ZACASPSource(_ZASource):
