@@ -306993,7 +306993,7 @@
 },
 "1059571": {
 "_enriched": 2,
-"active": true,
+"active": false,
 "city": "London",
 "email": "",
 "extra": {
@@ -307012,9 +307012,9 @@
 "regulator": "FCA",
 "services": "",
 "source": "fca",
-"status": "Active",
+"status": "Inactive",
 "status_date": "07/07/2026",
-"status_detail": "PSD Agent (firm status: See full details)",
+"status_detail": "PSD Agent Former (firm status: See full details)",
 "website": ""
 },
 "1059572": {
@@ -312375,7 +312375,7 @@
 },
 "1061512": {
 "_enriched": 2,
-"active": true,
+"active": false,
 "city": "West Drayton",
 "email": "",
 "extra": {
@@ -312394,9 +312394,9 @@
 "regulator": "FCA",
 "services": "",
 "source": "fca",
-"status": "Active",
+"status": "Inactive",
 "status_date": "31/07/2026",
-"status_detail": "PSD Agent (firm status: See full details)",
+"status_detail": "PSD Agent Former (firm status: See full details)",
 "website": ""
 },
 "1061514": {
@@ -348827,7 +348827,7 @@
 },
 "506798": {
 "_enriched": 2,
-"active": true,
+"active": false,
 "city": "Birmingham",
 "email": "",
 "extra": {
@@ -348846,9 +348846,9 @@
 "regulator": "FCA",
 "services": "",
 "source": "fca",
-"status": "Active",
+"status": "Inactive",
 "status_date": "01/11/2009",
-"status_detail": "PSD Agent (firm status: See full details)",
+"status_detail": "PSD Agent Former (firm status: See full details)",
 "website": ""
 },
 "506799": {
