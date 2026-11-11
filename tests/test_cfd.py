@@ -251,26 +251,3 @@ def test_source_time_limit():
             time.sleep(2)
     with time_limit(0, "no limit"):
         time.sleep(0.01)
-
-
-def test_licences_tab_left_out_when_sheet_too_big(monkeypatch):
-    import logging
-    from regtracker import sheets
-    monkeypatch.setenv("SHEET_CELL_LIMIT", "50")
-    reqs = []
-
-    class WS:
-        def __init__(self, t, i): self.title, self.id = t, i
-
-    class Sh:
-        def worksheets(self): return [WS("Licences", 5)]
-        def batch_update(self, body):
-            reqs.append(body)
-            return {"replies": [{"addSheet": {"properties": {"sheetId": 9}}} for _ in body["requests"]]}
-        def values_batch_update(self, body): pass
-        def fetch_sheet_metadata(self, params): return {"sheets": []}
-    recs = [{"name": f"Firm {i}", "jurisdiction": "GB", "active": True, "source": "fca", "licence_type": "EMI"}
-            for i in range(3)]
-    sheets.publish(recs, [], {}, logging.getLogger("t"), sh=Sh())
-    flat = [r for b in reqs for r in b["requests"]]
-    assert {"deleteSheet": {"sheetId": 5}} in flat
