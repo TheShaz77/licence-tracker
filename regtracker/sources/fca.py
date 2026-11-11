@@ -875,39 +875,37 @@ class FCASource(Source):
         client.verify()
         enrich = bool(cfg.get("enrich_address", True))
 
-        # 1. Re-check tracked firms: active ones daily, all of them weekly.
-        weekday_full = int(cfg.get("full_recheck_weekday", 6))  # Sunday
         import datetime as dt
+        import time as _time
         today = dt.date.fromisoformat(ctx.today)
-        # once a week (runs are every 2 hours, so only the first run that day)
-        full = (not st.get("last_full_recheck")
-                or (today.weekday() == weekday_full and st.get("last_full_recheck") != ctx.today))
-        frns = [int(f) for f, r in st["tracked"].items() if full or r.get("active")]
-        for frn in _watchlist(ctx):
-            if str(frn) not in st["tracked"]:
-                frns.append(frn)
-        ctx.log.info("FCA: re-checking %d firms (%s)", len(frns), "full" if full else "active only")
         workers = int(cfg.get("parallel_requests", 8))
-        for i in range(0, len(frns), 1000):
-            check_many(client, st, frns[i:i + 1000], enrich, ctx, workers)
-            save_state(ctx, st)
-        if full:
-            st["last_full_recheck"] = ctx.today
+        # Every step keeps to a time budget and carries on next run, so a run never hits GitHub's
+        # 3-hour limit (a full re-check of all ~145,000 tracked FRNs takes about 9 hours).
+        deadline = _time.monotonic() + float(cfg.get("run_minutes", 75)) * 60
 
-        # 2. Frontier scan for newly issued FRNs.
+        def age(d):
+            try:
+                return (today - dt.date.fromisoformat(d or "2000-01-01")).days
+            except ValueError:
+                return 9999
+
+        # 1. Frontier scan for newly issued FRNs first (new firms matter most); a wider one weekly.
         back = int(cfg.get("frontier_back", 3000))
         ahead = int(cfg.get("frontier_ahead", 2000))
-        if full:
+        wide = age(st.get("last_wide_frontier")) >= 7
+        if wide:
             back = int(cfg.get("frontier_back_weekly", 25000))
         top = st.get("max_frn_seen", 0)
         lo, hi = max(1, top - back), top + ahead
         ctx.log.info("FCA: scanning FRN window %d-%d for new firms", lo, hi)
         misses = 0
         frn = lo
-        while frn <= hi or misses < 500:
+        while (frn <= hi or misses < 500) and _time.monotonic() < deadline:
             batch = list(range(frn, frn + BATCH))
             res = check_many(client, st, batch, enrich, ctx, workers)
             for f in batch:  # in FRN order
+                if str(f) in st["tracked"] and res.get(f) not in (None, "error"):
+                    st["tracked"][str(f)]["_checked"] = ctx.today
                 if f > top:
                     found = res.get(f) in ("tracked", "other")
                     misses = 0 if found else misses + 1
@@ -916,6 +914,33 @@ class FCASource(Source):
             frn = batch[-1] + 1
             if frn > hi and misses >= 500:
                 break
+        else:
+            if wide:
+                st["last_wide_frontier"] = ctx.today
+        save_state(ctx, st)
+
+        # 2. Re-check tracked firms: active ones daily, inactive ones weekly, least recently checked first.
+        inactive_days = int(cfg.get("inactive_recheck_days", 7))
+        due = [(not r.get("active"), r.get("_checked", ""), int(f)) for f, r in st["tracked"].items()
+               if (r.get("active") and r.get("_checked") != ctx.today)
+               or (not r.get("active") and age(r.get("_checked")) >= inactive_days)]
+        due += [(False, "", f) for f in _watchlist(ctx) if str(f) not in st["tracked"]]
+        due.sort()
+        frns = [f for _, _, f in due]
+        ctx.log.info("FCA: %d firms due a re-check (%d active)", len(frns), sum(1 for a, _, _ in due if not a))
+        done = 0
+        for i in range(0, len(frns), 500):
+            if _time.monotonic() > deadline:
+                break
+            batch = frns[i:i + 500]
+            res = check_many(client, st, batch, enrich, ctx, workers)
+            for f in batch:
+                if str(f) in st["tracked"] and res.get(f) not in (None, "error"):
+                    st["tracked"][str(f)]["_checked"] = ctx.today
+            done += len(batch)
+            save_state(ctx, st)
+        if done < len(frns):
+            ctx.log.info("FCA: %d re-checked this run, %d left for the next run", done, len(frns) - done)
         save_state(ctx, st)
         if client.errors:
             ctx.log.warning("FCA: %d lookups failed; those firms keep their previous status", client.errors)

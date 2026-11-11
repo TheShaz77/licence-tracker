@@ -41,6 +41,8 @@ sources:
     frontier_ahead: 2000          # ...and this many above it
     frontier_back_weekly: 25000   # weekly wider re-scan
     full_recheck_weekday: 6       # 0=Mon ... 6=Sun: also re-check inactive firms
+    run_minutes: 75               # time per run for the FCA checks; what's left carries on next run
+    inactive_recheck_days: 7      # inactive firms are re-checked this often (active ones daily)
     track_services: false
     # CFD vertical: the same scan also looks at each authorised firm's permissions and lists the
     # firms allowed to deal in / arrange CFDs, spread bets or rolling spot forex in the

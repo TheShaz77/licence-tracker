@@ -2016,3 +2016,43 @@ def test_all_tables_positional_columns():
                          "NG", "CBN")
     assert {r.name: r.licence_type for r in recs} == {"Abeg Technologies Limited": "Mobile money operator",
                                                       "Arca Payments Company Limited": "Switching and processing"}
+
+
+def test_fca_daily_check_keeps_to_time_budget(tmp_path, monkeypatch):
+    """No 'full re-check' that runs past GitHub's 3-hour limit: work stops at run_minutes and the
+    least recently checked firms go first next run."""
+    calls = []
+
+    class FakeClient:
+        def __init__(self, ctx, rps):
+            self.errors = 0
+
+        def firm(self, frn):
+            calls.append(frn)
+            return {"Organisation Name": f"Firm {frn}", "Status": "Authorised",
+                    "PSD / EMD Status": "Authorised Electronic Money Institution"} if frn < 900020 else None
+
+        def address(self, frn):
+            return {}
+
+        def verify(self):
+            pass
+
+    monkeypatch.setattr(fca, "FCAClient", FakeClient)
+    cfg = {"sources": {"fca": {"seed_ranges": [[900000, 900019]], "frontier_back": 0, "frontier_ahead": 0,
+                               "frontier_back_weekly": 0, "run_minutes": 0}}}
+    ctx = cli.make_context(cfg, tmp_path)
+    ctx.today = "2026-11-11"
+    fca.seed(ctx, hours=0.01)
+    calls.clear()
+    recs = fca.FCASource().fetch(ctx)          # no time at all: nothing re-checked, list still returned
+    assert len(recs) == 20 and calls == []
+    cfg["sources"]["fca"]["run_minutes"] = 60
+    ctx = cli.make_context(cfg, tmp_path)
+    ctx.today = "2026-11-11"
+    fca.FCASource().fetch(ctx)
+    st = fca.load_state(ctx)
+    assert all(r.get("_checked") == "2026-11-11" for r in st["tracked"].values())
+    calls.clear()
+    fca.FCASource().fetch(ctx)                  # same day again: active firms already done today
+    assert not [c for c in calls if c < 900019]  # only the frontier above the newest FRN is looked at
