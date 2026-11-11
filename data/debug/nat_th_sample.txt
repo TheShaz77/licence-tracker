@@ -1,7 +1,7 @@
 url: https://www.bot.or.th/th/our-roles/payment-systems/payment-act-oversight/business-provider.html
 bytes: 447637  starts: b'\n<!DOCTY'
 error: None
-columns used: {'name': 'รายชื่อผู้ประกอบธุรกิจ', 'type': 'ประเภทธุรกิจ', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'รายชื่อผู้ประกอบธุรกิจ', 'type': 'ประเภทธุรกิจ', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['รายชื่อผู้ประกอบธุรกิจ', 'ประเภทธุรกิจ', 'วันที่อนุญาต']
 data rows: 344  kept: 144
 type values: [('การให้บริการรับชำระเงินแทน', 103), ('การให้บริการโอนเงินด้วยวิธีการทางอิเล็กทรอนิกส์', 77), ('การให้บริการสนับสนุนบริการแก่ผู้รับบัตร', 57), ('การให้บริการเงินอิเล็กทรอนิกส์', 40), ('การให้บริการบัตรเครดิต บัตรเดบิต หรือบัตรเอทีเอ็ม', 27), ('การให้บริการแก่ผู้รับบัตร', 23), ('การให้บริการระบบเครือข่ายบัตร', 8), ('การให้บริการระบบโอนเงินรายย่อยระหว่างผู้ใช้บริการของระบบ', 4), ('การให้บริการเงินอิเล็กทรอนิกส์ในวงจำกัด (ขึ้นทะเบียน)', 3), ('การให้บริการระบบการชำระดุล', 2)]
@@ -18,7 +18,7 @@ first lines:
 url: https://www.bot.or.th/content/dam/bot/documents/th/our-roles/financial-markets/foreign-exchange-regulations/foreign-exchange-business/money-changer/listauthorized.pdf
 bytes: 1615315  starts: b'%PDF-1.7'
 error: None
-columns used: {'name': '(guessed) สถานที่ตั้งส านักงานใหญ่', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': '(guessed) สถานที่ตั้งส านักงานใหญ่', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['ล าดับ', 'เลขที่ใบอนุญาต', 'ชื่อนิติบุคคล', 'สถานที่ตั้งส านักงานใหญ่']
 data rows: 2083  kept: 1946
 type values: [('', 2083)]

@@ -1,7 +1,7 @@
 url: https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/
 bytes: 95673  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'Name of Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Name of Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Name of Bank', 'Fx Related Fees and Charges']
 data rows: 33  kept: 33
 type values: [('', 33)]

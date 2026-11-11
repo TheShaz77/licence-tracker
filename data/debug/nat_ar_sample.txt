@@ -1,7 +1,7 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 81053  starts: b'{"succes'
+bytes: 81060  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
 data rows: 239  kept: 238
 type values: [('', 239)]
@@ -11,7 +11,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=2&lang=es
 bytes: 1644  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 5  kept: 5
 type values: [('', 5)]
@@ -21,7 +21,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=4&lang=es
 bytes: 1036  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 3  kept: 3
 type values: [('', 3)]
@@ -31,7 +31,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=5&lang=es
 bytes: 21805  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoCCT', 'id_proveedor']
 data rows: 67  kept: 67
 type values: [('', 67)]
@@ -41,7 +41,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=6&lang=es
 bytes: 4735  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 15  kept: 15
 type values: [('', 15)]
@@ -51,7 +51,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
 bytes: 29033  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 95  kept: 95
 type values: [('', 95)]
@@ -61,7 +61,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=8&lang=es
 bytes: 6905  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 23  kept: 23
 type values: [('', 23)]
@@ -71,7 +71,7 @@ first lines:
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=9&lang=es
 bytes: 1214  starts: b'{"succes'
 error: None
-columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
 data rows: 4  kept: 4
 type values: [('', 4)]

@@ -75,7 +75,7 @@
  },
  "BD": {
   "BB mobile financial services providers": "ok: 14 firms",
-  "BB payment system operators": "HTTP 404",
+  "BB payment system operators": "probe saved (246 bytes, 0 linked pages)",
   "date": "2026-11-10",
   "www.bb.org.bd homepage": "probe saved earlier this week"
  },
@@ -457,7 +457,7 @@
  },
  "MD": {
   "BNM register of e-money issuers": "HTTP 403",
-  "BNM registers (probe)": "probe saved (21860 bytes, 0 linked pages)",
+  "BNM registers (probe)": "probe saved earlier this week",
   "NBM payment service providers": "HTTP 404",
   "date": "2026-11-10",
   "www.bnm.md homepage": "probe saved earlier this week"
@@ -479,7 +479,7 @@
  "MN": {
   "Banking license": "probe saved earlier this week",
   "BoM banking supervision": "probe saved earlier this week",
-  "BoM banks": "ok: 12 firms",
+  "BoM banks": "timeout (connect)",
   "Difference Between Central Bank and Commercial Ban": "probe saved earlier this week",
   "FRC homepage": "probe saved earlier this week",
   "Licensed Entities": "probe saved earlier this week",

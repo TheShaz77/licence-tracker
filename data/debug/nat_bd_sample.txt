@@ -1,7 +1,7 @@
 url: https://www.bb.org.bd/en/index.php/financialactivity/paysystems
 bytes: 66264  starts: b'\xef\xbb\xbf\xef\xbb\xbf\n\n'
 error: None
-columns used: {'name': '(guessed) Name of the MFS Service', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': '(guessed) Name of the MFS Service', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Sl No.', 'Name of the MFS Service', 'Name of the Business Entity']
 data rows: 14  kept: 14
 type values: [('', 14)]

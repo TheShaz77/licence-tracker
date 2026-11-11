@@ -1,7 +1,7 @@
 url: https://www.cbn.gov.ng/PaymentsSystem/InternationalMoneyTransferOperators.html
 bytes: 77702  starts: b'\xef\xbb\xbf<!DOC'
 error: None
-columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Name', 'Address']
 data rows: 108  kept: 108
 type values: [('', 108)]
@@ -18,7 +18,7 @@ first lines:
 url: https://www.cbn.gov.ng/PaymentsSystem/PSPs.html
 bytes: 141165  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'Name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Name', 'section']
 data rows: 248  kept: 194
 type values: [('i. PAYMENT SOLUTION SERVICE PROVIDER (PSSP) AUTHORISATION', 104), ('iii. SUPER-AGENT AUTHORISATION', 54), ('ii. PAYMENT TERMINAL SERVICES PROVIDER (PTSP) AUTHORISATION', 42), ('C. SWITCHING & PROCESSING LICENCE CATEGORY', 18), ('B. MOBILE MONEY OPERATOR LICENCE CATEGORY', 17), ('A. CARD/PAYMENT SCHEMES', 8), ('F. PAYMENTS TERMINAL SERVICE AGGREGATOR CATEGORY', 2), ('E. PAYMENTS SERVICE HOLDING CATEGORY', 1)]
@@ -35,7 +35,7 @@ first lines:
 url: https://www.cbn.gov.ng/Out/2024/CCD/LIST OF DEPOSIT MONEY BANKS AS AT 26TH APRIL, 2024 (1).pdf
 bytes: 43310  starts: b'%PDF-1.6'
 error: None
-columns used: {'name': 'NAME OF INSTITUTION', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'STATE', 'website': None, 'email': None, 'phone': None, 'address': 'HEAD OFFICE ADDRESS', 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'NAME OF INSTITUTION', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'STATE', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'HEAD OFFICE ADDRESS', 'end': None, 'exclude': None, 'require': None}
 headers: ['SN', 'NAME OF INSTITUTION', 'HEAD OFFICE ADDRESS', 'STATE']
 data rows: 50  kept: 39
 type values: [('', 39)]
@@ -45,7 +45,7 @@ first lines:
 url: https://sec.gov.ng/fintech-and-innovation-hub-finport/registered-fintech-operators/
 bytes: 137140  starts: b'\n<!DOCTY'
 error: None
-columns used: {'name': 'Company', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Company', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Company', 'Function', 'Contact']
 data rows: 2  kept: 2
 type values: [('', 2)]
@@ -62,7 +62,7 @@ first lines:
 url: https://sec.gov.ng/fintech-and-innovation-hub-finport/registered-fintech-operators/
 bytes: 137140  starts: b'\n<!DOCTY'
 error: None
-columns used: {'name': 'Company', 'type': 'Institution Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+columns used: {'name': 'Company', 'type': 'Institution Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Company', 'Proposed Solution', 'Test Period', 'Institution Type', 'Contact Details', 'Remarks']
 data rows: 7  kept: 7
 type values: [('VASP', 5), ('Existing Capital Market Operator', 1), ('FinTech Entrepreneur', 1)]
