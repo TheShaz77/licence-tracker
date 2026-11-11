@@ -6090,64 +6090,6 @@
 "status_detail": "FCA Authorised; may deal in CFDs, spread bets, rolling spot forex (retail clients)",
 "website": "www.thesisam.com"
 },
-"114428": {
-"_enriched": true,
-"active": true,
-"city": "Ripon",
-"email": "",
-"extra": {
-"business_type": "Retail broker (guess)",
-"clients": "retail clients",
-"companies_house": "01676636",
-"phone": "+441423523553",
-"postcode": "HG4 1BN",
-"vertical": "CFD"
-},
-"jurisdiction": "GB",
-"key": "fca_cfd:114428",
-"lei": "",
-"licence_type": "CFD / FX provider (FCA permission to deal in CFDs)",
-"name": "MAUNBY INVESTMENT MANAGEMENT LIMITED",
-"passports": "",
-"reference": "114428",
-"register_url": "https://register.fca.org.uk/s/search?q=114428&type=Companies",
-"regulator": "FCA",
-"services": "",
-"source": "fca_cfd",
-"status": "Active",
-"status_date": "01/12/2001",
-"status_detail": "FCA Authorised; may deal in CFDs, spread bets, rolling spot forex (retail clients)",
-"website": "www.maunby.com"
-},
-"114503": {
-"_enriched": true,
-"active": true,
-"city": "London",
-"email": "",
-"extra": {
-"business_type": "Retail broker (guess)",
-"clients": "retail clients",
-"companies_house": "01753527",
-"phone": "+442070749300",
-"postcode": "EC2R 5BJ",
-"vertical": "CFD"
-},
-"jurisdiction": "GB",
-"key": "fca_cfd:114503",
-"lei": "",
-"licence_type": "CFD / FX provider (FCA permission to deal in CFDs)",
-"name": "Amundi (UK) Limited",
-"passports": "",
-"reference": "114503",
-"register_url": "https://register.fca.org.uk/s/search?q=114503&type=Companies",
-"regulator": "FCA",
-"services": "",
-"source": "fca_cfd",
-"status": "Active",
-"status_date": "01/12/2001",
-"status_detail": "FCA Authorised; may deal in CFDs, spread bets, rolling spot forex (retail clients)",
-"website": "https://www.amundi.co.uk"
-},
 "115126": {
 "_enriched": true,
 "active": true,
@@ -22146,8 +22088,8 @@
 ]
 },
 "cfd_seed": {
-"checked": 14600,
-"cursor": 114600,
+"checked": 14400,
+"cursor": 114400,
 "done": false,
 "range_index": 0,
 "ranges": [
@@ -254883,7 +254825,7 @@
 "services": "",
 "source": "fca",
 "status": "Active",
-"status_date": "11/09/2026",
+"status_date": "22/06/2026",
 "status_detail": "Authorised Electronic Money Institution (firm status: Registered)",
 "website": "www.remitly.com"
 },
