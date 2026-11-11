@@ -9,8 +9,8 @@
  "AE": {
   "CBUAE register": "ok: 242 firms",
   "DFSA firms": "probe saved earlier this week",
-  "VARA register page": "ok: 60 firms",
-  "date": "2026-11-10"
+  "VARA register page": "ok: 61 firms",
+  "date": "2026-11-11"
  },
  "AL": {
   "BoA licensed entities": "probe saved earlier this week",
@@ -50,7 +50,7 @@
   "CBA supervised institutions": "HTTP 404",
   "Commercial banks": "probe saved earlier this week",
   "List of financial institutions under supervision o": "probe saved earlier this week",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "www.cbaruba.org homepage": "probe saved earlier this week"
  },
  "AZ": {
@@ -138,7 +138,7 @@
   "CBB payment service providers (names)": "ok: 13 firms",
   "Central Bank of Belize licensees": "HTTP 404",
   "Payment Service Providers": "probe saved earlier this week",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "www.centralbank.org.bz homepage": "probe saved earlier this week"
  },
  "CA (iGaming)": {
@@ -175,7 +175,7 @@
   "SFC establecimientos bancarios": "ok: 576 firms",
   "SFC homepage": "probe saved earlier this week",
   "SFC low-value payment system operators": "ok: 24 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "CR": {
   "Datos sobre Entidades Fiscalizadas": "probe saved earlier this week",
@@ -183,7 +183,7 @@
   "Entidades Supervisadas (2)": "probe saved earlier this week",
   "SUGEF exchange houses": "ok: 1 firms",
   "SUGEF supervised entities list": "ok: 18 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "CV": {
   "BCV homepage": "probe saved earlier this week",
@@ -238,7 +238,7 @@
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
   "RBF licensing": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "GA": {
   "BEAC payment institutions (CEMAC)": "DNS: no such site",
@@ -250,11 +250,11 @@
  },
  "GE": {
   "NBG VASP registry": "probe saved earlier this week",
-  "NBG VASP supervision (probe)": "probe saved (364631 bytes, 7 linked pages)",
+  "NBG VASP supervision (probe)": "probe saved earlier this week",
   "NBG payment service providers": "probe saved earlier this week",
   "NBG payment service providers (names)": "ok: 4 firms",
   "NBG registered payment service providers": "read failed: no matching table on the page; table headers were: []",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "nbg.gov.ge homepage": "probe saved earlier this week"
  },
  "GG": {
@@ -264,6 +264,13 @@
   "Registered Entities (2)": "probe saved earlier this week",
   "Regulated Entities": "probe saved earlier this week",
   "Regulated Entities (2)": "probe saved earlier this week",
+  "date": "2026-11-11"
+ },
+ "GG (iGaming)": {
+  "Alderney category 1 and 2 associate certificates": "read failed: no firms matched",
+  "Alderney core service provider associates": "ok: 3 firms",
+  "Alderney eGambling licensees": "read failed: igm_gg took longer than 30 minutes; stopped (last list kept)",
+  "Alderney temporary eGambling licensees": "read failed: no firms matched",
   "date": "2026-11-11"
  },
  "GH": {
@@ -286,7 +293,7 @@
   "CBG mobile money": "probe saved earlier this week",
   "List of Licensed Microfinance Institutions": "probe saved earlier this week",
   "List of Participants in The Payment System": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "GN": {
   "BCRG banks": "read failed: no matching table on the page; table headers were: []",
@@ -317,12 +324,12 @@
  },
  "ID": {
   "BI e-licensing": "probe saved earlier this week",
-  "BI licensed institutions (probe)": "probe saved (617930 bytes, 12 linked pages)",
+  "BI licensed institutions (probe)": "probe saved earlier this week",
   "BI licensed payment system institutions": "ok: 10 firms",
   "BI payment service providers list": "probe saved earlier this week",
   "OJK digital financial assets": "HTTP 404",
   "OJK homepage": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "IM": {
   "Bank Recovery and Resolution": "probe saved earlier this week",
@@ -343,7 +350,7 @@
   "RBI banks in India": "probe saved earlier this week",
   "RBI banks permitted to issue prepaid instruments": "ok: 63 firms",
   "RBI scheduled commercial banks": "ok: 120 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "JE": {
   "Digital asset funds": "probe saved earlier this week",
@@ -453,7 +460,7 @@
  "MC": {
   "AMAF members (Monaco banks)": "ok: 68 firms",
   "AMAF members page": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "MD": {
   "BNM register of e-money issuers": "HTTP 403",
@@ -517,7 +524,7 @@
   "RBM payment systems": "probe saved earlier this week",
   "Register of Licensed Banks": "probe saved earlier this week",
   "Register of Licensed Entities": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "MX": {
   "CNBV register of supervised entities": "probe saved earlier this week",
@@ -550,7 +557,7 @@
   "BoN authorised dealers in foreign exchange (banks)": "ok: 10 firms",
   "BoN authorised dealers with limited authority (bureaux de change)": "ok: 5 firms",
   "BoN payment service providers": "HTTP 404",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "www.bon.com.na homepage": "probe saved earlier this week"
  },
  "NG": {
@@ -586,7 +593,7 @@
   "CBO licensed institutions": "HTTP 404",
   "CBO licensed money exchange companies": "ok: 20 firms",
   "cbo.gov.om homepage": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "PA": {
   "SBP banks": "HTTP 404",
@@ -632,11 +639,11 @@
   "NBS banks": "HTTP 404",
   "NBS e-money institutions": "HTTP 404",
   "NBS payment institutions": "HTTP 404",
-  "NBS payment/e-money registers (probe)": "probe saved (72998 bytes, 5 linked pages)",
+  "NBS payment/e-money registers (probe)": "probe saved earlier this week",
   "NBS register of e-money institutions": "ok: 5 firms",
   "NBS register of payment institutions": "ok: 6 firms",
   "NBS virtual asset service providers": "HTTP 404",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "nbs.rs homepage": "probe saved earlier this week"
  },
  "SA": {
@@ -658,7 +665,7 @@
   "Hire Purchase and Credit Sales": "probe saved earlier this week",
   "Insurance": "probe saved earlier this week",
   "International Trade Zone": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "SC (CFD)": {
   "FSA capital markets - securities dealers": "ok: 231 firms",
@@ -668,7 +675,7 @@
   "MAS directory cards": "ok: 4 firms",
   "MAS directory export": "ok: 687 firms",
   "Print/Download List": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "SL": {
   "BSL licensed institutions": "DNS: no such site",
@@ -708,7 +715,7 @@
   "TCI FSC licensed banks": "ok: 6 firms",
   "TCI FSC licensed money transmitters (names)": "ok: 3 firms",
   "TCI FSC money transmitters": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "TH": {
   "1) Depositary Corporations   For example: commerci": "probe saved earlier this week",
@@ -744,7 +751,7 @@
   "NRBT financial institutions page": "probe saved earlier this week",
   "NRBT licensed foreign exchange dealers (names)": "ok: 8 firms",
   "NRBT licensed institutions (names)": "ok: 11 firms",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "of-the-licensed-foreign-exchange-dealers": "probe saved earlier this week"
  },
  "TR": {
@@ -753,7 +760,7 @@
   "CBRT payment institutions": "ok: 20 firms",
   "SPK crypto asset service providers": "ok: 48 firms",
   "SPK crypto list page": "probe saved earlier this week",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "TT": {
   "CBTT approved PSPs, EMIs and PSOs": "HTTP 404",
@@ -790,7 +797,7 @@
   "BCU institution lists": "probe saved earlier this week",
   "BCU payment and e-money institutions": "HTTP 404",
   "BCU virtual asset service providers": "HTTP 404",
-  "date": "2026-11-10",
+  "date": "2026-11-11",
   "www.bcu.gub.uy homepage": "probe saved earlier this week"
  },
  "UZ": {

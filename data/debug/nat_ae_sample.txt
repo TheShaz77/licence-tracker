@@ -1,10 +1,10 @@
 url: https://www.vara.ae/en/licenses-and-register/public-register/
-bytes: 768294  starts: b'<!DOCTYP'
+bytes: 771915  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'VASP Name', 'type': 'Licence Type', 'id': 'Reference', 'lei': None, 'city': None, 'date': 'Licence Issued', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['VASP Name', 'Licence Type', 'Reference', 'Licensed Activities', 'Licence Issued', 'Status', 'CMA Registration Number']
-data rows: 60  kept: 60
-type values: [('VASP Licence', 60)]
+data rows: 61  kept: 61
+type values: [('VASP Licence', 61)]
 first lines:
 '<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 4.25.6"/><meta data-react-helmet="true" name="desc'
 '        px-[60px] transition-all duration-300 lg:flex 2xl:px-[100px] translate-y-0 bg-transparent"><div class="flex items-end" style="opacity:0;transform:translateY(20px) translateZ(0)"><a aria-label="Virtual Assets Regulatory Authority" href="/en/"><svg class="max-w-[75%]" width="200px" height="64p'

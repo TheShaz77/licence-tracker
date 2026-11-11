@@ -33,7 +33,7 @@ first lines:
 '        <title>TCMB - Ödeme Kuruluşları</title>'
 
 url: https://spk.gov.tr/kurumlar/kripto-varlik-hizmet-saglayicilar/faaliyette-bulunanlar-listesi
-bytes: 36259  starts: b'\n<!docty'
+bytes: 36183  starts: b'\n<!docty'
 error: None
 columns used: {'name': '(guessed) Güncel Ünvan', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Güncel Ünvan', 'Eski Ünvan (Varsa)']

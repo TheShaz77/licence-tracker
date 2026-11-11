@@ -1,5 +1,5 @@
 url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
-bytes: 128336  starts: b' <!DOCTY'
+bytes: 128368  starts: b' <!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

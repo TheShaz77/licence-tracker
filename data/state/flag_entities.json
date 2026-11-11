@@ -1,0 +1,335 @@
+{
+"checked": {
+"3P Solutions Limited": "2026-11-11",
+"AMINA Bank AG": "2026-11-11",
+"Annitak LTD": "2026-11-11",
+"B Transfer Services Limited": "2026-11-11",
+"BA EXCHANGE COMPANY (UK) LIMITED": "2026-11-11",
+"BC Remittance Ltd.": "2026-11-11",
+"BFXWW Inc.": "2026-11-11",
+"Bank Frick & Co. AG": "2026-11-11",
+"Banxa": "2026-11-11",
+"Bequant Pro Limited": "2026-11-11",
+"Bitpanda GmbH": "2026-11-11",
+"Bitstamp Limited": "2026-11-11",
+"BlackBull Markets": "2026-11-11",
+"Booming Games (Malta) Limited": "2026-11-11",
+"Booming Games (UK) Limited": "2026-11-11",
+"Breinrock UK Ltd": "2026-11-11",
+"ByBit": "2026-11-11",
+"C to C OU": "2026-11-11",
+"CEX.IO LTD": "2026-11-11",
+"CoinJar": "2026-11-11",
+"Confirmo s.r.o": "2026-11-11",
+"Currency.com": "2026-11-11",
+"Depasify S.L.": "2026-11-11",
+"Far West Pay Ltd": "2026-11-11",
+"Firstclear Limited": "2026-11-11",
+"Gate Global UAB": "2026-11-11",
+"Global Exchange Limited": "2026-11-11",
+"Globe Enterprise GmbH": "2026-11-11",
+"Heka Funds Sicav P.L.C. (with subfunds - check MC record for info)": "2026-11-11",
+"Innovative Concepts": "2026-11-11",
+"Keyrock SA (Old Record)": "2026-11-11",
+"Lanistar Limited": "2026-11-11",
+"Link FX PLC": "2026-11-11",
+"LondonLink (GI) Limited": "2026-11-11",
+"MILAYA CAPITAL LIMITED": "2026-11-11",
+"Mr. Green Limited": "2026-11-11",
+"Mt Pelerin SA": "2026-11-11",
+"OKX Europe Limited": "2026-11-11",
+"PAYON LTD": "2026-11-11",
+"PAYWISER": "2026-11-11",
+"PXP Financial Limited": "2026-11-11",
+"PXP Solutions Limited": "2026-11-11",
+"Pay On Limited": "2026-11-11",
+"Pay Perform OU": "2026-11-11",
+"Pay Set Limited": "2026-11-11",
+"Payabl. CY Limited": "2026-11-11",
+"Payhound Ltd": "2026-11-11",
+"Playmer Ltd": "2026-11-11",
+"Polar Limited": "2026-11-11",
+"Ramp Swaps Limited": "2026-11-11",
+"Raw Trading Ltd": "2026-11-11",
+"Reliz Limited (Blockfills)": "2026-11-11",
+"Resrade Limited": "2026-11-11",
+"S.S Cyprus Mutual Limited": "2026-11-11",
+"STS Transfer": "2026-11-11",
+"SwissBorg Solutions OU": "2026-11-11",
+"TokenWorld": "2026-11-11",
+"Tokero": "2026-11-11",
+"Transak": "2026-11-11",
+"Turicum Private Bank": "2026-11-11",
+"Uphold Europe Limited": "2026-11-11",
+"Vantage International Group Limited": "2026-11-11",
+"Wagestream": "2026-11-11",
+"Wintermute Trading LTD": "2026-11-11",
+"Xshop OU": "2026-11-11",
+"Yaspa Limited": "2026-11-11",
+"ZBX": "2026-11-11",
+"Zeply OU": "2026-11-11",
+"swipelux": "2026-11-11"
+},
+"entities": {
+"americaskids": {
+"kind": "DO NOT CONTACT",
+"name": "America’s Kids",
+"reason": "Owns Lazarus (on the do-not-contact list) - per Wikidata"
+},
+"andreessenhorowitz": {
+"kind": "DO NOT CONTACT",
+"name": "Andreessen Horowitz",
+"reason": "Owns Coinbase (on the do-not-contact list) - per Wikidata"
+},
+"archiveofporsche": {
+"kind": "DO NOT CONTACT",
+"name": "archive of Porsche AG",
+"reason": "Subsidiary of Porsche (on the do-not-contact list) - per Wikidata"
+},
+"armind": {
+"kind": "DO NOT CONTACT",
+"name": "Armind",
+"reason": "Subsidiary of Armada (on the do-not-contact list) - per Wikidata"
+},
+"astateoftrance": {
+"kind": "DO NOT CONTACT",
+"name": "A State of Trance",
+"reason": "Subsidiary of Armada (on the do-not-contact list) - per Wikidata"
+},
+"bitstampasiapte": {
+"kind": "DO NOT CONTACT",
+"name": "BITSTAMP ASIA PTE. LTD.",
+"reason": "Subsidiary of Bitstamp Limited (on the do-not-contact list) - per GLEIF"
+},
+"bitstampluxembourg": {
+"kind": "DO NOT CONTACT",
+"name": "Bitstamp Luxembourg SARL",
+"reason": "Subsidiary of Bitstamp Limited (on the do-not-contact list) - per GLEIF"
+},
+"california": {
+"kind": "DO NOT CONTACT",
+"name": "California",
+"reason": "Owns Phoenix (on the do-not-contact list) - per Wikidata"
+},
+"capitalflow": {
+"kind": "COMPETITOR",
+"name": "Capitalflow",
+"reason": "Subsidiary of OpenPayd competitor bunq - per Wikidata"
+},
+"ccsceskaspolecnostproplatebnikarty": {
+"kind": "COMPETITOR",
+"name": "CCS Česká společnost pro platební karty",
+"reason": "Subsidiary of OpenPayd competitor Corpay - per Wikidata"
+},
+"cellforcegroup": {
+"kind": "DO NOT CONTACT",
+"name": "Cellforce Group GmbH",
+"reason": "Subsidiary of Porsche (on the do-not-contact list) - per Wikidata"
+},
+"cityofphoenixparksandrecreationdepartment": {
+"kind": "DO NOT CONTACT",
+"name": "City of Phoenix Parks and Recreation Department",
+"reason": "Subsidiary of Phoenix (on the do-not-contact list) - per Wikidata"
+},
+"coldharbourrecordings": {
+"kind": "DO NOT CONTACT",
+"name": "Coldharbour Recordings",
+"reason": "Subsidiary of Armada (on the do-not-contact list) - per Wikidata"
+},
+"convergex": {
+"kind": "DO NOT CONTACT",
+"name": "Convergex",
+"reason": "Owns Vortex (on the do-not-contact list) - per Wikidata"
+},
+"cornhillfx": {
+"kind": "COMPETITOR",
+"name": "Cornhill FX Limited",
+"reason": "Subsidiary of OpenPayd competitor iBanFirst - per Wikidata"
+},
+"elysiumabfky": {
+"kind": "DO NOT CONTACT",
+"name": "Elysium ABF (KY)",
+"reason": "Subsidiary of Heka Funds Sicav P.L.C. (with subfunds - check MC record for info) (on the do-not-contact list) - per GLEIF"
+},
+"elysiumaefky": {
+"kind": "DO NOT CONTACT",
+"name": "Elysium AEF (KY)",
+"reason": "Subsidiary of Heka Funds Sicav P.L.C. (with subfunds - check MC record for info) (on the do-not-contact list) - per GLEIF"
+},
+"elysiumgafky": {
+"kind": "DO NOT CONTACT",
+"name": "Elysium GAF (KY)",
+"reason": "Subsidiary of Heka Funds Sicav P.L.C. (with subfunds - check MC record for info) (on the do-not-contact list) - per GLEIF"
+},
+"everlane": {
+"kind": "DO NOT CONTACT",
+"name": "Everlane",
+"reason": "Subsidiary of Shein (on the do-not-contact list) - per Wikidata"
+},
+"fleetcorluxembourgholding2": {
+"kind": "COMPETITOR",
+"name": "FleetCor Luxembourg Holding2",
+"reason": "Subsidiary of OpenPayd competitor Corpay - per Wikidata"
+},
+"frontierclimate": {
+"kind": "COMPETITOR",
+"name": "Frontier Climate",
+"reason": "Subsidiary of OpenPayd competitor Stripe - per Wikidata"
+},
+"hungariangeneralmachinefactory": {
+"kind": "DO NOT CONTACT",
+"name": "Hungarian General Machine Factory",
+"reason": "Owns Phoenix (on the do-not-contact list) - per Wikidata"
+},
+"inelopolskaspzoo": {
+"kind": "DO NOT CONTACT",
+"name": "INELO Polska Sp. z o. o.",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"ivgimmobilien": {
+"kind": "DO NOT CONTACT",
+"name": "IVG Immobilien",
+"reason": "Owns Polar (on the do-not-contact list) - per Wikidata"
+},
+"lemonsqueezy": {
+"kind": "COMPETITOR",
+"name": "Lemon Squeezy",
+"reason": "Subsidiary of OpenPayd competitor Stripe - per Wikidata"
+},
+"maxeda": {
+"kind": "DO NOT CONTACT",
+"name": "Maxeda",
+"reason": "Owns Praxis (on the do-not-contact list) - per Wikidata"
+},
+"museumofmontserrat": {
+"kind": "DO NOT CONTACT",
+"name": "Museum of Montserrat",
+"reason": "Owns Julia (on the do-not-contact list) - per Wikidata"
+},
+"nederlandschebetaalwisselmaatschappij": {
+"kind": "COMPETITOR",
+"name": "Nederlandsche Betaal & Wissel Maatschappij N.V.",
+"reason": "Subsidiary of OpenPayd competitor iBanFirst - per Wikidata"
+},
+"peraton": {
+"kind": "DO NOT CONTACT",
+"name": "Peraton",
+"reason": "Subsidiary of Veritas Capital (on the do-not-contact list) - per Wikidata"
+},
+"porschedigital": {
+"kind": "DO NOT CONTACT",
+"name": "Porsche Digital",
+"reason": "Subsidiary of Porsche (on the do-not-contact list) - per Wikidata"
+},
+"porscheengineeringgroup": {
+"kind": "DO NOT CONTACT",
+"name": "Porsche Engineering Group",
+"reason": "Subsidiary of Porsche (on the do-not-contact list) - per Wikidata"
+},
+"porschewerkzeugbau": {
+"kind": "DO NOT CONTACT",
+"name": "Porsche Werkzeugbau GmbH",
+"reason": "Subsidiary of Porsche (on the do-not-contact list) - per Wikidata"
+},
+"princip": {
+"kind": "DO NOT CONTACT",
+"name": "Princip",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"raveculture": {
+"kind": "DO NOT CONTACT",
+"name": "Rave Culture",
+"reason": "Subsidiary of Armada (on the do-not-contact list) - per Wikidata"
+},
+"realchemistry": {
+"kind": "DO NOT CONTACT",
+"name": "Real Chemistry",
+"reason": "Owns WCG (on the do-not-contact list) - per Wikidata"
+},
+"reamontax": {
+"kind": "DO NOT CONTACT",
+"name": "Reamon Tax",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"robinhoodmarketsirelandholdings": {
+"kind": "DO NOT CONTACT",
+"name": "ROBINHOOD MARKETS IRELAND HOLDINGS LIMITED",
+"reason": "Owns Bitstamp Limited (on the do-not-contact list) - per GLEIF"
+},
+"rotterdam": {
+"kind": "DO NOT CONTACT",
+"name": "Rotterdam",
+"reason": "Owns Phoenix (on the do-not-contact list) - per Wikidata"
+},
+"sheglam": {
+"kind": "DO NOT CONTACT",
+"name": "SHEGLAM",
+"reason": "Subsidiary of Shein (on the do-not-contact list) - per Wikidata"
+},
+"sheingermany": {
+"kind": "DO NOT CONTACT",
+"name": "SHEIN Germany",
+"reason": "Subsidiary of Shein (on the do-not-contact list) - per Wikidata"
+},
+"stripepress": {
+"kind": "COMPETITOR",
+"name": "Stripe Press",
+"reason": "Subsidiary of OpenPayd competitor Stripe - per Wikidata"
+},
+"sygic": {
+"kind": "DO NOT CONTACT",
+"name": "Sygic",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"taxjar": {
+"kind": "COMPETITOR",
+"name": "TaxJar",
+"reason": "Subsidiary of OpenPayd competitor Stripe - per Wikidata"
+},
+"transakaustraliapty": {
+"kind": "DO NOT CONTACT",
+"name": "TRANSAK AUSTRALIA PTY LTD",
+"reason": "Subsidiary of Transak (on the do-not-contact list) - per GLEIF"
+},
+"transakhk": {
+"kind": "DO NOT CONTACT",
+"name": "TRANSAK HK LIMITED",
+"reason": "Subsidiary of Transak (on the do-not-contact list) - per GLEIF"
+},
+"unionsquareventures": {
+"kind": "DO NOT CONTACT",
+"name": "Union Square Ventures",
+"reason": "Owns Coinbase (on the do-not-contact list) - per Wikidata"
+},
+"universidadnacional": {
+"kind": "DO NOT CONTACT",
+"name": "Universidad Nacional",
+"reason": "Owns Abra (on the do-not-contact list) - per Wikidata"
+},
+"volkswagengroup": {
+"kind": "DO NOT CONTACT",
+"name": "Volkswagen Group",
+"reason": "Owns Porsche (on the do-not-contact list) - per Wikidata"
+},
+"wagissuingservices": {
+"kind": "DO NOT CONTACT",
+"name": "W.A.G. Issuing Services",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"wagpaymentsolutions": {
+"kind": "DO NOT CONTACT",
+"name": "W.A.G Payment Solutions",
+"reason": "Owns Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"wagpaymentsolutionshu": {
+"kind": "DO NOT CONTACT",
+"name": "W.A.G. payment solutions HU",
+"reason": "Subsidiary of Eurowag (on the do-not-contact list) - per Wikidata"
+},
+"whosafraidof138": {
+"kind": "DO NOT CONTACT",
+"name": "Who’s Afraid of 138?!",
+"reason": "Subsidiary of Armada (on the do-not-contact list) - per Wikidata"
+}
+}
+}
