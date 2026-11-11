@@ -1,7 +1,7 @@
 url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv
 bytes: 76895  starts: b'\xef\xbb\xbfTitle'
 error: None
-columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': 'valid from', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': 'valid till', 'exclude': 'Business form', 'require': 'Company code'}
+columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': 'valid from', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'valid till', 'exclude': 'Business form', 'require': 'Company code'}
 headers: ['Title', 'Type', 'Business form', 'Company code', 'Registration code', 'Licence type/kind', 'Authorization code', 'valid from', 'valid till']
 data rows: 419  kept: 41
 type values: [('Payment institution', 378), ('Payment institution, Currency exchange operator', 33), ('Payment institution, Currency exchange operator, Electronic money institution intermediary', 3), ('Payment institution, Electronic money institution', 3), ('Payment institution, Credit servicer', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
@@ -18,7 +18,7 @@ first lines:
 url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv
 bytes: 61610  starts: b'\xef\xbb\xbfTitle'
 error: None
-columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': 'valid from', 'status': None, 'website': None, 'email': None, 'phone': None, 'address': None, 'end': 'valid till', 'exclude': 'Business form', 'require': 'Company code'}
+columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': 'valid from', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'valid till', 'exclude': 'Business form', 'require': 'Company code'}
 headers: ['Title', 'Type', 'Business form', 'Company code', 'Registration code', 'Licence type/kind', 'Authorization code', 'valid from', 'valid till']
 data rows: 283  kept: 72
 type values: [('Electronic money institution', 211), ('Electronic money institution, Currency exchange operator', 62), ('Payment institution, Electronic money institution', 3), ('Electronic money institution, Currency exchange operator, Consumer credit provider', 2), ('Electronic money institution, Currency exchange operator, Peer-to-peer lending platform operator, Consumer credit provider', 2), ('Electronic money institution, Real-estate related credit provider, Peer-to-peer lending platform operator, operating in accordance with the Republic of Lithuania Law on Credit Related to Real Estate, Peer-to-peer lending platform operator, Consumer credit provider, Crowdfunding service provider', 1), ('Electronic money institution, Currency exchange operator, Electronic money institution intermediary', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
