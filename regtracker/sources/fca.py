@@ -974,16 +974,30 @@ class FCACFDSource(Source):
                             if scanning else "fca-cfd-v1")
         if not scanning:
             import datetime as dt
+            import time as _time
             weekday = int(cfg.get("full_recheck_weekday", 6))
             if dt.date.fromisoformat(ctx.today).weekday() == weekday and st.get("last_cfd_recheck") != ctx.today:
+                # Time-boxed and resumable: a cursor keeps its place between runs, so the weekly
+                # re-check finishes over a few runs instead of running past the job's time limit.
+                deadline = _time.monotonic() + float(cfg.get("cfd_recheck_minutes", 30)) * 60
                 client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
                 client.verify()
                 frns = sorted(int(f) for f in st.get("cfd", {}))
-                ctx.log.info("FCA CFD: weekly re-check of %d firms", len(frns))
-                for i in range(0, len(frns), 500):
+                i = int(st.get("cfd_recheck_cursor", 0))
+                if i >= len(frns):
+                    i = 0
+                ctx.log.info("FCA CFD: weekly re-check of %d firms (from %d)", len(frns), i)
+                while i < len(frns) and _time.monotonic() < deadline:
                     cfd_scan(client, st, frns[i:i + 500], ctx, int(cfg.get("parallel_requests", 8)))
-                st["last_cfd_recheck"] = ctx.today
-                save_state(ctx, st)
+                    i += 500
+                    st["cfd_recheck_cursor"] = i
+                    save_state(ctx, st)
+                if i >= len(frns):
+                    st["cfd_recheck_cursor"] = 0
+                    st["last_cfd_recheck"] = ctx.today
+                    save_state(ctx, st)
+                else:
+                    ctx.log.info("FCA CFD: re-check paused at firm %d of %d; continues next run", i, len(frns))
         recs = []
         for d in st.get("cfd", {}).values():
             d = {k: v for k, v in d.items() if not k.startswith("_") and k != "status"}

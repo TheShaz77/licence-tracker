@@ -22,7 +22,7 @@ sheet_country_tabs: true
 
 sources:
   fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money & payment agents (FCA API)
-    timeout_minutes: 0            # no time limit (the FCA scan has its own)
+    timeout_minutes: 80           # safety net only (0 used to mean no limit, and the run hit the job's 3 hours); the FCA step keeps its own time budget below
     enabled: true
     requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
@@ -42,6 +42,7 @@ sources:
     frontier_back_weekly: 25000   # weekly wider re-scan
     full_recheck_weekday: 6       # 0=Mon ... 6=Sun: also re-check inactive firms
     run_minutes: 75               # time per run for the FCA checks; what's left carries on next run
+    cfd_recheck_minutes: 30       # weekly CFD re-check time per run; it resumes where it stopped
     inactive_recheck_days: 7      # inactive firms are re-checked this often (active ones daily)
     track_services: false
     # CFD vertical: the same scan also looks at each authorised firm's permissions and lists the
