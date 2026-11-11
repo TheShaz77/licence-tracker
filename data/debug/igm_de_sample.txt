@@ -1,0 +1,16 @@
+url: https://www.gluecksspiel-behoerde.de/de/fuer-spielende/uebersicht-erlaubter-anbieter-whitelist
+bytes: 1336876  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type']
+data rows: 184  kept: 62
+type values: [('Sportwetten', 43), ('Virtuelle Automatenspiele', 32), ('Gewerbliche Spielvermittlung', 29), ('Online-Poker', 13), ('Online-Casinospiele', 13)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="de-de" dir="ltr">'
+'    <head>'
+'<meta charset="utf-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<meta name="description" content="Amtliche Liste, in der Veranstalter und Vermittler von Glücksspielen aufgeführt werden, die über eine Erlaubnis oder Konzession nach dem GlüStV 2021 verfügen.">'
+'\t<title>Whitelist: Übersicht der erlaubten Glücksspielanbieter | GGL  – Gemeinsame Glücksspielbehörde der Länder (AöR)</title>'
+'\t<link href="/images/favicon_.png" rel="icon" sizes="any">'

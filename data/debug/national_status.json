@@ -30,7 +30,7 @@
   "BCRA aggregators": "ok: 95 firms",
   "BCRA collection services": "ok: 23 firms",
   "BCRA homepage": "probe saved earlier this week",
-  "BCRA payment account providers": "ok: 238 firms",
+  "BCRA payment account providers": "ok: 239 firms",
   "BCRA payment initiators": "ok: 5 firms",
   "CNV homepage": "probe saved earlier this week",
   "CNV virtual asset service providers": "HTTP 404",
@@ -75,7 +75,7 @@
  },
  "BD": {
   "BB mobile financial services providers": "ok: 14 firms",
-  "BB payment system operators": "probe saved (246 bytes, 0 linked pages)",
+  "BB payment system operators": "probe saved earlier this week",
   "date": "2026-11-11",
   "www.bb.org.bd homepage": "probe saved earlier this week"
  },
@@ -111,6 +111,10 @@
   "date": "2026-11-11",
   "www.bdcb.gov.bn homepage": "probe saved earlier this week"
  },
+ "BR (iGaming)": {
+  "Brazil - companies authorised for fixed-odds betting and online games (SPA)": "ok: 76 firms",
+  "date": "2026-11-11"
+ },
  "BS": {
   "CBOB register of licensees": "HTTP 404",
   "Regulates Entities": "probe saved earlier this week",
@@ -121,7 +125,7 @@
  },
  "BS (CFD)": {
   "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "BT": {
   "RMA licensed institutions": "SSL error",
@@ -144,8 +148,8 @@
  "CA (iGaming)": {
   "Kahnawake casino software provider authorizations": "ok: 2 firms",
   "Kahnawake client provider authorizations (operators and their sites)": "ok: 53 firms",
-  "Ontario registered internet gaming operators (probe)": "probe saved (456883 bytes, 10 linked pages)",
-  "date": "2026-11-10"
+  "Ontario registered internet gaming operators (probe)": "probe saved earlier this week",
+  "date": "2026-11-11"
  },
  "CD": {
   "BCC financial intermediaries": "probe waiting for the next run (page budget used up)",
@@ -153,7 +157,7 @@
  },
  "CH (CFD)": {
   "FINMA securities firms": "ok: 77 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "CL": {
   "Buscador de entidades supervisadas": "HTTP 404",
@@ -194,12 +198,35 @@
   "date": "2026-11-09",
   "www.centralbank.cw homepage": "HTTP 403"
  },
+ "CW (iGaming)": {
+  "Curacao - CGA online gaming licence registry (PDF)": "ok: 305 firms",
+  "GLEIF - Curacao companies named 'bet'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'bingo'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'casino'": "ok: 1 firms from 4 pages",
+  "GLEIF - Curacao companies named 'games'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'gaming'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'jackpot'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'lotto'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'poker'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'slots'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Curacao companies named 'sportsbook'": "read failed: no firms matched on 3 pages",
+  "date": "2026-11-11"
+ },
  "CY (CFD)": {
   "CySEC Cyprus Investment Firms (CIFs)": "blocked by robots.txt",
   "date": "2026-11-11"
  },
+ "DE (iGaming)": {
+  "Germany - GGL whitelist (online sports betting, slots, poker, casino)": "ok: 62 firms",
+  "date": "2026-11-11"
+ },
  "DJ": {
   "BCD homepage": "probe saved earlier this week",
+  "date": "2026-11-11"
+ },
+ "DK (iGaming)": {
+  "Denmark - licence holder pages (probe)": "probe saved (114646 bytes, 1 linked pages)",
+  "Denmark - licensed gambling operators": "read failed: no matching table on the page; table headers were: []",
   "date": "2026-11-11"
  },
  "DO": {
@@ -225,6 +252,10 @@
   "Bank of Eritrea": "timeout (connect)",
   "date": "2026-11-09"
  },
+ "ES (iGaming)": {
+  "Spain - DGOJ licensed gambling operators": "ok: 77 firms from 30 pages",
+  "date": "2026-11-11"
+ },
  "ET": {
   "NBE banks": "ok: 33 firms",
   "NBE payment instrument issuers": "HTTP 404",
@@ -233,11 +264,15 @@
  },
  "EU (CFD)": {
   "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2737 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
   "RBF licensing": "probe saved earlier this week",
+  "date": "2026-11-11"
+ },
+ "FR (iGaming)": {
+  "France - ANJ licensed online operators": "ok: 16 firms",
   "date": "2026-11-11"
  },
  "GA": {
@@ -246,7 +281,7 @@
  },
  "GB (iGaming)": {
   "UKGC register - remote and B2B gambling licences": "ok: 2337 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "GE": {
   "NBG VASP registry": "probe saved earlier this week",
@@ -285,6 +320,10 @@
   "GFSC regulated entities": "HTTP 403",
   "date": "2026-11-09",
   "www.fsc.gi homepage": "HTTP 403"
+ },
+ "GI (iGaming)": {
+  "Gibraltar licence holders (B2C, B2B, support services)": "disconnected",
+  "date": "2026-11-11"
  },
  "GM": {
   "CBG approved bureaus": "ok: 82 firms",
@@ -331,6 +370,10 @@
   "OJK homepage": "probe saved earlier this week",
   "date": "2026-11-11"
  },
+ "IE (iGaming)": {
+  "Gambling Regulatory Authority of Ireland register": "file link not found: no link matching '\\\\.csv' on https://www.grai.ie/register",
+  "date": "2026-11-11"
+ },
  "IM": {
   "Bank Recovery and Resolution": "probe saved earlier this week",
   "IOMFSA register search": "probe saved earlier this week",
@@ -340,7 +383,7 @@
  },
  "IM (iGaming)": {
   "Isle of Man online gambling (OGRA) licence holders": "ok: 49 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "IN": {
   "List of Agency Banks": "probe saved earlier this week",
@@ -350,6 +393,10 @@
   "RBI banks in India": "probe saved earlier this week",
   "RBI banks permitted to issue prepaid instruments": "ok: 63 firms",
   "RBI scheduled commercial banks": "ok: 120 firms",
+  "date": "2026-11-11"
+ },
+ "IT (iGaming)": {
+  "Italy - ADM remote gaming concessionaires": "read failed: no matching table on the page; table headers were: []",
   "date": "2026-11-11"
  },
  "JE": {
@@ -402,6 +449,10 @@
  },
  "KM": {
   "BCC Comores homepage": "probe saved earlier this week",
+  "date": "2026-11-11"
+ },
+ "KM (iGaming)": {
+  "Anjouan licence register (probe - table loads by script)": "probe saved (284371 bytes, 10 linked pages)",
   "date": "2026-11-11"
  },
  "KR": {
@@ -486,11 +537,25 @@
  "MN": {
   "Banking license": "probe saved earlier this week",
   "BoM banking supervision": "probe saved earlier this week",
-  "BoM banks": "timeout (connect)",
+  "BoM banks": "ok: 12 firms",
   "Difference Between Central Bank and Commercial Ban": "probe saved earlier this week",
   "FRC homepage": "probe saved earlier this week",
   "Licensed Entities": "probe saved earlier this week",
   "List of codes assigned by the Bank of Mongolia to ": "probe saved earlier this week",
+  "date": "2026-11-11"
+ },
+ "MT (iGaming)": {
+  "GLEIF - Malta companies named 'bet'": "ok: 1 firms from 4 pages",
+  "GLEIF - Malta companies named 'bingo'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Malta companies named 'casino'": "ok: 1 firms from 4 pages",
+  "GLEIF - Malta companies named 'games'": "ok: 4 firms from 4 pages",
+  "GLEIF - Malta companies named 'gaming'": "ok: 9 firms from 4 pages",
+  "GLEIF - Malta companies named 'jackpot'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Malta companies named 'lotto'": "ok: 1 firms from 4 pages",
+  "GLEIF - Malta companies named 'poker'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Malta companies named 'slots'": "read failed: no firms matched on 3 pages",
+  "GLEIF - Malta companies named 'sportsbook'": "read failed: no firms matched on 3 pages",
+  "MGA licensee register (probe - app loads by script)": "probe saved (72302 bytes, 0 linked pages)",
   "date": "2026-11-11"
  },
  "MU": {
@@ -501,16 +566,9 @@
   "www.fscmauritius.org homepage": "probe saved earlier this week"
  },
  "MU (CFD)": {
-  "FSC register of licensees - investment dealers": "read failed: 404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page=1",
-  "GLEIF - Mauritius companies named 'broker'": "ok: 5 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'cfd'": "ok: 2 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'forex'": "read failed: no firms matched on 3 pages",
-  "GLEIF - Mauritius companies named 'fx'": "ok: 1 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'liquidity'": "ok: 1 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'markets'": "ok: 102 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'prime'": "ok: 14 firms from 4 pages",
-  "GLEIF - Mauritius companies named 'securities'": "ok: 31 firms from 4 pages",
-  "date": "2026-11-10"
+  "FSC register of licensees - investment dealers (base page)": "read failed: 404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees",
+  "FSC register of licensees - investment dealers (pages 2+)": "read failed: 404 Client Error: Not Found for url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page=2",
+  "date": "2026-11-11"
  },
  "MV": {
   "MMA homepage": "probe saved earlier this week",
@@ -579,15 +637,7 @@
  },
  "NZ (CFD)": {
   "FMA licensed derivatives issuers": "read failed: 403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0",
-  "GLEIF - New Zealand companies named 'broker'": "read failed: no firms matched on 3 pages",
-  "GLEIF - New Zealand companies named 'cfd'": "read failed: no firms matched on 3 pages",
-  "GLEIF - New Zealand companies named 'forex'": "ok: 3 firms from 4 pages",
-  "GLEIF - New Zealand companies named 'fx'": "ok: 6 firms from 4 pages",
-  "GLEIF - New Zealand companies named 'liquidity'": "read failed: no firms matched on 3 pages",
-  "GLEIF - New Zealand companies named 'markets'": "ok: 25 firms from 4 pages",
-  "GLEIF - New Zealand companies named 'prime'": "ok: 4 firms from 4 pages",
-  "GLEIF - New Zealand companies named 'securities'": "ok: 20 firms from 4 pages",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "OM": {
   "CBO licensed institutions": "HTTP 404",
@@ -669,7 +719,7 @@
  },
  "SC (CFD)": {
   "FSA capital markets - securities dealers": "ok: 231 firms",
-  "date": "2026-11-10"
+  "date": "2026-11-11"
  },
  "SG": {
   "MAS directory cards": "ok: 4 firms",
@@ -790,6 +840,10 @@
  "UG": {
   "BoU homepage": "probe saved earlier this week",
   "date": "2026-11-09"
+ },
+ "US (iGaming)": {
+  "New Jersey internet gaming vendors incl. affiliates and payment firms (DGE list dated March 2020)": "ok: 927 firms",
+  "date": "2026-11-11"
  },
  "UY": {
   "BCU banks": "ok: 11 firms",

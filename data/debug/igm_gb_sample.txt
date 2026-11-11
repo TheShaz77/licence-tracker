@@ -1,5 +1,5 @@
 url: https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv
-bytes: 499815  starts: b'Account '
+bytes: 499846  starts: b'Account '
 error: None
 columns used: {'name': '(guessed) Licence Account Name', 'type': 'Type', 'id': 'Account Number', 'lei': None, 'city': None, 'date': 'Start Date', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'End Date', 'exclude': None, 'require': None}
 headers: ['Account Number', 'Licence Number', 'Status', 'Type', 'Activity', 'Start Date', 'End Date', 'Account Number', 'Licence Account Name']

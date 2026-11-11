@@ -1,10 +1,10 @@
 url: https://ofi.la.gov/non-depository/money-orders-transmitters/licensees/
-bytes: 150953  starts: b'<!doctyp'
+bytes: 151307  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'EntityName', 'dba': None, 'lic': None, 'nmls': None, 'status': None, 'type': None, 'addr': 'AddressLine1', 'city': 'City', 'csz': None, 'state': 'StateCode', 'phone': None, 'area': 'AreaCode', 'prefix': 'Prefix', 'number': 'Number', 'date': None}
 headers: ['EntityName', 'AddressLine1', 'AddressLine2', 'City', 'StateCode', 'PostalCode', 'CountryCode', 'AreaCode', 'Prefix', 'Number']
-data rows: 174  kept: 170
-type values: [('', 174)]
+data rows: 175  kept: 171
+type values: [('', 175)]
 first lines:
 '<!doctype html>'
 '<html class="no-js" lang="en-US" >'

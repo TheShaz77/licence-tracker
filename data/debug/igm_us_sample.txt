@@ -1,0 +1,9 @@
+url: https://www.nj.gov/lps/ge/docs/InternetGaming/AncillaryCompaniesVendor.pdf
+bytes: 383542  starts: b'%PDF-1.6'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['reference', 'name']
+data rows: 930  kept: 927
+type values: [('', 929)]
+first lines:
+'(binary)'

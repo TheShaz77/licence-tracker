@@ -1,0 +1,16 @@
+url: https://anj.fr/offre-de-jeu-et-marche/operateurs-agrees
+bytes: 96815  starts: b' <!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'type']
+data rows: 16  kept: 16
+type values: [('Paris sportifs', 8), ('Paris sportifs - Paris hippiques - Jeux de cercle', 4), ('Paris sportifs - Jeux de cercle', 3), ('Paris sportifs - Paris hippiques', 1)]
+first lines:
+' <!DOCTYPE html>'
+'<html lang="fr" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org'
+'<head>'
+'  <meta charset="utf-8" />'
+'<meta name="description" content="Retrouvez ici la liste des opérateurs agréés par l&#039;ANJ" />'
+'<link rel="canonical" href="https://anj.fr/offre-de-jeu-et-marche/operateurs-agrees" />'
+'<meta name="twitter:card" content="summary_large_image" />'
+'<meta name="twitter:title" content="Opérateurs agréés" />'

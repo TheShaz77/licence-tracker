@@ -1,0 +1,16 @@
+url: https://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores?title=&licences=All&order=title&sort=asc&page={page}
+bytes: 61972  starts: b'\n<!DOCTY'
+error: None
+columns used: {'name': 'Operador Sort descending', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Lista de dominios', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Operador Sort descending', 'Lista de dominios']
+data rows: 7  kept: 7
+type values: [('', 7)]
+first lines:
+''
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" xml:lang="en" class="h-100">'
+'  <head>'
+'    <meta charset="utf-8" />'
+'<script>var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://consumo.matomo.cloud/" : "https://consumo.matomo.cloud/");_paq.push(["setSiteId", "8"]);_paq.push(["setTrackerUrl", u+"matomo.php"]);_paq.push(["setDoNotTrack", 1]);if (!window.matomo_search_results_'
+'<link rel="canonical" href="http://www.ordenacionjuego.es/en/operadores-juego/operadores-licencia/operadores" />'
+'<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />'

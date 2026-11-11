@@ -1,5 +1,5 @@
 url: https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/
-bytes: 95673  starts: b'<!DOCTYP'
+bytes: 271262  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Name of Bank', 'Fx Related Fees and Charges']
@@ -7,10 +7,10 @@ data rows: 33  kept: 33
 type values: [('', 33)]
 first lines:
 '<!DOCTYPE html><html lang="en-US"><head><script data-no-optimize="1">var litespeed_docref=sessionStorage.getItem("litespeed_docref");litespeed_docref&&(Object.defineProperty(document,"referrer",{get:function(){return litespeed_docref}}),sessionStorage.removeItem("litespeed_docref"));</script><meta c'
+'<style>#wpadminbar #wp-admin-bar-wsm_free_top_button .ab-icon:before {'
+'\tcontent: "\\f239";'
+'\tcolor: #FF9800;'
+'\ttop: 3px;'
+"}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
 '<title>Summary of Banks&#039; Foreign Exchange Related Fees and Charges - National Bank of Ethiopia</title><link rel="canonical" href="https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/" /><meta property="og:locale" content="en_US" /><meta property="og:type" content="arti'
 '<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\\/\\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\\/\\/nbe.gov.et\\/summary-of-banks-foreign-exchange-related-fees-and-charges\\/","url":"https:\\/\\/nbe.gov.et\\/summary-of-banks-foreign-exchange-related-fees-and-cha'
-'<script id="jquery-core-js" type="litespeed/javascript" data-src="https://nbe.gov.et/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>'
-'<script id="search-filter-plugin-chosen-js" type="litespeed/javascript" data-src="https://nbe.gov.et/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.17"></script>'
-'<script id="google_gtagjs-js" type="litespeed/javascript" data-src="https://www.googletagmanager.com/gtag/js?id=GT-NFJ235DQ"></script>'
-'<script id="google_gtagjs-js-after" type="litespeed/javascript">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}'
-'gtag("set","linker",{"domains":["nbe.gov.et"]});gtag("js",new Date());gtag("set","developer_id.dZTNiMT",!0);gtag("config","GT-NFJ235DQ",{"googlesitekit_post_type":"page"});window._googlesitekit=window._googlesitekit||{};window._googlesitekit.throttledEvents=[];window._googlesitekit.gtagEvent=(name,d'

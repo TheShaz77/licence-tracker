@@ -1,12 +1,12 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 81060  starts: b'{"succes'
+bytes: 81384  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
-data rows: 239  kept: 238
-type values: [('', 239)]
+data rows: 240  kept: 239
+type values: [('', 240)]
 first lines:
-'{"success":true,"tipo_psp":1,"tipo_psp_nombre":"Proveedor de Servicio de Pago que ofrece Cuenta de Pago","lang":"es","total":239,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), C'
+'{"success":true,"tipo_psp":1,"tipo_psp_nombre":"Proveedor de Servicio de Pago que ofrece Cuenta de Pago","lang":"es","total":240,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), C'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=2&lang=es
 bytes: 1644  starts: b'{"succes'

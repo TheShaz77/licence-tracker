@@ -1,0 +1,12 @@
+url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
+bytes: 114646  starts: b'<!DOCTYP'
+error: RuntimeError('no matching table on the page; table headers were: []')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!DOCTYPE html><html lang="da-dk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Spiludbydere med tilladelse</title><meta property="og:title" content="Spiludbydere med tilladelse"/><meta name="dc.title" content="Spiludbydere med tilladelse"/><meta name="descr'
+'<p>Oversigten indeholder ikke spiludbydere med tilladelse til spilleautomater og spilleverandører.&nbsp;</p>'
+'<p><span class="RichText_arrowLink"><a href="/virksomheder-og-foreninger/spil-der-kraever-en-tilladelse/spilleautomater/liste-over-tilladelsesindehavere" title="Liste over tilladelsesindehavere" data-start-item-path="spillemyndigheden" data-start-item-id="ad8f2dc3-ff9a-43a8-abc1-accc55726ba8">Se, hv'
+'<p><span class="RichText_arrowLink"><a href="/virksomheder-og-foreninger/spilleverandoer/oversigt-over-spilleverandoerer" title="Oversigt over spilleverandører" data-start-item-path="spillemyndigheden" data-start-item-id="ad8f2dc3-ff9a-43a8-abc1-accc55726ba8">Se en oversigt over spilleverandører</a>'
