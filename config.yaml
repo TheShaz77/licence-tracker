@@ -22,6 +22,7 @@ sheet_country_tabs: true
 
 sources:
   fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money & payment agents (FCA API)
+    timeout_minutes: 0            # no time limit (the FCA scan has its own)
     enabled: true
     requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
@@ -1854,6 +1855,13 @@ national:
       probe: true
       follow: LicenseEntities|licensed|money exchange|finance compan|fintech|bank
       follow_max: 15
+# GitHub stops a run after 3 hours (and then nothing is saved). The run starts no new source after
+# run_budget_minutes, stops any single source after source_timeout_minutes (it keeps its last list),
+# and leaves what didn't fit for the next run - least recently tried first.
+run_budget_minutes: 100
+source_timeout_minutes: 30
+run_reserve_minutes: 20
+
 # Do-not-contact list and OpenPayd competitors (flags/do_not_contact.txt, flags/groups.yaml).
 # Flagged firms are coloured red on every tab, with the reason in "Flag reason". Each run also looks
 # up related entities (parents / subsidiaries) of listed companies in GLEIF and Wikidata, a slice
@@ -1867,7 +1875,9 @@ flags:
 # access): Wikidata (CC0) entities that are banks there, plus Wikipedia's "List of banks in ...".
 # Labelled "licence not checked"; banks an official list already has are left out of the sheet.
 wiki_banks:
-  min_hours: 72
+  min_hours: 0
+  minutes_per_run: 15     # countries refreshed per run (oldest first); each list is refreshed weekly
+  refresh_days: 7
   countries: [AD, AG, AI, AR, AW, BD, BH, BJ, BM, BN, BS, BT, BZ, CG, CI, CL, CN, CO, CR, CV, CW, DJ, DM, DO, DZ, EC, EG, ER, FM, GA, GD, GE, GI, GQ, GT, GY, HN, ID, IL, IM, JE, KI, KM, KN, KY, LC, LK, LR, LS, MD, ME, MG, MH, MK, MO, MR, MS, MU, MV, MX, NA, NE, NR, NZ, OM, PE, PH, PR, PW, PY, QA, RS, RW, SA, SB, SC, SL, SM, SR, ST, SV, SX, SZ, TD, TG, TH, TL, TO, TV, TW, VA, VC, WS, XK, ZM]
   # payment / e-money / money transfer / FX / crypto firms (all countries outside the UK, EU/EEA,
   # Switzerland, the US and Canada, which have their own registers)

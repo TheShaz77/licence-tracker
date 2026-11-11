@@ -10,11 +10,14 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
 import datetime as dt
 import json
 import os
 import logging
+import signal
 import sys
+import time
 from collections import Counter
 from pathlib import Path
 
@@ -145,16 +148,54 @@ def cmd_contacts(args, cfg, data_dir) -> int:
     return 0
 
 
+class SourceTimeout(Exception):
+    pass
+
+
+@contextlib.contextmanager
+def time_limit(seconds: float, name: str):
+    """Stop a source that runs too long (it keeps its last good list)."""
+    if not seconds or not hasattr(signal, "SIGALRM"):
+        yield
+        return
+
+    def stop(signum, frame):
+        raise SourceTimeout(f"{name} took longer than {seconds / 60:.0f} minutes; stopped (last list kept)")
+    old = signal.signal(signal.SIGALRM, stop)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, old)
+
+
 def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     all_events, problems, status = [], [], []
     due_file = data_dir / "state" / "last_fetch.json"
     last_fetch = json.loads(due_file.read_text()) if due_file.exists() else {}
-    for src in enabled_sources(cfg, args.sources):
+    tried_file = data_dir / "state" / "last_attempt.json"
+    last_try = json.loads(tried_file.read_text()) if tried_file.exists() else {}
+    # GitHub stops a job after 3 hours and then nothing is saved, so the run keeps to a time budget:
+    # the main sources go first, then the country / vertical lists, least recently tried first; whatever
+    # doesn't fit is left for the next run. Any one source is stopped after `source_timeout_minutes`.
+    t0 = time.monotonic()
+    budget = float(cfg.get("run_budget_minutes", 140)) * 60
+    sources = enabled_sources(cfg, args.sources)
+    if not args.sources:
+        lists = ("nat_", "cfd_", "igm_", "us_", "wiki_banks")
+        sources = [s for s in sources if not s.name.startswith(lists)] + sorted(
+            (s for s in sources if s.name.startswith(lists)), key=lambda s: last_try.get(s.name, ""))
+    deferred = []
+    for src in sources:
+        if not args.sources and time.monotonic() - t0 > budget:
+            deferred.append(src.name)
+            continue
         log.info("── %s", src.label)
         conf = (cfg.get("sources") or {}).get("us_states" if src.name.startswith("us_") else src.name) or {}
         if src.name == "wiki_banks" and "min_hours" not in conf:
-            conf = {**conf, "min_hours": (cfg.get("wiki_banks") or {}).get("min_hours", 72)}
+            conf = {**conf, "min_hours": (cfg.get("wiki_banks") or {}).get("min_hours", 0)}
         if src.name.startswith(("nat_", "cfd_", "igm_")) and "min_hours" not in conf:
             vert = not src.name.startswith("nat_")
             conf = {**conf, "min_hours": cfg.get("vertical_min_hours" if vert else "national_min_hours",
@@ -171,8 +212,13 @@ def cmd_run(args, cfg, data_dir) -> int:
                 log.info("%s: checked at %s; next check after %g hours", src.name, last[:16], min_hours)
                 status.append(f"{src.name}: not due")
                 continue
+        last_try[src.name] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes")
+        tried_file.parent.mkdir(parents=True, exist_ok=True)
+        tried_file.write_text(json.dumps(last_try, indent=1, sort_keys=True))
+        limit = float(conf.get("timeout_minutes", cfg.get("source_timeout_minutes", 40))) * 60
         try:
-            recs = src.fetch(ctx)
+            with time_limit(limit, src.name):
+                recs = src.fetch(ctx)
         except SourceNotReady as e:
             (log.info if getattr(e, "quiet", False) else log.warning)("%s skipped: %s", src.name, e)
             status.append(f"{src.name}: waiting ({e})")
@@ -230,11 +276,16 @@ def cmd_run(args, cfg, data_dir) -> int:
     if all_events:
         append_changes_csv(data_dir, all_events)
 
+    if deferred:
+        log.warning("Run time budget used up: %d sources left for the next run (%s)",
+                    len(deferred), ", ".join(deferred[:30]) + (" ..." if len(deferred) > 30 else ""))
+        status.append(f"{len(deferred)} sources deferred to the next run")
     fl = cfg.get("flags") or {}
-    if fl.get("enabled", False) and not args.sources:
+    spare = budget + float(cfg.get("run_reserve_minutes", 25)) * 60 - (time.monotonic() - t0)
+    if fl.get("enabled", False) and not args.sources and spare > 120:
         try:      # related entities of do-not-contact companies and competitors (GLEIF / Wikidata)
             from . import flags
-            flags.expand(ctx, float(fl.get("seconds_per_run", 900)), int(fl.get("refresh_days", 30)))
+            flags.expand(ctx, min(float(fl.get("seconds_per_run", 900)), spare - 60), int(fl.get("refresh_days", 30)))
         except Exception:
             log.exception("Do-not-contact related-entity lookup failed (flags from the lists still apply)")
     covered = covered_countries(cfg, data_dir)

@@ -240,3 +240,14 @@ def test_cfd_search_skips_failing_word(tmp_path):
     fca.cfd_search(Client(), st, ctx, time.monotonic() + 60, 2, ["financial", "markets"])
     assert st["cfd_search"]["done"] and st["cfd_search"]["failed_terms"] == ["financial"]
     assert st["cfd_search"]["terms_done"] == ["financial", "markets"]
+
+
+def test_source_time_limit():
+    import time
+    import pytest
+    from regtracker.cli import SourceTimeout, time_limit
+    with pytest.raises(SourceTimeout):
+        with time_limit(0.2, "slow"):
+            time.sleep(2)
+    with time_limit(0, "no limit"):
+        time.sleep(0.01)

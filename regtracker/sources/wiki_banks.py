@@ -141,69 +141,103 @@ class WikiBanksSource(Source):
             err.quiet = True
             raise err
         pages = {k.upper(): v for k, v in (cfg.get("pages") or {}).items()}
-        recs, problems, counts = {}, [], {}
-        for cc in fi_countries:
-            if cc in ctx.excluded_countries:
-                continue
+        # A slice of countries per run (oldest first, about `minutes_per_run`); the rest come from the
+        # copy kept in data/state/wiki_banks.json, so a slow Wikidata never holds up the whole run.
+        import datetime as dt
+        import json
+        from pathlib import Path
+        cache_file = Path(ctx.data_dir) / "state" / "wiki_banks.json"
+        try:
+            cache = json.loads(cache_file.read_text())
+        except Exception:
+            cache = {}
+        tasks = [(cc, "fi") for cc in fi_countries] + [(cc, "banks") for cc in countries]
+        tasks = [t for t in tasks if t[0] not in ctx.excluded_countries]
+        refresh = int(cfg.get("refresh_days", 7))
+        today = dt.date.fromisoformat(ctx.today)
+
+        def age(t):
+            d = (cache.get(f"{t[0]}:{t[1]}") or {}).get("date")
+            return d or ""
+        todo = sorted((t for t in tasks if not age(t) or (today - dt.date.fromisoformat(age(t))).days >= refresh), key=age)
+        deadline = time.monotonic() + float(cfg.get("minutes_per_run", 15)) * 60
+        problems, counts, done = [], {}, 0
+        for cc, kind in todo:
+            if time.monotonic() > deadline:
+                break
+            got, ok = {}, True
             try:
-                n = 0
-                for name, item, site, since, kind in self._wikidata_fi(ctx, cc):
-                    k = f"wiki_banks:{cc.lower()}:fi:{match_name(name)}"
-                    if not match_name(name) or k in recs or CENTRAL.search(name):
-                        continue
-                    recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikidata)", name=name,
-                                     licence_type=FI_TYPES[kind], active=True,
-                                     status_detail="Listed in Wikidata as a payment, e-money, money transfer or "
-                                                   "crypto company (unofficial)",
-                                     website=site, status_date=since[:10], register_url=item)
-                    n += 1
-                counts[cc + " other FIs"] = n
+                got = self._fi(ctx, cc) if kind == "fi" else self._banks(ctx, cc, pages.get(cc))
             except Exception as e:
-                problems.append(f"{cc} Wikidata FIs: {e}")
+                ok = False
+                problems.append(f"{cc} {kind}: {str(e)[:150]}")
+            if ok:
+                self._fill_websites(ctx, got)
+                cache[f"{cc}:{kind}"] = {"date": ctx.today, "records": [r.to_dict() for r in got.values()]}
+                counts[f"{cc} {kind}"] = len(got)
+                done += 1
             time.sleep(float(cfg.get("pause", 0.5)))
-        for cc in countries:
-            if cc in ctx.excluded_countries:
-                continue
-            cname = COUNTRY_NAMES.get(cc, cc)
-            got = 0
-            try:
-                for name, item, site, since in self._wikidata(ctx, cc):
-                    k = f"wiki_banks:{cc.lower()}:{match_name(name)}"
-                    if not match_name(name) or k in recs or NOT_BANKS.match(name) or CENTRAL.search(name):
-                        continue
-                    recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikidata)", name=name,
-                                     licence_type="Bank (per Wikidata; licence not checked)", active=True,
-                                     status_detail="Listed as a bank in Wikidata (unofficial)", website=site,
-                                     status_date=since[:10], register_url=item)
-                    got += 1
-            except Exception as e:
-                problems.append(f"{cc} Wikidata: {e}")
-            try:
-                title, banks = self._wikipedia(ctx, pages.get(cc), cname)
-                for name, target in banks:
-                    k = f"wiki_banks:{cc.lower()}:{match_name(name)}"
-                    if k in recs:
-                        continue
-                    url = "https://en.wikipedia.org/wiki/" + (target or title).replace(" ", "_")
-                    recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikipedia)", name=name,
-                                     licence_type="Bank (per Wikipedia; licence not checked)", active=True,
-                                     status_detail=f"Listed on Wikipedia's '{title}' (unofficial)", register_url=url)
-                    got += 1
-            except Exception as e:
-                problems.append(f"{cc} Wikipedia: {e}")
-            counts[cc] = got
-            time.sleep(float(cfg.get("pause", 0.5)))
-        ctx.log.info("wiki_banks: firms per country %s", counts)
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        cache_file.write_text(json.dumps(cache, ensure_ascii=False))
+        ctx.log.info("wiki_banks: refreshed %d of %d country lists this run (%d still due); firms %s",
+                     done, len(tasks), len(todo) - done, counts)
         if problems:
             ctx.log.info("wiki_banks: %s", "; ".join(problems)[:1500])
+        wanted = {f"{cc}:{k}" for cc, k in tasks}
+        recs = {}
+        for key, entry in cache.items():
+            if key in wanted:
+                for d in entry.get("records") or []:
+                    recs.setdefault(d["key"], Record(**{k: v for k, v in d.items() if k in Record.__dataclass_fields__}))
         if not recs:
-            raise RuntimeError("Wikidata / Wikipedia gave no banks: " + "; ".join(problems)[:500])
-        self._fill_websites(ctx, recs)
+            raise RuntimeError("Wikidata / Wikipedia gave no firms yet: " + "; ".join(problems)[:500])
         return list(recs.values())
+
+    def _fi(self, ctx, cc: str) -> dict:
+        recs = {}
+        for name, item, site, since, kind in self._wikidata_fi(ctx, cc):
+            k = f"wiki_banks:{cc.lower()}:fi:{match_name(name)}"
+            if not match_name(name) or k in recs or CENTRAL.search(name):
+                continue
+            recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikidata)", name=name,
+                             licence_type=FI_TYPES[kind], active=True,
+                             status_detail="Listed in Wikidata as a payment, e-money, money transfer or "
+                                           "crypto company (unofficial)",
+                             website=site, status_date=since[:10], register_url=item)
+        return recs
+
+    def _banks(self, ctx, cc: str, override: str | None) -> dict:
+        recs, errors = {}, []
+        try:
+            for name, item, site, since in self._wikidata(ctx, cc):
+                k = f"wiki_banks:{cc.lower()}:{match_name(name)}"
+                if not match_name(name) or k in recs or NOT_BANKS.match(name) or CENTRAL.search(name):
+                    continue
+                recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikidata)", name=name,
+                                 licence_type="Bank (per Wikidata; licence not checked)", active=True,
+                                 status_detail="Listed as a bank in Wikidata (unofficial)", website=site,
+                                 status_date=since[:10], register_url=item)
+        except Exception as e:
+            errors.append(f"Wikidata: {e}")
+        try:
+            title, banks = self._wikipedia(ctx, override, COUNTRY_NAMES.get(cc, cc))
+            for name, target in banks:
+                k = f"wiki_banks:{cc.lower()}:{match_name(name)}"
+                if k in recs:
+                    continue
+                url = "https://en.wikipedia.org/wiki/" + (target or title).replace(" ", "_")
+                recs[k] = Record(key=k, source="wiki_banks", jurisdiction=cc, regulator="(Wikipedia)", name=name,
+                                 licence_type="Bank (per Wikipedia; licence not checked)", active=True,
+                                 status_detail=f"Listed on Wikipedia's '{title}' (unofficial)", register_url=url)
+        except Exception as e:
+            errors.append(f"Wikipedia: {e}")
+        if len(errors) == 2:
+            raise RuntimeError("; ".join(errors))
+        return recs
 
     def _wikidata(self, ctx, cc: str) -> list:
         r = ctx.session.get(SPARQL, params={"query": SPARQL_Q % cc, "format": "json"},
-                            headers={**UA, "Accept": "application/sparql-results+json"}, timeout=90)
+                            headers={**UA, "Accept": "application/sparql-results+json"}, timeout=45)
         r.raise_for_status()
         out = []
         for b in r.json().get("results", {}).get("bindings", []):
@@ -218,7 +252,7 @@ class WikiBanksSource(Source):
         kind_of = {lbl: kind for kind, lbls in FI_LABELS.items() for lbl in lbls}
         values = " ".join(f'"{l}"@en' for l in kind_of)
         r = ctx.session.get(SPARQL, params={"query": SPARQL_FI % (values, cc), "format": "json"},
-                            headers={**UA, "Accept": "application/sparql-results+json"}, timeout=120)
+                            headers={**UA, "Accept": "application/sparql-results+json"}, timeout=60)
         r.raise_for_status()
         out, seen = [], set()
         for b in r.json().get("results", {}).get("bindings", []):
