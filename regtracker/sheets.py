@@ -198,6 +198,17 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
 
     tabs = build_tabs(records, change_rows, run_info, per_country, extra_tabs)
     existing = {ws.title: ws.id for ws in sh.worksheets()}
+    # Google Sheets holds at most 10 million cells per spreadsheet. The country tabs already contain
+    # every firm, so when everything won't fit, the all-countries "Licences" tab is left out.
+    limit = int(os.environ.get("SHEET_CELL_LIMIT", "9800000"))
+    cells = sum(max(len(rows), 2) * max((len(r) for r in rows), default=1) for rows in tabs.values())
+    dropped = []
+    if cells > limit and per_country and "Licences" in tabs:
+        rows = tabs.pop("Licences")
+        cells -= len(rows) * max((len(r) for r in rows), default=1)
+        dropped.append("Licences")
+        log.warning("The sheet would need %d cells (Google's limit is 10 million): the all-countries 'Licences' "
+                    "tab is left out; every firm is still on its country tab", cells + len(rows) * len(rows[0]))
 
     # 1. create any missing tabs (one request)
     missing = [t for t in tabs if t not in existing]
@@ -230,7 +241,7 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     for title, sid in existing.items():
         if title in tabs:
             continue
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or re.search(r"\(([A-Z]{2}|CFD|iGaming)\)$", title) or title.endswith("(all countries)"):
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or title in dropped or re.search(r"\(([A-Z]{2}|CFD|iGaming)\)$", title) or title.endswith("(all countries)"):
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 
