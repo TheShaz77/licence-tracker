@@ -187,8 +187,33 @@ def time_limit(seconds: float, name: str):
         signal.signal(signal.SIGALRM, old)
 
 
+# CFD lists built by guessing from company names (GLEIF names containing 'trading', 'markets', ...).
+# A saved list that still holds those guesses is removed, so they can't keep showing if the real list
+# fails to load. Lists read from a real register never carry the guess wording, so they are kept.
+GUESSED_CFD_SNAPSHOTS = ("cfd_bm", "cfd_vc", "cfd_vg", "cfd_mu", "cfd_nz")
+
+
+def retire_guessed_snapshots(data_dir) -> None:
+    import gzip
+    for name in GUESSED_CFD_SNAPSHOTS:
+        p = data_dir / "snapshots" / (name + ".json.gz")
+        if not p.exists():
+            continue
+        try:
+            text = gzip.open(p, "rt", encoding="utf-8").read()
+        except Exception:
+            continue
+        if "name suggests" not in text and "not checked" not in text:
+            continue
+        for path in (p, p.parent / (name + ".settings")):
+            if path.exists():
+                path.unlink()
+        log.info("Removed guessed CFD list %s; it is rebuilt from the register", name)
+
+
 def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
+    retire_guessed_snapshots(data_dir)
     all_events, problems, status = [], [], []
     due_file = data_dir / "state" / "last_fetch.json"
     last_fetch = json.loads(due_file.read_text()) if due_file.exists() else {}

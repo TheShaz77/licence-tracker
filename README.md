@@ -350,6 +350,13 @@ CFD / FX firms go to their own tabs, "Country (CFD)" (e.g. "United Kingdom (CFD)
   clients only), always marked "(guess)". Nobody has checked it.
 - Each market's last read is in `data/debug/national_status.json` under "XX (CFD)".
 
+**Only real registers are used.** A CFD tab row must come from a licence register (the regulator's list, or
+a public list it publishes). Firms are never listed because their name contains words like "markets" or
+"trading": that was guessing, and it has been removed for Mauritius, New Zealand, the BVI, Bermuda and
+St Vincent. The Mauritius FSC register lists *investment dealers* but does not say which ones offer CFDs,
+so those rows say "Investment dealer (FSC) - CFD permission not shown on the register". Where a country has
+no readable list, its tab is left empty rather than guessed.
+
 ## iGaming vertical (crypto casinos, PSPs, platform providers, affiliates)
 
 Same idea as the CFD vertical: firms go to "Country (iGaming)" tabs and "iGaming (all countries)",
