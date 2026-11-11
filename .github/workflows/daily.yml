@@ -33,7 +33,14 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Install headless browser (for the Bank of Canada pages)
-        run: python -m playwright install --with-deps chromium
+        continue-on-error: true
+        run: |
+          for i in 1 2 3; do
+            python -m playwright install --with-deps chromium && exit 0
+            echo "Browser install failed (attempt $i), retrying in 60 seconds"
+            sleep 60
+          done
+          echo "Browser not installed; the Bank of Canada source will be skipped this run"
 
       - name: Fetch registers, detect changes, update the sheet
         env:
