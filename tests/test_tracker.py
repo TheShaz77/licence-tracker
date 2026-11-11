@@ -935,7 +935,7 @@ def test_contacts_apply_fills_blanks_only(tmp_path):
     assert recs[0]["contact_source"] == "FCA register, firm website"
     assert recs[1]["email"] == "own@firm.eu" and recs[1]["phone"] == "+33 1 23 45 67 89"
     assert recs[2]["phone"] == "+49 69 1" and recs[2]["contact_source"] == "Wikidata, firm website"
-    assert n == {"website": 2, "email": 1, "phone": 3}
+    assert {k: n[k] for k in ("website", "email", "phone")} == {"website": 2, "email": 1, "phone": 3}
 
 
 def test_crawl_budget_and_cache(tmp_path):

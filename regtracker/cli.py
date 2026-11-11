@@ -140,10 +140,27 @@ def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = Non
 def cmd_contacts(args, cfg, data_dir) -> int:
     """Background job: read firms' own websites for email and phone."""
     ctx = make_context(cfg, data_dir)
+    t0 = time.monotonic()
     records = assemble(cfg, data_dir, ctx)
-    contacts.apply(records, contacts.load(data_dir))  # websites found via registers/Wikidata
     c = cfg.get("contacts") or {}
-    contacts.crawl(ctx, records, args.hours, log, workers=int(c.get("parallel_sites", 8)),
+    web = contacts.load(data_dir, contacts.WEB_STATE)
+    from . import enrich
+    # Company details (LinkedIn, headcount, revenue, websites): Wikidata, then Companies House accounts.
+    # Both keep their progress in contacts_web.json, so each run carries on where the last one stopped.
+    for label, fn, minutes in (("Wikidata", enrich.wikidata, c.get("wikidata_minutes", 30)),
+                               ("Companies House", enrich.companies_house, c.get("companies_house_minutes", 75))):
+        if not minutes:
+            continue
+        left = args.hours * 3600 - (time.monotonic() - t0)
+        try:
+            kw = {"save": lambda: contacts.save(data_dir, web, contacts.WEB_STATE)} if fn is enrich.companies_house else {}
+            log.info("%s: %s", label, fn(ctx, records, web, log, min(float(minutes) * 60, left * 0.4), **kw))
+        except Exception:
+            log.exception("%s company-details lookup failed (carrying on)", label)
+        contacts.save(data_dir, web, contacts.WEB_STATE)
+    contacts.apply(records, {**web, **contacts.load(data_dir)})  # websites found via registers/Wikidata
+    hours = max(0.1, args.hours - (time.monotonic() - t0) / 3600)
+    contacts.crawl(ctx, records, hours, log, workers=int(c.get("parallel_sites", 8)),
                    recheck_days=int(c.get("recheck_days", 180)))
     return 0
 

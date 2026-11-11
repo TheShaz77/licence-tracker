@@ -87,6 +87,8 @@ def apply(records: list, cache: dict) -> dict:
                     break
         if src:
             r["contact_source"] = ", ".join(sorted({s for s in src if s}))
+    from .enrich import apply as enrich_apply   # LinkedIn, headcount, revenue, other websites
+    n["company_details"] = enrich_apply(records, cache, domain)
     return n
 
 
@@ -386,10 +388,14 @@ def licence_states(html: str) -> tuple:
     return sorted(found), (nmls.group(1) if nmls else "")
 
 
-def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0, us_licences: bool = False) -> dict:
+SITE_VERSION = 2   # 2 = also looks for the LinkedIn page and headcount
+
+
+def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0, us_licences: bool = False, name: str = "") -> dict:
+    from .enrich import employees_in, linkedin_in
     site = norm_site(site)
     dom = domain(site)
-    res = {"website": site, "email": "", "phone": "", "pages": 0, "note": ""}
+    res = {"website": site, "email": "", "phone": "", "pages": 0, "note": "", "v": SITE_VERSION}
     r, why = fetcher.get(site)
     if r is None and site.startswith("https://"):
         r, why = fetcher.get("http://" + site[8:])
@@ -399,9 +405,12 @@ def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0, us_licences: boo
     final = r.url.rstrip("/")
     res["pages"] = 1
     html = r.text[:2_000_000]
+    if domain(final) and domain(final) != dom:
+        res["final_url"] = final            # the site redirects to another domain: a second website
     emails, phones = emails_in(html), phones_in(html)
+    res["linkedin"], res["employees"] = linkedin_in(html, name), employees_in(html)
     for link in contact_links(final, html):
-        if emails and phones:
+        if emails and phones and res["linkedin"]:
             break
         time.sleep(pause)
         r2, _ = fetcher.get(link)
@@ -411,6 +420,8 @@ def crawl_site(fetcher: Fetcher, site: str, pause: float = 1.0, us_licences: boo
         h2 = r2.text[:2_000_000]
         emails += [e for e in emails_in(h2) if e not in emails]
         phones += [p for p in phones_in(h2) if p not in phones]
+        res["linkedin"] = res["linkedin"] or linkedin_in(h2, name)
+        res["employees"] = res["employees"] or employees_in(h2)
     if us_licences:
         lic = licence_link(final, html)
         if lic:
@@ -435,30 +446,29 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
     cache = load(ctx.data_dir, WEB_STATE)
     deadline = time.monotonic() + hours * 3600
     today = dt.date.fromisoformat(ctx.today)
-    sites, us_domains = {}, set()
+    sites, us_domains, names, again = {}, set(), {}, set()
     for r in records:
         if not r.get("active"):
             continue
         site = norm_site(r.get("website") or "") or reg.get(r.get("key"), {}).get("website", "")
         if not site:
             continue
-        have_email = r.get("email") or (r.get("extra") or {}).get("email")
-        have_phone = r.get("phone") or (r.get("extra") or {}).get("phone")
-        if have_email and have_phone and r.get("jurisdiction") != "US":
-            continue
         d = domain(site)
         if not d:
             continue
         c = cache.get("site:" + d)
         if c and (today - dt.date.fromisoformat(c.get("checked", "2000-01-01"))).days < recheck_days:
-            continue
+            if c.get("v", 1) >= SITE_VERSION:
+                continue
+            again.add(d)     # read before the LinkedIn / headcount check existed: read again, after new sites
         sites.setdefault(d, site)
+        names.setdefault(d, r.get("name", ""))
         if r.get("jurisdiction") == "US":
             us_domains.add(d)
-    todo = list(sites.items())
-    log.info("contacts: %d firm websites to read", len(todo))
+    todo = sorted(sites.items(), key=lambda kv: kv[0] in again)
+    log.info("contacts: %d firm websites to read (%d of them again, for LinkedIn / headcount)", len(todo), len(again))
     fetcher = Fetcher(ctx.session)
-    done, found = 0, {"email": 0, "phone": 0}
+    done, found = 0, {"email": 0, "phone": 0, "linkedin": 0}
     with cf.ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {}
         it = iter(todo)
@@ -467,7 +477,7 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
                 d, site = next(it)
             except StopIteration:
                 return False
-            futures[pool.submit(crawl_site, fetcher, site, 1.0, d in us_domains)] = d
+            futures[pool.submit(crawl_site, fetcher, site, 1.0, d in us_domains, names.get(d, ""))] = d
             return True
         for _ in range(workers * 2):
             if not submit_next():
@@ -478,13 +488,18 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
                 try:
                     res = fut.result()
                 except Exception as e:
-                    res = {"website": sites[d], "email": "", "phone": "", "note": repr(e)}
+                    res = {"website": sites[d], "email": "", "phone": "", "note": repr(e), "v": SITE_VERSION}
+                old = cache.get("site:" + d) or {}
+                for f in ("email", "phone", "us_licence_states", "licence_page", "nmls_id"):
+                    if old.get(f) and not res.get(f):
+                        res[f] = old[f]          # a re-read that fails never loses what was found before
                 res["checked"] = ctx.today
                 res["email_from"] = res["phone_from"] = "firm website"
                 cache["site:" + d] = res
                 done += 1
                 found["email"] += bool(res.get("email"))
                 found["phone"] += bool(res.get("phone"))
+                found["linkedin"] += bool(res.get("linkedin"))
                 if done % 200 == 0:
                     save(ctx.data_dir, cache, WEB_STATE)
                     log.info("contacts: %d websites read (%d emails, %d phones found)", done, found["email"], found["phone"])
@@ -493,6 +508,6 @@ def crawl(ctx, records: list, hours: float, log, workers: int = 8, recheck_days:
                 break
     save(ctx.data_dir, cache, WEB_STATE)
     left = len(todo) - done
-    log.info("contacts: %d websites read this run (%d with email, %d with phone); %d still to do",
-             done, found["email"], found["phone"], left)
+    log.info("contacts: %d websites read this run (%d with email, %d with phone, %d with LinkedIn); %d still to do",
+             done, found["email"], found["phone"], found["linkedin"], left)
     return {"read": done, "left": left, **found}

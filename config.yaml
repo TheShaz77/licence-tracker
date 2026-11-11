@@ -3056,6 +3056,9 @@ contacts:
   enabled: true        # registers + Wikidata lookups in the 2-hourly run
   parallel_sites: 24   # firm websites read at once by the contacts job (each is a different site)
   recheck_days: 180
+  # Company details, in the contacts job (LinkedIn page, headcount, revenue, extra websites):
+  wikidata_minutes: 30          # Wikidata: match by LEI / exact name, read website, LinkedIn, employees, revenue
+  companies_house_minutes: 75   # UK: Companies House free bulk accounts (employees, turnover); 0 = off
 
 # Telegram notifications (needs the TELEGRAM_BOT_TOKEN secret; see README).
 # By default: every new licence, registration or application, all countries.

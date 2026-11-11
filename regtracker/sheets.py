@@ -52,8 +52,11 @@ def merge_cfd(records: list) -> list:
                 vals = [v for v in (first.get(f) or "").split(sep) if v]
                 if r.get(f) and r[f] not in vals:
                     first[f] = sep.join(vals + [r[f]])
-            for f in ("website", "email", "lei", "city", "reference"):
+            for f in ("website", "email", "lei", "city", "reference", "headcount", "revenue", "other_websites"):
                 first[f] = first.get(f) or r.get(f, "")
+            if r.get("linkedin") and (not first.get("linkedin")
+                                      or (first.get("linkedin_source") or "").startswith("not found")):
+                first["linkedin"], first["linkedin_source"] = r["linkedin"], r.get("linkedin_source", "")
             continue
         r = dict(r)
         seen[k] = r
@@ -124,6 +127,8 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     """Return {tab title: rows (list of lists, header first)} in display order."""
     header = [h for _, h in SHEET_COLUMNS]
     ordered = sort_records(records)
+    from .enrich import add_search_links
+    add_search_links(ordered)
     tabs = {}
 
     summ = summary_values(records, change_rows, run_info)

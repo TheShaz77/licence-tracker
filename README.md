@@ -261,6 +261,28 @@ Firms with no known website (most EU payment and e-money firms on the EBA
 register, Swiss firms) can't be filled this way; that would need a paid search
 API.
 
+## Company details: LinkedIn, headcount, revenue, websites
+
+Five columns after "Contact found via", on every tab: **LinkedIn**, **LinkedIn found via**,
+**Headcount (year, source)**, **Revenue (year, source)** and **Other websites**. They are filled by the
+contacts job (`contacts.yml`), which carries on where it stopped each run, so the columns fill up over
+the first few days. Sources, most official first:
+
+| Source | Gives | Matched by | Licence |
+|---|---|---|---|
+| Companies House free Accounts Data (bulk iXBRL files, last 12 months + daily) | UK: average employees, turnover | Companies House number (FCA register), or exact name via Companies House Basic Company Data | Free to re-use (Crown copyright / OGL) |
+| Wikidata | website(s), LinkedIn page, employees, revenue, parent company's LinkedIn page | LEI, or exact name within the same country (only when one item has that name) | CC0 |
+| The firm's own website | LinkedIn link in header/footer, schema.org numberOfEmployees, the domain it redirects to | its website | read politely, robots.txt respected |
+
+Not used: LinkedIn itself and search engines (their terms and robots.txt forbid automated access),
+Crunchbase / ZoomInfo / Apollo / OpenCorporates (paid or forbid copying), SEC EDGAR (needs a personal
+email in every request). When no LinkedIn page is found, the LinkedIn cell holds a LinkedIn company-search
+link for the firm and "LinkedIn found via" says "not found - link is a LinkedIn search".
+A LinkedIn page "found via Wikidata - parent company's page" is the group's page, not the local entity's.
+Headcount and revenue are as last reported, with the year; Companies House turnover is only there when
+the company filed full (not abridged / micro-entity) accounts. Settings: `contacts.wikidata_minutes`,
+`contacts.companies_house_minutes` in config.yaml.
+
 ## United States: MSBs and state money transmitter licences
 
 **Every US money services business** comes from FinCEN's MSB registrant list
