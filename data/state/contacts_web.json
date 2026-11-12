@@ -101588,6 +101588,15 @@
 "https://www.cumberland.gov.uk"
 ]
 },
+"q:Q1123387": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/nexi-germany",
+"parent": "Nexi",
+"parent_linkedin": "https://www.linkedin.com/company/nexigroup",
+"sites": [
+"https://www.nexi.de"
+]
+},
 "q:Q1123823": {
 "checked": "2026-11-12",
 "currency": "EUR",
@@ -101604,6 +101613,15 @@
 "https://www.nordea.fi",
 "https://www.nordea.dk",
 "https://www.nordea.com"
+]
+},
+"q:Q112581356": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/vr-bank-bonn-rhein-sieg-eg",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.vrbank-brs.de"
 ]
 },
 "q:Q113030774": {
@@ -101728,71 +101746,8 @@
 "https://www.tower-research.com/amsterdam"
 ]
 },
-"q:Q113465987": {
-"checked": "2026-11-12",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.goldmansachs.com"
-]
-},
-"q:Q113465993": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.gfigroup.co.uk"
-]
-},
-"q:Q113465994": {
-"checked": "2026-11-12",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"https://www.bp.com"
-]
-},
-"q:Q113465998": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.ml.com"
-]
-},
-"q:Q113466008": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.xtxmarkets.com"
-]
-},
-"q:Q113466019": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "JPMorgan Chase",
-"parent_linkedin": "https://www.linkedin.com/company/jpmorganchase",
-"sites": [
-"http://www.jpmorgan.com"
-]
-},
-"q:Q113466024": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"https://www.mbcl.com"
-]
-},
 "q:Q113466025": {
-"checked": "2026-11-11",
+"checked": "2026-11-12",
 "linkedin": "",
 "parent": "",
 "parent_linkedin": "",
@@ -101801,7 +101756,7 @@
 ]
 },
 "q:Q113466026": {
-"checked": "2026-11-11",
+"checked": "2026-11-12",
 "linkedin": "",
 "parent": "",
 "parent_linkedin": "",
@@ -101809,49 +101764,13 @@
 "https://www.onyxcapitalgroup.com/onyx-commodities"
 ]
 },
-"q:Q113466031": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"https://www.tradition.com"
-]
-},
-"q:Q113466037": {
-"checked": "2026-11-11",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"https://www.admisi.com"
-]
-},
-"q:Q113466038": {
-"checked": "2026-11-12",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.morganstanley.com"
-]
-},
 "q:Q113466042": {
-"checked": "2026-11-11",
+"checked": "2026-11-12",
 "linkedin": "",
 "parent": "",
 "parent_linkedin": "",
 "sites": [
 "https://www.rjobrien.co.uk"
-]
-},
-"q:Q113466056": {
-"checked": "2026-11-12",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"sites": [
-"http://www.shell.com"
 ]
 },
 "q:Q113466157": {
@@ -102091,6 +102010,15 @@
 "http://www.bancaetica.it"
 ]
 },
+"q:Q1152847": {
+"checked": "2026-11-12",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://lloydsbank.com"
+]
+},
 "q:Q1154366": {
 "checked": "2026-11-12",
 "employees": 120.0,
@@ -102178,6 +102106,17 @@
 "parent_linkedin": "https://www.linkedin.com/company/commerzbank-ag",
 "sites": [
 "https://mbank.pl"
+]
+},
+"q:Q116480794": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/creandwm",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://creand.es",
+"https://creand.es/ca",
+"https://creand.es/en"
 ]
 },
 "q:Q1165625": {
@@ -102969,6 +102908,17 @@
 "parent_linkedin": "",
 "sites": []
 },
+"q:Q1275597": {
+"checked": "2026-11-12",
+"employees": 921.0,
+"employees_year": "2016",
+"linkedin": "https://www.linkedin.com/company/volksbank-paderborn-höxter-detmold-eg",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.verbundvolksbank-owl.de"
+]
+},
 "q:Q12774628": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/penta-bank-slovensko",
@@ -103286,6 +103236,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.sozialfinanz.de"
+]
+},
+"q:Q131477305": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/secupay-ag",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://secupay.com"
 ]
 },
 "q:Q1315261": {
@@ -105542,6 +105501,17 @@
 "https://www.spk-burgenlandkreis.de"
 ]
 },
+"q:Q139677996": {
+"checked": "2026-11-12",
+"employees": 15.0,
+"employees_year": "2026",
+"linkedin": "https://www.linkedin.com/company/monei-digital-payments",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://monei.com"
+]
+},
 "q:Q139780510": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/soma-project-controls",
@@ -105615,6 +105585,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://smcoaz.com"
+]
+},
+"q:Q140454692": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/18303925",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://grupoveramatic.es"
 ]
 },
 "q:Q140637323": {
@@ -107252,6 +107231,21 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.raiba-gr.de"
+]
+},
+"q:Q157617": {
+"checked": "2026-11-12",
+"currency": "EUR",
+"employees": 38565.0,
+"employees_year": "2023",
+"linkedin": "https://www.linkedin.com/company/commerzbank-ag",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 11100000000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.commerzbank.de",
+"https://www.commerzbank.com"
 ]
 },
 "q:Q1576297": {
@@ -116403,22 +116397,8 @@
 "http://www.citibank.co.kr"
 ]
 },
-"q:Q5122657": {
-"checked": "2026-11-12",
-"currency": "GBP",
-"employees": 1055.0,
-"employees_year": "2025",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"revenue": 167831000.0,
-"revenue_year": "2025",
-"sites": [
-"https://www.citizensadvice.org.uk"
-]
-},
 "q:Q5139377": {
-"checked": "2026-11-11",
+"checked": "2026-11-12",
 "employees": 3369.0,
 "employees_year": "2023",
 "linkedin": "https://www.linkedin.com/company/kutxabank",
@@ -117329,6 +117309,15 @@
 "revenue_year": "2025",
 "sites": [
 "https://www.havenshospices.org.uk"
+]
+},
+"q:Q61196302": {
+"checked": "2026-11-12",
+"linkedin": "https://www.linkedin.com/company/euro-kartensysteme-gmbh",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.eurokartensysteme.de"
 ]
 },
 "q:Q61931054": {
@@ -136213,19 +136202,6 @@
 },
 "site:cardiffifa.co.uk": {
 "checked": "2026-11-11",
-"email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 1,
-"phone": "",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.cardiffcityfc.co.uk"
-},
-"site:cardiffifa.co.uk": {
-"checked": "2026-11-11",
 "email": "enquiries@cardiffifa.co.uk",
 "email_from": "firm website",
 "employees": 0,
@@ -141714,19 +141690,6 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://crabsi.com"
-},
-"site:creand.es": {
-"checked": "2026-11-12",
-"email": "info@creand.es",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/creandwm",
-"note": "",
-"pages": 2,
-"phone": "+34911750700",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://creand.es"
 },
 "site:crearecapital.com": {
 "checked": "2026-11-11",
@@ -218520,19 +218483,6 @@
 },
 "site:wisuno.sc": {
 "checked": "2026-11-11",
-"email": "temp_1794438948_783ee7ef-0df4-41dc-a319-dbdc01e9e78f@wishtempuser.com",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 1,
-"phone": "",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.wish.com"
-},
-"site:wisuno.sc": {
-"checked": "2026-11-11",
 "email": "",
 "email_from": "firm website",
 "note": "HTTP 401",
@@ -233826,16 +233776,19 @@
 "br_bcb:60872504": "Q1424293",
 "br_bcb:90400888": "Q2882087",
 "cfd_ch:CHE-107.512.885": "Q113466339",
+"cfd_eu:0W2PZJM8XOY22M4GG883": "Q1183542",
 "cfd_eu:1VUV7VQFKUOQSJ21A208": "Q3006172",
 "cfd_eu:21380045KC28948FNE32": "Q137779118",
 "cfd_eu:2138005DRCU66B8BNY04": "Q4650306",
 "cfd_eu:213800CDJOF7ZZVSKW68": "Q22906965",
 "cfd_eu:213800GIFQMSV7HROS23": "Q133815052",
+"cfd_eu:213800IMKAUV5KW28586": "Q11171029",
 "cfd_eu:213800J256ZBGMGZLV44": "Q60742651",
 "cfd_eu:213800JD2L89GGG7LF07": "Q28966957",
 "cfd_eu:213800M7T3CYVZ3ZRT12": "Q130475219",
 "cfd_eu:213800R54EFFINMY1P02": "Q113466157",
 "cfd_eu:213800UFLAA5SS55IZ10": "Q9645118",
+"cfd_eu:213800VKA8OF2G91X349": "Q113464357",
 "cfd_eu:23B6332KMR0JIZLJG565": "Q131539850",
 "cfd_eu:2549000MXQ8UZM1BF851": "Q131553687",
 "cfd_eu:2549007H11SP7GCXGN21": "Q131553718",
@@ -233846,6 +233799,7 @@
 "cfd_eu:2594003MRRL1L5OVRZ44": "Q9209338",
 "cfd_eu:259400QHG4C6452WLF35": "Q9296282",
 "cfd_eu:2W8N8UU78PMDQKZENC08": "Q1343118",
+"cfd_eu:2ZCNRR8UK83OBTEK2170": "Q220189",
 "cfd_eu:31570010000000004266": "Q27910063",
 "cfd_eu:31570010000000004460": "Q24282825",
 "cfd_eu:31570010000000009213": "Q58205982",
@@ -233868,14 +233822,30 @@
 "cfd_eu:315700VG7PTE9EJJRX01": "Q67810152",
 "cfd_eu:315700VXY5QHAP7H6W89": "Q113030774",
 "cfd_eu:315700X54P0SM26YWK55": "Q67811168",
+"cfd_eu:3KXUNHVVQFIJN6RHLO76": "Q133823758",
 "cfd_eu:3U8WV1YX2VMUHH7Z1Q21": "Q1642179",
 "cfd_eu:5299001YA7DD6CGPIF92": "Q28450768",
+"cfd_eu:5299005O2LPWV9IP2Z21": "Q15134107",
 "cfd_eu:5299005UJX6K7BQKV086": "Q31198593",
+"cfd_eu:52990061592SQLEJN964": "Q2531746",
+"cfd_eu:5299007I4FXQ3DWNYO94": "Q806608",
+"cfd_eu:5299007Z9DGHSB1PQ447": "Q112581356",
+"cfd_eu:5299008BPUFPGBJAVR28": "Q18334750",
+"cfd_eu:5299008QOOWW0IUSDH15": "Q19964038",
+"cfd_eu:529900967AJZ6T29Q111": "Q1445057",
 "cfd_eu:52990096Q5LMCH1WU462": "Q46078814",
+"cfd_eu:5299009IFX1XTKDY4568": "Q105475811",
+"cfd_eu:529900ACUKILJMOPWO17": "Q1303938",
+"cfd_eu:529900BI9ARDF02BZ794": "Q2127588",
+"cfd_eu:529900C1N2GMTYIKO591": "Q1573193",
+"cfd_eu:529900DSJ4S9VXG0FS94": "Q1455437",
 "cfd_eu:529900E2B6ZO7126FR35": "Q131552931",
+"cfd_eu:529900EH66KPWU1L3N23": "Q19310685",
 "cfd_eu:529900EKPN8EYA3AX590": "Q126365110",
 "cfd_eu:529900GEH0DAUTAXUA94": "Q5206146",
 "cfd_eu:529900GJOSVHI055QR67": "Q12664045",
+"cfd_eu:529900HIPZJM9DD5IY23": "Q14912505",
+"cfd_eu:529900JB9XYZ8E87N345": "Q27479372",
 "cfd_eu:529900KIX7269PVMPY26": "Q30632901",
 "cfd_eu:529900KLYIW1ERXXLT61": "Q2506412",
 "cfd_eu:529900LZT3QKPD355Q25": "Q15107359",
@@ -233886,13 +233856,20 @@
 "cfd_eu:529900OKPZTTS50FXP26": "Q651601",
 "cfd_eu:529900OLW8QPFMTBDC23": "Q141654848",
 "cfd_eu:529900OSVFQK3XISEQ85": "Q137779206",
+"cfd_eu:529900Q4W1LSVUCO8L66": "Q24288522",
 "cfd_eu:529900RPGHC6DQEQL615": "Q93449648",
+"cfd_eu:529900VHU3S8ZYAQYZ61": "Q1958943",
+"cfd_eu:529900Y2I953BJ8KOV45": "Q1369016",
 "cfd_eu:5493000IQQ05Y25L0V92": "Q114587086",
+"cfd_eu:5493000LM0MZ4JPMGM90": "Q1277898",
+"cfd_eu:54930056IRBXK0Q1FP96": "Q9598744",
 "cfd_eu:5493005A90DEIXLTT406": "Q28877433",
+"cfd_eu:5493007SJLLCTM6J6M37": "Q20908850",
 "cfd_eu:54930080G2M7EJ097A27": "Q18121568",
 "cfd_eu:5493008WOGQAQLWW1073": "Q131553690",
 "cfd_eu:5493009VJC01E4H6HH77": "Q4827724",
 "cfd_eu:5493009W2E2YDCXY6S81": "Q17488861",
+"cfd_eu:549300CQ9NLEHMRCU505": "Q17624732",
 "cfd_eu:549300E5ENQVY2IBLF67": "Q113466783",
 "cfd_eu:549300FXBIWWGK7T0Y98": "Q104429642",
 "cfd_eu:549300GH3DFCXVNBHE59": "Q17521037",
@@ -233907,6 +233884,7 @@
 "cfd_eu:549300RFKNCOX56F8591": "Q7283806",
 "cfd_eu:549300S2T3FWVVXWJI89": "Q7541907",
 "cfd_eu:549300SBPFE9JX7N8J82": "Q7389567",
+"cfd_eu:549300SXM92LQ05OJQ76": "Q7573578",
 "cfd_eu:549300U4LIZV0REEQQ46": "Q5139377",
 "cfd_eu:549300UE2ZF21B02QG64": "Q3633730",
 "cfd_eu:549300XG5LFGN1IGYC71": "Q113466695",
@@ -233919,11 +233897,18 @@
 "cfd_eu:743700FTBNXAUN57RH30": "Q7387053",
 "cfd_eu:743700GC62JLHFBUND16": "Q4353753",
 "cfd_eu:743700TBJXZLJIAVFQ92": "Q113465390",
+"cfd_eu:7CUNS533WID6K7DGFI87": "Q847225",
 "cfd_eu:7KDSOB6Z0X4S67TMX170": "Q137779174",
 "cfd_eu:7V6Z97IO7R1SEAO84Q32": "Q7573579",
 "cfd_eu:815600508DD477037C23": "Q128645154",
 "cfd_eu:815600522538355AE429": "Q27313701",
 "cfd_eu:81560064085A02B2B297": "Q16530902",
+"cfd_eu:851WYGNLUQLFZBSYGB56": "Q157617",
+"cfd_eu:95980020140005317135": "Q116480794",
+"cfd_eu:95980020140005487855": "Q113464599",
+"cfd_eu:95980020140005658381": "Q19604339",
+"cfd_eu:95980020140006024944": "Q7096483",
+"cfd_eu:959800LQ598A5RQASA61": "Q578252",
 "cfd_eu:96950008DNO3H80I0682": "Q3006185",
 "cfd_eu:9695001JU8NI5EHMH791": "Q131548826",
 "cfd_eu:9695001WIZU5SWHBP423": "Q131538737",
@@ -234007,7 +233992,10 @@
 "cfd_eu:9845002A8BS4B6869B79": "Q141987271",
 "cfd_eu:984500A7AA88D8EFFQ20": "Q110461223",
 "cfd_eu:9KOGW2C2FCIOJQ7FF485": "Q341100",
+"cfd_eu:B81CK4ESI35472RHJ606": "Q451814",
+"cfd_eu:DIZES5CFO5K3I5R58746": "Q464702",
 "cfd_eu:DKGVVH5FKILG8R13CO13": "Q131535576",
+"cfd_eu:DSNHHQ2B9X5N6OUJ1236": "Q561418",
 "cfd_eu:DW6MQVZNJSSKVELT9F22": "Q11179646",
 "cfd_eu:EJ3P8B7HPQFKAH6YME79": "Q2883429",
 "cfd_eu:F0HUI1NY1AZMJMD8LP67": "Q3125186",
@@ -234018,6 +234006,7 @@
 "cfd_eu:J48C8PCSJVUBR8KCW529": "Q686176",
 "cfd_eu:J4CP7MHCXR8DAQMKIL78": "Q46730",
 "cfd_eu:JU1U6S0DG9YLT7N8ZV32": "Q118581",
+"cfd_eu:K8MS7FD7N5Z2WQ51AZ71": "Q806189",
 "cfd_eu:KGCEPHLVVKVRZYO1T647": "Q796827",
 "cfd_eu:KHCL65TP05J1HUW2D560": "Q6326005",
 "cfd_eu:KR6LSKV3BTSJRD41IF75": "Q11878398",
@@ -234032,9 +234021,12 @@
 "cfd_eu:R0MUWSFPU8MPRO8K5P83": "Q499707",
 "cfd_eu:R1IO4YJ0O79SMWVCHB58": "Q131548706",
 "cfd_eu:RIL4VBPDB0M7Z3KXSF19": "Q662664",
+"cfd_eu:SI5RG2M0WQQLZCXKRM20": "Q762330",
 "cfd_eu:TO822O0VT80V06K0FH57": "Q1026044",
 "cfd_eu:UAIAINAJ28P30E5GWE37": "Q795898",
 "cfd_eu:VBHFXSYT7OG62HNT8T76": "Q131548760",
+"cfd_eu:VDYMYTQGZZ6DU0912C88": "Q152106",
+"cfd_eu:VWMYAEQSTOPNV0SUGU82": "Q806808",
 "cfd_eu:W2RVX391BFSQJQAGEM62": "Q3006190",
 "cfd_eu:ZSLF02UC3X1JFV1UX676": "Q113466245",
 "cfd_eu:akcijusabiedrbalpbbank": "Q104429626",
@@ -234124,6 +234116,9 @@
 "eba:CZ_CNB!60732075": "Q67811168",
 "eba:CZ_CNB!63080737": "Q58206631",
 "eba:CZ_CNB!63321521": "Q54977846",
+"eba:DE_BAFIN!122964": "Q1123387",
+"eba:DE_BAFIN!126737": "Q131477305",
+"eba:DE_BAFIN!144574": "Q61196302",
 "eba:DK_DFSA!22002": "Q28888546",
 "eba:DK_DFSA!22024": "Q29526255",
 "eba:ES_BE!6911": "Q139677996",
@@ -234405,6 +234400,7 @@
 "fintrac:N300000672": "Q7975268",
 "fintrac:N300000757": "Q92498647",
 "igm_br:55.459.453/0001-72": "Q138711584",
+"igm_es:veramaticonlinesa": "Q140454692",
 "igm_gb:100259": "Q30267932",
 "igm_gb:100370": "Q5164817",
 "igm_gb:10085": "Q6525177",
@@ -234565,6 +234561,7 @@
 "mica:097900CAKA0000249459": "Q137779213",
 "mica:097900CAKA0000269926": "Q137779212",
 "mica:097900CAKA0000272448": "Q137779210",
+"mica:0W2PZJM8XOY22M4GG883": "Q1183542",
 "mica:2138002QAMX8PPKSO715": "Q137779184",
 "mica:21380045KC28948FNE32": "Q137779118",
 "mica:2138005C815T9EZU4C75": "Q137779117",
@@ -234596,7 +234593,11 @@
 "mica:529900KTP3Y86BZKY754": "Q137779114",
 "mica:529900LZM6X3GBFNLG10": "Q137779110",
 "mica:529900OSVFQK3XISEQ85": "Q137779206",
+"mica:529900Q4W1LSVUCO8L66": "Q24288522",
 "mica:529900QH6TWSXWH0XM44": "Q137779173",
+"mica:529900VHU3S8ZYAQYZ61": "Q1958943",
+"mica:5493000LM0MZ4JPMGM90": "Q7096483",
+"mica:54930056IRBXK0Q1FP96": "Q9598744",
 "mica:5493007WZ7IFULIL8G21": "Q109391386",
 "mica:549300CQ9NLEHMRCU505": "Q17624732",
 "mica:549300ET4IUR6RCZOL84": "Q137779120",
@@ -234613,7 +234614,9 @@
 "mica:743700CHRVVP342JOA67": "Q137779150",
 "mica:743700GULNWPBLJ7A022": "Q137779148",
 "mica:743700PZG5RRF7SA4Q58": "Q137779147",
+"mica:7CUNS533WID6K7DGFI87": "Q847225",
 "mica:7KDSOB6Z0X4S67TMX170": "Q137779174",
+"mica:851WYGNLUQLFZBSYGB56": "Q157617",
 "mica:89450036UW3ID72T1M84.": "Q137779167",
 "mica:894500ISUYBQF9I7BE66": "Q137779183",
 "mica:894500IY99QLL9M0SR28": "Q137779178",
@@ -234633,6 +234636,8 @@
 "mica:984500F75CJ82D8B7D76": "Q137779170",
 "mica:984500FD0NZ8949F4363": "Q137779171",
 "mica:K8MS7FD7N5Z2WQ51AZ71": "Q806189",
+"mica_emt:9695002I9DJHZ3449O66": "Q131552879",
+"mica_emt:969500FX8K40ZDW4F377": "Q137779160",
 "nat_ar:30659863789": "Q122274886",
 "nat_ar:30703088534": "Q950419",
 "nat_au:ampbankltd": "Q295261",
