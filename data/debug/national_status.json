@@ -26,7 +26,7 @@
   "BCRA EFT networks": "ok: 3 firms",
   "BCRA QR administrators": "ok: 4 firms",
   "BCRA acceptors": "ok: 67 firms",
-  "BCRA acquirers": "ok: 15 firms",
+  "BCRA acquirers": "ok: 14 firms",
   "BCRA aggregators": "ok: 95 firms",
   "BCRA collection services": "ok: 23 firms",
   "BCRA homepage": "probe saved earlier this week",
@@ -34,12 +34,12 @@
   "BCRA payment initiators": "ok: 5 firms",
   "CNV homepage": "probe saved earlier this week",
   "CNV virtual asset service providers": "HTTP 404",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "AU": {
   "APRA ADIs and payment facilities": "ok: 126 firms",
   "AUSTRAC digital currency exchange register": "timeout",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "AU (CFD)": {
   "ASIC AFS licensees that make a market in derivatives / FX": "read failed: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt",
@@ -76,7 +76,7 @@
  "BD": {
   "BB mobile financial services providers": "ok: 14 firms",
   "BB payment system operators": "probe saved earlier this week",
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "www.bb.org.bd homepage": "probe saved earlier this week"
  },
  "BH": {
@@ -259,7 +259,7 @@
  "ET": {
   "NBE banks": "ok: 33 firms",
   "NBE payment instrument issuers": "HTTP 404",
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "nbe.gov.et homepage": "probe saved earlier this week"
  },
  "EU (CFD)": {
@@ -299,7 +299,7 @@
   "Registered Entities (2)": "probe saved earlier this week",
   "Regulated Entities": "probe saved earlier this week",
   "Regulated Entities (2)": "probe saved earlier this week",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "GG (iGaming)": {
   "Alderney category 1 and 2 associate certificates": "read failed: no firms matched",
@@ -396,7 +396,7 @@
   "date": "2026-11-12"
  },
  "IT (iGaming)": {
-  "Italy - ADM remote gaming concessionaires": "HTTP 404",
+  "Italy - ADM remote gaming concessionaires": "read failed: no matching table on the page; table headers were: []",
   "date": "2026-11-12"
  },
  "JE": {
@@ -462,7 +462,7 @@
   "KoFIU (Korean) VASP reports": "probe saved earlier this week",
   "KoFIU homepage": "probe saved earlier this week",
   "Table of FSS-Supervised Financial Institutions": "probe saved earlier this week",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "KY": {
   "CIMA entity search": "probe saved earlier this week",
@@ -498,7 +498,7 @@
   "date": "2026-11-12"
  },
  "LT": {
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv": "ok: 41 firms",
   "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv": "ok: 72 firms"
  },
@@ -542,7 +542,7 @@
   "FRC homepage": "probe saved earlier this week",
   "Licensed Entities": "probe saved earlier this week",
   "List of codes assigned by the Bank of Mongolia to ": "probe saved earlier this week",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "MT (iGaming)": {
   "GLEIF - Malta companies named 'bet'": "ok: 1 firms from 4 pages",
@@ -603,7 +603,7 @@
   "BNM principal MSB licensees": "ok: 15 firms",
   "Principal Money Services Business Licensees": "probe saved earlier this week",
   "SC registered digital asset exchanges": "probe saved earlier this week",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "MZ": {
   "Banco de Mocambique homepage": "probe saved earlier this week",
@@ -624,7 +624,7 @@
   "CBN money transfer operators": "ok: 108 firms",
   "SEC digital asset operators (ARIP)": "ok: 2 firms",
   "SEC regulatory incubation participants": "ok: 7 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "NI": {
   "SIBOIF supervised institutions": "ok: 8 firms",
@@ -773,7 +773,7 @@
   "BOT payment business providers": "ok: 144 firms",
   "Digital Asset Businesses": "probe saved earlier this week",
   "SEC digital asset operators": "HTTP 403",
-  "date": "2026-11-11",
+  "date": "2026-11-12",
   "www.sec.or.th homepage": "HTTP 403",
   "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved earlier this week"
  },

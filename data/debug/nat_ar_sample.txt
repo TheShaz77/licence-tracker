@@ -1,5 +1,5 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 81384  starts: b'{"succes'
+bytes: 81387  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
@@ -39,14 +39,14 @@ first lines:
 '{"success":true,"tipo_psp":5,"tipo_psp_nombre":"Aceptador","lang":"es","total":67,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=6&lang=es
-bytes: 4735  starts: b'{"succes'
+bytes: 4416  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
-data rows: 15  kept: 15
-type values: [('', 15)]
+data rows: 14  kept: 14
+type values: [('', 14)]
 first lines:
-'{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":15,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
+'{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":14,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
 bytes: 29033  starts: b'{"succes'
