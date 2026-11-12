@@ -99,7 +99,9 @@ def _flatten(d: dict, prefix: str = "") -> dict:
     for k, v in d.items():
         if k == "Properties" and isinstance(v, list):
             for item in v:
-                if isinstance(item, dict):
+                if isinstance(item, dict) and set(item) == {"Name", "Value"}:     # [{"Name": x, "Value": y}]
+                    out[str(item["Name"])] = item["Value"]
+                elif isinstance(item, dict):
                     for pk, pv in item.items():
                         out[pk] = pv[0] if isinstance(pv, list) and pv else pv
             continue
@@ -778,6 +780,15 @@ class NationalSource(Source):
         r.raise_for_status()
         return r.content
 
+    @staticmethod
+    def _post(ctx: Context, url: str, body) -> bytes:
+        """The search request a register's own page sends to show its list (same URL, same JSON body)."""
+        r = ctx.session.post(url, json=body, timeout=(15, 90), headers={
+            "User-Agent": "Mozilla/5.0 (compatible; licence-tracker)", "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest"})
+        r.raise_for_status()
+        return r.content
+
     def _fetch_multi(self, ctx: Context, spec: dict, label: str, status: dict) -> tuple:
         """Lists spread over numbered pages ('paginate': {start, step, max, marker}; the url holds
         {page}), or several addresses tried in turn until one gives firms ('fallback_urls').
@@ -901,7 +912,8 @@ class NationalSource(Source):
                     failed.add(label)
                     continue
                 try:
-                    raw = self._get(ctx, spec["url"], _accept(spec))
+                    raw = (self._post(ctx, spec["url"], spec["post_json"]) if spec.get("post_json")
+                           else self._get(ctx, spec["url"], _accept(spec)))
                     if spec.get("join"):
                         j = spec["join"]
                         jh, jrows = read_table(self._get(ctx, j["url"]))

@@ -326,3 +326,41 @@ def test_find_link_follows_a_chain_and_reads_json_lists(monkeypatch):
     assert n.find_link(Ctx, {"page": "https://x.test/index", "link_chain": ["list-as-at", r"\.pdf"]}) == "https://cdn.x.test/doc-abc.pdf"
     assert n.find_link(Ctx, {"page": "https://x.test/wp-json/media", "link_pattern": r"DARE-Firms-as-at[^\"\s]*\.pdf"}) \
         == "https://x.test/uploads/2026/08/DARE-Firms-as-at-31-July-2026-1.pdf"
+
+
+def test_post_json_register_and_name_value_properties(tmp_path, monkeypatch):
+    """Jersey: the register page loads its list with a POST; the reader sends the same request and
+    reads the {"Name": .., "Value": ..} properties as named columns."""
+    import json
+    from regtracker import cli
+    from regtracker.sources import national as n
+    body = {"Results": [{"Title": "MoonPay Jersey Limited", "Url": "/x/1",
+                         "Properties": [{"Name": "LawSection", "Value": "Virtual Asset Service Provider (VASP)"}]},
+                        {"Title": "CoinShares (Jersey) Limited", "Url": "/x/2",
+                         "Properties": [{"Name": "LawSection", "Value": "Fund Services Business (FSB), Virtual Asset Service Provider (VASP)"}]}]}
+    sent = []
+
+    class R:
+        content = json.dumps(body).encode()
+        def raise_for_status(self): pass
+
+    class S:
+        def post(self, url, json=None, **kw):
+            sent.append((url, json))
+            return R()
+        def get(self, url, **kw):
+            raise AssertionError("GET not expected")
+
+    monkeypatch.setattr("regtracker.http.robots_allowed", lambda *a, **k: True)
+    monkeypatch.setattr(n, "robots_allowed", lambda *a, **k: True, raising=False)
+    cfg = {"national": {"JE": {"regulator": "JFSC", "files": [{
+        "label": "JFSC VASPs", "url": "https://www.jerseyfsc.org/umbraco/api/VaspEntitiesSearch/GetResults",
+        "post_json": {"Keyword": "", "PageSize": 1000, "PageNumber": 1, "Refiners": []},
+        "name_column": "Title", "status_column": "LawSection", "licence_type": "Virtual asset service provider (JFSC)"}]}}}
+    ctx = cli.make_context(cfg, tmp_path)
+    ctx.session = S()
+    src = n.NationalSource("JE", cfg["national"]["JE"])
+    recs = src.fetch(ctx)
+    assert sent and sent[0][1]["PageSize"] == 1000
+    assert sorted(r.name for r in recs) == ["CoinShares (Jersey) Limited", "MoonPay Jersey Limited"]
+    assert all(r.licence_type == "Virtual asset service provider (JFSC)" for r in recs)
