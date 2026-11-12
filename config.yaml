@@ -1195,15 +1195,29 @@ national:
   JE:
     regulator: JFSC
     files:
-    - label: JFSC regulated entities - money service business
-      url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionMSB=1
-      probe: true
-    - label: JFSC regulated entities - banking
-      url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionDC=1
-      probe: true
-    - label: JFSC VASP entities register
-      url: https://www.jerseyfsc.org/industry/vasp-entities/?search=
-      probe: true
+    # The JFSC register pages fill their tables from these requests (the same POST the page sends);
+    # robots.txt allows everything.
+    - label: JFSC regulated entities - banks (deposit-taking)
+      url: https://www.jerseyfsc.org/umbraco/api/RegulatedEntitiesSearch/GetResults
+      post_json: {"Keyword": "", "PageSize": 1000, "PageNumber": 1, "Refiners": [{"Name": "lawSection", "SelectedValue": "bankingdc"}]}
+      name_column: Title
+      status_column: LawSection
+      licence_type: Bank - deposit-taking business (JFSC)
+      register_url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionDC=1
+    - label: JFSC regulated entities - money service businesses
+      url: https://www.jerseyfsc.org/umbraco/api/RegulatedEntitiesSearch/GetResults
+      post_json: {"Keyword": "", "PageSize": 1000, "PageNumber": 1, "Refiners": [{"Name": "lawSection", "SelectedValue": "moneyservicebusinessmsb"}]}
+      name_column: Title
+      status_column: LawSection
+      licence_type: Money service business (JFSC)
+      register_url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionMSB=1
+    - label: JFSC virtual asset service providers
+      url: https://www.jerseyfsc.org/umbraco/api/VaspEntitiesSearch/GetResults
+      post_json: {"Keyword": "", "PageSize": 1000, "PageNumber": 1, "Refiners": []}
+      name_column: Title
+      status_column: LawSection
+      licence_type: Virtual asset service provider (JFSC)
+      register_url: https://www.jerseyfsc.org/industry/vasp-entities/
     - label: www.jerseyfsc.org homepage
       url: https://www.jerseyfsc.org/
       probe: true
@@ -1285,18 +1299,20 @@ national:
   IM:
     regulator: IOMFSA
     files:
-    # The register search answers plain requests. Business types: 7 deposit taking, 18 restricted deposit
-    # taking, 15 money transmission services (payments, e-money, money service businesses).
-    - label: IOMFSA register - banks and money transmission services
-      url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=7&BusinessType=18&BusinessType=15&Page={page}
-      paginate: {start: 1, step: 1, max: 5, marker: 'registers/licence-holders/([a-z0-9-]+)/'}
+    - label: IOMFSA register - deposit taking and restricted deposit taking (banks)
+      url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=7&BusinessType=18
       format: html_table
       name_column: Name
       type_column: Business Type
       type_patterns:
-        Restricted Deposit: Restricted deposit taker (IOMFSA)
-        Deposit Taking: Bank / deposit taker (IOMFSA Class 1)
-        Money Transmission: Money transmission services - payments, e-money, MSB (IOMFSA Class 8)
+        Restricted: Restricted deposit taker (IOMFSA, Class 1(2))
+        .: Bank - deposit taking (IOMFSA, Class 1(1))
+      register_url: https://www.iomfsa.im/register-search/
+    - label: IOMFSA register - money transmission services
+      url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=15
+      format: html_table
+      name_column: Name
+      licence_type: Money transmission services (IOMFSA, Class 8)
       register_url: https://www.iomfsa.im/register-search/
     - label: IOMFSA register search
       url: https://www.iomfsa.im/register-search/
