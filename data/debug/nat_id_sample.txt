@@ -1,10 +1,10 @@
 url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
-bytes: 732063  starts: b'\r\n\r\n<!DO'
+bytes: 731991  starts: b'\r\n\r\n<!DO'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'Status', 'website': None, 'email': 'Email', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Company Name', 'Location', 'Category', 'Status', 'Permission/Approval Number', 'Permission/Approval Date', 'Email', 'Action']
 data rows: 10  kept: 10
-type values: [('Non Bank Money Changer Operators', 9), ('Payment Service Provider - License Category 3', 1)]
+type values: [('Non Bank Money Changer Operators', 10)]
 first lines:
 ''
 ''

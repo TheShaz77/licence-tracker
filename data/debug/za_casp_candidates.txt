@@ -1,0 +1,14 @@
+chosen: https://www.fsca.co.za/_api/cr3ad_regulatoryframes(94942cc4-0238-f111-88b3-000d3a64fb06)/cr3ad_document/$value
+
+https://www2.fsca.co.za/HTML/FAIS/FSPExport.xlsx
+    {'rows': 22724, 'columns': {'fsp': 0, 'name': 1, 'status': 3, 'products': [4]}, 'header': ['FSPno', 'Name', 'Tradename', 'Status', 'Financial Products [Cat No / SubCat No / A = Advice / B = Intermediary / C = Automated Advice / D = Scripted Intermediary]', 'Company Type', 'Company Registration Number', 'FSP Date Authorised', ''], 'kept': 0}
+https://www.fsca.co.za/_api/cr3ad_regulatoryframes(94942cc4-0238-f111-88b3-000d3a64fb06)/cr3ad_document/$value
+    edition (2026, 3)  firms 285  first line: 'A. LIST OF CRYPTO ASSET SERVICE PROVIDERS (CASPS) LICENSED UNDER THE FINANCIAL'
+https://www.fsca.co.za/_api/cr3ad_regulatoryframes(f9282be5-33f2-f011-8406-7c1e5277e2b1)/cr3ad_document/$value
+    edition (2024, 4)  firms 71  first line: 'LIST OF CRYPTO ASSET SERVICE PROVIDERS (CASPS) AUTHORISED UNDER THE FINANCIAL ADVISORY AND'
+https://www.fsca.co.za/_api/cr3ad_newses(ac3ef686-badb-f011-8544-000d3ab44730)/cr3ad_document/$value
+    edition (2024, 4)  firms 0  first line: 'FSCA Press Release 22 April 2024'
+https://www.fsca.co.za/_api/cr3ad_newses(cbe9ded4-7b74-f111-ab0e-7c1e5277e2b1)/cr3ad_document/$value
+    edition (2026, 6)  firms 3  first line: 'Q1 FSCA'
+https://www.fsca.co.za/Regulatory%20Frameworks/Documents/List%20of%20approved%20crypto%20asset%20service%20providers%20%28CASPs%29.pdf
+    failed: 404 Client Error: Not Found for url: https://www.fsca.co.za/Regulatory%20Frameworks/Documents/List%20of%20approved%20crypto%20asset%20service%20provid

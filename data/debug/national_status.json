@@ -7,7 +7,7 @@
   "www.afa.ad homepage": "probe saved earlier this week"
  },
  "AE": {
-  "CBUAE register": "ok: 242 firms",
+  "CBUAE register": "ok: 240 firms",
   "DFSA firms": "probe saved earlier this week",
   "VARA register page": "ok: 61 firms",
   "date": "2026-11-12"
@@ -113,19 +113,19 @@
  },
  "BR (iGaming)": {
   "Brazil - companies authorised for fixed-odds betting and online games (SPA)": "ok: 76 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "BS": {
-  "CBOB register of licensees": "HTTP 404",
-  "Regulates Entities": "probe saved earlier this week",
-  "SCB digital asset businesses": "HTTP 404",
-  "date": "2026-11-12",
-  "www.centralbankbahamas.com homepage": "probe saved earlier this week",
-  "www.scb.gov.bs homepage": "probe saved earlier this week"
+  "CBOB supervised institutions - banks": "ok: 35 firms",
+  "CBOB supervised institutions - electronic money service providers": "ok: 3 firms",
+  "CBOB supervised institutions - money transmission service providers": "ok: 5 firms",
+  "SCB register of digital asset businesses (DARE Act)": "ok: 35 firms",
+  "SCB registrant / licensee search (probe)": "probe saved (262718 bytes, 9 linked pages)",
+  "date": "2026-11-12"
  },
  "BS (CFD)": {
   "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "BT": {
   "RMA licensed institutions": "SSL error",
@@ -149,7 +149,7 @@
   "Kahnawake casino software provider authorizations": "ok: 2 firms",
   "Kahnawake client provider authorizations (operators and their sites)": "ok: 53 firms",
   "Ontario registered internet gaming operators (probe)": "probe saved earlier this week",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "CD": {
   "BCC financial intermediaries": "probe waiting for the next run (page budget used up)",
@@ -157,7 +157,7 @@
  },
  "CH (CFD)": {
   "FINMA securities firms": "ok: 77 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "CL": {
   "Buscador de entidades supervisadas": "HTTP 404",
@@ -210,7 +210,7 @@
   "GLEIF - Curacao companies named 'poker'": "read failed: no firms matched on 3 pages",
   "GLEIF - Curacao companies named 'slots'": "read failed: no firms matched on 3 pages",
   "GLEIF - Curacao companies named 'sportsbook'": "read failed: no firms matched on 3 pages",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "CY (CFD)": {
   "CySEC Cyprus Investment Firms (CIFs)": "blocked by robots.txt",
@@ -218,7 +218,7 @@
  },
  "DE (iGaming)": {
   "Germany - GGL whitelist (online sports betting, slots, poker, casino)": "ok: 62 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "DJ": {
   "BCD homepage": "probe saved earlier this week",
@@ -254,7 +254,7 @@
  },
  "ES (iGaming)": {
   "Spain - DGOJ licensed gambling operators": "ok: 77 firms from 30 pages",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "ET": {
   "NBE banks": "ok: 33 firms",
@@ -264,7 +264,7 @@
  },
  "EU (CFD)": {
   "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2737 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
@@ -273,15 +273,15 @@
  },
  "FR (iGaming)": {
   "France - ANJ licensed online operators": "ok: 16 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "GA": {
   "BEAC payment institutions (CEMAC)": "DNS: no such site",
   "date": "2026-11-09"
  },
  "GB (iGaming)": {
-  "UKGC register - remote and B2B gambling licences": "ok: 2337 firms",
-  "date": "2026-11-11"
+  "UKGC register - remote and B2B gambling licences": "ok: 2336 firms",
+  "date": "2026-11-12"
  },
  "GE": {
   "NBG VASP registry": "probe saved earlier this week",
@@ -350,7 +350,7 @@
   "www.bankofguyana.org.gy homepage": "HTTP 403"
  },
  "HK": {
-  "Customs money service operators": "ok: 614 firms",
+  "Customs money service operators": "ok: 613 firms",
   "HKMA SVF licensees": "ok: 11 firms",
   "HKMA banks": "ok: 164 firms",
   "SFC crypto platform applicants": "ok: 6 firms",
@@ -376,6 +376,8 @@
  },
  "IM": {
   "Bank Recovery and Resolution": "probe saved earlier this week",
+  "IOMFSA register - deposit taking and restricted deposit taking (banks)": "ok: 11 firms",
+  "IOMFSA register - money transmission services": "ok: 5 firms",
   "IOMFSA register search": "probe saved earlier this week",
   "Legislation & Guidance": "probe saved earlier this week",
   "Trust and Corporate Service Providers (\"TCSPs\")": "probe saved earlier this week",
@@ -383,7 +385,7 @@
  },
  "IM (iGaming)": {
   "Isle of Man online gambling (OGRA) licence holders": "ok: 49 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "IN": {
   "List of Agency Banks": "probe saved earlier this week",
@@ -405,7 +407,9 @@
   "Digital assets in Jersey": "probe saved earlier this week",
   "Getting started with digital assets": "probe saved earlier this week",
   "Initial coin or token offerings": "probe saved earlier this week",
-  "JFSC regulated entities": "HTTP 404",
+  "JFSC regulated entities - banks (deposit-taking)": "ok: 20 firms",
+  "JFSC regulated entities - money service businesses": "ok: 26 firms",
+  "JFSC virtual asset service providers": "ok: 12 firms",
   "Tokenised real-world assets": "probe saved earlier this week",
   "date": "2026-11-12",
   "www.jerseyfsc.org homepage": "probe saved earlier this week"
@@ -515,7 +519,7 @@
  },
  "MD": {
   "BNM register of e-money issuers": "HTTP 403",
-  "BNM registers (probe)": "probe saved earlier this week",
+  "BNM register of payment institutions and postal payment providers": "ok: 4 firms",
   "NBM payment service providers": "HTTP 404",
   "date": "2026-11-12",
   "www.bnm.md homepage": "probe saved earlier this week"
@@ -560,7 +564,7 @@
  },
  "MU": {
   "BoM licensed banks": "SSL error",
-  "FSC Mauritius licensees": "HTTP 404",
+  "FSC online public register - virtual asset service providers (VAITOS Act)": "read failed: no matching table on the page; table headers were: []",
   "date": "2026-11-12",
   "www.bom.mu homepage": "SSL error",
   "www.fscmauritius.org homepage": "probe saved earlier this week"
@@ -683,6 +687,7 @@
  "QA": {
   "QCB homepage": "probe saved earlier this week",
   "QFCRA homepage": "probe saved earlier this week",
+  "QFCRA public register - authorised firms": "probe saved (176215 bytes, 0 linked pages)",
   "date": "2026-11-12"
  },
  "RS": {
@@ -698,7 +703,7 @@
  },
  "SA": {
   "SAMA licensed entities (probe)": "HTTP 404",
-  "SAMA licensed payment service providers (EMIs and PIs)": "HTTP 404",
+  "SAMA licensed payment service providers (EMIs and PIs)": "read failed: 404 Client Error: Not Found for url: https://sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx",
   "date": "2026-11-12"
  },
  "SB": {
@@ -719,7 +724,7 @@
  },
  "SC (CFD)": {
   "FSA capital markets - securities dealers": "ok: 231 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "SG": {
   "MAS directory cards": "ok: 4 firms",
@@ -806,7 +811,7 @@
  },
  "TR": {
   "BDDK banks": "ok: 66 firms",
-  "CBRT e-money institutions": "ok: 55 firms",
+  "CBRT e-money institutions": "ok: 53 firms",
   "CBRT payment institutions": "ok: 20 firms",
   "SPK crypto asset service providers": "ok: 48 firms",
   "SPK crypto list page": "probe saved earlier this week",
@@ -843,7 +848,7 @@
  },
  "US (iGaming)": {
   "New Jersey internet gaming vendors incl. affiliates and payment firms (DGE list dated March 2020)": "ok: 927 firms",
-  "date": "2026-11-11"
+  "date": "2026-11-12"
  },
  "UY": {
   "BCU banks": "ok: 11 firms",

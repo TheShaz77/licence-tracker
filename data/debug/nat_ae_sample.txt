@@ -15,12 +15,12 @@ first lines:
 '      .st1 {'
 '        fill: #ba9248;'
 
-url: https://www.centralbank.ae/media/lmbpqcll/cb-register-sept-2026.pdf
-bytes: 626493  starts: b'%PDF-1.6'
+url: https://www.centralbank.ae/media/ffco0wgo/cb-register-oct-2026.pdf
+bytes: 623765  starts: b'%PDF-1.6'
 error: None
 columns used: {'name': 'Institution Name', 'type': 'License Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'Head office', 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Institution Name', 'License Type', 'License Category', 'Head office', 'Identification Number', 'ﺮﻘﻤﻟا ﻲﺴﯿﺋﺮﻟا', 'ﺔ ﺼﺧﺮﻟا ﺔﺌﻓ', 'عﻮﻧ ﺔ ﺼﺧﺮﻟا', 'ﺔ ﺴﺳﺆﻤﻟا ﻢﺳا', 'ﻢ ﻗﺮﻟا']
-data rows: 348  kept: 242
-type values: [('Exchange Business', 62), ('National Company', 62), ('Representative Office', 53), ('Foreign Bank', 38), ('National Bank', 25), ('National Finance Company', 19), ('License Type', 6), ('', 2), ('Foreign Finance Company', 1)]
+data rows: 346  kept: 240
+type values: [('Exchange Business', 62), ('National Company', 62), ('Representative Office', 53), ('Foreign Bank', 38), ('National Bank', 25), ('National Finance Company', 17), ('License Type', 6), ('', 2), ('Foreign Finance Company', 1)]
 first lines:
 '(binary)'

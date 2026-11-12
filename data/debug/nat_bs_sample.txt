@@ -1,0 +1,39 @@
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
+bytes: 253242  starts: b'%PDF-1.4'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
+headers: ['reference', 'name', 'type', 'phone', 'section']
+data rows: 39  kept: 35
+type values: [('Bank & Trust', 39)]
+first lines:
+'(binary)'
+
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
+bytes: 253242  starts: b'%PDF-1.4'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['reference', 'name', 'phone']
+data rows: 3  kept: 3
+type values: [('', 3)]
+first lines:
+'(binary)'
+
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
+bytes: 253242  starts: b'%PDF-1.4'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['reference', 'name', 'phone']
+data rows: 5  kept: 5
+type values: [('', 5)]
+first lines:
+'(binary)'
+
+url: https://scb.gov.bs/wp-content/uploads/2026/11/DARE-Firms-as-at-31-October-2026-1.pdf
+bytes: 736873  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type']
+data rows: 35  kept: 35
+type values: [('Digital Asset Business', 23), ('Digital Asset Exchange and Digital Asset Business', 9), ('Business', 2), ('Registered Firm approved to Carry on Digital Asset Business', 1)]
+first lines:
+'(binary)'

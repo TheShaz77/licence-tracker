@@ -1,0 +1,29 @@
+url: https://www.jerseyfsc.org/umbraco/api/RegulatedEntitiesSearch/GetResults
+bytes: 10831  starts: b'{"Result'
+error: None
+columns used: {'name': 'Title', 'type': 'Type', 'id': None, 'lei': None, 'city': None, 'date': 'Date', 'status': 'LawSection', 'website': 'Url', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Title', 'Url', 'Type', 'IconUrl', 'ImageUrl', 'ImageAlt', 'Image2Url', 'Image2Alt', 'Summary', 'Date', 'NewWindow', 'PageBranding', 'Rank', 'DateTime', 'CssClass', 'LawSection']
+data rows: 20  kept: 20
+type values: [('Regulated entities', 20)]
+first lines:
+'{"Results":[{"Title":"Barclays Bank plc, Jersey Branch","Url":"/industry/regulated-entities/entity/7262","Type":"Regulated entities","IconUrl":null,"ImageUrl":null,"ImageAlt":null,"Image2Url":null,"Image2Alt":null,"Summary":"","Date":null,"NewWindow":false,"PageBranding":null,"Rank":2.5985675,"DateT'
+
+url: https://www.jerseyfsc.org/umbraco/api/RegulatedEntitiesSearch/GetResults
+bytes: 13631  starts: b'{"Result'
+error: None
+columns used: {'name': 'Title', 'type': 'Type', 'id': None, 'lei': None, 'city': None, 'date': 'Date', 'status': 'LawSection', 'website': 'Url', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Title', 'Url', 'Type', 'IconUrl', 'ImageUrl', 'ImageAlt', 'Image2Url', 'Image2Alt', 'Summary', 'Date', 'NewWindow', 'PageBranding', 'Rank', 'DateTime', 'CssClass', 'LawSection']
+data rows: 26  kept: 26
+type values: [('Regulated entities', 26)]
+first lines:
+'{"Results":[{"Title":"Afex Offshore Limited","Url":"/industry/regulated-entities/entity/72297","Type":"Regulated entities","IconUrl":null,"ImageUrl":null,"ImageAlt":null,"Image2Url":null,"Image2Alt":null,"Summary":"","Date":null,"NewWindow":false,"PageBranding":null,"Rank":3.4105082,"DateTime":"0001'
+
+url: https://www.jerseyfsc.org/umbraco/api/VaspEntitiesSearch/GetResults
+bytes: 8031  starts: b'{"Result'
+error: None
+columns used: {'name': 'Title', 'type': 'Type', 'id': None, 'lei': None, 'city': None, 'date': 'Date', 'status': 'LawSection', 'website': 'Url', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Title', 'Url', 'Type', 'IconUrl', 'ImageUrl', 'ImageAlt', 'Image2Url', 'Image2Alt', 'Summary', 'Date', 'NewWindow', 'PageBranding', 'Rank', 'DateTime', 'CssClass', 'LawSection', 'LicenseClasses']
+data rows: 12  kept: 12
+type values: [('VASP entities', 12)]
+first lines:
+'{"Results":[{"Title":"Bloomsbury Money Jersey Limited","Url":"/industry/vasp-entities/entity/210054","Type":"VASP entities","IconUrl":null,"ImageUrl":null,"ImageAlt":null,"Image2Url":null,"Image2Alt":null,"Summary":"","Date":null,"NewWindow":false,"PageBranding":null,"Rank":1.6409274,"DateTime":"000'

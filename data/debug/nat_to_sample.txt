@@ -1,5 +1,5 @@
 url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
-bytes: 108380  starts: b'\n<!DOCTY'
+bytes: 108413  starts: b'\n<!DOCTY'
 error: RuntimeError('no matching table on the page; table headers were: []')
 columns used: None
 headers: None
@@ -33,7 +33,7 @@ first lines:
 '\t<meta name="author" content="NRBT Webmaster">'
 
 url: https://www.reservebank.to/index.php/news/updated-list-of-the-licensed-foreign-exchange-dealers
-bytes: 51301  starts: b'\n<!DOCTY'
+bytes: 51240  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

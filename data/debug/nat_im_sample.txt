@@ -1,0 +1,33 @@
+url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=7&BusinessType=18
+bytes: 53174  starts: b'\r\n\r\n\r\n<!'
+error: None
+columns used: {'name': 'Name', 'type': 'Business Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Trading/Business Name', 'Business Type']
+data rows: 11  kept: 11
+type values: [('Deposit Taking', 10), ('Restricted Deposit Taking', 1)]
+first lines:
+''
+''
+''
+'<!DOCTYPE html>'
+'<html lang="en-gb" class="no-js">'
+'<head><script src="/common.js?matcher"></script><script src="/common.js?single"></script>'
+'    <title>Register Results</title>'
+'    <meta name="description" content="Register Results">'
+
+url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=15
+bytes: 50680  starts: b'\r\n\r\n\r\n<!'
+error: None
+columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name', 'Trading/Business Name', 'Business Type']
+data rows: 5  kept: 5
+type values: [('', 5)]
+first lines:
+''
+''
+''
+'<!DOCTYPE html>'
+'<html lang="en-gb" class="no-js">'
+'<head><script src="/common.js?matcher"></script><script src="/common.js?single"></script>'
+'    <title>Register Results</title>'
+'    <meta name="description" content="Register Results">'
