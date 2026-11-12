@@ -1,5 +1,5 @@
 url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
-bytes: 731994  starts: b'\r\n\r\n<!DO'
+bytes: 732063  starts: b'\r\n\r\n<!DO'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'Status', 'website': None, 'email': 'Email', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Company Name', 'Location', 'Category', 'Status', 'Permission/Approval Number', 'Permission/Approval Date', 'Email', 'Action']

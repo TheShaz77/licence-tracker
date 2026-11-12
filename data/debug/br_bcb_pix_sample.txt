@@ -1,13 +1,13 @@
-url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261110.pdf
-bytes: 160527  starts: b'%PDF-1.4'
+url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261111.pdf
+bytes: 160481  starts: b'%PDF-1.4'
 error: None
 columns used: {}
 headers: None
-data rows: 2774  kept: 844
+data rows: 2772  kept: 844
 type values: None
 first lines:
 'Lista de participantes ativos do Pix.'
-'Publicado em: 10/11/2026'
+'Publicado em: 11/11/2026'
 'Para fazer o download do arquivo no formato CSV, clique aqui.'
 'Iniciação de Facilitador'
 'Tipo de Tipo de Modalidade de'
@@ -69,7 +69,7 @@ first lines:
 '...'
 '(applicants table)'
 'Lista de instituições em processo de adesão ao Pix.'
-'Publicado em: 10/11/2026'
+'Publicado em: 11/11/2026'
 'Autorizad Tipo de Tipo de Modalidade de'
 'Status da'
 'Nome Reduzido ISPB CNPJ Tipo de Instituição a pelo Participação Participação Participação'
@@ -81,11 +81,9 @@ first lines:
 'Provedor de Conta Etapa'
 '2 BRAZA BANK S.A. BCO DE CÂMBIO 19307785 19.307.785/0001-78 Banco de Câmbio Sim Direta Facultativa'
 'Transacional Homologatória'
-'Aguardando Início'
-'Provedor de Conta'
-'3 CREDIMÓVEL SCD S.A. 45341994 45.341.994/0001-48 Sociedade de Crédito Direto Sim Indireta Facultativa da Etapa de'
-'Transacional'
-'Operação Restrita'
+'Provedor de Conta Ativo em operação'
+'3 CREDIMÓVEL SCD S.A. 45.341.994/0001-48 Sociedade de Crédito Direto Sim Facultativa'
+'Transacional restrita'
 'Provedor de Conta Etapa'
 '4 EXTRATTA IP 36000836 36.000.836/0001-33 Instituição de Pagamento Sim Indireta Facultativa'
 'Transacional Homologatória'
