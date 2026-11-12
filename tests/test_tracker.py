@@ -493,17 +493,19 @@ def test_sheet_country_tabs():
     sheets.publish(recs, [], {"finished": "x"}, logging.getLogger("t"), sh=sh)
     assert len(sh.batches) == 2 and len(sh.writes) == 1        # a handful of requests in total
     added = [r["addSheet"]["properties"]["title"] for r in sh.batches[0]["requests"]]
-    assert added == ["Summary", "Changes", "Ireland (IE)", "Switzerland (CH)", "United Kingdom (GB)", "Other"]
+    assert added == ["Summary", "Changes", "FI (all countries)", "Ireland (FI)", "Switzerland (FI)",
+                     "United Kingdom (FI)", "Other (FI)"]
     reqs = sh.batches[1]["requests"]
     order = {sh_id: r["updateSheetProperties"]["properties"]["index"]
              for r in reqs if "updateSheetProperties" in r
              for sh_id in [r["updateSheetProperties"]["properties"]["sheetId"]]}
-    assert order[sh.tabs["Summary"]] == 0 and order[sh.tabs["Other"]] == len(order) - 1
+    assert order[sh.tabs["Summary"]] == 0 and order[sh.tabs["Other (FI)"]] == len(order) - 1
     assert {"deleteSheet": {"sheetId": 0}} in reqs                # empty default tab removed
     data = {d["range"]: d["values"] for d in sh.writes[0]["data"]}
-    ie = data["'Ireland (IE)'!A1"]
+    ie = data["'Ireland (FI)'!A1"]
     assert ie[0][0] == "Jurisdiction" and len(ie) == 3 and any("Irish EMI" in row for row in ie)
-    assert len(data["'Licences'!A1"]) == 6
+    assert len(data["'FI (all countries)'!A1"]) == 6
+    assert any(r.get("deleteSheet", {}).get("sheetId") == sh.tabs["Licences"] for r in reqs)   # old tab removed
     assert len(data["'Changes'!A1"]) == 2                        # header + blanked row
     # second run: no tabs to add, still only a couple of requests
     sh.batches, sh.writes = [], []
@@ -1390,7 +1392,8 @@ def test_mica_tab():
     assert sum(1 for x in rows[1:] if x[4].startswith("Notified")) == 150
     tabs = build_tabs(recs, [], {"finished": "", "sources_status": "", "changes": 0, "problems": []},
                       extra_tabs={"MiCA CASPs (EU-EEA)": rows})
-    assert list(tabs)[:4] == ["Summary", "Changes", "MiCA CASPs (EU-EEA)", "Licences"]
+    assert list(tabs)[:5] == ["Summary", "Changes", "MiCA CASPs (EU-EEA)", "Digital Assets (all countries)",
+                              "FI (all countries)"]
 
 
 def test_friendly_change_labels():
@@ -2066,3 +2069,75 @@ def test_fsca_list_link_takes_newest_edition():
             'service providers (CASPs) December 2025</a>')
     assert fsca_list_link(page).endswith("cr3ad_document/$value")
     assert fsca_list_link("<p>no list here</p>") == ""
+
+
+def test_fi_and_digital_assets_are_on_separate_tabs():
+    from regtracker import sheets
+    from regtracker.model import segment_of
+    recs = [{**rec("a"), "name": "Pay Ltd", "licence_type": "Authorised EMI"},
+            {**rec("b"), "name": "Coin Ltd", "licence_type": "Cryptoasset firm (MLR registered)"},
+            {**rec("c"), "name": "Both Ltd", "licence_type": "Authorised EMI + cryptoasset firm"},
+            {**rec("d"), "name": "Maple MSB", "jurisdiction": "CA", "licence_type": "MSB",
+             "services": "Foreign exchange dealing; Dealing in virtual currencies"},
+            {**rec("e"), "name": "Caixa Econômica Federal", "jurisdiction": "BR", "licence_type": "Bank (Caixa Econômica Federal)"},
+            {**rec("f"), "name": "Bitpanda", "jurisdiction": "AT", "licence_type": "MiCA CASP (authorised)"}]
+    assert [segment_of(r) for r in recs] == ["FI", "Digital Assets", "Digital Assets", "Digital Assets", "FI", "Digital Assets"]
+    tabs = sheets.build_tabs(recs, [], {})
+    assert len(tabs["United Kingdom (FI)"]) == 2 and len(tabs["United Kingdom (Digital Assets)"]) == 3
+    assert len(tabs["Digital Assets (all countries)"]) == 5 and len(tabs["FI (all countries)"]) == 3
+    assert "Canada (Digital Assets)" in tabs and "Canada (FI)" not in tabs and "Brazil (FI)" in tabs
+
+
+def test_za_casp_reads_fais_export_then_falls_back_to_the_linked_list(tmp_path, monkeypatch):
+    """South Africa crypto firms: the FSCA's public FAIS export (all authorised FSPs with their product
+    categories) comes first; if it has no crypto firms, the CASP list linked from the homepage is read."""
+    import io
+    import openpyxl
+    from regtracker.sources import southafrica as za
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.append(["FSP Number", "FSP Name", "Status", "Product Sub Category"])
+    for i in range(60):
+        ws.append([60000 + i, f"Coin Firm {i} (Pty) Ltd", "Authorised", "1.27 Crypto Assets"])
+    ws.append([61999, "Gone Coin (Pty) Ltd", "Lapsed", "1.27 Crypto Assets"])
+    ws.append([12345, "Plain Brokers", "Authorised", "1.2 Short-term Insurance"])
+    buf = io.BytesIO()
+    wb.save(buf)
+    export = {"bytes": buf.getvalue()}
+    old = ["LIST OF CRYPTO ASSET SERVICE PROVIDERS (CASPS) - APRIL 2024"] + [
+        f"{i} Old Firm {i} (Pty) Ltd {50000 + i} CAT I" for i in range(1, 31)]
+    monkeypatch.setattr(za, "pdf_lines", lambda raw: old)
+    monkeypatch.setattr(za, "_pdf_links", lambda raw: [])
+    monkeypatch.setattr(za, "robots_allowed", lambda s, u, *a: True)
+    asked = []
+
+    class R:
+        def __init__(self, text="", content=b""):
+            self.text, self.content = text, content
+        def raise_for_status(self): pass
+
+    class S:
+        def get(self, url, **kw):
+            asked.append(url)
+            if url == za.FAIS_EXPORT:
+                return R(content=export["bytes"])
+            if url == za.FSCA_HOME:
+                return R(text='<a href="/_api/cr3ad_regulatoryframes(abc)/cr3ad_document/$value">'
+                              'Approved list of crypto asset serviceproviders</a>')
+            return R(content=b"%PDF-1.7")
+
+    ctx = cli.make_context({}, tmp_path)
+    ctx.session = S()
+    recs = za.ZACASPSource().fetch_web(ctx)
+    by = {r.name: r for r in recs}
+    assert len(recs) == 61 and by["Coin Firm 7 (Pty) Ltd"].active and not by["Gone Coin (Pty) Ltd"].active
+    assert "Plain Brokers" not in by and not any("?$top" in u for u in asked)   # no internal lookups
+
+    wb2 = openpyxl.Workbook()
+    wb2.active.append(["FSP Number", "FSP Name", "Status", "Product Sub Category"])
+    b2 = io.BytesIO()
+    wb2.save(b2)
+    export["bytes"] = b2.getvalue()                    # export without crypto firms: the PDF list is used
+    recs = za.ZACASPSource().fetch_web(ctx)
+    assert len(recs) == 30 and "April 2024" in recs[0].status_detail
+    assert "chosen:" in (tmp_path / "debug" / "za_casp_candidates.txt").read_text()

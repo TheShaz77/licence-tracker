@@ -242,26 +242,76 @@ def parse_banks(lines: list, url: str, kind: str) -> list:
     return list(out.values())
 
 
+CASP_MONTHS = ("january", "february", "march", "april", "may", "june", "july", "august", "september",
+               "october", "november", "december")
+CASP_GONE = re.compile(r"\b(declined|refused|rejected|withdrawn|lapsed|cancelled|canceled|suspended|"
+                       r"no longer|removed|revoked)\b", re.I)
+
+
+def casp_edition(lines: list) -> tuple:
+    """(year, month) of a CASP list, from its title lines ("... - APRIL 2024", "as at 31 March 2026")."""
+    head = " ".join(lines[:12])
+    m = re.search(r"\b(" + "|".join(CASP_MONTHS) + r")\s+(20\d{2})\b", head, re.I)
+    return (int(m.group(2)), CASP_MONTHS.index(m.group(1).lower()) + 1) if m else (0, 0)
+
+
+_CASP_ROW = re.compile(r"^(?:\d{1,3}\s+){1,2}(\d{3,6})\s+(?!CAT\b|•)(.+?)(?:\s+CAT\b.*|\s*•.*)?$", re.I)
+_CASP_BARE = re.compile(r"^(?:\d{1,3}\s+){1,2}(\d{3,6})(?:\s+(?:CAT\b|•).*)?$", re.I)
+_CASP_NO_ROWNUM = re.compile(r"^(\d{3,6})\s+([A-Z0-9].*?(?:\(PTY\)\s*LTD|LIMITED|LTD|CC|INC|NPC)\.?)(?:\s+CAT\b.*|\s*•.*)?$", re.I)
+_CASP_NAME_LINE = re.compile(r"^(?!•|CAT\b|LIST OF|NO\.|LICENCE|CATEGORY|[A-Z]\.\s)[A-Z0-9][A-Za-z0-9 &'’.,()/\-]{3,90}$")
+_CASP_SECTION = re.compile(r"^([A-Z])\.\s+(?=.*\b(?:LIST OF|CASPs?|LICENCES?)\b)", re.I)
+
+
 def parse_casps(lines: list, url: str = "") -> list:
+    """The FSCA's list of crypto asset service providers. Two layouts are read:
+    2024: "12 Luno (Pty) Ltd 53314 CAT I & II ..."      (row number, name, FSP number)
+    2026: "12 53314 LUNO (PTY) LTD CAT I & II ..."      (row number, FSP number, name), in sections
+          A. licensed / B. crypto category removed / C. lapsed / D. provisionally withdrawn.
+    Firms in sections B-D are kept but marked as no longer licensed."""
     out = {}
-    head = " ".join(lines[:6])
-    when = re.search(r"\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(20\d{2})\b",
-                     head, re.I)
-    edition = f", {when.group(1).title()} {when.group(2)} edition" if when else ""
-    for line in lines:
+    year, month = casp_edition(lines)
+    edition = f", {CASP_MONTHS[month - 1].title()} {year} edition" if year else ""
+    section_gone, pending = "", None
+
+    def add(fsp, name, rest=""):
+        name = re.sub(r"\s+", " ", name).strip(" -|")
+        if len(name) < 3 or not re.search(r"[A-Za-z]{2}", name):
+            return
+        gone = CASP_GONE.search(rest or "")
+        why = (gone.group(1).lower() if gone else "") or section_gone
+        out[fsp] = Record(key="za_casp:" + fsp, source="za_casp", jurisdiction="ZA", regulator="FSCA",
+                          name=name, licence_type="Crypto asset service provider (FSP licence)", active=not why,
+                          status_detail=(f"No longer a licensed CASP: {why}" if why else "Licensed CASP") + " (FSCA list" + edition + ")",
+                          reference=fsp, register_url=url or FSCA_HOME, extra={"fsp_number": fsp})
+
+    for i, line in enumerate(lines):
+        line = line.strip()
+        sec = _CASP_SECTION.match(line)
+        if sec or re.search(r"\blist of\b.*\b(lapsed|withdrawn|removed|declined)\b", line, re.I):
+            g = CASP_GONE.search(line)
+            section_gone = ("crypto category removed" if g and g.group(1).lower() == "removed" else g.group(1).lower()) if g else ""
+            pending = None
+            continue
         if re.search(r"\b(FSP Number|FSP No|Name of|List of|Act, No\.|Page \d+ of)\b", line, re.I):
             continue
-        # each firm row starts with its row number: "12 Luno (Pty) Ltd 53314 CAT I & II ..."
-        m = re.match(r"^\d{1,4}\.?\s+(.+?)\s+(?:FSP\s*(?:No\.?)?\s*)?(\d{3,6})(?:\s+.*)?$", line)
-        if not m:
+        m = _CASP_ROW.match(line) or _CASP_NO_ROWNUM.match(line)
+        if m:
+            add(m.group(1), m.group(2))
+            pending = None
             continue
-        name = m.group(1).strip(" -|")
-        if len(name) < 3 or not re.search(r"[A-Za-z]{2}", name):
+        m = _CASP_BARE.match(line)
+        if m:                       # the name wrapped onto a line of its own below
+            pending = (m.group(1), i)
             continue
-        out[m.group(2)] = Record(key="za_casp:" + m.group(2), source="za_casp", jurisdiction="ZA", regulator="FSCA",
-                                 name=name, licence_type="Crypto asset service provider (FSP licence)", active=True,
-                                 status_detail="Approved CASP (FSCA list" + edition + ")", reference=m.group(2),
-                                 register_url=url or FSCA_HOME, extra={"fsp_number": m.group(2)})
+        if pending and i - pending[1] <= 4 and _CASP_NAME_LINE.match(line) \
+                and not re.search(r"services|management|advice|advi ce", line, re.I):
+            add(pending[0], line)
+            pending = None
+            continue
+        # 2024 layout: each firm row starts with its row number: "12 Luno (Pty) Ltd 53314 CAT I & II ..."
+        m = re.match(r"^\d{1,4}\.?\s+(.+?)\s+(?:FSP\s*(?:No\.?)?\s*)?(\d{3,6})(?:\s+(.*))?$", line)
+        if m:
+            add(m.group(2), m.group(1), m.group(3) or "")
     return list(out.values())
 
 
@@ -484,18 +534,199 @@ def fsca_list_link(page: str) -> str:
 
 
 class ZACASPSource(_ZASource):
-    name, label, fingerprint = "za_casp", "South Africa crypto asset service providers (FSCA)", "za-casp-v1"
+    name, label, fingerprint = "za_casp", "South Africa crypto asset service providers (FSCA)", "za-casp-v3"
     manual_hint = "za_casp.pdf or za_casp.xlsx (FSCA website > list of approved crypto asset service providers)"
 
     def parse_for_file(self, path):
         return parse_casps
 
     def fetch_web(self, ctx):
-        url = ctx.source_config(self.name).get("url") or fsca_list_link(self._get(ctx, FSCA_HOME).text)
-        if not url:
-            raise SourceNotReady("the FSCA's list of approved crypto asset service providers isn't linked from "
-                                 "its homepage right now")
-        return self._run(ctx, [(url, parse_casps)])
+        """Two public FSCA sources, best first:
+        1. the FAIS export (www2.fsca.co.za/HTML/FAIS/FSPExport.xlsx, linked from "FAIS Verifications"):
+           every authorised financial services provider with its product categories, kept current by the
+           FSCA - firms authorised for crypto assets are taken from it;
+        2. the "approved list of crypto asset service providers" PDF linked from the FSCA homepage (and
+           any list linked from the FSCA's crypto press releases) - the newest edition wins.
+        Only documents the FSCA links publicly are read."""
+        notes = []
+        try:
+            recs = self._from_fais_export(ctx, notes)
+            if recs:
+                self._write_candidates(ctx, notes, (None, FAIS_EXPORT))
+                return recs
+        except SourceNotReady:
+            raise
+        except Exception as e:
+            notes.append(f"{FAIS_EXPORT}\n    failed: {str(e)[:150]}")
+        best = None
+        for url in self._candidates(ctx, notes)[:int(ctx.source_config(self.name).get("max_candidates", 25))]:
+            try:
+                raw = self._get(ctx, url).content
+                lines = sheet_lines(raw) if raw[:2] in (b"PK", b"\xd0\xcf") else pdf_lines(raw) if raw[:4] == b"%PDF" else []
+                recs = parse_casps(lines, url) if lines else []
+                notes.append(f"{url}\n    edition {casp_edition(lines)}  firms {len(recs)}  first line: {(lines or [''])[0][:90]!r}")
+                for link in (_pdf_links(raw) if raw[:4] == b"%PDF" and len(recs) < 20 else []):
+                    self._extra.append(link)          # a press release: follow the links inside it
+                key = (casp_edition(lines), len(recs))
+                if len(recs) >= 20 and (best is None or key > best[0]):
+                    best = (key, url, raw, lines, recs)
+            except SourceNotReady:
+                raise
+            except Exception as e:
+                notes.append(f"{url}\n    failed: {str(e)[:150]}")
+        self._write_candidates(ctx, notes, best)
+        if not best:
+            raise SourceNotReady("no list of approved crypto asset service providers found on the FSCA website; "
+                                 "see data/debug/za_casp_candidates.txt")
+        _, url, raw, lines, recs = best
+        write_diagnostics(ctx, self.name, [(url, raw, {"rows": len(lines), "kept": len(recs), "columns": {},
+                                                       "first_text_lines": lines[:40]}, None)])
+        return recs
+
+    def _from_fais_export(self, ctx, notes) -> list:
+        raw = self._get(ctx, FAIS_EXPORT).content
+        recs, info = parse_fais_export(raw)
+        notes.append(f"{FAIS_EXPORT}\n    {info}")
+        write_diagnostics(ctx, self.name, [(FAIS_EXPORT, raw, {"rows": info.get("rows", 0), "kept": len(recs),
+                                                               "columns": info.get("columns", {}),
+                                                               "first_text_lines": info.get("header", [])}, None)])
+        return recs if len(recs) >= int(ctx.source_config(self.name).get("fais_min_firms", 50)) else []
+
+    def _write_candidates(self, ctx, notes, best):
+        try:
+            d = ctx.data_dir / "debug"
+            d.mkdir(parents=True, exist_ok=True)
+            (d / "za_casp_candidates.txt").write_text(
+                f"chosen: {best[1] if best else None}\n\n" + "\n".join(notes), encoding="utf-8")
+        except Exception:
+            pass
+
+    def _candidates(self, ctx, notes) -> list:
+        """Addresses that may hold a CASP list, most likely first. More are appended while reading
+        (links found inside press-release PDFs), which is why the caller walks the same list object."""
+        self._extra = out = _GrowingList()
+        cfg_url = ctx.source_config(self.name).get("url")
+        if cfg_url:
+            out.append(cfg_url)
+        try:
+            home = self._get(ctx, FSCA_HOME).text
+            for u in fsca_list_links(home):
+                out.append(u)
+        except SourceNotReady:
+            raise
+        except Exception as e:
+            notes.append(f"homepage: {str(e)[:120]}")
+        return out
+
+
+class _GrowingList(list):
+    def append(self, u):
+        if u and u not in self:
+            super().append(u)
+
+    def __getitem__(self, k):          # a slice of it keeps growing with the original
+        if isinstance(k, slice):
+            return _Walk(self, k.stop)
+        return super().__getitem__(k)
+
+
+class _Walk:
+    def __init__(self, items, limit):
+        self.items, self.limit = items, limit
+
+    def __iter__(self):
+        i = 0
+        while i < len(self.items) and (self.limit is None or i < self.limit):
+            yield list.__getitem__(self.items, i)
+            i += 1
+
+
+FAIS_EXPORT = "https://www2.fsca.co.za/HTML/FAIS/FSPExport.xlsx"
+
+
+def parse_fais_export(raw: bytes) -> tuple:
+    """Crypto-asset FSPs from the FSCA's FAIS export. The column names are found by meaning, not
+    position (FSP number, name, status, product categories), so a re-ordered export still reads.
+    A firm counts when any of its product / category cells mentions crypto assets."""
+    from .national import read_table
+    headers, rows = read_table(raw) if raw[:2] == b"PK" else (None, None)
+    if headers is None:
+        import xlrd
+        sh = xlrd.open_workbook(file_contents=raw).sheet_by_index(0)
+        allrows = [[str(c).strip() for c in sh.row_values(r)] for r in range(sh.nrows)]
+        headers, rows = allrows[0], allrows[1:]
+
+    def col(*pats):
+        for p in pats:
+            for i, h in enumerate(headers):
+                if re.search(p, str(h or ""), re.I):
+                    return i
+        return None
+    c_num = col(r"fsp\s*(no|num)", r"^fsp$", r"licen[cs]e\s*(no|num)")
+    c_name = col(r"fsp\s*name", r"^name", r"company|entity|provider")
+    c_status = col(r"status")
+    c_trade = col(r"trading")
+    c_prod = [i for i, h in enumerate(headers) if re.search(r"product|categor|sub.?cat|licen[cs]e\s*cat", str(h or ""), re.I)]
+    info = {"rows": len(rows), "columns": {"fsp": c_num, "name": c_name, "status": c_status, "products": c_prod},
+            "header": [str(h) for h in headers][:40]}
+    if c_name is None:
+        return [], info
+    by_fsp = {}
+    for r in rows:
+        cells = [str(c or "").strip() for c in r]
+        prod_text = " ".join(cells[i] for i in c_prod if i < len(cells)) if c_prod else " ".join(cells)
+        if not re.search(r"crypto", prod_text, re.I):
+            continue
+        name = cells[c_name] if c_name < len(cells) else ""
+        num = re.sub(r"\.0$", "", cells[c_num]) if c_num is not None and c_num < len(cells) else ""
+        if not name:
+            continue
+        key = num or name.lower()
+        status = cells[c_status] if c_status is not None and c_status < len(cells) else ""
+        rec = by_fsp.get(key)
+        if rec is None:
+            gone = bool(status) and re.search(r"lapsed|withdrawn|suspend|debar|cancel|revok|inactive|final", status, re.I)
+            by_fsp[key] = Record(
+                key="za_casp:" + key, source="za_casp", jurisdiction="ZA", regulator="FSCA", name=name,
+                licence_type="Crypto asset service provider (FSP licence)", active=not gone,
+                status_detail=(status or "Authorised") + " - crypto assets (FSCA FAIS register)",
+                reference=num, register_url="https://www.fsca.co.za/FAIS-Verifications/",
+                extra={"fsp_number": num, "trading_name": cells[c_trade] if c_trade is not None and c_trade < len(cells) else ""})
+    info["kept"] = len(by_fsp)
+    return list(by_fsp.values()), info
+
+
+def _pdf_links(raw: bytes) -> list:
+    """Web addresses on the FSCA site that a PDF links to (press releases link the current list)."""
+    out = []
+    try:
+        import io
+        import pdfplumber
+        with pdfplumber.open(io.BytesIO(raw)) as pdf:
+            for page in pdf.pages[:6]:
+                for h in (page.hyperlinks or []):
+                    u = (h.get("uri") or "").strip()
+                    if re.search(r"fsca\.co\.za", u, re.I) and re.search(r"_api/|\.pdf|\.xlsx", u, re.I) and u not in out:
+                        out.append(u)
+    except Exception:
+        pass
+    return out
+
+
+def fsca_list_links(page: str) -> list:
+    """Every link on an FSCA page that looks like a CASP list or a crypto press release document."""
+    out = []
+    for m in re.finditer(r"""<a[^>]+href=["']([^"']+)["'][^>]*>(.*?)</a>""", page, re.I | re.S):
+        before = re.sub(r"<[^>]+>", " ", page[max(0, m.start() - 600):m.start()])
+        label = re.sub(r"<[^>]+>", " ", m.group(2))
+        href = htmlmod.unescape(m.group(1))
+        if (re.search(r"crypto\s*asset\s*service\s*provider|\bCASP", before + " " + label, re.I)
+                and re.search(r"_api/|\.pdf|\.xlsx", href, re.I)):
+            u = urljoin(FSCA_HOME, href)
+            if u not in out:
+                out.append(u)
+    best = fsca_list_link(page)
+    return ([best] if best else []) + [u for u in out if u != best]
 
 
 # ---------------------------------------------------------------- ADLAs

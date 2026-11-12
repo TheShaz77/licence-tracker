@@ -23,7 +23,8 @@ from .store import cfd_row, record_row, sort_records
 ROWS_PER_REQUEST = 4000   # keeps each request well under Google's size limit
 
 from .countries import COUNTRY_NAMES  # noqa: E402
-FIXED_TABS = ["Summary", "Changes", "Licences"]
+FIXED_TABS = ["Summary", "Changes", "Digital Assets (all countries)", "FI (all countries)"]
+FI_ALL_TAB = "FI (all countries)"
 OTHER_TAB = "Other"
 
 
@@ -141,13 +142,23 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     # "Malta (iGaming)"), not the licence tabs
     verticals = {v: merge_cfd([r for r in ordered if vertical_of(r) == v]) for v in VERTICAL_NAMES}
     ordered = [r for r in ordered if not vertical_of(r)]
-    tabs["Licences"] = [header] + [record_row(r) for r in ordered]
+    # Financial institutions and digital-asset firms are kept apart: "FI (all countries)" /
+    # "Digital Assets (all countries)", and per country "United Kingdom (FI)" / "United Kingdom (Digital Assets)".
+    from .model import SEGMENTS, segment_of
+    by_seg = {seg: [] for seg in SEGMENTS}
+    for r in ordered:
+        by_seg[segment_of(r)].append(r)
+    for seg in reversed(SEGMENTS):          # Digital Assets first: it is the short one
+        if by_seg[seg] or seg == "FI":
+            tabs[f"{seg} (all countries)"] = [header] + [record_row(r) for r in by_seg[seg]]
 
     if per_country:
         by_tab = defaultdict(list)
-        for r in ordered:
-            by_tab[country_tab(r.get("jurisdiction", ""))].append(record_row(r))
-        for title in sorted(by_tab, key=lambda t: (t == OTHER_TAB, t)):
+        for seg in SEGMENTS:
+            for r in by_seg[seg]:
+                by_tab[cfd_tab(r.get("jurisdiction", ""), seg) if country_tab(r.get("jurisdiction", "")) != OTHER_TAB
+                       else f"{OTHER_TAB} ({seg})"].append(record_row(r))
+        for title in sorted(by_tab, key=lambda t: (t.startswith(OTHER_TAB + " ("), t)):
             tabs[title] = [header] + by_tab[title]
     for vertical, recs in verticals.items():
         if not recs:
@@ -204,15 +215,15 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     tabs = build_tabs(records, change_rows, run_info, per_country, extra_tabs)
     existing = {ws.title: ws.id for ws in sh.worksheets()}
     # Google Sheets holds at most 10 million cells per spreadsheet. The country tabs already contain
-    # every firm, so when everything won't fit, the all-countries "Licences" tab is left out.
+    # every firm, so when everything won't fit, the "FI (all countries)" tab is left out.
     limit = int(os.environ.get("SHEET_CELL_LIMIT", "9800000"))
     cells = sum(max(len(rows), 2) * max((len(r) for r in rows), default=1) for rows in tabs.values())
     dropped = []
-    if cells > limit and per_country and "Licences" in tabs:
-        rows = tabs.pop("Licences")
+    if cells > limit and per_country and FI_ALL_TAB in tabs:
+        rows = tabs.pop(FI_ALL_TAB)
         cells -= len(rows) * max((len(r) for r in rows), default=1)
-        dropped.append("Licences")
-        log.warning("The sheet would need %d cells (Google's limit is 10 million): the all-countries 'Licences' "
+        dropped.append(FI_ALL_TAB)
+        log.warning("The sheet would need %d cells (Google's limit is 10 million): the 'FI (all countries)' "
                     "tab is left out; every firm is still on its country tab", cells + len(rows) * len(rows[0]))
 
     # 1. create any missing tabs (one request)
@@ -246,7 +257,7 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     for title, sid in existing.items():
         if title in tabs:
             continue
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or title in dropped or re.search(r"\(([A-Z]{2}|CFD|iGaming)\)$", title) or title.endswith("(all countries)"):
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or title in dropped or title == "Licences" or re.search(r"\(([A-Z]{2}|CFD|iGaming|FI|Digital Assets)\)$", title) or title.endswith("(all countries)"):
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 

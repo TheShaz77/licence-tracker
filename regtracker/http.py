@@ -13,7 +13,11 @@ from urllib3.util.retry import Retry
 
 log = logging.getLogger(__name__)
 
-USER_AGENT = "licence-tracker/1.0 (regulatory register monitor; github actions)"
+# The usual way a well-behaved bot names itself (like "Mozilla/5.0 (compatible; Googlebot/2.1; +url)"):
+# it still says plainly that this is the licence-tracker bot and where it lives. Several regulators'
+# sites answer "404 Not Found" to requests whose User-Agent doesn't start with "Mozilla/5.0".
+USER_AGENT = "Mozilla/5.0 (compatible; licence-tracker/1.0; +https://github.com/TheShaz77/licence-tracker)"
+ROBOTS_AGENT = "licence-tracker/1.0"     # the name looked up in robots.txt
 
 
 def make_session() -> requests.Session:
@@ -29,6 +33,7 @@ def make_session() -> requests.Session:
     s.mount("https://", adapter)
     s.mount("http://", adapter)
     s.headers["User-Agent"] = USER_AGENT
+    s.headers["Accept-Language"] = "en-GB,en;q=0.9"
     return s
 
 
@@ -70,7 +75,7 @@ def _pattern_len_if_match(pattern: str, path: str) -> int:
     return len(pattern) if re.match(rx, path) else -1
 
 
-def rules_allow(text: str, url: str, agent: str = USER_AGENT) -> bool:
+def rules_allow(text: str, url: str, agent: str = ROBOTS_AGENT) -> bool:
     """Decide like Google and RFC 9309: the group for the most specific matching
     user-agent (else *), then the longest matching rule wins; Allow wins ties."""
     from urllib.parse import urlparse
@@ -90,7 +95,7 @@ def rules_allow(text: str, url: str, agent: str = USER_AGENT) -> bool:
     return allowed
 
 
-def robots_allowed(session: requests.Session, url: str, agent: str = USER_AGENT) -> bool:
+def robots_allowed(session: requests.Session, url: str, agent: str = ROBOTS_AGENT) -> bool:
     """True unless the site's robots.txt disallows `url` (missing/unreadable
     robots.txt counts as allowed). Cached per host. Implements wildcards and
     longest-match like search engines do (Python's built-in parser does not)."""

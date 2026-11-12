@@ -54,7 +54,7 @@ def test_cfd_tabs_are_separate():
              "extra": {"vertical": "CFD"}},
             {"name": "Wise", "jurisdiction": "GB", "active": True, "source": "fca", "licence_type": "EMI"}]
     tabs = sheets.build_tabs(recs, [], {})
-    assert len(tabs["Licences"]) == 2 and len(tabs["United Kingdom (GB)"]) == 2
+    assert len(tabs["FI (all countries)"]) == 2 and len(tabs["United Kingdom (FI)"]) == 2
     assert len(tabs["United Kingdom (CFD)"]) == 2          # the two CFD records merged into one row
     assert "CFD + Other" in tabs["United Kingdom (CFD)"][1]
 
@@ -69,7 +69,7 @@ def test_igaming_type_guess_and_tabs():
     recs = [{"name": "Bet Co", "jurisdiction": "MT", "active": True, "source": "igm_mt", "licence_type": "B2C",
              "extra": {"vertical": "iGaming", "business_type": "Operator (guess)"}}]
     tabs = sheets.build_tabs(recs, [], {})
-    assert "Malta (iGaming)" in tabs and "iGaming (all countries)" in tabs and len(tabs["Licences"]) == 1
+    assert "Malta (iGaming)" in tabs and "iGaming (all countries)" in tabs and len(tabs["FI (all countries)"]) == 1
 
 
 def test_join_two_files():
@@ -274,3 +274,55 @@ def test_licences_tab_left_out_when_sheet_too_big(monkeypatch):
     sheets.publish(recs, [], {}, logging.getLogger("t"), sh=Sh())
     flat = [r for b in reqs for r in b["requests"]]
     assert {"deleteSheet": {"sheetId": 5}} in flat
+
+
+def test_text_regex_sections_and_continuation_rows(monkeypatch):
+    """Bahamas: a row keeps the heading it sits under (non-active licensees are left out).
+    Moldova: history rows under a firm are folded in, so a withdrawn licence shows as inactive."""
+    from regtracker.sources import national as n
+    text = ("Authorized Dealers\nLIC0049 Bank of The Bahamas Ltd. Resident Bank & Trust Authorized Dealer N-7118 (242) 326-2560\n"
+            "LIC0022 Butterfield Trust (Bahamas) Ltd. Resident Trust Authorized Agent N-3242 (242) 393-8622\n"
+            "Non-Active Licensees\nLIC0227 Belgravia Bank & Trust Co. Ltd. Non-Resident Bank & Trust Not an Authorized Agent "
+            "or Authorized Dealer N-65 (242) 323-8574\nRegistered Representatives\nLIC0049 Bank of The Bahamas Ltd. N-7118 (242) 326-2560\n")
+    monkeypatch.setattr(n, "page_text_lines", lambda raw: raw.decode().splitlines())
+    spec = {"format": "text_regex", "url": "u", "ignore_case": False, "licence_type": "Bank",
+            "row_regex": r"^(?P<id>LIC\d{4})\s+(?P<name>.+?)\s+(?:Non-)?Resident\s+(?P<type>Bank & Trust|Bank)\s+(?:Not an )?"
+                         r"Authorized\b.*?\s(?P<phone>\(\d{3}\)\s*\d{3}-\d{4})\s*$",
+            "section_regex": r"^(Authorized Dealers|Non-Active Licensees)\s*$",
+            "exclude_column": "section", "exclude_pattern": "Non-Active"}
+    recs, _ = n.parse_file(text.encode(), spec, "BS", "CBOB")
+    assert [(r.name, r.reference) for r in recs] == [("Bank of The Bahamas Ltd.", "LIC0049")]
+
+    html = ("<table><tr><th>N/O</th><th>Name</th><th>Licence</th></tr>"
+            "<tr><td>1.</td><td>Alpha Pay SRL</td><td>nr 1</td></tr>"
+            "<tr><td>2.</td><td>Beta Pay SRL</td><td>nr 2</td></tr>"
+            "<tr><td>nr 3 din 2015</td><td>Licența retrasă, conform Hotărârii</td></tr></table>")
+    spec = {"format": "html_table", "url": "u", "name_column": "Name", "continuation_of": "N/O", "entry_pattern": r"^\d+\.$",
+            "status_column": "notes", "inactive_pattern": "retras", "licence_type": "PI"}
+    recs, _ = n.parse_file(html.encode(), spec, "MD", "BNM")
+    assert [(r.name, r.active) for r in recs] == [("Alpha Pay SRL", True), ("Beta Pay SRL", False)]
+
+
+def test_find_link_follows_a_chain_and_reads_json_lists(monkeypatch):
+    from regtracker.sources import national as n
+    pages = {
+        "https://x.test/index": '<a href="/editions/list-as-at-02-october-2026">List as at 02-October-2026</a>'
+                                '<a href="/editions/list-as-at-30-october-2026">List as at 30-October-2026</a>',
+        "https://x.test/editions/list-as-at-30-october-2026": '<a href="https://cdn.x.test/doc-abc.pdf">Download</a>',
+        "https://x.test/wp-json/media": '[{"source_url":"https:\\/\\/x.test\\/uploads\\/2026\\/07\\/DARE-Firms-as-at-30-June-2026-1.pdf",'
+                                        '"description":{"rendered":"<a href=\'https:\\/\\/x.test\\/uploads\\/2026\\/08\\/DARE-Firms-as-at-31-July-2026-1.pdf\'>f<\\/a>"}}]',
+    }
+
+    class R:
+        def __init__(self, t): self.text = t
+        def raise_for_status(self): pass
+
+    class S:
+        def get(self, url, **kw): return R(pages[url])
+
+    class Ctx:
+        session = S()
+    monkeypatch.setattr("regtracker.http.robots_allowed", lambda *a, **k: True)
+    assert n.find_link(Ctx, {"page": "https://x.test/index", "link_chain": ["list-as-at", r"\.pdf"]}) == "https://cdn.x.test/doc-abc.pdf"
+    assert n.find_link(Ctx, {"page": "https://x.test/wp-json/media", "link_pattern": r"DARE-Firms-as-at[^\"\s]*\.pdf"}) \
+        == "https://x.test/uploads/2026/08/DARE-Firms-as-at-31-July-2026-1.pdf"

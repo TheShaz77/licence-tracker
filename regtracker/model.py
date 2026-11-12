@@ -193,3 +193,28 @@ def guess_igaming_type(name: str, licence: str = "", website: str = "") -> str:
     if _IG_B2B.search(f"{name} {lic}"):
         return "Platform / game provider (guess)"
     return "Operator - casino / sportsbook (guess)"
+
+
+# ---------------------------------------------------------------- FI / Digital Assets split
+import re as _re
+
+# A record goes on the "Digital Assets" tabs when its licence, or the services it is registered for,
+# are crypto / virtual-asset ones (VASP, CASP, DASP, DPT, MiCA, MLR cryptoasset registration, an MSB
+# registered to deal in virtual currency, ...). Everything else is a financial institution ("FI").
+_DIGITAL_LICENCE = _re.compile(
+    r"crypto|virtual[ -]?(?:asset|currenc)|digital[ -]?(?:asset|payment token|token|currenc)|blockchain|"
+    r"\btoken|bitlicen|stablecoin|ativos virtuais|activos virtuales|kripto|\bDLT\b", _re.I)
+_DIGITAL_ACRONYM = _re.compile(r"\b(?:VASP|CASP|DASP|DPT|MiCA|PSAV|SPSAV|PSAN|VAITOS|DABA|DARE)\b")
+_DIGITAL_SERVICE = _re.compile(
+    r"crypto|virtual[ -]?(?:asset|currenc)|digital[ -]?(?:asset|payment token|token|currenc)|\bDPT\b", _re.I)
+SEGMENTS = ("FI", "Digital Assets")
+
+
+def segment_of(r: dict) -> str:
+    """'Digital Assets' or 'FI' for a licence record (lead-generation verticals are handled separately)."""
+    lic = r.get("licence_type") or ""
+    if _DIGITAL_LICENCE.search(lic) or _DIGITAL_ACRONYM.search(lic):
+        return "Digital Assets"
+    ex = r.get("extra") or {}
+    services = " ".join(str(x) for x in (r.get("services"), ex.get("services"), ex.get("activities")) if x)
+    return "Digital Assets" if services and _DIGITAL_SERVICE.search(services) else "FI"

@@ -127,6 +127,8 @@ sources:
   za_casp:        # South Africa: licensed crypto asset service providers (FSCA)
     enabled: true
     min_hours: 12
+    # the March 2026 list; newer editions are found automatically in the FSCA's document tables
+    url: https://www.fsca.co.za/_api/cr3ad_regulatoryframes(94942cc4-0238-f111-88b3-000d3a64fb06)/cr3ad_document/$value
   nat_hk:         # Hong Kong registers (see national: below); lists change slowly
     min_hours: 6
   nat_ng:
@@ -677,6 +679,10 @@ national:
   QA:
     regulator: QCB
     files:
+    - label: QFCRA public register - authorised firms
+      url: https://www.qfcra.com/public_registers/search-authorised-firms
+      regulator: QFCRA
+      probe: true
     - label: QFCRA homepage
       regulator: QFCRA
       url: https://www.qfcra.com/
@@ -722,9 +728,18 @@ national:
   MU:
     regulator: FSC
     files:
-    - label: FSC Mauritius licensees
-      url: https://www.fscmauritius.org/en/supervision/register-of-licensees
-      probe: true
+    # The FSC moved its register (November 2026) to a new "Online Public Register". Filtered by Act it
+    # is an ordinary page: Act 6 = Virtual Asset and Initial Token Offering Services Act (all on one page).
+    - label: FSC online public register - virtual asset service providers (VAITOS Act)
+      url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr?p3_acts=6
+      format: html_table
+      name_column: Name of Licensee
+      type_column: Type of Licence
+      date_column: Date of Licence
+      status_column: Annotations
+      type_patterns:
+        'VA-|VT-|virtual asset|token': Virtual asset service provider (FSC, VAITOS Act)
+      register_url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr
     - label: BoM licensed banks
       url: https://www.bom.mu/financial-stability/supervision/licensees
       regulator: BoM
@@ -1022,28 +1037,58 @@ national:
   BS:
     regulator: CBOB
     files:
-    - label: CBOB register of licensees
-      url: https://www.centralbankbahamas.com/bank-supervision/register-of-licensees
-      probe: true
-    - label: SCB digital asset businesses
-      url: https://www.scb.gov.bs/registrations-and-licences/
+    # The Central Bank's "Supervised Financial Institutions" list (a new PDF most weeks): the newest one
+    # is the first PDF on the page. Each line starts with a master code: LIC = bank / trust company,
+    # PSP = electronic money service provider, MTB = money transmission service provider.
+    - label: CBOB supervised institutions - banks
+      page: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+      link_pattern: 'cdn\.centralbankbahamas\.com/.*Supervised-Financial-Institutions-List.*\.pdf'
+      link_pick: first
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<id>LIC\d{4})\s+(?P<name>.+?)\s+(?:Non-)?Resident\s+(?P<type>Bank & Trust|Bank)\s+(?:Not an )?Authorized\b.*?\s(?P<phone>\(\d{3}\)\s*\d{3}-\d{4})\s*$'
+      section_regex: '^(Authorized Agents|Authorized Dealers|Other Public Licensees|Restricted|Non-Active Licensees)\s*$'
+      exclude_column: section
+      exclude_pattern: Non-Active
+      licence_type: Bank / bank & trust company (CBOB)
+      register_url: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+    - label: CBOB supervised institutions - electronic money service providers
+      page: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+      link_pattern: 'cdn\.centralbankbahamas\.com/.*Supervised-Financial-Institutions-List.*\.pdf'
+      link_pick: first
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<id>PSP\d{4})\s+(?P<name>.+?)\s+(?:[A-Z]{1,3}-\d+|n/a)\s+(?P<phone>\(\d{3}\)\s*\d{3}-\d{4}|n/a)\s*$'
+      licence_type: Electronic money service provider (CBOB)
+      register_url: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+    - label: CBOB supervised institutions - money transmission service providers
+      page: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+      link_pattern: 'cdn\.centralbankbahamas\.com/.*Supervised-Financial-Institutions-List.*\.pdf'
+      link_pick: first
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<id>MTB\d{4})\s+(?P<name>.+?)\s+(?:[A-Z]{1,3}-\d+|n/a)\s+(?P<phone>\(\d{3}\)\s*\d{3}-\d{4}|n/a)\s*$'
+      licence_type: Money transmission service provider (CBOB)
+      register_url: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
+    # Securities Commission: register of digital asset businesses (DARE Act), a PDF re-issued monthly
+    # under a new address; the site's own media list (WordPress) gives the newest one.
+    - label: SCB register of digital asset businesses (DARE Act)
+      page: https://scb.gov.bs/wp-json/wp/v2/media?search=DARE%20Firms%20as%20at&per_page=30&orderby=date&order=desc
+      link_pattern: 'DARE-Firms-as-at[^"\s]*\.pdf'
       regulator: SCB
+      format: text_regex
+      multiline: true
+      row_regex: 'Digital Asset Business:\s*(?P<name>[^\n]+)(?:(?!Digital Asset Business:)[\s\S]){0,4000}?Registration Type:?\s*(?P<type>[^\n]+)'
+      type_patterns:
+        exchange: Digital asset exchange and digital asset business (SCB, DARE Act)
+        .: Digital asset business (SCB, DARE Act)
+      register_url: https://scb.gov.bs/dare/
+    - label: SCB registrant / licensee search (probe)
+      url: https://scb.gov.bs/registrant-licensee-search/
       probe: true
-    - label: www.centralbankbahamas.com homepage
-      url: https://www.centralbankbahamas.com/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: www.scb.gov.bs homepage
-      url: https://www.scb.gov.bs/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Regulates Entities
-      url: https://www.centralbankbahamas.com/bank-supervision/supervised-financial-institutions
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
+      follow: \.pdf|\.xlsx?|\.csv|DARE|digital asset|securities firm|register
+      follow_max: 12
+
   KY:
     regulator: CIMA
     files:
@@ -1143,13 +1188,21 @@ national:
     - label: Register of Licensed Financial Institutions
       url: https://www.eccb-centralbank.org/register-of-licensed-financial-institutions
       probe: true
+      follow: Register-of-Financial-Institutions-Licensed
+      follow_max: 2
       follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
       follow_max: 6
   JE:
     regulator: JFSC
     files:
-    - label: JFSC regulated entities
-      url: https://www.jerseyfsc.org/registry/regulated-entities/
+    - label: JFSC regulated entities - money service business
+      url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionMSB=1
+      probe: true
+    - label: JFSC regulated entities - banking
+      url: https://www.jerseyfsc.org/industry/regulated-entities?lawSectionDC=1
+      probe: true
+    - label: JFSC VASP entities register
+      url: https://www.jerseyfsc.org/industry/vasp-entities/?search=
       probe: true
     - label: www.jerseyfsc.org homepage
       url: https://www.jerseyfsc.org/
@@ -1232,6 +1285,19 @@ national:
   IM:
     regulator: IOMFSA
     files:
+    # The register search answers plain requests. Business types: 7 deposit taking, 18 restricted deposit
+    # taking, 15 money transmission services (payments, e-money, money service businesses).
+    - label: IOMFSA register - banks and money transmission services
+      url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=7&BusinessType=18&BusinessType=15&Page={page}
+      paginate: {start: 1, step: 1, max: 5, marker: 'registers/licence-holders/([a-z0-9-]+)/'}
+      format: html_table
+      name_column: Name
+      type_column: Business Type
+      type_patterns:
+        Restricted Deposit: Restricted deposit taker (IOMFSA)
+        Deposit Taking: Bank / deposit taker (IOMFSA Class 1)
+        Money Transmission: Money transmission services - payments, e-money, MSB (IOMFSA Class 8)
+      register_url: https://www.iomfsa.im/register-search/
     - label: IOMFSA register search
       url: https://www.iomfsa.im/register-search/
       probe: true
@@ -1389,9 +1455,16 @@ national:
       format: html_table
       keep_all: true
       default_type: E-money issuer (BNM)
-    - label: BNM registers (probe)
+    - label: BNM register of payment institutions and postal payment providers
       url: https://bnm.md/en/print/node/54787
-      probe: true
+      format: html_table
+      name_column: Denumirea societății de plată
+      continuation_of: N/O            # later rows under a firm hold its history (re-issued / withdrawn)
+      entry_pattern: '^\d+\.$'
+      status_column: notes
+      inactive_pattern: 'retras[ăa]|withdrawn|revocat'
+      licence_type: Payment institution (BNM licence)
+      register_url: https://www.bnm.md/
       follow: regist|prestator|plat|moneda|payment|e-money
       follow_max: 8
   XK:
@@ -1846,6 +1919,8 @@ national:
     files:
     - label: SAMA licensed payment service providers (EMIs and PIs)
       url: https://www.sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
+      fallback_urls:
+      - https://sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
       format: html_table
       name_column: Entity Name
       type_column: Activity
@@ -1922,34 +1997,10 @@ cfd:
       url: https://www.cysec.gov.cy/en-GB/entities/investment-firms/cypriot/
       format: html_table
       licence_type: Cyprus Investment Firm (CySEC)
-  MU:
-    regulator: FSC
-    files:
-    - label: FSC register of licensees - investment dealers (base page)
-      url: https://www.fscmauritius.org/en/supervision/register-of-licensees
-      fallback_urls:
-      - https://fscmauritius.org/en/supervision/register-of-licensees
-      format: html_table
-      name_column: Name of Licensee
-      type_column: Type of Licence
-      date_column: Date of Licence
-      status_column: Annotations
-      type_patterns:
-        INVESTMENT DEALER: Investment dealer (FSC) - CFD permission not shown on the register
-      register_url: https://www.fscmauritius.org/en/supervision/register-of-licensees
-    - label: FSC register of licensees - investment dealers (pages 2+)
-      url: https://www.fscmauritius.org/en/supervision/register-of-licensees?page={page}
-      fallback_urls:
-      - https://fscmauritius.org/en/supervision/register-of-licensees?page={page}
-      paginate: {start: 2, step: 1, max: 220, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
-      format: html_table
-      name_column: Name of Licensee
-      type_column: Type of Licence
-      date_column: Date of Licence
-      status_column: Annotations
-      type_patterns:
-        INVESTMENT DEALER: Investment dealer (FSC) - CFD permission not shown on the register
-      register_url: https://www.fscmauritius.org/en/supervision/register-of-licensees
+  # Mauritius: the FSC's register moved to a new site (opr.fscmauritius.org) that shows 50 firms per page and
+  # only turns pages through its own in-page requests, so the investment dealers (the licence CFD brokers
+  # hold) can't be listed completely yet. Left out rather than shown half-complete.
+
   SC:
     regulator: FSA
     files:

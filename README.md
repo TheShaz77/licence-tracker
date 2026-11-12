@@ -261,6 +261,19 @@ Firms with no known website (most EU payment and e-money firms on the EBA
 register, Swiss firms) can't be filled this way; that would need a paid search
 API.
 
+## Sheet layout: FI and Digital Assets
+
+Licences are split into two groups, each with its own tabs, like the CFD and iGaming verticals:
+
+- **Digital Assets**: firms whose licence or registered services are crypto / virtual-asset ones (VASP,
+  CASP, MiCA, DPT, MLR cryptoasset registration, MSBs registered to deal in virtual currency, ...).
+  Tabs: "Digital Assets (all countries)" and "<Country> (Digital Assets)".
+- **FI**: every other financial institution (banks, EMIs, payment institutions, MSBs, ...).
+  Tabs: "FI (all countries)" and "<Country> (FI)".
+
+A firm holding both kinds of licence appears on both. When the sheet would pass Google's 10-million-cell
+limit, "FI (all countries)" is left out (every FI is still on its country tab).
+
 ## Company details: LinkedIn, headcount, revenue, websites
 
 Five columns after "Contact found via", on every tab: **LinkedIn**, **LinkedIn found via**,
@@ -332,10 +345,24 @@ every 60 days): Swiss firms already in the sheet from other registers get a
 **Swiss SRO** value, and names you add to `data/ch_sro_watch.txt` (one per line)
 appear as rows on the Switzerland tab once FINMA shows them as SRO members.
 
+## FI and Digital Assets tabs
+
+Licence records are split in two, the same way CFD and iGaming have their own tabs:
+
+- **Digital Assets**: crypto / virtual-asset licences and registrations (VASP, CASP, DASP, MiCA, UK
+  cryptoasset registration, DPT ...) and firms registered for crypto services (for example a Canadian MSB
+  registered to deal in virtual currencies). Tabs: "Digital Assets (all countries)" and
+  "United Kingdom (Digital Assets)", "South Africa (Digital Assets)", ...
+- **FI**: everything else (banks, payment and e-money institutions, MSBs, FX businesses ...). Tabs:
+  "United Kingdom (FI)", ... and "FI (all countries)". Google Sheets holds 10 million cells at most, so
+  when everything does not fit, "FI (all countries)" is the tab left out (every firm stays on its country tab).
+
+The old "Licences" tab and the old "Country (CC)" tabs are removed automatically on the next run.
+
 ## CFD vertical (brokers, liquidity providers, prop firms)
 
 CFD / FX firms go to their own tabs, "Country (CFD)" (e.g. "United Kingdom (CFD)"), plus a
-"CFD (all countries)" tab. They are not mixed into the Licences tab or the normal country tabs.
+"CFD (all countries)" tab. They are not mixed into the FI / Digital Assets tabs.
 
 - **UK**: the FCA scan also reads each authorised firm's permissions and lists firms allowed to deal
   in or arrange CFDs, spread bets or rolling spot forex (CFDs held only under "managing investments",

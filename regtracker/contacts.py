@@ -331,7 +331,7 @@ class Fetcher:
             except Exception:
                 text = ""
             self.robots[root] = text
-        return rules_allow(text, url, UA)
+        return rules_allow(text, url)      # looked up under the bot's name, licence-tracker
 
     def get(self, url: str):
         if not self.allowed(url):

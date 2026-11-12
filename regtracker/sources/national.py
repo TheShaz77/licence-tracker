@@ -327,6 +327,17 @@ def read_text_regex(raw: bytes, spec: dict) -> tuple:
     headers = [names.get(g, g) for g in groups]
     text = "\n".join(lines) if spec.get("multiline") else None
     rows = []
+    if text is None and spec.get("section_regex"):
+        # lists split by headings ("Authorized Dealers", "Non-Active Licensees"): each row also gets
+        # the heading it sits under, as a "section" column (use exclude_column / type_column on it)
+        sec_rx, section = re.compile(spec["section_regex"], re.I), ""
+        for l in lines:
+            m = rx.search(l)
+            if m:
+                rows.append([re.sub(r"\s+", " ", m.group(g) or "").strip() for g in groups] + [section])
+            elif sec_rx.search(l):
+                section = l.strip()
+        return headers + ["section"], rows
     for m in (rx.finditer(text) if text is not None else (m for l in lines for m in [rx.search(l)] if m)):
         rows.append([re.sub(r"\s+", " ", m.group(g) or "").strip() for g in groups])
     return headers, rows
@@ -598,6 +609,20 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
             raise RuntimeError(f"join column {on!r} not in {headers}")
         headers = list(headers) + list(jheaders)
         rows = [list(r) + list(jmap.get(norm_key(r[k] if k < len(r) else ""), [""] * len(jheaders))) for r in rows]
+    if spec.get("continuation_of"):
+        # Registers where a firm's later history (licence re-issued, withdrawn ...) sits on extra rows
+        # under it: rows whose 'continuation_of' column doesn't look like a new entry ('entry_pattern')
+        # are folded into a "notes" column of the entry above, so a withdrawal isn't lost.
+        k = _col(headers, [], spec["continuation_of"])
+        entry = re.compile(spec.get("entry_pattern") or r"^\d+\.?$")
+        if k is not None:
+            merged = []
+            for r in rows:
+                if k < len(r) and entry.search(r[k].strip()):
+                    merged.append(list(r) + [""] * (len(headers) - len(r)) + [""])
+                elif merged:
+                    merged[-1][-1] = (merged[-1][-1] + " " + " ".join(c for c in r if c.strip())).strip()
+            headers, rows = list(headers) + ["notes"], merged
     if spec.get("squeeze"):            # PDFs with merged cells: drop the empty cells and line up by position
         headers = [h for h in headers if h.strip()]
         rows = [[x for x in r if x.strip()] for r in rows]
@@ -687,7 +712,9 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         name = re.sub(r"(\s*([\^#*]+|※\d*|\(\d\)|\[\d+\]))+$", "", name).strip()   # footnote marks: "^", "#", "※1"
         key = f"{prefix}_{country.lower()}:{ref or norm_key(name) or hkey(name)}"
         status = get(row, "status")
-        active = not (status and INACTIVE_RE.search(status))
+        inactive_rx = re.compile(spec["inactive_pattern"], re.I) if spec.get("inactive_pattern") else INACTIVE_RE
+        active = not (status and inactive_rx.search(status))
+        status = status[:160]
         end = _iso(get(row, "end"))
         if end and end < today:
             active = False
@@ -962,6 +989,9 @@ def _date_key(url: str) -> tuple:
     if m:
         return int(m.group(3)), int(m.group(2)), int(m.group(1))
     months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+    m = re.search(r"(?i)(?<!\d)([0-3]?\d)[\s_.-]+(" + "|".join(months) + r")[a-z]*[\s_.,-]*(20\d{2})", u)
+    if m:                                                             # 30-October-2026, 31 July 2026
+        return int(m.group(3)), months.index(m.group(2).lower()[:3]) + 1, int(m.group(1))
     m = re.search(r"(?i)\b(" + "|".join(months) + r")[a-z]*[\s_.-]*(20\d{2})", u)
     if m:
         return int(m.group(2)), months.index(m.group(1).lower()[:3]) + 1, 0
@@ -991,6 +1021,16 @@ def find_link(ctx: Context, spec: dict) -> str:
     from urllib.parse import urljoin
     from ..http import robots_allowed
     pages = spec["page"] if isinstance(spec["page"], list) else [spec["page"]]
+    chain = list(spec.get("link_chain") or [])
+    if chain:
+        # e.g. an index of editions -> the newest edition's own page -> the PDF on it:
+        # each pattern but the last picks the next page to open, the last picks the file
+        for i, pattern in enumerate(chain):
+            step = {"page": pages, "link_pattern": pattern}
+            if i == len(chain) - 1 and spec.get("link_pick"):
+                step["link_pick"] = spec["link_pick"]
+            pages = [find_link(ctx, step)]
+        return pages[0]
     rx = re.compile(spec["link_pattern"], re.I)
     found, errors = [], []
     for page in pages:            # several pages may link to the file; the newest link wins
@@ -1003,7 +1043,10 @@ def find_link(ctx: Context, spec: dict) -> str:
         except Exception as e:
             errors.append(f"{page}: {_short_error(e)}")
             continue
-        for href, text in re.findall(r"""<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", r.text, re.I | re.S):
+        body = r.text
+        if body.lstrip()[:1] in "[{":          # a JSON API (WordPress media list, CKAN): addresses as plain text
+            body = body.replace("\\/", "/").replace("<a", "<x")     # no anchors: every address is read as text
+        for href, text in re.findall(r"""<a\b[^>]*?href\s*=\s*["']([^"']+)["'][^>]*>(.*?)</a>""", body, re.I | re.S):
             href = htmlmod.unescape(href.strip())
             text = re.sub(r"<[^>]+>|\s+", " ", htmlmod.unescape(text)).strip()
             if rx.search(href) or rx.search(text):
@@ -1011,7 +1054,7 @@ def find_link(ctx: Context, spec: dict) -> str:
                 if u not in [f[0] for f in found]:
                     found.append((u, text))
         if not found:      # JSON / API pages (e.g. a CKAN package_show): addresses in plain text
-            for u in re.findall(r"""https?://[^\s"'<>\\]+""", r.text):
+            for u in re.findall(r"""https?://[^\s"'<>\\]+""", body):
                 if rx.search(u) and u not in [f[0] for f in found]:
                     found.append((u, ""))
     if not found:
