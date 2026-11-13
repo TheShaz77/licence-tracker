@@ -30,7 +30,7 @@ jobs:
         env:
           FCA_API_EMAIL: ${{ secrets.FCA_API_EMAIL }}
           FCA_API_KEY: ${{ secrets.FCA_API_KEY }}
-        run: python -m regtracker contacts --hours 1.8
+        run: python -m regtracker contacts --hours 5
 
       - name: Save progress
         if: always()
