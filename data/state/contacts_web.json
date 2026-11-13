@@ -101459,6 +101459,15 @@
 "http://www.sek.se"
 ]
 },
+"q:Q106913609": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.theaccessbankukltd.co.uk"
+]
+},
 "q:Q106913718": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/hampshire-trust-bank",
@@ -101778,20 +101787,6 @@
 ]
 },
 "q:Q112666885": {
-"checked": "2026-11-12",
-"currency": "GBP",
-"employees": 500.0,
-"employees_year": "2025",
-"linkedin": "",
-"parent": "",
-"parent_linkedin": "",
-"revenue": 19252174.0,
-"revenue_year": "2025",
-"sites": [
-"https://www.stelizabethhospice.org.uk"
-]
-},
-"q:Q112666885": {
 "checked": "2026-11-13",
 "currency": "GBP",
 "employees": 500.0,
@@ -101941,6 +101936,15 @@
 "https://www.tower-research.com/amsterdam"
 ]
 },
+"q:Q113465983": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.ksandt.com"
+]
+},
 "q:Q113465987": {
 "checked": "2026-11-13",
 "linkedin": "",
@@ -101975,6 +101979,24 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.ml.com"
+]
+},
+"q:Q113466008": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.xtxmarkets.com"
+]
+},
+"q:Q113466013": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.societegenerale.co.uk/en"
 ]
 },
 "q:Q113466019": {
@@ -103471,6 +103493,13 @@
 },
 "q:Q130557391": {
 "checked": "2026-11-12",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
+},
+"q:Q130558352": {
+"checked": "2026-11-13",
 "linkedin": "",
 "parent": "",
 "parent_linkedin": "",
@@ -105872,6 +105901,13 @@
 "sites": [
 "https://www.capstoneworks.com"
 ]
+},
+"q:Q139894100": {
+"checked": "2026-11-13",
+"linkedin": "https://www.linkedin.com/company/amulet-private-office",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
 },
 "q:Q139922976": {
 "checked": "2026-11-12",
@@ -108586,6 +108622,13 @@
 "http://www.thebraintumourcharity.org/home"
 ]
 },
+"q:Q17049510": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
+},
 "q:Q1705051": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -109015,6 +109058,15 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.spreewaldbank.de"
+]
+},
+"q:Q17511979": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.anacapfp.com"
 ]
 },
 "q:Q1751833": {
@@ -116945,6 +116997,15 @@
 "https://www.cats.org.uk"
 ]
 },
+"q:Q5055260": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.caxton.com"
+]
+},
 "q:Q5062689": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -117485,6 +117546,13 @@
 "https://www.gamesysgroup.com"
 ]
 },
+"q:Q5527062": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
+},
 "q:Q5531757": {
 "checked": "2026-11-12",
 "employees": 200.0,
@@ -117819,6 +117887,15 @@
 "sites": [
 "https://pfandbriefbank.cib.natixis.de",
 "https://pfandbriefbank.cib.natixis.com"
+]
+},
+"q:Q5770739": {
+"checked": "2026-11-13",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://hiroseuk.com"
 ]
 },
 "q:Q578252": {
@@ -118486,6 +118563,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.pathward.com"
+]
+},
+"q:Q6824499": {
+"checked": "2026-11-13",
+"linkedin": "https://www.linkedin.com/company/metro-bank-uk-",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://metrobankonline.co.uk"
 ]
 },
 "q:Q686176": {
@@ -124551,9 +124637,11 @@
 "checked": "2026-11-13",
 "email": "",
 "email_from": "firm website",
-"note": "RetryError",
-"pages": 0,
-"phone": "",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/alzheimer",
+"note": "",
+"pages": 1,
+"phone": "03001115555",
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.alzheimersresearchuk.org"
@@ -124570,19 +124658,6 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.alzheimers.org.uk"
-},
-"site:alzheimersresearchuk.org": {
-"checked": "2026-11-13",
-"email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/alzheimer",
-"note": "",
-"pages": 1,
-"phone": "03001115555",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.alzheimersresearchuk.org"
 },
 "site:am.jpmorgan.com": {
 "checked": "2026-11-11",
@@ -125741,19 +125816,6 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://apple.com/mk"
-},
-"site:appositecapital.com": {
-"checked": "2026-11-13",
-"email": "enquiry@appositecapital.com",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/apposite-capital",
-"note": "",
-"pages": 1,
-"phone": "+442034751710",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.appositecapital.com"
 },
 "site:appositecapital.com": {
 "checked": "2026-11-13",
@@ -242663,14 +242725,26 @@
 "fca_cfd:210513": "Q493751",
 "fca_cfd:221411": "Q488048",
 "fca_cfd:417741": "Q120486162",
+"fca_cfd:434413": "Q17049510",
 "fca_cfd:439327": "Q65089884",
 "fca_cfd:466201": "Q137162596",
 "fca_cfd:469094": "Q113466024",
+"fca_cfd:475346": "Q5527062",
+"fca_cfd:478415": "Q106913609",
+"fca_cfd:488982": "Q6824499",
+"fca_cfd:497283": "Q113465983",
+"fca_cfd:504390": "Q5055260",
 "fca_cfd:528328": "Q141519948",
+"fca_cfd:538896": "Q113466013",
+"fca_cfd:540244": "Q5770739",
 "fca_cfd:709693": "Q141972840",
 "fca_cfd:760555": "Q56395801",
 "fca_cfd:778117": "Q113466026",
 "fca_cfd:793714": "Q110461223",
+"fca_cfd:912798": "Q17511979",
+"fca_cfd:912920": "Q139894100",
+"fca_cfd:949967": "Q113466008",
+"fca_cfd:978402": "Q130558352",
 "fincen_os:0b5e3b4c2c5b": "Q5558336",
 "fincen_os:0b5fef322213": "Q107309310",
 "fincen_os:0c369ee34eb6": "Q5343830",
@@ -242882,6 +242956,7 @@
 "igm_gb:67478": "Q110909603",
 "igm_gb:802": "Q5302759",
 "igm_gb:8297": "Q4926620",
+"igm_gb:9471": "Q7730643",
 "igm_us:57812": "Q1411739",
 "igm_us:57944": "Q793699",
 "igm_us:58495": "Q744149",
