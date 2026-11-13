@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import re
 import datetime as dt
 import json
 import os
@@ -190,7 +191,7 @@ def time_limit(seconds: float, name: str):
 # CFD lists built by guessing from company names (GLEIF names containing 'trading', 'markets', ...).
 # A saved list that still holds those guesses is removed, so they can't keep showing if the real list
 # fails to load. Lists read from a real register never carry the guess wording, so they are kept.
-GUESSED_CFD_SNAPSHOTS = ("cfd_bm", "cfd_vc", "cfd_vg", "cfd_mu", "cfd_nz")
+GUESSED_CFD_SNAPSHOTS = ("cfd_bm", "cfd_vc", "cfd_vg", "cfd_mu", "cfd_nz", "igm_cw", "igm_mt")
 
 
 def retire_guessed_snapshots(data_dir) -> None:
@@ -211,9 +212,33 @@ def retire_guessed_snapshots(data_dir) -> None:
         log.info("Removed guessed CFD list %s; it is rebuilt from the register", name)
 
 
+def prune_status(cfg, data_dir) -> None:
+    """Drop data/debug/national_status.json entries for countries no longer configured, so sources
+    that were removed don't keep showing as failing."""
+    import json
+    p = data_dir / "debug" / "national_status.json"
+    if not p.exists():
+        return
+    try:
+        d = json.loads(p.read_text())
+    except Exception:
+        return
+    names = {"": "national", "CFD": "cfd", "iGaming": "igaming"}
+    keep = {}
+    for key, v in d.items():
+        m = re.match(r"^([A-Z]{2})(?: \((\w+)\))?$", key)
+        sec = names.get(m.group(2) or "") if m else None
+        if sec and m.group(1) in (cfg.get(sec) or {}):
+            labels = {f.get("label") for f in (cfg[sec][m.group(1)].get("files") or [])}
+            keep[key] = {k: x for k, x in v.items() if k == "date" or k in labels}
+    if keep != d:
+        p.write_text(json.dumps(keep, indent=1, sort_keys=True, ensure_ascii=False))
+
+
 def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     retire_guessed_snapshots(data_dir)
+    prune_status(cfg, data_dir)
     all_events, problems, status = [], [], []
     due_file = data_dir / "state" / "last_fetch.json"
     last_fetch = json.loads(due_file.read_text()) if due_file.exists() else {}

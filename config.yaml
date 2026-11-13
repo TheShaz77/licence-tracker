@@ -636,12 +636,27 @@ national:
       probe: true
       follow: daftar|penyelenggara|izin|pjp|list
       follow_max: 12
-    - label: OJK digital financial assets
+    - label: OJK licensed digital financial asset (crypto) traders, exchange, clearing and custodian
       regulator: OJK
-      url: https://www.ojk.go.id/id/kanal/iakd/Pages/default.aspx
-      probe: true
-      follow: aset|kripto|pedagang|daftar|perizinan
-      follow_max: 12
+      page: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Default.aspx
+      link_chain:
+      - 'Daftar-Penyelenggara-Perdagangan-Aset-Keuangan-Digital-Posisi'
+      - '\.pdf'
+      format: text_regex
+      ignore_case: false
+      row_regex: '(?P<name>\bPT\.?\s+[A-Z0-9][A-Za-z0-9&.''()-]*(?:\s+(?!PT\b)[A-Z][A-Za-z0-9&.''()-]*){0,7})'
+      licence_type: Digital financial asset / crypto asset trader (OJK)
+      register_url: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Default.aspx
+    - label: OJK registered ITSK (financial technology) providers
+      regulator: OJK
+      page: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Default.aspx
+      link_chain:
+      - 'Daftar-Penyelenggara-ITSK'
+      - '\.pdf'
+      format: text_regex
+      ignore_case: false
+      row_regex: '(?P<name>\bPT\.?\s+[A-Z0-9][A-Za-z0-9&.''()-]*(?:\s+(?!PT\b)[A-Z][A-Za-z0-9&.''()-]*){0,7})'
+      licence_type: Registered financial technology (ITSK) provider (OJK)
     - label: OJK homepage
       url: https://www.ojk.go.id/id/Default.aspx
       probe: true
@@ -680,15 +695,6 @@ national:
         บัตรเครดิต: Card issuer (BoT)
         ระบบเครือข่ายบัตร: Card network (BoT)
         ระบบโอนเงินรายย่อย: Retail funds transfer system (BoT)
-    - label: SEC digital asset operators
-      url: https://www.sec.or.th/EN/Pages/Shortcut/DigitalAsset.aspx
-      regulator: SEC
-      probe: true
-    - label: www.sec.or.th homepage
-      url: https://www.sec.or.th/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
     - label: Digital Asset Businesses
       url: https://www.bot.or.th/en/financial-innovation/resilient-regulation/digital-asset.html
       probe: true
@@ -729,20 +735,24 @@ national:
   OM:
     regulator: CBO
     files:
-    - label: CBO licensed institutions
-      url: https://cbo.gov.om/Pages/LicensedEntities.aspx
-      probe: true
-    - label: cbo.gov.om homepage
-      url: https://cbo.gov.om/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: CBO licensed money exchange companies
+    # CBO lists are plain text blocks: the name on one line, then "P. O. Box" / "Box:" and phones.
+    - label: CBO licensed banks
+      url: https://cbo.gov.om/Pages/LicensedBanks.aspx
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*(?:P\.\s*O\.\s*)?Box\b'
+      licence_type: Bank (CBO)
+      register_url: https://cbo.gov.om/Pages/LicensedBanks.aspx
+    - label: CBO money exchange companies
       url: https://cbo.gov.om/Pages/MoneyExchangeCompanies.aspx
-      format: text_names
-      name_regex: (exchange|unimoni|money|remit|forex)\b[^,]{0,25}$
-      name_exclude: central bank|money exchange companies$|^money exchange
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*(?:P\.\s*O\.\s*)?Box\b'
       licence_type: Money exchange company (CBO)
+      register_url: https://cbo.gov.om/Pages/MoneyExchangeCompanies.aspx
+
   EG:
     regulator: CBE
     files:
@@ -814,33 +824,18 @@ national:
   NA:
     regulator: BoN
     files:
-    - label: BoN payment service providers
-      url: https://www.bon.com.na/Payment-Systems/Payment-Service-Providers.aspx
-      probe: true
-    - label: www.bon.com.na homepage
-      url: https://www.bon.com.na/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Authorised Dealers in Foreign Exchange
-      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealers-in-Foreign-Exchange.aspx
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Authorised Dealer in Foreign Exchange with Limited
-      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealer-in-Foreign-Exchange-with-Limited.aspx
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: BoN authorised dealers with limited authority (bureaux de change)
-      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealer-in-Foreign-Exchange-with-Limited.aspx
-      format: text_names
-      licence_type: Authorised dealer in foreign exchange with limited authority (BoN)
-      name_exclude: \bbank\b
-    - label: BoN authorised dealers in foreign exchange (banks)
-      url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealers-in-Foreign-Exchange.aspx
-      format: text_names
-      licence_type: Bank - authorised dealer in foreign exchange (BoN)
+    # Bank of Namibia: payment service providers in the national payment system (one table).
+    - label: BoN national payment system participants
+      url: https://www.bon.com.na/Bank/National-Payment-System/National-Payment-System-Participants.aspx
+      format: html_table
+      name_column: Institution
+      name_exclude: '^Bank of Namibia'
+      type_column: Institution
+      type_patterns:
+        '\bBank\b|Banco|Bank\s': Bank - payment system participant (BoN)
+        '.': Payment service provider - payment system participant (BoN)
+      register_url: https://www.bon.com.na/Bank/National-Payment-System/National-Payment-System-Participants.aspx
+
   AR:
     regulator: BCRA
     files:
@@ -905,16 +900,16 @@ national:
       probe: true
       follow: entidades|bancos|casas de cambio|financieras|listado
       follow_max: 12
-    - label: CNV virtual asset service providers
+    - label: CNV register of virtual asset service providers (PSAV)
       regulator: CNV
-      url: https://www.cnv.gov.ar/SitioWeb/PSAV
-      probe: true
-      follow: psav|registro|proveedores
-    - label: CNV homepage
-      regulator: CNV
-      url: https://www.cnv.gov.ar/SitioWeb/
-      probe: true
-      follow: psav|activos virtuales
+      url: https://www.cnv.gov.ar/SitioWeb/Reportes/ListadoRegistrosPsav
+      name_column: Razon Social
+      id_column: Nro. Matricula
+      website_column: Sitio Web
+      email_column: Correo Electronico
+      date_column: Fecha Alta
+      licence_type: Virtual asset service provider - PSAV (CNV)
+      register_url: https://www.cnv.gov.ar/SitioWeb/RegistrosPublicos/PSAV
   CL:
     regulator: CMF
     files:
@@ -1037,44 +1032,54 @@ national:
   UY:
     regulator: BCU
     files:
-    - label: BCU payment and e-money institutions
-      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/Instituciones-Emisoras-de-Dinero-Electronico.aspx
-      probe: true
-    - label: BCU virtual asset service providers
-      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/Proveedores-de-Servicios-de-Activos-Virtuales.aspx
-      probe: true
-    - label: www.bcu.gub.uy homepage
-      url: https://www.bcu.gub.uy/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
     - label: BCU banks
       url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
       format: html_table
       name_column: RAZÓN SOCIAL
-      licence_type: Bank
-    - label: BCU institution lists
-      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
-      probe: true
-      follow: Instituciones_Lst|dinero electr|pago|cambio|activos virtuales|remes
-      follow_max: 10
+      licence_type: Bank (BCU)
+      register_url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/bancos_Instituciones_Lst.aspx
+    - label: BCU funds transfer companies
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Trans_Fondos_Lst.aspx
+      format: html_table
+      name_column: RAZÓN SOCIAL
+      licence_type: Funds transfer company (BCU)
+      register_url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Trans_Fondos_Lst.aspx
+    - label: BCU financial services companies
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Serv_Fin_Lst.aspx
+      format: html_table
+      name_column: RAZÓN SOCIAL
+      licence_type: Financial services company - FX and payments (BCU)
+      register_url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Serv_Fin_Lst.aspx
+    - label: BCU financial houses
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_Financieras_Lst.aspx
+      format: html_table
+      name_column: RAZÓN SOCIAL
+      licence_type: Financial house (BCU)
+      register_url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_Financieras_Lst.aspx
     - label: BCU exchange houses
       url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_cambio.aspx
       format: html_table
       name_column: RAZÓN SOCIAL
       licence_type: Exchange house (BCU)
+      register_url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_cambio.aspx
+    # Kept as probes: the VASP register is still empty ("No hay elementos que mostrar"), and the
+    # payment-system register (e-money issuers) is filled in by script on the page.
+    - label: BCU virtual asset service providers (probe - register empty so far)
+      url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/prov_Serv_Act_Virtuales_Lst.aspx
+      probe: true
+    - label: BCU payment system register - e-money issuers (probe)
+      url: https://www.bcu.gub.uy/Sistema-de-Pagos/Paginas/Registro-de-Instituciones.aspx
+      probe: true
+
   EC:
-    regulator: BCE
+    regulator: SB
     files:
-    - label: Superintendencia de Bancos entities
-      url: https://www.superbancos.gob.ec/bancos/entidades-controladas/
-      regulator: SB
-      probe: true
-    - label: www.superbancos.gob.ec homepage
-      url: https://www.superbancos.gob.ec/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    - label: Superintendencia de Bancos public register - banks (private, foreign and public)
+      url: https://www.superbancos.gob.ec/bancos/catastro-publico/
+      format: text_regex
+      raw_html: true
+      row_regex: '<td[^>]*>\s*(?:<[^>]+>\s*)*(?P<name>[A-Z][^<]{3,120}?)\s*(?:<[^>]+>\s*)*</td>'
+      licence_type: Bank (Superintendencia de Bancos)
   CR:
     regulator: SUGEF
     files:
@@ -1113,14 +1118,32 @@ national:
   DO:
     regulator: SB
     files:
-    - label: SB supervised entities
-      url: https://sb.gob.do/entidades-supervisadas/
-      probe: true
-    - label: sb.gob.do homepage
-      url: https://sb.gob.do/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    - label: SB financial intermediation entities (banks, savings and loan, credit corporations)
+      url: https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/?page={page}
+      paginate: {start: 0, max: 20, marker: 'class="entity_card(?:(?!entity_card).)*?href="([^"]+)"'}
+      format: text_regex
+      raw_html: true
+      row_regex: 'class="entity_card[^"]*">(?:(?!entity_card).)*?<span>(?P<name>[^<]{2,120})</span>\s*</a>\s*<label class="entity_type_container">\s*(?P<type>[^<]{2,80}?)\s*</label>.*?<label>Estatus</label>\s*<span[^>]*>(?P<status>[^<]{2,60})</span>'
+      inactive_pattern: liquidaci
+      register_url: https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/
+    - label: SB foreign exchange and remittance agents
+      url: https://sb.gob.do/supervisados/entidades-de-intermediacion-cambiaria/?page={page}
+      paginate: {start: 0, max: 20, marker: 'class="entity_card(?:(?!entity_card).)*?href="([^"]+)"'}
+      format: text_regex
+      raw_html: true
+      row_regex: 'class="entity_card[^"]*">(?:(?!entity_card).)*?<span>(?P<name>[^<]{2,120})</span>\s*</a>\s*<label class="entity_type_container">\s*(?P<type>[^<]{2,80}?)\s*</label>.*?<label>Estatus</label>\s*<span[^>]*>(?P<status>[^<]{2,60})</span>'
+      inactive_pattern: liquidaci
+      register_url: https://sb.gob.do/supervisados/entidades-de-intermediacion-cambiaria/
+    - label: SB support entities (card processors, payment networks)
+      url: https://sb.gob.do/supervisados/otras-entidades/?page={page}
+      paginate: {start: 0, max: 20, marker: 'class="entity_card(?:(?!entity_card).)*?href="([^"]+)"'}
+      format: text_regex
+      raw_html: true
+      row_regex: 'class="entity_card[^"]*">(?:(?!entity_card).)*?<span>(?P<name>[^<]{2,120})</span>\s*</a>\s*<label class="entity_type_container">\s*(?P<type>[^<]{2,80}?)\s*</label>.*?<label>Estatus</label>\s*<span[^>]*>(?P<status>[^<]{2,60})</span>'
+      inactive_pattern: liquidaci
+      exclude_column: type
+      exclude_pattern: 'garant|conexos'
+      register_url: https://sb.gob.do/supervisados/otras-entidades/
   BS:
     regulator: CBOB
     files:
@@ -1187,33 +1210,26 @@ national:
   AW:
     regulator: CBA
     files:
-    - label: CBA supervised institutions
-      url: https://www.cbaruba.org/supervision/registers
-      probe: true
-    - label: www.cbaruba.org homepage
-      url: https://www.cbaruba.org/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: List of financial institutions under supervision o
-      url: https://www.cbaruba.org/financial-institutions-under-supervision-of-the-central-bank/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Commercial banks
-      url: https://www.cbaruba.org/commercial-banks/
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: CBA financial institutions under supervision (names)
-      url: https://www.cbaruba.org/financial-institutions-under-supervision-of-the-central-bank/
-      format: text_names
-      name_exclude: insurance|assurance|pension|verzeker|stichting|reinsur|trust company|central bank|reserve bank|leven|schade|life\b|seguros|nagico|assurant|insur|trust|management|living|union caribe|aresta|mahalaxmi
-      type_from_row: true
+    # CBA: one page, institutions listed under headings; firms are read with their legal form and
+    # the heading they sit under (insurance, pensions, trusts and brokers are left out).
+    - label: CBA institutions under supervision
+      url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<name>[A-Z0-9][^\n]{2,90}?\b(?:N\.V\.?|VBA|V\.B\.A\.?|B\.V\.?|Inc\.?|Ltd\.?|Limited))\s*$'
+      section_regex: '^(?:\d+\.\s*)?(Commercial banks|Mortgage banks|Credit unions|Other financial institutions|Pawnshops|Finance companies|Mortgage brokers|.*[Ii]nsurance.*|.*[Pp]ension.*|.*Money Transaction Compan.*|Trust Service Providers|.*[Bb]rokers.*|.*[Ss]ecurities.*|Credit Institutions that have registered.*)\s*$'
+      exclude_column: section
+      exclude_pattern: '[Ii]nsurance|[Pp]ension|Trust|[Bb]roker|[Ss]ecurities|Pawn|registered'
+      type_column: section
       type_patterns:
-        \bbank\b|banco|bancorp: Bank (CBA)
-        moneygram|western union|money|transfer|remit|cambio|exchange: Money transfer company (CBA)
-        .: Supervised financial institution (CBA)
+        'Commercial banks': Commercial bank (CBA)
+        'Mortgage banks': Mortgage bank (CBA)
+        'Credit unions': Credit union (CBA)
+        'Other financial': Other financial institution (CBA)
+        'Finance compan': Finance company (CBA)
+        'Money Transaction': Money transaction company (CBA)
+      register_url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
+
   TC:
     regulator: FSC
     files:
@@ -1238,24 +1254,49 @@ national:
   BZ:
     regulator: CBB
     files:
-    - label: Central Bank of Belize licensees
-      url: https://www.centralbank.org.bz/financial-system/licensed-institutions
-      probe: true
-    - label: www.centralbank.org.bz homepage
-      url: https://www.centralbank.org.bz/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Payment Service Providers
+    # One page per kind of institution. Each licensed firm's name is followed by "Main Branch" (banks,
+    # credit unions) or "Master Agent" (remittance providers); their agents are followed by "Agent".
+    - label: Central Bank of Belize - domestic banks
+      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/domestic-banks
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*(?:Main Branch|Head Office)\s*$'
+      licence_type: Domestic bank (CBB)
+      register_url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/domestic-banks
+    - label: Central Bank of Belize - international banks
+      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/international-banks
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*(?:Main Branch|Head Office)\s*$'
+      licence_type: International bank (CBB)
+      register_url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/international-banks
+    - label: Central Bank of Belize - credit unions
+      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/credit-unions
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*(?:Main Branch|Head Office)\s*$'
+      licence_type: Credit union (CBB)
+      register_url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/credit-unions
+    - label: Central Bank of Belize - remittance service providers
+      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/remittance-service-providers
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?)\s*\n\s*Master Agent\s*$'
+      licence_type: Remittance service provider (CBB)
+      register_url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/remittance-service-providers
+    - label: Central Bank of Belize - payment service providers
       url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: CBB payment service providers (names)
-      url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
-      format: text_names
-      name_exclude: development finance|insurance|assurance|pension|verzeker|stichting|reinsur|trust company|central bank|reserve bank
-      licence_type: Payment service provider (Central Bank of Belize)
+      format: text_regex
+      multiline: true
+      ignore_case: false
+      row_regex: '(?m)^(?P<name>[A-Z][^\n]{2,80}?\b(?:Limited|Ltd\.?))\s*\n\s*(?!Agent\b)\S'
+      licence_type: Payment service provider (CBB)
+      register_url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
+
   LC:
     regulator: ECCB
     files:
@@ -1419,44 +1460,42 @@ national:
   AD:
     regulator: AFA
     files:
-    - label: AFA supervised entities
-      url: https://www.afa.ad/en/supervised-entities
-      probe: true
-    - label: www.afa.ad homepage
-      url: https://www.afa.ad/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: Llistat de Taxes
-      url: https://www.afa.ad/ca/entitats-supervisades/proveidors-de-serveis-de-financament-participatiu/llistat-de-taxes-i-tarifes
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Llistat de Taxes (2)
-      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-bancaries/llistat-de-taxes-i-tarifes_v2
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Llistat de Taxes (2)
-      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-financeres-no-bancaries-de-credit-especialitzat/llistat-de-taxes-i-tarifes_v2
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Llistat de Taxes (2)
-      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-financeres-dinversio/llistat-de-taxes-i-tarifes_v2
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Llistat de Taxes (2)
-      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/societats-gestores-doic/llistat-de-taxes-i-tarifes_v2
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: Llistat de Taxes (2)
-      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-de-pagament/llistat-de-taxes-i-tarifes_v2
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
+    - label: AFA register - banks
+      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-bancaries/registre-dentitats-autoritzades
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominaci. social:\s*(?P<name>[^\n]{2,150}?)\s*\n(?:(?!Denominaci)[^\n]*\n){0,6}?Tipologia:\s*(?P<type>[^\n]+)\n(?:(?!Denominaci)[^\n]*\n){0,4}?Data d.(?:autoritzaci|inscripci)[^\n]*\n?(?P<status>Data de baixa:[^\n]*)?'
+      inactive_pattern: baixa
+      licence_type: Bank (AFA)
+    - label: AFA register - specialised non-bank credit institutions
+      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-financeres-no-bancaries-de-credit-especialitzat/registre-dentitats-autoritzades
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominaci. social:\s*(?P<name>[^\n]{2,150}?)\s*\n(?:(?!Denominaci)[^\n]*\n){0,6}?Tipologia:\s*(?P<type>[^\n]+)\n(?:(?!Denominaci)[^\n]*\n){0,4}?Data d.(?:autoritzaci|inscripci)[^\n]*\n?(?P<status>Data de baixa:[^\n]*)?'
+      inactive_pattern: baixa
+      licence_type: Non-bank specialised credit institution (AFA)
+    - label: AFA register - payment institutions
+      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-de-pagament/registre-dentitats-autoritzades
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominaci. social:\s*(?P<name>[^\n]{2,150}?)\s*\n(?:(?!Denominaci)[^\n]*\n){0,6}?Tipologia:\s*(?P<type>[^\n]+)\n(?:(?!Denominaci)[^\n]*\n){0,4}?Data d.(?:autoritzaci|inscripci)[^\n]*\n?(?P<status>Data de baixa:[^\n]*)?'
+      inactive_pattern: baixa
+      licence_type: Payment institution (AFA)
+    - label: AFA register - e-money institutions
+      url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-de-diner-electronic/registre-d2019entitats-autoritzades
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominaci. social:\s*(?P<name>[^\n]{2,150}?)\s*\n(?:(?!Denominaci)[^\n]*\n){0,6}?Tipologia:\s*(?P<type>[^\n]+)\n(?:(?!Denominaci)[^\n]*\n){0,4}?Data d.(?:autoritzaci|inscripci)[^\n]*\n?(?P<status>Data de baixa:[^\n]*)?'
+      inactive_pattern: baixa
+      empty_pattern: 'no hi ha cap entitat registrada'
+      licence_type: E-money institution (AFA)
+    - label: AFA register - digital asset participants
+      url: https://www.afa.ad/ca/entitats-supervisades/actius-digitals/participants-actius-digitals/registre_entitats_autoritzades
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominaci. social:\s*(?P<name>[^\n]{2,150}?)\s*\n(?:(?!Denominaci)[^\n]*\n){0,6}?Tipologia:\s*(?P<type>[^\n]+)\n(?:(?!Denominaci)[^\n]*\n){0,4}?Data d.(?:autoritzaci|inscripci)[^\n]*\n?(?P<status>Data de baixa:[^\n]*)?'
+      inactive_pattern: baixa
+      licence_type: Digital asset services participant (AFA)
   MC:
     regulator: AMAF
     files:
@@ -1472,60 +1511,77 @@ national:
   SM:
     regulator: BCSM
     files:
-    - label: BCSM register of authorised entities
-      url: https://www.bcsm.sm/site/en/home/supervision/registers.html
-      probe: true
-    - label: www.bcsm.sm homepage
-      url: https://www.bcsm.sm/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    - label: BCSM register of authorised parties - San Marino financial companies
+      url: https://www.bcsm.sm/registro-soggetti-autorizzati-imprese-finanziarie-sammarinesi?hsLang=it
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^(?P<name>[^\n]{3,120}?)\s*\nData iscrizione:[ \t]*(?P<date>[\d/]{8,10})\s*\nNumero iscrizione:[ \t]*\S+'
+      name_exclude: 'ASSICURAZ|SOCIET. DI GESTIONE|\bSG\b'
+      licence_type: Authorised financial company - bank / financial institution (BCSM)
+    - label: BCSM register of payment service providers
+      url: https://www.bcsm.sm/registro-dei-prestatori-di-servizi-di-pagamento?hsLang=it
+      format: text_regex
+      multiline: true
+      row_regex: '(?m)^Denominazione:[ \t]*(?P<name>[^\n]{2,150}?)\s*\nNumero iscrizione:[ \t]*\S+\s*\nData iscrizione:[ \t]*(?P<date>[\d/]{8,10})'
+      licence_type: Payment service provider (BCSM)
   RS:
     regulator: NBS
     files:
-    - label: NBS payment institutions
-      url: https://nbs.rs/en/finansijske-institucije/platne-institucije/spisak/
-      probe: true
-    - label: NBS e-money institutions
-      url: https://nbs.rs/en/finansijske-institucije/institucije-elektronskog-novca/spisak/
-      probe: true
-    - label: NBS banks
-      url: https://nbs.rs/en/finansijske-institucije/banke/spisak-banaka/
-      probe: true
-    - label: NBS virtual asset service providers
-      url: https://nbs.rs/en/finansijske-institucije/digitalna-imovina/
-      probe: true
-    - label: nbs.rs homepage
-      url: https://nbs.rs/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    # NBS registers are served by its public web-application centre (complete lists, no paging).
+    - label: NBS list of banks
+      url: https://webappcenter.nbs.rs/WebApp/FinInstBank/LegalEntityFinInstitution/Index
+      format: html_table
+      name_column: Назив
+      licence_type: Bank (NBS)
+      register_url: https://nbs.rs/en/finansijske-institucije/banke/spisak-banaka
     - label: NBS register of payment institutions
-      url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi
+      url: https://webappcenter.nbs.rs/WebApp/FinInstPayment/LegalEntityFinInstitution/Index
       format: html_table
-      keep_all: true
-      default_type: Payment institution (NBS)
-    - label: NBS register of e-money institutions
-      url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-ien
+      name_column: Назив
+      id_column: Регистарски број
+      licence_type: Payment institution (NBS)
+      register_url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi
+    - label: NBS register of electronic money institutions
+      url: https://webappcenter.nbs.rs/WebApp/FinInstElectronicMoney/LegalEntityFinInstitution/Index
       format: html_table
-      keep_all: true
-      default_type: Electronic money institution (NBS)
-    - label: NBS payment/e-money registers (probe)
-      url: https://nbs.rs/en/finansijske-institucije/pi-ien/
-      probe: true
-      follow: registar|lista|\.pdf|\.xlsx?
-      follow_max: 8
+      name_column: Назив
+      id_column: Регистарски број
+      licence_type: Electronic money institution (NBS)
+      register_url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-ien
+    - label: NBS register of virtual currency service providers
+      url: https://nbs.rs/en/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/reg_di/
+      format: html_table
+      name_column: Name of the virtual currency service provider
+      id_column: Registration No
+      licence_type: Virtual currency service provider (NBS)
+      register_url: https://nbs.rs/en/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/reg_di/
+
   ME:
     regulator: CBCG
     files:
-    - label: CBCG payment and e-money institutions
-      url: https://www.cbcg.me/en/supervision/payment-institutions
-      probe: true
-    - label: www.cbcg.me homepage
-      url: https://www.cbcg.me/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    # CBCG register pages list the firms by name (legal form AD for banks, DOO for payment/e-money firms).
+    - label: CBCG register of banks
+      url: https://cbcg.me/en/core-functions/supervisory-function/banking-system/register-of-banks
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<name>[^|\n]{2,70}?\b(?:AD|A\.D\.)(?:\s+Podgorica)?)\b'
+      licence_type: Bank (CBCG)
+      register_url: https://cbcg.me/en/core-functions/supervisory-function/banking-system/register-of-banks
+    - label: CBCG register of payment institutions
+      url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-payment-institutions
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<name>[^|\n]{2,70}?\b(?:DOO|D\.O\.O\.?)(?:\s+[A-Z][A-Za-z]+)?)\s*$'
+      licence_type: Payment institution (CBCG)
+      register_url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-payment-institutions
+    - label: CBCG register of e-money institutions
+      url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-emoney-institutions
+      format: text_regex
+      ignore_case: false
+      row_regex: '^(?P<name>[^|\n]{2,70}?\b(?:DOO|D\.O\.O\.?)(?:\s+[A-Z][A-Za-z]+)?)\s*$'
+      licence_type: Electronic money institution (CBCG)
+      register_url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-emoney-institutions
+
   MK:
     regulator: NBRM
     files:
@@ -1565,42 +1621,46 @@ national:
   XK:
     regulator: CBK
     files:
-    - label: CBK licensed institutions
-      url: https://bqk-kos.org/financial-institutions/
-      probe: true
-    - label: bqk-kos.org homepage
-      url: https://bqk-kos.org/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    # CBK "List of licensed/registered Financial Institutions" (English PDF, re-issued a few times a
+    # year under a new name; the newest is picked by the date in its name). Sections, then numbered firms.
+    - label: CBK list of licensed and registered financial institutions
+      page: https://bqk-kos.org/mbikeqyrja-financiare-2/licencimi-i-institucioneve-financiare/?lang=en
+      link_pattern: 'Lista-e-institucioneve-financiare[^"''\s]*ENG\.pdf'
+      format: text_regex
+      ignore_case: false
+      row_regex: '^\d{1,3}\.\s+(?P<name>\S.{2,100}?)\s*$'
+      section_regex: '^(Banks licensed|MFIs registered|NBFIs registered.*|Crypto-asset service operator.*|Insurers licensed|Insurance brokers.*|Individual Brokers.*|PENSION FUNDS)\s*$'
+      type_column: section
+      exclude_column: section
+      exclude_pattern: 'Insur|PENSION|Broker'
+      type_patterns:
+        '^Banks': Bank (CBK)
+        '^MFIs': Microfinance institution (CBK)
+        'Currency Exchange': Currency exchange bureau (CBK)
+        '^NBFIs': Non-bank financial institution (CBK)
+        'Crypto-asset': Crypto-asset service operator (CBK)
+      register_url: https://bqk-kos.org/mbikeqyrja-financiare-2/licencimi-i-institucioneve-financiare/?lang=en
+
   GE:
     regulator: NBG
     files:
-    - label: NBG payment service providers
-      url: https://nbg.gov.ge/en/page/payment-service-providers-registry
-      probe: true
-    - label: NBG VASP registry
-      url: https://nbg.gov.ge/en/page/vasp-registry
-      probe: true
-    - label: nbg.gov.ge homepage
-      url: https://nbg.gov.ge/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: NBG registered payment service providers
-      url: https://nbg.gov.ge/en/payment-system/providers
-      format: html_table
-      keep_all: true
-      default_type: Payment service provider (NBG)
-    - label: NBG payment service providers (names)
-      url: https://nbg.gov.ge/en/payment-system/providers
-      format: text_names
+    # NBG's site loads its registers as Excel files; the page's own data service names the current file
+    - label: NBG register of payment service providers
+      page: https://nbg.gov.ge/gw/api/ct/paymentsystem/providers/content/details
+      link_pattern: 'list-of-psps-eng.*\.xlsx$'
+      link_base: https://nbg.gov.ge/fm/
+      page_headers: {Accept-Language: en}
+      name_column: Name of Provider
+      id_column: Registration
       licence_type: Payment service provider (NBG)
-    - label: NBG VASP supervision (probe)
-      url: https://nbg.gov.ge/en/page/virtual-asset-service-providers-vasps
-      probe: true
-      follow: regist|list|vasp|\.pdf|\.xlsx?
-      follow_max: 8
+      register_url: https://nbg.gov.ge/en/payment-system/providers
+    - label: NBG register of virtual asset service providers (VASPs)
+      page: https://nbg.gov.ge/en/page/virtual-asset-service-providers-vasps
+      link_pattern: 'vasps-eng-[^/]*\.xlsx'
+      name_column: Name of the Virtual Asset Service Provider
+      id_column: Registration Number
+      licence_type: Virtual asset service provider (NBG)
+      register_url: https://nbg.gov.ge/en/page/virtual-asset-service-providers-vasps
   MN:
     regulator: BoM
     files:
@@ -1682,14 +1742,20 @@ national:
   BN:
     regulator: BDCB
     files:
-    - label: BDCB licensed institutions
-      url: https://www.bdcb.gov.bn/regulation-supervision/licensed-institutions
-      probe: true
-    - label: www.bdcb.gov.bn homepage
-      url: https://www.bdcb.gov.bn/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+    - label: BDCB list of licensees (banks, finance companies, payment system operators, money changers, remitters)
+      url: 'https://www.bdcb.gov.bn/regulatory/list-of-bdcb-licensees?flt_subs%5B0%5D=01hhgccvwskdpa1hf3zwf4a5g7&flt_subs%5B1%5D=01hhgcf42j6765zjtq42n00nv5&flt_subs%5B2%5D=01hhgcy2x6pvm0dpjrf0bdd9qv&flt_subs%5B3%5D=01hhgcyffk2c4xjadp86cypcv3&flt_subs%5B4%5D=01hn2jq3sqhnb837da7mjfg9q7&flt_subs%5B5%5D=01hhgd3rpky6feecdta3cj9kmp&flt_subs%5B6%5D=01hhgd40xtvr1a32ekn80pkxks&page={page}'
+      paginate: {start: 1, max: 15, marker: 'class="h5default">([^<]+)<'}
+      format: text_regex
+      raw_html: true
+      row_regex: 'class="h5default">(?P<name>[^<]{2,150})</p>.*?text-green">\s*(?P<type>[^<|]{3,60}?)\s*<span'
+      type_patterns:
+        'Conventional Bank': Conventional bank (BDCB)
+        'Islamic Bank': Islamic bank (BDCB)
+        'Finance Company': Finance company (BDCB)
+        'Payment System': Payment system operator (BDCB)
+        'Money Changer': Money changer (BDCB)
+        'Money Remitter': Money remitter (BDCB)
+      register_url: https://www.bdcb.gov.bn/regulatory/list-of-bdcb-licensees
   CN:
     regulator: PBOC
     files:
@@ -1748,31 +1814,21 @@ national:
   TO:
     regulator: NRBT
     files:
-    - label: NRBT financial institutions
+    - label: NRBT licensed financial institutions (banks and foreign exchange dealers)
       url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
-      format: html_table
-    - label: NRBT financial institutions page
-      url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
-      probe: true
-    - label: of-the-licensed-foreign-exchange-dealers
-      url: https://www.reservebank.to/index.php/news/updated-list-of-the-licensed-foreign-exchange-dealers
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
-    - label: NRBT licensed institutions (names)
-      url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
-      format: text_names
-      type_from_row: true
-      name_exclude: about the reserve
+      format: text_regex
+      raw_html: true
+      row_regex: '<h5 class="fd-item-title[^"]*">(?P<name>.*?)</h5>'
+      section_regex: '<h[2-4][^>]*>\s*(Commercial Banks|License Type [A-Z]|Under Banking License|Licensed Foreign Exchange Dealers)\s*</h[2-4]>|>\s*(Commercial Banks)\s*<'
+      exclude_column: section
+      exclude_pattern: 'Under Banking'
+      type_column: section
       type_patterns:
-        \bbank\b: Bank (NRBT)
-        microfinance|mincrofinance: Microfinance institution (NRBT)
-        .: Foreign exchange dealer / money transfer (NRBT)
-    - label: NRBT licensed foreign exchange dealers (names)
-      url: https://www.reservebank.to/index.php/news/updated-list-of-the-licensed-foreign-exchange-dealers
-      format: text_names
-      licence_type: Foreign exchange dealer / money transfer (NRBT)
-      name_exclude: \bbank\b
+        'Commercial Banks': Bank (NRBT)
+        'Type A': Foreign exchange dealer - Type A, remittances (NRBT)
+        'Type B': Foreign exchange dealer - Type B (NRBT)
+        'Type C': Foreign exchange dealer - Type C (NRBT)
+      register_url: https://www.reservebank.to/index.php/financial-system/financial-institutions/financial-institutions-in-tonga
   SB:
     regulator: CBSI
     files:
@@ -1790,9 +1846,23 @@ national:
   ET:
     regulator: NBE
     files:
-    - label: NBE payment instrument issuers
-      url: https://nbe.gov.et/payment-system/
-      probe: true
+    - label: NBE payment instrument issuers and payment system operators
+      url: https://nbe.gov.et/payment-instrument-issuers-system-operators/
+      format: text_regex
+      row_regex: '^(?P<name>[A-Z][^\n]{2,80}?(?:S\.\s?C\.?|PLC\b.*|\|\s*\w[\w -]{1,20}))\s*$'
+      ignore_case: false
+      section_regex: '^(PAYMENT INSTRUMENT ISSUERS?|PAYMENT SYSTEM OPERATORS?)\s*$'
+      type_column: section
+      type_patterns:
+        'INSTRUMENT': Payment instrument issuer (NBE)
+        'OPERATOR': Payment system operator (NBE)
+    - label: NBE licensed money transfer agencies
+      url: https://nbe.gov.et/mta/
+      format: text_regex
+      raw_html: true
+      row_regex: '<h2 class="elementor-heading-title[^"]*">(?P<name>[^<]{2,90})</h2>'
+      name_exclude: '^(Money Remittance|Copyright)'
+      licence_type: International money transfer operator (NBE)
     - label: nbe.gov.et homepage
       url: https://nbe.gov.et/
       probe: true
@@ -2081,10 +2151,20 @@ cfd:
   CY:
     regulator: CySEC
     files:
-    - label: CySEC Cyprus Investment Firms (CIFs)
-      url: https://www.cysec.gov.cy/en-GB/entities/investment-firms/cypriot/
-      format: html_table
-      licence_type: Cyprus Investment Firm (CySEC)
+    # CySEC's own site disallows automated access (robots.txt); the same firms are on the ESMA
+    # register, which CySEC reports them to (every Cyprus Investment Firm is a MiFID investment firm)
+    - label: Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC
+      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=*:*&fq=ae_entityTypeCode%3AMIF&fq=ae_homeMemberState%3Acyprus&wt=json&rows=5000
+      name_column: ae_entityName
+      lei_column: ae_lei
+      address_column: ae_headOfficeAddress
+      website_column: ae_website
+      status_column: ae_status
+      date_column: ae_authorisationNotificationDateStr
+      exclude_column: ae_officeType
+      exclude_pattern: branch
+      licence_type: Cyprus Investment Firm (CySEC, via ESMA register)
+      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
   # Mauritius: the FSC's register moved to a new site (opr.fscmauritius.org) that shows 50 firms per page and
   # only turns pages through its own in-page requests, so the investment dealers (the licence CFD brokers
   # hold) can't be listed completely yet. Left out rather than shown half-complete.
@@ -2235,35 +2315,41 @@ igaming:
       url: https://www.gamblingcontrol.org/applications-guidance/egambling-licensees
       format: text_regex
       multiline: true
-      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*\((?P<type>1\s*&\s*2|1|2)\)'
+      row_regex: '(?m)^Company Name(?: \(Licence Category\))?\s*\n(?P<name>[^\n()]{2,150}?(?:\([^)\n]*\)[^\n()]*?)?)\s*\((?P<type>1\s*&\s*2|1|2)\)\s*$'
       type_patterns:
         '1\s*&\s*2': eGambling licence - category 1 & 2, B2C + B2B (AGCC)
         '^1$': eGambling licence - category 1, B2C (AGCC)
         '^2$': eGambling licence - category 2, B2B (AGCC)
     - label: Alderney temporary eGambling licensees
       url: https://www.gamblingcontrol.org/temporary-egambling-licensees
+      empty_pattern: 'There are currently no Temporary'
       format: text_regex
       multiline: true
-      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      row_regex: '(?m)^Company Name(?: \(Licence Category\))?\s*\n(?!N/A)(?P<name>[^\n]{2,150}?)\s*(?:\((?:1\s*&\s*2|1|2)\))?\s*$'
       licence_type: Temporary eGambling licence (AGCC)
     - label: Alderney core service provider associates
       url: https://www.gamblingcontrol.org/core-service-provider-associates
       format: text_regex
       multiline: true
-      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      row_regex: '(?m)^Company Name(?: \(Licence Category\))?\s*\n(?!N/A)(?P<name>[^\n]{2,150}?)\s*(?:\((?:1\s*&\s*2|1|2)\))?\s*$'
       licence_type: Core service provider associate - B2B (AGCC)
     - label: Alderney category 1 and 2 associate certificates
       url: https://www.gamblingcontrol.org/category-1-and-2-associate-certificates
       format: text_regex
       multiline: true
-      row_regex: '(?m)^(?:\S+\.[a-z]{2,6}\S*\s+)*(?P<name>[^\n()]{2,120}?(?:\([^)\n]*\)[^\n()]*?)?(?:Limited|Ltd\.?|LLC|plc|Inc\.?|B\.V\.|N\.V\.|S\.A\.|AG|GmbH|SRL|S\.L\.))\s*$'
+      row_regex: '(?m)^Company Name(?: \(Licence Category\))?\s*\n(?!N/A)(?P<name>[^\n]{2,150}?)\s*(?:\((?:1\s*&\s*2|1|2)\))?\s*$'
       licence_type: Category 1/2 associate certificate - B2B (AGCC)
   IE:
     regulator: GRAI
     files:
     - label: Gambling Regulatory Authority of Ireland register
-      page: https://www.grai.ie/register
-      link_pattern: \.csv
+      url: https://www.grai.ie/register/download
+      name_column: Account Name
+      id_column: Account Number
+      type_column: Activity
+      exclude_column: Activity
+      exclude_pattern: In-person
+      date_column: Issue Date
       keep_all: true
       register_url: https://www.grai.ie/register
 
@@ -2272,17 +2358,16 @@ igaming:
     files:
     - label: Gibraltar licence holders (B2C, B2B, support services)
       url: https://gamblingdivision.gov.gi/licence-holders
-      format: html_table
-      all_tables: true
-      name_column: Company
-      type_from_row: true
-      exclude_column: section
-      exclude_pattern: non-remote|land-based
+      format: text_regex
+      raw_html: true
+      row_regex: '<tr[^>]*>\s*<td[^>]*>[\s\S]{0,40}?\d+\s*(?:</[a-z]+>\s*)*</td>\s*<td[^>]*>(?P<name>(?:(?!<a\b|</td>|Approved [Bb]rands)[\s\S])*)[\s\S]*?</td>\s*<td[^>]*>(?P<type>[\s\S]*?)</td>'
+      exclude_column: type
+      exclude_pattern: 'Non-Remote|Land Based'
       type_patterns:
-        'affiliate|marketing': Marketing / affiliate services licence (Gibraltar)
-        'support service': Gambling operator support services licence (Gibraltar)
-        'B2B|business-to-business': B2B remote gambling licence (Gibraltar)
-        '.': B2C remote gambling licence (Gibraltar)
+        'Marketing|Affiliate': Marketing / affiliate services licence (Gibraltar)
+        'Support': Gambling operator support services licence (Gibraltar)
+        'B2B': B2B remote gambling licence (Gibraltar)
+        'B2C': B2C remote gambling licence (Gibraltar)
       register_url: https://gamblingdivision.gov.gi/licence-holders
   BR:
     regulator: SPA (Ministry of Finance)
@@ -2341,24 +2426,33 @@ igaming:
   DK:
     regulator: Spillemyndigheden
     files:
+    # the register page loads its list from the site's own search service (same request the page sends)
     - label: Denmark - licensed gambling operators
-      url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
-      format: html_table
-      keep_all: true
-      default_type: Gambling licence (Spillemyndigheden, Denmark)
+      url: https://spillemyndigheden.dk/api/indexSearch
+      post_json: {index: spillemyndigheden-da, parentGId: 84250812-4a71-42d1-baf2-c29000c08028, query: '*', tags: null,
+                  types: null, operatorForTagsAndTypes: and, sort: title, lang: da}
+      name_column: title
+      website_column: contentText
+      id_column: gId
+      type_column: tags
+      require_column: tags
+      require_pattern: '(^|[^a-z])(onlinekasino|vddeml|onlinekasinoindtgtsbegrnset|vddemlindtgtsbegrnset)'
+      type_patterns:
+        'onlinekasino.*vddeml|vddeml.*onlinekasino': Online casino + betting licence (Spillemyndigheden)
+        'onlinekasino': Online casino licence (Spillemyndigheden)
+        'vddeml': Betting licence (Spillemyndigheden)
       register_url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
-    - label: Denmark - licence holder pages (probe)
-      url: https://spillemyndigheden.dk/tilladelsesindehavere?field_license_type_target_id=All
-      probe: true
-      follow: tilladelse|spiludbyder|licens
   IT:
     regulator: ADM
     files:
+    # the page loads its list from its own portlet address, 20 concessions per page (pager=N)
     - label: Italy - ADM remote gaming concessionaires
-      url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari
+      url: 'https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari?p_p_id=it_sogei_wda_web_portlet_WebDisplayAamsPortlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&pager={page}'
+      paginate: {start: 1, max: 15, marker: '>\s*(160\d\d|\d{5})\s*<'}
       format: html_table
-      keep_all: true
-      default_type: Remote gaming concession (ADM, Italy)
+      name_column: Concessionario
+      website_column: Sito internet
+      licence_type: Remote gaming concession (ADM, Italy)
       register_url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari
   CW:
     regulator: Curacao Gaming Authority
@@ -2374,146 +2468,6 @@ igaming:
       keep_all: true
       default_type: Online gaming licence (CGA, Curacao)
       register_url: https://www.gamingcontrolcuracao.org/en/133i348441001
-    - label: GLEIF - Curacao companies named 'casino'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=casino&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'bet'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bet&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'gaming'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=gaming&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'games'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=games&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'poker'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=poker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'slots'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=slots&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'bingo'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bingo&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'lotto'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=lotto&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'sportsbook'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=sportsbook&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Curacao companies named 'jackpot'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=jackpot&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Curacao company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
   MT:
     regulator: MGA
     min_hours: 72
@@ -2522,146 +2476,6 @@ igaming:
       url: https://mgalicenseeregister.mga.org.mt/
       probe: true
       follow: api|licensee|register|\.json|\.csv
-    - label: GLEIF - Malta companies named 'casino'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=casino&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'bet'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=bet&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'gaming'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=gaming&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'games'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=games&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'poker'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=poker&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'slots'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=slots&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'bingo'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=bingo&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'lotto'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=lotto&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'sportsbook'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=sportsbook&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
-    - label: GLEIF - Malta companies named 'jackpot'
-      url: https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=jackpot&page%5Bsize%5D=200&page%5Bnumber%5D={page}
-      paginate: {start: 1, step: 1, max: 20, marker: '(?m)^"([A-Z0-9]{20})",'}
-      name_column: Entity.LegalName
-      id_column: LEI
-      lei_column: LEI
-      city_column: Entity.LegalAddress.City
-      status_column: Entity.EntityStatus
-      date_column: Registration.InitialRegistrationDate
-      require_column: Entity.LegalName
-      require_pattern: 'casino|\bbet|betting|gaming|\bgames?\b|poker|slots?\b|bingo|lotto|lotter|sportsbook|wager|jackpot|spins?\b|igaming|play'
-      name_exclude: '\bfund\b|holding|\btrust\b|propert|real estate|shipping|insurance'
-      licence_type: Malta company (name suggests gambling; licence not checked)
-      register_url: https://search.gleif.org/
   KM:
     regulator: Anjouan Gaming
     files:

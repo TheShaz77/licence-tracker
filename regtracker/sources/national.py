@@ -132,9 +132,33 @@ def _records_in_json(doc):
     return best
 
 
+def _first_site(v: str) -> str:
+    """A register's website cell can list several domains ("bet25.dk\ncasinoGo.dk"): keep the first,
+    as a full address."""
+    v = (v or "").strip()
+    if not v:
+        return ""
+    first = re.split(r"[\s,;|]+", v)[0]
+    if not re.search(r"[\w-]+\.[a-z]{2,}", first, re.I):
+        return v if v.startswith("http") else ""
+    return first if re.match(r"https?://", first, re.I) else "https://" + first
+
+
 def read_table(raw: bytes, sheets: str = "first") -> tuple:
     """Return (headers, rows) from CSV/TSV text, an .xlsx/.xls file or JSON.
     sheets="all" reads every worksheet (each with its own header row)."""
+    if raw[:2] == b"PK":
+        import zipfile
+        try:
+            z = zipfile.ZipFile(io.BytesIO(raw))
+            names = z.namelist()
+            if not any(n.startswith("xl/") for n in names):
+                # a plain zip around the list (e.g. Licence.zip holding Licence.csv): read the biggest table in it
+                inner = [n for n in names if re.search(r"\.(csv|tsv|txt|xlsx|xls|json)$", n, re.I)]
+                if inner:
+                    return read_table(z.read(max(inner, key=lambda n: z.getinfo(n).file_size)), sheets)
+        except zipfile.BadZipFile:
+            pass
     text0 = raw.lstrip()[:1]
     if text0 in (b"{", b"["):
         import json
@@ -153,6 +177,10 @@ def read_table(raw: bytes, sheets: str = "first") -> tuple:
             from openpyxl import load_workbook
             wb = load_workbook(io.BytesIO(raw), read_only=True, data_only=True)
             for ws in (wb.worksheets if sheets == "all" else wb.worksheets[:1]):
+                try:
+                    ws.reset_dimensions()       # some exports declare a wrong sheet size (A1:L3 for 85 rows)
+                except AttributeError:
+                    pass
                 books.append([[_cell(c) for c in r] for r in ws.iter_rows(values_only=True)])
         else:
             import xlrd
@@ -313,8 +341,17 @@ def read_text_regex(raw: bytes, spec: dict) -> tuple:
         rx = re.compile(spec["row_regex"], re.I | re.S)
         groups = list(rx.groupindex)
         names = {"id": "reference"}
-        rows = [[re.sub(r"\s+", " ", htmlmod.unescape(re.sub(r"<[^>]+>", " ", m.group(g) or ""))).strip()
-                 for g in groups] for m in rx.finditer(decode_bytes(raw))]
+        text = decode_bytes(raw)
+        clean = lambda v: re.sub(r"\s+", " ", htmlmod.unescape(re.sub(r"<[^>]+>", " ", v or ""))).strip()
+        rows = [[clean(m.group(g)) for g in groups] for m in rx.finditer(text)]
+        if spec.get("section_regex"):
+            # headings in the page ("License Type A", "Under Banking License"): each row gets the
+            # last heading above it, as a "section" column (use type_column / exclude_column on it)
+            heads = [(h.start(), clean(h.group(h.lastindex or 0))) for h in re.finditer(spec["section_regex"], text, re.I | re.S)]
+            starts = [m.start() for m in rx.finditer(text)]
+            for row, at in zip(rows, starts):
+                row.append(next((h for pos, h in reversed(heads) if pos < at), ""))
+            return [names.get(g, g) for g in groups] + ["section"], rows
         return [names.get(g, g) for g in groups], rows
     lines = page_text_lines(raw)
     if spec.get("between"):
@@ -472,6 +509,8 @@ def read_html_table(raw: bytes, spec: dict) -> tuple:
     if not best:
         raise RuntimeError(f"no matching table on the page; table headers were: "
                            f"{[' | '.join(t[0])[:120] for t in p.tables if t]}")
+    if spec.get("name_column"):          # a note or title row above the real header row
+        return _header_split(best, (spec["name_column"],))
     return best[0], best[1:]
 
 
@@ -714,6 +753,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
                 continue
         ref = get(row, "id")
         name = re.sub(r"(\s*([\^#*]+|※\d*|\(\d\)|\[\d+\]))+$", "", name).strip()   # footnote marks: "^", "#", "※1"
+        if re.fullmatch(r'["“„«].*["”»]', name):      # a name given in quotes: "eMoney Georgia"
+            name = name[1:-1].strip()
         key = f"{prefix}_{country.lower()}:{ref or norm_key(name) or hkey(name)}"
         status = get(row, "status")
         inactive_rx = re.compile(spec["inactive_pattern"], re.I) if spec.get("inactive_pattern") else INACTIVE_RE
@@ -745,7 +786,7 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
             status_detail=" / ".join(x for x in (raw_type, get(row, "exclude"), status) if x) or f"{regulator} register",
             status_date=_iso(get(row, "date")) or get(row, "date")[:10], reference=ref, lei=get(row, "lei"),
             city=get(row, "city"), register_url=spec.get("register_url") or spec["url"],
-            website=get(row, "website"), email=get(row, "email").lower(),
+            website=_first_site(get(row, "website")), email=get(row, "email").lower(),
             extra=extra,
         )
     info["type_values"] = sorted(type_values.items(), key=lambda kv: -kv[1])[:40]
@@ -1005,7 +1046,10 @@ class NationalSource(Source):
                     continue
                 try:
                     got, info = parse_file(raw, self._spec(spec), self.country, self.regulator)
-                    if not got:
+                    if not got and spec.get("empty_pattern") and re.search(spec["empty_pattern"], decode_bytes(raw), re.I):
+                        # the register says it has no firms of this kind ("no entity registered")
+                        status[label] = "register is empty (the regulator lists no firms of this type)"
+                    elif not got:
                         raise RuntimeError("no firms matched")
                 except Exception as e:
                     err = e
@@ -1054,6 +1098,14 @@ class NationalSource(Source):
         return list(recs.values())
 
 
+# month-name prefixes in English and the other languages registers publish in
+# (Indonesian Mei/Agustus/Oktober/Desember, Spanish enero/abril/agosto/diciembre, French mai/juin/août)
+_MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6, "jul": 7, "aug": 8, "sep": 9,
+           "oct": 10, "nov": 11, "dec": 12, "mei": 5, "agu": 8, "okt": 10, "des": 12, "ene": 1, "abr": 4,
+           "ago": 8, "dic": 12, "set": 9, "mai": 5, "aoû": 8, "aou": 8, "déc": 12, "fév": 2, "avr": 4}
+_MONTH_RX = "|".join(sorted(_MONTHS, key=len, reverse=True))
+
+
 def _date_key(url: str) -> tuple:
     """Newest-first sort key from a date in a file name/link text (2026-11-06, 06112026, 6-11-2026,
     'November 2026', '2026')."""
@@ -1068,13 +1120,12 @@ def _date_key(url: str) -> tuple:
     m = re.search(r"(?<!\d)([0-2]\d|3[01])(0[1-9]|1[0-2])(20\d{2})(?!\d)", u)
     if m:
         return int(m.group(3)), int(m.group(2)), int(m.group(1))
-    months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
-    m = re.search(r"(?i)(?<!\d)([0-3]?\d)[\s_.-]+(" + "|".join(months) + r")[a-z]*[\s_.,-]*(20\d{2})", u)
-    if m:                                                             # 30-October-2026, 31 July 2026
-        return int(m.group(3)), months.index(m.group(2).lower()[:3]) + 1, int(m.group(1))
-    m = re.search(r"(?i)\b(" + "|".join(months) + r")[a-z]*[\s_.-]*(20\d{2})", u)
+    m = re.search(r"(?i)(?<!\d)([0-3]?\d)[\s_.-]+(?:de\s+)?(" + _MONTH_RX + r")[a-z]*[\s_.,-]*(?:de\s+)?(20\d{2})", u)
+    if m:                                                             # 30-October-2026, 22 Agustus 2026
+        return int(m.group(3)), _MONTHS[m.group(2).lower()], int(m.group(1))
+    m = re.search(r"(?i)\b(" + _MONTH_RX + r")[a-z]*[\s_.-]*(?:de\s+)?(20\d{2})", u)
     if m:
-        return int(m.group(2)), months.index(m.group(1).lower()[:3]) + 1, 0
+        return int(m.group(2)), _MONTHS[m.group(1).lower()], 0
     m = re.search(r"/(\d{2})-(0[1-9]|1[0-2])-([0-3]\d)-[^/]*$", u)    # .../26-10-28-current-list.xlsx
     if m:
         return 2000 + int(m.group(1)), int(m.group(2)), int(m.group(3))
@@ -1106,7 +1157,8 @@ def find_link(ctx: Context, spec: dict) -> str:
         # e.g. an index of editions -> the newest edition's own page -> the PDF on it:
         # each pattern but the last picks the next page to open, the last picks the file
         for i, pattern in enumerate(chain):
-            step = {"page": pages, "link_pattern": pattern}
+            step = {"page": pages, "link_pattern": pattern, "link_base": spec.get("link_base"),
+                    "page_headers": spec.get("page_headers")}
             if i == len(chain) - 1 and spec.get("link_pick"):
                 step["link_pick"] = spec["link_pick"]
             pages = [find_link(ctx, step)]
@@ -1118,7 +1170,8 @@ def find_link(ctx: Context, spec: dict) -> str:
             errors.append(f"{page} is disallowed by robots.txt")
             continue
         try:
-            r = ctx.session.get(page, timeout=90, headers={"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)"})
+            r = ctx.session.get(page, timeout=90, headers={"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)",
+                                                           **(spec.get("page_headers") or {})})
             r.raise_for_status()
         except Exception as e:
             errors.append(f"{page}: {_short_error(e)}")
@@ -1137,6 +1190,15 @@ def find_link(ctx: Context, spec: dict) -> str:
             for u in re.findall(r"""https?://[^\s"'<>\\]+""", body):
                 if rx.search(u) and u not in [f[0] for f in found]:
                     found.append((u, ""))
+        if not found and spec.get("link_base"):
+            # a JSON API that gives the file as a bare path ("payments/providers/list-12-10-26.xlsx"),
+            # served under a fixed address (link_base, e.g. the site's file manager)
+            from urllib.parse import quote
+            for v in re.findall(r'"([^"\\]{3,400})"', r.text):
+                if rx.search(v) and not v.startswith("http"):
+                    u = spec["link_base"].rstrip("/") + "/" + quote(v.lstrip("/"))
+                    if u not in [f[0] for f in found]:
+                        found.append((u, v))
     if not found:
         raise RuntimeError(f"no link matching {spec['link_pattern']!r} on {', '.join(pages)}"
                            + (f" ({'; '.join(errors)})" if errors else ""))
@@ -1201,7 +1263,17 @@ def _chain_bundle(url: str):
             try:
                 cert = x509.load_der_x509_certificate(data)
             except ValueError:
-                cert = x509.load_pem_x509_certificate(data)
+                try:
+                    cert = x509.load_pem_x509_certificate(data)
+                except ValueError:       # a .p7c bundle (PKCS#7), as some CAs publish
+                    from cryptography.hazmat.primitives.serialization import pkcs7
+                    try:
+                        certs = pkcs7.load_der_pkcs7_certificates(data)
+                    except ValueError:
+                        certs = pkcs7.load_pem_pkcs7_certificates(data)
+                    for c in certs[:-1]:
+                        extra.append(c.public_bytes(Encoding.PEM).decode())
+                    cert = certs[-1]
             extra.append(cert.public_bytes(Encoding.PEM).decode())
             if cert.issuer == cert.subject:
                 break
@@ -1214,6 +1286,37 @@ def _chain_bundle(url: str):
     except Exception:
         return None
     return _BUNDLES[host]
+
+
+_LEGACY = set()
+
+
+def _legacy_adapter_class():
+    import ssl
+    from requests.adapters import HTTPAdapter
+
+    class LegacyTLSAdapter(HTTPAdapter):
+        """TLS for old government servers: allows legacy renegotiation and smaller DH keys
+        (OpenSSL 3 refuses both by default). Certificate and host-name checks stay on."""
+        def init_poolmanager(self, *a, **kw):
+            ctx = ssl.create_default_context()
+            try:
+                import certifi
+                ctx.load_verify_locations(certifi.where())
+            except Exception:
+                pass
+            ctx.options |= getattr(ssl, "OP_LEGACY_SERVER_CONNECT", 0x4)
+            try:
+                ctx.set_ciphers("DEFAULT:@SECLEVEL=1")
+            except ssl.SSLError:
+                pass
+            kw["ssl_context"] = ctx
+            return super().init_poolmanager(*a, **kw)
+    return LegacyTLSAdapter
+
+
+def _LegacyTLSAdapter():
+    return _legacy_adapter_class()()
 
 
 def quick_session(base):
@@ -1237,7 +1340,22 @@ def quick_session(base):
         kw.setdefault("timeout", (15, 90))
         try:
             return orig(method, url, **kw)
-        except requests.exceptions.SSLError:
+        except requests.exceptions.SSLError as e:
+            if re.search(r"legacy renegotiation|dh key too small|handshake failure|unsupported protocol|"
+                         r"no protocols available|sslv3 alert", str(e), re.I):
+                # an old server setup (legacy renegotiation, small DH keys): talk to it with an
+                # older-compatible TLS setup; the certificate is still checked in full
+                from urllib.parse import urlparse
+                host = urlparse(url).hostname
+                if host not in _LEGACY:
+                    s.mount(f"https://{host}", _LegacyTLSAdapter())
+                    _LEGACY.add(host)
+                    try:
+                        return orig(method, url, **kw)
+                    except requests.exceptions.SSLError as e2:
+                        e = e2
+                if "certificate verify failed" not in str(e):
+                    raise
             # many government sites don't send their intermediate certificate; fetch it from the
             # address in the site certificate (AIA) and verify again with it - verification stays on
             bundle = _chain_bundle(url)
@@ -1254,6 +1372,10 @@ def _short_error(e) -> str:
     m = re.search(r"(\d{3}) (?:Client|Server) Error", t)
     if m:
         return f"HTTP {m.group(1)}"
+    if "SSLError" in t or "SSL:" in t:
+        m = re.search(r"\[SSL: ([A-Z_]+)\]|(certificate verify failed[^)'\"]{0,80}|unsafe legacy renegotiation"
+                      r"|dh key too small|wrong version number|handshake failure)", t, re.I)
+        return "SSL error" + (f" ({(m.group(1) or m.group(2)).lower()})" if m else "")
     for k, v in (("Read timed out", "timeout"), ("ConnectTimeout", "timeout (connect)"), ("NameResolution", "DNS: no such site"),
                  ("SSLError", "SSL error"), ("ConnectionRefused", "connection refused"), ("RemoteDisconnected", "disconnected"),
                  ("Max retries exceeded", "connection failed")):

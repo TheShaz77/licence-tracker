@@ -2141,3 +2141,79 @@ def test_za_casp_reads_fais_export_then_falls_back_to_the_linked_list(tmp_path, 
     recs = za.ZACASPSource().fetch_web(ctx)
     assert len(recs) == 30 and "April 2024" in recs[0].status_detail
     assert "chosen:" in (tmp_path / "debug" / "za_casp_candidates.txt").read_text()
+
+def test_date_key_other_languages():
+    from regtracker.sources.national import _date_key as d
+    assert d("Daftar Posisi 25 Mei 2026") == (2026, 5, 25)
+    assert d("Posisi 13 Agustus 2026") > d("Posisi 22 Mei 2026")
+    assert d("15 de diciembre de 2025") == (2025, 12, 15)
+
+
+def test_first_site_and_quoted_names():
+    from regtracker.sources.national import _first_site, parse_file
+    assert _first_site("bet25.dk\ncasinoGo.dk") == "https://bet25.dk"
+    assert _first_site("www.x.com") == "https://www.x.com" and _first_site("N/A") == ""
+    raw = b'Name of Provider,Registration\n"""eMoney Georgia""",0001-9004\n'
+    recs, _ = parse_file(raw, {"url": "x.csv", "name_column": "Name of Provider"}, "GE", "NBG")
+    assert recs[0].name == "eMoney Georgia"
+
+
+def test_zipped_csv_register():
+    import io
+    import zipfile
+    from regtracker.sources.national import parse_file
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w") as z:
+        z.writestr("Licence.csv", '"Account Name","Activity"\n"Kwiff Limited","Remote Betting"\n')
+    recs, _ = parse_file(buf.getvalue(), {"url": "x", "name_column": "Account Name", "type_column": "Activity"},
+                         "IE", "GRAI")
+    assert [(r.name, r.licence_type) for r in recs] == [("Kwiff Limited", "Remote Betting")]
+
+
+def test_raw_html_rows_get_their_section():
+    from regtracker.sources.national import parse_file
+    html = (b'<h3>Commercial Banks</h3><h5 class="fd-item-title">Tonga Development <br/>Bank</h5>'
+            b'<h3>License Type A</h3><h5 class="fd-item-title"><b>FEXCO Tonga Limited</b></h5>'
+            b'<h3>Under Banking License</h3><h5 class="fd-item-title">Corner Store</h5>')
+    spec = {"url": "x", "format": "text_regex", "raw_html": True,
+            "row_regex": '<h5 class="fd-item-title[^"]*">(?P<name>.*?)</h5>',
+            "section_regex": r"<h3>([^<]+)</h3>", "type_column": "section",
+            "exclude_column": "section", "exclude_pattern": "Under Banking",
+            "type_patterns": {"Banks": "Bank", "Type A": "FX dealer A"}}
+    recs, _ = parse_file(html, spec, "TO", "NRBT")
+    assert [(r.name, r.licence_type) for r in recs] == [("Tonga Development Bank", "Bank"),
+                                                         ("FEXCO Tonga Limited", "FX dealer A")]
+
+
+def test_find_link_in_json_with_bare_path():
+    import logging
+    from regtracker.sources.national import find_link
+
+    class R:
+        text = '{"registeredProvidersFile":"pay/providers/list-of-psps-eng-12-10-26.xlsx","agentsFile":"a.xlsx"}'
+        def raise_for_status(self):
+            pass
+
+    class S:
+        def get(self, url, **kw):
+            assert kw["headers"]["Accept-Language"] == "en"
+            return R()
+
+    class C:
+        session = S()
+        log = logging.getLogger("t")
+    import regtracker.http as h
+    orig = h.robots_allowed
+    h.robots_allowed = lambda *a, **k: True
+    try:
+        u = find_link(C, {"page": "https://nbg.gov.ge/gw/api/x", "link_pattern": r"list-of-psps-eng.*\.xlsx$",
+                          "link_base": "https://nbg.gov.ge/fm/", "page_headers": {"Accept-Language": "en"}})
+    finally:
+        h.robots_allowed = orig
+    assert u == "https://nbg.gov.ge/fm/pay/providers/list-of-psps-eng-12-10-26.xlsx"
+
+
+def test_ssl_errors_are_named():
+    from regtracker.sources.national import _short_error
+    e = Exception("Max retries exceeded (Caused by SSLError(SSLError(1, '[SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] x')))")
+    assert _short_error(e) == "SSL error (unsafe_legacy_renegotiation_disabled)"
