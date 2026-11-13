@@ -1,33 +1,33 @@
 {
- "frn": 951209,
+ "frn": 500498,
  "address_response": [
   {
-   "URL": "https://register.fca.org.uk/services/V0.1/Firm/951209/Address?Type=PPOB",
-   "Website Address": "www.eicosinv.com",
-   "Phone Number": "+4402031482180",
+   "URL": "https://register.fca.org.uk/services/V0.1/Firm/500498/Address?Type=PPOB",
+   "Website Address": "www.bernsteinresearch.com",
+   "Phone Number": "+4402077621000",
    "Country": "UNITED KINGDOM",
-   "Postcode": "W1H 7AL",
-   "County": "",
-   "Town": "BRISTOL",
-   "Address Line 4": "",
-   "Address LIne 3": "",
-   "Address Line 2": "",
-   "Address Line 1": "One Great Cumberland Place",
-   "Address Type": "Principal Place of Business"
-  },
-  {
-   "URL": "https://register.fca.org.uk/services/V0.1/Firm/951209/Address?Type=Complaint",
-   "Website Address": "",
-   "Phone Number": "+4402031482180",
-   "Country": "UNITED KINGDOM",
-   "Postcode": "W1H 7AL",
+   "Postcode": "EC2M 5SH",
    "County": "",
    "Town": "London",
    "Address Line 4": "",
    "Address LIne 3": "",
    "Address Line 2": "",
-   "Address Line 1": "One Great Cumberland Place",
-   "Individual": "Askan Denstaedt",
+   "Address Line 1": "60 London Wall",
+   "Address Type": "Principal Place of Business"
+  },
+  {
+   "URL": "https://register.fca.org.uk/services/V0.1/Firm/500498/Address?Type=Complaint",
+   "Website Address": "",
+   "Phone Number": "+4402076768073",
+   "Country": "UNITED KINGDOM",
+   "Postcode": "EC2M 5SH",
+   "County": "",
+   "Town": "London",
+   "Address Line 4": "",
+   "Address LIne 3": "",
+   "Address Line 2": "",
+   "Address Line 1": "60 London Wall",
+   "Individual": "Michael Hodnett",
    "Address Type": "Complaints Contact"
   }
  ]
