@@ -101162,6 +101162,20 @@
 "https://www.canadapost-postescanada.ca"
 ]
 },
+"q:Q1032739": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1267.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 124804000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.restoretherhs.co.uk"
+]
+},
 "q:Q1034654": {
 "checked": "2026-11-12",
 "currency": "USD",
@@ -101222,6 +101236,20 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.swedbank.lv"
+]
+},
+"q:Q104563371": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 211.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 10769978.0,
+"revenue_year": "2026",
+"sites": [
+"https://www.firefighterscharity.org.uk"
 ]
 },
 "q:Q104585876": {
@@ -101496,6 +101524,20 @@
 "https://www.globusbank.com"
 ]
 },
+"q:Q110909603": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 885.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 262508000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.savethechildren.org.uk"
+]
+},
 "q:Q110915472": {
 "checked": "2026-11-12",
 "employees": 500.0,
@@ -101615,13 +101657,18 @@
 "https://www.nordea.com"
 ]
 },
-"q:Q112581356": {
+"q:Q112666885": {
 "checked": "2026-11-12",
-"linkedin": "https://www.linkedin.com/company/vr-bank-bonn-rhein-sieg-eg",
+"currency": "GBP",
+"employees": 500.0,
+"employees_year": "2025",
+"linkedin": "",
 "parent": "",
 "parent_linkedin": "",
+"revenue": 19252174.0,
+"revenue_year": "2025",
 "sites": [
-"https://www.vrbank-brs.de"
+"https://www.stelizabethhospice.org.uk"
 ]
 },
 "q:Q113030774": {
@@ -101631,6 +101678,20 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.second-foundation.eu"
+]
+},
+"q:Q113069937": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1213.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 182080000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.rbo.org.uk"
 ]
 },
 "q:Q113232090": {
@@ -103609,6 +103670,20 @@
 "parent_linkedin": "",
 "sites": []
 },
+"q:Q131561641": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 287.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 21166000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.thameshospice.org.uk"
+]
+},
 "q:Q131825121": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -103622,6 +103697,20 @@
 "parent": "",
 "parent_linkedin": "",
 "sites": []
+},
+"q:Q131845376": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 160.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 24142000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.amnesty.org.uk/about/accountability/governance/amnesty-international-uk-charitable-trust"
+]
 },
 "q:Q13188974": {
 "checked": "2026-11-12",
@@ -105698,6 +105787,32 @@
 "parent_linkedin": "",
 "sites": []
 },
+"q:Q141190520": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1815.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 67323001.0,
+"revenue_year": "2024",
+"sites": []
+},
+"q:Q141191015": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 40.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 74377771.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.charitiestrust.org"
+]
+},
 "q:Q141409609": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/monemon",
@@ -107575,6 +107690,20 @@
 "https://www.sparkasse-freising.de"
 ]
 },
+"q:Q1621811": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1765.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 151003000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.britishlegion.org.uk"
+]
+},
 "q:Q16218534": {
 "checked": "2026-11-12",
 "employees": 76.0,
@@ -108231,6 +108360,34 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.ksk-bautzen.de"
+]
+},
+"q:Q17080503": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1896.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 143833000.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.alzheimers.org.uk"
+]
+},
+"q:Q17084916": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 36.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 5821402.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.coppafeel.org"
 ]
 },
 "q:Q1715498": {
@@ -109342,6 +109499,20 @@
 "sites": [
 "https://www.nbg.gr",
 "http://www.nbg.gr"
+]
+},
+"q:Q18160980": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 234.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 14740183.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.northlondonhospice.org"
 ]
 },
 "q:Q18169782": {
@@ -111138,6 +111309,20 @@
 "https://www.uobgroup.com",
 "https://www.uob.co.th",
 "https://www.uob.co.id"
+]
+},
+"q:Q20646969": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 397.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 59270000.0,
+"revenue_year": "2025",
+"sites": [
+"http://breastcancernow.org"
 ]
 },
 "q:Q20744004": {
@@ -113901,6 +114086,20 @@
 "https://www.sparkasse-haslach-zell.de"
 ]
 },
+"q:Q2689124": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 180.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 20232000.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.landmarktrust.org.uk"
+]
+},
 "q:Q26898315": {
 "checked": "2026-11-12",
 "employees": 47.0,
@@ -113970,6 +114169,17 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.rb-elln.de"
+]
+},
+"q:Q274372": {
+"checked": "2026-11-12",
+"employees": 10617.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.evokeplc.com"
 ]
 },
 "q:Q27479372": {
@@ -114149,6 +114359,20 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.stroud.gov.uk"
+]
+},
+"q:Q2840694": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 269.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 61949957.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.alzheimersresearchuk.org"
 ]
 },
 "q:Q28450768": {
@@ -114332,6 +114556,20 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.palatine.fr"
+]
+},
+"q:Q2884670": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 7404.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 340251582.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.barnardos.org.uk"
 ]
 },
 "q:Q28873035": {
@@ -114757,6 +114995,20 @@
 "http://www.rothschild-cie.fr"
 ]
 },
+"q:Q30265046": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 9.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 914190.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.bds.org.uk"
+]
+},
 "q:Q30267139": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -114818,6 +115070,20 @@
 "revenue_year": "2025",
 "sites": [
 "http://www.gosh.org"
+]
+},
+"q:Q30296984": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 34.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 2637478.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.meningitis.org"
 ]
 },
 "q:Q30300069": {
@@ -114886,6 +115152,20 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.eurogarages.com"
+]
+},
+"q:Q3067365": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 626.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 44795369.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.fauna-flora.org"
 ]
 },
 "q:Q3093140": {
@@ -115244,6 +115524,20 @@
 "https://www.co-operativebank.co.uk"
 ]
 },
+"q:Q3569774": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 680.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 41481000.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.royalvoluntaryservice.org.uk"
+]
+},
 "q:Q3633485": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/idbi-bank",
@@ -115588,6 +115882,18 @@
 "https://www.rb-onw.de"
 ]
 },
+"q:Q4526279": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 23598000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.scottishspca.org"
+]
+},
 "q:Q45568": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/unicredit",
@@ -115736,6 +116042,20 @@
 "sites": [
 "https://www.affingroup.com/en/homepage",
 "http://www.affinbank.com.my"
+]
+},
+"q:Q4691850": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1317.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 131786000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.ageuk.org.uk"
 ]
 },
 "q:Q46931324": {
@@ -115898,6 +116218,46 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.wish.com"
+]
+},
+"q:Q4794095": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 90.0,
+"employees_year": "2026",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 13721354.0,
+"revenue_year": "2026",
+"sites": [
+"https://armybenevolentfund.org"
+]
+},
+"q:Q4797635": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 280.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 30018000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.versusarthritis.org"
+]
+},
+"q:Q4809461": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 10453368.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.aicr.org.uk"
 ]
 },
 "q:Q481206": {
@@ -116263,6 +116623,20 @@
 "https://group.bnpparibas"
 ]
 },
+"q:Q5002927": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 109.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 6060000.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.butterfly-conservation.org"
+]
+},
 "q:Q5008589": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -116277,6 +116651,20 @@
 "http://cafod.org.uk"
 ]
 },
+"q:Q5014548": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 128.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 11861258.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.ctc.org.uk"
+]
+},
 "q:Q50258367": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -116284,6 +116672,21 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.paymium.com"
+]
+},
+"q:Q5030960": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1805.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 232600000.0,
+"revenue_year": "2025",
+"sites": [
+"https://canalrivertrust.org.uk/cymru",
+"https://canalrivertrust.org.uk"
 ]
 },
 "q:Q5053244": {
@@ -116855,6 +117258,20 @@
 "https://giantfood.com"
 ]
 },
+"q:Q5564543": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 273.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 34217000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.girlguiding.org.uk"
+]
+},
 "q:Q55810105": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/fisher-investments-uk",
@@ -117061,6 +117478,34 @@
 "https://www.hiowaa.org"
 ]
 },
+"q:Q56584007": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 73.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 36482378.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.concern.net"
+]
+},
+"q:Q56585212": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 30.0,
+"employees_year": "2026",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 5136000.0,
+"revenue_year": "2026",
+"sites": [
+"http://kchcharity.org.uk"
+]
+},
 "q:Q56653727": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -117077,6 +117522,20 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.bpaura.banquepopulaire.fr"
+]
+},
+"q:Q5691640": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 226.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 16410564.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.hearingdogs.org.uk"
 ]
 },
 "q:Q571156": {
@@ -117243,6 +117702,20 @@
 "parent_linkedin": "https://www.linkedin.com/company/zenith-bank-group",
 "sites": [
 "https://www.zenithbank.com"
+]
+},
+"q:Q599997": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 760.0,
+"employees_year": "2022",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 91432000.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.nts.org.uk"
 ]
 },
 "q:Q60540983": {
@@ -117430,6 +117903,20 @@
 "http://www.kidneyresearchuk.org"
 ]
 },
+"q:Q6415893": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 300.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 10904028.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.kirkwoodhospice.co.uk"
+]
+},
 "q:Q65122274": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/jana-small-financebank",
@@ -117534,6 +118021,34 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.berenberg.de"
+]
+},
+"q:Q6724723": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 1782.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 245546000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.macmillan.org.uk"
+]
+},
+"q:Q6725780": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 95.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 8865000.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.macularsociety.org"
 ]
 },
 "q:Q67323294": {
@@ -117847,6 +118362,20 @@
 "https://www.openbank.es"
 ]
 },
+"q:Q7138534": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 484.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 48566393.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.parkinsons.org.uk"
+]
+},
 "q:Q7156870": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/payoneer",
@@ -117921,6 +118450,34 @@
 "https://www.raleys.com"
 ]
 },
+"q:Q7306467": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 396.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 12867957.0,
+"revenue_year": "2025",
+"sites": [
+"http://www.redwings.org.uk"
+]
+},
+"q:Q7316814": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 25.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 3841248.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.greyhoundtrust.org.uk"
+]
+},
 "q:Q7362554": {
 "checked": "2026-11-12",
 "employees": 430.0,
@@ -117930,6 +118487,20 @@
 "parent_linkedin": "",
 "sites": [
 "https://salt.bank"
+]
+},
+"q:Q7372653": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 137.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 5224124.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.roycastle.org"
 ]
 },
 "q:Q7387053": {
@@ -118007,6 +118578,18 @@
 "revenue_year": "2025",
 "sites": [
 "https://www.scope.org.uk"
+]
+},
+"q:Q7435605": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 8786516.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.scaa.org.uk"
 ]
 },
 "q:Q744149": {
@@ -118232,6 +118815,15 @@
 "https://www.capital.bank.in"
 ]
 },
+"q:Q7671560": {
+"checked": "2026-11-12",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.tsb.co.uk"
+]
+},
 "q:Q76743161": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/apt-pay-inc",
@@ -118248,6 +118840,34 @@
 "parent_linkedin": "",
 "sites": [
 "https://tavid.ee"
+]
+},
+"q:Q7694371": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 148.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 19842506.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.teenagecancertrust.org"
+]
+},
+"q:Q7730643": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 786.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 59557831.0,
+"revenue_year": "2025",
+"sites": [
+"https://www.thedonkeysanctuary.org.uk"
 ]
 },
 "q:Q7738454": {
@@ -118461,6 +119081,20 @@
 "revenue_year": "2025",
 "sites": [
 "https://woodgreen.org.uk"
+]
+},
+"q:Q8035831": {
+"checked": "2026-11-12",
+"currency": "GBP",
+"employees": 131.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 9944000.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.worldhorsewelfare.org/Home"
 ]
 },
 "q:Q803873": {
@@ -123189,19 +123823,6 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.alynapp.com"
-},
-"site:am-one-int.co.uk": {
-"checked": "2026-11-12",
-"email": "info@am-one-int.co.uk",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/asset-management-one-international-ltd",
-"note": "",
-"pages": 1,
-"phone": "00442073293777",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.am-one-int.co.uk"
 },
 "site:am-one-int.co.uk": {
 "checked": "2026-11-12",
@@ -135545,19 +136166,6 @@
 "site:canadalifeassetmanagement.co.uk": {
 "checked": "2026-11-12",
 "email": "tim.lewis@canadalife.co.uk",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/canada-life-asset-management",
-"note": "",
-"pages": 2,
-"phone": "03456060708",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.canadalifeassetmanagement.co.uk"
-},
-"site:canadapost-postescanada.ca": {
-"checked": "2026-11-11",
-"email": "groupcsc@canadalife.co.uk",
 "email_from": "firm website",
 "employees": 0,
 "linkedin": "https://www.linkedin.com/company/canada-life-asset-management",
@@ -148581,19 +149189,6 @@
 "v": 2,
 "website": "https://www.europacapital.com"
 },
-"site:europacapital.com": {
-"checked": "2026-11-12",
-"email": "info@europacapital.com",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "https://www.linkedin.com/company/europa-capital",
-"note": "",
-"pages": 2,
-"phone": "+4402078816800",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.europacapital.com"
-},
 "site:european-markets.co.uk": {
 "checked": "2026-11-11",
 "email": "matore@gmail.com",
@@ -156857,19 +157452,6 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.grey.co"
-},
-"site:griffin-insurance.co.uk": {
-"checked": "2026-11-12",
-"email": "griffin@tindallriley.com",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 4,
-"phone": "+44 (0)20 7407 3588",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.griffin-insurance.co.uk"
 },
 "site:griffin-insurance.co.uk": {
 "checked": "2026-11-12",
@@ -166461,19 +167043,6 @@
 "email_from": "firm website",
 "note": "ConnectionError",
 "pages": 0,
-"phone": "",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.kryptlonexchange.com"
-},
-"site:krypto-knight.com": {
-"checked": "2026-11-12",
-"email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 1,
 "phone": "",
 "phone_from": "firm website",
 "v": 2,
@@ -194642,19 +195211,6 @@
 "v": 2,
 "website": "https://www.scottishwidows.co.uk"
 },
-"site:scottishwidows.co.uk": {
-"checked": "2026-11-12",
-"email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 1,
-"phone": "03457166777",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.scottishwidows.co.uk"
-},
 "site:scratchpay.com": {
 "checked": "2026-11-11",
 "email": "support@scratchpay.com",
@@ -203894,19 +204450,6 @@
 "website": "https://www.swedbank.lv"
 },
 "site:sweetbanks.com": {
-"checked": "2026-11-11",
-"email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 2,
-"phone": "+37167444444",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.swedbank.lv"
-},
-"site:sweetbanks.com": {
 "checked": "2026-11-12",
 "email": "",
 "email_from": "firm website",
@@ -210043,19 +210586,6 @@
 "site:uiic.co.uk": {
 "checked": "2026-11-12",
 "email": "",
-"email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 4,
-"phone": "",
-"phone_from": "firm website",
-"v": 2,
-"website": "https://www.uiic.co.uk"
-},
-"site:ujjivansfb.bank.in": {
-"checked": "2026-11-11",
-"email": "support@uia.co.uk",
 "email_from": "firm website",
 "employees": 0,
 "linkedin": "",
@@ -233766,6 +234296,7 @@
 "boc:a7db2f0a-189e-ef11-8a69-6045bd60b625": "Q140933838",
 "boc:db247a8a-f9c3-f011-bbd3-7ced8d360bbd": "Q123181621",
 "boc:e5c4cf74-5134-f111-88b4-7ced8da6563c": "Q88857869",
+"br_bcb:00360305": "Q835283",
 "br_bcb:01858774": "Q4854117",
 "br_bcb:13009717": "Q16496452",
 "br_bcb:31872495": "Q93117593",
@@ -233873,6 +234404,7 @@
 "cfd_eu:549300E5ENQVY2IBLF67": "Q113466783",
 "cfd_eu:549300FXBIWWGK7T0Y98": "Q104429642",
 "cfd_eu:549300GH3DFCXVNBHE59": "Q17521037",
+"cfd_eu:549300GKFG0RYRRQ1414": "Q80788",
 "cfd_eu:549300I48OJHSE9OZS95": "Q137779116",
 "cfd_eu:549300IRGNL8Q3O8Y413": "Q7234083",
 "cfd_eu:549300JB1P61FUTPEZ75": "Q12778981",
@@ -233881,15 +234413,21 @@
 "cfd_eu:549300ND1MQ8SNNYMJ22": "Q2205755",
 "cfd_eu:549300OLBL49CW8CT155": "Q5907815",
 "cfd_eu:549300PZMFIQR79Q0T97": "Q15614925",
+"cfd_eu:549300Q3OIWRHQUQM052": "Q124155619",
 "cfd_eu:549300RFKNCOX56F8591": "Q7283806",
 "cfd_eu:549300S2T3FWVVXWJI89": "Q7541907",
 "cfd_eu:549300SBPFE9JX7N8J82": "Q7389567",
 "cfd_eu:549300SXM92LQ05OJQ76": "Q7573578",
 "cfd_eu:549300U4LIZV0REEQQ46": "Q5139377",
 "cfd_eu:549300UE2ZF21B02QG64": "Q3633730",
+"cfd_eu:549300VRM6G42M8OWN49": "Q7573575",
 "cfd_eu:549300XG5LFGN1IGYC71": "Q113466695",
 "cfd_eu:549300YE00MPPHROSI62": "Q113466562",
 "cfd_eu:549300YQPHGOZPRXY653": "Q296765",
+"cfd_eu:5967007LIEEXZX4RVS72": "Q11958585",
+"cfd_eu:5967007LIEEXZX5PU005": "Q857336",
+"cfd_eu:5967007LIEEXZX6Q3K70": "Q115167472",
+"cfd_eu:5967007LIEEXZX8UHK11": "Q4573634",
 "cfd_eu:6354008ZEX1XBUOEUY66": "Q113466586",
 "cfd_eu:6B2PBRV1FCJDMR45RZ53": "Q941020",
 "cfd_eu:6EWKU0FGVX5QQJHFGT48": "Q2877312",
@@ -233903,7 +234441,6 @@
 "cfd_eu:815600508DD477037C23": "Q128645154",
 "cfd_eu:815600522538355AE429": "Q27313701",
 "cfd_eu:81560064085A02B2B297": "Q16530902",
-"cfd_eu:851WYGNLUQLFZBSYGB56": "Q157617",
 "cfd_eu:95980020140005317135": "Q116480794",
 "cfd_eu:95980020140005487855": "Q113464599",
 "cfd_eu:95980020140005658381": "Q19604339",
@@ -234025,7 +234562,6 @@
 "cfd_eu:TO822O0VT80V06K0FH57": "Q1026044",
 "cfd_eu:UAIAINAJ28P30E5GWE37": "Q795898",
 "cfd_eu:VBHFXSYT7OG62HNT8T76": "Q131548760",
-"cfd_eu:VDYMYTQGZZ6DU0912C88": "Q152106",
 "cfd_eu:VWMYAEQSTOPNV0SUGU82": "Q806808",
 "cfd_eu:W2RVX391BFSQJQAGEM62": "Q3006190",
 "cfd_eu:ZSLF02UC3X1JFV1UX676": "Q113466245",
@@ -234130,6 +234666,7 @@
 "eba:FI_FIN_FSA!29182549": "Q137779150",
 "eba:FI_FIN_FSA!32888032": "Q137779151",
 "eba:FI_FIN_FSA!33680559": "Q141163716",
+"eba:FT00103719": "Q21750286",
 "eba:FT00112298": "Q110516569",
 "eba:HR_HNB!IEN110": "Q470696",
 "eba:HR_HNB!IEN116": "Q131892091",
@@ -234595,7 +235132,6 @@
 "mica:529900OSVFQK3XISEQ85": "Q137779206",
 "mica:529900Q4W1LSVUCO8L66": "Q24288522",
 "mica:529900QH6TWSXWH0XM44": "Q137779173",
-"mica:529900VHU3S8ZYAQYZ61": "Q1958943",
 "mica:5493000LM0MZ4JPMGM90": "Q7096483",
 "mica:54930056IRBXK0Q1FP96": "Q9598744",
 "mica:5493007WZ7IFULIL8G21": "Q109391386",
