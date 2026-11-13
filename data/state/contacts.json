@@ -4,6 +4,11 @@
 "website": "http://www.htisec.com",
 "website_from": "Wikidata"
 },
+"cfd_cy:ae45049": {
+"checked": "2026-11-13",
+"website": "https://www.equiti-capital.com/cy-en",
+"website_from": "Wikidata"
+},
 "cfd_eu:2138001R35G3IZJZZC68": {
 "checked": "2026-11-10",
 "website": "https://capital.com",
@@ -6299,6 +6304,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:2138001ME4Z9Z8DZNS52": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138001NDMJFHZV4FL43": {
 "checked": "2026-11-11",
 "website": ""
@@ -6309,6 +6318,10 @@
 },
 "lei:2138001VME4MKDJSIB38": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:2138001VXH42U6PR6K39": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138001WO21Z3B8Y8K20": {
@@ -6361,6 +6374,10 @@
 },
 "lei:2138003IGGAUDLPNC244": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:2138003J5Y8VPB7VH350": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138003K4HA4JNKW7342": {
@@ -6427,6 +6444,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:2138004UADE7XZYOY375": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138004V3QRHHLXXZU17": {
 "checked": "2026-11-11",
 "website": ""
@@ -6457,6 +6478,10 @@
 },
 "lei:2138005DRCU66B8BNY04": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:2138005EFA978Y43G944": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138005G19GJFZLMU242": {
@@ -6523,8 +6548,20 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:2138006N88Y57SVJYT49": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138006O8D7SV36PWU16": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:2138006OM7LL1Q266E22": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:2138006Q4P69VVS8MZ72": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138006QFV6OJMYQC847": {
@@ -6547,12 +6584,24 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:21380072YOYRXZ8TKE88": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:21380073P7J4PAD91E29": {
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:2138007AOJ526TASD235": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138007B2H458QJU8221": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:2138007B8VEIDB8DWH83": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138007D4SHGY1KX4T75": {
@@ -6593,6 +6642,10 @@
 },
 "lei:2138007PMFRAGF5WTW87": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:2138007PT2CLJWOCDZ83": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138007WKF5CM2EUM824": {
@@ -6639,6 +6692,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:2138008GBZOJYXLQEX50": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138008GFCCUSIHXV183": {
 "checked": "2026-11-11",
 "website": ""
@@ -6683,6 +6740,14 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:21380092PBQSQNXZMH30": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800949LR8JK276A27": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800984CWACNBY8F31": {
 "checked": "2026-11-06",
 "website": ""
@@ -6693,6 +6758,10 @@
 },
 "lei:2138009FPTOGM7OUCN40": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:2138009GKOGCFS4USD64": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138009LRPGXL479W190": {
@@ -6719,8 +6788,16 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:2138009UJX646ZT32817": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2138009VNMX66BDDFX75": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:2138009WSAUBPY5TI109": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:2138009Y59EAR7H1UO97": {
@@ -6927,6 +7004,14 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:213800D63GJ2YBQSBO66": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800D784NODKJ26N67": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800DBQIB6VBNU5C64": {
 "checked": "2026-11-06",
 "website": "https://www.alpha.gr"
@@ -6959,6 +7044,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800DO1R3D5F7LH118": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800DQE751CUP2N348": {
 "checked": "2026-11-10",
 "website": ""
@@ -6969,6 +7058,10 @@
 },
 "lei:213800DRQPQP2QNCYG86": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800DUG6YNHV5ZLT91": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800DV8T188HXYWD21": {
@@ -7011,8 +7104,16 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:213800EF5UZ2V5MX1O19": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800EFA2CMV8J58E64": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800EG2RLGP5VLLM74": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800EI7VKHJGF5VT77": {
@@ -7025,6 +7126,10 @@
 },
 "lei:213800EK7ZNBL7FQE477": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800EKX595V51V8056": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800EMT81223B2UU41": {
@@ -7087,6 +7192,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800FKH3W3ONRVG873": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800FLZB75NI6NRO92": {
 "checked": "2026-11-06",
 "website": ""
@@ -7103,8 +7212,16 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:213800FVXBJLK7Z64G66": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800FWT9A51E6FDK45": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800FXT8YDQ67AE287": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800G1YD18JVVXU246": {
@@ -7118,6 +7235,10 @@
 "lei:213800GIFQMSV7HROS23": {
 "checked": "2026-11-10",
 "website": "https://www.etoro.com"
+},
+"lei:213800GJ47NI1547NH25": {
+"checked": "2026-11-13",
+"website": ""
 },
 "lei:213800GMZTKXUBL83249": {
 "checked": "2026-11-11",
@@ -7149,6 +7270,10 @@
 },
 "lei:213800GZPY6S4NGFYJ51": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:213800H18IXNAMNAEI50": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800H2UOPJDGKRTY19": {
@@ -7187,6 +7312,10 @@
 "checked": "2026-11-10",
 "website": "https://www.ig.com/de"
 },
+"lei:213800HO2YDYIWT36O75": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800HP6KZ9XS1D1U57": {
 "checked": "2026-11-10",
 "website": ""
@@ -7219,6 +7348,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:213800I6QTY6EVZ3NT32": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800I6ZX6XG3BHR692": {
 "checked": "2026-11-11",
 "website": ""
@@ -7234,6 +7367,10 @@
 "lei:213800ID258V2NOMTB11": {
 "checked": "2026-11-11",
 "website": ""
+},
+"lei:213800ID68D4W72RNT97": {
+"checked": "2026-11-13",
+"website": "https://www.equiti-capital.com/cy-en"
 },
 "lei:213800ID88ZAWFL5EO28": {
 "checked": "2026-11-11",
@@ -7263,6 +7400,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800IROGZSPMTLOB25": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800IVMM2CB4VLYG74": {
 "checked": "2026-11-11",
 "website": ""
@@ -7273,6 +7414,10 @@
 },
 "lei:213800IYZNFUEIYMDE59": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:213800IZQ8PAXTQV2G91": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800J256ZBGMGZLV44": {
@@ -7297,6 +7442,10 @@
 },
 "lei:213800J7R5S5HB56BJ48": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:213800J8EV4SSMIBWB22": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800J8L9UF16XHW959": {
@@ -7347,12 +7496,32 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800JXJNPQ5XWE8L51": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800K13N6U5B2BU244": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800K15D5H1HSN8T84": {
 "checked": "2026-11-11",
 "website": ""
 },
 "lei:213800K7TKCQHQ7V8Q83": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:213800K9HSZOZ93Y2U19": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800KCQNP46XTVF260": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800KFMFJJCTVXY398": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800KGF4EFNUQKAT69": {
@@ -7407,6 +7576,18 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800LBOIN2CDM5CW71": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800LENWF8QHU2K928": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800LFAHYEZ7VDSQ60": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800LFPK48IEQQW552": {
 "checked": "2026-11-10",
 "website": ""
@@ -7423,12 +7604,20 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:213800LNKY7VKUZJAD45": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800LUMX8BI52XO931": {
 "checked": "2026-11-06",
 "website": ""
 },
 "lei:213800LX3LNYIHE7HX39": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800M2NWEK47T96D85": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800M3Q8UL8CZJAU53": {
@@ -7575,6 +7764,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800NVX644XRESSZ91": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800NYXKJLT7T2WF13": {
 "checked": "2026-11-11",
 "website": ""
@@ -7589,6 +7782,14 @@
 },
 "lei:213800O46VY8NJD1BD28": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800O745YAU8XJDM35": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800O8SA1IH5IXAV59": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800O9KWKPD6B82K35": {
@@ -7647,6 +7848,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800P7OYMIVCX7Z430": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800P9OYGKAJGKW325": {
 "checked": "2026-11-10",
 "website": ""
@@ -7661,6 +7866,10 @@
 },
 "lei:213800PDJEZ5JXI9V158": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800PF75J5KIBM8E68": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800PL9FD9NQ1DE892": {
@@ -7691,6 +7900,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800PZFB9VV8FNWB30": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800PZWYFKIOAGQY35": {
 "checked": "2026-11-10",
 "website": ""
@@ -7701,6 +7914,10 @@
 },
 "lei:213800Q3LL8GBWJG4S51": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:213800Q6KJH8RVR7LW56": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800QGAHOREDYTPE71": {
@@ -7729,6 +7946,10 @@
 },
 "lei:213800QOZUTO9BPCOA58": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800QT8WZK738XGX35": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800R3IY74VWTLSJ54": {
@@ -7767,12 +7988,24 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:213800RN44VPALXWQR14": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800ROVK72CQLNN629": {
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:213800RUDZPU51FVRR50": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800RW8YEKZI56QJ92": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800S1DAWWOXFDGQ42": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800S27UNSS11O6P26": {
@@ -7843,6 +8076,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800SVEH1JPDU56W19": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800SYQAZFYQR7RT76": {
 "checked": "2026-11-11",
 "website": ""
@@ -7891,8 +8128,16 @@
 "checked": "2026-11-06",
 "website": "https://aegeanbalticbank.com"
 },
+"lei:213800TX8ZB391LJX140": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800TZBKBFZRIVWJ95": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:213800U4JT7HN2435372": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800U5G4COJM5PH909": {
@@ -7955,6 +8200,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800VDRK6EDHETI619": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800VKA8OF2G91X349": {
 "checked": "2026-11-10",
 "website": "http://www.R4.COM"
@@ -7975,6 +8224,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800VWF2ENRXL63G13": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800W1NGBLERUS6M39": {
 "checked": "2026-11-06",
 "website": ""
@@ -7993,6 +8246,10 @@
 },
 "lei:213800WCTUNZAAFKOM93": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:213800WDN7EQXUKM4G17": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800WDZB2Y2EE7BS71": {
@@ -8025,6 +8282,10 @@
 },
 "lei:213800WXX2IQ9KUTMP52": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:213800WYGKF2K3TGPT48": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800X213HJDGUCN173": {
@@ -8079,6 +8340,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:213800XP9YY3GNQGZE38": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800XQ3WSOJWMDCA49": {
 "checked": "2026-11-11",
 "website": ""
@@ -8107,6 +8372,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:213800Y9EYOA814ETY87": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:213800Y9IHU7Q1XX4527": {
 "checked": "2026-11-06",
 "website": ""
@@ -8125,6 +8394,10 @@
 },
 "lei:213800YDRT813XKUGL94": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:213800YF4FFAXV312Q58": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800YGLP66PQFJDE14": {
@@ -8181,6 +8454,14 @@
 },
 "lei:213800Z9KFBIC4EEGW98": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:213800ZGHSN8ZQLN2151": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:213800ZHTVFIRDQ8OE88": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:213800ZIG2Q1IA6JEM88": {
@@ -8643,6 +8924,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900760XXI8LFVUX22": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:25490078EYMP8BER2E04": {
 "checked": "2026-11-11",
 "website": ""
@@ -8719,6 +9004,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:2549008IW4ZD7IZCGD30": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2549008JG2BYYAMYYB60": {
 "checked": "2026-11-11",
 "website": ""
@@ -8783,6 +9072,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:2549009MMS5GQY4HX419": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:2549009R3LQBPKHHTN50": {
 "checked": "2026-11-11",
 "website": ""
@@ -8813,6 +9106,10 @@
 },
 "lei:254900AIK6LGHVSTSS94": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900AJ1KFRP6TY6770": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900AO2WZJWKCCLI24": {
@@ -9055,8 +9352,16 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900DTUYD9YY5N4E51": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:254900DWLRA30R4R5B94": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900DXIQ4SX56YP250": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900DXUDUF2I5D5563": {
@@ -9143,6 +9448,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900FHFT1X7HZ6OY78": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:254900FIJ009TJSAI180": {
 "checked": "2026-11-11",
 "website": ""
@@ -9187,8 +9496,16 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900GBN6EFIVS1GF73": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:254900GKRVJHAPLAR513": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900GLZCDFS9XNHX69": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900GQQEGFT6T3PY71": {
@@ -9275,6 +9592,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900IB0U0RVOPTA088": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:254900IC8YHIDH7T6O57": {
 "checked": "2026-11-11",
 "website": ""
@@ -9289,6 +9610,10 @@
 },
 "lei:254900ISJOFSIFRUOC42": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900IV5GPR6K9JMW78": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900IZS2QO7FS7ED60": {
@@ -9445,6 +9770,10 @@
 },
 "lei:254900KWEB5U7HW3KN53": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900KZT32T1CHSCS35": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900L0QAYOXPGMAK33": {
@@ -9851,6 +10180,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:254900RJ1500Z5X4US86": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:254900RJQFRGKEX7JC81": {
 "checked": "2026-11-11",
 "website": ""
@@ -9873,6 +10206,10 @@
 },
 "lei:254900RUMTKRB53L2381": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900RZVNJGTQ2C6Q86": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900S2MDMR2U0GBL82": {
@@ -9941,6 +10278,10 @@
 },
 "lei:254900TM4O048THHU392": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900TOJXYY84ZY1E09": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900TQPK8W0SV1UD91": {
@@ -10201,6 +10542,14 @@
 },
 "lei:254900XSKSGJEF1PU598": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:254900XTKPKPGR9QD008": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:254900XZW03DXY1DV378": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:254900Y1CWJBGRZL1046": {
@@ -10897,6 +11246,10 @@
 },
 "lei:259400AC7KVMM4JB2376": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:259400ACN0TJL6FUD677": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:259400AFH6IBVP1PO532": {
@@ -12591,9 +12944,17 @@
 "checked": "2026-11-06",
 "website": "https://www.tatrabanka.sk/en/personal"
 },
+"lei:3157005WQR3GP17Z6K87": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:3157006K4C7PJT790450": {
 "checked": "2026-11-06",
 "website": "https://www.creditcoop.ro"
+},
+"lei:3157006PNGXZXXBSNZ45": {
+"checked": "2026-11-13",
+"website": ""
 },
 "lei:315700BB8GELKKC5Z374": {
 "checked": "2026-11-06",
@@ -12602,6 +12963,10 @@
 "lei:315700BEHT3NJAG8RX82": {
 "checked": "2026-11-06",
 "website": "https://www.brci.ro"
+},
+"lei:315700C3TSUBMR2A5390": {
+"checked": "2026-11-13",
+"website": ""
 },
 "lei:315700CAYR7MDC0A4Z80": {
 "checked": "2026-11-06",
@@ -14307,6 +14672,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:52990029TKC9LBIJWM35": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:5299002A6AAQRFGFPM76": {
 "checked": "2026-11-11",
 "website": ""
@@ -15137,6 +15506,10 @@
 },
 "lei:5299006HIBV3ENUMQB84": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:5299006IGVPOGQEU3R46": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:5299006IY04COKD1F936": {
@@ -19331,6 +19704,10 @@
 "checked": "2026-11-06",
 "website": "http://www.umweltbank.de"
 },
+"lei:529900POI4WA3RADSM10": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:529900PPVG3BDSDC4D89": {
 "checked": "2026-11-06",
 "website": ""
@@ -21995,6 +22372,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:5493004QVEF71UG5LL51": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:5493004S3EW5FKCKDU11": {
 "checked": "2026-11-10",
 "website": ""
@@ -22083,6 +22464,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:5493005LFR3XVSOHOS43": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:5493005M1XMNLCLRSV88": {
 "checked": "2026-11-11",
 "website": ""
@@ -22129,6 +22514,10 @@
 },
 "lei:549300615CPXQO52J309": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:54930061WVB2PY0VOY32": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300627QRYTW1KIZ12": {
@@ -22359,8 +22748,16 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:54930084MPFPL8QNFB73": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:54930084TZJBK6D1AY92": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:54930085LWGQ386JYM54": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:54930086UBBM0ZMLUD96": {
@@ -22393,6 +22790,10 @@
 },
 "lei:5493008GNQHVI377MY19": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:5493008H0Y6H4VK01B91": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:5493008JFFHD30I65P35": {
@@ -22575,6 +22976,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:549300AOBWCBUX8I1R48": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300APOHPVL4YFCA77": {
 "checked": "2026-11-06",
 "website": ""
@@ -22602,6 +23007,10 @@
 "lei:549300AX1UM10U30HK09": {
 "checked": "2026-11-06",
 "website": "https://www.bankcomm.com"
+},
+"lei:549300AY0188NLJ8V681": {
+"checked": "2026-11-13",
+"website": ""
 },
 "lei:549300B0FLNFTFYQDJ30": {
 "checked": "2026-11-06",
@@ -22733,6 +23142,10 @@
 },
 "lei:549300C7ANWSAJCH4Y03": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:549300C7WQ0SIIQMPQ31": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300C87RHKB1R1SS32": {
@@ -23071,6 +23484,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:549300FHIIHBXJ2PGX17": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300FJLYOGV9HDK059": {
 "checked": "2026-11-11",
 "website": ""
@@ -23313,6 +23730,10 @@
 },
 "lei:549300HUKIA1IZQHFZ83": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:549300HV1P8CVN4OBH29": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300HV9IHW0B6UUA13": {
@@ -23683,6 +24104,14 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:549300LHBPUT0VBBW127": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:549300LIT450323BK688": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300LJKCCPS0QO4S31": {
 "checked": "2026-11-11",
 "website": ""
@@ -24023,6 +24452,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:549300OBDWYLEP2V5I94": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300OBGOF2IVUD3L23": {
 "checked": "2026-11-06",
 "website": ""
@@ -24155,6 +24588,14 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:549300PJA4LRT7EUYI32": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:549300PJTBHSU0H13E45": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300PKIBU2YUNTH225": {
 "checked": "2026-11-06",
 "website": ""
@@ -24162,6 +24603,10 @@
 "lei:549300PLIQC17ABD1N68": {
 "checked": "2026-11-06",
 "website": "http://www.danskebank.se"
+},
+"lei:549300PLL0EROXI6VH34": {
+"checked": "2026-11-13",
+"website": ""
 },
 "lei:549300PO3ZPO1TWBWB20": {
 "checked": "2026-11-10",
@@ -24251,6 +24696,14 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:549300Q82SNSBMITH078": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:549300QB073VJAC68J85": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300QBUODNBG4CWT29": {
 "checked": "2026-11-11",
 "website": ""
@@ -24273,6 +24726,10 @@
 },
 "lei:549300QHIO1S23JUF392": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:549300QHKOVUB370OO57": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300QHMHYHV6PN4S68": {
@@ -24431,6 +24888,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:549300RRJXQD38W3N104": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300RT3HUPVHDUZ811": {
 "checked": "2026-11-10",
 "website": ""
@@ -24553,6 +25014,14 @@
 },
 "lei:549300SOGU7U2WCM9D57": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:549300SPHL8RYOF0YC13": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:549300SS5YL3DNCPHI21": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300SUE5DO2H5RVG10": {
@@ -24739,6 +25208,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:549300UJ8Q3UJYX8CU24": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300UJHOEPYOK3OJ51": {
 "checked": "2026-11-11",
 "website": ""
@@ -24753,6 +25226,10 @@
 },
 "lei:549300UN6U9Q1BBRSS43": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:549300UOLC26RW3KDJ09": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300UOP2UO6S4VQ011": {
@@ -24851,6 +25328,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:549300VGPFLZ1GI5EF51": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300VKDWF327EOZV52": {
 "checked": "2026-11-11",
 "website": ""
@@ -24873,6 +25354,10 @@
 },
 "lei:549300VTR6EGLGTZLN45": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:549300VYDYXGB1JR5I13": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300VZP67UNNEWFC19": {
@@ -24967,6 +25452,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:549300WVCRYKRUIT7C78": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300WX2OJ5CMH13929": {
 "checked": "2026-11-11",
 "website": ""
@@ -25009,6 +25498,10 @@
 },
 "lei:549300XC68NNLEW2NC89": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:549300XEW2OKEEYGHM53": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300XG5LFGN1IGYC71": {
@@ -25143,6 +25636,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:549300YTIIROTUK6X557": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300YV6LXRPJO3U576": {
 "checked": "2026-11-06",
 "website": "https://merkur.dk"
@@ -25191,6 +25688,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:549300ZCGZNVDA6R3Y84": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:549300ZEF3QWM810M319": {
 "checked": "2026-11-06",
 "website": ""
@@ -25229,6 +25730,10 @@
 },
 "lei:549300ZQDK3ZZYUXZZ24": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:549300ZQFKYDMY048Z42": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:549300ZQRZWWPU44CD35": {
@@ -28391,6 +28896,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:894500CGTQ3PZTSZ9P67": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:894500CLAS7ZBXXITQ20": {
 "checked": "2026-11-10",
 "website": ""
@@ -30443,6 +30952,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:9845000E1ACC85M6C817": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:98450011DF01C69B7883": {
 "checked": "2026-11-11",
 "website": ""
@@ -30475,12 +30988,20 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:9845001B68DF6A75C597": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:9845001C7D9E8F6BD929": {
 "checked": "2026-11-11",
 "website": ""
 },
 "lei:9845001DE7E84FF54124": {
 "checked": "2026-11-10",
+"website": ""
+},
+"lei:9845001DFDFA93MC3D68": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:9845001F61E39K580F74": {
@@ -30575,6 +31096,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:98450042FBB75T7D0A85": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500441D12E4051C92": {
 "checked": "2026-11-06",
 "website": ""
@@ -30589,6 +31114,14 @@
 },
 "lei:984500497A78CEQ61A46": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:9845004998BC3EC4AB97": {
+"checked": "2026-11-13",
+"website": ""
+},
+"lei:98450049D0F01EBAFE04": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:9845004CJ9DCD0964432": {
@@ -30651,6 +31184,10 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:98450056510A8A1D4322": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:98450056897AE764D060": {
 "checked": "2026-11-11",
 "website": ""
@@ -30661,6 +31198,10 @@
 },
 "lei:984500582BA03474AC37": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:98450058C4AA3DE92E58": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500594553DB76C886": {
@@ -30723,6 +31264,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:98450064KS41D2EF6156": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500650BE83E99B737": {
 "checked": "2026-11-10",
 "website": ""
@@ -30759,6 +31304,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:9845007438A0F012BA72": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:98450075VBA36BF6X924": {
 "checked": "2026-11-11",
 "website": ""
@@ -30793,6 +31342,10 @@
 },
 "lei:9845007F3D2E2FCE8A92": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:9845007F477911V4DC98": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500810CD3D88A3666": {
@@ -30855,8 +31408,16 @@
 "checked": "2026-11-06",
 "website": ""
 },
+"lei:98450090C7E00I093828": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500910E6MC5A9A466": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:98450097C488794A6867": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:9845009B05AD8C3A8833": {
@@ -30979,6 +31540,10 @@
 "checked": "2026-11-10",
 "website": ""
 },
+"lei:984500B4483CCC0B1E07": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500B46096CEZF3V19": {
 "checked": "2026-11-11",
 "website": ""
@@ -31011,6 +31576,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:984500BEE40C108D6D61": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500BF55800409BB67": {
 "checked": "2026-11-06",
 "website": ""
@@ -31021,6 +31590,10 @@
 },
 "lei:984500BL4D6E039AFA76": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:984500BPA49BT5995203": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500BV2FE452CE7C67": {
@@ -31045,6 +31618,10 @@
 },
 "lei:984500C5CCO3E89A6A07": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:984500C65491EC2C6Z38": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500C83CAF638E5534": {
@@ -31093,6 +31670,10 @@
 },
 "lei:984500CY1BA2FKF1D213": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:984500D0E861405EB365": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500D1ADF1FEF55D20": {
@@ -31159,6 +31740,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:984500E01C036E10C061": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500E02O8ED7B0R934": {
 "checked": "2026-11-11",
 "website": ""
@@ -31215,6 +31800,10 @@
 "checked": "2026-11-11",
 "website": ""
 },
+"lei:984500EBL33F46CBF732": {
+"checked": "2026-11-13",
+"website": ""
+},
 "lei:984500EC4A4A3EACED91": {
 "checked": "2026-11-10",
 "website": ""
@@ -31229,6 +31818,10 @@
 },
 "lei:984500EF37C46H974E72": {
 "checked": "2026-11-11",
+"website": ""
+},
+"lei:984500ETB4ECEIF29891": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500EX4K6D86CDTP69": {
@@ -31325,6 +31918,10 @@
 },
 "lei:984500N1DF46E7D48967": {
 "checked": "2026-11-06",
+"website": ""
+},
+"lei:984500Q32DBD51DI9F72": {
+"checked": "2026-11-13",
 "website": ""
 },
 "lei:984500SB75F058462A12": {

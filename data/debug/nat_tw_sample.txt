@@ -1,0 +1,9 @@
+url: https://www.banking.gov.tw/webdowndoc?file=/stat/bas/31130.ods
+bytes: 46453  starts: b'PK\x03\x04\x14\x00\x00\x08'
+error: None
+columns used: {'name': 'Institutions'}
+headers: None
+data rows: 88  kept: 88
+type values: None
+first lines:
+'(binary)'

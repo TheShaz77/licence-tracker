@@ -1,0 +1,16 @@
+url: https://www.bdcb.gov.bn/regulatory/list-of-bdcb-licensees?flt_subs%5B0%5D=01hhgccvwskdpa1hf3zwf4a5g7&flt_subs%5B1%5D=01hhgcf42j6765zjtq42n00nv5&flt_subs%5B2%5D=01hhgcy2x6pvm0dpjrf0bdd9qv&flt_subs%5B3%5D=01hhgcyffk2c4xjadp86cypcv3&flt_subs%5B4%5D=01hn2jq3sqhnb837da7mjfg9q7&flt_subs%5B5%5D=01hhgd3rpky6feecdta3cj9kmp&flt_subs%5B6%5D=01hhgd40xtvr1a32ekn80pkxks&page={page}
+bytes: 327773  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type']
+data rows: 0  kept: 0
+type values: []
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+''
+'<head>'
+'    <!-- Google tag (gtag.js) -->'
+'    <script nonce="sA8cgGZcIft6v5P3tIJghCujsFz2U0Ie" async src="https://www.googletagmanager.com/gtag/js?id=G-EJTXFQ5GZP"></script>'
+'    <script nonce="sA8cgGZcIft6v5P3tIJghCujsFz2U0Ie">'
+'        window.dataLayer = window.dataLayer || [];'

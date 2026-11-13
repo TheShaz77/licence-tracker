@@ -1,33 +1,19 @@
-url: https://nbg.gov.ge/en/payment-system/providers
-bytes: 394891  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
-first lines:
-'<!DOCTYPE html><html><head><meta name="facebook-domain-verification" content="8zndw7jba43at59e6a3fz7z2py4epe"/><meta name="theme-color" content="#5f9796"/><meta name="format-detection" content="telephone=no"/><link rel="icon" type="image/png" href="/images/favicon.png"/><script>'
-"              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
-"              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
-"              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
-"              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
-"              })(window,document,'script','dataLayer','GTM-5QR5JG3');"
-'              </script><script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script><meta charSet="utf-8"/><meta name="description" content="The National Bank of Georgia for Financial Stability"/><meta property="og:description" content="The National Bank of Georgia for Fi'
-'№</div><div class="jsx-1402014464 flex items-center mt-1-3"><div class="jsx-3022195269 border-grey-750 border-solid border md:rounded-17-5 rounded-50-0  border-grey-400 flex items-center duration-200 relative md:text-1-6 text-2-6 px-1-8 no-print relative group"><input type="text" value="" placeholde'
-
-url: https://nbg.gov.ge/en/payment-system/providers
-bytes: 394891  starts: b'<!DOCTYP'
+url: https://nbg.gov.ge/fm/%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%93%E1%83%90%E1%83%AE%E1%83%93%E1%83%9D/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%A0%E1%83%94%E1%83%92%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A0%E1%83%98%E1%83%A0%E1%83%94%E1%83%91%E1%83%A3%E1%83%9A%E1%83%98/list-of-psps-eng-12-10-26.xlsx
+bytes: 18458  starts: b'PK\x03\x04\x14\x00\x06\x00'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name']
-data rows: 4  kept: 4
-type values: [('', 4)]
+columns used: {'name': 'Name of Provider', 'type': None, 'id': 'Registration №', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['№', 'Registration №', 'Name of Provider', 'Legal Form', 'Identification Code', '№', 'Date (Day, Month, Year)', 'Location', 'Name and Surname of Director']
+data rows: 41  kept: 41
+type values: [('', 41)]
 first lines:
-'<!DOCTYPE html><html><head><meta name="facebook-domain-verification" content="8zndw7jba43at59e6a3fz7z2py4epe"/><meta name="theme-color" content="#5f9796"/><meta name="format-detection" content="telephone=no"/><link rel="icon" type="image/png" href="/images/favicon.png"/><script>'
-"              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':"
-"              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
-"              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
-"              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
-"              })(window,document,'script','dataLayer','GTM-5QR5JG3');"
-'              </script><script crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script><meta charSet="utf-8"/><meta name="description" content="The National Bank of Georgia for Financial Stability"/><meta property="og:description" content="The National Bank of Georgia for Fi'
-'№</div><div class="jsx-1402014464 flex items-center mt-1-3"><div class="jsx-3022195269 border-grey-750 border-solid border md:rounded-17-5 rounded-50-0  border-grey-400 flex items-center duration-200 relative md:text-1-6 text-2-6 px-1-8 no-print relative group"><input type="text" value="" placeholde'
+'(binary)'
+
+url: https://nbg.gov.ge/fm/საგადახდო/vasps/რეესტრი/vasps-eng-10-11-2026.xlsx
+bytes: 47699  starts: b'PK\x03\x04\x14\x00\x06\x00'
+error: None
+columns used: {'name': 'Name of the Virtual Asset Service Provider', 'type': None, 'id': 'Registration Number at the National Bank of Georgia', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['№', 'Registration Number at the National Bank of Georgia', 'Name of the Virtual Asset Service Provider', 'Commercial Name', 'Legal Form', 'Identification Number', 'Registration Decree', '', 'Director', 'Virtual Asset Services that Provider is allowed', '', '', '']
+data rows: 46  kept: 45
+type values: [('', 45)]
+first lines:
+'(binary)'

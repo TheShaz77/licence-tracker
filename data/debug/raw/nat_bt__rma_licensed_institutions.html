@@ -1,0 +1,1861 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Royal Monetary Authority</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="/static/img/rma-logo-white.png" rel="icon" />
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="/static/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+  <!-- Alertify -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+
+  <!-- Template Main CSS File -->
+  <!-- <link href="/static/css/main.css" rel="stylesheet" /> -->
+
+  <!--Cache Busting-->
+  <link href="/static/css/main.css?v=20261103" rel="stylesheet" />
+  <link href="/static/css/chatbot.css?v=20261103b" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="nav-header">
+    <a href="/" class="logo d-flex align-items-center">
+      <h1 class="d-flex align-items-center">
+        <img class="logo-rma" src="/static/img/rma-logo-white.png" alt="" />
+      </h1>
+    </a>
+
+    <nav class="top">
+      <ul class="">
+        <li>
+          <a href="/analyticsDashboard" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Analytics Dashboard"
+            class="text-dark" style="padding-right: 5px">
+            <svg width="24" height="34" viewBox="0 0 24 24" style="padding-bottom: 11px">
+              <rect width="8" height="8" fill="#FF0000" x="0" y="20" />
+              <rect width="8" height="16" fill="#00FF00" x="8" y="16" />
+              <rect width="8" height="24" fill="#0000FF" x="16" y="12" />
+            </svg>
+            <span class="d-none d-sm-inline">Analytics Dashboard</span>
+          </a>
+        </li>
+        <li style="margin-left: 0">
+          <div class="dropdown" style="display: inline">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+              aria-expanded="false" style="border: 0; padding: 0 8px">
+              e-Services
+            </button>
+            <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton">
+              <li class="m-0">
+                <div class="accordion" id="scopedAccordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="scopedHeadingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#scopedCollapseOne" aria-expanded="true" aria-controls="scopedCollapseOne"
+                        style="width: 333px">
+                        Internal Web Services
+                      </button>
+                    </h2>
+                    <div id="scopedCollapseOne" class="accordion-collapse collapse" aria-labelledby="scopedHeadingOne"
+                      data-bs-parent="#scopedAccordionExample">
+                      <div class="accordion-body">
+                        <!-- <a
+                            class="dropdown-item"
+                            href="https://www.rma.org.bt/dashboard/login"
+                            target="_blank"
+                            >RMA Executive Dashboard</a 
+                          > -->
+                        <!-- <a class="dropdown-item" href="https://www.rma.org.bt/login.jsp" target="_blank">Currency Chest System</a> -->
+                        <!-- <a class="dropdown-item" href="https://www.rma.org.bt/login.jsp" target="_blank">Banks Treasury Management System</a> -->
+                        <!-- <a
+                            class="dropdown-item"
+                            href="https://www.rma.org.bt/bis/login"
+                            target="_blank"
+                            >Board Management Dashboard</a
+                          > -->
+                        <!-- <a class="dropdown-item" href="https://systems.rma.org.bt/" target="_blank">Employee Self
+                          Service Portal</a> -->
+                        <a class="dropdown-item" href="https://dms.rma.org.bt/share/page" target="_blank">Document
+                          Management System</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="scopedHeadingTwo">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#scopedCollapseTwo" aria-expanded="false" aria-controls="scopedCollapseTwo">
+                        External Services
+                      </button>
+                    </h2>
+                    <div id="scopedCollapseTwo" class="accordion-collapse collapse" aria-labelledby="scopedHeadingTwo"
+                      data-bs-parent="#scopedAccordionExample">
+                      <div class="accordion-body">
+                        <a class="dropdown-item" href="https://remitbhutan.rma.org.bt/" target="_blank">Remit Bhutan</a>
+                        <a class="dropdown-item" href="https://xbrl.rma.org.bt" target="_blank">Data Acquisition
+                          Portal</a>
+                        <a class="dropdown-item" href="https://www.btfn.bt/" target="_blank">Bhutan TradeFin Net
+                          System</a>
+                        <a class="dropdown-item" href="https://amc.rma.org.bt/login" target="_blank">Authorized Money
+                          Changers</a>
+                        <a class="dropdown-item" href="https://nes.rma.org.bt:8443/NES/login" target="_blank">Ngultrum
+                          Exchange System</a>
+                        <a class="dropdown-item" href="https://lms.rma.org.bt/lms/login" target="_blank">Liquidity
+                          Management System</a>
+                        <a class="dropdown-item"
+                          href="https://www.crst.bt/crstweb/redirect.html?method=webRedirect&q=index"
+                          target="_blank">Central Registry</a>
+                        <a class="dropdown-item" href="http://fidportal.rma.org.bt/" target="_blank">FID Portal</a>
+                        <a class="dropdown-item" href="https://fintechbhutan.rma.org.bt/" target="_blank">FinTech
+                          Bhutan</a>
+                        <a class="dropdown-item" href="https://ftp.rma.org.bt/EFTClient/Account/Login.htm"
+                          target="_blank">File Transfer Protocol (FTP)</a>
+                        <!-- <a class="dropdown-item" href="https://jobs.rma.org.bt/index" target="_blank">e-Recruitment</a> -->
+                        <a class="dropdown-item" href="https://leave.rma.org.bt" target="_blank">Leave Submission and
+                          Approval</a>
+                        <a class="dropdown-item" href="https://www.rma.org.bt/bank/login.jsp" target="_blank">Bank
+                          login</a>
+                        <a class="dropdown-item" href="https://www.rma.org.bt/green" target="_blank">Green Finance
+                          Taxonomy Alignment Tool</a>
+                        <a class="dropdown-item" href="/paymentGateway/">RMA Payment Gateway Submission</a>
+                        <!-- <a class="dropdown-item" href="https://www.rma.org.bt/consumer_protection.jsp" target="_blank">Consumer Protection</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a class="button-login" href="/login/">Login</a>
+        </li>
+      </ul>
+    </nav>
+
+    <nav class="bottom">
+      <input type="checkbox" id="ham-menu" />
+      <label for="ham-menu" class="checkbtn">
+        <i class="bi bi-list"></i>
+      </label>
+
+      <ul>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/legislation/">Legal Framework</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Publications & Statistics
+            </a>
+            <div class="dropdown-menu">
+              <!--<a class="dropdown-item" href="/publication/23/">
+                  Foreign Exchange & Reserve
+                </a>-->
+              <a class="dropdown-item" href="/publication/24/">
+                Payment & Settlement Systems
+              </a>
+              <a class="dropdown-item" href="/publication/25/">
+                Financial Intelligence Reports</a>
+              <a class="dropdown-item" href="/publication/26/">
+                RMA's Financial Statements</a>
+              <!-- <a class="dropdown-item" href="/publication/27/">
+                  Currency (Bank Notes and Coins)
+                </a> -->
+              <a class="dropdown-item" href="/publication/31/">
+                Macro-economic Data
+              </a>
+              <a class="dropdown-item" href="/publication/41/">
+                Financial Sector Publication & Statistics
+              </a>
+              <!-- <a class="dropdown-item" href="/publication/42/">
+                  Financial Stability Report
+                </a> -->
+              <!-- <a class="dropdown-item" href="/publication/46/">
+                  Press Release
+                </a> -->
+            </div>
+          </li>
+          <li><a href="/eResources/">Advocacy & Resources</a></li>
+          <li><a href="/news/">Announcements </a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              RGOB T-Bills & Bonds
+            </a>
+            <div class="dropdown-menu">
+              <!-- <a class="dropdown-item" href="http://202.144.129.58:8080/tbills/notice" target="_blank">Notice</a> -->
+              <a class="dropdown-item" href="http://202.144.129.58:8080/tbills/" target="_blank">Bhutan T-Bills
+                System</a>
+              <a class="dropdown-item" href="/rgobBond/">RGOB Bond</a>
+            </div>
+          </li>
+          <li class="">
+            <a class="dropdown dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About RMA
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/about/">
+                History & Core Functions
+              </a>
+              <a class="dropdown-item" href="/media/RMA Act 2010.pdf">
+                RMA ACT
+              </a>
+              <a class="dropdown-item" href="/board_of_directors/">
+                Board of Directors
+              </a>
+              <a class="dropdown-item" href="/management/">
+                Management
+              </a>
+              <a class="dropdown-item" href="/organogram/">
+                Organogram
+              </a>
+            </div>
+          </li>
+        </ul>
+      </ul>
+    </nav>
+
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/legislation/">Legal Framework</a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Publications & Statistics
+          </a>
+          <div class="dropdown-menu">
+            <!--<a class="dropdown-item" href="/publication/23/">
+                Foreign Exchange & Reserve
+              </a>-->
+            <a class="dropdown-item" href="/publication/24/">
+              Payment & Settlement Systems
+            </a>
+            <a class="dropdown-item" href="/publication/25/">
+              Financial Intelligence Reports
+            </a>
+            <a class="dropdown-item" href="/publication/26/">
+              RMA's Financial Statements
+            </a>
+            <!-- <a class="dropdown-item" href="/publication/27/">
+                Currency (Bank Notes and Coins)
+              </a> -->
+            <a class="dropdown-item" href="/publication/31/">
+              Macro-economic Data
+            </a>
+            <a class="dropdown-item" href="/publication/41/">
+              Financial Sector Publication & Statistics
+            </a>
+            <!-- <a class="dropdown-item" href="/publication/42/">
+                Financial Stability Report
+              </a> -->
+            <!-- <a class="dropdown-item" href="/publication/46/">
+                Press Release
+              </a> -->
+          </div>
+        </li>
+        <li><a href="/eResources/">Advocacy & Resources</a></li>
+        <li><a href="/news/">Announcements</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            RGOB T-Bills & Bonds
+          </a>
+          <div class="dropdown-menu">
+            <!-- <a class="dropdown-item" href="http://202.144.129.58:8080/tbills/notice" target="_blank">Notice</a> -->
+            <a class="dropdown-item" href="http://202.144.129.58:8080/tbills/" target="_blank">Bhutan T-Bills System</a>
+            <a class="dropdown-item" href="/rgobBond/">RGOB Bond</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About RMA
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/about/">History & Core Functions</a>
+            <a class="dropdown-item" href="/media/RMA Act 2010.pdf">RMA ACT</a>
+            <a class="dropdown-item" href="/board_of_directors/">Board of Directors</a>
+            <a class="dropdown-item" href="/management/">Management</a>
+            <a class="dropdown-item" href="/organogram/">Organogram</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!---------------------------------Chatbot------------------------------------>
+
+  <button type="button" class="rc-launcher" id="rcLauncher" onclick="toggleChat()"
+    aria-controls="chatbox" aria-expanded="false" aria-label="Open RMA Assistant chat">
+    <img src="/static/img/rma_chatbot_icon.png" alt="" width="52" height="52">
+    <span class="rc-launcher-label">Ask RMA</span>
+  </button>
+
+  <!-- Chat Window -->
+  <section class="rc-chat" id="chatbox" role="dialog" aria-labelledby="rcTitle" aria-hidden="true">
+    <header class="rc-header">
+      <img class="rc-avatar" src="/static/img/rma_chatbot_icon.png" alt="" width="42" height="42">
+      <div class="rc-head-text">
+        <h2 id="rcTitle">RMA Assistant</h2>
+        <span class="rc-status">Online</span>
+      </div>
+      <div class="rc-head-actions">
+        <button type="button" class="rc-icon-btn" onclick="showChatbotDisclaimer()" aria-label="Disclaimer" title="Disclaimer"><i class="bi bi-info-circle"></i></button>
+        <button type="button" class="rc-icon-btn" onclick="resetChat()" aria-label="Start a new chat" title="New chat"><i class="bi bi-arrow-counterclockwise"></i></button>
+        <button type="button" class="rc-icon-btn" onclick="toggleChat(false)" aria-label="Close chat" title="Close"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </header>
+
+    <div class="rc-body" id="chatBody" aria-live="polite"></div>
+
+    <div class="rc-suggest" id="rcSuggest">
+      <p class="rc-suggest-title">Popular questions</p>
+      <div class="rc-chips">
+        <button type="button" class="rc-chip" onclick="sendQuickReply('Exchange rates for Notes?')">Exchange rates</button>
+        <button type="button" class="rc-chip" onclick="sendQuickReply('How can I avail INR from RMA?')">Avail INR</button>
+        <button type="button" class="rc-chip" onclick="sendQuickReply('How to obtain fresh notes?')">Fresh notes</button>
+        <button type="button" class="rc-chip" onclick="sendQuickReply('How can I avail the Convertible Currency?')">Convertible currency</button>
+        <button type="button" class="rc-chip" onclick="sendQuickReply('How to Register my Business for Bhutan\'s Payment Gateway?')">Payment Gateway</button>
+        <button type="button" class="rc-chip" onclick="sendQuickReply('How do I get a collateral search report for my vehicle?')">CRST report</button>
+      </div>
+    </div>
+
+    <form class="rc-composer" id="rcComposer" onsubmit="event.preventDefault(); sendMessage();">
+      <label for="userInput" class="visually-hidden">Your message</label>
+      <textarea id="userInput" rows="1" maxlength="1000" autocomplete="off"
+        placeholder="Ask about rates, forms, services…"></textarea>
+      <button type="submit" class="rc-send" id="rcSend" aria-label="Send message"><i class="bi bi-send-fill"></i></button>
+    </form>
+    <div class="rc-foot">AI-generated answers may be inaccurate. Please verify with official RMA sources.</div>
+  </section>
+
+  <main id="main">
+<!--First Section-->
+<div class="container-fluid pt-5" style="background-image: url('/static/img/bg-image.jpeg'); background-size: cover;">
+
+    <!-- <div class="container py-4 custom-container">
+        <h5 class="text-center text-white">We are the Central Bank of Bhutan, committed to enabling a resilient, prosperous, inclusive, and sustainable economy for the Nation.</h5>
+    </div> -->
+
+    <div class="container-fluid px-3 py-3">
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col py-3">
+                <div class="card h-100 pt-4">
+                    <div class="text-center">
+                        <h4 class="custom-heading mb-0">Exchange Rates</h4>
+                        <span>
+                          As of November 13, 2026
+                        </span>
+                    </div>
+                    <div class="pt-3 cardBody">
+                      <div class="container" >
+                        <div class="row mb-0 pb-0 px-1">
+                          <div class="col-6">
+                            <h5 class="custom-h5-2">Currency</h5>
+                          </div>
+                          <div class="col-3 text-center">
+                            <h5 class="custom-h5-2">Notes</h5>
+                          </div>
+                          <div class="col-3 text-center">
+                            <h5 class="custom-h5-2">TT</h5>
+                          </div>
+                        </div>
+                      </div>
+                      
+                        <div class="container" >
+                          <div class="row mb-0 pb-0 px-1">
+                            <div class="col-6" style="text-align: start;">
+                              <h5 class="custom-h5">
+                                <img class="d-none d-md-inline" style="margin-right: 10px;" src="../static/img/currency/USD.png" alt="" width="40" height="23">USD</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">92.65</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">93.81</h5>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="container" >
+                          <div class="row mb-0 pb-0 px-1">
+                            <div class="col-6" style="text-align: start;">
+                              <h5 class="custom-h5">
+                                <img class="d-none d-md-inline" style="margin-right: 10px;" src="../static/img/currency/EURO.png" alt="" width="40" height="23">EURO</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">102.70</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">104.09</h5>
+                            </div>
+                          </div>
+                        </div>
+                      
+                        <div class="container" >
+                          <div class="row mb-0 pb-0 px-1">
+                            <div class="col-6" style="text-align: start;">
+                              <h5 class="custom-h5">
+                                <img class="d-none d-md-inline" style="margin-right: 10px;" src="../static/img/currency/AUD.png" alt="" width="40" height="23">AUD</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">63.20</h5>
+                            </div>
+                            <div class="col-3 text-center">
+                              <h5 class="custom-h5">64.06</h5>
+                            </div>
+                          </div>
+                        </div>
+                      
+                    </div>
+
+                    <div class="container customContainer mt-2">
+                      <div class="row text-center">
+                          <div class="col text-center">
+                              <h5 class="mb-0 custom-h5">View all <a href="/exchangeRates"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                              </svg></a>
+                          </h5>
+                          </div>  
+                      </div>         
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col py-3">
+                <div class="card h-100 py-4">
+                    <div class="text-center">
+                        <h4 class="custom-heading">Key Financial Sector Rates</h4>
+                    </div>
+                    <div class="mt-2 pt-1 mt-sm-4 pt-sm-4 cardBody">
+                      
+                        <div class="container">
+                            <div class="row mb-0 pb-0 px-1">
+                              <div class="col-8 text-start">
+                                <h5 class="custom-h5">Cash Reserve Ratio (CRR)</h5>
+                              </div>
+                              <div class="col-4 text-end">
+                                <h5 class="custom-h5">8.0%</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="row mb-0 pb-0 px-1">
+                              <div class="col-8 text-start">
+                                <h5 class="custom-h5">Minimum Lending Rate (MLR)</h5>
+                              </div>
+                              <div class="col-4 text-end">
+                                <h5 class="custom-h5">5.37%</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="row mb-0 pb-0 px-1">
+                              <div class="col-8 text-start">
+                                <h5 class="custom-h5">SLR Banks</h5>
+                              </div>
+                              <div class="col-4 text-end">
+                                <h5 class="custom-h5">20.0%</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="container ">
+                        <div class="row justify-content-center text-center align-items-center mb-0 pb-0">
+                            <div class="col text-center">
+                                <h5 class="mb-0 custom-h5">View all <a href="/ldepositRates"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                </svg></a>
+                            </h5>
+                            </div>  
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col py-3">
+                <div class="card h-100 py-4">
+                    <div class="text-center">
+                        <h4 class="custom-heading mb-0">Commemorative Items</h4>
+                        <span>As of November 13, 2026</span>
+                    </div>
+                    <div class="mt-2 pt-3 cardBody">
+                        
+                        <div class="container">
+                            <div class="row justify-content-center mb-0 pb-0">
+                              <div class="col-7 text-start px-4">
+                                <h5 class="custom-h5">Gold</h5>
+                              </div>
+                              <div class="col-5 text-end">
+                                <h5 class="custom-h5">166,930.04</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="row justify-content-center mb-0 pb-0">
+                              <div class="col-7 text-start px-4">
+                                <h5 class="custom-h5">Silver</h5>
+                              </div>
+                              <div class="col-5 text-end">
+                                <h5 class="custom-h5">       253,535.00</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container">
+                            <div class="row justify-content-center mb-0 pb-0">
+                              <div class="col-7 text-start px-4">
+                                <h5 class="custom-h5">Royal Wedding Silver Coin</h5>
+                              </div>
+                              <div class="col-5 text-end">
+                                <h5 class="custom-h5">   5,000.00</h5>
+                              </div>
+                            </div>
+                        </div>
+                        
+                      </div>
+                      <div class="container customContainer mt-1">
+                          <div class="row justify-content-center text-center align-items-center mb-0 pb-0">
+                              <div class="col text-center">
+                                  <h5 class="mb-0 custom-h5">View all <a href="/commemorativeItems"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                                  </svg></a>
+                              </h5>
+                              </div>  
+                          </div>                        
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End of First Section-->
+
+<!--Second Section-->    
+<div class="container-fluid pt-4 px-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" style="margin-bottom: 0;">
+
+  <div class="col mb-4">
+  <div class="card h-100">
+    <img src="/static/img/monetary_policy.jpg" alt="">
+    <div class="card-body">
+      <div class="custom-head px-4">
+        <p class="card-title text-white">Monetary Policy</p>
+      </div>
+      <p class="card-text">The primary role of the RMA is to formulate and implement monetary policy with a view to achieving and maintaining price and financial stability.</p>
+     <a href="/mpolicy" class="btn btn-sm custom-atag">Read More</a>
+     <a href="/publication2/31/" class="d-block custom-link mb-2 mt-2">Reports and Statistics</a>
+    </div>
+   </div>
+  </div>
+
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/static/img/foreign_exchange.jpeg">
+      <div class="card-body">
+        <div class="custom-head px-4">
+          <p class="card-title text-white">Foreign Exchange & Reserve Management</p>
+        </div>
+        <!-- <p class="card-text">The RMA is the owner, depository and manager of the official external assets of the country, including gold and foreign currency reserves.</p> -->
+        <p class="card-text">Managing external reserves is one of the core mandates of the Royal Monetary Authority of Bhutan as stipulated under Section 108 of the RMA Act</p>
+       <a href="/fexchange" class="btn btn-sm custom-atag">Read More</a>
+       <a href="/legislation2/17/" class="d-block custom-link mb-2 mt-2">Foreign Exchange Rules & Regulations</a>
+       <!-- <a href="/publication/23/" class="d-block custom-link mb-2 mt-2">Reports and Publications</a> -->
+      </div>
+     </div>
+  </div>
+
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/static/img/financial_stability.jpg">
+      <div class="card-body">
+        <div class="custom-head px-4">
+          <p class="card-title text-white">Financial Stability</p>
+        </div>
+        <p class="card-text">The RMA has the mandate to ensure the soundness and stability of the country's financial system.</p>
+        <a href="/fstability" class="btn btn-sm custom-atag">Read More</a>
+        <!-- <a href="#" class="d-block custom-link mb-2 mt-2">Legal Framework for Banks</a>
+        <a href="#" class="d-block custom-link mb-2 mt-2">Legal Framework for Non-Banks</a> -->
+        <!-- <a href="/publication/26/" class="d-block custom-link mb-2 mt-2">Reports and Publications</a> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/static/img/payment_system.png">
+      <div class="card-body">
+        <div class="custom-head px-4">
+          <p class="card-title text-white">Payment & Settlement Systems</p>
+        </div>
+        <p class="card-text">Establishing a sound and robust payment system infrastructure that facilitates the efficient functioning of economic activities,</p>
+       <a href="/pssystem" class="btn btn-sm custom-atag">Read More</a>
+       <a href="/dpeSystem" class="d-block custom-link mb-2 mt-2">Digital Payment Ecosystem</a>
+       <a href="/dpSystem" class="d-block custom-link mb-2 mt-2">Domestic Payment Systems</a>
+       <a href="/rpSystem" class="d-block custom-link mb-2 mt-2">Regional Payment Systems</a>
+       <a href="/ipSystem" class="d-block custom-link mb-2 mt-2">International Payment Systems</a>
+       <a href="/legislation2/18/" class="d-block custom-link mb-2 mt-2">Rules and Regulations, Guidelines, Manuals</a>
+       <a href="/publication/24/" class="d-block custom-link mb-2 mt-2">Reports & Publications</a>
+       <a href="/feeNCharges" class="d-block custom-link mb-2 mt-2">Fees & Charges</a>
+      </div>
+     </div>
+  </div>
+
+  <div class="col mb-4">
+    <div class="card h-100">
+      <img src="/static/img/currency.png">
+      <div class="card-body">
+        <div class="custom-head px-4">
+          <p class="card-title text-white">Currency (Bank Notes & Coins)</p>
+        </div>
+        <p class="card-text">The Royal Monetary Authority of Bhutan (RMA) is the country’s sole currency issuing authority as mandated by Section 9 (a) of the RMA Act 2010.</p>
+       <a href="/currency" class="btn btn-sm custom-atag">Read More</a>
+       <a href="/historyCurrency" class="d-block custom-link mb-2 mt-2">History of the Currency</a>
+       <a href="/cBankNotes" class="d-block custom-link mb-2 mt-2">Contemporary Banknotes</a>
+       <a href="/media/denomination and security features.pdf" target="_blank" class="d-block custom-link mb-2 mt-2">Denominations of notes & coins in circulation</a>
+       <a href="/legislation2/20/" class="d-block custom-link mb-2 mt-2">Guidelines & Rules</a>
+       <a href="/pAwaraness" class="d-block custom-link mb-2 mt-2">Public Awareness & Advocacy</a>
+      </div>
+     </div>
+  </div>
+
+</div>
+</div>
+<!--End of Second Section-->
+
+<!-- ======= Third Section ======= -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-header p-0">
+      <h2>Announcements </h2>
+    </div>
+    <div class="row">
+      <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12">
+        <div class="">
+          <ul id="portfolio-flters">
+            <li data-filter=".filter-web" class="filter-active">Notifications</li>
+            <li data-filter=".filter-career">Career</li>
+            <li data-filter=".filter-tender">Procurement</li>
+          </ul>
+        </div>
+      
+        <section id="portfolio-sub">
+          <div class="row portfolio-container">
+            <div class="col-lg-12 col-md-12 col-sm-12 portfolio-item filter-web ">
+              
+                <a class="media-container" href="/view_news/193/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Nov. 10, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6>OMO Tender Results Announcement</h6>
+                          <p>
+                           With reference to letter no RMA/OMO/0017 dated 10th November 2026,  RMA hereby announces the tender result of open market operation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/192/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Nov. 10, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6>OMO Tender Announcement</h6>
+                          <p>
+                           The Royal Monetary Authority (RMA) hereby announces an Open Market Operations (OMO) tender and invites eligible Commercial Banks to participate.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/190/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 27, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6>OMO Tender Results Announcement</h6>
+                          <p>
+                           With reference to letter no RMA/OMO/0016 dated 27th October 2026,  RMA hereby announces the tender result of open market operation.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/189/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 27, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6>OMO Tender Announcement</h6>
+                          <p>
+                           The Royal Monetary Authority (RMA) hereby announces an Open Market Operations (OMO) tender and invites eligible Commercial Banks to participate.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/188/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 22, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6>Press Release</h6>
+                          <p>
+                           RMA Grants License to Loden Tewa to Operate Catalytic Concessional Lending Facility
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+            </div>
+      
+            <div class="col-lg-12 col-md-12 col-sm-12 portfolio-item filter-career">
+              
+                <a class="media-container" href="/view_news/191/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 30, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Announcement: Shortlisted Candidates for Written Examination</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan (RMA) is pleased to announce that the shortlisting process for the recently advertised vacancies is now complete.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/183/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Sept. 30, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Vacancy Announcement</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan (RMA) is pleased to announce vacancies for the positions detailed below. All interested and eligible Bhutanese citizens aged 18 years and above are invited to submit their applications by 14th October 2026.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/122/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 30, 2025</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Selection Result Announcement</h6>
+                          <p>
+                            The Royal Monetary Authority (RMA) of Bhutan is pleased to inform that the selection process for the Chief Strategy and Planning Officer position is has successfully completed.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/120/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Oct. 1, 2025</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Selection Result Announcement</h6>
+                          <p>
+                            The Royal Monetary Authority (RMA) of Bhutan is pleased to announce the selection process for various positions with and without prior work experience is completed.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/119/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Sept. 19, 2025</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Announcement for Viva Voce</h6>
+                          <p>
+                            RMA is pleased to announce the shortlisted candidates who have applied for various posts for the viva-voce after the conduct of written examination held on 6th September2025.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+            </div>
+      
+            <div class="col-lg-12 col-md-12 col-sm-12 portfolio-item filter-tender">
+              
+                <a class="media-container" href="/view_news/180/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Sept. 25, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Amendment Notice</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan would like to inform all bidders participating in the bidding process for Supply, Installation and Renewal of IT Infrastructure and Software that amendments have been made related to Lot VIII – PAC and the delivery time of PACs.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/178/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Sept. 18, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Bidding documents for auction of vehicle auction notice</h6>
+                          <p>
+                            The Royal Monetary Authority (RMA) of Bhutan hereby notifies all interested parties of the upcoming auction for the disposal of vehicle. Sealed bids are invited from eligible and interested bidders in accordance with the following terms and conditions:
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/174/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Sept. 14, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Invitation for Bids</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan (RMA) invites sealed bids from eligible and qualified bidders for the Supply, Installation and Renewal of IT Infrastructure and Software
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/170/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Aug. 28, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Amendment Notice</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan would like to inform all bidders participating in the bidding process for Computer &amp;amp; Accessories, Equipment, and Furniture that amendments have been made to the Bidding Data Sheet and Technical Specifications of the Standard Bidding Document (SBD).
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+                <a class="media-container" href="/view_news/166/">
+                    <div class="media-box">
+                      <div class="row">
+                        <div class="col-3">
+                          <h5>Aug. 14, 2026</h5>
+                        </div>
+                        <div class="col-9">
+                          <h6> Invitation for Bids</h6>
+                          <p>
+                            The Royal Monetary Authority of Bhutan (RMA) invites sealed bids from eligible and qualified bidders for the Supply of Computer &amp; Accessories, Equipment and Furniture
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </a>
+              
+            </div>
+          </div>
+          
+        </section>
+        <a class="portfolio-button" href="/news/">More news and announcements</a>  
+        
+      </div>
+  
+      <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
+
+        <div class="container-fluid">
+          <div class="image-container">
+            <div class="mytext-overlay text-white">
+              <h4>Public Services</h4>
+            </div>
+          </div>
+          
+          <section id="portfolio-subor">
+            <div class="portfolio-container">
+              <div class="portfolio-item-services py-2">
+
+                <div class="portfolio-item-forms">
+                  <a class="custom-link" href="/fnotes">Fresh-Note Exchange</a>
+                </div>
+                <div class="portfolio-item-forms">
+                  <a class="custom-link" href="/inrExchange">Indian Rupee Exchange</a>
+                </div>
+                <div class="portfolio-item-forms">
+                  <a class="custom-link" href="/fcExchange">Foreign Currency Exchange</a>
+                </div>
+				 <div class="portfolio-item-forms">
+                  <a class="custom-link" href="/paymentGateway/">RMA Payment Gateway Submission</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        
+
+        <div class="col-lg-12 d-flex justify-content-center py-2">
+			<h5 style="color:#000000">Forms</h5>
+        </div>
+          
+        <div class="container-fluid">
+          <section id="portfolio-subor">
+            <div class="portfolio-container pb-2">
+              
+              <div class="portfolio-item-forms">
+                <ul class="p-0 m-0" style="list-style-type: none;">
+                    <li><a class="custom-link" href="/media/forms_upload/2_INR Cash Exchange Form (Individual).pdf" download>1. INR Cash Exchange Form (Individual)</a></li>
+                </ul>
+            </div>
+              
+              <div class="portfolio-item-forms">
+                <ul class="p-0 m-0" style="list-style-type: none;">
+                    <li><a class="custom-link" href="/media/forms_upload/10_Incident Reporting Form.pdf" download>2. Incident Reporting Form</a></li>
+                </ul>
+            </div>
+              
+              <div class="portfolio-item-forms">
+                <ul class="p-0 m-0" style="list-style-type: none;">
+                    <li><a class="custom-link" href="/media/forms_upload/12_INR Cash Exchange Form (Exporter).pdf" download>3. INR Cash Exchange Form (Exporter)</a></li>
+                </ul>
+            </div>
+              
+              <div class="portfolio-item-forms">
+                <ul class="p-0 m-0" style="list-style-type: none;">
+                    <li><a class="custom-link" href="/media/forms_upload/14_Account Freeze and Unfreeze Form.pdf" download>4. Account Freeze and Unfreeze Form</a></li>
+                </ul>
+            </div>
+              
+              <div class="portfolio-item-forms">
+                <ul class="p-0 m-0" style="list-style-type: none;">
+                    <li><a class="custom-link" href="/media/forms_upload/16_Discount Bill Form.pdf" download>5. Discount Bill Form</a></li>
+                </ul>
+            </div>
+              
+
+              <div class="col text-center">
+                <p class="mb-0 text-center">View all <a href="/forms"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+                </svg></a>
+              </p>
+              </div> 
+            </div>
+          </section>
+        </div>
+      </div>
+  
+    </div>
+
+  </div>
+
+</section>
+<!-- End Third Section -->
+
+<!-- ======= Fourth Section ======= -->
+<section id="slider">
+  <div class="section-header p-0">
+    <h2>Latest Publications</h2>
+  </div>
+  <div class="slide-container swiper">
+    <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+
+            <div class="card card-slider swiper-slide">
+              <div class="img-container">
+                <a href="/media/Publication/Macro-economic Data/Annual Report 2025.pdf" class="publication-link">
+                  <img class="publication-img" src="/static/img/publication-1.png" alt=""> 
+                </a>
+              </div>
+                <a class="description" href="/media/Publication/Macro-economic Data/Annual Report 2025.pdf">Annual Report</a>
+            </div>
+
+            <div class="card card-slider swiper-slide">
+              <div  class="img-container">
+                <a href="/media/Publication/Macro-economic Data/Monthly Statistical Bulletin November 2026.xlsx" class="publication-link">
+                  <img class="publication-img" src="/static/img/publication-2.png" alt="">
+                </a> 
+              </div>
+              <a class="description" href="/media/Publication/Macro-economic Data/Monthly Statistical Bulletin November 2026.xlsx">
+                Monthly Statistical Bulletin
+              </a> 
+            </div>
+
+            <!-- <div class="card card-slider swiper-slide">
+              <div  class="img-container">
+                <img class="publication-img" src="/static/img/publication-3.png" alt="">
+              </div>
+              <a class="description" href="/media/Publication/SEI/">
+                Selected Economic Indicators 
+              </a> 
+            </div> -->
+
+
+            <div class="card card-slider swiper-slide">
+              <div  class="img-container">
+                <a href="/media/Publication/Financial Sector Performance Review/September 2022.pdf" class="publication-link">
+                  <img class="publication-img" src="/static/img/publication-4.png" alt="">
+                </a> 
+              </div>
+              <a class="description" href="/media/Publication/Financial Sector Performance Review/September 2022.pdf">
+                Financial Sector Performance Review
+              </a> 
+            </div>
+            
+
+            <div class="card card-slider swiper-slide">
+              <div  class="img-container">
+                <a href="/media/Publication/Macro-economic Data/Monetary Policy Statement 2026.pdf" class="publication-link">
+                  <img class="publication-img" src="/static/img/publication-5.png" alt="">
+                </a> 
+              </div>
+              <a class="description" href="/media/Publication/Macro-economic Data/Monetary Policy Statement 2026.pdf">
+                Monetary Policy Statement
+              </a> 
+            </div>
+
+        </div>
+    </div>
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+    <div class="swiper-pagination"></div>
+</div>
+</section>
+<!-- End Fourth Section -->
+  
+
+
+</main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 col-sm-6 footer-links">
+            <h4>Links</h4>
+            <ul>
+              <li>
+                <a href="https://www.rma.org.bt/fid/" target="_blank">Department of Financial Intelligence</a>
+              </li>
+              <li>
+                <a href="https://www.saarcfinance.org/" target="_blank">SAARC Finance</a>
+              </li>
+              <li>
+                <a href="/media/Registered Private Money Lenders.pdf" target="_blank">Registered Private Money
+                  Lenders</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End footer links column-->
+
+          <div class="col-lg-3 col-md-4 col-sm-6 footer-links">
+            <h4>Banks</h4>
+            <ul>
+              <li>
+                <a href="https://www.bob.bt/" target="_blank">Bank of Bhutan</a>
+              </li>
+              <li>
+                <a href="https://www.bnb.bt/" target="_blank">Bhutan National Bank Ltd</a>
+              </li>
+              <li>
+                <a href="http://drukpnbbank.bt/" target="_blank">Druk PNB Bank Ltd</a>
+              </li>
+              <li>
+                <a href="https://bdb.bt/" target="_blank">Bhutan Development Bank Ltd</a>
+              </li>
+              <li>
+                <a href="https://www.tbank.bt/" target="_blank">T Bank</a>
+              </li>
+              <li>
+                <a href="https://www.digitalkidu.bt/" target="_blank">DK Limited</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End footer links column-->
+
+          <div class="col-lg-3 col-md-4 col-sm-6 footer-links">
+            <h4>Non-Banks</h4>
+            <ul>
+              <li>
+                <a href="https://www.ricb.bt/" target="_blank">RICBL</a>
+              </li>
+              <li>
+                <a href="https://www.bhutaninsurance.com.bt/" target="_blank">Bhutan Insurance Ltd</a>
+              </li>
+              <li>
+                <a href="https://www.nppf.org.bt/" target="_blank">NPPF</a>
+              </li>
+              <li>
+                <a href="https://www.gicbhutanre.com/" target="_blank">GIC</a>
+              </li>
+            </ul>
+            <br>
+            <h4>Capital Markets</h4>
+            <ul>
+              <li>
+                <a href="https://rsebl.org.bt/" targer="_blank">Royal Securities Exchange of Bhutan Ltd</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End footer links column-->
+
+          <div class="col-lg-3 col-md-4 col-sm-6 footer-links">
+            <h4>Microfinance Institutions</h4>
+            <ul>
+              <li>
+                <a href="http://renewmicrofinance.com/" target="_blank">RENEW MFI</a>
+              </li>
+              <li>
+                <a href="http://www.mbpl.bt/" target="_blank">MBPL</a>
+              </li>
+              <li>
+                <a href="https://www.baowe.org/programmes/baowe-pelzing-microfinance-institution/" target="_blank">BAOWE
+                  Pelzing</a>
+              </li>
+              <li>
+                <a href="https://tarayanamicrofinance.com/" target="_blank">Tarayana Microfinance</a>
+              </li>
+              <li>
+                <a href="https://carecredit.bt/" target="_blank">BCCL</a>
+              </li>
+              <li>
+                <a href="https://www.fdmpl.bt/" target="_blank">Farmer Development Microfinance Private Ltd</a>
+              </li>
+              <li>
+                <a href="https://gfl.bt/" target="_blank">Gerab Financials Limited</a>
+              </li>
+            </ul>
+          </div>
+          <!-- End footer links column-->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal2 position-relative">
+      <div class="container">
+        <div class="row text-center text-sm-start">
+          <ul class="nav flex-column flex-lg-row flex-md-row justify-content-lg-between justify-content-md-between">
+            <li class="nav-item col-lg-2 col-md-4">
+              <a class="nav-link" href="/contact_us/">CONTACT US</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-4">
+              <a class="nav-link" href="https://mail.google.com/mail/u/0/#inbox" target="_blank">MAIL</a>
+            </li>
+            <li class="nav-item col-lg-2 col-md-4">
+              <!-- <a class="nav-link" href="https://www.rma.org.bt/pop_up_disclaimer.htm" onclick="openPopup(this.href, 600, 400); return false;">DISCLAIMER</a> -->
+              <a class="nav-link" href="#" id="myBtn">DISCLAIMER</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="my-modal" class="my-modal">
+      <div class="modal-dialog custom-modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gx-0 footer-legal position-relative">
+      <div class="col-md-8 copyright text-center text-lg-end">
+        <strong><span>Royal Monetary Authority of Bhutan </span></strong>
+        &copy; 2024. All Rights Reserved
+      </div>
+      <div class="col-md-4 social-links d-flex justify-content-center mt-2 mt-md-0 mt-lg-0">
+        <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FRMABhutan" target="_blank"
+          class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="https://www.facebook.com/rmabhutan/" target="_blank"
+          class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <!-- <a href="https://www.instagram.com/rmabhutan/" target="_blank" class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-instagram"></i>
+        </a> -->
+        <a href="https://www.youtube.com/channel/UCu14djp1rRFoix7OOq8hUWQ" target="_blank"
+          class="d-flex align-items-center justify-content-center">
+          <i class="bi bi-youtube"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/vendor/aos/aos.js"></script>
+  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js" integrity="sha512-jB0TkTBeQC9ZSkBqDhdmfTv1qdfbWpGE72yJ/01Srq6hEzZIz2xkz1e57p9ai7IeHMwEG7HpzG6NdptChif5Pg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Removed: bootstrap.bundle.min.js above already includes Bootstrap + Popper.
+       Loading Bootstrap twice makes dropdowns open and immediately close. -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-Vkoo8x4CGsTz99xg3F1df9JGdR9M/RnI+xSceL3i6UqjNp2+c8xj/jByXJr5Myyb"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+    integrity="sha384-e55VjIDp5CiJgPKBUsPw3ng5RdXYuL6+9VMYop6HE+kWLMb1F+EF3BRb9L6R15I8"
+    crossorigin="anonymous"></script> -->
+  <!-- <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"></script> -->
+
+  <script>
+    function openPopup(url, width, height) {
+      // Calculate the position of the popup to center it on the screen
+      const left = (window.innerWidth - width) / 2;
+      const top = (window.innerHeight - height) / 2;
+
+      // Open the popup window
+      window.open(
+        url,
+        "_blank",
+        `width=${width},height=${height},left=${left},top=${top}`
+      );
+    }
+
+    (" ");
+    // Add an event listener to prevent dropdown from closing on accordion item click
+    document.querySelectorAll(".accordion-button").forEach(function (item) {
+      item.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    });
+    // Bootstrap 5 accordion initialization
+    var myAccordion = new bootstrap.Collapse(
+      document.getElementById("scopedCollapseOne"),
+      { toggle: false }
+    );
+    var myAccordion2 = new bootstrap.Collapse(
+      document.getElementById("scopedCollapseTwo"),
+      { toggle: false }
+    );
+
+    (function () {
+      //modal
+      var isStartWith = "myBtn";
+      var buttons = document.querySelectorAll(`[id^=${isStartWith}]`);
+      console.log(buttons[0]);
+
+      var modal = document.getElementById("my-modal");
+
+      var modal_content = document.querySelector(
+        "#my-modal .modal-content .modal-body"
+      );
+
+      var span = document.getElementsByClassName("close")[0];
+
+      buttons.forEach(function (btn) {
+        btn.onclick = function () {
+          modal.style.display = "block";
+
+          if (btn.getAttribute("id") === "myBtn") {
+            modal_content.innerHTML = `
+                    <div class="director-container">
+                        <div class="bio-content" style="color:black;">
+                            <p>
+                              The website of the Central Bank of Bhutan(RMA) not automatically retrieve, capture or store information on the person browsing the website except for logging the Internet Protocol (IP) address and other session information like the type of browser being used and the duration of the visit to the website. Any such information is used by the Bank's Internet Service Provider (ISP) for system administration purposes and to provide the Bank with statistics on the use of the website. 
+                            </p>
+                            <ol type="a">
+                                <li class="text-start text-justify">The website does not warrant or guarantee the accuracy, completeness or fitness for purpose of any information or material on this website. Under no circumstances shall the RMA be liable for any loss, damage, liability or expense suffered in connection with reliance by any person on any such information or material.</li>
+                                <li class="text-start text-justify">RMA in not liable for an offer or invitation by or on behalf of the RMA to subscribe for, purchase or sell any shares, securities or other financial instruments.</li>
+                                <li class="text-start text-justify">Under no circumstances shall the RMA be liable for any loss, damage, liability or expense suffered in connection with the use of this website, including (but not limited to) any fault, error, omission, interruption or delay.</li>
+                                <li class="text-start text-justify">As and when visiting any website or area on the Internet, RMA urges visitor(s) to read the Privacy Policies of the hyperlinked websites and companies.</li>
+                            </ol>
+                            <p>The RMA may at any time without notice:</p>
+                            <ol type="a">
+                                <li class="text-start text-justify">Add, Update or Modify information on this website.</li>
+                                <li class="text-start text-justify">Limit access to or discontinue the whole or any part of this website.</li>
+                            </ol>
+
+                        </div>
+                    </div>`;
+          }
+          if (btn.getAttribute("id") === "myBtn-01") {
+            modal_content.innerHTML = `
+                    <div class="director-container">
+
+                      <div class="image-directors">
+                        <img src="/static/img/governor.png" alt="" />
+                      </div>
+        
+                      <div class="bio-content">
+                        Dasho Penjore
+                        <P class="text-center"><strong>CHAIRMAN</strong></P>
+                        <p style="text-align: justify;">
+                          Dasho Penjore was appointed as the Governor of the Royal Monetary Authority of Bhutan in
+                          December 2015, and is serving his second term as Governor, following his re-appointment in 2020.
+                          Dasho Penjore started his career in the RMA in 1987 and has over 30 years of experience in central
+                          banking and monetary policy and macroeconomic policy. Dasho also served as the Gyalpoi Zimpon
+                          (Chamberlain) to His Majesty The King of Bhutan from 2007, equipping him with valuable insights
+                          and expertise in welfare and social policy. At the time of his appointment as the RMA’s Governor, he
+                          was serving as the Chief Executive Officer of the National Pension & Provident Fund of Bhutan.
+                        </p>
+                        <p style="text-align: justify;">Dasho was conferred the red scarf in 2008 and received the Druk Thuksey medal from His Majesty
+                        The King in December 2017 for his dedicated service to the nation.</p> 
+                        <p style="text-align: justify;">He holds a Master's in Economics from Northeastern University, Boston, USA.</p> 
+                      </div>
+                    </div>`;
+          }
+          if (btn.getAttribute("id") === "myBtn-02") {
+            modal_content.innerHTML = `
+                                  <div class="director-container">
+                                    <div class="image-directors">
+                                      <img src="/static/img/secretary-finance.jpeg" alt="" />
+                                    </div>
+                      
+                                    <div class="bio-content">
+                                      Ms. Leki Wangmo
+                                      <P class="text-center"><strong>MEMBER</strong></P>
+                                      <p style="text-align: justify;">Appointed as the Finance Secretary by the Royal Civil Service Commission, Ms. Leki Wangmo
+                                      brings a wealth of experience to her role. Starting her career in the Ministry of Finance, she worked
+                                      on resource mobilization for planned development and later contributed to business development and
+                                      investments at Druk Holding and Investments (DHI).</p>
+                                      <p style="text-align: justify;">Ms. Leki's leadership extended to the National Pension and Provident Fund (NPPF), where she
+                                      managed a diverse portfolio of over Nu. 50 billion. In December 2021, she joined the
+                                      Transformation Team, focusing on bold reforms in governance, leadership, financial discipline, and
+                                      fostering a culture of behavioral change across public and corporate sectors.</p>
+                                      <p style="text-align: justify;">In addition to her wealth of experience, Ms. Leki Wangmo holds an MBA with a major in Finance
+                                      from the Australian National University, Australia.</p>
+                                    </div>
+                                  </div>`;
+          }
+
+          if (btn.getAttribute("id") === "myBtn-03") {
+            modal_content.innerHTML = `
+                                          <div class="director-container">
+                                          <div class="image-directors">
+                                              <img src="/static/img/han.jpg" alt="" />
+                                          </div>
+                              
+                                          <div class="bio-content">
+                                              Mr. Han Hee Jan
+                                              <P class="text-center"><strong>MEMBER</strong></P>
+                                              <p style="text-align: justify;">With over three decades of experience in banking and finance, Mr. Han has made significant
+                                              contributions to banking and finance. He commenced his career with Citibank's Financial Control
+                                              unit, overseeing Accounting Compliance, Regulatory Reporting, and General Ledger management</p>
+                                              <p style="text-align: justify;">As the Chief Financial Officer for Citibank's Singapore Consumer business, he played a pivotal role
+                                              in the incorporation of Citibank Singapore Limited. Mr. Han is a key member of operating
+                                              Committees, providing strategic direction and oversight in managing liquidity, price, credit, and
+                                              operational risk for the consumer business.</p>
+                                              <p style="text-align: justify;">Joining the Citibank Regional Team as Chief of Staff for Citibank Asia Consumer business, he
+                                              collaborated with the Global office to set strategic directions. Mr. Han led the monthly performance
+                                              review process across 14 countries, driving financial results. His leadership extended to Citigroup's
+                                              Execution 2.0 initiative, optimizing resources and achieving cost efficiency in Asia Consumer Bank.</p>
+                                              <p style="text-align: justify;">Mr. Han holds an MBA in Finance, showcasing his academic prowess in addition to his extensive
+                                              industry experience.</p>
+                                              <p style="text-align: justify;">Beyond his professional commitments, Mr. Han actively volunteers for non-profit organizations. He
+                                              serves as a Treasurer on the board of directors for ART:DIS, a charity dedicated to Persons with
+                                              Disabilities.</p>
+                                          </div>
+                                          </div>`;
+          }
+          if (btn.getAttribute("id") === "myBtn-04") {
+            modal_content.innerHTML = `
+                                          <div class="director-container">
+                                          <div class="image-directors">
+                                              <img src="/static/img/nelson.png" alt="" />
+                                          </div>
+                              
+                                          <div class="bio-content">
+                                              Mr. Nelson Trevor Thackery
+                                              <P class="text-center"><strong>MEMBER</strong></P>
+                                              <p style="text-align: justify;">With over 30 years of banking expertise across New Zealand, Singapore, and Japan, Nelson is a
+                                              seasoned professional specializing in treasury management, balance sheet optimization, leadership
+                                              assessment and governance</p>
+                                              <p style="text-align: justify;">His illustrious career includes pivotal roles at Barclays (NZ) Ltd, Westpac (NZ), NZI Bank (NZ)
+                                              Ltd, and Citibank NA in Singapore and Japan. Nelson's contributions extend beyond traditional
+                                              banking, as he played a key role in shaping the future of banking professionals at Citibank
+                                              Singapore.</p> 
+                                              <p style="text-align: justify;">Post-corporate, Nelson has remained actively involved in specialized banking and treasury advisory
+                                              roles, focusing on Asset and Liability Management (ALM) advisory, consulting, and training. His
+                                              academic credentials include a Bachelor of Commerce from Victoria University of Wellington, NZ,
+                                              and an MBA from the National University of Singapore.</p> 
+                                              <p style="text-align: justify;">Currently serving as Director at Waimahn Holdings Private Limited and Special Advisor at
+                                              Singapore Consultancy Pte Ltd, Nelson continues to bring invaluable insights to the financial
+                                              industry</p> 
+                                          </div>
+                                          </div>`;
+          }
+
+          if (btn.getAttribute("id") === "myBtn-05") {
+            modal_content.innerHTML = `
+                                          <div class="director-container">
+                                          <div class="image-directors">
+                                              <img src="/static/img/jigme.png" alt="" />
+                                          </div>
+                              
+                                          <div class="bio-content">
+                                              Mr. Jigme Tenzin
+                                              <P class="text-center"><strong>MEMBER</strong></P>
+                                              <p style="text-align: justify;">
+                                              As the Secretary of the Government Technology Agency, Mr. Jigme Tenzing is a key figure in shaping Bhutan's 
+                                              technological landscape. With a career dating back to 2002, he has been a driving force in the government's adoption of Information Technology, actively contributing to its development path. His efforts extend to 
+                                              modernizing public services, fortifying the domestic ICT industry, and enhancing the Telecommunications and Space sector. He played a crucial role in consolidating all ICT personnel, IT systems, 
+                                              and projects of the Royal Government of Bhutan under a single autonomous agency during the civil service reform, aiming for comprehensive digital transformation.
+                                              </p>
+                                              <p style="text-align: justify;">
+                                              Educationally, Mr. Jigme Tenzing holds a Master of Science in Information and Computer Science from the University of Oregon (2007) and a Bachelor of 
+                                              Science in Information Technology from Thammasat University (2002). His commitment to the intersection of technology and governance underscores his 
+                                              leadership in steering Bhutan's technological evolution.
+                                              </p> 
+                                          </div>
+                                          </div>`;
+          }
+
+          if (btn.getAttribute("id") === "myBtn-06") {
+            modal_content.innerHTML = `
+                                          <div class="director-container">
+                                          <div class="image-directors">
+                                              <img src="/static/img/dg-ii.png" alt="" />
+                                          </div>
+                              
+                                          <div class="bio-content">
+                                              Ms. Yangchen Tshogyel
+                                              <P  class="text-center"><strong>CHAIRMAN</strong></P>
+                                              <p style="text-align: justify;">
+                                                Ms. Yangchen Tshogyel was appointed as the Governor of the Royal Monetary Authority of Bhutan, effective from 1 December 2025. She previously served as the Deputy Governor from September 2016 and was re-appointed for a second term in 2021. She began her career at the RMA in 2001 in the Research and Statistics Department and has strong experience in external sector statistics, monetary policy, and macroeconomic policy.</p> <p>During the COVID-19 pandemic, she worked closely with civil servants on welfare, youth reskilling, and transformation initiatives. She is passionate about HR reforms and organizational excellence. She holds a Master’s degree in Public Policy (Economic Policy) from the Australian National University.
+                                              </p>
+                                          </div>
+                                          </div>`;
+          }
+
+          if (btn.getAttribute("id") === "myBtn-07") {
+            modal_content.innerHTML = `
+                                          <div class="director-container">
+                                          <div class="image-directors">
+                                              <img src="/static/img/new-dg.jpeg" alt="" />
+                                          </div>
+                              
+                                          <div class="bio-content">
+                                              Ms. Ugyen Choden
+                                              <P class="text-center"><strong>MEMBER</strong></P>
+                                              <p style="text-align: justify;">
+                                                Ms. Ugyen Choden was appointed as the Deputy Governor of the RMA on December 1, 2023. Before this role, she served as the Director of the Department of Financial Regulation & Supervision at the RMA since 2022.
+												Joining the RMA in 2003, she has held various roles, including leadership positions. She brings significant expertise in financial regulation, supervision, and intelligence. Her skills also encompass project management, market analysis, and stakeholder engagement. Her extensive participation in various technical committees highlights her dedication to promoting financial inclusion and integrity.
+												Academically, she earned a Master of Business Administration from the University of Canberra, Australia (2024), a Bachelor of Commerce from the University of Delhi, India (2003), and a Graduate Diploma in Business (Major in Professional Accounting) from Queensland University of Technology, Brisbane, Australia (2012).
+                                              </p> 
+                                          </div>
+                                          </div>`;
+          }
+
+
+          if (btn.getAttribute("id") === "myBtn-08") {
+            modal_content.innerHTML = `
+                  <div class="director-container">
+                      <div class="image-directors">
+                          <img src="/static/img/management/TP.jpg"
+                              alt="Mr. Tshering Penjor" />
+                      </div>
+
+                      <div class="bio-content">
+                          Mr. Tshering Penjor
+                          <p class="text-center">
+                              <strong>MEMBER</strong>
+                          </p>
+
+                          <p style="text-align: justify;">
+                              Mr. Tshering Penjor was appointed Deputy Governor
+                              of the Royal Monetary Authority of Bhutan on May 1,
+                              2026. Prior to his appointment, Mr. Penjor served
+                              as the Executive Director of the Department of
+                              Financial Regulation and Supervision.
+                          </p>
+
+                          <p style="text-align: justify;">
+                              Earlier, he served as a Specialist in the Financial
+                              Intelligence Department from 2018, contributing to
+                              critical areas of financial oversight and integrity.
+                              He has also served in the Department of Revenue and
+                              Customs under the Ministry of Finance, as well as
+                              the Anti-Corruption Commission, reflecting a
+                              distinguished career across key public institutions.
+                          </p>
+
+                          <p style="text-align: justify;">
+                              Mr. Penjor holds a Master's degree in Forensic
+                              Accounting from the University of Wollongong,
+                              Australia.
+                          </p>
+                      </div>
+                  </div>`;
+          }
+        };
+      });
+
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    })();
+
+    //Chatbot-----------------
+    const RC_ICON = "/static/img/rma_chatbot_icon.png";
+    const RC_WELCOME = "<p><strong>Hello!</strong> I am the RMA Assistant.</p><p>Ask me about exchange rates, currency services, forms, the payment gateway and more.</p>";
+    let rcBusy = false;
+
+    function rcTime() {
+      return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function rcIsMobile() {
+      return window.matchMedia('(max-width: 576px)').matches;
+    }
+
+    function toggleChat(force) {
+      const chatbox = document.getElementById("chatbox");
+      const launcher = document.getElementById("rcLauncher");
+      const open = typeof force === "boolean" ? force : !chatbox.classList.contains("active");
+
+      chatbox.classList.toggle("active", open);
+      chatbox.setAttribute("aria-hidden", open ? "false" : "true");
+      launcher.classList.toggle("rc-hidden", open);
+      launcher.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.classList.toggle("rc-lock", open && rcIsMobile());
+
+      if (open) {
+        if (!document.getElementById("chatBody").children.length) addBotMessage(RC_WELCOME, true);
+        if (!rcIsMobile()) setTimeout(() => document.getElementById("userInput").focus(), 200);
+      } else {
+        launcher.focus();
+      }
+    }
+
+    function resetChat() {
+      document.getElementById("chatBody").innerHTML = "";
+      document.getElementById("rcSuggest").hidden = false;
+      addBotMessage(RC_WELCOME, true);
+    }
+
+    async function sendQuickReply(message) {
+      if (rcBusy) return;
+      addUserMessage(message);
+      await sendToApi(message);
+    }
+
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value.trim();
+      if (message === "" || rcBusy) return;
+
+      addUserMessage(message);
+      input.value = "";
+      rcAutosize(input);
+      await sendToApi(message);
+    }
+
+    function rcAppend(node) {
+      const chatBody = document.getElementById("chatBody");
+      chatBody.appendChild(node);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function addUserMessage(text) {
+      document.getElementById("rcSuggest").hidden = true;
+      const msg = document.createElement("div");
+      msg.className = "rc-msg rc-user";
+      msg.innerHTML = '<div class="rc-msg-main"><div class="rc-bubble"></div><span class="rc-time"></span></div>';
+      msg.querySelector(".rc-bubble").textContent = text;   // user text is never treated as HTML
+      msg.querySelector(".rc-time").textContent = rcTime();
+      rcAppend(msg);
+    }
+
+    // Bot answers contain simple HTML from the AI. Clean it before display so that
+    // scripts, iframes, event handlers etc. can never run (prevents XSS).
+    function rcSanitize(html) {
+      if (window.DOMPurify) {
+        const clean = DOMPurify.sanitize(html, {
+          ALLOWED_TAGS: ['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a', 'small', 'hr', 'div', 'span',
+            'table', 'thead', 'tbody', 'tr', 'th', 'td', 'h4', 'h5', 'h6', 'blockquote', 'code'],
+          ALLOWED_ATTR: ['href', 'download', 'class', 'title'],
+          ALLOWED_URI_REGEXP: /^(?:https?:|mailto:|tel:|\/(?!\/))/i
+        });
+        const tpl = document.createElement("template");
+        tpl.innerHTML = clean;
+        tpl.content.querySelectorAll("a[href]").forEach(a => { a.target = "_blank"; a.rel = "noopener noreferrer"; });
+        return tpl.innerHTML;
+      }
+      // Fallback if the sanitizer failed to load: show as plain text
+      const div = document.createElement("div");
+      div.textContent = html.replace(/<[^>]*>/g, " ");
+      return div.innerHTML;
+    }
+
+    function addBotMessage(html, isWelcome, isError) {
+      const msg = document.createElement("div");
+      msg.className = "rc-msg rc-bot" + (isError ? " rc-error" : "");
+      msg.innerHTML =
+        '<img class="rc-msg-avatar" alt="" width="28" height="28">' +
+        '<div class="rc-msg-main"><div class="rc-bubble"></div><span class="rc-time"></span></div>';
+      msg.querySelector(".rc-msg-avatar").src = RC_ICON;
+      msg.querySelector(".rc-bubble").innerHTML = rcSanitize(html);
+      msg.querySelector(".rc-time").textContent = isWelcome ? "" : rcTime();
+      rcAppend(msg);
+    }
+
+    function rcSetBusy(busy) {
+      rcBusy = busy;
+      document.getElementById("rcSend").disabled = busy;
+      document.querySelectorAll(".rc-chip").forEach(b => b.disabled = busy);
+    }
+
+    const CSRF_TOKEN = 'bwU1az8bShkHKguOdhQviikXfagvOXMu11B8JrbOimlMznUfGDKuQxNPkOawVj3a';
+    async function sendToApi(query) {
+      rcSetBusy(true);
+      const typing = document.createElement("div");
+      typing.className = "rc-msg rc-bot";
+      typing.innerHTML = '<img class="rc-msg-avatar" alt="" width="28" height="28" style="margin-bottom:0">' +
+        '<div class="rc-bubble" aria-label="Assistant is typing"><span class="rc-typing"><span></span><span></span><span></span></span></div>';
+      typing.querySelector("img").src = RC_ICON;
+      rcAppend(typing);
+
+      try {
+        const response = await fetch("/chat/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-CSRFToken": CSRF_TOKEN,
+          },
+          credentials: "same-origin",
+          body: JSON.stringify({ query: query }),
+        });
+        let data = {};
+        try { data = await response.json(); } catch (e) { /* non-JSON error page */ }
+        typing.remove();
+
+        if (response.status === 429) {
+          addBotMessage("<p>You are sending messages too quickly. Please wait a moment and try again.</p>", false, true);
+        } else if (!response.ok) {
+          addBotMessage(data.response || "<p>Sorry, something went wrong. Please try again.</p>", false, true);
+        } else {
+          addBotMessage(data.response || "<p>Sorry, I couldn't process your request.</p>");
+        }
+      } catch (error) {
+        typing.remove();
+        addBotMessage("<p>Oops! I couldn't reach the server. Please check your connection and try again.</p>", false, true);
+        console.error("Chat error:", error);
+      } finally {
+        rcSetBusy(false);
+      }
+    }
+
+    function rcAutosize(el) {
+      el.style.height = "auto";
+      el.style.height = Math.min(el.scrollHeight, 120) + "px";
+    }
+
+    (function initChat() {
+      const input = document.getElementById("userInput");
+      if (!input) return;
+      input.addEventListener("input", () => rcAutosize(input));
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey && !e.isComposing) {
+          e.preventDefault();
+          sendMessage();
+        }
+      });
+      document.addEventListener("keydown", (e) => {
+        const chatbox = document.getElementById("chatbox");
+        const modal = document.getElementById("chatbot-disclaimer-modal");
+        if (e.key === "Escape" && chatbox.classList.contains("active") && !(modal && modal.style.display === "block")) {
+          toggleChat(false);
+        }
+      });
+      window.addEventListener("resize", () => {
+        document.body.classList.toggle("rc-lock", document.getElementById("chatbox").classList.contains("active") && rcIsMobile());
+      });
+    })();
+
+    // Kept for backward compatibility with any old callers
+    function sanitizeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function showChatbotDisclaimer() {
+      let disclaimerModal = document.getElementById('chatbot-disclaimer-modal');
+
+      if (!disclaimerModal) {
+        disclaimerModal = document.createElement('div');
+        disclaimerModal.id = 'chatbot-disclaimer-modal';
+        disclaimerModal.className = 'chatbot-disclaimer-modal';
+        disclaimerModal.innerHTML = `
+      <div class="chatbot-disclaimer-content">
+        <div class="chatbot-disclaimer-header">
+          <h4 style="margin: 0; font-weight: 600;">
+            <i class="bi bi-robot" style="margin-right: 10px;"></i>
+            Chatbot Assistant Disclaimer
+          </h4>
+          <button class="chatbot-disclaimer-close" onclick="closeChatbotDisclaimer()">×</button>
+        </div>
+        <div class="chatbot-disclaimer-body">
+          <p><strong>Important Notice:</strong> The RMA AI Assistant provides responses based on AI-generated content and information from various sources.</p>
+          
+          <div class="chatbot-disclaimer-alert">
+            <p style="margin: 0; color: #d32f2f; font-weight: 500;">
+              <i class="bi bi-exclamation-triangle-fill" style="margin-right: 8px;"></i>
+              <strong>Please Note:</strong> AI-generated responses should be validated before making important decisions.
+            </p>
+          </div>
+          
+          <h5>Limitations & Important Information</h5>
+          <ul class="chatbot-disclaimer-points">
+            <li>
+              <strong>AI-Generated Content:</strong> Responses are automatically generated based on the knowledge base and supplemented with external web search results. Information may contain inaccuracies or be outdated.
+            </li>
+            <li>
+              <strong>External Sources:</strong> Information may be supplemented from external sources. Always validate with official RMA publications or contact relevant departments.
+            </li>
+            <li>
+              <strong>Not Official Advice:</strong> This chatbot should not be used as a basis for financial decisions, legal interpretations, or official procedures.
+            </li>
+            <li>
+              <strong>User Responsibility:</strong> You are responsible for verifying any information provided by the chatbot before taking action.
+            </li>
+            <li>
+              <strong>Data Privacy:</strong> Conversations may be logged for improvement purposes but will be handled in accordance with RMA's privacy policy.
+            </li>
+          </ul>
+          
+          <div style="margin-top: 20px; padding: 15px; background-color: #f5f5f5; border-radius: 6px;">
+            <p style="margin: 0; font-size: 0.9em; color: #666;">
+              <i class="bi bi-shield-check" style="margin-right: 8px;"></i>
+              For official information, please refer to:
+              <br>
+              • <a href="/publication/31/" style="color: #1a5f7a;">Official RMA Publications</a>
+              <br>
+              • <a href="/forms/" style="color: #1a5f7a;">Official Forms & Documents</a>
+              <br>
+              • <a href="/contact_us/" style="color: #1a5f7a;">Contact Relevant Departments</a>
+            </p>
+          </div>
+        </div>
+        <div class="chatbot-disclaimer-footer">
+          <button onclick="closeChatbotDisclaimer()" style="
+            background: #204b85;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+          ">
+            I Understand
+          </button>
+        </div>
+      </div>
+    `;
+        document.body.appendChild(disclaimerModal);
+      }
+
+      disclaimerModal.style.display = 'block';
+    }
+
+    function closeChatbotDisclaimer() {
+      const disclaimerModal = document.getElementById('chatbot-disclaimer-modal');
+      if (disclaimerModal) {
+        disclaimerModal.style.display = 'none';
+      }
+    }
+
+    window.onclick = function (event) {
+      const disclaimerModal = document.getElementById('chatbot-disclaimer-modal');
+      if (event.target === disclaimerModal) {
+        disclaimerModal.style.display = 'none';
+      }
+    };
+
+  </script>
+  <style>
+    .alertify-notifier .ajs-message {
+      color: white;
+      width: 500px;
+      text-align: center;
+    }
+  </style>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+url: https://www.grai.ie/register/download
+bytes: 1616  starts: b'PK\x03\x04\x14\x00\x02\x00'
+error: None
+columns used: {'name': 'Account Name', 'type': 'Activity', 'id': 'Account Number', 'lei': None, 'city': 'City', 'date': 'Issue Date', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'Expiry Date', 'exclude': 'Activity', 'require': None}
+headers: ['Account Number', 'Account Name', 'Licence Number', 'Licence Type', 'Activity', 'Relevant Games', 'Issue Date', 'Expiry Date', 'Street', 'City', 'County', 'Postcode', 'Country', 'Trading Name', 'Full Name', 'Officer Role']
+data rows: 43  kept: 40
+type values: [('Remote Betting', 38), ('Remote Betting Intermediary', 4), ('In-person Betting', 1)]
+first lines:
+'(binary)'

@@ -1,10 +1,10 @@
-url: https://www.cbaruba.org/financial-institutions-under-supervision-of-the-central-bank/
+url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
 bytes: 48265  starts: b'\n<!DOCTY'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name']
-data rows: 43  kept: 12
-type values: [('', 14)]
+columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
+headers: ['name', 'section']
+data rows: 56  kept: 18
+type values: [('1. Insurance brokers that have been granted a license pursuant to article 2, paragraph 1, of the State Decree on the Supervision of Insurance Brokers (AB 2014 no. 6)', 15), ('6. Money Transaction Companies that have been granted exemption pursuant to article 10 of the State Ordinance on the Supervision of the Money Transaction Companies (AB 2003 No. 60)', 8), ('2. Credit Institutions that have registered at the Centrale Bank van Aruba pursuant to article 2, paragraph 3, of the State Decree on the Supervision of Insurance Brokers (AB 2014 no. 6)', 5), ('Commercial banks', 4), ('Other financial institutions', 3), ('Fatum General Insurance Aruba N.V. (Trade name: Guardian Group Fatum General Insurance Aruba and Guardian Group General Insurance)', 3), ('Captive insurance companies', 3), ('Credit Institutions that have registered at the CBA pursuant to article 10, paragraph 2, of the State Ordinance on the Supervision of the Securities Business (AB 2016 no. 53)', 3), ('Pawnshops', 2), ('Mortgage brokers', 2), ('Nagico Life Insurance (Aruba) N.V. (Trade Name: Nagico Life Insurance)', 2), ('5. Money Transaction Companies that have been granted authorization pursuant to article 3 of the State Ordinance on the Supervision of the Money Transaction Companies (AB 2003 No. 60)', 2), ('Finance companies', 1), ('Life insurance companies operating in Aruba', 1), ('Bupa Insurance Company, Agency', 1), ('4. Insurance Brokers that have been granted a dispensation pursuant to article 4, paragraph 4, of the State Ordinance on the Supervision of the Insurance Business (AB 2000 No. 82) regarding entities with supplementary insurance brokerage services', 1)]
 first lines:
 ''
 '<!DOCTYPE html>'

@@ -1,10 +1,78 @@
-url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
-bytes: 128349  starts: b' <!DOCTY'
+url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/domestic-banks
+bytes: 109428  starts: b' <!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
-data rows: 14  kept: 13
-type values: [('', 13)]
+data rows: 4  kept: 4
+type values: [('', 4)]
+first lines:
+' <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>'
+'\tDomestic Banks | Central Bank of Belize'
+'</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"> <link href="/Stylesheets/public/cd980ac9-2ba4-4b28-9894-f05633ef172c?version=1130" rel="stylesheet" type="text/css" /><link href="/Style'
+'/*SEARCH CODE*/'
+'function doSearch(event, element) {'
+'    if (event.keyCode == 13) {'
+'        var keyword = element ? element.value : document.getElementById("header-search__input").value;'
+'        if (!!keyword && keyword.length > 0) {'
+
+url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/international-banks
+bytes: 107180  starts: b' <!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 3  kept: 3
+type values: [('', 3)]
+first lines:
+' <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>'
+'\tInternational Banks | Central Bank of Belize'
+'</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"> <link href="/Stylesheets/public/cd980ac9-2ba4-4b28-9894-f05633ef172c?version=1130" rel="stylesheet" type="text/css" /><link href="/Style'
+'/*SEARCH CODE*/'
+'function doSearch(event, element) {'
+'    if (event.keyCode == 13) {'
+'        var keyword = element ? element.value : document.getElementById("header-search__input").value;'
+'        if (!!keyword && keyword.length > 0) {'
+
+url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/credit-unions
+bytes: 108008  starts: b' <!DOCTY'
+error: RuntimeError('no firms matched')
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 0  kept: 0
+type values: []
+first lines:
+' <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>'
+'\tCredit Unions | Central Bank of Belize'
+'</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"> <link href="/Stylesheets/public/cd980ac9-2ba4-4b28-9894-f05633ef172c?version=1130" rel="stylesheet" type="text/css" /><link href="/Style'
+'/*SEARCH CODE*/'
+'function doSearch(event, element) {'
+'    if (event.keyCode == 13) {'
+'        var keyword = element ? element.value : document.getElementById("header-search__input").value;'
+'        if (!!keyword && keyword.length > 0) {'
+
+url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/remittance-service-providers
+bytes: 131058  starts: b' <!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 4  kept: 4
+type values: [('', 4)]
+first lines:
+' <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>'
+'\tRemittance Service Providers | Central Bank of Belize'
+'</title> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"> <link href="/Stylesheets/public/cd980ac9-2ba4-4b28-9894-f05633ef172c?version=1130" rel="stylesheet" type="text/css" /><link href="/Style'
+'/*SEARCH CODE*/'
+'function doSearch(event, element) {'
+'    if (event.keyCode == 13) {'
+'        var keyword = element ? element.value : document.getElementById("header-search__input").value;'
+'        if (!!keyword && keyword.length > 0) {'
+
+url: https://www.centralbank.org.bz/home/core-functions/prudential-supervision/payment-service-providers
+bytes: 128319  starts: b' <!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 1  kept: 1
+type values: [('', 1)]
 first lines:
 ' <!DOCTYPE html> <html class="no-js" lang="en"><head> <title>'
 '\tPayment Service Providers | Central Bank of Belize'

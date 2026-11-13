@@ -1,16 +1,16 @@
-url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari
-bytes: 98407  starts: b'\n\n\n\n\n\n\n\n'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.adm.gov.it/portale/monopoli/giochi/gioco_distanza/gioco_dist_concessionari?p_p_id=it_sogei_wda_web_portlet_WebDisplayAamsPortlet&p_p_lifecycle=2&p_p_state=normal&p_p_mode=view&p_p_cacheability=cacheLevelPage&pager={page}
+bytes: 149  starts: b'<div cla'
+error: None
+columns used: {'name': 'Concessionario △ ▽', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Sito internet', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Codice concessione △ ▽', 'Concessionario △ ▽', 'Sito internet']
+data rows: 12  kept: 12
+type values: [('', 12)]
 first lines:
+'<div class="container py-4">'
 ''
-''
-''
-''
-''
-''
-''
-''
+'\t\t\t\t\t\t\t'
+'\t\t\t<div class="errore">Non sono presenti concessionari autorizzati al gioco a distanza</div>'
+'\t\t\t'
+'\t\t\t\t'
+'\t'
+'</div>'

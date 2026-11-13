@@ -15,6 +15,57 @@ first lines:
 '    - '
 '\tInstituciones'
 
+url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Trans_Fondos_Lst.aspx
+bytes: 125120  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['RAZÓN SOCIAL', 'DIRECCIÓN', 'TELÉFONO', 'FAX']
+data rows: 7  kept: 7
+type values: [('', 7)]
+first lines:
+''
+'<!DOCTYPE html >'
+'<html dir="ltr" lang="es-ES">'
+'    <head><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta name="viewport" content="width=device-width, initial-scale=1" /><'
+'\t'
+'    Páginas'
+'    - '
+'\tEmpresas de Transferencia de Fondos'
+
+url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/emp_Serv_Fin_Lst.aspx
+bytes: 128662  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['RAZÓN SOCIAL', 'DIRECCIÓN', 'TELÉFONO', 'FAX']
+data rows: 18  kept: 18
+type values: [('', 18)]
+first lines:
+''
+'<!DOCTYPE html >'
+'<html dir="ltr" lang="es-ES">'
+'    <head><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta name="viewport" content="width=device-width, initial-scale=1" /><'
+'\t'
+'    Páginas'
+'    - '
+'\tEmpresas de Servicios Financieros'
+
+url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_Financieras_Lst.aspx
+bytes: 123047  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'RAZÓN SOCIAL', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'TELÉFONO', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['RAZÓN SOCIAL', 'DIRECCIÓN', 'TELÉFONO', 'FAX']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+''
+'<!DOCTYPE html >'
+'<html dir="ltr" lang="es-ES">'
+'    <head><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta name="viewport" content="width=device-width, initial-scale=1" /><'
+'\t'
+'    Páginas'
+'    - '
+'\tCasas Financieras'
+
 url: https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/casas_cambio.aspx
 bytes: 132911  starts: b'\r\n<!DOCT'
 error: None

@@ -1,5 +1,5 @@
 url: https://www.bnm.gov.my/non-bank-e-money-issuers
-bytes: 230719  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 232788  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
@@ -16,7 +16,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory/msb-licensees
-bytes: 890775  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 892844  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Licensee', 'type': 'Type of money services business', 'id': 'Business Registration Number', 'lei': None, 'city': None, 'date': None, 'status': 'State', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'Full Address', 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Licensee', 'Business Registration Number', 'Full Address', 'State', 'Premises', 'Status of premises', 'Type of money services business']
@@ -33,7 +33,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory
-bytes: 300277  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 302346  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']

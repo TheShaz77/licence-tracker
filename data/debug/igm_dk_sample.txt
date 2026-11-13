@@ -1,12 +1,9 @@
-url: https://spillemyndigheden.dk/spiludbydere-med-tilladelse
-bytes: 114646  starts: b'<!DOCTYP'
-error: RuntimeError('no matching table on the page; table headers were: []')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://spillemyndigheden.dk/api/indexSearch
+bytes: 67031  starts: b'[{"id":"'
+error: None
+columns used: {'name': 'title', 'type': 'tags', 'id': 'gId', 'lei': None, 'city': None, 'date': 'date', 'status': None, 'website': 'contentText', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': 'tags'}
+headers: ['id', 'gId', 'articleId', 'domainName', 'types', 'tags', 'expirationDate', 'parentId', 'parentGId', 'contentImage', 'contentText', 'date', 'description', 'seoDescription', 'seoTitle', 'title', 'url', 'culture', 'siteName', 'oid', 'createDate', 'updateDate']
+data rows: 92  kept: 44
+type values: [('onlinekasino; vddeml', 24), ('walkietalkiebingoindtgtsbegrnsetonlinekasino', 13), ('onlinekasino', 12), ('landbaseretfysiskbingo', 11), ('offentligepokerturneringer', 10), ('Kasino', 5), ('klasselotterimonopol', 3), ('onlinekasinoindtgtsbegrnset; onlinekasino', 2), ('kasino', 2), ('lokalepuljevddemlhundevddelbpvddelbsbane', 2), ('vddemlindtgtsbegrnset; vddeml', 2), ('vddeml', 2), ('lokalepuljevddemlhestevddelbpvddelbsbane', 1), ('lotterimonopol', 1), ('vddeml; onlinekasino', 1), ('onlinekasinoindtgtsbegrnset', 1)]
 first lines:
-'<!DOCTYPE html><html lang="da-dk"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>Spiludbydere med tilladelse</title><meta property="og:title" content="Spiludbydere med tilladelse"/><meta name="dc.title" content="Spiludbydere med tilladelse"/><meta name="descr'
-'<p>Oversigten indeholder ikke spiludbydere med tilladelse til spilleautomater og spilleverandører.&nbsp;</p>'
-'<p><span class="RichText_arrowLink"><a href="/virksomheder-og-foreninger/spil-der-kraever-en-tilladelse/spilleautomater/liste-over-tilladelsesindehavere" title="Liste over tilladelsesindehavere" data-start-item-path="spillemyndigheden" data-start-item-id="ad8f2dc3-ff9a-43a8-abc1-accc55726ba8">Se, hv'
-'<p><span class="RichText_arrowLink"><a href="/virksomheder-og-foreninger/spilleverandoer/oversigt-over-spilleverandoerer" title="Oversigt over spilleverandører" data-start-item-path="spillemyndigheden" data-start-item-id="ad8f2dc3-ff9a-43a8-abc1-accc55726ba8">Se en oversigt over spilleverandører</a>'
+'[{"id":"3785-da-dk","gId":"d64e5883be49439a8c545e746b4265f5","articleId":"","domainName":"https://spillemyndigheden.dk/","types":["HarikketilladelseiGrønland"],"tags":["walkietalkiebingoindtgtsbegrnsetonlinekasino"],"expirationDate":null,"parentId":3736,"parentGId":"842508124a7142d1baf2c29000c08028"'

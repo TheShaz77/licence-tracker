@@ -1,32 +1,15 @@
-url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealer-in-Foreign-Exchange-with-Limited.aspx
-bytes: 127034  starts: b'<!DOCTYP'
+url: https://www.bon.com.na/Bank/National-Payment-System/National-Payment-System-Participants.aspx
+bytes: 143383  starts: b'<!DOCTYP'
 error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name']
-data rows: 12  kept: 5
-type values: [('', 5)]
+columns used: {'name': 'Institution', 'type': 'Institution', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['No.', 'Institution', 'NISS', 'EFT', 'Card-switch Facility', 'E-Money', 'SADC-RTGS', 'Third party payment service providers', 'Payment facilitator service provider', 'Virtual Asset Service Provider']
+data rows: 31  kept: 30
+type values: [('Bank BIC Namibia (Bank BIC)', 1), ('Bank Windhoek (BWHK)', 1), ('First National Bank (FNB)', 1), ('Standard Bank Namibia (SBN)', 1), ('Letshego Bank Namibia (LBN)', 1), ('Nedbank Namibia (NBN)', 1), ('Bank Atlántico (Bank ATL)', 1), ('Namibia Post Limited (NamPost)', 1), ('Virtual Technology Services (VTS)', 1), ('Nam-mic Payment Solutions (NPS)', 1), ('VIVO Energy Namibia (VIVO)', 1), ('MTC Maris (Pty) Ltd', 1), ('Ecentric Namibia', 1), ('MobiCash Payment Solutions', 1), ('Virtual Card Services Namibia (DPO)', 1), ('Adumo Online Namibia', 1), ('ATM Solutions Namibia', 1), ('Hyphen Technology Namibia', 1), ('Innervation Group Namibia', 1), ('Selcom Payment Namibia', 1), ('Paymate Namibia', 1), ('RealPay Namibia', 1), ('Collexia Payments Namibia', 1), ('Payat Payment Services Namibia', 1), ('Q Link Transact (Pty) Ltd', 1), ('Buddy Industries (Pty) Ltd', 1), ('Finatic Technologies (Pty) Ltd', 1), ('United PayPoint (Pty) Ltd', 1), ('Access Bank Namibia (ABN)', 1), ('TPTS Financial Technology Group (TPTS)', 1)]
 first lines:
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
 '<html xmlns="http://www.w3.org/1999/xhtml" >'
 '<head id="head"><title>'
-'\tBank of Namibia - Authorised Dealer in Foreign Exchange with Limited Authority (ADLA)'
-'</title><meta http-equiv="content-type" content="text/html; charset=UTF-8" /> '
-'<meta http-equiv="pragma" content="no-cache" /> '
-'<meta http-equiv="content-style-type" content="text/css" /> '
-'<meta http-equiv="content-script-type" content="text/javascript" /> '
-
-url: https://www.bon.com.na/Bank/Exchange-Control/Authorised-Dealers-in-Foreign-Exchange.aspx
-bytes: 126510  starts: b'<!DOCTYP'
-error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name']
-data rows: 11  kept: 10
-type values: [('', 11)]
-first lines:
-'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'
-'<html xmlns="http://www.w3.org/1999/xhtml" >'
-'<head id="head"><title>'
-'\tBank of Namibia - Authorised Dealers in Foreign Exchange'
+'\tBank of Namibia - National Payment System Participants'
 '</title><meta http-equiv="content-type" content="text/html; charset=UTF-8" /> '
 '<meta http-equiv="pragma" content="no-cache" /> '
 '<meta http-equiv="content-style-type" content="text/css" /> '

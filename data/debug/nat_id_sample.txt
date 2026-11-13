@@ -1,3 +1,23 @@
+url: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20Perdagangan%20Aset%20Keuangan%20Digital%20Posisi%2022%20September%202026.pdf
+bytes: 6111731  starts: b'%PDF-1.4'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 23  kept: 23
+type values: [('', 23)]
+first lines:
+'(binary)'
+
+url: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Posisi%2023%20Oktober%202026.pdf
+bytes: 4074602  starts: b'%PDF-1.4'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 18  kept: 18
+type values: [('', 18)]
+first lines:
+'(binary)'
+
 url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
 bytes: 731991  starts: b'\r\n\r\n<!DO'
 error: None

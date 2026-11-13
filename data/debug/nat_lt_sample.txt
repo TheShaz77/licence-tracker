@@ -1,10 +1,10 @@
 url: https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv
-bytes: 76892  starts: b'\xef\xbb\xbfTitle'
+bytes: 77077  starts: b'\xef\xbb\xbfTitle'
 error: None
 columns used: {'name': 'Title', 'type': 'Type', 'id': 'Company code', 'lei': None, 'city': None, 'date': 'valid from', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'valid till', 'exclude': 'Business form', 'require': 'Company code'}
 headers: ['Title', 'Type', 'Business form', 'Company code', 'Registration code', 'Licence type/kind', 'Authorization code', 'valid from', 'valid till']
-data rows: 419  kept: 41
-type values: [('Payment institution', 378), ('Payment institution, Currency exchange operator', 33), ('Payment institution, Currency exchange operator, Electronic money institution intermediary', 3), ('Payment institution, Electronic money institution', 3), ('Payment institution, Credit servicer', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
+data rows: 420  kept: 41
+type values: [('Payment institution', 379), ('Payment institution, Currency exchange operator', 33), ('Payment institution, Currency exchange operator, Electronic money institution intermediary', 3), ('Payment institution, Electronic money institution', 3), ('Payment institution, Credit servicer', 1), ('Bank, Payment institution, Electronic money institution, Consumer credit provider', 1)]
 first lines:
 'Title;Type;Business form;Company code;Registration code;Licence type/kind;Authorization code;valid from;valid till'
 ' Unzer Luxembourg S.A.;Payment institution;Payment institutions of EU Member States providing services in the Republic of Lithuania without a branch;; B 144133;;;;'

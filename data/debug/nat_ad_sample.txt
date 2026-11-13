@@ -1,0 +1,84 @@
+url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-bancaries/registre-dentitats-autoritzades
+bytes: 399700  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 8  kept: 8
+type values: [('Entitat Bancària', 8)]
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">'
+'<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+''
+'    <meta charset="utf-8" />'
+"    <title>Registre d'Entitats Autoritzades — AFA - Autoritat Financera Andorrana</title>"
+'    <link rel="icon" href="/++theme++afa/images/favicon.ico" type="image/png" sizes="16x16" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1" />'
+
+url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-financeres-no-bancaries-de-credit-especialitzat/registre-dentitats-autoritzades
+bytes: 390523  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 1  kept: 1
+type values: [('Societat financera no bancària de crèdit especialitzat', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">'
+'<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+''
+'    <meta charset="utf-8" />'
+"    <title>Registre d'entitats autoritzades — AFA - Autoritat Financera Andorrana</title>"
+'    <link rel="icon" href="/++theme++afa/images/favicon.ico" type="image/png" sizes="16x16" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1" />'
+
+url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-de-pagament/registre-dentitats-autoritzades
+bytes: 397391  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 2  kept: 2
+type values: [('Entitat de pagament', 2)]
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">'
+'<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+''
+'    <meta charset="utf-8" />'
+'    <title>Registre d’entitats autoritzades — AFA - Autoritat Financera Andorrana</title>'
+'    <link rel="icon" href="/++theme++afa/images/favicon.ico" type="image/png" sizes="16x16" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1" />'
+
+url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-de-diner-electronic/registre-d2019entitats-autoritzades
+bytes: 387897  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 0  kept: 0
+type values: []
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">'
+'<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+''
+'    <meta charset="utf-8" />'
+'    <title>Registre d’Entitats Autoritzades — AFA - Autoritat Financera Andorrana</title>'
+'    <link rel="icon" href="/++theme++afa/images/favicon.ico" type="image/png" sizes="16x16" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1" />'
+
+url: https://www.afa.ad/ca/entitats-supervisades/actius-digitals/participants-actius-digitals/registre_entitats_autoritzades
+bytes: 388329  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 5  kept: 5
+type values: [('Participant en la representació digital d’actius', 5)]
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca">'
+'<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+''
+'    <meta charset="utf-8" />'
+"    <title>Registre d'Entitats Autoritzades — AFA - Autoritat Financera Andorrana</title>"
+'    <link rel="icon" href="/++theme++afa/images/favicon.ico" type="image/png" sizes="16x16" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1" />'

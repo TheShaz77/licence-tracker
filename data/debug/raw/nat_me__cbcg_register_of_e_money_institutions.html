@@ -1,0 +1,627 @@
+
+<!doctype html>
+<html lang="en">
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->
+<!--[if !IE]><html lang="en"><![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Register of E-money Institutions - CBCG</title>
+	<meta name="description" content="CBCG">
+	<meta property="og:title" content="Register of E-money Institutions - CBCG" />
+	<meta property="og:site_name" content="CBCG"/>
+	<meta property='og:image' content='https://cbcg.me/' />
+	<meta property="og:url" content="https://cbcg.me" />
+	<meta property="og:type" content="article" />
+	<meta property="fb:app_id" content="267368873636411"/>
+	<meta property="og:description" content="CBCG" />
+
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+	<link rel="stylesheet" href="/css/flaticon/flaticon.css">
+		<link rel="stylesheet" href="/css/main.css?ver=0.8">
+</head>
+<body>
+<style>
+   .cookies-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background: #f0f0f0;
+      color: #0f0f0f;
+      z-index: 55;
+
+      transform: translateY(100%);
+      transition: all .3s ease;
+   }
+
+   .cookies-footer.show {
+      transform: translateY(0);
+   }
+
+   .cookies-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 15px;
+   }
+
+   .cookies-content p {
+      line-height: 1.2;
+   }
+
+   @media(max-width: 767px) {
+      .cookies-content {
+         flex-direction: column;
+         padding: 12px;
+      }
+
+      .cookies-buttons-wrapper {
+         margin-top: 15px;
+      }
+   }
+
+   .cookies-buttons-wrapper {
+      display: flex;
+   }
+
+   .cookies-btn {
+      background: #f0f0f0;
+      border: 2px solid #003b7d;
+      padding: 3px 12px;
+      margin-left: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      color: #003b7d;
+      cursor: pointer;
+   }
+
+   .accept-cookies {
+      background-color: #003b7d;
+      color: white;
+      margin-left: 20px;
+   }
+</style>
+<div class="cookies-footer" id="cookies-footer">
+	<div class="cookies-content">
+      <p>This website uses cookies to ensure you get the best experience on our website.</p>
+		<div class="cookies-buttons-wrapper">
+			<div class="cookies-btn accept-cookies" id="accept-cookies">I understand</div>
+			<a href="/en/public-relations/information/access-to-information" class="cookies-btn accept">More info</a>
+		</div>
+	</div>
+</div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function(){
+      var closeBtn = document.getElementById('accept-cookies');
+      var cookiesFooter = document.getElementById('cookies-footer');
+      if ( !localStorage.getItem('cookies_accepted') ) {
+         cookiesFooter.classList.add('show');
+         closeBtn.addEventListener('click', function() {
+            localStorage.setItem('cookies_accepted', true);
+            cookiesFooter.classList.remove('show');
+         });	
+      }
+   });
+</script>
+
+
+<nav class="navbar navbar-expand-lg">
+  <div class="w-100 h-100">
+    <div class="col-12 nav-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <a class="navbar-brand" href="/en"><img src="/images/nav-logo-me2.svg" alt="CBCG Logo - Montenegro" width='170px'></a>
+            <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        
+          <div class="nav-search nav-right  d-none d-lg-flex align-items-center justify-content-end">
+       
+
+            <ul class='helper-links d-none list-unstyled d-lg-flex align-items-center'>
+              <li><a href='/en/about-us/contact'>Contact</a></li><li><a href='/en/site-map'>Site map</a></li><li><a href='/en/public-relations/information/faq'>FAQ</a></li><li><a href='/en/public-relations/information/access-to-information'>Access to Information</a></li>            </ul>
+
+            <ul class="d-flex list-unstyled m-0 ml-3 social-links">
+<li>
+                <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin.svg" width="24" height="24" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+
+            
+              <li>
+                <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-youtube.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+  <li>
+                <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+  <li>
+                <a href="https://x.com/Centralnabanka" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+
+            </ul>
+
+                      
+            <a href="/en/search" class='search-form'>
+	    	<span>Search</span>
+              	<img src="/images/icon-search.svg" width="40px" height="40px" alt="Search" class="search-icon">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 nav-bottom">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-mega-menu">
+            <li class='nav-item mr-md-1' data-id=''><a href='/en' class='nav-link top-nav-link px-0'><i class='flaticon-home'></i></a></li><li class='nav-item  dropdown' data-parentId='18'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/about-us'
+                  id='nav_18' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>About us
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/about-us'>About us</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_18' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_18'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/history-goals-and-functions' 
+                            class='mega-menu-heading'>History, goals and functions
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-149'></span></div><ul class='nav flex-column' id='subnav-149'><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/history'>History</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/objectives-and-functions'>Objectives and Functions</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/cbcg-independence-and-transparency'>CBCG Independence and Transparency</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/policy-for-the-attainment-of-objectives-and-the-exercising-of-functions'>Policy for the Attainment of Objectives and the Exercising of Functions</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/cbcg-and-climate-changes'>CBCG and Climate Changes</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/history-goals-and-functions/recommendations-to-the-government-of-montenegro-for-economic-policy'>Recommendations to the Government of Montenegro for Economic Policy</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/governance-management-and-organisation' 
+                            class='mega-menu-heading'>Governance, Management and Organisation
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-26'></span></div><ul class='nav flex-column' id='subnav-26'><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/governance'>Governance</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/management'>Management</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/standing-bodies-of-the-council'>Standing Bodies of the Council</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/organisation'>Organisation</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/working-bodies'>Working Bodies</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/governance-management-and-organisation/strategic-plan-20252028'>Strategic Plan 2025-2028</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/legislation' 
+                            class='mega-menu-heading'>Legislation
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-112'></span></div><ul class='nav flex-column' id='subnav-112'><li class='nav-item'><a class='nav-link active' href='/en/about-us/legislation/constitution-of-montenegro'>Constitution of Montenegro</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/legislation/laws'>Laws</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/legislation/statute'>Statute</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/legislation/regulations'>Regulations</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/prevention-of-corruption-and-integrity-protection' 
+                            class='mega-menu-heading'>Prevention of Corruption and Integrity Protection
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1074'></span></div><ul class='nav flex-column' id='subnav-1074'><li class='nav-item'><a class='nav-link active' href='/en/about-us/prevention-of-corruption-and-integrity-protection/prevention-of-corruption'>Prevention of Corruption</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/prevention-of-corruption-and-integrity-protection/integrity-protection'>Integrity Protection</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/internal-audit' 
+                            class='mega-menu-heading'>Internal Audit
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/audit-by-the-state-audit-institution' 
+                            class='mega-menu-heading'>Audit by the State Audit Institution
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/cbcg-cooperation-with-other-state-authorities-and-organisations' 
+                            class='mega-menu-heading'>CBCG Cooperation with Other State Authorities and Organisations
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/international-cooperation' 
+                            class='mega-menu-heading'>International Cooperation
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-28'></span></div><ul class='nav flex-column' id='subnav-28'><li class='nav-item'><a class='nav-link active' href='/en/about-us/international-cooperation/international-institutions'>International Institutions</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/international-cooperation/cooperation-with-eu-institutions'>Cooperation with EU Institutions</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/international-cooperation/technical-cooperation'>Technical Cooperation</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/operational-risk-management' 
+                            class='mega-menu-heading'>Operational Risk Management
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2277'></span></div><ul class='nav flex-column' id='subnav-2277'><li class='nav-item'><a class='nav-link active' href='/en/about-us/operational-risk-management/basic-principles'>Basic Principles</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/operational-risk-management/methodological-framework'>Methodological Framework</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/operational-risk-management/information-security-and-business-continuity'>Information Security and Business Continuity</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/operational-risk-management/committee-for-operational-risk-information-security-and-business-continuity-management'>Committee for operational risk, information security and business continuity management</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/financial-activities' 
+                            class='mega-menu-heading'>Financial Activities
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2590'></span></div><ul class='nav flex-column' id='subnav-2590'><li class='nav-item'><a class='nav-link active' href='/en/about-us/financial-activities/financial-plan'>Financial Plan</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/financial-activities/rulebook-on-accounting'>Rulebook on Accounting</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/financial-activities/guidelines-for-the-selection-of-an-independent-external-auditor'>Guidelines for the selection of an independent external auditor</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/financial-activities/annual-financial-statements-with-the-independent-external-auditors-report'>Annual Financial Statements with the Independent external Auditor’s Report</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/corporate-social-responsibility' 
+                            class='mega-menu-heading'>Corporate Social Responsibility
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-153'></span></div><ul class='nav flex-column' id='subnav-153'><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/financial-education'>Financial Education</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/encouraging-scientific-research'>Encouraging Scientific Research</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/student-scholarship'>Student scholarship</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/women-on-boards'>Women On Boards</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/we-finance-code'>WE Finance Code</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/preservation-of-cultural-and-historical-heritage'>Preservation of Cultural and Historical Heritage</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/donations-and-humanitarian-activities'>Donations and Humanitarian Activities</a></li><li class='nav-item'><a class='nav-link active' href='/en/about-us/corporate-social-responsibility/corporate-environmental-responsibility'>Corporate Environmental Responsibility</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/about-us/contact' 
+                            class='mega-menu-heading'>Contact
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='19'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/core-functions'
+                  id='nav_19' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Core functions
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/core-functions'>Core functions</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_19' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_19'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/monetary-policy' 
+                            class='mega-menu-heading'>Monetary Policy
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-35'></span></div><ul class='nav flex-column' id='subnav-35'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/monetary-policy/objectives'>Objectives</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/monetary-policy/euroisation'>Euroisation</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/monetary-policy/instruments'>Instruments</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/financial-stability' 
+                            class='mega-menu-heading'>Financial Stability
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-118'></span></div><ul class='nav flex-column' id='subnav-118'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-stability/role-and-activities-of-the-cbcg'>Role and activities of the CBCG</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-stability/financial-system-of-montenegro'>Financial System of Montenegro</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-stability/indicators-and-reports'>Indicators and Reports</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-stability/macroprudential-measures'>Macroprudential Measures</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-stability/payment-system-oversight'>Payment System Oversight</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/supervisory-function' 
+                            class='mega-menu-heading'>Supervisory Function
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-36'></span></div><ul class='nav flex-column' id='subnav-36'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/banking-system'>Banking System</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/balance-sheets-and-profit-and-loss-statements-of-banks'>Balance Sheets and Profit and Loss Statements of Banks</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/financial-statements-of-banks'>Financial Statements of Banks</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/weighted-average-interest-rates-on-outstanding-loans-by-bank'>Weighted average interest rates on outstanding loans by bank</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/financial-service-providers'>Financial Service Providers</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers'>Financial Statements of Financial Service Providers</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/credit-registry-services'>Credit Registry Services</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/recognized-rating-agencies'>Recognized Rating Agencies</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/aqr'>AQR</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervisory-function/cooperation-agreements'>Cooperation agreements</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/financial-and-banking-operations' 
+                            class='mega-menu-heading'>Financial and Banking Operations
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-37'></span></div><ul class='nav flex-column' id='subnav-37'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/international-reserves'>International Reserves</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/international-payment-transactions'>International Payment Transactions</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/reserve-requirement'>Reserve Requirement</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills'>Fiscal Agent – Treasury Bills</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/default-interest-rate'>Default Interest Rate</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/fx-reference-rates'>FX Reference Rates</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/financial-and-banking-operations/memorandums-of-understanding'>Memorandums of Understanding</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/payment-system' 
+                            class='mega-menu-heading'>Payment System
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-38'></span></div><ul class='nav flex-column' id='subnav-38'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/registers'>Registers</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/instant-payments-tips-clone'>Instant Payments (TIPS Clone)</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/payment-systems'>Payment Systems</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/overview-of-the-tariffs-of-the-central-bank-of-montenegro'>Overview of the tariffs of the Central Bank of Montenegro</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/financial-statements-of-payment-institutions-and-electronic-money-institutions'>Financial statements of payment institutions and electronic money institutions</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/fees-for-services-related-to-a-consumer-payment-account'>Fees for Services Related to a Consumer Payment Account</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/payment-account-with-basic-features'>Payment Account with Basic Features</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/payment-system-statistics'>Payment system statistics</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/central-register-of-transaction-accounts-of-legal-persons-and-entrepreneurs'>Central Register of Transaction Accounts of Legal Persons and Entrepreneurs</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/enforced-collection'>Enforced Collection</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/payment-system/cooperation-agreements'>Cooperation Agreements</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/resolution-of-credit-institutions' 
+                            class='mega-menu-heading'>Resolution of Credit Institutions
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1934'></span></div><ul class='nav flex-column' id='subnav-1934'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/resolution-objectives'>Resolution Objectives</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/critical-functions-of-credit-institutions'>Critical Functions of Credit Institutions</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/resolution-tools'>Resolution Tools</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/resolution-fund'>Resolution Fund</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/mrel'>MREL</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/independent-valuers'>Independent Valuers</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/summary-of-internal-acts-governing-the-organisation-of-activities-from-the-area-of-resolution-of-credit-institutions'>Summary of Internal Acts Governing the Organisation of Activities from the Area of Resolution of Credit Institutions</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/resolution-of-credit-institutions/bilateral-cooperation-arrangement-between-the-srb-and-cbcg'>Bilateral Cooperation Arrangement Between the SRB and CBCG</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/research-and-forecast' 
+                            class='mega-menu-heading'>Research and Forecast
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2062'></span></div><ul class='nav flex-column' id='subnav-2062'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/research-and-forecast/directorate-for-economic-analysis-and-projections'>Directorate for Economic Analysis and Projections</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/research-and-forecast/inflation-forecasts'>Inflation Forecasts</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/research-and-forecast/gdp-projections'>GDP Projections</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights' 
+                            class='mega-menu-heading'>Supervision of Compliance and Protection of Rights
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-2440'></span></div><ul class='nav flex-column' id='subnav-2440'><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/supervision-in-the-area-of-prevention-of-money-laundering-and-terrorist-financing'>Supervision in the Area of Prevention of Money Laundering and Terrorist Financing</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services'>Protection of the Rights of Credit Institutions’ Clients and Users of Financial Services</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/weighted-average-effective-interest-rate-and-the-maximum-allowed-effective-interest-rate-on-consumer-loans'>Weighted average effective interest rate and the maximum allowed effective interest rate on Consumer Loans</a></li><li class='nav-item'><a class='nav-link active' href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/cooperation-agreements'>Cooperation Agreements</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='93'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/currency'
+                  id='nav_93' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Currency
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/currency'>Currency</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_93' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_93'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/money-in-circulation' 
+                            class='mega-menu-heading'>Money in Circulation
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-175'></span></div><ul class='nav flex-column' id='subnav-175'><li class='nav-item'><a class='nav-link active' href='/en/currency/money-in-circulation/banknotes'>Banknotes</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-in-circulation/coins'>Coins</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/euro-area' 
+                            class='mega-menu-heading'>Euro Area
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/protection-of-euro-banknotes-and-coins-against-counterfeiting' 
+                            class='mega-menu-heading'>Protection of Euro Banknotes and Coins against Counterfeiting
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-463'></span></div><ul class='nav flex-column' id='subnav-463'><li class='nav-item'><a class='nav-link active' href='/en/currency/protection-of-euro-banknotes-and-coins-against-counterfeiting/security-features'>Security Features</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/protection-of-euro-banknotes-and-coins-against-counterfeiting/list-of-successfully-tested-devices'>List of Successfully Tested Devices</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/replacement-of-unfit-currency' 
+                            class='mega-menu-heading'>Replacement of Unfit Currency
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/jubilee-money' 
+                            class='mega-menu-heading'>Jubilee Money
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/currency/money-museum' 
+                            class='mega-menu-heading'>Money Museum
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-101'></span></div><ul class='nav flex-column' id='subnav-101'><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/about-the-museum'>About the Museum</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/money-in-montenegro-through-history'>Money in Montenegro through History</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/current'>Current</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/permanent-exhibitions'>Permanent Exhibitions</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/exhibits-and-other-events'>Exhibits and Other Events</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/publications'>Publications</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/gallery-multimedia'>Gallery/Multimedia</a></li><li class='nav-item'><a class='nav-link active' href='/en/currency/money-museum/contact'>Contact</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='21'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/statistics'
+                  id='nav_21' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Statistics
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/statistics'>Statistics</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_21' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_21'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/statistics/cbcg-competence-for-statistics' 
+                            class='mega-menu-heading'>CBCG Competence for Statistics
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/en/statistics/enhanced-general-data-dissemination-system-egdds' 
+                            class='mega-menu-heading'>Enhanced General Data Dissemination System (e-GDDS)
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/en/statistics/release-calendar' 
+                            class='mega-menu-heading'>Release Calendar
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='d-flex clearfix mt-md-2'><a href='/en/statistics/cooperation-agreements' 
+                            class='mega-menu-heading'>Cooperation Agreements
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/statistics/statistical-data' 
+                            class='mega-menu-heading'>Statistical Data
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-1283'></span></div><ul class='nav flex-column' id='subnav-1283'><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/monetary-and-financial-statistics'>Monetary and Financial Statistics</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/financial-soundness-indicators'>Financial Soundness Indicators</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/interest-rates'>Interest Rates</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/tbills-statistics'>T-bills Statistics</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/capital-market'>Capital Market</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/international-economic-relations'>International Economic Relations</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/payment-system'>Payment System</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/real-economy'>Real Economy</a></li><li class='nav-item'><a class='nav-link active' href='/en/statistics/statistical-data/fiscal-developments'>Fiscal Developments</a></li></ul></div></div></div></li><li class='nav-item  dropdown' data-parentId='20'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/publications'
+                  id='nav_20' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Publications
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/publications'>Publications</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_20' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_20'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/publications/regular-publications' 
+                            class='mega-menu-heading'>Regular Publications
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-474'></span></div><ul class='nav flex-column' id='subnav-474'><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/calendar'>Calendar</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/governors-report'>Governor’s Report</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/central-bank-of-montenegro-annual-report'>Central Bank of Montenegro Annual Report</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/financial-stability-report'>Financial Stability Report</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/macroprudential-analysis-and-policy'>Macroprudential Analysis and Policy</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/inflation-report'>Inflation Report</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/cbcg-bulletin'>CBCG Bulletin</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/cbcg-macroeconomic-report'>CBCG Macroeconomic Report</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/report-on-bank-lending-survey-results'>Report on Bank Lending Survey Results</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/regular-publications/international-financial-market-report'>International Financial Market Report</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/publications/other-publications' 
+                            class='mega-menu-heading'>Other Publications
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-286'></span></div><ul class='nav flex-column' id='subnav-286'><li class='nav-item'><a class='nav-link active' href='/en/publications/other-publications/report-on-the-results-of-the-macroeconomic-risk-analysis'>Report on the Results of the Macroeconomic Risk Analysis</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/other-publications/working-papers'>Working Papers</a></li><li class='nav-item'><a class='nav-link active' href='/en/publications/other-publications/our-books'>Our Books</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='22'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/public-relations'
+                  id='nav_22' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Public Relations
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/public-relations'>Public Relations</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_22' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_22'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-6 vertical-border d-none d-md-block'></div><div class='col-lg-9 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/news' 
+                            class='mega-menu-heading'>News
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-518'></span></div><ul class='nav flex-column' id='subnav-518'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/news/press-releases'>Press releases</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/news/events'>Events</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/media' 
+                            class='mega-menu-heading'>Media
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-482'></span></div><ul class='nav flex-column' id='subnav-482'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/media/interviews-and-texts'>Interviews and texts</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/media/speeches'>Speeches</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/blog' 
+                            class='mega-menu-heading'>Blog
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a></div><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/multimedia' 
+                            class='mega-menu-heading'>Multimedia
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-290'></span></div><ul class='nav flex-column' id='subnav-290'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/multimedia/video'>Video</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/bids-and-advertisements' 
+                            class='mega-menu-heading'>Bids and Advertisements
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-31'></span></div><ul class='nav flex-column' id='subnav-31'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/bids-and-advertisements/job-vacancies'>Job Vacancies</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/information' 
+                            class='mega-menu-heading'>Information
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-522'></span></div><ul class='nav flex-column' id='subnav-522'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/information/faq'>FAQ</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/information/access-to-information'>Access to Information</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/information/working-days'>Working Days</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/information/useful-links'>Useful links</a></li></ul><div class='border-bottom '></div></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/public-relations/eservices' 
+                            class='mega-menu-heading'>E-Services
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-114'></span></div><ul class='nav flex-column' id='subnav-114'><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/cbcg-auction-platform-access'>CBCG Auction Platform Access</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/resident-reporting'>Resident Reporting</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/enforced-collection-system-access'>Enforced Collection System Access</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/accessing-data-from-the-central-register-of-transaction-accounts'>Accessing Data from the Central Register of Transaction Accounts</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/web-service-search-of-legal-persons-and-entrepreneurs-in-the-ispn-and-crtr'>Web service Search of legal persons and entrepreneurs in the ISPN and CRTR</a></li><li class='nav-item'><a class='nav-link active' href='/en/public-relations/eservices/pki-certificates-for-advanced-electronic-stamp-for-payment-system-participant'>PKI – Certificates for Advanced Electronic Stamp for Payment System Participant</a></li></ul><div class='border-bottom '></div></div></div></div></div></li><li class='nav-item  dropdown' data-parentId='2541'><a class='nav-link  top-nav-link d-none d-lg-block' 
+                  href='/en/journal'
+                  id='nav_2541' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'>Journal
+                  <span class='dropdown-icon flaticon-arrow-down-sign-to-navigate'></span></a><a class='nav-link top-nav-link d-lg-none' href='/en/journal'>Journal</a><span class='dropdown-icon flaticon-arrow-down-sign-to-navigate top-nav-link-arrow d-lg-none' 
+                  id='nav_2541' 
+                  role='button' 
+                  data-toggle='dropdown' 
+                  aria-haspopup='true' 
+                  aria-expanded='false'></span><div class='dropdown-menu mega-menu' aria-labelledby='nav_2541'><div class='container'><div class='row nav-grid'><div class='col-lg-3 vertical-border d-none d-md-block'></div><div class='col-lg-3 mega-menu-section nav-grid-item'><div class='d-flex clearfix mt-md-2'><a href='/en/journal/journal-of-central-banking-theory-and-practice' 
+                            class='mega-menu-heading'>Journal of Central Banking Theory and Practice
+                            <span class='nav-right-icon flaticon-arrow-point-to-right d-none d-lg-block'></span></a><span 
+                              class='dropdown-icon subnav-trigger flaticon-arrow-down-sign-to-navigate d-lg-none' 
+                              data-href='#subnav-121'></span></div><ul class='nav flex-column' id='subnav-121'><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/current-issue'>Current Issue</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/archive'>Archive</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/aims-scope'>Aims&Scope</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/instructions-for-authors'>Instructions for Authors</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/editorial-board'>Editorial Board</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/indexing'>Indexing</a></li><li class='nav-item'><a class='nav-link active' href='/en/journal/journal-of-central-banking-theory-and-practice/contact-information'>Contact Information</a></li></ul><div class='border-bottom '></div></div></div></div></div></li>          </ul>
+          
+          <ul class='navbar-nav ml-auto'>
+	<li class='nav-item d-flex d-lg-none'>
+	<a href="/en/search" class='top-nav-link pr-0'>Search</a>
+</li>
+            <li class='nav-item '>
+              <a href='/me/kljucne-funkcije/platni-promet/registri/registar-institucija-za-elektronski-novac-i-njihovih-agenata' class='top-nav-link pr-0'>MNE</a>            </li>
+            <li class='nav-item d-flex d-lg-none'>
+              <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" style='width: auto' class="top-nav-link pr-0" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin-blue.svg" width="27" height="27" />
+              </a>
+              <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook-blue.svg" width="27" height="27"/>
+              </a>
+	      <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA"  target="_blank" style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+	          <img src="/images/icon-youtube-blue.svg" width="27" height="27" />
+	      </a>
+              <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank"  style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram-blue.svg" width="25" height="25"/>
+              </a>
+              <a href="https://x.com/Centralnabanka" target="_blank"  style='width: auto' class="top-nav-link pr-0 w-auto" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x-blue.svg" width="24" height="24"/>
+              </a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- col12 -->
+  </div> <!-- row -->
+</nav>
+<div class="bg-nav"></div>
+<main id="page-content">
+	<div class="container pt-4 pb-5">
+	<div class="row">
+		<div class="col-md-12 mb-5 breadcrumbs">
+			<a href='/en'>Home</a><i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/en/core-functions'>Core functions</a> <i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/en/core-functions/payment-system'>Payment System</a> <i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/en/core-functions/payment-system/registers'>Registers</a> <i class='flaticon-arrow-point-to-right bc-icon'></i> <a href='/en/core-functions/payment-system/registers/register-of-emoney-institutions'>Register of E-money Institutions</a>		</div>
+		<div class="col-lg-3 mb-4">
+	
+			<a href='#mobile-multi-level-nav' class='h4 multi-nav-title d-block collapsed' data-toggle='collapse'>Core functions <i class='mobile-nav-icon flaticon-arrow-down-sign-to-navigate'></i></a><div class='collapse' id='mobile-multi-level-nav'><div id="sidebar" class='multi-level-nav'>
+	<div class="list-group panel" id='multi-level-nav'>
+		<div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/monetary-policy/' class='d-inline-block parent-link'>Monetary Policy</a><a href='#menu_35' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_35'><div class='list-group-item'><a href='/en/core-functions/monetary-policy/objectives' class=' parent-link full'>Objectives</a></div><div class='list-group-item'><a href='/en/core-functions/monetary-policy/euroisation' class=' parent-link full'>Euroisation</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/monetary-policy/instruments' class='d-inline-block parent-link'>Instruments</a><a href='#submenu_40' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_35' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_40'><div class='list-group-item'><a href='/en/core-functions/monetary-policy/instruments/open-market-operations' class=' parent-link full'>Open Market Operations</a></div><div class='list-group-item'><a href='/en/core-functions/monetary-policy/instruments/credit-operations' class=' parent-link full'>Credit Operations</a></div><div class='list-group-item'><a href='/en/core-functions/monetary-policy/instruments/reserve-requirement' class=' parent-link full'>Reserve Requirement</a></div></div></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/financial-stability/' class='d-inline-block parent-link'>Financial Stability</a><a href='#menu_118' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_118'><div class='list-group-item'><a href='/en/core-functions/financial-stability/role-and-activities-of-the-cbcg' class=' parent-link full'>Role and activities of the CBCG</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/financial-system-of-montenegro' class=' parent-link full'>Financial System of Montenegro</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/indicators-and-reports' class=' parent-link full'>Indicators and Reports</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/financial-stability/macroprudential-measures' class='d-inline-block parent-link'>Macroprudential Measures</a><a href='#submenu_163' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_118' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_163'><div class='list-group-item'><a href='/en/core-functions/financial-stability/macroprudential-measures/capital-conservation-buffer' class=' parent-link full'>Capital Conservation Buffer</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/macroprudential-measures/countercyclical-capital-buffer' class=' parent-link full'>Countercyclical Capital Buffer</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/macroprudential-measures/structural-systemic-risk-buffer' class=' parent-link full'>Structural Systemic Risk Buffer</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/macroprudential-measures/systemically-important-credit-institutions' class=' parent-link full'>Systemically Important Credit Institutions</a></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/macroprudential-measures/measures-for-retail-loans' class=' parent-link full'>Measures for Retail Loans</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/financial-stability/payment-system-oversight' class=' parent-link full'>Payment System Oversight</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervisory-function/' class='d-inline-block parent-link'>Supervisory Function</a><a href='#menu_36' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_36'><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervisory-function/banking-system' class='d-inline-block parent-link'>Banking System</a><a href='#submenu_44' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_44'><div class='list-group-item'><a href='/en/core-functions/supervisory-function/banking-system/register-of-banks' class=' parent-link full'>Register of Banks</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/banking-system/banks-against-which-the-proceedings-of-bank-bankruptcy-have-been-taken' class=' parent-link full'>Banks against Which the Proceedings of Bank Bankruptcy Have Been Taken</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/banking-system/statistical-data' class=' parent-link full'>Statistical Data</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/balance-sheets-and-profit-and-loss-statements-of-banks' class=' parent-link full'>Balance Sheets and Profit and Loss Statements of Banks</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-statements-of-banks' class=' parent-link full'>Financial Statements of Banks</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/weighted-average-interest-rates-on-outstanding-loans-by-bank' class=' parent-link full'>Weighted average interest rates on outstanding loans by bank</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervisory-function/financial-service-providers' class='d-inline-block parent-link'>Financial Service Providers</a><a href='#submenu_436' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_436'><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-service-providers/leasing-companies' class=' parent-link full'>Leasing Companies</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-service-providers/factoring-companies' class=' parent-link full'>Factoring Companies</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-service-providers/companies-for-the-purchase-of-receivables' class=' parent-link full'>Companies for the Purchase of Receivables</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-service-providers/microcredit-financial-institutions-mfis' class=' parent-link full'>Microcredit Financial Institutions (MFIs)</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-service-providers/creditguarantee-funds' class=' parent-link full'>Credit-Guarantee Funds</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers' class='d-inline-block parent-link'>Financial Statements of Financial Service Providers</a><a href='#submenu_3027' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_3027'><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers/microcredit-financial-institutions' class=' parent-link full'>Micro-credit financial institutions</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers/leasing-companies' class=' parent-link full'>Leasing companies</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers/companies-for-purchase-of-receivables' class=' parent-link full'>Companies for purchase of receivables</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/financial-statements-of-financial-service-providers/factoring-companies' class=' parent-link full'>Factoring companies</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/credit-registry-services' class=' parent-link full'>Credit Registry Services</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/recognized-rating-agencies' class=' parent-link full'>Recognized Rating Agencies</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervisory-function/aqr' class='d-inline-block parent-link'>AQR</a><a href='#submenu_1649' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_36' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_1649'><div class='list-group-item'><a href='/en/core-functions/supervisory-function/aqr/guidelines-for-portfolio-selection' class=' parent-link full'>Guidelines for Portfolio Selection</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/aqr/q-a-work-block-2' class=' parent-link full'>Q&A Work Block 2</a></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/aqr/q-a-work-block-3' class=' parent-link full'>Q&A Work Block 3</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/supervisory-function/cooperation-agreements' class=' parent-link full'>Cooperation agreements</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/financial-and-banking-operations/' class='d-inline-block parent-link'>Financial and Banking Operations</a><a href='#menu_37' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_37'><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/international-reserves' class=' parent-link full'>International Reserves</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/financial-and-banking-operations/international-payment-transactions' class='d-inline-block parent-link'>International Payment Transactions</a><a href='#submenu_1297' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_37' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_1297'><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/international-payment-transactions/clearing-of-payments-in-foreign-exchange' class=' parent-link full'>Clearing of Payments in Foreign Exchange</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/reserve-requirement' class=' parent-link full'>Reserve Requirement</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills' class='d-inline-block parent-link'>Fiscal Agent – Treasury Bills</a><a href='#submenu_113' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_37' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_113'><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2023-records' class=' parent-link full'>2023 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2022-records' class=' parent-link full'>2022 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2020-records' class=' parent-link full'>2020 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2019-records' class=' parent-link full'>2019 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2018-records' class=' parent-link full'>2018 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2017-records' class=' parent-link full'>2017 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2016-records' class=' parent-link full'>2016 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2015-records' class=' parent-link full'>2015 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2014-records' class=' parent-link full'>2014 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2013-records' class=' parent-link full'>2013 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2012-records' class=' parent-link full'>2012 Records</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fiscal-agent-treasury-bills/2011-records' class=' parent-link full'>2011 Records</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/default-interest-rate' class=' parent-link full'>Default Interest Rate</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/fx-reference-rates' class=' parent-link full'>FX Reference Rates</a></div><div class='list-group-item'><a href='/en/core-functions/financial-and-banking-operations/memorandums-of-understanding' class=' parent-link full'>Memorandums of Understanding</a></div></div></div><div class='list-group-item'><div class='d-flex active'><a href='/en/core-functions/payment-system/' class='d-inline-block parent-link'>Payment System</a><a href='#menu_38' class='d-inline-block nav-arrow '  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse show' id='menu_38'><div class='list-group-item'><div class='d-flex active'><a href='/en/core-functions/payment-system/registers' class='d-inline-block parent-link'>Registers</a><a href='#submenu_60' class='d-inline-block nav-arrow '  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse show' id='submenu_60'><div class='list-group-item'><a href='/en/core-functions/payment-system/registers/payment-systems-register' class=' parent-link full'>Payment Systems Register</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/registers/register-of-payment-institutions' class=' parent-link full'>Register of Payment Institutions</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/registers/register-of-emoney-institutions' class='active parent-link full'>Register of E-money Institutions</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/registers/payment-institutions-and-electronic-money-institutions-whose-authorisation-is-withdrawn' class=' parent-link full'>Payment Institutions and Electronic Money Institutions Whose Authorisation is Withdrawn</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/payment-system/instant-payments-tips-clone' class='d-inline-block parent-link'>Instant Payments (TIPS Clone)</a><a href='#submenu_3083' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_3083'><div class='list-group-item'><a href='/en/core-functions/payment-system/instant-payments-tips-clone/faq' class=' parent-link full'>FAQ</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/instant-payments-tips-clone/banks-video-tutorials' class=' parent-link full'>Banks' video tutorials</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/payment-system/payment-systems' class='d-inline-block parent-link'>Payment Systems</a><a href='#submenu_56' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_56'><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-systems/rtgs-system' class=' parent-link full'>RTGS System</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-systems/dns-system' class=' parent-link full'>DNS System</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-systems/ips-system' class=' parent-link full'>IPS System</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/payment-system/overview-of-the-tariffs-of-the-central-bank-of-montenegro' class=' parent-link full'>Overview of the tariffs of the Central Bank of Montenegro</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/financial-statements-of-payment-institutions-and-electronic-money-institutions' class=' parent-link full'>Financial statements of payment institutions and electronic money institutions</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/fees-for-services-related-to-a-consumer-payment-account' class=' parent-link full'>Fees for Services Related to a Consumer Payment Account</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-account-with-basic-features' class=' parent-link full'>Payment Account with Basic Features</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/payment-system/payment-system-statistics' class='d-inline-block parent-link'>Payment system statistics</a><a href='#submenu_62' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_62'><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-system-statistics/payment-system-statistics-of-the-central-bank-of-montenegro' class=' parent-link full'>Payment System Statistics of the Central Bank of Montenegro</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/payment-system-statistics/payment-services-provision-and-electronic-money-data' class=' parent-link full'>Payment services provision and electronic money data</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/payment-system/central-register-of-transaction-accounts-of-legal-persons-and-entrepreneurs' class=' parent-link full'>Central Register of Transaction Accounts of Legal Persons and Entrepreneurs</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/payment-system/enforced-collection' class='d-inline-block parent-link'>Enforced Collection</a><a href='#submenu_61' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_38' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_61'><div class='list-group-item'><a href='/en/core-functions/payment-system/enforced-collection/search-of-debtors-in-enforced-collection' class=' parent-link full'>Search of Debtors in Enforced Collection</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/enforced-collection/data-on-blocked-legal-entities-and-entrepreneurs' class=' parent-link full'>Data on Blocked Legal Entities and Entrepreneurs</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/enforced-collection/enforced-collection-indicators' class=' parent-link full'>Enforced Collection Indicators</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/enforced-collection/records' class=' parent-link full'>Records</a></div><div class='list-group-item'><a href='/en/core-functions/payment-system/enforced-collection/certificates-and-overviews-at-clients-request' class=' parent-link full'>Certificates and Overviews at Client's Request</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/payment-system/cooperation-agreements' class=' parent-link full'>Cooperation Agreements</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/resolution-of-credit-institutions/' class='d-inline-block parent-link'>Resolution of Credit Institutions</a><a href='#menu_1934' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_1934'><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/resolution-objectives' class=' parent-link full'>Resolution Objectives</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/critical-functions-of-credit-institutions' class=' parent-link full'>Critical Functions of Credit Institutions</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/resolution-tools' class=' parent-link full'>Resolution Tools</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/resolution-fund' class=' parent-link full'>Resolution Fund</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/mrel' class=' parent-link full'>MREL</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/independent-valuers' class=' parent-link full'>Independent Valuers</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/summary-of-internal-acts-governing-the-organisation-of-activities-from-the-area-of-resolution-of-credit-institutions' class=' parent-link full'>Summary of Internal Acts Governing the Organisation of Activities from the Area of Resolution of Credit Institutions</a></div><div class='list-group-item'><a href='/en/core-functions/resolution-of-credit-institutions/bilateral-cooperation-arrangement-between-the-srb-and-cbcg' class=' parent-link full'>Bilateral Cooperation Arrangement Between the SRB and CBCG</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/research-and-forecast/' class='d-inline-block parent-link'>Research and Forecast</a><a href='#menu_2062' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_2062'><div class='list-group-item'><a href='/en/core-functions/research-and-forecast/directorate-for-economic-analysis-and-projections' class=' parent-link full'>Directorate for Economic Analysis and Projections</a></div><div class='list-group-item'><a href='/en/core-functions/research-and-forecast/inflation-forecasts' class=' parent-link full'>Inflation Forecasts</a></div><div class='list-group-item'><a href='/en/core-functions/research-and-forecast/gdp-projections' class=' parent-link full'>GDP Projections</a></div></div></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/' class='d-inline-block parent-link'>Supervision of Compliance and Protection of Rights</a><a href='#menu_2440' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#multi-level-nav' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='menu_2440'><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/supervision-in-the-area-of-prevention-of-money-laundering-and-terrorist-financing' class=' parent-link full'>Supervision in the Area of Prevention of Money Laundering and Terrorist Financing</a></div><div class='list-group-item'><div class='d-flex '><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services' class='d-inline-block parent-link'>Protection of the Rights of Credit Institutions’ Clients and Users of Financial Services</a><a href='#submenu_2442' class='d-inline-block nav-arrow collapsed'  data-toggle='collapse' data-parent='#menu_2440' aria-expanded='false'><i class='flaticon-arrow-down-sign-to-navigate'></i></a></div><div class='collapse ' id='submenu_2442'><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/central-banks-policy-in-the-area-of-consumer-protection' class=' parent-link full'>Central Bank’s Policy in the Area of Consumer Protection</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/statistics-examinations-conducted-objections-considered-and-measures-imposed' class=' parent-link full'>Statistics: examinations conducted, objections considered and measures imposed</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/right-to-complain' class=' parent-link full'>Right to Complain</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/what-you-need-to-know-before-and-after-concluding-a-consumer-loan-agreement' class=' parent-link full'>What you need to know before and after concluding a consumer loan agreement?</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/informative-list-on-offered-consumer-loans' class=' parent-link full'>Informative List on Offered Consumer Loans</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/lower-interest-rates-offered-by-credit-institutions' class=' parent-link full'>Lower Interest Rates Offered by Credit institutions</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/protection-of-the-rights-of-credit-institutions-clients-and-users-of-financial-services/activities-to-improve-consumer-rights' class=' parent-link full'>Activities to improve consumer rights</a></div></div></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/weighted-average-effective-interest-rate-and-the-maximum-allowed-effective-interest-rate-on-consumer-loans' class=' parent-link full'>Weighted average effective interest rate and the maximum allowed effective interest rate on Consumer Loans</a></div><div class='list-group-item'><a href='/en/core-functions/supervision-of-compliance-and-protection-of-rights/cooperation-agreements' class=' parent-link full'>Cooperation Agreements</a></div></div></div>	
+	</div>
+</div>
+</div>			
+		</div>
+		<div class="col-lg-9 pl-lg-5">
+			<div class='page-text'>
+				<div class='d-flex'>
+					<h1>Register of E-money Institutions</h1>
+									</div> <!-- clearfix -->
+				<hr class='heading-hr'>
+
+					
+	
+							
+				<p style="text-align: justify;">The register of electronic money institutions is a database of:</p><p style="text-align: justify;"><br></p><ul><li style="text-align: justify;">e-money institutions authorised by the CBCG to issue e-money; </li><li style="text-align: justify;">branches through which e-money institutions issue electronic money and/or provide payment services; and</li><li style="text-align: justify;">agents to which electronic money institutions have entrusted the provision of payment services.</li></ul><p style="text-align: justify;"><em><span style="color: rgb(44, 130, 201);">Currently there is no electronic money institution registered.</span></em></p>			</div>
+			
+		</div>
+	</div>
+</div>
+
+</main>
+
+ 	<footer>
+		<div class="top bg-light-primary">
+			<div class="container">
+				<div class="row ">
+					<div class="col-md-9">
+							
+						<h2 class='t-gray'>FAQ</h2>
+						<hr class="heading-hr bg-gray">
+						<ul class='faq-list mt-4'>
+							<li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/en/public-relations/information/faq?accordion-open=537#open-537'>How to get a certificate that your company is not blocked?</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/en/public-relations/information/faq?accordion-open=1730#open-1730'>Questions and answers regarding the manner of application of the Decision on interim measures to reduce the adverse effects of the impact of the new coronavirus outbreak on the financial system after the mitigating measures to protect the population against communicable diseases</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/en/public-relations/information/faq?accordion-open=1711#open-1711'>The moratorium on loan repayment and benefits to bank clients during the Government of Montenegro’s interim measures to mitigate the effects of the new coronavirus pandemic</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/en/public-relations/information/faq?accordion-open=295#open-295'>How and where to exchange damaged banknotes?</a>
+										</li><li>
+											<img src='/images/icon-arrow-right.svg' width='17' height'13' class='icon' />
+											<a href='/en/public-relations/information/faq?accordion-open=534#open-534'>Whose accounts may the CBCG freeze?</a>
+										</li>						</ul>
+
+						<a href='/en/public-relations/information/faq' class='btn-arrow-right mt-auto pt-2'>
+							<span>More</span> 
+							<img src='/images/icon-arrow-right.svg' width="25" height="29" />
+						</a>
+					</div>
+				</div> <!-- row -->
+			</div> <!-- container -->
+		</div> <!-- top -->
+
+		<div class="middle">
+			<div class="container">
+				<div class="row">
+				<div class='col-md-3 mt-3 mt-md-0 footer-text'><h4>CENTRAL BANK OF MONTENEGRO</h4><p>Blvd. Svetog Petra Cetinjskog 6</p><p>81000 Podgorica</p><p>Opening hours: 08:00 - 16:00</p><p class='mt-3'>
+										<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map1'>
+											Location
+										</a>
+									</p><div class='modal fade modal-map modal-clean' id='modal-map1' role='dialog'>
+										<div class='modal-dialog' role='document'>
+											<div class='modal-header'>
+												<i class='flaticon-multiply'></i>
+											</div>
+											<div class='modal-content'>
+												<div id='gmap1' class='g-maps' data-lat='42.439483' 
+												data-lng='19.261337'></div>
+											</div>
+										</div>
+									</div></div><div class='col-md-3 mt-4 mt-md-0 footer-text'><h4><br></h4><p>Novaka Milo&scaron;eva bb</p><p>81000 Podgorica</p><p>Opening hours: 08:00 - 16:00&nbsp;</p><p class='mt-3'>
+									<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map2'>
+										Location
+									</a>
+								</p><div class='modal fade modal-map modal-clean' id='modal-map2' role='dialog'>
+									<div class='modal-dialog' role='document'>
+										<div class='modal-header'>
+											<i class='flaticon-multiply'></i>
+										</div>
+										<div class='modal-content'>
+											<div id='gmap2' class='g-maps' data-lat='42.440445' 
+											data-lng='19.265778'></div>
+										</div>
+									</div>
+								</div></div><div class='col-md-3 mt-4 mt-md-0 footer-text'><h4>MONEY MUSEUM</h4><p>Njego&scaron;eva 122</p><p>41000 Cetinje</p><p>Opening hours: 08:00 - 16:00</p><p class='mt-3'>
+									<a href='#' class='t-white underlined hover-white' data-toggle='modal' data-target='#modal-map3'>
+										Location
+									</a>
+								</p><div class='modal fade modal-map modal-clean' id='modal-map3' role='dialog'>
+									<div class='modal-dialog' role='document'>
+										<div class='modal-header'>
+											<i class='flaticon-multiply'></i>
+										</div>
+										<div class='modal-content'>
+											<div id='gmap3' class='g-maps' data-lat='42.390481' 
+											data-lng='18.923086'></div>
+										</div>
+									</div>
+								</div></div>
+					<div class='col-md-3 mt-4 mt-md-0 footer-text'>
+
+						<ul class="d-flex list-unstyled m-0 social-links">
+
+
+
+<li>
+                <a href="https://www.linkedin.com/company/centralna-banka-crne-gore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-linkedin.svg" width="24" height="24" />
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.facebook.com/Centralna-banka-Crne-Gore-113179444512849" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-facebook.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+
+            
+              <li>
+                <a href="https://youtube.com/channel/UCoapI6e3Adn2cFJMqhC71XA" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-youtube.svg" width="24" height="24"/>
+                </a>
+              </li>
+
+
+  <li>
+                <a href="https://www.instagram.com/centralnabankacrnegore" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-instagram.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+	  <li>
+                <a href="https://x.com/Centralnabanka" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/icon-social-x.svg" width="24" height="24"/>
+                </a>
+
+              </li>
+
+
+
+
+
+						</ul>	
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom">
+			<div class="container">
+				<div class="d-flex">
+					<div class="d-block d-lg-inline mr-auto">
+						<a href="/en"><img src='/images/nav-logo-en.svg' class='footer-logo d-block d-lg-inline' /></a> 
+						2026 CBCG</a> | All Rights Reserved.
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKundjTbXSHAOy4wqmD7IDBtTh3-zvFTw"></script>
+	<script src='/js/scripts.js'></script>
+	<script src='/js/main.js?ver=0.2'></script>
+</body>
+</html>

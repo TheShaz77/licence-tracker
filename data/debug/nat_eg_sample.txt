@@ -1,0 +1,16 @@
+url: https://fra.gov.eg/en/%D8%B3%D8%AC%D9%84%D8%A7%D8%AA-%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84/page/{page}/
+bytes: 190276  starts: b'\xef\xbb\xbf<!DOC'
+error: None
+columns used: {'name': 'Company', 'type': 'Company', 'id': None, 'lei': None, 'city': None, 'date': 'Licensing Date', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['', 'Company', 'Licensing Date']
+data rows: 20  kept: 20
+type values: [('جمعيه تنظيم الاسره بسوهاج', 1), ('جمعيه الافاق العليا لتنميه المجتمع وخدمه البيئه بالفيوم', 1), ('تنميه لخدمات المشروعات متناهيه الصغر', 1), ('جمعيه تنميه المجتمع المحلي بالسبخاويه', 1), ('جمعيه الواحه الجميله لذوي الاحتياجات الخاصه وتنميه المجتمع', 1), ('جمعيه تنميه المجتمع باللواء صبيح', 1), ('جمعيه المصري للتنميه والتدريب بالاقصر', 1), ('مؤسسه شمس البرالخيريه باسيوط', 1), ('جمعيه تنميه المجتمع المنشيه الجديده', 1), ('جمعيه تنميه المجتمع المحلي بحسن باشا', 1), ('مؤسسه فكره للتعليم والتنميه', 1), ('جمعيه تنميه المجتمع بالقاره', 1), ('جمعيه تنميه المجتمع بنجع ابوعوض', 1), ('جمعيه الوعظ والارشاد الخيري بابو قرقاس', 1), ('جمعيه تنميه المجتمع بنقاليفه', 1), ('جمعيه الفواخريه للتنميه الاجتماعيه بالعريش', 1), ('جمعيه تنميه المجتمع بكفر تصفا', 1), ('جمعيه الشابات المسلمات بالعريش', 1), ('جمعيه تنميه المجتمع بمنشاه بغداد الفيوم', 1), ('جمعيه شموع للتنميه المستدامه', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'    <meta charset="UTF-8">'
+'    <!-- Set the viewport width to device width for mobile -->'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>'
+'    <title>Registers in the Financing Sector &#8211; Page 12 &#8211; الهيئة العامة للرقابة المالية</title>'
+"<meta name='robots' content='max-image-preview:large' />"

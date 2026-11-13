@@ -1,0 +1,50 @@
+url: https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/?page={page}
+bytes: 154876  starts: b'\r\n\r\n<htm'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 22  kept: 22
+type values: [('Banco de Ahorro y Crédito', 11), ('Asociación de Ahorros y Préstamos', 6), ('Corporación de Crédito', 3), ('Banco Múltiple', 2)]
+first lines:
+''
+''
+'<html lang="es">'
+'<head>'
+'        <title>Entidades de Intermediaci&#xF3;n Financiera</title>'
+'        <meta name="description" content="Instituciones financieras autorizadas por la Junta Monetaria y supervisadas por la Superintendencia de Bancos, que se dedican a la captaci&#xF3;n habitual de fondos del p&#xFA;blico con el objeto de cederlos a terceros. Bancos M&#xFA;ltiples, Bancos de Ahorr'
+'        <meta property="og:image" content="/media/fnqpp0wr/apple-touch-icon.png">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
+
+url: https://sb.gob.do/supervisados/entidades-de-intermediacion-cambiaria/?page={page}
+bytes: 104652  starts: b'\r\n\r\n<htm'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 17  kept: 17
+type values: [('Agente de cambio', 13), ('Agente de remesas y cambio', 4)]
+first lines:
+''
+''
+'<html lang="es">'
+'<head>'
+'        <title>Entidades de Intermediaci&#xF3;n Cambiaria</title>'
+'        <meta name="description" content="Personas jur&#xED;dicas autorizadas por la Junta Monetaria para efectuar intermediaci&#xF3;n cambiaria, a trav&#xE9;s de la compra y venta de divisas y realizar transacciones en divisas en el mercado cambiario.">'
+'        <meta property="og:image" content="/media/fnqpp0wr/apple-touch-icon.png">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
+
+url: https://sb.gob.do/supervisados/otras-entidades/?page={page}
+bytes: 87932  starts: b'\r\n\r\n<htm'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'type', 'require': None}
+headers: ['name', 'type', 'status']
+data rows: 1  kept: 1
+type values: [('Entidades de apoyo', 1)]
+first lines:
+''
+''
+'<html lang="es">'
+'<head>'
+'        <title>Otras entidades</title>'
+'        <meta name="description" content="Agentes de garant&#xED;as, Certificadoras de garant&#xED;as de t&#xED;tulos, Entidades de apoyo y Servicios conexos.">'
+'        <meta property="og:image" content="/media/fnqpp0wr/apple-touch-icon.png">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'

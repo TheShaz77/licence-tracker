@@ -1,10 +1,10 @@
 url: https://www.gamblingcontrol.org/applications-guidance/egambling-licensees
-bytes: 623864  starts: b'<!DOCTYP'
-error: SourceTimeout('igm_gg took longer than 30 minutes; stopped (last list kept)')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+bytes: 623888  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'type']
+data rows: 20  kept: 20
+type values: [('1', 16), ('1&2', 2), ('2', 2)]
 first lines:
 '<!DOCTYPE html>'
 '<html lang="en">'
@@ -16,8 +16,8 @@ first lines:
 '  <meta name="generator" content="Wix.com Website Builder"/>'
 
 url: https://www.gamblingcontrol.org/temporary-egambling-licensees
-bytes: 557178  starts: b'<!DOCTYP'
-error: RuntimeError('no firms matched')
+bytes: 557395  starts: b'<!DOCTYP'
+error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
 data rows: 0  kept: 0
@@ -50,12 +50,12 @@ first lines:
 '  <meta name="generator" content="Wix.com Website Builder"/>'
 
 url: https://www.gamblingcontrol.org/category-1-and-2-associate-certificates
-bytes: 578942  starts: b'<!DOCTYP'
-error: RuntimeError('no firms matched')
+bytes: 579442  starts: b'<!DOCTYP'
+error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
-data rows: 0  kept: 0
-type values: []
+data rows: 10  kept: 10
+type values: [('', 10)]
 first lines:
 '<!DOCTYPE html>'
 '<html lang="en">'

@@ -1,0 +1,33 @@
+url: https://www.bcsm.sm/registro-soggetti-autorizzati-imprese-finanziarie-sammarinesi?hsLang=it
+bytes: 56629  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': 'date', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'date']
+data rows: 12  kept: 8
+type values: [('', 8)]
+first lines:
+'<!doctype html><html lang="it"><head>'
+'    <meta charset="utf-8">'
+'    <title>Imprese finanziarie sammarinesi - BCSM</title>'
+'    <link rel="shortcut icon" href="https://www.bcsm.sm/hubfs/Favicon_BCSM.svg">'
+'    <meta name="description" content="">'
+''
+'    <style>@font-face {'
+'        font-family: "Lato";'
+
+url: https://www.bcsm.sm/registro-dei-prestatori-di-servizi-di-pagamento?hsLang=it
+bytes: 62718  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': 'date', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'date']
+data rows: 11  kept: 11
+type values: [('', 11)]
+first lines:
+'<!doctype html><html lang="it"><head>'
+'    <meta charset="utf-8">'
+'    <title>Registro prestatori servizi pagamento iol mto ttp - BCSM</title>'
+'    <link rel="shortcut icon" href="https://www.bcsm.sm/hubfs/Favicon_BCSM.svg">'
+'    <meta name="description" content="">'
+''
+'    <style>@font-face {'
+'        font-family: "Lato";'

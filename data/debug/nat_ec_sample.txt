@@ -1,0 +1,16 @@
+url: https://www.superbancos.gob.ec/bancos/catastro-publico/
+bytes: 178805  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 28  kept: 28
+type values: [('', 28)]
+first lines:
+'<!doctype html>'
+'<html lang="es">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<link rel="profile" href="https://gmpg.org/xfn/11">'
+"\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+'<meta name="dlm-version" content="5.3.7">'

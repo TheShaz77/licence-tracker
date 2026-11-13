@@ -1,0 +1,16 @@
+url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=*:*&fq=ae_entityTypeCode%3AMIF&fq=ae_homeMemberState%3Acyprus&wt=json&rows=5000
+bytes: 437647  starts: b'{\n  "res'
+error: None
+columns used: {'name': 'ae_entityName', 'type': 'entity_type', 'id': 'id', 'lei': 'ae_lei', 'city': None, 'date': 'ae_authorisationNotificationDateStr', 'status': 'ae_status', 'website': 'ae_website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': 'ae_headOfficeAddress', 'end': None, 'exclude': 'ae_officeType', 'require': None}
+headers: ['id', 'ae_entityTypeCode', 'ae_lastUpdate', 'ae_lastUpdateStr', 'ae_lei', 'ae_headOfficeLei', 'ae_entityName', 'collectorParent', 'ae_officeType', 'ae_competentAuthority', 'ae_homeMemberState', 'ae_hostMemberState', 'ae_hostMemberStates', 'ae_headOfficeAddress', 'ae_branchAddress', 'ae_comment', 'ae_status', 'ae_authorisationNotificationDate', 'ae_authorisationNotificationDateStr', 'ae_authorisationWithdrawalEndDate', 'ae_authorisationWithdrawalEndDateStr', 'entity_type', 'type_s', 'ae_entityTypeLabel', '_root_', 'ae_dbId', 'ae_website', 'ae_commercialName', 'ae_legalform', '_version_', 'timestamp']
+data rows: 349  kept: 307
+type values: [('ae', 349)]
+first lines:
+'{'
+'  "responseHeader":{'
+'    "status":0,'
+'    "QTime":40,'
+'    "params":{'
+'      "q":"*:*",'
+'      "fq":["ae_entityTypeCode:MIF",'
+'        "ae_homeMemberState:cyprus"],'

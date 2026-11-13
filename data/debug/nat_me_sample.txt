@@ -1,0 +1,50 @@
+url: https://cbcg.me/en/core-functions/supervisory-function/banking-system/register-of-banks
+bytes: 101409  starts: b'\n<!docty'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 11  kept: 11
+type values: [('', 11)]
+first lines:
+''
+'<!doctype html>'
+'<html lang="en">'
+'<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->'
+'<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->'
+'<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->'
+'<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->'
+'<!--[if !IE]><html lang="en"><![endif]-->'
+
+url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-payment-institutions
+bytes: 103298  starts: b'\n<!docty'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 5  kept: 5
+type values: [('', 5)]
+first lines:
+''
+'<!doctype html>'
+'<html lang="en">'
+'<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->'
+'<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->'
+'<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->'
+'<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->'
+'<!--[if !IE]><html lang="en"><![endif]-->'
+
+url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-emoney-institutions
+bytes: 99088  starts: b'\n<!docty'
+error: RuntimeError('no firms matched')
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 0  kept: 0
+type values: []
+first lines:
+''
+'<!doctype html>'
+'<html lang="en">'
+'<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->'
+'<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->'
+'<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->'
+'<!--[if (gt IE 9)|!(IE)]><html lang="en"><![endif]-->'
+'<!--[if !IE]><html lang="en"><![endif]-->'

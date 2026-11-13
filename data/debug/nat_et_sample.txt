@@ -1,5 +1,39 @@
+url: https://nbe.gov.et/payment-instrument-issuers-system-operators/
+bytes: 491389  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'section']
+data rows: 27  kept: 27
+type values: [('PAYMENT SYSTEM OPERATORS', 21), ('PAYMENT INSTRUMENT ISSUER', 5), ('Payment Instrument Issuer', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en-US"><head><script data-no-optimize="1">var litespeed_docref=sessionStorage.getItem("litespeed_docref");litespeed_docref&&(Object.defineProperty(document,"referrer",{get:function(){return litespeed_docref}}),sessionStorage.removeItem("litespeed_docref"));</script><meta c'
+'<style>#wpadminbar #wp-admin-bar-wsm_free_top_button .ab-icon:before {'
+'\tcontent: "\\f239";'
+'\tcolor: #FF9800;'
+'\ttop: 3px;'
+"}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+'<title>Payment Instrument Issuers/System Operators - National Bank of Ethiopia</title><link rel="canonical" href="https://nbe.gov.et/payment-instrument-issuers-system-operators/" /><meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta property="og:title" con'
+'<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\\/\\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\\/\\/nbe.gov.et\\/payment-instrument-issuers-system-operators\\/","url":"https:\\/\\/nbe.gov.et\\/payment-instrument-issuers-system-operators\\/","name":"Payment Instru'
+
+url: https://nbe.gov.et/mta/
+bytes: 398676  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 84  kept: 82
+type values: [('', 83)]
+first lines:
+'<!DOCTYPE html><html lang="en-US"><head><script data-no-optimize="1">var litespeed_docref=sessionStorage.getItem("litespeed_docref");litespeed_docref&&(Object.defineProperty(document,"referrer",{get:function(){return litespeed_docref}}),sessionStorage.removeItem("litespeed_docref"));</script><meta c'
+'<style>#wpadminbar #wp-admin-bar-wsm_free_top_button .ab-icon:before {'
+'\tcontent: "\\f239";'
+'\tcolor: #FF9800;'
+'\ttop: 3px;'
+"}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+'<title>MTA - National Bank of Ethiopia</title><link rel="canonical" href="https://nbe.gov.et/mta/" /><meta property="og:locale" content="en_US" /><meta property="og:type" content="article" /><meta property="og:title" content="MTA - National Bank of Ethiopia" /><meta property="og:description" content'
+'<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\\/\\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\\/\\/nbe.gov.et\\/mta\\/","url":"https:\\/\\/nbe.gov.et\\/mta\\/","name":"MTA - National Bank of Ethiopia","isPartOf":{"@id":"https:\\/\\/nbe.gov.et\\/#website"},"datePubl'
+
 url: https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/
-bytes: 271262  starts: b'<!DOCTYP'
+bytes: 271419  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Name of Bank', 'Fx Related Fees and Charges']

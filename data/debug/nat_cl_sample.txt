@@ -1,0 +1,80 @@
+url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TPEEM
+bytes: 843  starts: b'\xef\xbb\xbfR.U.T'
+error: None
+columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['R.U.T.', 'Entidad', 'Código Institucional', 'Seleccione: VigentesNo VigentesTodas']
+data rows: 15  kept: 15
+type values: [('', 15)]
+first lines:
+'R.U.T.,Entidad,"Código Institucional","Seleccione: VigentesNo VigentesTodas"'
+'77509915-1,"COMPAÑÍA EMISORA DE MEDIOS DE PAGO DIGITALES S.A.",741,Vigente'
+'76639633-K,"FINTOC PAGOS S.A.",764,Vigente'
+'77535416-K,"FINTUAL PREPAGO S.A.",746,Vigente'
+'77096794-5,"GLOBAL CARD S.A.",738,Vigente'
+'77312496-5,"HAULMER PREPAGO S.A.",739,Vigente'
+'76265724-4,"INVERSIONES LP S.A.",697,Vigente'
+'76965744-4,"LOS ANDES TARJETAS DE PREPAGO S.A.",732,Vigente'
+
+url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TPOPE
+bytes: 540  starts: b'\xef\xbb\xbfR.U.T'
+error: None
+columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
+data rows: 10  kept: 10
+type values: [('', 10)]
+first lines:
+'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
+'76625125-0,"BAASKIT PAGOS S.A.",Vigente'
+'99546900-6,"ISWITCH S.A.",Vigente'
+'77597984-4,"KUSHKI OPERADORA S.A.",Vigente'
+'76516950-K,"MERCADO PAGO OPERADORA S.A.",Vigente'
+'77955969-6,"OPERADORA DE TARJETAS BANCHILE PAGOS S.A.",Vigente'
+'77190661-3,"PAGOS Y SERVICIOS S.A.\xa0",Vigente'
+'76693183-9,"RED GLOBAL S.A.",Vigente'
+
+url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=FBOTP
+bytes: 182  starts: b'\xef\xbb\xbfR.U.T'
+error: None
+columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
+data rows: 2  kept: 2
+type values: [('', 2)]
+first lines:
+'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
+'76693183-9,"RED GLOBAL S.A.",Vigente'
+'77190692-3,"SOCIEDAD OPERADORA DE TARJETAS DE PAGO SANTANDER GETNET CHILE S.A.",Vigente'
+''
+
+url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TCEEM
+bytes: 430  starts: b'\xef\xbb\xbfR.U.T'
+error: None
+columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
+data rows: 9  kept: 9
+type values: [('', 9)]
+first lines:
+'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
+'96522900-0,"CRÉDITOS, ORGANIZACIÓN Y FINANZAS S.A.",Vigente'
+'96712290-4,"FISO S.A.",Vigente'
+'76265724-4,"INVERSIONES LP S.A.",Vigente'
+'85325100-3,"INVERSIONES Y TARJETAS S.A.",Vigente'
+'96623540-3,"MATIC KARD S.A.",Vigente'
+'96776000-5,"SOLVENTA TARJETAS S.A.",Vigente'
+'76967692-9,"TENPO PAYMENTS S.A.",Vigente'
+
+url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=BCCOO
+bytes: 603  starts: b'\xef\xbb\xbfR.U.T'
+error: None
+columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
+data rows: 7  kept: 7
+type values: [('', 7)]
+first lines:
+'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
+'82878900-7,"COOPERATIVA DE AHORRO Y CRÉDITO COOPEUCH",Vigente'
+'70017860-9,"COOPERATIVA DE AHORRO Y CRÉDITO EL DETALLISTA LTDA.",Vigente'
+'70286300-7,"COOPERATIVA DE AHORRO Y CRÉDITO NACIONAL PARA LA FAMILIA LIMITADA",Vigente'
+'70010920-8,"COOPERATIVA DE AHORRO Y CRÉDITO ORIENTE LTDA.",Vigente'
+'70015260-K,"COOPERATIVA DE AHORRO Y CRÉDITO TALAGANTE LTDA.",Vigente'
+'84156800-1,"COOPERATIVA DE AHORRO Y CRÉDITO UNIÓN AÉREA LTDA.",Vigente'
+'81836800-3,"COOPERATIVA DE AHORRO, CRÉDITO Y SERVICIOS FINANCIEROS AHORROCOOP DIEGO PORTALES LTDA.",Vigente'

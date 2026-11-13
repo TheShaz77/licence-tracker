@@ -1,8 +1,25 @@
-url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi
-bytes: 10903  starts: b'<!doctyp'
+url: https://webappcenter.nbs.rs/WebApp/FinInstBank/LegalEntityFinInstitution/Index
+bytes: 29021  starts: b'<!doctyp'
 error: None
-columns used: {'name': 'Name', 'type': None, 'id': 'Registration number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['Name', 'Registration number', '']
+columns used: {'name': 'Назив', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Назив', 'Адреса', 'Телефон', 'Телефакс', '']
+data rows: 18  kept: 18
+type values: [('', 18)]
+first lines:
+'<!doctype html>'
+'<html lang="en">'
+'<head>'
+'    <meta cha!importantmportantset="utf-8" />'
+'<meta http-equiv="X-UA-Compatible" content="IE=edge" />'
+'<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
+'<title>&#x426;&#x435;&#x43D;&#x442;&#x430;&#x440; &#x437;&#x430; &#x458;&#x430;&#x432;&#x43D;&#x435; &#x432;&#x435;&#x431; &#x430;&#x43F;&#x43B;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x458;&#x435; - &#x421;&#x43F;&#x438;&#x441;&#x430;&#x43A; &#x431;&#x430;&#x43D;&#x430;&#x43A;&#x430;</title>'
+'<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
+
+url: https://webappcenter.nbs.rs/WebApp/FinInstPayment/LegalEntityFinInstitution/Index
+bytes: 13057  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'Назив', 'type': None, 'id': 'Регистарски број', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Назив', 'Регистарски број', '']
 data rows: 6  kept: 6
 type values: [('', 6)]
 first lines:
@@ -12,14 +29,14 @@ first lines:
 '    <meta cha!importantmportantset="utf-8" />'
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'
 '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
-'<title>Center for Public Web Applications - Register of payment institutions</title>'
+'<title>&#x426;&#x435;&#x43D;&#x442;&#x430;&#x440; &#x437;&#x430; &#x458;&#x430;&#x432;&#x43D;&#x435; &#x432;&#x435;&#x431; &#x430;&#x43F;&#x43B;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x458;&#x435; - &#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x430;&#x440; &#x43F;&#x43B;&#x430;&#x442;&#x43D;&#x438;&#x44'
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
 
-url: https://nbs.rs/en/finansijske-institucije/pi-ien/registar-ien
-bytes: 10490  starts: b'<!doctyp'
+url: https://webappcenter.nbs.rs/WebApp/FinInstElectronicMoney/LegalEntityFinInstitution/Index
+bytes: 12739  starts: b'<!doctyp'
 error: None
-columns used: {'name': 'Name', 'type': None, 'id': 'Registration number', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['Name', 'Registration number', '']
+columns used: {'name': 'Назив', 'type': None, 'id': 'Регистарски број', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Назив', 'Регистарски број', '']
 data rows: 5  kept: 5
 type values: [('', 5)]
 first lines:
@@ -29,5 +46,22 @@ first lines:
 '    <meta cha!importantmportantset="utf-8" />'
 '<meta http-equiv="X-UA-Compatible" content="IE=edge" />'
 '<meta name="viewport" content="width=device-width, initial-scale=1.0" />'
-'<title>Center for Public Web Applications - Register of electronic money institutions</title>'
+'<title>&#x426;&#x435;&#x43D;&#x442;&#x430;&#x440; &#x437;&#x430; &#x458;&#x430;&#x432;&#x43D;&#x435; &#x432;&#x435;&#x431; &#x430;&#x43F;&#x43B;&#x438;&#x43A;&#x430;&#x446;&#x438;&#x458;&#x435; - &#x420;&#x435;&#x433;&#x438;&#x441;&#x442;&#x430;&#x440; &#x438;&#x43D;&#x441;&#x442;&#x438;&#x442;&#x44'
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
+
+url: https://nbs.rs/en/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/reg_di/
+bytes: 65612  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Name of the virtual currency service provider', 'type': None, 'id': 'Registration No', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name of the virtual currency service provider', 'No', 'Registration No']
+data rows: 3  kept: 3
+type values: [('', 3)]
+first lines:
+'<!DOCTYPE html>'
+'<html>'
+'<head>'
+'<META http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+'<META http-equiv="pragma" content="no-cache" />'
+'<META http-equiv="cache-control" content="no-cache" />'
+'<META http-equiv="Expires" content="-1" />'
+'<meta charset="utf-8" />'

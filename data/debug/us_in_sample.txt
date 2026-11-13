@@ -1,10 +1,10 @@
 url: https://extranet.dfi.in.gov/ConsumerCredit/CompanyListing/5?handler=CompaniesInLicenseType
-bytes: 106029  starts: b'<html cl'
+bytes: 104881  starts: b'<html cl'
 error: None
 columns used: {'name': 'Name', 'dba': 'Doing Business As', 'lic': None, 'nmls': None, 'status': None, 'type': None, 'addr': 'Address', 'city': None, 'csz': 'City, State, Zip', 'state': None, 'phone': 'Phone', 'area': None, 'prefix': None, 'number': None, 'date': None}
 headers: ['Name', 'Doing Business As', 'Address', 'City, State, Zip', 'Phone']
-data rows: 142  kept: 142
-type values: [('', 142)]
+data rows: 140  kept: 140
+type values: [('', 140)]
 first lines:
 '<html class="no-js" lang="en">'
 '<head>'

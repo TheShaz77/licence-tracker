@@ -1,10 +1,27 @@
+url: https://cbo.gov.om/Pages/LicensedBanks.aspx
+bytes: 205950  starts: b'\r\n<!DOCT'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name']
+data rows: 21  kept: 21
+type values: [('', 21)]
+first lines:
+''
+'<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
+'<html dir="ltr" lang="en-US">'
+'    '
+'    <head><meta http-equiv="X-UA-Compatible" content="IE=10" /><meta name="GENERATOR" content="Microsoft SharePoint" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /'
+'\t'
+'        Central Bank Of Oman - '
+'            '
+
 url: https://cbo.gov.om/Pages/MoneyExchangeCompanies.aspx
 bytes: 199244  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
-data rows: 22  kept: 20
-type values: [('', 20)]
+data rows: 16  kept: 16
+type values: [('', 16)]
 first lines:
 ''
 '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">'
