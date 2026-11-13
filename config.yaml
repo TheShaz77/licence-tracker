@@ -440,6 +440,31 @@ national:
   MX:
     regulator: CNBV
     files:
+    - label: CNBV register of supervised entities - fintech institutions (ITF - e-money and crowdfunding)
+      url: https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/Fintech/Paginas/Padr%C3%B3n-de-Entidades-Supervisadas.aspx
+      probe: true
+      follow: \.xlsx?|\.csv|\.pdf|Padr|Entidades
+      follow_max: 6
+    - label: CNBV register of supervised entities - multiple banking (banks)
+      url: https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/BANCA-MULTIPLE/Paginas/Padr%C3%B3n-de-Entidades-Supervisadas.aspx
+      probe: true
+      follow: \.xlsx?|\.csv|\.pdf|Padr|Entidades
+      follow_max: 6
+    - label: CNBV register of supervised entities - other supervised (money transmitters, exchange houses)
+      url: https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/OTROS-SUPERVISADOS/Paginas/Padr%C3%B3n-de-Entidades-Supervisadas.aspx
+      probe: true
+      follow: \.xlsx?|\.csv|\.pdf|Padr|Entidades
+      follow_max: 6
+    - label: CNBV register of supervised entities - popular savings and credit
+      url: https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/SECTOR-POPULAR/Paginas/Padr%C3%B3n-de-Entidades-Supervisadas.aspx
+      probe: true
+      follow: \.xlsx?|\.csv|\.pdf|Padr|Entidades
+      follow_max: 6
+    - label: CNBV register of supervised entities - card network participants (acquirers, aggregators)
+      url: https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/PARTICIPANTES_EN_REDES_DE_MEDIOS_DE_DISPOSICI%C3%93N/Paginas/Padr%C3%B3n-de-Entidades-Supervisadas.aspx
+      probe: true
+      follow: \.xlsx?|\.csv|\.pdf|Padr|Entidades
+      follow_max: 6
     - label: CNBV supervised entities register
       url: https://www.cnbv.gob.mx/Paginas/InfoPES.aspx
       probe: true
@@ -571,6 +596,13 @@ national:
   TW:
     regulator: FSC
     files:
+    # Banking Bureau "Table 13 - Listing of Head Offices of Domestic Financial Institutions" (.ods,
+    # updated each half-year): banks, bills finance, credit cooperatives, Chunghwa Post, card companies
+    # and electronic payment / stored-value institutions, with English names and websites.
+    - label: Banking Bureau list of domestic financial institutions (head offices)
+      url: https://www.banking.gov.tw/webdowndoc?file=/stat/bas/31130.ods
+      format: tw_head_offices
+      register_url: https://www.banking.gov.tw/en/home.jsp?id=145&parentpath=0,100,111
     - label: Banking Bureau institutions directory
       url: https://www.banking.gov.tw/en/home.jsp?id=111&parentpath=0,100
       probe: true
@@ -714,6 +746,24 @@ national:
   EG:
     regulator: CBE
     files:
+    # FRA register of companies in the (non-bank) financing sector: plain pages /page/N/, 20 firms each.
+    # The kind of finance is in each company's name (Arabic and/or English).
+    - label: FRA register of non-bank financing companies
+      url: https://fra.gov.eg/en/%D8%B3%D8%AC%D9%84%D8%A7%D8%AA-%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84/page/{page}/
+      paginate: {start: 1, step: 1, max: 60, marker: '<td[^>]*>\s*([^<]{4,}?)\s*</td>'}
+      format: html_table
+      name_column: Company
+      type_column: Company
+      date_column: Licensing Date
+      type_patterns:
+        متناهي الصغر|microfinanc|micro finance: Microfinance company (FRA)
+        استهلاك|consumer: Consumer finance company (FRA)
+        تأجير|leasing|lease: Financial leasing company (FRA)
+        تخصيم|factoring: Factoring company (FRA)
+        عقاري|mortgage: Mortgage finance company (FRA)
+        .: Non-bank financing company (FRA)
+      regulator: FRA
+      register_url: https://fra.gov.eg/en/%D8%B3%D8%AC%D9%84%D8%A7%D8%AA-%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84/
     - label: FRA registers in the financing sector
       regulator: FRA
       url: https://fra.gov.eg/en/%D8%B3%D8%AC%D9%84%D8%A7%D8%AA-%D9%84%D8%B4%D8%B1%D9%83%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84/
@@ -728,18 +778,25 @@ national:
   MU:
     regulator: FSC
     files:
-    # The FSC moved its register (November 2026) to a new "Online Public Register". Filtered by Act it
-    # is an ordinary page: Act 6 = Virtual Asset and Initial Token Offering Services Act (all on one page).
-    - label: FSC online public register - virtual asset service providers (VAITOS Act)
-      url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr?p3_acts=6
+    # FSC online public register (current licences; surrendered ones are listed separately). It is an
+    # Oracle APEX report, read 50 rows at a time the way its own "next" button asks for them.
+    - label: FSC public register - payment intermediaries and virtual-asset licences
+      url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr
+      apex_irr: OPR
       format: html_table
       name_column: Name of Licensee
       type_column: Type of Licence
       date_column: Date of Licence
       status_column: Annotations
-      type_patterns:
-        'VA-|VT-|virtual asset|token': Virtual asset service provider (FSC, VAITOS Act)
       register_url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr
+      type_patterns:
+        'FS-2\.9\b': Payment intermediary services (FSC FS-2.9)
+        'VA-1\.1\b': Virtual asset broker-dealer (FSC VAITOS Class M)
+        'VA-1\.2\b': Virtual asset wallet services (FSC VAITOS Class O)
+        'VA-1\.3\b': Virtual asset custodian (FSC VAITOS Class R)
+        'VA-1\.4\b': Virtual asset advisory services (FSC VAITOS Class I)
+        'VA-1\.5\b': Virtual asset marketplace (FSC VAITOS Class S)
+        'VT-1\.1\b': Initial token offering issuer (FSC VAITOS)
     - label: BoM licensed banks
       url: https://www.bom.mu/financial-stability/supervision/licensees
       regulator: BoM
@@ -861,21 +918,51 @@ national:
   CL:
     regulator: CMF
     files:
-    - label: CMF banks and financial institutions
-      url: https://www.cmfchile.cl/portal/principal/613/w4-propertyname-731.html
+    # CMF publishes each register as a CSV ("Descargar datos a CSV" on the entity-type pages):
+    # R.U.T., Entidad, [Código Institucional], status (Vigente = active). Estado=VI asks for active ones.
+    - label: CMF register - non-bank prepaid card issuers (e-money)
+      url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TPEEM
+      name_column: Entidad
+      id_column: R.U.T.
+      status_column: Seleccione
+      inactive_pattern: 'No Vigente|Cancelad|Revocad'
+      licence_type: Prepaid payment card issuer - non-bank (CMF)
+      register_url: https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48681.html
+    - label: CMF register - payment card operators (acquirers)
+      url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TPOPE
+      name_column: Entidad
+      id_column: R.U.T.
+      status_column: Seleccione
+      inactive_pattern: 'No Vigente|Cancelad|Revocad'
+      licence_type: Payment card operator - acquirer (CMF)
+      register_url: https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48681.html
+    - label: CMF register - bank subsidiaries operating payment cards
+      url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=FBOTP
+      name_column: Entidad
+      id_column: R.U.T.
+      status_column: Seleccione
+      inactive_pattern: 'No Vigente|Cancelad|Revocad'
+      licence_type: Payment card operator - bank subsidiary (CMF)
+      register_url: https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48681.html
+    - label: CMF register - non-bank credit card issuers
+      url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TCEEM
+      name_column: Entidad
+      id_column: R.U.T.
+      status_column: Seleccione
+      inactive_pattern: 'No Vigente|Cancelad|Revocad'
+      licence_type: Credit card issuer - non-bank (CMF)
+      register_url: https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48681.html
+    - label: CMF register - savings and credit cooperatives
+      url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=BCCOO
+      name_column: Entidad
+      id_column: R.U.T.
+      status_column: Seleccione
+      inactive_pattern: 'No Vigente|Cancelad|Revocad'
+      licence_type: Savings and credit cooperative (CMF)
+      register_url: https://www.cmfchile.cl/portal/principal/623/w4-propertyvalue-48681.html
+    - label: CMF fintech register (Registro de Prestadores de Servicios Financieros) (probe)
+      url: https://www.cmfchile.cl/institucional/estadisticas/seg_rgpsf.php
       probe: true
-      follow: banc|emisor|tarjeta|prepago|fintec|registro|entidades
-      follow_max: 15
-    - label: CMF entity types
-      url: https://www.cmfchile.cl/portal/principal/613/w4-propertyvalue-48681.html
-      probe: true
-      follow: banc|emisor|prepago|fintec|prestadores|registro
-      follow_max: 15
-    - label: Buscador de entidades supervisadas
-      url: https://www.cmfchile.cl/portal/principal/613/w4-propertyvalue-48680.html
-      probe: true
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
   CO:
     regulator: SFC
     files:
@@ -1172,9 +1259,6 @@ national:
   LC:
     regulator: ECCB
     files:
-    - label: ECCB licensed institutions (Eastern Caribbean)
-      url: https://www.eccb-centralbank.org/financial-institutions/licensed-financial-institutions
-      probe: true
     - label: www.eccb-centralbank.org homepage
       url: https://www.eccb-centralbank.org/
       probe: true
@@ -1188,10 +1272,8 @@ national:
     - label: Register of Licensed Financial Institutions
       url: https://www.eccb-centralbank.org/register-of-licensed-financial-institutions
       probe: true
-      follow: Register-of-Financial-Institutions-Licensed
+      follow: Register-of-Financial-Institutions-Licensed|Revoked-Licences
       follow_max: 2
-      follow: \.pdf|\.xlsx?|\.csv|list|register|licen|bank|payment|money|remit|exchange|virtual|crypto
-      follow_max: 6
   JE:
     regulator: JFSC
     files:
@@ -1458,9 +1540,6 @@ national:
   MD:
     regulator: NBM
     files:
-    - label: NBM payment service providers
-      url: https://www.bnm.md/en/content/payment-service-providers
-      probe: true
     - label: www.bnm.md homepage
       url: https://www.bnm.md/
       probe: true
@@ -1932,23 +2011,16 @@ national:
 
   SA:
     regulator: SAMA
+    # SAMA moved its licensed-entities pages (the old payment-companies address returns 404). The new
+    # page builds its lists in the browser from an encrypted payload, so there is no plain list to read;
+    # the page is kept as a probe so a change to a readable list is noticed.
     files:
-    - label: SAMA licensed payment service providers (EMIs and PIs)
-      url: https://www.sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
-      fallback_urls:
-      - https://sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
-      format: html_table
-      name_column: Entity Name
-      type_column: Activity
-      id_column: Unified Number
-      type_patterns:
-        EMI|e-?money|electronic money: Electronic money institution (SAMA)
-        .: Payment institution (SAMA)
     - label: SAMA licensed entities (probe)
-      url: https://www.sama.gov.sa/en-US/LicenseEntities/Pages/Licensed_Payment_Service_Providers_companies.aspx
+      url: https://www.sama.gov.sa/en-US/Supervision/LicenseEntities/Pages/default.aspx
       probe: true
-      follow: LicenseEntities|licensed|money exchange|finance compan|fintech|bank
-      follow_max: 15
+      follow: \.xlsx?|\.csv|\.pdf|LicenseEntities
+      follow_max: 6
+
 # GitHub stops a run after 3 hours (and then nothing is saved). The run starts no new source after
 # run_budget_minutes, stops any single source after source_timeout_minutes (it keeps its last list),
 # and leaves what didn't fit for the next run - least recently tried first.
@@ -2017,6 +2089,22 @@ cfd:
   # only turns pages through its own in-page requests, so the investment dealers (the licence CFD brokers
   # hold) can't be listed completely yet. Left out rather than shown half-complete.
 
+  MU:
+    regulator: FSC
+    files:
+    # FSC online public register. It shows each firm's licence, not whether it offers CFDs.
+    - label: FSC public register - investment dealers
+      url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr
+      apex_irr: OPR
+      format: html_table
+      name_column: Name of Licensee
+      type_column: Type of Licence
+      date_column: Date of Licence
+      status_column: Annotations
+      register_url: https://opr.fscmauritius.org/ords/opr/r/fsc-opr/fsc-online-public-register-opr
+      type_patterns:
+        'SEC-2\.1[AB]\b': Investment dealer - full service (FSC SEC-2.1) - CFD permission not shown on the register
+        'SEC-2\.[23]\b|SEC-6\.3\b': Investment dealer - broker (FSC SEC-2.2/2.3/6.3) - CFD permission not shown on the register
   SC:
     regulator: FSA
     files:

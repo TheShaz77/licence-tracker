@@ -364,3 +364,114 @@ def test_post_json_register_and_name_value_properties(tmp_path, monkeypatch):
     assert sent and sent[0][1]["PageSize"] == 1000
     assert sorted(r.name for r in recs) == ["CoinShares (Jersey) Limited", "MoonPay Jersey Limited"]
     assert all(r.licence_type == "Virtual asset service provider (JFSC)" for r in recs)
+
+
+def test_taiwan_head_office_listing_ods():
+    """Taiwan Banking Bureau Table 13: code + Chinese name row, then English name + website row,
+    in two side-by-side panels."""
+    import io
+    import pytest
+    odf = pytest.importorskip("odf")
+    from odf.opendocument import OpenDocumentSpreadsheet
+    from odf.table import Table, TableRow, TableCell
+    from odf.text import P
+    from regtracker.sources import national as n
+    doc = OpenDocumentSpreadsheet()
+    t = Table(name="T13")
+
+    def row(cells):
+        tr = TableRow()
+        for c in cells:
+            tc = TableCell()
+            tc.addElement(P(text=c))
+            tr.addElement(tc)
+        t.addElement(tr)
+    row(["", "表十三 本國金融機構總機構一覽表"])
+    row(["", "Table 13. Listing of Head Offices"])
+    row(["", "中華民國115年 6月底", "", "", "", "End of June 2026"])
+    head = ["總行代號", "總行代號Code", "銀行別Institutions", "銀行別", "", "總行地址", "電話及網址"]
+    row(head + ["", ""] + head)
+    row(["004", "004", "臺灣銀行　#", "", "", "臺北市", "02-2349", "", "", "396", "396", "街口電子支付股份有限公司", "", "", "台北", "02-1"])
+    row(["", "", "Bank Of Taiwan", "", "", "", "www.bot.com.tw", "", "", "", "", "Jkopay Co., Ltd", "", "", "", "www.jkopay.com"])
+    doc.spreadsheet.addElement(t)
+    buf = io.BytesIO()
+    doc.save(buf)
+    recs, _ = n.parse_file(buf.getvalue(), {"format": "tw_head_offices", "url": "u"}, "TW", "FSC")
+    got = {r.name: (r.licence_type, r.website, r.reference) for r in recs}
+    assert got == {"Bank Of Taiwan": ("Bank (FSC)", "https://www.bot.com.tw", "004"),
+                   "Jkopay Co., Ltd": ("Electronic payment institution (FSC)", "https://www.jkopay.com", "396")}
+    assert "June 2026" in recs[0].status_detail
+
+
+def test_apex_interactive_report_paging(tmp_path, monkeypatch):
+    """FSC Mauritius register: an Oracle APEX interactive report, 50 rows a page, next pages fetched
+    the way the page's own "next" button does (POST wwv_flow.ajax with the page's hidden fields)."""
+    from urllib.parse import parse_qs
+    from regtracker import cli
+    from regtracker.sources import national as n
+    page = ('<input type="hidden" name="p_flow_id" value="110" id="pFlowId"><input type="hidden" name="p_flow_step_id" '
+            'value="3" id="pFlowStepId"><input type="hidden" name="p_instance" value="12345" id="pInstance">'
+            '<input type="hidden" id="pPageItemsProtected" value="PROT"><input type="hidden" value="SALT" id="pSalt">'
+            '<input type="hidden" id="OPR_worksheet_id" value="111"><input type="hidden" id="OPR_report_id" value="222">'
+            '<select name="P3_ACTS"></select><input name="P3_NAME">'
+            '<script>apex.jQuery("#OPR").interactiveReport({"regionId":"OPR","searchField":false,"ajaxIdentifier":"AJAXID"});</script>')
+    head = "<tr><th>Link</th><th>Name of Licensee</th><th>Date of Licence</th><th>Type of Licence</th><th>Annotations</th></tr>"
+
+    def rows(a, b):
+        return "".join(f"<tr><td></td><td>Dealer {i} Ltd</td><td>01/01/2025</td>"
+                       f"<td>SEC-2.1B Investment Dealer (Full Service Dealer excluding Underwriting)</td><td></td></tr>"
+                       for i in range(a, b))
+    posts = []
+
+    class R:
+        def __init__(self, text, url="https://opr.test/ords/opr/r/fsc-opr/x?session=1"):
+            self.text, self.url, self.content = text, url, text.encode()
+        def raise_for_status(self): pass
+
+    class S:
+        def get(self, url, **kw):
+            return R(page)
+        def post(self, url, data=None, **kw):
+            posts.append((url, data))
+            start = int(data["p_widget_action_mod"].split("=")[1].split("max")[0])
+            body = rows(start, min(start + 50, 121)) if start <= 120 else ""
+            return R(f'<table class="a-IRR-table">{head}{body}</table>')
+
+    monkeypatch.setattr(n, "robots_allowed", lambda *a, **k: True, raising=False)
+    monkeypatch.setattr("regtracker.http.robots_allowed", lambda *a, **k: True)
+    monkeypatch.setattr("time.sleep", lambda s: None)
+    cfg = {"national": {"MU": {"regulator": "FSC", "files": [{
+        "label": "FSC register", "url": "https://opr.test/ords/opr/r/fsc-opr/x", "apex_irr": "OPR",
+        "format": "html_table", "name_column": "Name of Licensee", "type_column": "Type of Licence",
+        "type_patterns": {r"SEC-2\.1": "Investment dealer"}}]}}}
+    ctx = cli.make_context(cfg, tmp_path)
+    ctx.session = S()
+    recs = n.NationalSource("MU", cfg["national"]["MU"]).fetch(ctx)
+    assert len(recs) == 120 and len(posts) == 3
+    f = posts[1][1]
+    assert posts[0][0] == "https://opr.test/ords/wwv_flow.ajax" and f["p_request"] == "PLUGIN=AJAXID"
+    assert f["p_widget_action_mod"] == "pgR_min_row=51max_rows=50rows_fetched=50" and f["x01"] == "111" and f["x02"] == "222"
+    assert '"n":"P3_ACTS"' in f["p_json"] and '"salt":"SALT"' in f["p_json"] and f["p_instance"] == "12345"
+
+
+def test_config_has_no_duplicate_keys():
+    """A repeated key in config.yaml silently overrides the first one (that hid a fix for a day)."""
+    import yaml
+    from pathlib import Path
+    dups = []
+
+    class Loader(yaml.SafeLoader):
+        pass
+
+    def mapping(loader, node, deep=False):
+        seen = set()
+        for k, _ in node.value:
+            key = loader.construct_object(k, deep=deep)
+            if key in seen:
+                dups.append((key, k.start_mark.line + 1))
+            seen.add(key)
+        return yaml.SafeLoader.construct_mapping(loader, node, deep)
+    Loader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, mapping)
+    cfg = yaml.load((Path(__file__).parent.parent / "config.yaml").read_text(encoding="utf-8"), Loader=Loader)
+    assert dups == []
+    assert "MU" in cfg["cfd"] and any(f.get("apex_irr") for f in cfg["cfd"]["MU"]["files"])

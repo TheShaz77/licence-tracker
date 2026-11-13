@@ -579,6 +579,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     """Return (records, info) for one downloaded file."""
     if spec.get("format") == "nbs_psd2":
         return parse_nbs_psd2(raw, spec, country, regulator)
+    if spec.get("format") == "tw_head_offices":
+        return parse_tw_head_offices(raw, spec, country, regulator)
     import datetime as dt
     today = spec.get("_today") or dt.date.today().isoformat()
     fmt = spec.get("format")
@@ -789,6 +791,71 @@ class NationalSource(Source):
         r.raise_for_status()
         return r.content
 
+    @staticmethod
+    def _apex_irr(ctx: Context, spec: dict) -> bytes:
+        """An Oracle APEX "interactive report" register (e.g. the FSC Mauritius public register).
+        Opens the page as a browser does (the session is kept in a cookie and the page's hidden
+        fields), then asks for each further page of 50 rows exactly as the page's own "next" button
+        does (POST wwv_flow.ajax). Returns all rows as one HTML table, read like any other table."""
+        import time as _t
+        import html as _h
+        from urllib.parse import urljoin
+        hdr = {"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)", "Accept": "text/html,*/*"}
+        r = ctx.session.get(spec["url"], timeout=(15, 90), headers=hdr)
+        r.raise_for_status()
+        page = r.text
+
+        def val(pat):
+            m = re.search(pat, page)
+            if not m:
+                raise RuntimeError(f"APEX page field not found: {pat[:40]}")
+            return _h.unescape(m.group(1))
+        flow = val(r'name="p_flow_id" value="([^"]+)"')
+        step = val(r'name="p_flow_step_id" value="([^"]+)"')
+        inst = val(r'name="p_instance" value="([^"]+)"')
+        prot = val(r'id="pPageItemsProtected" value="([^"]*)"')
+        salt = val(r'value="([^"]*)" id="pSalt"')
+        region = spec["apex_irr"] if isinstance(spec["apex_irr"], str) else "OPR"
+        ws = val(r'id="%s_worksheet_id" value="([^"]+)"' % region)
+        rep = val(r'id="%s_report_id" value="([^"]+)"' % region)
+        ajax = val(r'interactiveReport\(\{"regionId":"%s".*?"ajaxIdentifier":"([^"]+)"' % region)
+        items = list(dict.fromkeys(re.findall(r'name="(P%s_[A-Z0-9_]+)"' % step, page)))
+        preset = spec.get("apex_items") or {}
+        import json as _j
+        p_json = _j.dumps({"pageItems": {"itemsToSubmit": [{"n": n, "v": preset.get(n, "")} for n in items],
+                                         "protected": prot, "rowVersion": "", "formRegionChecksums": []},
+                           "salt": salt}, separators=(",", ":"))
+        ajax_url = urljoin(r.url, "/ords/wwv_flow.ajax") if "/ords/" in r.url else urljoin(r.url, "wwv_flow.ajax")
+        head, body, seen = "", [], set()
+        size = int(spec.get("apex_page_size", 50))
+        for n in range(int(spec.get("apex_max_pages", 200))):
+            form = {"p_flow_id": flow, "p_flow_step_id": step, "p_instance": inst, "p_debug": "",
+                    "p_request": "PLUGIN=" + ajax, "p_widget_name": "worksheet", "p_widget_mod": "ACTION",
+                    "p_widget_action": "PAGE", "p_widget_num_return": str(size),
+                    "p_widget_action_mod": f"pgR_min_row={1 + n * size}max_rows={size}rows_fetched={size}",
+                    "x01": ws, "x02": rep, "p_json": p_json}
+            rr = ctx.session.post(ajax_url, data=form, timeout=(15, 90), headers={
+                **hdr, "X-Requested-With": "XMLHttpRequest", "Referer": r.url,
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"})
+            rr.raise_for_status()
+            m = re.search(r'<table[^>]*a-IRR-table[^>]*>(.*?)</table>', rr.text, re.S)
+            if not m:
+                break
+            rows = re.findall(r"<tr\b.*?</tr>", m.group(1), re.S)
+            if not head:
+                head = next((x for x in rows if "<th" in x), "")
+            data = [x for x in rows if "<td" in x and x not in seen]
+            if not data:
+                break
+            seen.update(data)
+            body.extend(data)
+            if len(data) < size:
+                break
+            _t.sleep(float(spec.get("apex_pause", 0.7)))
+        if not body:
+            raise RuntimeError("APEX report returned no rows")
+        return ("<table>" + head + "".join(body) + "</table>").encode("utf-8")
+
     def _fetch_multi(self, ctx: Context, spec: dict, label: str, status: dict) -> tuple:
         """Lists spread over numbered pages ('paginate': {start, step, max, marker}; the url holds
         {page}), or several addresses tried in turn until one gives firms ('fallback_urls').
@@ -913,6 +980,7 @@ class NationalSource(Source):
                     continue
                 try:
                     raw = (self._post(ctx, spec["url"], spec["post_json"]) if spec.get("post_json")
+                           else self._apex_irr(ctx, spec) if spec.get("apex_irr")
                            else self._get(ctx, spec["url"], _accept(spec)))
                     if spec.get("join"):
                         j = spec["join"]
@@ -1376,3 +1444,81 @@ def match_name(name: str) -> str:
     s = re.sub(r"[\"'„“”«»().,/&-]", " ", s)
     s = LEGAL_FORMS.sub(" ", s)
     return re.sub(r"[^a-z0-9]", "", s)
+
+
+def ods_sheets(raw: bytes) -> list:
+    """OpenDocument spreadsheet (.ods) as [(sheet name, rows)], read from its XML - no extra library."""
+    import io
+    import zipfile
+    import xml.etree.ElementTree as ET
+    ns = {"table": "urn:oasis:names:tc:opendocument:xmlns:table:1.0",
+          "text": "urn:oasis:names:tc:opendocument:xmlns:text:1.0"}
+    T = "{%s}" % ns["table"]
+    root = ET.fromstring(zipfile.ZipFile(io.BytesIO(raw)).read("content.xml"))
+    out = []
+    for tbl in root.iter(T + "table"):
+        rows = []
+        for tr in tbl.iter(T + "table-row"):
+            row = []
+            for cell in tr:
+                if cell.tag not in (T + "table-cell", T + "covered-table-cell"):
+                    continue
+                text = " ".join("".join(p.itertext()) for p in cell.findall("text:p", ns)).strip()
+                n = min(int(cell.get(T + "number-columns-repeated", "1")), 50)
+                row.extend([text] * n)
+            while row and not row[-1]:
+                row.pop()
+            reps = min(int(tr.get(T + "number-rows-repeated", "1")), 5)
+            rows.extend([row] * (reps if row else 1))
+        out.append((tbl.get(T + "name", ""), rows))
+    return out
+
+
+TW_TYPES = [
+    (r"電子支付|支付|悠遊卡|一卡通|愛金卡", "Electronic payment institution (FSC)"),
+    (r"票券金融", "Bills finance company (FSC)"),
+    (r"信用合作社", "Credit cooperative (FSC)"),
+    (r"郵政", "Postal savings and remittance - Chunghwa Post (FSC)"),
+    (r"信用卡|卡股份|威士卡|美國運通|吉世美|環滙|聯合信用卡", "Credit card business (FSC)"),
+    (r"銀行", "Bank (FSC)"),
+]
+
+
+def parse_tw_head_offices(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
+    """Taiwan Banking Bureau 'Table 13 - Listing of Head Offices of Domestic Financial Institutions'
+    (.ods): two side-by-side panels per sheet; each institution is a row with its 3-digit code and
+    Chinese name, followed by a row with the English name and website."""
+    recs, seen = [], set()
+    as_at = ""
+    for _, rows in ods_sheets(raw):
+        for r in rows[:4]:
+            for c in r:
+                m = re.search(r"End of ([A-Za-z]+ \d{4})", c)
+                as_at = as_at or (m.group(1) if m else "")
+        head = next((r for r in rows[:6] if any("總行代號" in c and "Code" not in c for c in r)), None)
+        if head is None:
+            continue
+        starts = [i for i, c in enumerate(head) if "總行代號" in c and "Code" not in c]
+        for s in starts:
+            for i, r in enumerate(rows):
+                code = r[s].strip() if s < len(r) else ""
+                if not re.fullmatch(r"\d{3}", code) or code in seen:
+                    continue
+                zh = re.sub(r"[\s\u3000#]+$", "", r[s + 2] if s + 2 < len(r) else "").strip()
+                nxt = rows[i + 1] if i + 1 < len(rows) else []
+                en = (nxt[s + 2] if s + 2 < len(nxt) else "").strip()
+                web = ""
+                for rr in (r, nxt):
+                    for c in rr[s + 4:s + 9]:
+                        if re.search(r"www\.|\.com|\.tw|\.org", c):
+                            web = re.search(r"[\w.-]+\.[a-z]{2,}(?:/\S*)?", c).group(0)
+                lic = next((t for pat, t in TW_TYPES if re.search(pat, zh)), "Financial institution (FSC)")
+                seen.add(code)
+                recs.append(Record(
+                    key=f"nat_tw:{code}", source="nat_tw", jurisdiction=country, regulator=regulator,
+                    name=en or zh, licence_type=lic, active=True, reference=code,
+                    status_detail=f"Head office listing (Banking Bureau){' - end of ' + as_at if as_at else ''}",
+                    register_url=spec.get("register_url") or spec.get("url", ""),
+                    website=("https://" + web) if web and not web.startswith("http") else web,
+                    extra={"name_local": zh, "bank_code": code}))
+    return recs, {"rows": len(recs), "kept": len(recs), "columns": {"name": "Institutions"}}
