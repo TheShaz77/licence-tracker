@@ -2,7 +2,7 @@ name: Contact details (firm websites)
 
 on:
   schedule:
-        - cron: "53 */2 * * *"
+        - cron: "53 3-23/12 * * *"   # every 12 hours: 03:53 and 15:53 UTC
   workflow_dispatch:
 
 permissions:
