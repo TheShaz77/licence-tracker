@@ -36,7 +36,7 @@ first lines:
 '2XCHANGE FINTECH LIMITED TRADING AS 2XCHANGE,,2XCHANGE,,"HOTEL LOBBY, WHARNEY HOTEL, 57-73 LOCKHART ROAD, WAN CHAI, HONG KONG",Specified Premises,指明處所,12/11/2026'
 
 url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
-bytes: 127099  starts: b'\r\n\r\n\r\n<!'
+bytes: 127020  starts: b'\r\n\r\n\r\n<!'
 error: None
 columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': 'CE Reference', 'lei': None, 'city': None, 'date': 'Date of licence', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['CE Reference', 'Company name of virtual asset trading platform operator', 'Virtual asset trading platform', 'Date of licence']
@@ -53,7 +53,7 @@ first lines:
 ''
 
 url: https://www.sfc.hk/en/Welcome-to-the-Fintech-Contact-Point/Virtual-assets/Virtual-asset-trading-platforms-operators/Lists-of-virtual-asset-trading-platforms
-bytes: 127099  starts: b'\r\n\r\n\r\n<!'
+bytes: 127020  starts: b'\r\n\r\n\r\n<!'
 error: None
 columns used: {'name': 'Company name of virtual asset trading platform operator', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': 'Date of submission of licence application*', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Company name of virtual asset trading platform operator', 'Virtual asset trading platform', 'Date of submission of licence application*']

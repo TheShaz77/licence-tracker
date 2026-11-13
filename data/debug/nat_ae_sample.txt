@@ -1,5 +1,5 @@
 url: https://www.vara.ae/en/licenses-and-register/public-register/
-bytes: 771915  starts: b'<!DOCTYP'
+bytes: 771780  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'VASP Name', 'type': 'Licence Type', 'id': 'Reference', 'lei': None, 'city': None, 'date': 'Licence Issued', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['VASP Name', 'Licence Type', 'Reference', 'Licensed Activities', 'Licence Issued', 'Status', 'CMA Registration Number']

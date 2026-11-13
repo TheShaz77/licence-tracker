@@ -1,6 +1,6 @@
 {
  "AD": {
-  "AFA supervised entities": "connection failed",
+  "AFA supervised entities": "HTTP 404",
   "Llistat de Taxes": "probe saved earlier this week",
   "Llistat de Taxes (2)": "probe saved earlier this week",
   "date": "2026-11-13",
@@ -10,7 +10,7 @@
   "CBUAE register": "ok: 240 firms",
   "DFSA firms": "probe saved earlier this week",
   "VARA register page": "ok: 61 firms",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "AL": {
   "BoA licensed entities": "probe saved earlier this week",
@@ -50,7 +50,7 @@
   "CBA supervised institutions": "HTTP 404",
   "Commercial banks": "probe saved earlier this week",
   "List of financial institutions under supervision o": "probe saved earlier this week",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.cbaruba.org homepage": "probe saved earlier this week"
  },
  "AZ": {
@@ -120,8 +120,8 @@
   "CBOB supervised institutions - electronic money service providers": "ok: 3 firms",
   "CBOB supervised institutions - money transmission service providers": "ok: 5 firms",
   "SCB register of digital asset businesses (DARE Act)": "ok: 35 firms",
-  "SCB registrant / licensee search (probe)": "probe saved (262718 bytes, 9 linked pages)",
-  "date": "2026-11-12"
+  "SCB registrant / licensee search (probe)": "probe saved earlier this week",
+  "date": "2026-11-13"
  },
  "BS (CFD)": {
   "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
@@ -142,7 +142,7 @@
   "CBB payment service providers (names)": "ok: 13 firms",
   "Central Bank of Belize licensees": "HTTP 404",
   "Payment Service Providers": "probe saved earlier this week",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.centralbank.org.bz homepage": "probe saved earlier this week"
  },
  "CA (iGaming)": {
@@ -179,7 +179,7 @@
   "SFC establecimientos bancarios": "ok: 576 firms",
   "SFC homepage": "probe saved earlier this week",
   "SFC low-value payment system operators": "ok: 24 firms",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "CR": {
   "Datos sobre Entidades Fiscalizadas": "probe saved earlier this week",
@@ -187,7 +187,7 @@
   "Entidades Supervisadas (2)": "probe saved earlier this week",
   "SUGEF exchange houses": "ok: 1 firms",
   "SUGEF supervised entities list": "ok: 18 firms",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "CV": {
   "BCV homepage": "probe saved earlier this week",
@@ -269,7 +269,7 @@
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
   "RBF licensing": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "FR (iGaming)": {
   "France - ANJ licensed online operators": "ok: 16 firms",
@@ -289,7 +289,7 @@
   "NBG payment service providers": "probe saved earlier this week",
   "NBG payment service providers (names)": "ok: 4 firms",
   "NBG registered payment service providers": "read failed: no matching table on the page; table headers were: []",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "nbg.gov.ge homepage": "probe saved earlier this week"
  },
  "GG": {
@@ -332,7 +332,7 @@
   "CBG mobile money": "probe saved earlier this week",
   "List of Licensed Microfinance Institutions": "probe saved earlier this week",
   "List of Participants in The Payment System": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "GN": {
   "BCRG banks": "read failed: no matching table on the page; table headers were: []",
@@ -368,7 +368,7 @@
   "BI payment service providers list": "probe saved earlier this week",
   "OJK digital financial assets": "HTTP 404",
   "OJK homepage": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "IE (iGaming)": {
   "Gambling Regulatory Authority of Ireland register": "file link not found: no link matching '\\\\.csv' on https://www.grai.ie/register",
@@ -381,7 +381,7 @@
   "IOMFSA register search": "probe saved earlier this week",
   "Legislation & Guidance": "probe saved earlier this week",
   "Trust and Corporate Service Providers (\"TCSPs\")": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "IM (iGaming)": {
   "Isle of Man online gambling (OGRA) licence holders": "ok: 49 firms",
@@ -395,7 +395,7 @@
   "RBI banks in India": "probe saved earlier this week",
   "RBI banks permitted to issue prepaid instruments": "ok: 63 firms",
   "RBI scheduled commercial banks": "ok: 120 firms",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "IT (iGaming)": {
   "Italy - ADM remote gaming concessionaires": "read failed: no matching table on the page; table headers were: []",
@@ -411,7 +411,7 @@
   "JFSC regulated entities - money service businesses": "ok: 26 firms",
   "JFSC virtual asset service providers": "ok: 12 firms",
   "Tokenised real-world assets": "probe saved earlier this week",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.jerseyfsc.org homepage": "probe saved earlier this week"
  },
  "JM": {
@@ -515,13 +515,13 @@
  "MC": {
   "AMAF members (Monaco banks)": "ok: 68 firms",
   "AMAF members page": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "MD": {
   "BNM register of e-money issuers": "HTTP 403",
   "BNM register of payment institutions and postal payment providers": "ok: 4 firms",
   "NBM payment service providers": "HTTP 404",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.bnm.md homepage": "probe saved earlier this week"
  },
  "ME": {
@@ -541,7 +541,7 @@
  "MN": {
   "Banking license": "probe saved earlier this week",
   "BoM banking supervision": "probe saved earlier this week",
-  "BoM banks": "connection failed",
+  "BoM banks": "ok: 12 firms",
   "Difference Between Central Bank and Commercial Ban": "probe saved earlier this week",
   "FRC homepage": "probe saved earlier this week",
   "Licensed Entities": "probe saved earlier this week",
@@ -586,7 +586,7 @@
   "RBM payment systems": "probe saved earlier this week",
   "Register of Licensed Banks": "probe saved earlier this week",
   "Register of Licensed Entities": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "MX": {
   "CNBV register of supervised entities": "probe saved earlier this week",
@@ -619,7 +619,7 @@
   "BoN authorised dealers in foreign exchange (banks)": "ok: 10 firms",
   "BoN authorised dealers with limited authority (bureaux de change)": "ok: 5 firms",
   "BoN payment service providers": "HTTP 404",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.bon.com.na homepage": "probe saved earlier this week"
  },
  "NG": {
@@ -647,7 +647,7 @@
   "CBO licensed institutions": "HTTP 404",
   "CBO licensed money exchange companies": "ok: 20 firms",
   "cbo.gov.om homepage": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "PA": {
   "SBP banks": "HTTP 404",
@@ -698,7 +698,7 @@
   "NBS register of e-money institutions": "ok: 5 firms",
   "NBS register of payment institutions": "ok: 6 firms",
   "NBS virtual asset service providers": "HTTP 404",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "nbs.rs homepage": "probe saved earlier this week"
  },
  "SA": {
@@ -720,7 +720,7 @@
   "Hire Purchase and Credit Sales": "probe saved earlier this week",
   "Insurance": "probe saved earlier this week",
   "International Trade Zone": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "SC (CFD)": {
   "FSA capital markets - securities dealers": "ok: 231 firms",
@@ -730,7 +730,7 @@
   "MAS directory cards": "ok: 4 firms",
   "MAS directory export": "ok: 687 firms",
   "Print/Download List": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "SL": {
   "BSL licensed institutions": "DNS: no such site",
@@ -770,7 +770,7 @@
   "TCI FSC licensed banks": "ok: 6 firms",
   "TCI FSC licensed money transmitters (names)": "ok: 3 firms",
   "TCI FSC money transmitters": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "TH": {
   "1) Depositary Corporations   For example: commerci": "probe saved earlier this week",
@@ -806,7 +806,7 @@
   "NRBT financial institutions page": "probe saved earlier this week",
   "NRBT licensed foreign exchange dealers (names)": "ok: 8 firms",
   "NRBT licensed institutions (names)": "ok: 11 firms",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "of-the-licensed-foreign-exchange-dealers": "probe saved earlier this week"
  },
  "TR": {
@@ -815,7 +815,7 @@
   "CBRT payment institutions": "ok: 20 firms",
   "SPK crypto asset service providers": "ok: 48 firms",
   "SPK crypto list page": "probe saved earlier this week",
-  "date": "2026-11-12"
+  "date": "2026-11-13"
  },
  "TT": {
   "CBTT approved PSPs, EMIs and PSOs": "HTTP 404",
@@ -856,7 +856,7 @@
   "BCU institution lists": "probe saved earlier this week",
   "BCU payment and e-money institutions": "HTTP 404",
   "BCU virtual asset service providers": "HTTP 404",
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "www.bcu.gub.uy homepage": "probe saved earlier this week"
  },
  "UZ": {
