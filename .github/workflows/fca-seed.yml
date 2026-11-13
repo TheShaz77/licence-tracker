@@ -6,7 +6,7 @@ name: FCA seed scan (one-off)
 
 on:
   schedule:
-        - cron: "41 */6 * * *"
+        - cron: "41 6-23/12 * * *"   # every 12 hours: 06:41 and 18:41 UTC
   workflow_dispatch:
 
 permissions:
