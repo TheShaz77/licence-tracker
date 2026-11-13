@@ -49,24 +49,24 @@ first lines:
 '{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":14,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
-bytes: 29033  starts: b'{"succes'
+bytes: 29324  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
-data rows: 95  kept: 95
-type values: [('', 95)]
+data rows: 96  kept: 96
+type values: [('', 96)]
 first lines:
-'{"success":true,"tipo_psp":7,"tipo_psp_nombre":"Agregador","lang":"es","total":95,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
+'{"success":true,"tipo_psp":7,"tipo_psp_nombre":"Agregador","lang":"es","total":96,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=8&lang=es
-bytes: 6905  starts: b'{"succes'
+bytes: 7223  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
-data rows: 23  kept: 23
-type values: [('', 23)]
+data rows: 24  kept: 24
+type values: [('', 24)]
 first lines:
-'{"success":true,"tipo_psp":8,"tipo_psp_nombre":"Cobranza extrabancaria","lang":"es","total":23,"proveedores":[{"codigo":34630,"denominacion_pj":"Adelantos Pay S.A.","denominacion":"Adelantos Pay","cuit":30718438906,"domicilio":"Sarmiento 848, piso 6°<br>Ciudad de Buenos Aire (CP: C1041AAR), CABA","l'
+'{"success":true,"tipo_psp":8,"tipo_psp_nombre":"Cobranza extrabancaria","lang":"es","total":24,"proveedores":[{"codigo":34630,"denominacion_pj":"Adelantos Pay S.A.","denominacion":"Adelantos Pay","cuit":30718438906,"domicilio":"Sarmiento 848, piso 6°<br>Ciudad de Buenos Aire (CP: C1041AAR), CABA","l'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=9&lang=es
 bytes: 1214  starts: b'{"succes'
