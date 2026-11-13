@@ -910,7 +910,7 @@
 "ch:01515768": {
 "employees": 5,
 "name": "HEDDLEWORTH (AMUSEMENTS) LIMITED",
-"period": "2025-01-31"
+"period": "2026-01-31"
 },
 "ch:01517104": {
 "employees": 3,
@@ -1026,9 +1026,9 @@
 "period": "2025-03-31"
 },
 "ch:01705196": {
-"employees": 14,
+"employees": 17,
 "name": "Inn-House Automatics Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:01708774": {
 "employees": 23,
@@ -2622,6 +2622,11 @@
 "name": "LETTING INTERNATIONAL LIMITED",
 "period": "2025-09-30"
 },
+"ch:03446540": {
+"employees": 0,
+"name": "EXPRESS HANDLING SERVICES LIMITED",
+"period": "2025-06-30"
+},
 "ch:03448089": {
 "employees": 0,
 "name": "THE UPPER DALES COMMUNITY PARTNERSHIP (UDCP) LIMITED",
@@ -3132,6 +3137,11 @@
 "name": "PARKINSONS LIMITED",
 "period": "2025-04-30"
 },
+"ch:03721833": {
+"employees": 12,
+"name": "MORRIS NEIGHBOURHOOD STORES LIMITED",
+"period": "2025-03-31"
+},
 "ch:03722928": {
 "employees": 0,
 "name": "SUPERFRESH HALAL LIMITED",
@@ -3511,7 +3521,7 @@
 "ch:03976068": {
 "employees": 0,
 "name": "ST. NOHA SERVICES LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:03978955": {
 "employees": 7,
@@ -3709,7 +3719,7 @@
 "ch:04074760": {
 "employees": 2,
 "name": "Parkstone Estate Agents Ltd",
-"period": "2025-09-30"
+"period": "2026-09-30"
 },
 "ch:04074789": {
 "employees": 2,
@@ -9983,9 +9993,9 @@
 "period": "2026-03-31"
 },
 "ch:05991525": {
-"employees": 27,
+"employees": 26,
 "name": "Shivam Capital Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:05998321": {
 "currency": "GBP",
@@ -14428,9 +14438,9 @@
 "period": "2025-03-31"
 },
 "ch:07187783": {
-"employees": 9,
+"employees": 0,
 "name": "PREMIER BAWTRY LTD",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:07188369": {
 "employees": 2,
@@ -15618,7 +15628,7 @@
 "ch:07380482": {
 "employees": 5,
 "name": "PIT STOP MARKET LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:07381080": {
 "employees": 49,
@@ -16475,7 +16485,7 @@
 "ch:07528920": {
 "employees": 0,
 "name": "24/7 LONDON CITY LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:07530403": {
 "employees": 5,
@@ -18525,6 +18535,11 @@
 "name": "D-ANGELZ LTD",
 "period": "2025-03-31"
 },
+"ch:07890404": {
+"employees": 7,
+"name": "Fine Food &amp; Wine Store Ltd",
+"period": "2026-02-28"
+},
 "ch:07890710": {
 "employees": 0,
 "name": "EKOM SUPERSTORE LIMITED",
@@ -19039,7 +19054,7 @@
 "ch:07981915": {
 "employees": 1,
 "name": "Colin Stuart Limited",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:07983121": {
 "employees": 8,
@@ -19726,9 +19741,9 @@
 "period": "2025-05-31"
 },
 "ch:08071668": {
-"employees": 6,
+"employees": 7,
 "name": "EXPRESS SHOPS LTD",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:08073073": {
 "employees": 3,
@@ -23017,7 +23032,7 @@
 "ch:08618432": {
 "employees": 7,
 "name": "Shivam Retail Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:08620139": {
 "employees": 6,
@@ -25716,9 +25731,9 @@
 "period": "2025-03-31"
 },
 "ch:09036222": {
-"employees": 3,
+"employees": 4,
 "name": "RSE Gravesend Limited",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:09037340": {
 "employees": 2,
@@ -27088,7 +27103,7 @@
 "ch:09238194": {
 "employees": 1,
 "name": "Crisalide Limited",
-"period": "2025-09-30"
+"period": "2026-09-30"
 },
 "ch:09238846": {
 "employees": 4,
@@ -28269,9 +28284,9 @@
 "period": "2025-02-25"
 },
 "ch:09458233": {
-"employees": 4,
+"employees": 0,
 "name": "PREMIER BRANTON LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:09462142": {
 "employees": 7,
@@ -32232,6 +32247,11 @@
 "name": "Kramor Ltd",
 "period": "2026-01-31"
 },
+"ch:09992887": {
+"employees": 3,
+"name": "MOMDATECH LIMITED",
+"period": "2026-02-28"
+},
 "ch:09994397": {
 "employees": 3,
 "name": "K &amp; J Staines Ltd",
@@ -32250,6 +32270,11 @@
 "ch:10063965": {
 "employees": 2,
 "name": "Optim System Ltd",
+"period": "2026-03-31"
+},
+"ch:10072744": {
+"employees": 0,
+"name": "CARTHAGO LTD",
 "period": "2026-03-31"
 },
 "ch:10112657": {
@@ -36191,9 +36216,9 @@
 "period": "2025-04-30"
 },
 "ch:10715776": {
-"employees": 10,
+"employees": 6,
 "name": "KASHMIR BAZAR LTD",
-"period": "2025-04-30"
+"period": "2026-04-30"
 },
 "ch:10716477": {
 "employees": 0,
@@ -37612,7 +37637,7 @@
 "ch:10860148": {
 "employees": 1,
 "name": "EVERSHOLT UAS LTD",
-"period": "2025-01-29"
+"period": "2026-01-29"
 },
 "ch:10861077": {
 "employees": 0,
@@ -38678,6 +38703,11 @@
 "employees": 5,
 "name": "RASPBERY LOCAL LTD",
 "period": "2025-09-30"
+},
+"ch:10978083": {
+"employees": 5,
+"name": "ADELAIDE CLARKS LTD",
+"period": "2026-03-31"
 },
 "ch:10978538": {
 "currency": "GBP",
@@ -42447,6 +42477,11 @@
 "employees": 5,
 "name": "FIRST STEP CONVENIENCE STORES LIMITED",
 "period": "2025-06-30"
+},
+"ch:11401276": {
+"employees": 0,
+"name": "BROTHERS PVT LTD",
+"period": "2025-12-31"
 },
 "ch:11401277": {
 "employees": 4,
@@ -48900,6 +48935,11 @@
 "name": "TANISHKAA11 LTD",
 "period": "2025-07-31"
 },
+"ch:12024416": {
+"employees": 1,
+"name": "PEARSON SOLICITORS AND FINANCIAL ADVISERS LTD",
+"period": "2026-03-31"
+},
 "ch:12024449": {
 "employees": 2,
 "name": "AFRICA SUPER STORES LIMITED",
@@ -53201,7 +53241,7 @@
 "ch:12400406": {
 "employees": 2,
 "name": "Cozway Limited",
-"period": "2025-01-31"
+"period": "2026-01-31"
 },
 "ch:12400489": {
 "employees": 0,
@@ -53893,7 +53933,7 @@
 "ch:12456546": {
 "employees": 3,
 "name": "LR EXPRESS LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:12456848": {
 "employees": 1,
@@ -54250,9 +54290,9 @@
 "period": "2025-06-30"
 },
 "ch:12489658": {
-"employees": 3,
+"employees": 2,
 "name": "DIAMOND PLUS TELECOM LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:12489799": {
 "employees": 3,
@@ -54358,6 +54398,11 @@
 "employees": 0,
 "name": "ZEUS CARTEL LTD",
 "period": "2025-03-31"
+},
+"ch:12496974": {
+"employees": 2,
+"name": "Burslem Food &amp; Wine Limited",
+"period": "2026-02-28"
 },
 "ch:12497078": {
 "employees": 2,
@@ -58894,7 +58939,7 @@
 "ch:13058249": {
 "employees": 3,
 "name": "VSID REGTECH GROUP LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:13058434": {
 "employees": 7,
@@ -65755,6 +65800,21 @@
 "name": "Sweepmate Ltd",
 "period": "2025-03-31"
 },
+"ch:13783491": {
+"employees": 3,
+"name": "R CHEEMA CONVENIENCE STORES LTD",
+"period": "2025-12-31"
+},
+"ch:13829890": {
+"employees": 1,
+"name": "INSTANT MOBILE FIX LTD",
+"period": "2026-01-31"
+},
+"ch:13857710": {
+"employees": 3,
+"name": "AVR K2U SANDHU'S LIMITED",
+"period": "2026-01-31"
+},
 "ch:13895331": {
 "employees": 3,
 "name": "AKHP Retail Ltd",
@@ -65765,10 +65825,20 @@
 "name": "JHL CONSULTANCY UK LTD",
 "period": "2026-02-28"
 },
+"ch:13967638": {
+"employees": 5,
+"name": "RMS NEWARK LTD",
+"period": "2026-03-31"
+},
 "ch:13986187": {
 "employees": 10,
 "name": "VVS TRADING LTD",
 "period": "2026-07-31"
+},
+"ch:13993820": {
+"employees": 5,
+"name": "OXFORD OFF LICENCE LTD",
+"period": "2026-03-31"
 },
 "ch:14089389": {
 "employees": 1,
@@ -66046,9 +66116,9 @@
 "period": "2025-05-31"
 },
 "ch:14110177": {
-"employees": 3,
+"employees": 5,
 "name": "JST PVT LTD",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:14110266": {
 "employees": 3,
@@ -68250,7 +68320,7 @@
 "ch:14370595": {
 "employees": 0,
 "name": "RISING DIGITAL LIMITED",
-"period": "2025-07-31"
+"period": "2026-07-31"
 },
 "ch:14371119": {
 "employees": 3,
@@ -74046,9 +74116,9 @@
 "period": "2026-06-30"
 },
 "ch:14955797": {
-"employees": 1,
-"name": "RAHEENA LIMITED",
-"period": "2025-06-30"
+"employees": 2,
+"name": "Raheena Limited",
+"period": "2026-06-30"
 },
 "ch:14955986": {
 "employees": 3,
@@ -77376,7 +77446,7 @@
 "ch:15274611": {
 "employees": 2,
 "name": "OXFORD BOTTLE SHOP LTD",
-"period": "2024-11-30"
+"period": "2025-11-30"
 },
 "ch:15275276": {
 "employees": 1,
@@ -79379,7 +79449,7 @@
 "ch:15516023": {
 "employees": 1,
 "name": "BABTEM LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:15516778": {
 "employees": 6,
@@ -82283,6 +82353,11 @@
 "name": "JTV MANCHESTER LTD",
 "period": "2025-06-30"
 },
+"ch:15784109": {
+"employees": 1,
+"name": "Tech Run Ltd",
+"period": "2026-06-30"
+},
 "ch:15784656": {
 "employees": 3,
 "name": "WALTON OFF LICENCE LTD",
@@ -84405,7 +84480,7 @@
 "ch:15973538": {
 "employees": 1,
 "name": "A S Seaside Stores Ltd",
-"period": "2025-09-30"
+"period": "2026-09-17"
 },
 "ch:15973539": {
 "employees": 2,
@@ -85449,9 +85524,19 @@
 "name": "DVC LOCAL STORE LTD",
 "period": "2025-11-30"
 },
+"ch:16074084": {
+"employees": 2,
+"name": "Somnath Store Ltd",
+"period": "2025-11-30"
+},
 "ch:16076607": {
 "employees": 1,
 "name": "MACSH SOLUTIONS LTD",
+"period": "2025-11-30"
+},
+"ch:16083605": {
+"employees": 7,
+"name": "Seaside Store Ltd",
 "period": "2025-11-30"
 },
 "ch:16085766": {
@@ -86001,6 +86086,21 @@
 "name": "GRAMEEN GROCERY LIMITED",
 "period": "2026-02-28"
 },
+"ch:16245943": {
+"employees": 5,
+"name": "DELUXE PAAN PARLOUR AND OFF LICENCE LTD",
+"period": "2026-02-28"
+},
+"ch:16246299": {
+"employees": 3,
+"name": "Aen Convenience Ltd",
+"period": "2026-02-28"
+},
+"ch:16246638": {
+"employees": 3,
+"name": "ZAH STORE LIMITED",
+"period": "2026-02-28"
+},
 "ch:16246860": {
 "employees": 1,
 "name": "TAWAQAL LIMITED",
@@ -86024,6 +86124,11 @@
 "ch:16252968": {
 "employees": 1,
 "name": "Yellow Vapes Ltd",
+"period": "2026-02-28"
+},
+"ch:16256225": {
+"employees": 5,
+"name": "KANESH CONVENIENCE STORE LTD",
 "period": "2026-02-28"
 },
 "ch:16262407": {
@@ -89821,7 +89926,7 @@
 "ch:SC654237": {
 "employees": 5,
 "name": "51214 LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:SC654639": {
 "employees": 1,
@@ -90288,9 +90393,9 @@
 "period": "2025-12-31"
 },
 "ch:SC682574": {
-"employees": 17,
+"employees": 0,
 "name": "SCOTTISH POLICE RECREATION ASSOCIATION",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:SC682811": {
 "employees": 2,
@@ -92501,6 +92606,11 @@
 "name": "GAMBLOR GAMING TECHNOLOGIES LTD",
 "period": "2025-10-31"
 },
+"ch:SC819130": {
+"employees": 1,
+"name": "Realmrise Ltd",
+"period": "2025-03-31"
+},
 "ch:SC838826": {
 "employees": 3,
 "name": "Vd Shops Ltd",
@@ -92581,6 +92691,7 @@
 "Accounts_Bulk_Data-2026-11-10.zip",
 "Accounts_Bulk_Data-2026-11-11.zip",
 "Accounts_Bulk_Data-2026-11-12.zip",
+"Accounts_Bulk_Data-2026-11-13.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
@@ -101655,6 +101766,15 @@
 "https://www.nordea.fi",
 "https://www.nordea.dk",
 "https://www.nordea.com"
+]
+},
+"q:Q112581356": {
+"checked": "2026-11-13",
+"linkedin": "https://www.linkedin.com/company/vr-bank-bonn-rhein-sieg-eg",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.vrbank-brs.de"
 ]
 },
 "q:Q112666885": {
@@ -120064,6 +120184,19 @@
 "v": 2,
 "website": "https://1608innovations.com"
 },
+"site:17capital.com": {
+"checked": "2026-11-13",
+"email": "17capital@h-advisors.global",
+"email_from": "firm website",
+"employees": 117,
+"linkedin": "https://www.linkedin.com/company/17capital",
+"note": "",
+"pages": 2,
+"phone": "+442074932462",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.17capital.com"
+},
 "site:1atm.net": {
 "checked": "2026-11-12",
 "email": "contact@1atm.net",
@@ -120284,6 +120417,19 @@
 "v": 2,
 "website": "https://www.2pays.co.uk"
 },
+"site:2tix.ltd": {
+"checked": "2026-11-13",
+"email": "admin@2tix.ltd",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "03330 116 134",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.2tix.ltd"
+},
 "site:360t.com": {
 "checked": "2026-11-12",
 "email": "cas@360t.com",
@@ -120310,6 +120456,19 @@
 "v": 2,
 "website": "https://365.bank"
 },
+"site:36south.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.36south.com"
+},
 "site:3ex.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -120333,6 +120492,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.3i.com"
+},
+"site:3iq.io": {
+"checked": "2026-11-13",
+"email": "info@3iq.ca",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/3iq-corp",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.3iq.io"
 },
 "site:3ribe.io": {
 "checked": "2026-11-11",
@@ -120588,6 +120760,19 @@
 "v": 2,
 "website": "https://888starz.bet/en"
 },
+"site:8amglobal.com": {
+"checked": "2026-11-13",
+"email": "portfolios@8amglobal.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/8am-global-ltd",
+"note": "",
+"pages": 1,
+"phone": "02033273277",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.8amglobal.com"
+},
 "site:8hexa.com": {
 "checked": "2026-11-12",
 "email": "sales@8hexa.com",
@@ -120759,7 +120944,7 @@
 "phone": "+496113482000",
 "phone_from": "firm website",
 "v": 2,
-"website": "http://www.aareal-bank.com"
+"website": "https://www.aareal-bank.com"
 },
 "site:aarin.com.br": {
 "checked": "2026-11-11",
@@ -121341,6 +121526,19 @@
 "v": 2,
 "website": "https://acemoneytransfer.com"
 },
+"site:acerim.com": {
+"checked": "2026-11-13",
+"email": "info@acerim.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/acertreeim",
+"note": "",
+"pages": 2,
+"phone": "+442081248005",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.acerim.com"
+},
 "site:aceunion.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -121480,6 +121678,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://WWW.ACORIANACORRETORA.COM.BR"
+},
+"site:acorocapital.com": {
+"checked": "2026-11-13",
+"email": "info@acorocapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+4402078317755",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.acorocapital.com"
 },
 "site:acquired.com": {
 "checked": "2026-11-11",
@@ -121653,6 +121864,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.addmoneytransfer.com"
+},
+"site:adelio.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/adeliopartners",
+"note": "",
+"pages": 2,
+"phone": "+442045264902",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.adelio.com"
 },
 "site:adequita.co.uk": {
 "checked": "2026-11-11",
@@ -121945,6 +122169,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.aerapay.com"
+},
+"site:aermont.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+3522620298000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aermont.com"
 },
 "site:aeropay.com": {
 "checked": "2026-11-12",
@@ -122322,6 +122559,19 @@
 "v": 2,
 "website": "https://www.agant.io"
 },
+"site:agcequitypartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.agcequitypartners.com"
+},
 "site:agence-france-locale.fr": {
 "checked": "2026-11-07",
 "email": "contact@afl-banque.fr",
@@ -122508,6 +122758,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.aicr.org.uk"
+},
+"site:aikya.co.uk": {
+"checked": "2026-11-13",
+"email": "clients@aikya.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/aikya-investment-management",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aikya.co.uk"
 },
 "site:aio-finance.com": {
 "checked": "2026-11-12",
@@ -123144,6 +123407,19 @@
 "v": 2,
 "website": "https://alende.ca"
 },
+"site:aleph.com": {
+"checked": "2026-11-13",
+"email": "info@aleph.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+44 (0)20 3540 6800",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aleph.com"
+},
 "site:alephexchange.ca": {
 "checked": "2026-11-12",
 "email": "",
@@ -123397,6 +123673,19 @@
 "v": 2,
 "website": "https://allcampus.ca"
 },
+"site:allenbycapital.com": {
+"checked": "2026-11-13",
+"email": "info@allenbycapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+442033285656",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.allenbycapital.com"
+},
 "site:allfunds.com": {
 "checked": "2026-11-07",
 "email": "press@allfunds.com",
@@ -123441,6 +123730,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.allianz.fr/allianz-banque.html"
+},
+"site:allianzgi.com": {
+"checked": "2026-11-13",
+"email": "cs.id@allianzgi.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/allianz-global-investors",
+"note": "",
+"pages": 2,
+"phone": "+971 2 495 8742",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.allianzgi.com/en"
 },
 "site:allica.bank": {
 "checked": "2026-11-07",
@@ -123567,6 +123869,32 @@
 "v": 2,
 "website": "https://www.alma.fr"
 },
+"site:almacapital.com": {
+"checked": "2026-11-13",
+"email": "info.investors@almacapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+352 28 84 54-10",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.almacapital.com"
+},
+"site:almaceam.com": {
+"checked": "2026-11-13",
+"email": "info@almaceam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.almaceam.com"
+},
 "site:almagidgroup.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -123604,6 +123932,19 @@
 "v": 2,
 "website": "https://www.aloris.ca"
 },
+"site:aloxarcapital.com": {
+"checked": "2026-11-13",
+"email": "info@aloxarcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aloxarcapital.com"
+},
 "site:alpenbank.com": {
 "checked": "2026-11-07",
 "email": "info@alpenprivatbank.com",
@@ -123613,6 +123954,19 @@
 "phone": "+435517350",
 "phone_from": "firm website",
 "website": "http://www.alpenbank.com"
+},
+"site:alpha-grep.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/agbuild-vc",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.alpha-grep.com"
 },
 "site:alpha.gr": {
 "checked": "2026-11-13",
@@ -123663,6 +124017,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://alphacap.fr"
+},
+"site:alphacapital.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.alphacapital.co.uk"
 },
 "site:alphafactoring.ca": {
 "checked": "2026-11-12",
@@ -123781,6 +124148,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.alphatransfers.co.uk"
+},
+"site:alphidence.capital": {
+"checked": "2026-11-13",
+"email": "info@alphidence.capital",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.alphidence.capital"
 },
 "site:alpho.com": {
 "checked": "2026-11-11",
@@ -124001,6 +124381,19 @@
 "v": 2,
 "website": "https://www.altiorassetmanagement.co.uk"
 },
+"site:altiuminvestments.com": {
+"checked": "2026-11-13",
+"email": "info@altiuminvestments.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.altiuminvestments.com"
+},
 "site:altivest.io": {
 "checked": "2026-11-11",
 "email": "",
@@ -124144,6 +124537,30 @@
 "site:alzheimers.org.uk": {
 "checked": "2026-11-13",
 "email": "enquiries@alzheimers.org.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "03331503456",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.alzheimers.org.uk"
+},
+"site:alzheimersresearchuk.org": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "RetryError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.alzheimersresearchuk.org"
+},
+"site:am-one-int.co.uk": {
+"checked": "2026-11-12",
+"email": "info@am-one-int.co.uk",
 "email_from": "firm website",
 "employees": 0,
 "linkedin": "",
@@ -124335,6 +124752,20 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.ambercapital.com"
+},
+"site:amberinfrastructure.com": {
+"checked": "2026-11-13",
+"email": "csir@amberinfrastructure.com",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.amberinfrastructure.com:443",
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.amberinfrastructure.com"
 },
 "site:ambr.io": {
 "checked": "2026-11-12",
@@ -124591,6 +125022,19 @@
 "phone_from": "firm website",
 "website": "http://www.amundi.com"
 },
+"site:anacap.com": {
+"checked": "2026-11-13",
+"email": "info@anacap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/anacap-financial-partners",
+"note": "",
+"pages": 1,
+"phone": "+442070705250",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.anacap.com"
+},
 "site:anadolubank.com.tr": {
 "checked": "2026-11-12",
 "email": "",
@@ -124603,6 +125047,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.anadolubank.com.tr"
+},
+"site:ananda-am.com": {
+"checked": "2026-11-13",
+"email": "info@ananda-am.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ananda-am.com"
 },
 "site:anb.com.sa": {
 "checked": "2026-11-12",
@@ -124665,6 +125122,19 @@
 "phone": "87993000",
 "phone_from": "firm website",
 "website": "https://www.andelskassen.dk"
+},
+"site:andromedainvestors.com": {
+"checked": "2026-11-13",
+"email": "ir@andromedainvestors.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/andromedainvestors",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.andromedainvestors.com"
 },
 "site:anexpress.com": {
 "checked": "2026-11-11",
@@ -124766,6 +125236,19 @@
 "v": 2,
 "website": "https://ant.fun"
 },
+"site:antaresglobal.com": {
+"checked": "2026-11-13",
+"email": "info@antaresglobal.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/qic-global",
+"note": "",
+"pages": 2,
+"phone": "+4402079591900",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://antaresglobal.com"
+},
 "site:anthonynolan.org": {
 "checked": "2026-11-12",
 "email": "",
@@ -124778,6 +125261,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.anthonynolan.org"
+},
+"site:antipodespartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.antipodespartners.com"
 },
 "site:antom.com": {
 "checked": "2026-11-11",
@@ -125094,6 +125588,20 @@
 "v": 2,
 "website": "https://www.apollo.io"
 },
+"site:apollomultiasset.com": {
+"checked": "2026-11-13",
+"email": "info@apollomam.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.apollomam.co.uk",
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+44 (0) 20 3291 2916",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.apollomultiasset.com"
+},
 "site:aposta1.bet.br": {
 "checked": "2026-11-12",
 "email": "",
@@ -125233,6 +125741,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://apple.com/mk"
+},
+"site:appositecapital.com": {
+"checked": "2026-11-13",
+"email": "enquiry@appositecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/apposite-capital",
+"note": "",
+"pages": 1,
+"phone": "+442034751710",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.appositecapital.com"
 },
 "site:appositecapital.com": {
 "checked": "2026-11-13",
@@ -125449,6 +125970,19 @@
 "v": 2,
 "website": "https://www.arabbankeurope.com"
 },
+"site:aranciadvisors.com": {
+"checked": "2026-11-13",
+"email": "info@aranciadvisors.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aranciadvisors.com"
+},
 "site:arbcap.io": {
 "checked": "2026-11-11",
 "email": "info@arbcap.io",
@@ -125487,6 +126021,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.arbuthnotlatham.co.uk"
+},
+"site:arcapita.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/arcapita",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.arcapita.com"
 },
 "site:arcassociates.com": {
 "checked": "2026-11-13",
@@ -125604,6 +126151,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.arcusinvest.com"
+},
+"site:ardea.com.au": {
+"checked": "2026-11-13",
+"email": "info@ardea.com.au",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/ardea-investment-management",
+"note": "",
+"pages": 2,
+"phone": "1300721637",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ardea.com.au"
 },
 "site:ardentpay.io": {
 "checked": "2026-11-12",
@@ -125805,6 +126365,19 @@
 "v": 2,
 "website": "https://www.argonautcapital.co.uk"
 },
+"site:argorealestate.com": {
+"checked": "2026-11-13",
+"email": "admin@argorealestate.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/argorealestate",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.argorealestate.com"
+},
 "site:ari10.com": {
 "checked": "2026-11-12",
 "email": "support@ari10.com",
@@ -125994,6 +126567,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.arpinvestments.com"
+},
+"site:arquant.co.uk": {
+"checked": "2026-11-13",
+"email": "ak@arquant.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "0333 050 9302",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.arquant.co.uk"
 },
 "site:arrowship.com": {
 "checked": "2026-11-11",
@@ -126540,6 +127126,19 @@
 "v": 2,
 "website": "https://www.assureremit.co.uk"
 },
+"site:astaris.com": {
+"checked": "2026-11-13",
+"email": "info@astaris.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/astaris-capital",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.Astaris.com"
+},
 "site:astoncurrencymanagement.com": {
 "checked": "2026-11-11",
 "email": "contact@astoncm.com",
@@ -126605,6 +127204,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://astrex.io"
+},
+"site:astridadvisors.com": {
+"checked": "2026-11-13",
+"email": "kate.campbell@astridadvisors.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/astridadvisors",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.astridadvisors.com"
 },
 "site:astropay.com": {
 "checked": "2026-11-11",
@@ -126891,6 +127503,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.attarfx.ca"
+},
+"site:attestor.com": {
+"checked": "2026-11-13",
+"email": "enquiries@attestor.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.attestor.com"
 },
 "site:atticabank.gr": {
 "checked": "2026-11-13",
@@ -127187,6 +127812,19 @@
 "v": 2,
 "website": "https://autonomycapital.com"
 },
+"site:auxiliumfrm.co.uk": {
+"checked": "2026-11-13",
+"email": "jlye@auxiliumfrm.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.auxiliumfrm.co.uk"
+},
 "site:avaexchange.ca": {
 "checked": "2026-11-12",
 "email": "info@avaexchange.ca",
@@ -127432,6 +128070,19 @@
 "v": 2,
 "website": "https://WWW.AVSCAMBIO.COM.BR"
 },
+"site:aware.com.au": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/awaresuper",
+"note": "",
+"pages": 4,
+"phone": "1300650873",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.aware.com.au"
+},
 "site:axa-im.co.uk": {
 "checked": "2026-11-11",
 "email": "axa-im@uk.dstsystems.com",
@@ -127523,6 +128174,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.axcap247.com"
+},
+"site:axebrook.com": {
+"checked": "2026-11-13",
+"email": "ir@axebrook.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.axebrook.com"
 },
 "site:axepay.com": {
 "checked": "2026-11-12",
@@ -128191,6 +128855,19 @@
 "v": 2,
 "website": "https://www.bailliegifford.com"
 },
+"site:bainbridgepartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/bainbridge-partners-llp",
+"note": "",
+"pages": 3,
+"phone": "+4402075901801",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.bainbridgepartners.com"
+},
 "site:baincapital.com": {
 "checked": "2026-11-12",
 "email": "ir@baincapital.com",
@@ -128295,6 +128972,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.balance.ca"
+},
+"site:baldercap.com": {
+"checked": "2026-11-13",
+"email": "info@baldercap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.baldercap.com"
 },
 "site:ballinger.co": {
 "checked": "2026-11-11",
@@ -129528,13 +130218,16 @@
 "website": "https://www.bankofirelanduk.com"
 },
 "site:bankoflondon.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "uksupport@bankoflondon.com",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "",
 "note": "",
 "pages": 4,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.bankoflondon.com"
 },
 "site:bankofmaharashtra.bank.in": {
@@ -130303,6 +130996,19 @@
 "v": 2,
 "website": "https://www.bayernlb.de"
 },
+"site:bayforest.ai": {
+"checked": "2026-11-13",
+"email": "info@bayforest.ai",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/35704274",
+"note": "",
+"pages": 2,
+"phone": "+442039685227",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://bayforest.ai"
+},
 "site:bayonetventures.com": {
 "checked": "2026-11-12",
 "email": "information@bayonetventures.com",
@@ -130781,6 +131487,19 @@
 "v": 2,
 "website": "https://www.bedrockgroup.com"
 },
+"site:beechbrookcapital.com": {
+"checked": "2026-11-13",
+"email": "info@beechbrookcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/beechbrook-capital",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.beechbrookcapital.com"
+},
 "site:beediseasesinsurance.co.uk": {
 "checked": "2026-11-12",
 "email": "claims@beediseasesinsurance.co.uk",
@@ -131091,6 +131810,20 @@
 "v": 2,
 "website": "https://bequant.pro"
 },
+"site:berenberg.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.berenberg.de/en",
+"linkedin": "https://www.linkedin.com/company/berenberg-bank",
+"note": "",
+"pages": 4,
+"phone": "+4940350600",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.berenberg.com"
+},
 "site:berenberg.de": {
 "checked": "2026-11-12",
 "email": "",
@@ -131179,6 +131912,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.berrystreetcapital.com"
+},
+"site:berylluscapital.com": {
+"checked": "2026-11-13",
+"email": "info@berylluscapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.berylluscapital.com"
 },
 "site:bestbuy.ca": {
 "checked": "2026-11-12",
@@ -131657,6 +132403,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://bfinance.app"
+},
+"site:bfinance.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "02077478600",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bfinance.com"
 },
 "site:bfm.fr": {
 "checked": "2026-11-07",
@@ -133203,6 +133962,19 @@
 "v": 2,
 "website": "https://www.blithehouse.co.uk"
 },
+"site:blixtgroup.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/blixt-group",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.blixtgroup.com"
+},
 "site:blme.com": {
 "checked": "2026-11-13",
 "email": "info@blme.com",
@@ -133403,6 +134175,19 @@
 "v": 2,
 "website": "https://www.bluebellwood.org"
 },
+"site:blueboxfunds.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/bluebox-asset-management",
+"note": "",
+"pages": 1,
+"phone": "+41 22 816 80 00",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.blueboxfunds.com"
+},
 "site:bluebridgeam.com": {
 "checked": "2026-11-11",
 "email": "contact@bluebridgeam.com",
@@ -133467,6 +134252,30 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.bluegemcp.com"
+},
+"site:blueglen.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.blueglen.co.uk"
+},
+"site:bluegrovecm.com": {
+"checked": "2026-11-13",
+"email": "info@bluegrovecm.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bluegrovecm.com"
 },
 "site:bluepine.sc;": {
 "checked": "2026-11-11",
@@ -134431,6 +135240,19 @@
 "v": 2,
 "website": "https://www.boursorama.com"
 },
+"site:bowmark.com": {
+"checked": "2026-11-13",
+"email": "info@bowmark.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/bowmark-capital",
+"note": "",
+"pages": 2,
+"phone": "442071899000",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.bowmark.com"
+},
 "site:bowspritpartners.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -134759,6 +135581,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.bramdeanam.com"
+},
+"site:bramwellcap.com": {
+"checked": "2026-11-13",
+"email": "info@bca-advisory.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bramwellcap.com"
 },
 "site:branches.aib.ie": {
 "checked": "2026-11-11",
@@ -135094,6 +135929,19 @@
 "v": 2,
 "website": "https://www.bridgepointgroup.com"
 },
+"site:bridgesfundmanagement.com": {
+"checked": "2026-11-13",
+"email": "info@bridgesfundmanagement.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/bridgesfundmanagement",
+"note": "",
+"pages": 2,
+"phone": "+4402037808000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bridgesfundmanagement.com"
+},
 "site:briefcase.so": {
 "checked": "2026-11-11",
 "email": "",
@@ -135133,6 +135981,32 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://brightsg.com"
+},
+"site:brightwellpensions.com": {
+"checked": "2026-11-13",
+"email": "hello@brightwellpensions.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://brightwellpensions.com"
+},
+"site:brilliancefp.com": {
+"checked": "2026-11-13",
+"email": "susi@brilliancefp.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "02070998603",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.brilliancefp.com"
 },
 "site:brimfinancial.com": {
 "checked": "2026-11-12",
@@ -135315,6 +136189,19 @@
 "v": 2,
 "website": "https://www.broadmoneytransfer.com"
 },
+"site:broadwalkam.com": {
+"checked": "2026-11-13",
+"email": "info@broadwalkam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "0044 (0)207 491 7384",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.broadwalkam.com"
+},
 "site:broadwaypawnbrokers.co.uk": {
 "checked": "2026-11-11",
 "email": "info@broadwaypawnbrokers.co.uk",
@@ -135387,6 +136274,19 @@
 "v": 2,
 "website": "https://bromcom.com"
 },
+"site:bromptonam.com": {
+"checked": "2026-11-13",
+"email": "info@bromptonam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bromptonam.com"
+},
 "site:brookmi.com": {
 "checked": "2026-11-12",
 "email": "hello@brookmi.com",
@@ -135434,6 +136334,19 @@
 "v": 2,
 "website": "https://www.brou.com.uy"
 },
+"site:brownadvisory.com": {
+"checked": "2026-11-13",
+"email": "mediainquiries@brownadvisory.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/brown-advisory",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.brownadvisory.com"
+},
 "site:brownshipley.com": {
 "checked": "2026-11-11",
 "email": "andy.smith@sodali.com",
@@ -135472,6 +136385,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.brsshipbrokers.com"
+},
+"site:brummer.se": {
+"checked": "2026-11-13",
+"email": "info@brummer.se",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/brummer",
+"note": "",
+"pages": 1,
+"phone": "+46856621480",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.brummer.se"
 },
 "site:bsdex.de": {
 "checked": "2026-11-12",
@@ -135823,6 +136749,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://bullsbet.bet.br"
+},
+"site:bullseyefinancial.co.uk": {
+"checked": "2026-11-13",
+"email": "accounts@bullseyefinancial.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/69176780",
+"note": "",
+"pages": 1,
+"phone": "+4402036938016",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.bullseyefinancial.co.uk"
 },
 "site:bullwaves.com": {
 "checked": "2026-11-11",
@@ -136827,6 +137766,19 @@
 "v": 2,
 "website": "https://www.cambria.uk.com"
 },
+"site:cambridgeassociates.com": {
+"checked": "2026-11-13",
+"email": "contactca@cambridgeassociates.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/cambridge-associates",
+"note": "",
+"pages": 2,
+"phone": "+861065354700",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cambridgeassociates.com"
+},
 "site:cambridgebs.co.uk": {
 "checked": "2026-11-12",
 "email": "thecambridge@cambridgebs.co.uk",
@@ -137174,6 +138126,19 @@
 "v": 2,
 "website": "https://www.candela-capital.com"
 },
+"site:candriam.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/candriam",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.candriam.com"
+},
 "site:canopy.rent": {
 "checked": "2026-11-11",
 "email": "agent.support@canopy.rent",
@@ -137286,6 +138251,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.capelasset.com"
+},
+"site:capgenpartners.com": {
+"checked": "2026-11-13",
+"email": "info@capgenpartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+4402075431500",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.capgenpartners.com"
 },
 "site:capimoney.com": {
 "checked": "2026-11-12",
@@ -137523,6 +138501,19 @@
 "v": 2,
 "website": "http://www.capricorncapital.com"
 },
+"site:capstoneco.com": {
+"checked": "2026-11-13",
+"email": "clientservice@capstoneco.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/capstone-investment-advisors",
+"note": "",
+"pages": 2,
+"phone": "+1 212 232 1420",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.capstoneco.com"
+},
 "site:capstoneworks.com": {
 "checked": "2026-11-12",
 "email": "sales@capstoneworks.com",
@@ -137535,6 +138526,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.capstoneworks.com"
+},
+"site:capsys.co.uk": {
+"checked": "2026-11-13",
+"email": "admin@capsys.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+4407957232888",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.capsys.co.uk"
 },
 "site:captafx.com": {
 "checked": "2026-11-11",
@@ -137585,6 +138589,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.capulaglobal.com"
+},
+"site:capvest.com": {
+"checked": "2026-11-13",
+"email": "info@capvest.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.capvest.com"
 },
 "site:cardaq.co.uk": {
 "checked": "2026-11-12",
@@ -137743,6 +138760,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.carmaf.com"
+},
+"site:carmignac.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.carmignac.com"
 },
 "site:carnegroup.com": {
 "checked": "2026-11-11",
@@ -138407,6 +139437,19 @@
 "v": 2,
 "website": "https://catalinaworthing.co.uk"
 },
+"site:catalystcapital.com": {
+"checked": "2026-11-13",
+"email": "info@catalystcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/catalyst-capital",
+"note": "",
+"pages": 1,
+"phone": "02072905100",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.catalystcapital.com"
+},
 "site:caterallen.co.uk": {
 "checked": "2026-11-07",
 "email": "",
@@ -138544,6 +139587,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.cbcx.co.uk"
+},
+"site:cbfinancialadvice.com": {
+"checked": "2026-11-13",
+"email": "info@cbfinancialadvice.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/cbfinancialadvisers",
+"note": "",
+"pages": 2,
+"phone": "+4401775718850",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://cbfinancialadvice.com"
 },
 "site:cbhbank.com": {
 "checked": "2026-11-11",
@@ -139393,6 +140449,19 @@
 "v": 2,
 "website": "https://chainmyne.com"
 },
+"site:challengerim.com.au": {
+"checked": "2026-11-13",
+"email": "info@fidante.com.au",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/challenger-investment-management",
+"note": "",
+"pages": 2,
+"phone": "1300721637",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.challengerim.com.au"
+},
 "site:chameleoncap.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -139458,6 +140527,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://chapchap.ca"
+},
+"site:chapelhilldenham.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.chapelhilldenham.com"
 },
 "site:chargeanywhere.com": {
 "checked": "2026-11-12",
@@ -139737,6 +140819,19 @@
 "v": 2,
 "website": "https://www.checkout.com"
 },
+"site:checkrisk.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.checkrisk.co.uk"
+},
 "site:checksig.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -139789,6 +140884,17 @@
 "v": 2,
 "website": "https://www.chelvertonam.com"
 },
+"site:chenavari.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.chenavari.com"
+},
 "site:chengqi.ca": {
 "checked": "2026-11-12",
 "email": "",
@@ -139801,6 +140907,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://chengqi.ca"
+},
+"site:chepstowcap.com": {
+"checked": "2026-11-13",
+"email": "ir@chepstowcap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.chepstowcap.com"
 },
 "site:chequeandsave.com": {
 "checked": "2026-11-12",
@@ -140227,6 +141346,19 @@
 "v": 2,
 "website": "https://www.cifc.com"
 },
+"site:cigp.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/cigpgroup",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cigp.com"
+},
 "site:cimb.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -140239,6 +141371,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.cimb.com"
+},
+"site:cinven.com": {
+"checked": "2026-11-13",
+"email": "info@cinven.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/cinven",
+"note": "",
+"pages": 2,
+"phone": "+4402076613333",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cinven.com"
 },
 "site:circit.io": {
 "checked": "2026-11-07",
@@ -140299,6 +141444,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.cit.co.uk"
+},
+"site:citadel.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.citadel.com"
 },
 "site:citadele.lv": {
 "checked": "2026-11-13",
@@ -140542,6 +141698,19 @@
 "v": 2,
 "website": "https://citrn.io"
 },
+"site:city-westminster.com": {
+"checked": "2026-11-13",
+"email": "info@city-westminster.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "00442079176824",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.city-westminster.com"
+},
 "site:cityledgers.square.site": {
 "checked": "2026-11-12",
 "email": "peter@cityledgers.com",
@@ -140674,6 +141843,20 @@
 "v": 2,
 "website": "https://www.claricorecapital.com,"
 },
+"site:clarioneurope.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.clarionpartners.com/about-us/clarion-europe",
+"linkedin": "https://www.linkedin.com/company/clarion-partners-llc",
+"note": "",
+"pages": 4,
+"phone": "+49 (69) 505 060 4248",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.clarioneurope.com"
+},
 "site:clarionwealth.co.uk": {
 "checked": "2026-11-11",
 "email": "enquiries@clarionwealth.co.uk",
@@ -140752,6 +141935,32 @@
 "v": 2,
 "website": "https://cleanbooksai.com"
 },
+"site:cleanbridge.co": {
+"checked": "2026-11-13",
+"email": "info@cleanbridge.co",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/pan-american-finance",
+"note": "",
+"pages": 1,
+"phone": "+44555000015",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cleanbridge.co"
+},
+"site:cleanenergytransition.com": {
+"checked": "2026-11-13",
+"email": "clients@cleanenergytransition.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/clean-energy-transition-llp",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cleanenergytransition.com"
+},
 "site:clear-markets.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -140790,6 +141999,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.clearaccept.com"
+},
+"site:clearbell.com": {
+"checked": "2026-11-13",
+"email": "enquiries@clearbell.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/clearbell-capital-llp",
+"note": "",
+"pages": 2,
+"phone": "+442074947620",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.clearbell.com"
 },
 "site:clearbooks.co.uk": {
 "checked": "2026-11-08",
@@ -141000,6 +142222,19 @@
 "v": 2,
 "website": "https://clema-rs.com"
 },
+"site:clerville.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.clerville.co.uk"
+},
 "site:cleva.online": {
 "checked": "2026-11-12",
 "email": "info@clevaglobal.com",
@@ -141087,6 +142322,19 @@
 "v": 2,
 "website": "https://www.clikpay.eu"
 },
+"site:climateassetmanagement.com": {
+"checked": "2026-11-13",
+"email": "contact@climateassetmanagement.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+4402045511160",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.climateassetmanagement.com"
+},
 "site:clio.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -141123,6 +142371,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.closebrothers.com"
+},
+"site:cloudcapital.com": {
+"checked": "2026-11-13",
+"email": "info@cloudcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/cloud-capital-llc",
+"note": "",
+"pages": 1,
+"phone": "18001234567",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cloudcapital.com"
 },
 "site:cloudflare.com": {
 "checked": "2026-11-12",
@@ -142354,6 +143615,19 @@
 "phone_from": "firm website",
 "website": "https://www.compass.it"
 },
+"site:complusam.com": {
+"checked": "2026-11-13",
+"email": "hi@typemade.mx",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/complus-asset-management-limited",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.complusam.com"
+},
 "site:complycrypto.eu": {
 "checked": "2026-11-12",
 "email": "info@complycrypto.eu",
@@ -142455,6 +143729,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://condoaide.ca"
+},
+"site:conductorcapital.co.uk": {
+"checked": "2026-11-13",
+"email": "info@conductorcapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/conductor-capital",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.conductorcapital.co.uk"
 },
 "site:conduit-ventures.com": {
 "checked": "2026-11-12",
@@ -142967,6 +144254,17 @@
 "v": 2,
 "website": "https://www.corecard.com"
 },
+"site:coremont.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.coremont.com"
+},
 "site:corient.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -143122,6 +144420,30 @@
 "v": 2,
 "website": "https://www.corsair-capital.com"
 },
+"site:cortencapital.com": {
+"checked": "2026-11-13",
+"email": "info@cortencapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/corten-capital",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cortencapital.com"
+},
+"site:corumbutler.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 404",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.corumbutler.com/bond-funds"
+},
 "site:corvusgroup.com": {
 "checked": "2026-11-11",
 "email": "enquiries@corvusgroup.com",
@@ -143274,6 +144596,19 @@
 "v": 2,
 "website": "https://www.coutts.com"
 },
+"site:covale.com": {
+"checked": "2026-11-13",
+"email": "co@covale.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+4402038396880",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.covale.com"
+},
 "site:coveainsurance.co.uk": {
 "checked": "2026-11-12",
 "email": "hr@coveainsurance.co.uk",
@@ -143287,6 +144622,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.coveainsurance.co.uk"
+},
+"site:coventry.com": {
+"checked": "2026-11-13",
+"email": "info@coventry.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "8778368300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.coventry.com"
 },
 "site:coventrybuildingsociety.co.uk": {
 "checked": "2026-11-12",
@@ -143964,6 +145312,19 @@
 "v": 2,
 "website": "https://www.crisscross.money"
 },
+"site:criterium-cap.com": {
+"checked": "2026-11-13",
+"email": "info@criterium-cap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+4402037505300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.criterium-cap.com"
+},
 "site:criuspay.com": {
 "checked": "2026-11-12",
 "email": "info@criuspay.com",
@@ -144000,6 +145361,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.cronbank.de"
+},
+"site:crossbridgecapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.crossbridgecapital.com"
 },
 "site:crossmint.com": {
 "checked": "2026-11-12",
@@ -144593,6 +145967,19 @@
 "v": 2,
 "website": "https://WWW.CUPP-TECH.COM"
 },
+"site:curiositycapital.io": {
+"checked": "2026-11-13",
+"email": "info@curiositycapital.io",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/curiosity-cap-llp",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://curiositycapital.io"
+},
 "site:currenciesdirect.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -144786,6 +146173,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.curve.com"
+},
+"site:cusanacapital.com": {
+"checked": "2026-11-13",
+"email": "info@cusanacapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+44 7979 908 916",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.cusanacapital.com"
 },
 "site:custodiy.com": {
 "checked": "2026-11-12",
@@ -145127,6 +146527,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.daisylink.xyz"
+},
+"site:daiwa-icp.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+442075978624",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.daiwa-icp.com"
 },
 "site:dakoshi.io": {
 "checked": "2026-11-12",
@@ -145607,6 +147020,19 @@
 "v": 2,
 "website": "https://DCremit.com"
 },
+"site:deaconcapital.com": {
+"checked": "2026-11-13",
+"email": "info@deaconcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+44 (0)207 965 6090",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.deaconcapital.com"
+},
 "site:dealschipi.com": {
 "checked": "2026-11-12",
 "email": "info@dealschipi.com",
@@ -145698,6 +147124,19 @@
 "v": 2,
 "website": "https://www.debtstream.co.uk"
 },
+"site:decagonam.com": {
+"checked": "2026-11-13",
+"email": "ir@decagonam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.decagonam.com"
+},
 "site:decimalmarkets.com": {
 "checked": "2026-11-12",
 "email": "contact@decimalmarkets.com",
@@ -145736,6 +147175,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.deel.com"
+},
+"site:deemglobal.com": {
+"checked": "2026-11-13",
+"email": "ir@deemglobal.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.deemglobal.com"
 },
 "site:deepcoin.com": {
 "checked": "2026-11-12",
@@ -146059,6 +147511,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.demoneytransfer.com"
+},
+"site:denhamcapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/denham-capital",
+"note": "",
+"pages": 3,
+"phone": "5512846700",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.denhamcapital.com"
 },
 "site:denizbank.com": {
 "checked": "2026-11-12",
@@ -147384,6 +148849,19 @@
 "v": 2,
 "website": "https://www.doxa.partners"
 },
+"site:dpi-llp.com": {
+"checked": "2026-11-13",
+"email": "info@dpi-llp.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/development-partners-international",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.dpi-llp.com"
+},
 "site:dpreciousjadejewelry.com": {
 "checked": "2026-11-12",
 "email": "preciousjadejewelry@gmail.com",
@@ -147575,6 +149053,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://dtimsb.com"
+},
+"site:dtp.uk.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/david-tolson-partnership-limited",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.dtp.uk.com"
 },
 "site:dtr.org": {
 "checked": "2026-11-12",
@@ -148083,6 +149574,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.eastwoodanglo.com"
+},
+"site:eastx.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eastx.com"
 },
 "site:easymarkets.com": {
 "checked": "2026-11-11",
@@ -148720,6 +150224,19 @@
 "v": 2,
 "website": "https://egovin.com"
 },
+"site:eicosinv.com": {
+"checked": "2026-11-13",
+"email": "info@eicosinv.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eicosinv.com"
+},
 "site:eight-pay.com": {
 "checked": "2026-11-12",
 "email": "office@eight-pay.com",
@@ -148732,6 +150249,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://eight-pay.com"
+},
+"site:eightcap.com": {
+"checked": "2026-11-13",
+"email": "customerservice@eightcap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/eightcap-global",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eightcap.com/en-uk/traders"
 },
 "site:eightcap.sc": {
 "checked": "2026-11-13",
@@ -148767,6 +150297,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.eihbank.de"
+},
+"site:ekhinos.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ekhinos.com"
 },
 "site:ekinsguinness.com": {
 "checked": "2026-11-11",
@@ -148829,6 +150372,19 @@
 "phone": "03458500195",
 "phone_from": "firm website",
 "website": "https://www.elavon.co.uk"
+},
+"site:elbruscapital.co.uk": {
+"checked": "2026-11-13",
+"email": "jarnoff@elbruscapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+447887551915",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.elbruscapital.co.uk"
 },
 "site:elective.com": {
 "checked": "2026-11-11",
@@ -148954,6 +150510,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://elmwoodasset.com"
+},
+"site:elwood.io": {
+"checked": "2026-11-13",
+"email": "info@elwood.io",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/elwoodtechnologies",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://elwood.io"
 },
 "site:em.ron.in": {
 "checked": "2026-11-12",
@@ -149083,6 +150652,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://Emergsecureservices.com"
+},
+"site:emesfunds.com": {
+"checked": "2026-11-13",
+"email": "info@emesfunds.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+44 (0)203 008 7700",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.emesfunds.com"
 },
 "site:emiratesnbd.co.uk": {
 "checked": "2026-11-07",
@@ -149357,6 +150939,19 @@
 "v": 2,
 "website": "https://www.enginemens.co.uk"
 },
+"site:enhanceddigital.group": {
+"checked": "2026-11-13",
+"email": "info@enhanceddigital.group",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.enhanceddigital.group"
+},
 "site:enigma-securities.io": {
 "checked": "2026-11-11",
 "email": "info@enigma-securities.io",
@@ -149370,6 +150965,19 @@
 "v": 2,
 "website": "https://www.enigma-securities.io"
 },
+"site:enigmastrategy.com": {
+"checked": "2026-11-13",
+"email": "support@enigmastrategy.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/enigmastrategy",
+"note": "",
+"pages": 2,
+"phone": "004402039839499",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.enigmastrategy.com"
+},
 "site:enity.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -149379,6 +150987,19 @@
 "phone": "+460850100400",
 "phone_from": "firm website",
 "website": "https://www.enity.com"
+},
+"site:enkocapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+442078810030",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.enkocapital.com"
 },
 "site:ennismorefunds.com": {
 "checked": "2026-11-12",
@@ -149630,6 +151251,19 @@
 "v": 2,
 "website": "https://enventgroup.eu"
 },
+"site:envestracapital.com": {
+"checked": "2026-11-13",
+"email": "ir@envestracapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.envestracapital.com"
+},
 "site:enviartransfert.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -149742,6 +151376,32 @@
 "v": 2,
 "website": "https://www.episodesix.com"
 },
+"site:epistemecap.com": {
+"checked": "2026-11-13",
+"email": "jobs@epistemecap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+442072922662",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.epistemecap.com"
+},
+"site:epladvisory.co.uk": {
+"checked": "2026-11-13",
+"email": "david.anderson@epladvisory.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.epladvisory.co.uk"
+},
 "site:epmsb.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -149781,6 +151441,19 @@
 "v": 2,
 "website": "https://epworthim.com"
 },
+"site:eqtgroup.com": {
+"checked": "2026-11-13",
+"email": "you@company.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/508278",
+"note": "",
+"pages": 1,
+"phone": "+46850655300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eqtgroup.com"
+},
 "site:equalsmoney.com": {
 "checked": "2026-11-11",
 "email": "help@equalsmoney.com",
@@ -149817,6 +151490,19 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://www.equifax.co.uk"
+},
+"site:equilend.com": {
+"checked": "2026-11-13",
+"email": "support@equilend.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/equilend",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.equilend.com"
 },
 "site:equipmentsolutions.groupebpce.com": {
 "checked": "2026-11-11",
@@ -150419,6 +152105,19 @@
 "v": 2,
 "website": "https://www.eukapay.com"
 },
+"site:eurazeo.com": {
+"checked": "2026-11-13",
+"email": "ir@eurazeo.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/eurazeo",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eurazeo.com"
+},
 "site:euro-ib.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -150491,6 +152190,19 @@
 "site:eurokartensysteme.de": {
 "checked": "2026-11-13",
 "email": "empfang@eurokartensysteme.de",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/euro-kartensysteme-gmbh",
+"note": "",
+"pages": 2,
+"phone": "+49 (0) 69 979 45 0",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.eurokartensysteme.de"
+},
+"site:europacapital.com": {
+"checked": "2026-11-12",
+"email": "info@europacapital.com",
 "email_from": "firm website",
 "employees": 0,
 "linkedin": "https://www.linkedin.com/company/euro-kartensysteme-gmbh",
@@ -151075,6 +152787,19 @@
 "v": 2,
 "website": "https://www.expedier.co"
 },
+"site:expedition.capital": {
+"checked": "2026-11-13",
+"email": "info@expedition.capital",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/expeditiongrowthcapital",
+"note": "",
+"pages": 2,
+"phone": "+442070825170",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://expedition.capital"
+},
 "site:expensedoc.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -151448,6 +153173,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://WWW.FALAHASSETS.COM"
+},
+"site:falconmoneymanagement.com": {
+"checked": "2026-11-13",
+"email": "info@falconmm.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+44 (0) 207 074 4900",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.falconmoneymanagement.com"
 },
 "site:falconremit.com": {
 "checked": "2026-11-12",
@@ -151923,6 +153661,19 @@
 "v": 2,
 "website": "HTTPS://FEATBANK.COM.BR"
 },
+"site:featherstonecapital.co.uk": {
+"checked": "2026-11-13",
+"email": "fcp@featherstonecapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/featherstonecapital",
+"note": "",
+"pages": 2,
+"phone": "+4402071837320",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.featherstonecapital.co.uk"
+},
 "site:federal.bank.in": {
 "checked": "2026-11-12",
 "email": "",
@@ -151972,6 +153723,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://feelingbet.fr"
+},
+"site:felixcap.com": {
+"checked": "2026-11-13",
+"email": "info@felixcap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/felix-capital",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.felixcap.com"
 },
 "site:fellbacher-bank.de": {
 "checked": "2026-11-12",
@@ -152303,6 +154067,20 @@
 "v": 2,
 "website": "https://www.fidera.eu"
 },
+"site:fidessa.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://iongroup.com/products/markets/fidessa",
+"linkedin": "https://www.linkedin.com/company/iongroup",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.fidessa.com"
+},
 "site:fidus-ag.de": {
 "checked": "2026-11-12",
 "email": "info@fidus-ag.de",
@@ -152328,6 +154106,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.fieracapital.com"
+},
+"site:fifthdelta.com": {
+"checked": "2026-11-13",
+"email": "info@fifthdelta.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/fifthdelta",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.fifthdelta.com"
 },
 "site:figma.com": {
 "checked": "2026-11-12",
@@ -152701,6 +154492,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://fincard.ca"
+},
+"site:finchbaycapital.com": {
+"checked": "2026-11-13",
+"email": "enquiries@finchbaycapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://finchbaycapital.com"
 },
 "site:finchtrade.com": {
 "checked": "2026-11-12",
@@ -154480,6 +156284,19 @@
 "v": 2,
 "website": "https://www.foracon.com"
 },
+"site:forada.com": {
+"checked": "2026-11-13",
+"email": "info@forada.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/forada",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.forada.com"
+},
 "site:forapay.ca": {
 "checked": "2026-11-12",
 "email": "",
@@ -154739,6 +156556,19 @@
 "v": 2,
 "website": "https://www.foundationlending.co.uk"
 },
+"site:foundingam.com": {
+"checked": "2026-11-13",
+"email": "info@foundingam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.foundingam.com"
+},
 "site:fourtrade.com.br": {
 "checked": "2026-11-11",
 "email": "fourtrade@fourtrade.com.br",
@@ -154789,6 +156619,19 @@
 "v": 2,
 "website": "https://www.fpmarkets.com/sc"
 },
+"site:fppim.com": {
+"checked": "2026-11-13",
+"email": "ir@fppim.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/fabien-pictet",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.fppim.com"
+},
 "site:fprop.com": {
 "checked": "2026-11-13",
 "email": "enquiries@fprop.com",
@@ -154827,6 +156670,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://fractalmoney.ca"
+},
+"site:franchisepartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+442074959070",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.franchisepartners.com"
 },
 "site:frankfurter-sparkasse.de": {
 "checked": "2026-11-12",
@@ -155028,6 +156884,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.freshbooks.com/en-gb"
+},
+"site:freshstream.com": {
+"checked": "2026-11-13",
+"email": "contact@freshstream.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/freshstream",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.freshstream.com"
 },
 "site:friday-ip.com.br": {
 "checked": "2026-11-11",
@@ -155452,6 +157321,19 @@
 "v": 2,
 "website": "https://fusionmarkets.com"
 },
+"site:future30funds.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.future30funds.com"
+},
 "site:futuregrowthcapital.com": {
 "checked": "2026-11-11",
 "email": "sam.murphy@futuregrowthcapital.com",
@@ -155543,6 +157425,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.fuzepay.co"
+},
+"site:fwcap.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/fitzwaltercapital",
+"note": "",
+"pages": 3,
+"phone": "+442075506116",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.fwcap.com"
 },
 "site:fx-edge.com": {
 "checked": "2026-11-11",
@@ -155889,6 +157784,19 @@
 "v": 2,
 "website": "https://www.gallium-ip.com"
 },
+"site:gallium.co.uk": {
+"checked": "2026-11-13",
+"email": "admin@gallium.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "01732 882 642",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.gallium.co.uk"
+},
 "site:gam.com": {
 "checked": "2026-11-11",
 "email": "hiroaki.saito@gam.com",
@@ -156007,13 +157915,14 @@
 "website": "http://www.gatecapitalgroup.com"
 },
 "site:gatehousebank.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "bdteam@gatehousebank.com",
 "email_from": "firm website",
-"note": "",
-"pages": 4,
+"note": "RetryError",
+"pages": 0,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.gatehousebank.com"
 },
 "site:gatehub.net": {
@@ -156296,6 +158205,20 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://geltano.com"
+},
+"site:gemcorp.net": {
+"checked": "2026-11-13",
+"email": "info@gemcorp.net",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://gemcorpcapital.com",
+"linkedin": "https://www.linkedin.com/company/gemcorp",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.gemcorp.net"
 },
 "site:gemini.com": {
 "checked": "2026-11-11",
@@ -157609,6 +159532,19 @@
 "v": 2,
 "website": "https://WWW.GLOBALEPAY.CA"
 },
+"site:globalevolution.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/global-evolution",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.globalevolution.com"
+},
 "site:globalexchange.co.uk": {
 "checked": "2026-11-11",
 "email": "info@globalexchange.co.uk",
@@ -157836,6 +159772,19 @@
 "v": 2,
 "website": "https://www.globalwebpay.com"
 },
+"site:globalxetfs.eu": {
+"checked": "2026-11-13",
+"email": "europe@globalxetfs.eu",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.globalxetfs.eu"
+},
 "site:globepay.co": {
 "checked": "2026-11-11",
 "email": "info@globepay.co",
@@ -157967,6 +159916,19 @@
 "v": 2,
 "website": "https://www.gls.de"
 },
+"site:gmg-brokers.com": {
+"checked": "2026-11-13",
+"email": "info@gmg-brokers.com",
+"email_from": "firm website",
+"employees": 50,
+"linkedin": "https://www.linkedin.com/company/gmg-brokers-ltd",
+"note": "",
+"pages": 2,
+"phone": "+97144496900",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.gmg-brokers.com"
+},
 "site:gmgmarkets.co.uk": {
 "checked": "2026-11-11",
 "email": "info@gmgmarkets.co.uk",
@@ -157992,6 +159954,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.gmkmoneytransfer.com"
+},
+"site:gmlcapital.net": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "RetryError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.gmlcapital.net"
 },
 "site:gmo.com": {
 "checked": "2026-11-12",
@@ -158385,6 +160358,17 @@
 "v": 2,
 "website": "https://www.gondalbrothers.com"
 },
+"site:goodbody.ie": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 404",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.goodbody.ie/homepage"
+},
 "site:goodbox.com": {
 "checked": "2026-11-11",
 "email": "sales@goodbox.com",
@@ -158397,6 +160381,30 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.goodbox.com"
+},
+"site:goodhartpartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.goodhartpartners.com"
+},
+"site:goodman.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.goodman.com"
 },
 "site:gopayint.com": {
 "checked": "2026-11-12",
@@ -158652,6 +160660,19 @@
 "v": 2,
 "website": "https://granpay.ca"
 },
+"site:grantabridgeresearch.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://grantabridgeresearch.com"
+},
 "site:grantthornton.co.uk": {
 "checked": "2026-11-12",
 "email": "",
@@ -158878,6 +160899,19 @@
 "v": 2,
 "website": "https://www.greenash-partners.com"
 },
+"site:greeninvestmentpartners.com": {
+"checked": "2026-11-13",
+"email": "info@greeninvestp.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/greeninvestmentpartners",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.greeninvestmentpartners.com"
+},
 "site:greenlight.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -158929,6 +160963,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.greenskywealth.co.uk"
+},
+"site:greentrailglobal.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 404",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.greentrailglobal.com"
 },
 "site:greenzonefin.com": {
 "checked": "2026-11-12",
@@ -158996,6 +161041,19 @@
 "site:greyhoundtrust.org.uk": {
 "checked": "2026-11-13",
 "email": "hello@greyhoundtrust.org.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.greyhoundtrust.org.uk"
+},
+"site:griffin-insurance.co.uk": {
+"checked": "2026-11-12",
+"email": "griffin@tindallriley.com",
 "email_from": "firm website",
 "employees": 0,
 "linkedin": "",
@@ -159326,6 +161384,19 @@
 "v": 2,
 "website": "https://www.guardcap.co.uk"
 },
+"site:guardianstockbrokers.com": {
+"checked": "2026-11-13",
+"email": "newaccounts@guardianstockbrokers.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/guardian-stockbrokers",
+"note": "",
+"pages": 1,
+"phone": "02076386996",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.guardianstockbrokers.com"
+},
 "site:guavapay.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -159576,6 +161647,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://haipay.net"
+},
+"site:haitongib.com": {
+"checked": "2026-11-13",
+"email": "info.paris@haitongib.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/haitong",
+"note": "",
+"pages": 3,
+"phone": "+351 213 515 840",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.haitongib.com"
 },
 "site:hakach.com": {
 "checked": "2026-11-12",
@@ -159922,6 +162006,19 @@
 "v": 2,
 "website": "https://www.harbourandhills.com/ca/index.html"
 },
+"site:harbourlitigationfunding.com": {
+"checked": "2026-11-13",
+"email": "info@harbourlf.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/harbour-litigation-funding-ltd",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.harbourlitigationfunding.com"
+},
 "site:harbourvest.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -159999,6 +162096,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.harrisonsllp.com"
+},
+"site:harrisonst.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/harrison-street",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.harrisonst.com"
 },
 "site:harthing.com": {
 "checked": "2026-11-11",
@@ -160326,14 +162436,14 @@
 "email": "communications@hcob-bank.com",
 "email_from": "firm website",
 "employees": 501,
-"final_url": "https://www.hcob-bank.com",
+"final_url": "https://www.hcob-bank.com/en",
 "linkedin": "https://www.linkedin.com/company/hamburg-commercial-bank",
 "note": "",
-"pages": 1,
+"pages": 4,
 "phone": "",
 "phone_from": "firm website",
 "v": 2,
-"website": "https://www.hcob-bank.de"
+"website": "https://www.hcob-bank.de/en/startseite"
 },
 "site:hdfc.bank.in": {
 "checked": "2026-11-11",
@@ -160461,6 +162571,19 @@
 "v": 2,
 "website": "https://www.hedgeflows.com"
 },
+"site:hedleyandco.co.uk": {
+"checked": "2026-11-13",
+"email": "info@hedleyandco.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "01772887880",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://hedleyandco.co.uk"
+},
 "site:hedosophia.com": {
 "checked": "2026-11-11",
 "email": "info@hedosophia.com",
@@ -160500,6 +162623,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.heidelberger-volksbank.de"
+},
+"site:helaba.com": {
+"checked": "2026-11-13",
+"email": "datenschutz@helaba.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/helaba",
+"note": "",
+"pages": 4,
+"phone": "069/9132-2510",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.helaba.com"
 },
 "site:helaba.de": {
 "checked": "2026-11-13",
@@ -160932,10 +163068,8 @@
 "checked": "2026-11-13",
 "email": "",
 "email_from": "firm website",
-"employees": 0,
-"linkedin": "",
-"note": "",
-"pages": 1,
+"note": "ConnectionError",
+"pages": 0,
 "phone": "",
 "phone_from": "firm website",
 "v": 2,
@@ -161196,6 +163330,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.hillgate.com"
+},
+"site:hindocha.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://hindocha.co.uk"
 },
 "site:hines.com": {
 "checked": "2026-11-11",
@@ -163393,6 +165538,19 @@
 "v": 2,
 "website": "https://www.ikpartners.com"
 },
+"site:ilarapartners.com": {
+"checked": "2026-11-13",
+"email": "info@ilarapartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ilarapartners.com"
+},
 "site:ilavo.cz": {
 "checked": "2026-11-12",
 "email": "info@ilavo.cz",
@@ -163560,6 +165718,19 @@
 "v": 2,
 "website": "http://www.imibank.com.br"
 },
+"site:impactcubed.com": {
+"checked": "2026-11-13",
+"email": "info@impactcubed.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/12982989",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.impactcubed.com"
+},
 "site:impaxam.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -163710,6 +165881,19 @@
 "v": 2,
 "website": "https://www.incomm.com"
 },
+"site:incredwealth.uk": {
+"checked": "2026-11-13",
+"email": "info@incredwealth.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+442039886250",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.incredwealth.uk"
+},
 "site:incrementum.si": {
 "checked": "2026-11-12",
 "email": "info@incrementum.si",
@@ -163848,6 +166032,19 @@
 "v": 2,
 "website": "https://infinifx.io"
 },
+"site:infinity-inv.com": {
+"checked": "2026-11-13",
+"email": "ir@infinity-inv.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+44 (0)207 046 9310",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.infinity-inv.com"
+},
 "site:infinityapp.in": {
 "checked": "2026-11-12",
 "email": "support@infinityapp.in",
@@ -163860,6 +166057,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "HTTPS://www.infinityapp.in"
+},
+"site:infinitycap.co": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/infinity-capital-partners-ltd",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.infinitycap.co"
 },
 "site:infinitycapitalmanagement.com": {
 "checked": "2026-11-13",
@@ -164093,6 +166303,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://WWW.INICIADOR.COM.BR"
+},
+"site:ininad.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ininad.co.uk"
 },
 "site:inkapital.hr": {
 "checked": "2026-11-12",
@@ -165265,6 +167488,19 @@
 "v": 2,
 "website": "https://ippbonline.bank.in"
 },
+"site:ipscap.com": {
+"checked": "2026-11-13",
+"email": "info@ipscap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "02074696830",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ipscap.com"
+},
 "site:iqana.io": {
 "checked": "2026-11-12",
 "email": "contact@iqana.io",
@@ -165923,6 +168159,19 @@
 "v": 2,
 "website": "https://www.jana.bank.in"
 },
+"site:janestreet.com": {
+"checked": "2026-11-13",
+"email": "media@janestreet.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+16467596000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.janestreet.com"
+},
 "site:jangotransfer.com": {
 "checked": "2026-11-12",
 "email": "sales@jangogroup.com",
@@ -166023,6 +168272,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.jefferies.com"
+},
+"site:jengaip.com": {
+"checked": "2026-11-13",
+"email": "ir@jengaip.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/jenga-investment-partners",
+"note": "",
+"pages": 1,
+"phone": "+447460035307",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.jengaip.com"
 },
 "site:jenosys.com": {
 "checked": "2026-11-12",
@@ -166194,6 +168456,19 @@
 "v": 2,
 "website": "https://www.jjfsltd.com"
 },
+"site:jjjcapital.com": {
+"checked": "2026-11-13",
+"email": "ir@jjjcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+442038394600",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://jjjcapital.com"
+},
 "site:jkb.bank.in": {
 "checked": "2026-11-12",
 "email": "",
@@ -166318,6 +168593,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.johnston-kennedy.com"
+},
+"site:johnstreetcapital.com": {
+"checked": "2026-11-13",
+"email": "enquiries@johnstreetcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.johnstreetcapital.com"
 },
 "site:joinfurther.com": {
 "checked": "2026-11-08",
@@ -167130,6 +169418,19 @@
 "v": 2,
 "website": "https://www.karnatakabank.bank.in"
 },
+"site:kartesia.com": {
+"checked": "2026-11-13",
+"email": "contact@kartesia.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/kartesia",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.kartesia.com"
+},
 "site:kasha.io": {
 "checked": "2026-11-12",
 "email": "",
@@ -167474,6 +169775,19 @@
 "v": 2,
 "website": "https://www.kennet.com"
 },
+"site:kennox.co.uk": {
+"checked": "2026-11-13",
+"email": "enquiries@kennox.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/kennox-asset-management-limited",
+"note": "",
+"pages": 1,
+"phone": "01315635440",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.kennox.co.uk"
+},
 "site:kensingtonmortgages.co.uk": {
 "checked": "2026-11-12",
 "email": "complaints@kensingtonmortgages.co.uk",
@@ -167508,6 +169822,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.keplerpartners.com"
+},
+"site:kernowam.com": {
+"checked": "2026-11-13",
+"email": "contact@kernowam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/kernow-asset-management",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://kernowam.com"
 },
 "site:kestrl.co.uk": {
 "checked": "2026-11-11",
@@ -169846,6 +172173,19 @@
 "v": 2,
 "website": "https://www.kunyefinancial.com"
 },
+"site:kuperstein.co.uk": {
+"checked": "2026-11-13",
+"email": "info@kuperstein.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/kuperstein",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.kuperstein.co.uk"
+},
 "site:kurncy.com": {
 "checked": "2026-11-12",
 "email": "support@kurncy.com",
@@ -169937,6 +172277,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.kvarnx.com"
+},
+"site:kvasir.ai": {
+"checked": "2026-11-13",
+"email": "enquiries@kvasir.ai",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://kvasir.ai"
 },
 "site:kvb.bank.in": {
 "checked": "2026-11-11",
@@ -170090,6 +172443,19 @@
 "phone_from": "firm website",
 "website": "https://www.l-bank.de"
 },
+"site:l-gam.com": {
+"checked": "2026-11-13",
+"email": "info@l-gam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+352253418",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.l-gam.com"
+},
 "site:la-finteca.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -170179,6 +172545,19 @@
 "v": 2,
 "website": "http://www.ladanexpress.net"
 },
+"site:lamancharesourcecapital.com": {
+"checked": "2026-11-13",
+"email": "info@lamancha.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/la-mancha-resource-capital",
+"note": "",
+"pages": 1,
+"phone": "+4402039602020",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://lamancharesourcecapital.com"
+},
 "site:lamasset.com": {
 "checked": "2026-11-13",
 "email": "melissa.longley@lamasset.com",
@@ -170204,6 +172583,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://lambourncapital.com"
+},
+"site:lancasterim.co.uk": {
+"checked": "2026-11-13",
+"email": "enquiries@lancasterim.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.lancasterim.co.uk"
 },
 "site:lancelotpay.io": {
 "checked": "2026-11-11",
@@ -170265,6 +172657,19 @@
 "v": 2,
 "website": "http://www.landmarktrust.org.uk"
 },
+"site:landseeram.com": {
+"checked": "2026-11-13",
+"email": "ep@landseeram.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+44 (0)20 7959 3509",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.landseeram.com"
+},
 "site:lanef.com": {
 "checked": "2026-11-07",
 "email": "",
@@ -170274,6 +172679,19 @@
 "phone": "04 81 65 00 00",
 "phone_from": "firm website",
 "website": "https://www.lanef.com"
+},
+"site:langleyadvisors.co.uk": {
+"checked": "2026-11-13",
+"email": "info@langleyadvisors.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.langleyadvisors.co.uk"
 },
 "site:lansdownepayments.com": {
 "checked": "2026-11-12",
@@ -170433,6 +172851,17 @@
 "v": 2,
 "website": "https://www.lavivapayltd.com"
 },
+"site:laxcapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 520",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.laxcapital.com"
+},
 "site:layer2financial.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -170511,6 +172940,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.lbbw.de"
+},
+"site:lbvam.com": {
+"checked": "2026-11-13",
+"email": "investors@lbvam.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.lbvam.com"
 },
 "site:lcg.com": {
 "checked": "2026-11-11",
@@ -170632,6 +173074,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.leadcapitalcrp.com"
+},
+"site:leadenhallcp.com": {
+"checked": "2026-11-13",
+"email": "investors@leadenhallcp.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/leadenhall-capital-partners-llp",
+"note": "",
+"pages": 1,
+"phone": "+4402078717290",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.leadenhallcp.com"
 },
 "site:leadingbridgesltd.com": {
 "checked": "2026-11-12",
@@ -170907,6 +173362,17 @@
 "v": 2,
 "website": "HTTP://LEND.TECH/PT"
 },
+"site:lendable.io": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.lendable.io"
+},
 "site:lendingmetrics.com": {
 "checked": "2026-11-08",
 "email": "info@lendingmetrics.com",
@@ -171081,6 +173547,19 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "http://www.lfa.de"
+},
+"site:lfip.co.uk": {
+"checked": "2026-11-13",
+"email": "email@company.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://lfip.co.uk"
 },
 "site:lgim.com": {
 "checked": "2026-11-11",
@@ -171988,6 +174467,19 @@
 "v": 2,
 "website": "https://logipay.ca"
 },
+"site:lohgronagerpartners.com": {
+"checked": "2026-11-13",
+"email": "ir@lohgronagerpartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/loh-gronager-partners",
+"note": "",
+"pages": 1,
+"phone": "0075 4183 02(0) 44",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.LohGronagerPartners.com"
+},
 "site:lollandsbank.dk": {
 "checked": "2026-11-07",
 "email": "kontakt@lobk.dk",
@@ -172010,6 +174502,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://lollicash.com"
+},
+"site:lombardicapital.com": {
+"checked": "2026-11-13",
+"email": "info@lombardicapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://lombardicapital.com"
 },
 "site:lombardodier.com": {
 "checked": "2026-11-07",
@@ -172525,6 +175030,19 @@
 "v": 2,
 "website": "http://www.lulumoney.com.sg"
 },
+"site:lumenfinancialplanning.com": {
+"checked": "2026-11-13",
+"email": "info@lumenfinancialplanning.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "02838022014",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.lumenfinancialplanning.com"
+},
 "site:lumepay.com": {
 "checked": "2026-11-12",
 "email": "support@lumepay.com",
@@ -172971,6 +175489,19 @@
 "v": 2,
 "website": "https://www.maayanpayments.co.uk"
 },
+"site:macdoch.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://macdoch.co.uk"
+},
 "site:macfp.co.uk": {
 "checked": "2026-11-11",
 "email": "info@macfp.co.uk",
@@ -173135,6 +175666,32 @@
 "v": 2,
 "website": "HTTPS://WWW.MAGALUPAY.COM.BR"
 },
+"site:magenfinancial.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.magenfinancial.com"
+},
+"site:magentapartners.com": {
+"checked": "2026-11-13",
+"email": "info@magentapartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "004402081830001",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.magentapartners.com"
+},
 "site:magmafinance.ca": {
 "checked": "2026-11-12",
 "email": "info@magmafinance.ca",
@@ -173147,6 +175704,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://magmafinance.ca"
+},
+"site:magnacapital.co.uk": {
+"checked": "2026-11-13",
+"email": "info@magnacapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+442045770027",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.magnacapital.co.uk"
 },
 "site:magnetar.com": {
 "checked": "2026-11-13",
@@ -173341,6 +175911,19 @@
 "v": 2,
 "website": "https://www.manax.swiss"
 },
+"site:manchesterglobal.com": {
+"checked": "2026-11-13",
+"email": "info@manchesterglobal.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.manchesterglobal.com"
+},
 "site:mandg.com": {
 "checked": "2026-11-11",
 "email": "general.servicing.pru@mandg.com",
@@ -173390,6 +175973,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://mangopay.com"
+},
+"site:mangustarisk.com": {
+"checked": "2026-11-13",
+"email": "contact@mangustarisk.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+390645439400",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mangustarisk.com"
 },
 "site:manhattin.com": {
 "checked": "2026-11-12",
@@ -173588,6 +176184,19 @@
 "v": 2,
 "website": "https://mara.boo"
 },
+"site:marathon.co.uk": {
+"checked": "2026-11-13",
+"email": "info@marathon.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/marathon-asset-management-ltd",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.marathon.co.uk"
+},
 "site:marathonbet.eshttps:": {
 "checked": "2026-11-12",
 "email": "",
@@ -173598,6 +176207,32 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.marathonbet.eshttps://www.maratonbet.eshttps://www.mbet.es"
+},
+"site:marathoncapital.com": {
+"checked": "2026-11-13",
+"email": "info@legioncollective.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/marathon-capital",
+"note": "",
+"pages": 2,
+"phone": "+1-312-989-1350",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.marathoncapital.com"
+},
+"site:marblebar.com": {
+"checked": "2026-11-13",
+"email": "info@mbamfunds.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+4402030238100",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.marblebar.com"
 },
 "site:marcard.de": {
 "checked": "2026-11-12",
@@ -173947,6 +176582,19 @@
 "v": 2,
 "website": "https://www.mas.gov.sg"
 },
+"site:masecoprivatewealth.com": {
+"checked": "2026-11-13",
+"email": "enquiries@masecopw.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+442070430455",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.masecoprivatewealth.com"
+},
 "site:mashreq.com": {
 "checked": "2026-11-12",
 "email": "media@mashreq.com",
@@ -174151,6 +176799,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.maxpay.com"
+},
+"site:mayarcapital.com": {
+"checked": "2026-11-13",
+"email": "ir@mayarcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/mayarcapital",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mayarcapital.com"
 },
 "site:maybank.com": {
 "checked": "2026-11-12",
@@ -174460,13 +177121,16 @@
 "website": "https://medfin.ai"
 },
 "site:mediobanca.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "risorse.umane@mediobanca.com",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/13738",
 "note": "",
 "pages": 2,
 "phone": "+39 02 8829.1",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.mediobanca.com"
 },
 "site:medirect.com.mt": {
@@ -174925,6 +177589,19 @@
 "phone_from": "firm website",
 "website": "https://merkur.dk"
 },
+"site:mesaretecapital.com": {
+"checked": "2026-11-13",
+"email": "info@mesaretecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+4402031482330",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mesaretecapital.com"
+},
 "site:mesghalexchange.com": {
 "checked": "2026-11-12",
 "email": "info@mesghalexchange.com",
@@ -174950,6 +177627,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://meshpayments.com"
+},
+"site:mesirow.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/mesirow-financial",
+"note": "",
+"pages": 3,
+"phone": "3125956000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mesirow.com"
 },
 "site:meta.com": {
 "checked": "2026-11-12",
@@ -175102,13 +177792,16 @@
 "website": "https://www.metric-capital.com"
 },
 "site:metrobankonline.co.uk": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "enquiries@metrobank.plc.uk",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/metro-bank-uk",
 "note": "",
 "pages": 4,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.metrobankonline.co.uk"
 },
 "site:metrorem.co.uk": {
@@ -175387,6 +178080,19 @@
 "v": 2,
 "website": "https://www.migrapay.com"
 },
+"site:milkstone.co.uk": {
+"checked": "2026-11-13",
+"email": "peter@milkstone.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "0161 850 9899",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.milkstone.co.uk"
+},
 "site:milkypay.org": {
 "checked": "2026-11-11",
 "email": "",
@@ -175425,6 +178131,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.milleis.fr"
+},
+"site:milleniumassociates.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+41 58 710 47 00",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.milleniumassociates.com"
 },
 "site:millennialcurrencyexchange.com": {
 "checked": "2026-11-12",
@@ -175604,6 +178323,19 @@
 "v": 2,
 "website": "https://www.mintpayments.com"
 },
+"site:miopartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.miopartners.com"
+},
 "site:mirabaud-am.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -175616,6 +178348,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.mirabaud-am.com"
+},
+"site:mirabaud.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/mirabaud-group",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mirabaud.com/en/wealth-management"
 },
 "site:miraclepace.com": {
 "checked": "2026-11-12",
@@ -177490,6 +180235,19 @@
 "v": 2,
 "website": "https://mountcap.com"
 },
+"site:mountstreet.com": {
+"checked": "2026-11-13",
+"email": "info@mountstreet.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/mountstreet",
+"note": "",
+"pages": 2,
+"phone": "+14708164620",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.mountstreet.com"
+},
 "site:mourocapital.com": {
 "checked": "2026-11-11",
 "email": "info@mourocapital.com",
@@ -177868,6 +180626,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://muchbetter.com"
+},
+"site:muditaadvisors.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://muditaadvisors.com"
 },
 "site:muenchenerhyp.de": {
 "checked": "2026-11-12",
@@ -179233,6 +182004,19 @@
 "v": 2,
 "website": "https://navan.com/uk"
 },
+"site:naverainvestment.com": {
+"checked": "2026-11-13",
+"email": "hellolondon@naverainvestment.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/naverainvestmentmanagement",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.naverainvestment.com"
+},
 "site:navrisk.io": {
 "checked": "2026-11-11",
 "email": "hello@navrisk.io",
@@ -179651,6 +182435,19 @@
 "v": 2,
 "website": "https://www.neillclerkmurray.co.uk"
 },
+"site:nektoncapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.nektoncapital.com"
+},
 "site:nellspay.com": {
 "checked": "2026-11-12",
 "email": "info@nellspay.com",
@@ -179726,6 +182523,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.neofintech.cloud"
+},
+"site:neoinvestmentpartners.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.neoinvestmentpartners.com"
 },
 "site:neomoney.tech": {
 "checked": "2026-11-11",
@@ -179811,6 +182621,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.nestmanagement.co.uk"
+},
+"site:nestpensions.org.uk": {
+"checked": "2026-11-13",
+"email": "secretariat@nestcorporation.org.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/nestpensions",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.nestpensions.org.uk/schemeweb/nest.html"
 },
 "site:netbet.fr": {
 "checked": "2026-11-12",
@@ -180440,6 +183263,19 @@
 "v": 2,
 "website": "HTTPS://WWW.NG.CASH"
 },
+"site:ngcim.com": {
+"checked": "2026-11-13",
+"email": "ir@ngcim.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/nassau-global-credit-llc",
+"note": "",
+"pages": 1,
+"phone": "2039025517",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://ngcim.com"
+},
 "site:nhbank.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -180478,14 +183314,17 @@
 "website": "https://niapayments.io"
 },
 "site:nibc.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "info@nibc.com",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/nibc-bank",
 "note": "",
 "pages": 1,
 "phone": "+310703425425",
 "phone_from": "firm website",
-"website": "http://www.nibc.com"
+"v": 2,
+"website": "https://www.nibc.com"
 },
 "site:nicheclear.ca": {
 "checked": "2026-11-12",
@@ -180512,6 +183351,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.nichepc.co.uk"
+},
+"site:nickel.digital": {
+"checked": "2026-11-13",
+"email": "ir@nickel.digital",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/nickel-digital-asset-management",
+"note": "",
+"pages": 1,
+"phone": "+442079470300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.nickel.digital"
 },
 "site:nihaopay.com": {
 "checked": "2026-11-12",
@@ -181304,6 +184156,17 @@
 "v": 2,
 "website": "https://www.north49.com"
 },
+"site:northatlanticinvestmentservice.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.northatlanticinvestmentservice.co.uk"
+},
 "site:northcasino.com": {
 "checked": "2026-11-13",
 "email": "",
@@ -181386,6 +184249,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.northpeakpay.com"
+},
+"site:northrockllc.com": {
+"checked": "2026-11-13",
+"email": "talent@northrockllc.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/north-rock-llc",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.northrockllc.com"
 },
 "site:northstake.dk": {
 "checked": "2026-11-12",
@@ -182028,6 +184904,19 @@
 "v": 2,
 "website": "https://WWW.NUMBER.COM.BR"
 },
+"site:numencapital.com": {
+"checked": "2026-11-13",
+"email": "info@numencapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+44 (0)20 0000 0000",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.numencapital.com"
+},
 "site:numeric.io": {
 "checked": "2026-11-11",
 "email": "",
@@ -182242,6 +185131,32 @@
 "v": 2,
 "website": "https://nyotafinancial.com"
 },
+"site:oakceancapital.com": {
+"checked": "2026-11-13",
+"email": "info@oakceancapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/oakcean-capital-limited",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.oakceancapital.com"
+},
+"site:oakglenwealth.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.oakglenwealth.com"
+},
 "site:oakhamwealth.com": {
 "checked": "2026-11-13",
 "email": "directors@oakhamwealth.com",
@@ -182453,6 +185368,19 @@
 "v": 2,
 "website": "https://octaviva.com"
 },
+"site:octopusenergygeneration.com": {
+"checked": "2026-11-13",
+"email": "info@octopusenergygeneration.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "004402045308369",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.octopusenergygeneration.com"
+},
 "site:octopusinvestments.com": {
 "checked": "2026-11-11",
 "email": "support@octopusinvestments.com",
@@ -182544,6 +185472,32 @@
 "v": 2,
 "website": "https://www.odimuk.com"
 },
+"site:odincm.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.odincm.com"
+},
+"site:odinwh.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.odinwh.com"
+},
 "site:odola.com": {
 "checked": "2026-11-11",
 "email": "support@odola.com",
@@ -182556,6 +185510,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.odola.com"
+},
+"site:odum-research.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.odum-research.com"
 },
 "site:odumpay.com": {
 "checked": "2026-11-11",
@@ -183068,6 +186035,19 @@
 "v": 2,
 "website": "https://www.omni.co.uk"
 },
+"site:omniadvisory.co.uk": {
+"checked": "2026-11-13",
+"email": "compliance@omni.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://omniadvisory.co.uk"
+},
 "site:omniapay.io": {
 "checked": "2026-11-12",
 "email": "info@omniapay.io",
@@ -183391,6 +186371,19 @@
 "v": 2,
 "website": "https://www.oneify.money"
 },
+"site:oneimgroup.com": {
+"checked": "2026-11-13",
+"email": "contact@oneimgroup.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/oneim",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.oneimgroup.com"
+},
 "site:oneinc.com": {
 "checked": "2026-11-12",
 "email": "hr@oneinc.com",
@@ -183507,13 +186500,17 @@
 "website": "https://www.onerock.com"
 },
 "site:onesavingsbank.co.uk": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "mail@osb.co.uk",
 "email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.osb.co.uk/about-us/our-brands",
+"linkedin": "https://www.linkedin.com/company/osb-group",
 "note": "",
 "pages": 2,
 "phone": "24401634848944",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.onesavingsbank.co.uk/about-us/our-brands"
 },
 "site:onesourcevirtual.com": {
@@ -183969,6 +186966,19 @@
 "v": 2,
 "website": "https://www.opulencecapitalinvestments.com"
 },
+"site:opulenzecapital.com": {
+"checked": "2026-11-13",
+"email": "info@opulenzecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+6494461709",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.opulenzecapital.com"
+},
 "site:oqtima.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -184070,6 +187080,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.orcapay.io"
+},
+"site:orchardglobal.com": {
+"checked": "2026-11-13",
+"email": "media@orchardglobal.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/orchard-global",
+"note": "",
+"pages": 2,
+"phone": "+1 713 225 5965",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.orchardglobal.com"
 },
 "site:orchidfinancials.com": {
 "checked": "2026-11-12",
@@ -184307,6 +187330,19 @@
 "v": 2,
 "website": "https://otcx.io"
 },
+"site:otcxtrading.com": {
+"checked": "2026-11-13",
+"email": "info@otcxtrading.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/otcx",
+"note": "",
+"pages": 1,
+"phone": "+442070604750",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.otcxtrading.com"
+},
 "site:otonomsolution.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -184379,6 +187415,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.otuscapital.com"
+},
+"site:ouem.co.uk": {
+"checked": "2026-11-13",
+"email": "enquiries@ouem.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+44 (0)1865 632900",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ouem.co.uk"
 },
 "site:ouitrust.com": {
 "checked": "2026-11-11",
@@ -184469,6 +187518,20 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://outpayce.com"
+},
+"site:outsized.vc": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://www.outsizedventures.com",
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.outsized.vc"
 },
 "site:ovado.co": {
 "checked": "2026-11-11",
@@ -184723,6 +187786,19 @@
 "v": 2,
 "website": "https://www.pacificam.co.uk"
 },
+"site:pacificlifere.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pacificlifere.com"
+},
 "site:pacificshorefx.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -184957,6 +188033,19 @@
 "v": 2,
 "website": "https://paio.company/en"
 },
+"site:paipartners.com": {
+"checked": "2026-11-13",
+"email": "pai.nyc@paipartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/pai-partners",
+"note": "",
+"pages": 2,
+"phone": "+33143166300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.paipartners.com"
+},
 "site:paisaexchange.co.uk": {
 "checked": "2026-11-11",
 "email": "info@paisaexchange.co.uk",
@@ -185021,6 +188110,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.pallinghurst.com"
+},
+"site:pallisercap.com": {
+"checked": "2026-11-13",
+"email": "info@pallisercap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pallisercap.com"
 },
 "site:palmerfs.com": {
 "checked": "2026-11-11",
@@ -185275,6 +188377,19 @@
 "v": 2,
 "website": "https://paradech.com"
 },
+"site:paradigmig.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://paradigmig.com"
+},
 "site:paradistech.com": {
 "checked": "2026-11-11",
 "email": "info@paradistech.com",
@@ -185492,6 +188607,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.partnercapital.net"
+},
+"site:partners-cap.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+1 617 292 2570",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://partners-cap.com"
 },
 "site:partnersbanka.cz": {
 "checked": "2026-11-12",
@@ -188072,6 +191200,58 @@
 "v": 2,
 "website": "https://www.pddirect.com"
 },
+"site:pearldivercapital.com": {
+"checked": "2026-11-13",
+"email": "info@pearldivercap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/27137372",
+"note": "",
+"pages": 2,
+"phone": "+4402039678032",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pearldivercapital.com"
+},
+"site:pearlstonealternative.com": {
+"checked": "2026-11-13",
+"email": "ir@pearlstonealternative.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pearlstonealternative.com"
+},
+"site:pearsonlegal.co.uk": {
+"checked": "2026-11-13",
+"email": "enquiries@pearsonlegal.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/pearsonsolicitors",
+"note": "",
+"pages": 1,
+"phone": "01617853500",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pearsonlegal.co.uk"
+},
+"site:pectencapital.com": {
+"checked": "2026-11-13",
+"email": "info@pectencapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+44 207 290 5787",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pectencapital.com"
+},
 "site:peerfx.online": {
 "checked": "2026-11-12",
 "email": "",
@@ -188264,6 +191444,32 @@
 "v": 2,
 "website": "https://www.pentabank.sk"
 },
+"site:pentacapital.com": {
+"checked": "2026-11-13",
+"email": "info@pentacapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/penta-capital-llp",
+"note": "",
+"pages": 2,
+"phone": "0141 572 7300",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pentacapital.com"
+},
+"site:pentechvc.com": {
+"checked": "2026-11-13",
+"email": "craig@pentechvc.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pentechvc.com"
+},
 "site:pento.io": {
 "checked": "2026-11-11",
 "email": "",
@@ -188344,13 +191550,16 @@
 "website": "http://www.peregrine390.com"
 },
 "site:perenna.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "admin@servicing.perenna.com",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/perenna",
 "note": "",
 "pages": 3,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://perenna.com"
 },
 "site:perfectpay.digital": {
@@ -188452,6 +191661,19 @@
 "phone": "",
 "phone_from": "firm website",
 "website": "https://personal-finance.bnpparibas/en"
+},
+"site:pertento.com": {
+"checked": "2026-11-13",
+"email": "info@pertento.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pertento.com"
 },
 "site:pesa.co": {
 "checked": "2026-11-11",
@@ -188794,13 +192016,16 @@
 "website": "HTTPS://WWW.PICPAY.COM.BR"
 },
 "site:pictet.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/the-pictet-group",
 "note": "",
 "pages": 4,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.pictet.com/uk/en"
 },
 "site:piggypay.io": {
@@ -188977,6 +192202,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://pioneermoneytransfer.com"
+},
+"site:pioneerpoint.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pioneerpoint.com"
 },
 "site:pipernus.com": {
 "checked": "2026-11-11",
@@ -189235,6 +192471,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.platformsecurities.com"
+},
+"site:platinapartners.com": {
+"checked": "2026-11-13",
+"email": "enquiries@platinapartners.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+442070429600",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.platinapartners.com"
 },
 "site:platincasino.eshttps:": {
 "checked": "2026-11-12",
@@ -189538,6 +192787,19 @@
 "phone_from": "firm website",
 "website": "https://www.pnbint.com"
 },
+"site:pnbuk.pnb.com.my": {
+"checked": "2026-11-13",
+"email": "pnbukcompliance@pnb.com.my",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://pnbuk.pnb.com.my/en/pnbuk"
+},
 "site:pocket-trader.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -189575,6 +192837,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.pohjola.fi"
+},
+"site:point72.com": {
+"checked": "2026-11-13",
+"email": "inquiries@point72.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/point72-asset-management-l-p",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.point72.com"
 },
 "site:pointra.com": {
 "checked": "2026-11-12",
@@ -189664,6 +192939,19 @@
 "v": 2,
 "website": "https://www.polarpay.com"
 },
+"site:polencapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 200,
+"linkedin": "https://www.linkedin.com/company/polen-capital-management",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.polencapital.com"
+},
 "site:polinpay.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -189726,6 +193014,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "HTTPS://POMELO.LA/BR"
+},
+"site:pomonacapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/pomona-capital",
+"note": "",
+"pages": 3,
+"phone": "+12125933639",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.pomonacapital.com"
 },
 "site:pompay.io": {
 "checked": "2026-11-12",
@@ -190630,6 +193931,19 @@
 "v": 2,
 "website": "https://www.privilegeplan.co.uk"
 },
+"site:priviumfund.com": {
+"checked": "2026-11-13",
+"email": "htchiou@priviumfund.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/privium-fund-management",
+"note": "",
+"pages": 1,
+"phone": "+44 207 0469 882",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.priviumfund.com"
+},
 "site:probanking.digital": {
 "checked": "2026-11-12",
 "email": "",
@@ -190857,6 +194171,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://protean-capital.com"
+},
+"site:providenceasset.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://providenceasset.co.uk"
 },
 "site:providentia-capital.com": {
 "checked": "2026-11-11",
@@ -191130,6 +194457,19 @@
 "phone": "0258555855",
 "phone_from": "firm website",
 "website": "https://www.pss.sk"
+},
+"site:ptarmigancapital.co.uk": {
+"checked": "2026-11-13",
+"email": "contact@ptarmigancapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/ptarmigan-capital-ltd",
+"note": "",
+"pages": 1,
+"phone": "+442030341135",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://ptarmigancapital.co.uk"
 },
 "site:ptbankmandiri.com.sg": {
 "checked": "2026-11-12",
@@ -191663,6 +195003,19 @@
 "v": 2,
 "website": "https://qpay.ca"
 },
+"site:qpequity.com": {
+"checked": "2026-11-13",
+"email": "pbagnpg@dcrdhvgl.pbz",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/queen-s-park-equity-llp",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.qpequity.com"
+},
 "site:qqpay.io": {
 "checked": "2026-11-12",
 "email": "support@qqpay.io",
@@ -191699,6 +195052,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.qrios.com"
+},
+"site:qsix.com": {
+"checked": "2026-11-13",
+"email": "info@qsix.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+442039378760",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.qsix.com"
 },
 "site:qsmasset.com": {
 "checked": "2026-11-11",
@@ -192946,6 +196312,17 @@
 "v": 2,
 "website": "https://www.railpen.com"
 },
+"site:raine.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.raine.com"
+},
 "site:raisin.com": {
 "checked": "2026-11-11",
 "email": "help@raisin.com",
@@ -193025,6 +196402,19 @@
 "v": 2,
 "website": "https://www.ramp.network"
 },
+"site:rampartcapital.co": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+44 (0)20 3551 2910",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://rampartcapital.co"
+},
 "site:rampgx.com": {
 "checked": "2026-11-12",
 "email": "admin@rampgx.com",
@@ -193074,6 +196464,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.ramsdensforcash.co.uk"
+},
+"site:ranmorefunds.com": {
+"checked": "2026-11-13",
+"email": "clientservices@ranmorefunds.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/ranmorefundmanagement",
+"note": "",
+"pages": 1,
+"phone": "+441932864651",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ranmorefunds.com"
 },
 "site:rapidcents.com": {
 "checked": "2026-11-12",
@@ -193910,13 +197313,16 @@
 "website": "https://www.rbfalkenstein-woerth.de"
 },
 "site:rbinternational.com": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "ir@rbinternational.com",
 "email_from": "firm website",
+"employees": 4300,
+"linkedin": "",
 "note": "",
-"pages": 3,
+"pages": 4,
 "phone": "00436641803969",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.rbinternational.com"
 },
 "site:rbk-haag-gars.de": {
@@ -194101,6 +197507,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.rbvw.de"
+},
+"site:rcapital.co.uk": {
+"checked": "2026-11-13",
+"email": "info@rcapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/rcapital",
+"note": "",
+"pages": 1,
+"phone": "+4402083235888",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.rcapital.co.uk"
 },
 "site:rcbim.co.uk": {
 "checked": "2026-11-12",
@@ -194378,6 +197797,19 @@
 "v": 2,
 "website": "https://www.redhat.com"
 },
+"site:redmayne.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/70623",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.redmayne.co.uk"
+},
 "site:redseamoneytransfer.com": {
 "checked": "2026-11-11",
 "email": "info@redseamoneytransfer.com",
@@ -194390,6 +197822,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.redseamoneytransfer.com"
+},
+"site:redwheel.com": {
+"checked": "2026-11-13",
+"email": "invest@redwheel.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/rwc",
+"note": "",
+"pages": 1,
+"phone": "+442072276000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.redwheel.com"
 },
 "site:redwings.org.uk": {
 "checked": "2026-11-11",
@@ -194450,6 +197895,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://Regalfastmove.co.uk"
+},
+"site:regentsgatecapital.com": {
+"checked": "2026-11-13",
+"email": "info@regentsgatecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/regents-gate-capital-llp",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://regentsgatecapital.com"
 },
 "site:regisbentley.com": {
 "checked": "2026-11-11",
@@ -195213,6 +198671,19 @@
 "v": 2,
 "website": "https://repay.com"
 },
+"site:resfamiliaris.com": {
+"checked": "2026-11-13",
+"email": "info@resfamiliaris.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.resfamiliaris.com"
+},
 "site:resrv.money": {
 "checked": "2026-11-12",
 "email": "",
@@ -195401,6 +198872,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.rheinhessen-sparkasse.de"
+},
+"site:rhodonim.com": {
+"checked": "2026-11-13",
+"email": "ir@rhodonim.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+4402039951841",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://WWW.RHODONIM.COM"
 },
 "site:rhoen-rennsteig-sparkasse.de": {
 "checked": "2026-11-12",
@@ -195618,6 +199102,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://WWW.RISEPEOPLE.COM"
+},
+"site:riskbridge.com": {
+"checked": "2026-11-13",
+"email": "advice@riskbridge.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/riskbridge-associates",
+"note": "",
+"pages": 1,
+"phone": "+442071297500",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.riskbridge.com"
 },
 "site:ritual.co": {
 "checked": "2026-11-11",
@@ -195983,6 +199480,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://robinhood.com/gb/en"
+},
+"site:robocap.com": {
+"checked": "2026-11-13",
+"email": "info@robocap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+4402034571224",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.robocap.com"
 },
 "site:robomarkets.com": {
 "checked": "2026-11-11",
@@ -196468,6 +199978,19 @@
 "v": 2,
 "website": "https://www.rubycap.com"
 },
+"site:rudi.us": {
+"checked": "2026-11-13",
+"email": "admin@rudi.us",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.rudi.us"
+},
 "site:rudolfwolff.com": {
 "checked": "2026-11-13",
 "email": "info@rudolfwolff.com",
@@ -196817,6 +200340,32 @@
 "v": 2,
 "website": "https://www.s-pankki.fi"
 },
+"site:s-r-p.co.uk": {
+"checked": "2026-11-13",
+"email": "nigel@s-r-p.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.s-r-p.co.uk"
+},
+"site:s8uk.digital": {
+"checked": "2026-11-13",
+"email": "micah@micahrich.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.s8uk.digital"
+},
 "site:saakremit.com": {
 "checked": "2026-11-11",
 "email": "it@saakremit.com",
@@ -196907,6 +200456,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.sabsecurities.co.uk"
+},
+"site:sackvillecapital.com": {
+"checked": "2026-11-13",
+"email": "info@sackvillecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sackvillecapital",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://sackvillecapital.com"
 },
 "site:saderat-plc.com": {
 "checked": "2026-11-12",
@@ -197044,6 +200606,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.sagic.co.uk"
+},
+"site:sagilcap.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sagilcap.com"
 },
 "site:sakuramoonotc.com": {
 "checked": "2026-11-12",
@@ -197188,6 +200763,19 @@
 "phone_from": "firm website",
 "website": "https://www.samblagroup.com"
 },
+"site:samcapital.com": {
+"checked": "2026-11-13",
+"email": "info@samcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sam-capital-partners",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.samcapital.com"
+},
 "site:samna-finance.com": {
 "checked": "2026-11-12",
 "email": "business@samna-finance.com",
@@ -197264,6 +200852,32 @@
 "v": 2,
 "website": "https://www.sanctumfi.com"
 },
+"site:sandfia.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sandfia.com"
+},
+"site:sanford-deland.com": {
+"checked": "2026-11-13",
+"email": "contact@sanford-deland.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sanford-deland-asset-management-ltd",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "http://www.sanford-deland.com"
+},
 "site:sangerwal.co.uk": {
 "checked": "2026-11-11",
 "email": "info@sangerwal.co.uk",
@@ -197276,6 +200890,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.sangerwal.co.uk"
+},
+"site:sankofapartners.co.uk": {
+"checked": "2026-11-13",
+"email": "david@sankofapartners.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sankofapartners.co.uk"
 },
 "site:santander.co.uk": {
 "checked": "2026-11-11",
@@ -197541,6 +201168,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://sarasanctuary.org"
+},
+"site:sarasinandpartners.com": {
+"checked": "2026-11-13",
+"email": "contact@sarasin.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sarasin",
+"note": "",
+"pages": 1,
+"phone": "+442070387000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sarasinandpartners.com"
 },
 "site:sarasinassetmanagement.com": {
 "checked": "2026-11-12",
@@ -198030,6 +201670,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.scipion-capital.com"
+},
+"site:scmdirect.com": {
+"checked": "2026-11-13",
+"email": "enquiries@scmdirect.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/scm-private",
+"note": "",
+"pages": 1,
+"phone": "02078388650",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.scmdirect.com"
 },
 "site:scope.org.uk": {
 "checked": "2026-11-12",
@@ -198683,6 +202336,19 @@
 "v": 2,
 "website": "https://semoto.io/prime"
 },
+"site:sempera.com": {
+"checked": "2026-11-13",
+"email": "communications@sempera.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sempera.com"
+},
 "site:send.flutterwave.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -198952,6 +202618,19 @@
 "v": 2,
 "website": "https://www.sentinel-rs.com"
 },
+"site:sentinelportfoliomanagement.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://sentinelportfoliomanagement.co.uk"
+},
 "site:sentumworld.eu": {
 "checked": "2026-11-12",
 "email": "",
@@ -198977,6 +202656,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.sentvia.com"
+},
+"site:sep.co.uk": {
+"checked": "2026-11-13",
+"email": "enquiries@sep.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/scottish-equity-partners",
+"note": "",
+"pages": 2,
+"phone": "+4402077585900",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sep.co.uk"
 },
 "site:sepay.ca": {
 "checked": "2026-11-12",
@@ -199016,6 +202708,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://sepsistrust.org"
+},
+"site:sequoiacap.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sequoia",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sequoiacap.com"
 },
 "site:sequoiacircle.com": {
 "checked": "2026-11-11",
@@ -199634,6 +203339,19 @@
 "v": 2,
 "website": "https://www.shinhan.com"
 },
+"site:shiprock.co.uk": {
+"checked": "2026-11-13",
+"email": "info@shiprock.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/shiprockcapital",
+"note": "",
+"pages": 1,
+"phone": "+27123456789",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.shiprock.co.uk"
+},
 "site:shokran.io": {
 "checked": "2026-11-12",
 "email": "support@shokran.io",
@@ -199919,6 +203637,19 @@
 "v": 2,
 "website": "https://www.siglopay.com"
 },
+"site:sigma-broking.com": {
+"checked": "2026-11-13",
+"email": "info@sigma-broking.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/sigma-broking-limited",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.sigma-broking.com"
+},
 "site:sigmaprivate.com": {
 "checked": "2026-11-12",
 "email": "info@sigmaprivate.com",
@@ -199954,6 +203685,19 @@
 "phone": "+37167080000",
 "phone_from": "firm website",
 "website": "https://signetbank.com"
+},
+"site:signetfinancialservices.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.signetfinancialservices.co.uk"
 },
 "site:signetglobal.com": {
 "checked": "2026-11-12",
@@ -200053,6 +203797,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.siliveruexchange.ca"
+},
+"site:silkinvest.com": {
+"checked": "2026-11-13",
+"email": "operations@silkinvest.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/silk-invest",
+"note": "",
+"pages": 4,
+"phone": "+44-208-088-1040",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.silkinvest.com"
 },
 "site:silkroadex.ca": {
 "checked": "2026-11-12",
@@ -201364,6 +205121,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.soditic.com"
+},
+"site:soditicassetmanagement.com": {
+"checked": "2026-11-13",
+"email": "admin@soditic.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+44 (0)20 7872 7000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.soditicassetmanagement.com"
 },
 "site:sofisa.com.br": {
 "checked": "2026-11-11",
@@ -204507,6 +208277,19 @@
 "v": 2,
 "website": "https://sparrowremit.com"
 },
+"site:spartacapital.co.uk": {
+"checked": "2026-11-13",
+"email": "ir@spartacapital.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://spartacapital.co.uk"
+},
 "site:spartakexchange.com": {
 "checked": "2026-11-12",
 "email": "info@spartakexchange.com",
@@ -204732,6 +208515,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.sperrer.de"
+},
+"site:spexcapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.spexcapital.com"
 },
 "site:spgsl.com": {
 "checked": "2026-11-12",
@@ -205675,6 +209469,19 @@
 "v": 2,
 "website": "https://sqril.io"
 },
+"site:squarecapitalgroup.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.squarecapitalgroup.com"
+},
 "site:squareglobalmarkets.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -206487,6 +210294,19 @@
 "v": 2,
 "website": "https://www.stelizabethhospice.org.uk"
 },
+"site:stellar-am.com": {
+"checked": "2026-11-13",
+"email": "enquiries@stellar-am.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/stellar-asset-management-limited",
+"note": "",
+"pages": 1,
+"phone": "02031953500",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.stellar-am.com"
+},
 "site:stellari.io": {
 "checked": "2026-11-12",
 "email": "support@stellari.io",
@@ -206565,6 +210385,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.sterlingfx.co.uk"
+},
+"site:sterlingim.co.uk": {
+"checked": "2026-11-13",
+"email": "info@sterlingim.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/64929340",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://sterlingim.co.uk"
 },
 "site:sterlingpaymentservices.ca": {
 "checked": "2026-11-12",
@@ -207898,6 +211731,19 @@
 "v": 2,
 "website": "https://www.switchhub.ca"
 },
+"site:swixfo.com": {
+"checked": "2026-11-13",
+"email": "info@swixfo.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "+442039073960",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.swixfo.com"
+},
 "site:swkbank.de": {
 "checked": "2026-11-12",
 "email": "kontakt@swk-bank.de",
@@ -208163,6 +212009,19 @@
 "v": 2,
 "website": "https://syrixpay.com"
 },
+"site:system2capital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.system2capital.com"
+},
 "site:systematica.com": {
 "checked": "2026-11-11",
 "email": "press.enquiries@systematica.com",
@@ -208366,6 +212225,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.takasbank.com.tr"
+},
+"site:talbotcapital.co.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "SSLError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.talbotcapital.co.uk"
 },
 "site:talinods.ca": {
 "checked": "2026-11-11",
@@ -209066,6 +212936,19 @@
 "v": 2,
 "website": "https://www.teeparamexchange.co.uk"
 },
+"site:tejaracapital.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.tejaracapital.com"
+},
 "site:tejaventures.com": {
 "checked": "2026-11-12",
 "email": "info@tejaventures.com",
@@ -209452,6 +213335,19 @@
 "v": 2,
 "website": "https://terencefinancial.com"
 },
+"site:terium.com": {
+"checked": "2026-11-13",
+"email": "contact@terium.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/terium-llp",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.terium.com"
+},
 "site:teroxx.com": {
 "checked": "2026-11-12",
 "email": "info@teroxx.com",
@@ -209759,13 +213655,14 @@
 "website": "https://www.the-labz.com"
 },
 "site:theaccessbankukltd.co.uk": {
-"checked": "2026-11-07",
+"checked": "2026-11-13",
 "email": "",
 "email_from": "firm website",
 "note": "HTTP 403",
 "pages": 0,
 "phone": "",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.theaccessbankukltd.co.uk"
 },
 "site:theaccessgroup.com": {
@@ -210540,6 +214437,20 @@
 "v": 2,
 "website": "https://www.tide.co"
 },
+"site:tidewayinvestment.co.uk": {
+"checked": "2026-11-13",
+"email": "info@tidewayinvestment.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"final_url": "https://tidewaywealth.co.uk",
+"linkedin": "https://www.linkedin.com/company/1574379",
+"note": "",
+"pages": 1,
+"phone": "442031436100",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.tidewayinvestment.co.uk"
+},
 "site:tiger.bet.br": {
 "checked": "2026-11-12",
 "email": "",
@@ -210983,6 +214894,19 @@
 "v": 2,
 "website": "https://WWW.TOKENTIR.COM"
 },
+"site:tokiomarineam.com": {
+"checked": "2026-11-13",
+"email": "tmalgdpr@tokiomarine.co.uk",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.tokiomarineam.com/uk"
+},
 "site:tokrava.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -211225,6 +215149,19 @@
 "v": 2,
 "website": "https://WWW.TOPPAY.COM"
 },
+"site:topstonecap.com": {
+"checked": "2026-11-13",
+"email": "info@topstonecap.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/topstonecapital",
+"note": "",
+"pages": 1,
+"phone": "+4402039806253",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.topstonecap.com"
+},
 "site:topupmoneytransfer.com": {
 "checked": "2026-11-11",
 "email": "",
@@ -211404,6 +215341,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://tpicap.com/tpicap"
+},
+"site:tpt.co.uk": {
+"checked": "2026-11-13",
+"email": "privacy@tpt.co.uk",
+"email_from": "firm website",
+"employees": 200,
+"linkedin": "https://www.linkedin.com/company/tpt-retirement-solutions",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.tpt.co.uk"
 },
 "site:tr.mufg.jp": {
 "checked": "2026-11-11",
@@ -213321,6 +217271,19 @@
 "v": 2,
 "website": "https://www.ttfinance.al"
 },
+"site:ttint.com": {
+"checked": "2026-11-13",
+"email": "info@ttint.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 4,
+"phone": "+442075091000",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.ttint.com"
+},
 "site:ttpmarkets.com": {
 "checked": "2026-11-11",
 "email": "info@ttpmarkets.com",
@@ -213370,6 +217333,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "http://www.tu.bk.mufg.jp/index-tr.html"
+},
+"site:tudorfunds.com": {
+"checked": "2026-11-13",
+"email": "careers@tudor.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "+1 203 863 6700",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.tudorfunds.com"
 },
 "site:tufton.com": {
 "checked": "2026-11-12",
@@ -213574,6 +217550,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.twelvesecuris.com"
+},
+"site:twentyfouram.com": {
+"checked": "2026-11-13",
+"email": "sales@twentyfouram.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "+4402070158944",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://twentyfouram.com"
 },
 "site:twiddlebit.com": {
 "checked": "2026-11-11",
@@ -213873,6 +217862,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.ucanpay.ca"
+},
+"site:ucap-am.uk": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "ConnectionError",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://ucap-am.uk"
 },
 "site:ucapital-am.com": {
 "checked": "2026-11-11",
@@ -214187,6 +218187,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://ultramarinex.com"
+},
+"site:umbracapital.com": {
+"checked": "2026-11-13",
+"email": "info@umbracapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/umbra-partners",
+"note": "",
+"pages": 1,
+"phone": "+4402074601030",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.umbracapital.com"
 },
 "site:umojja.com": {
 "checked": "2026-11-11",
@@ -215497,6 +219510,19 @@
 "v": 2,
 "website": "HTTPS://WWW.VALECARD.COM.BR"
 },
+"site:valence8.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.valence8.com"
+},
 "site:valenspay.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -215535,6 +219561,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.valguard.ca"
+},
+"site:valiance-am.com": {
+"checked": "2026-11-13",
+"email": "investor.relations@valiance-am.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/valiance-advisors",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.valiance-am.com"
 },
 "site:valiantassetmanagement.com": {
 "checked": "2026-11-11",
@@ -215906,6 +219945,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.varengold.de"
+},
+"site:varramore.com": {
+"checked": "2026-11-13",
+"email": "info@varramore.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/varramorepartners",
+"note": "",
+"pages": 2,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.varramore.com"
 },
 "site:varsoviafx.co.uk": {
 "checked": "2026-11-11",
@@ -217418,6 +221470,32 @@
 "v": 2,
 "website": "https://veritasprime.com"
 },
+"site:verition.com": {
+"checked": "2026-11-13",
+"email": "compliancegroup@veritionfund.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/verition",
+"note": "",
+"pages": 2,
+"phone": "203-742-7700",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.verition.com"
+},
+"site:verity.capital": {
+"checked": "2026-11-13",
+"email": "info@verity.capital",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/verity-capital-london",
+"note": "",
+"pages": 1,
+"phone": "+442037276159",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.verity.capital"
+},
 "site:vermoegensbutler.de": {
 "checked": "2026-11-12",
 "email": "info@vermoegensbutler.de",
@@ -217743,6 +221821,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.victoriaprivateinvestment.com"
+},
+"site:victory-hill.com": {
+"checked": "2026-11-13",
+"email": "info@victory-hill.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/victory-hill",
+"note": "",
+"pages": 1,
+"phone": "+442071559570",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.victory-hill.com"
 },
 "site:victoryconquest.com": {
 "checked": "2026-11-12",
@@ -219509,6 +223600,19 @@
 "v": 2,
 "website": "https://vonban.com"
 },
+"site:vontobel.com": {
+"checked": "2026-11-13",
+"email": "contact@vontobel.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/vontobel",
+"note": "",
+"pages": 4,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.vontobel.com/en-int"
+},
 "site:vooo.uk": {
 "checked": "2026-11-12",
 "email": "support@debitway.com",
@@ -219558,6 +223662,17 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.vopenmarket.com"
+},
+"site:voriana.com": {
+"checked": "2026-11-13",
+"email": "",
+"email_from": "firm website",
+"note": "HTTP 403",
+"pages": 0,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.voriana.com"
 },
 "site:vorne.de": {
 "checked": "2026-11-12",
@@ -221034,6 +225149,19 @@
 "v": 2,
 "website": "https://wallex.global"
 },
+"site:walleyecapital.com": {
+"checked": "2026-11-13",
+"email": "compliance-emea@walleyecapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/walleye-trading-advisors",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.walleyecapital.com"
+},
 "site:walleytrade.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -221644,6 +225772,19 @@
 "v": 2,
 "website": "https://www.wellsfargo.com"
 },
+"site:welwingcapital.com": {
+"checked": "2026-11-13",
+"email": "info@welwingcapital.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/welwing-capital-group",
+"note": "",
+"pages": 2,
+"phone": "+85235267523",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.welwingcapital.com"
+},
 "site:wemabank.com": {
 "checked": "2026-11-12",
 "email": "",
@@ -222000,6 +226141,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://whitebit.eu"
+},
+"site:whitecreek.com": {
+"checked": "2026-11-13",
+"email": "info@whitecreek.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.whitecreek.com"
 },
 "site:whitely.hr": {
 "checked": "2026-11-12",
@@ -222681,6 +226835,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://www.wood.cz"
+},
+"site:woodandcompany.co.uk": {
+"checked": "2026-11-13",
+"email": "info@wood.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 1,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://woodandcompany.co.uk"
 },
 "site:woodcore.co": {
 "checked": "2026-11-12",
@@ -223507,6 +227674,19 @@
 "v": 2,
 "website": "https://www.xeppt.com"
 },
+"site:xeqos.com": {
+"checked": "2026-11-13",
+"email": "zac@xeqos.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "",
+"note": "",
+"pages": 3,
+"phone": "",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.xeqos.com"
+},
 "site:xero.com": {
 "checked": "2026-11-12",
 "email": "ceo@xero.com",
@@ -223856,13 +228036,16 @@
 "website": "https://xwardpay.io"
 },
 "site:y-tree.com": {
-"checked": "2026-11-08",
+"checked": "2026-11-13",
 "email": "information@y-tree.com",
 "email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/y-tree",
 "note": "",
 "pages": 1,
 "phone": "+442039288444",
 "phone_from": "firm website",
+"v": 2,
 "website": "https://www.y-tree.com"
 },
 "site:yaasscasino.es": {
@@ -224833,6 +229016,19 @@
 "phone_from": "firm website",
 "v": 2,
 "website": "https://zenvio.ca"
+},
+"site:zephyrusgroup.com": {
+"checked": "2026-11-13",
+"email": "contact@zphrs.com",
+"email_from": "firm website",
+"employees": 0,
+"linkedin": "https://www.linkedin.com/company/zephyrus-partners-limited",
+"note": "",
+"pages": 1,
+"phone": "+44 20 8078 4042",
+"phone_from": "firm website",
+"v": 2,
+"website": "https://www.zephyrusgroup.com"
 },
 "site:zeprapayments.com": {
 "checked": "2026-11-12",
