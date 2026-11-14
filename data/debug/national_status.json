@@ -5,7 +5,7 @@
   "AFA register - e-money institutions": "register is empty (the regulator lists no firms of this type)",
   "AFA register - payment institutions": "ok: 2 firms",
   "AFA register - specialised non-bank credit institutions": "ok: 1 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "AE": {
   "CBUAE register": "ok: 240 firms",
@@ -24,12 +24,12 @@
   "BCRA payment account providers": "ok: 239 firms",
   "BCRA payment initiators": "ok: 5 firms",
   "CNV register of virtual asset service providers (PSAV)": "ok: 83 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "AU": {
   "APRA ADIs and payment facilities": "ok: 126 firms",
   "AUSTRAC digital currency exchange register": "timeout",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "AU (CFD)": {
   "ASIC AFS licensees that make a market in derivatives / FX": "read failed: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt",
@@ -37,17 +37,17 @@
  },
  "AW": {
   "CBA institutions under supervision": "ok: 18 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "BD": {
   "BB mobile financial services providers": "ok: 14 firms",
   "BB payment system operators": "probe saved earlier this week",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "www.bb.org.bd homepage": "probe saved earlier this week"
  },
  "BN": {
   "BDCB list of licensees (banks, finance companies, payment system operators, money changers, remitters)": "ok: 54 firms from 15 pages",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "BR (iGaming)": {
   "Brazil - companies authorised for fixed-odds betting and online games (SPA)": "ok: 76 firms",
@@ -75,7 +75,7 @@
   "Central Bank of Belize - international banks": "ok: 3 firms",
   "Central Bank of Belize - payment service providers": "ok: 1 firms",
   "Central Bank of Belize - remittance service providers": "ok: 4 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "CA (iGaming)": {
   "Kahnawake casino software provider authorizations": "ok: 2 firms",
@@ -88,13 +88,13 @@
   "date": "2026-11-14"
  },
  "CL": {
-  "CMF fintech register (Registro de Prestadores de Servicios Financieros) (probe)": "probe saved (133591 bytes, 0 linked pages)",
+  "CMF fintech register (Registro de Prestadores de Servicios Financieros) (probe)": "probe saved earlier this week",
   "CMF register - bank subsidiaries operating payment cards": "ok: 2 firms",
   "CMF register - non-bank credit card issuers": "ok: 9 firms",
   "CMF register - non-bank prepaid card issuers (e-money)": "ok: 15 firms",
   "CMF register - payment card operators (acquirers)": "ok: 10 firms",
   "CMF register - savings and credit cooperatives": "ok: 7 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "CN": {
   "date": "2026-11-14",
@@ -148,7 +148,7 @@
   "SB financial intermediation entities (banks, savings and loan, credit corporations)": "ok: 46 firms from 5 pages",
   "SB foreign exchange and remittance agents": "ok: 39 firms from 5 pages",
   "SB support entities (card processors, payment networks)": "ok: 6 firms from 5 pages",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "DZ": {
   "Bank of Algeria approved institutions": "probe saved earlier this week",
@@ -156,13 +156,13 @@
  },
  "EC": {
   "Superintendencia de Bancos public register - banks (private, foreign and public)": "ok: 28 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "EG": {
   "FRA register of non-bank financing companies": "ok: 200 firms from 12 pages",
   "FRA registers in the financing sector": "probe saved earlier this week",
   "Licensed ( Institutions / Professions )": "probe saved earlier this week",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "ES (iGaming)": {
   "Spain - DGOJ licensed gambling operators": "ok: 77 firms from 30 pages",
@@ -172,7 +172,7 @@
   "NBE banks": "ok: 33 firms",
   "NBE licensed money transfer agencies": "ok: 82 firms",
   "NBE payment instrument issuers and payment system operators": "ok: 27 firms",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "nbe.gov.et homepage": "probe saved earlier this week"
  },
  "EU (CFD)": {
@@ -195,7 +195,7 @@
  "GE": {
   "NBG register of payment service providers": "ok: 41 firms",
   "NBG register of virtual asset service providers (VASPs)": "ok: 45 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "GG": {
   "GFSC banks": "ok: 10 firms",
@@ -204,7 +204,7 @@
   "Registered Entities (2)": "probe saved earlier this week",
   "Regulated Entities": "probe saved earlier this week",
   "Regulated Entities (2)": "probe saved earlier this week",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "GG (iGaming)": {
   "Alderney category 1 and 2 associate certificates": "ok: 10 firms",
@@ -246,7 +246,7 @@
   "OJK homepage": "probe saved earlier this week",
   "OJK licensed digital financial asset (crypto) traders, exchange, clearing and custodian": "ok: 23 firms",
   "OJK registered ITSK (financial technology) providers": "ok: 18 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "IE (iGaming)": {
   "Gambling Regulatory Authority of Ireland register": "ok: 40 firms",
@@ -307,7 +307,7 @@
   "KoFIU (Korean) VASP reports": "probe saved earlier this week",
   "KoFIU homepage": "probe saved earlier this week",
   "Table of FSS-Supervised Financial Institutions": "probe saved earlier this week",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "KY": {
   "CIMA entity search": "probe saved earlier this week",
@@ -334,7 +334,9 @@
   "date": "2026-11-14"
  },
  "LT": {
-  "date": "2026-11-13"
+  "date": "2026-11-14",
+  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv": "ok: 41 firms",
+  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv": "ok: 72 firms"
  },
  "MC": {
   "AMAF members (Monaco banks)": "ok: 68 firms",
@@ -344,14 +346,14 @@
  "MD": {
   "BNM register of e-money issuers": "HTTP 403",
   "BNM register of payment institutions and postal payment providers": "ok: 4 firms",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "www.bnm.md homepage": "probe saved earlier this week"
  },
  "ME": {
   "CBCG register of banks": "ok: 11 firms",
   "CBCG register of e-money institutions": "read failed: no firms matched",
   "CBCG register of payment institutions": "ok: 5 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "MG": {
   "BFM e-money institutions": "probe saved earlier this week",
@@ -425,11 +427,11 @@
   "BNM principal MSB licensees": "ok: 15 firms",
   "Principal Money Services Business Licensees": "probe saved earlier this week",
   "SC registered digital asset exchanges": "probe saved earlier this week",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "NA": {
   "BoN national payment system participants": "ok: 30 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "NG": {
   "CBN deposit money banks": "ok: 39 firms",
@@ -437,7 +439,7 @@
   "CBN money transfer operators": "ok: 108 firms",
   "SEC digital asset operators (ARIP)": "ok: 2 firms",
   "SEC regulatory incubation participants": "ok: 7 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "NZ (CFD)": {
   "FMA licensed derivatives issuers": "read failed: 403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0",
@@ -446,7 +448,7 @@
  "OM": {
   "CBO licensed banks": "ok: 21 firms",
   "CBO money exchange companies": "ok: 16 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "PE": {
   "Casas de cambio": "probe saved earlier this week",
@@ -466,7 +468,7 @@
   "NBS register of electronic money institutions": "ok: 5 firms",
   "NBS register of payment institutions": "ok: 6 firms",
   "NBS register of virtual currency service providers": "ok: 3 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "SA": {
   "SAMA licensed entities (probe)": "probe saved earlier this week",
@@ -501,7 +503,7 @@
  "SM": {
   "BCSM register of authorised parties - San Marino financial companies": "ok: 8 firms",
   "BCSM register of payment service providers": "ok: 11 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "ST": {
   "BCSTP homepage": "probe saved earlier this week",
@@ -523,7 +525,7 @@
   "BOT money changers": "ok: 1946 firms",
   "BOT payment business providers": "ok: 144 firms",
   "Digital Asset Businesses": "probe saved earlier this week",
-  "date": "2026-11-13",
+  "date": "2026-11-14",
   "ธุรกิจสินทรัพย์ดิจิทัล": "probe saved earlier this week"
  },
  "TL": {
@@ -532,7 +534,7 @@
  },
  "TO": {
   "NRBT licensed financial institutions (banks and foreign exchange dealers)": "ok: 19 firms",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "TR": {
   "BDDK banks": "ok: 66 firms",
@@ -549,7 +551,7 @@
   "Electronic payment institutions": "probe saved earlier this week",
   "FSC virtual asset service providers": "probe saved earlier this week",
   "Financial Institutions Directory": "probe saved earlier this week",
-  "date": "2026-11-13"
+  "date": "2026-11-14"
  },
  "US (iGaming)": {
   "New Jersey internet gaming vendors incl. affiliates and payment firms (DGE list dated March 2020)": "ok: 927 firms",
@@ -561,9 +563,9 @@
   "BCU financial houses": "ok: 1 firms",
   "BCU financial services companies": "ok: 18 firms",
   "BCU funds transfer companies": "ok: 7 firms",
-  "BCU payment system register - e-money issuers (probe)": "probe saved (149730 bytes, 0 linked pages)",
-  "BCU virtual asset service providers (probe - register empty so far)": "probe saved (121425 bytes, 0 linked pages)",
-  "date": "2026-11-13"
+  "BCU payment system register - e-money issuers (probe)": "probe saved earlier this week",
+  "BCU virtual asset service providers (probe - register empty so far)": "probe saved earlier this week",
+  "date": "2026-11-14"
  },
  "WS": {
   "CBS Samoa supervision": "probe saved earlier this week",

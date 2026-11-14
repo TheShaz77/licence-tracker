@@ -1,5 +1,5 @@
 url: https://www.superbancos.gob.ec/bancos/catastro-publico/
-bytes: 178805  starts: b'<!doctyp'
+bytes: 191958  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

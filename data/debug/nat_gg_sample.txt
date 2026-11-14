@@ -1,5 +1,5 @@
 url: https://www.gfsc.gg/industry-sectors/banking/regulated-entities
-bytes: 93179  starts: b'<!DOCTYP'
+bytes: 93707  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['GFSC Ref.', 'Name', 'Licence(s)', 'Filters', '']

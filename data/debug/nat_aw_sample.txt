@@ -1,5 +1,5 @@
 url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
-bytes: 48265  starts: b'\n<!DOCTY'
+bytes: 48267  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
 headers: ['name', 'section']

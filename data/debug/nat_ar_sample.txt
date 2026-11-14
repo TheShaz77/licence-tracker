@@ -1,5 +1,5 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 81387  starts: b'{"succes'
+bytes: 81380  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
@@ -79,7 +79,7 @@ first lines:
 '{"success":true,"tipo_psp":9,"tipo_psp_nombre":"Administrador QR","lang":"es","total":4,"proveedores":[{"codigo":34618,"denominacion_pj":"BANELSIP S.A.","denominacion":"Banelsip","cuit":30710903812,"domicilio":"Lavardén 247<br>CABA (CP: C1437FBE), CABA","localidad":"CABA","provincia":"CABA","codigo_'
 
 url: https://www.cnv.gov.ar/SitioWeb/Reportes/ListadoRegistrosPsav
-bytes: 39487  starts: b'PK\x03\x04\x14\x00\x06\x00'
+bytes: 39490  starts: b'PK\x03\x04\x14\x00\x06\x00'
 error: None
 columns used: {'name': 'Razon Social', 'type': None, 'id': 'Nro. Matricula', 'lei': None, 'city': None, 'date': 'Fecha Alta', 'status': None, 'website': 'Sitio Web', 'email': 'Correo Electronico', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Nro. Matricula', 'Fecha Alta', 'Razon Social', 'Nombre Comercial', 'Descripcion Fiscal', 'ID Fiscal', 'Actividad', 'Sitio Web', 'Correo Electronico']

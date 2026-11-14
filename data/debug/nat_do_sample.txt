@@ -1,5 +1,5 @@
 url: https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/?page={page}
-bytes: 154876  starts: b'\r\n\r\n<htm'
+bytes: 154528  starts: b'\r\n\r\n<htm'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type', 'status']
@@ -16,7 +16,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
 
 url: https://sb.gob.do/supervisados/entidades-de-intermediacion-cambiaria/?page={page}
-bytes: 104652  starts: b'\r\n\r\n<htm'
+bytes: 104304  starts: b'\r\n\r\n<htm'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type', 'status']
@@ -33,7 +33,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
 
 url: https://sb.gob.do/supervisados/otras-entidades/?page={page}
-bytes: 87932  starts: b'\r\n\r\n<htm'
+bytes: 87584  starts: b'\r\n\r\n<htm'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'type', 'require': None}
 headers: ['name', 'type', 'status']
