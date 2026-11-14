@@ -1,10 +1,10 @@
 url: https://www.gamblingcommission.gov.uk/downloads/business-licence-register-licences.csv
-bytes: 499612  starts: b'Account '
+bytes: 500111  starts: b'Account '
 error: None
 columns used: {'name': '(guessed) Licence Account Name', 'type': 'Type', 'id': 'Account Number', 'lei': None, 'city': None, 'date': 'Start Date', 'status': 'Status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': 'End Date', 'exclude': None, 'require': None}
 headers: ['Account Number', 'Licence Number', 'Status', 'Type', 'Activity', 'Start Date', 'End Date', 'Account Number', 'Licence Account Name']
-data rows: 4597  kept: 2336
-type values: [('Non-Remote', 2442), ('Remote', 1619), ('Ancillary Remote', 534)]
+data rows: 4604  kept: 2339
+type values: [('Non-Remote', 2444), ('Remote', 1623), ('Ancillary Remote', 535)]
 first lines:
 'Account Number,Licence Number,Status,Type,Activity,Start Date,End Date'
 '"102","000102-N-000000-000","Pending","Non-Remote","Bingo",,'

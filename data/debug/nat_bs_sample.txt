@@ -1,5 +1,5 @@
-url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
-bytes: 253242  starts: b'%PDF-1.4'
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794596026-q5LUOA.pdf
+bytes: 253167  starts: b'%PDF-1.4'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
 headers: ['reference', 'name', 'type', 'phone', 'section']
@@ -8,8 +8,8 @@ type values: [('Bank & Trust', 39)]
 first lines:
 '(binary)'
 
-url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
-bytes: 253242  starts: b'%PDF-1.4'
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794596026-q5LUOA.pdf
+bytes: 253167  starts: b'%PDF-1.4'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['reference', 'name', 'phone']
@@ -18,8 +18,8 @@ type values: [('', 3)]
 first lines:
 '(binary)'
 
-url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794501662-cbeFkL.pdf
-bytes: 253242  starts: b'%PDF-1.4'
+url: https://cdn.centralbankbahamas.com/tenantcbob_prod/assets/documents/Supervised-Financial-Institutions-List-1794596026-q5LUOA.pdf
+bytes: 253167  starts: b'%PDF-1.4'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'reference', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['reference', 'name', 'phone']

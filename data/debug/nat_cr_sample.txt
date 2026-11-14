@@ -1,5 +1,5 @@
 url: https://www.sugef.fi.cr/entidades_supervisadas/lista_entidades_supervisadas_por_SUGEF.aspx
-bytes: 808293  starts: b'\r\n<!DOCT'
+bytes: 808294  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': '(guessed) Descripción', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Fecha Actualización', 'Descripción', 'Año', 'Tipo de Documento', 'section']
@@ -10,7 +10,7 @@ first lines:
 '<!DOCTYPE html>'
 '<html lang="es">'
 '<head id="ctl00_HeaderMaster">'
-'    <!-- Response Elapsed Time: 15,617-->'
+'    <!-- Response Elapsed Time: 16,2193-->'
 '    <title>'
 '\tLista de entidades supervisadas por la SUGEF'
 '</title><!-- OPEN GRAPH -->'
