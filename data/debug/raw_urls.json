@@ -30,6 +30,11 @@
 "igm_mt__gleif_malta_companies_named_slots.txt": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=slots&page%5Bsize%5D=200&page%5Bnumber%5D={page}",
 "igm_mt__gleif_malta_companies_named_sportsbook.txt": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=MT&filter%5Bfulltext%5D=sportsbook&page%5Bsize%5D=200&page%5Bnumber%5D={page}",
 "igm_mt__mga_licensee_register_probe_app_loads_by_script.html": "https://mgalicenseeregister.mga.org.mt/",
+"nat_ae__dfsa_firms_funds.html": "https://www.dfsa.ae/public-register/funds",
+"nat_ae__dfsa_firms_individuals.html": "https://www.dfsa.ae/public-register/individuals",
+"nat_ae__dfsa_firms_passported_funds.html": "https://www.dfsa.ae/public-register/passport-funds",
+"nat_ae__dfsa_firms_prohibited_restricted_individuals.html": "https://www.dfsa.ae/public-register/prohibited-individuals",
+"nat_ae__dfsa_firms_public_register.html": "https://www.dfsa.ae/public-register/firms",
 "nat_bd__bb_payment_system_operators.html": "https://www.bb.org.bd/en/index.php/financialsystem/psdlist",
 "nat_bs__scb_registrant_licensee_search_probe.html": "https://scb.gov.bs/registrant-licensee-search/",
 "nat_bs__scb_registrant_licensee_search_probe_dare_registrants.pdf": "https://scb.gov.bs/wp-content/uploads/2026/11/DARE-Firms-as-at-31-October-2026-1.pdf",
@@ -98,6 +103,10 @@
 "nat_rs__nbs_payment_e_money_registers_probe_register_of_payment_inst.html": "https://nbs.rs/en/finansijske-institucije/pi-ien/registar-pi",
 "nat_sa__sama_licensed_entities_probe.html": "https://www.sama.gov.sa/en-US/Supervision/LicenseEntities/Pages/default.aspx",
 "nat_sa__sama_licensed_entities_probe_licensed_entities.html": "https://www.sama.gov.sa/en-US/Supervision/LicenseEntities/Pages/default.aspx",
+"nat_sc__collective_investment_scheme_licensed_vasps.html": "https://fsaseychelles.sc/vasp/licensed-vasps",
+"nat_sc__collective_investment_scheme_register_of_ico_and_nfts.html": "https://fsaseychelles.sc/vasp/register-of-ico-and-nfts",
+"nat_sc__collective_investment_scheme_report_suspected_unauthorized_o.html": "https://fsaseychelles.sc/vasp/report-suspected-unauthorized-or-unlicensed-va-vasp-activity",
+"nat_tc__tci_fsc_money_transmitters_tci_fsc_strengthens_global_regula.html": "https://www.tcifsc.tc/news-press-release/tci-fsc-strengthens-global-regulatory-readiness-for-the-digital-asset-era",
 "nat_uy__bcu_payment_system_register_e_money_issuers_probe.html": "https://www.bcu.gub.uy/Sistema-de-Pagos/Paginas/Registro-de-Instituciones.aspx",
 "nat_uy__bcu_virtual_asset_service_providers_probe_register_empty_so_.html": "https://www.bcu.gub.uy/Servicios-Financieros-SSF/Paginas/prov_Serv_Act_Virtuales_Lst.aspx"
 }

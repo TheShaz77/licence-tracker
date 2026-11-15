@@ -1,5 +1,5 @@
 url: https://www.gamblingcontrol.org/applications-guidance/egambling-licensees
-bytes: 623888  starts: b'<!DOCTYP'
+bytes: 623864  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type']
@@ -16,7 +16,7 @@ first lines:
 '  <meta name="generator" content="Wix.com Website Builder"/>'
 
 url: https://www.gamblingcontrol.org/temporary-egambling-licensees
-bytes: 557395  starts: b'<!DOCTYP'
+bytes: 557178  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
@@ -50,7 +50,7 @@ first lines:
 '  <meta name="generator" content="Wix.com Website Builder"/>'
 
 url: https://www.gamblingcontrol.org/category-1-and-2-associate-certificates
-bytes: 579442  starts: b'<!DOCTYP'
+bytes: 578942  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

@@ -1,6 +1,6 @@
 {
-  "finished": "2026-11-15 03:06",
-  "sources_status": "fca: ok (0 changes); fca_cfd: baseline 3021; eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: not due; mica: ok (0 changes); ch_sro: baseline 0; za_tppp: ok (0 changes); za_so: ok (0 changes); za_pchso: ok (0 changes); za_banks: ok (0 changes); za_adla: not due; za_casp: ok (0 changes); 105 sources deferred to the next run",
-  "changes": 0,
+  "finished": "2026-11-15 14:52",
+  "sources_status": "fca: ok (0 changes); fca_cfd: ok (0 changes); eba: ok (0 changes); fintrac: ok (0 changes); boc: ok (0 changes); finma: ok (0 changes); fincen_os: ok (0 changes); mica: ok (0 changes); ch_sro: baseline 0; za_tppp: not due; za_so: not due; za_pchso: not due; za_banks: not due; za_adla: ok (0 changes); za_casp: not due; br_bcb: ok (0 changes); igm_gg: ok (0 changes); igm_cw: ok (0 changes); cfd_cy: ok (0 changes); igm_ie: ok (0 changes); igm_dk: ok (0 changes); igm_it: ok (0 changes); cfd_eu: ok (0 changes); cfd_sc: ok (0 changes); cfd_bs: ok (0 changes); cfd_ch: ok (0 changes); igm_gb: ok (2 changes); igm_im: ok (0 changes); igm_ca: ok (0 changes); igm_br: ok (0 changes); igm_es: ok (0 changes); nat_sg: ok (0 changes); igm_fr: ok (0 changes); igm_de: ok (0 changes); igm_us: ok (0 changes); nat_ae: ok (0 changes); nat_in: ok (0 changes); nat_tr: ok (0 changes); nat_co: ok (0 changes); nat_cr: ok (0 changes); nat_bs: ok (0 changes); nat_tc: ok (0 changes); nat_je: ok (0 changes); nat_im: ok (0 changes); nat_mc: ok (0 changes); nat_mn: ok (0 changes); nat_fj: ok (0 changes); nat_mw: ok (0 changes); nat_sc: ok (0 changes); nat_gm: ok (0 changes); nat_ng: ok (0 changes); nat_lt: ok (0 changes); nat_my: ok (0 changes); nat_au: ok (0 changes); nat_kr: ok (0 changes); nat_th: ok (0 changes); nat_id: ok (0 changes); nat_om: ok (0 changes); 62 sources deferred to the next run",
+  "changes": 2,
   "problems": []
 }
