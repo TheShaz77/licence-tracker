@@ -106642,6 +106642,15 @@
 "https://firefish.io"
 ]
 },
+"q:Q138011545": {
+"checked": "2026-11-16",
+"linkedin": "https://www.linkedin.com/company/tabtrade",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.tabtrade.com"
+]
+},
 "q:Q1385106": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -107135,6 +107144,15 @@
 "http://www.vb-bia.de"
 ]
 },
+"q:Q142084874": {
+"checked": "2026-11-16",
+"linkedin": "https://www.linkedin.com/company/born2trade",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://born2trade.com"
+]
+},
 "q:Q142089101": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/optaxe",
@@ -107162,6 +107180,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.reisebank.de"
+]
+},
+"q:Q142115521": {
+"checked": "2026-11-16",
+"linkedin": "https://www.linkedin.com/company/nexttrade-trading",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://nexttrade.com"
 ]
 },
 "q:Q142120723": {
@@ -243638,6 +243665,7 @@
 "ME": "2026-11-16",
 "MN": "2026-11-16",
 "MT": "2026-11-16",
+"MU": "2026-11-16",
 "MW": "2026-11-16",
 "MY": "2026-11-16",
 "NA": "2026-11-16",
@@ -257659,6 +257687,10 @@
 "cfd_eu:unicreditbanksa": "Q4682050",
 "cfd_eu:vistabankromaniasa": "Q12734873",
 "cfd_eu:vivibancaspa": "Q125266757",
+"cfd_mu:C118023331": "Q56395801",
+"cfd_mu:GB24203511": "Q142084874",
+"cfd_mu:GB25204563": "Q142115521",
+"cfd_mu:GB26206419": "Q138011545",
 "cfd_sc:atglobalmarketssclimited": "Q56395801",
 "cfd_sc:equitibrokerageseychellesltd": "Q141519944",
 "eba:10055700": "Q7689088",
