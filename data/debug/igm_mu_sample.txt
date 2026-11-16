@@ -93,6 +93,23 @@ type values: [('', 1)]
 first lines:
 '(binary)'
 
+url: https://booksystem.mu/
+bytes: 73608  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">'
+'    <head>'
+'        <meta http-equiv="X-UA-Compatible" content="IE=edge">'
+'            <meta name="viewport" content="width=device-width, initial-scale=1">'
+'                                <!-- head -->'
+'                <base href="https://booksystem.mu/" />'
+'\t<meta http-equiv="content-type" content="text/html; charset=utf-8" />'
+
 url: https://gra.govmu.org/gra/?page_id=1382
 bytes: 113826  starts: b'<!DOCTYP'
 error: None
@@ -190,3 +207,139 @@ data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
 '(binary)'
+
+url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+bytes: 27348  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
+'<html>'
+''
+'<head>'
+'    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+'            '
+'<title>SIC | Hospitality and Entertainment Cluster</title>'
+'<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
+
+url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+bytes: 27348  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
+'<html>'
+''
+'<head>'
+'    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+'            '
+'<title>SIC | Hospitality and Entertainment Cluster</title>'
+'<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
+
+url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+bytes: 27348  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
+'<html>'
+''
+'<head>'
+'    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+'            '
+'<title>SIC | Hospitality and Entertainment Cluster</title>'
+'<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
+
+url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+bytes: 27348  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">'
+'<html>'
+''
+'<head>'
+'    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />'
+'            '
+'<title>SIC | Hospitality and Entertainment Cluster</title>'
+'<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
+
+url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
+bytes: 120380  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="fr">'
+''
+'<head>'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1">'
+'    <meta name="csrf-token" content="vDWjyQWlL3xvAvKnxYZQg4OiJ0Mer5u2JGxUowOx">'
+''
+
+url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+bytes: 270265  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'Port Louis,'
+'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
+'$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
+''
+'<p>Le litige opposant des bookmakers à la Gambling Regulatory Authority (GRA) a été appelé en Cour suprême, le lundi 22 avril 2019, devant le chef juge Eddy Balancy. Ils contestent la décision de l’organisme de ne pas renouveler leur permis d’opération comme «&nbsp;off-course bookmaker&nbsp;» pour l'
+''
+'<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
+
+url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+bytes: 270131  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'Port Louis,'
+'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
+'$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
+''
+'<p>Le litige opposant des bookmakers à la Gambling Regulatory Authority (GRA) a été appelé en Cour suprême, le lundi 22 avril 2019, devant le chef juge Eddy Balancy. Ils contestent la décision de l’organisme de ne pas renouveler leur permis d’opération comme «&nbsp;off-course bookmaker&nbsp;» pour l'
+''
+'<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
+
+url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+bytes: 270131  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'Port Louis,'
+'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
+'$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
+''
+'<p>Le litige opposant des bookmakers à la Gambling Regulatory Authority (GRA) a été appelé en Cour suprême, le lundi 22 avril 2019, devant le chef juge Eddy Balancy. Ils contestent la décision de l’organisme de ne pas renouveler leur permis d’opération comme «&nbsp;off-course bookmaker&nbsp;» pour l'
+''
+'<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
