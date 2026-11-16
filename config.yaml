@@ -55,7 +55,7 @@ sources:
         - [100000, 499999]        # long-established brokers (IG, CMC, City Index ...)
 
   fca_cfd:        # UK CFD / FX providers found by the FCA scan above (shown in "United Kingdom (CFD)")
-    enabled: true
+    enabled: false   # CFDs are tracked only for MU, VG, SC, BS, VC, AU, CH, NZ and BM (Nov 2026)
 
   pra:            # UK: banks and building societies (PRA monthly lists)
     enabled: false   # banks no longer tracked
@@ -2169,48 +2169,6 @@ wiki_banks:
 # The UK comes from the FCA scan (sources: fca: cfd:).
 cfd_min_hours: 24
 cfd:
-  EU:
-    regulator: ESMA register
-    files:
-    - label: ESMA register - investment firms dealing on own account (all EEA)
-      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20on%20own%20account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
-      fallback_urls:
-      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20On%20Own%20Account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
-      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7Dac_serviceName%3A*own%5C%20account*&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
-      name_column: ae_entityName
-      id_column: ae_lei
-      lei_column: ae_lei
-      country_column: ae_homeMemberState
-      regulator_column: ae_competentAuthority
-      address_column: ae_headOfficeAddress
-      website_column: ae_website
-      status_column: ae_status
-      date_column: ae_authorisationNotificationDateStr
-      exclude_column: ae_officeType
-      exclude_pattern: branch
-      licence_type: Investment firm - dealing on own account (MiFID)
-      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
-  CY:
-    regulator: CySEC
-    files:
-    # CySEC's own site disallows automated access (robots.txt); the same firms are on the ESMA
-    # register, which CySEC reports them to (every Cyprus Investment Firm is a MiFID investment firm)
-    - label: Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC
-      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=*:*&fq=ae_entityTypeCode%3AMIF&fq=ae_homeMemberState%3Acyprus&wt=json&rows=5000
-      name_column: ae_entityName
-      lei_column: ae_lei
-      address_column: ae_headOfficeAddress
-      website_column: ae_website
-      status_column: ae_status
-      date_column: ae_authorisationNotificationDateStr
-      exclude_column: ae_officeType
-      exclude_pattern: branch
-      licence_type: Cyprus Investment Firm (CySEC, via ESMA register)
-      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
-  # Mauritius: the FSC's register moved to a new site (opr.fscmauritius.org) that shows 50 firms per page and
-  # only turns pages through its own in-page requests, so the investment dealers (the licence CFD brokers
-  # hold) can't be listed completely yet. Left out rather than shown half-complete.
-
   MU:
     regulator: FSC
     files:
@@ -3242,26 +3200,116 @@ cfd:
         dealing: Securities firm - dealing as agent or principal (SCB)
   AU:
     regulator: ASIC
+    # ASIC's licensee list is only published on data.gov.au, whose robots.txt blocks all automated
+    # access. These are brokers that state their AFSL number on their own websites.
     files:
-    - label: ASIC AFS licensees that make a market in derivatives / FX
-      page:
-      - https://data.gov.au/data/dataset/asic-afs-licensee
-      - https://data.gov.au/data/dataset/asic-afs-licensee/resource/d98a113d-6b50-40e6-b65f-2612efc877f4
-      - https://www.data.gov.au/data/dataset/asic-afs-licensee/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc
-      - https://data.gov.au/data/api/3/action/package_show?id=asic-afs-licensee
-      link_pattern: afs_lic_\d{6}\.(csv|tsv)
-      fallback_urls:     # last known copies, used if no newer link can be found
-      - https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/d98a113d-6b50-40e6-b65f-2612efc877f4/download/afs_lic_202602.csv
-      - https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv
-      name_column: AFS_LIC_NAME
-      id_column: AFS_LIC_NUM
-      date_column: AFS_LIC_START_DT
-      city_column: AFS_LIC_ADD_LOCAL
-      require_column: AFS_LIC_CONDITION
-      require_pattern: '^(?=.*make a market)(?=.*(derivative|foreign exchange)).*'
-      name_exclude: energy|power|electric|\bgas\b|hydro|\bwater\b|grain|agri|mining|resources|superannuation|insurance|\bfuel|petroleum|\boil\b
-      licence_type: AFS licence - market maker in derivatives / FX (ASIC)
-      register_url: https://connectonline.asic.gov.au/RegistrySearch/
+    - label: 'Eightcap Pty Ltd - AFSL 391441'
+      url: 'https://www.eightcap.com/en/traders/about-us/'
+      format: statement
+      firm: 'Eightcap Pty Ltd'
+      licence_no: '391441'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.eightcap.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'AxiCorp Financial Services Pty Ltd - AFSL 318232'
+      url: 'https://www.axi.com/au'
+      format: statement
+      firm: 'AxiCorp Financial Services Pty Ltd'
+      licence_no: '318232'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.axi.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Gleneagle Securities (Aust) Pty Limited - AFSL 337985'
+      url: 'https://gleneagle.com.au/'
+      format: statement
+      firm: 'Gleneagle Securities (Aust) Pty Limited'
+      licence_no: '337985'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://gleneagle.com.au
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Kohle Capital Markets Pty Ltd - AFSL 489437'
+      url: 'https://www.kcmtradeplus.com.au/'
+      format: statement
+      firm: 'Kohle Capital Markets Pty Ltd'
+      licence_no: '489437'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.kcmtradeplus.com.au
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'MEX Australia Pty Ltd - AFSL 416279'
+      url: 'https://multibank.exchange/en/about/regulations'
+      format: statement
+      firm: 'MEX Australia Pty Ltd'
+      licence_no: '416279'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://multibank.exchange
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Mitrade Global Pty Ltd - AFSL 398528'
+      url: 'https://www.mitrade.com/en'
+      format: statement
+      firm: 'Mitrade Global Pty Ltd'
+      licence_no: '398528'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.mitrade.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Pepperstone Group Limited - AFSL 414530'
+      url: 'https://pepperstone.com/en-au'
+      format: statement
+      firm: 'Pepperstone Group Limited'
+      licence_no: '414530'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://pepperstone.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Spec Capital Group Pty Ltd - AFSL 700136'
+      url: 'https://speccapitalgroup.com/'
+      format: statement
+      firm: 'Spec Capital Group Pty Ltd'
+      licence_no: '700136'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://speccapitalgroup.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Zero Markets Australia Pty Ltd - AFSL 313016'
+      url: 'https://www.zeromarkets.com/'
+      format: statement
+      firm: 'Zero Markets Australia Pty Ltd'
+      firm_match: 'Zero Markets Australia'
+      licence_no: '313016'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.zeromarkets.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Trademax Australia Limited - AFSL 436416'
+      url: 'https://www.tmgm.com/en'
+      format: statement
+      firm: 'Trademax Australia Limited'
+      licence_no: '436416'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.tmgm.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Totality Wealth Limited (formerly Saxo Capital Markets (Australia)) - AFSL 280372'
+      url: 'https://www.totality.com.au'
+      format: statement
+      firm: 'Totality Wealth Limited (formerly Saxo Capital Markets (Australia))'
+      firm_match: 'Totality Wealth Limited'
+      licence_no: '280372'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.totality.com.au
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'OANDA Australia Pty Ltd - AFSL 412981'
+      url: 'https://www.oanda.com/au-en/'
+      format: statement
+      firm: 'OANDA Australia Pty Ltd'
+      licence_no: '412981'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.oanda.com
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
+    - label: 'Interactive Brokers Australia Pty Ltd - AFSL 453554'
+      url: 'https://www.interactivebrokers.com.au/en/home.php'
+      format: statement
+      firm: 'Interactive Brokers Australia Pty Ltd'
+      firm_match: 'Interactive Brokers Australia'
+      licence_no: '453554'
+      regulator_match: '\bASIC\b|Australian Securities|Australian Financial Services Licen'
+      website: https://www.interactivebrokers.com.au
+      licence_type: 'Australian Financial Services Licence holder (ASIC) - as stated by the firm'
   NZ:
     regulator: FMA
     files:
@@ -3272,6 +3320,14 @@ cfd:
       row_regex: '^(?P<name>[^,]{3,150}?)(?:\s*\([^)]*\))?,\s*(?:(?P<id>FSP\d+),\s*)?[^.]{0,200}?derivatives issuer'
       licence_type: Licensed derivatives issuer (FMA)
       register_url: https://www.fma.govt.nz/business/licensed-providers/
+    - label: 'AxiCorp Financial Services Pty Ltd - NZ derivatives issuer licence (FSP 518226)'
+      url: 'https://www.axi.com/au'
+      format: statement
+      firm: 'AxiCorp Financial Services Pty Ltd'
+      licence_no: '518226'
+      regulator_match: 'Derivatives Issuer'
+      website: https://www.axi.com
+      licence_type: 'Derivatives issuer licence (FMA New Zealand) - as stated by the firm'
   CH:
     regulator: FINMA
     files:
@@ -3283,6 +3339,78 @@ cfd:
       type_patterns:
         securities (firm|dealer): Securities firm (FINMA)
       register_url: https://www.finma.ch/en/finma-public/authorised-institutions-individuals-and-products/
+  VG:
+    regulator: BVI FSC
+    # The BVI FSC website blocks automated access (403). These are brokers that state their BVI FSC
+    # investment business licence number on their own websites.
+    files:
+    - label: 'BCR Co Pty Ltd - BVI FSC licence SIBA/L/19/1122'
+      url: 'https://cfds.thebcr.com/'
+      format: statement
+      firm: 'BCR Co Pty Ltd'
+      licence_no: 'SIBA/L/19/1122'
+      website: https://cfds.thebcr.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'FIBO Group, Ltd. - BVI FSC licence SIBA/L/13/1063'
+      url: 'https://www.fibogroup.com/'
+      format: statement
+      firm: 'FIBO Group, Ltd.'
+      firm_match: 'FIBO Group'
+      licence_no: 'SIBA/L/13/1063'
+      website: https://www.fibogroup.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'FTD Limited - BVI FSC licence SIBA/L/19/1123'
+      url: 'https://www.ftdsystem.com/'
+      format: statement
+      firm: 'FTD Limited'
+      licence_no: 'SIBA/L/19/1123'
+      website: https://www.ftdsystem.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'IFCMARKETS. CORP. - BVI FSC licence SIBA/L/14/1073'
+      url: 'https://www.ifcmarkets.com/'
+      format: statement
+      firm: 'IFCMARKETS. CORP.'
+      firm_match: 'IFCMARKETS'
+      licence_no: 'SIBA/L/14/1073'
+      website: https://www.ifcmarkets.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'Trive International Limited - BVI FSC licence SIBA/L/14/1066'
+      url: 'https://www.trive.com/'
+      format: statement
+      firm: 'Trive International Limited'
+      firm_match: 'Trive International'
+      licence_no: 'SIBA/L/14/1066'
+      website: https://www.trive.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'Z Trading & Technology Inc - BVI FSC licence SIBA/L/23/1162'
+      url: 'https://zitaplus.com/'
+      format: statement
+      firm: 'Z Trading & Technology Inc'
+      firm_match: 'Z Trading & Technology'
+      licence_no: 'SIBA/L/23/1162'
+      website: https://zitaplus.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+    - label: 'Zooe Global Ltd - BVI FSC licence SIBA/L/21/1139'
+      url: 'https://zooe.com/'
+      format: statement
+      firm: 'Zooe Global Ltd'
+      licence_no: 'SIBA/L/21/1139'
+      website: https://zooe.com
+      licence_type: 'Investment business licence (BVI FSC) - as stated by the firm'
+  VC:
+    regulator: SVG FSA
+    # St Vincent & the Grenadines' FSA does not license forex/CFD brokers; brokers there are companies
+    # registered with it. Listed where the firm's own website gives its SVG registration.
+    files:
+    - label: 'Land Prime (SVG) - SVG company registration 23627 IBC 2016'
+      url: 'https://www.landprime.com/en-GB'
+      format: statement
+      firm: 'Land Prime (SVG)'
+      licence_no: '23627 IBC 2016'
+      regulator_match: 'St\.? Vincent'
+      website: https://www.landprime.com
+      licence_type: 'Company registered in St Vincent & the Grenadines (no forex/CFD licence exists there) - as stated by the firm'
+
 igaming:
   GB:
     regulator: Gambling Commission
