@@ -3567,12 +3567,12 @@ igaming:
       statement_by: firm's own website
       licence_type: Bookmaker - local horse racing by remote communication (GRA Mauritius)
     - label: Lottotech Ltd - GRA national lottery licence
-      url: https://www.lottotech.mu/about-us/
+      url: https://gra.govmu.org/gra/?page_id=1382
       format: statement
       firm: Lottotech Ltd
       website: https://www.lottotech.mu
-      statement: 'Gambling Regulatory Authority \(GRA\) grants Lottotech the licen[cs]e to operate the Mauritius National Lottery'
-      statement_by: firm's own website
+      statement: 'registered \d[\d,]* retailers for Lottotech Ltd'
+      statement_by: the GRA's own licensees page
       licence_type: Lottery operator - Mauritius National Lottery (GRA Mauritius)
     - label: SIC Management Services Co Ltd (Casinos of Mauritius) - 4 state casinos
       url: https://www.casinosofmauritius.mu/about-us
@@ -3582,6 +3582,46 @@ igaming:
       statement: 'SIC MANAGEMENT SERVICES CO LTD.{0,300}four casinos'
       statement_by: the Casinos of Mauritius website
       licence_type: Casino operator - the 4 State Investment Corporation casinos (licences confirmed in GRA Annual Report 2022/23)
+    - label: Silver Sports Ltd - GRA bookmaker licence (football)
+      url: https://silversportsltd.mu/
+      format: statement
+      firm: Silver Sports Ltd
+      website: https://silversportsltd.mu
+      statement: 'Silver Sports Ltd is licen[cs]ed and regulated by the Mauritius Gambling Regulatory Authority'
+      licence_type: Bookmaker - football betting (GRA Mauritius)
+    - label: SMS Pariaz Ltd - GRA licence (firm's website)
+      url: https://smspariaz.com/
+      format: statement
+      firm: SMS Pariaz Ltd
+      website: https://smspariaz.com
+      statement: 'SMS PARIAZ LTD is licen[cs]ed and regulated by the Mauritius Gambling Regulatory Authority'
+      licence_type: Bookmaker - betting by SMS (GRA Mauritius)
+    - label: SMS Pariaz Ltd - GRA conditions of licence (local horse racing by SMS)
+      url: https://gra.govmu.org/gra/wp-content/uploads/2021/02/Conditions-for-SMS-PARIAZ-LTD-Bookmaker-Local-Horse-Race.pdf
+      format: statement
+      firm: SMS Pariaz Ltd
+      website: https://smspariaz.com
+      statement: 'Bookmaker conducting fixed odds betting on local race through remote communication \(SMS\)'
+      statement_by: the GRA's conditions of licence for SMS Pariaz Ltd
+      licence_type: Bookmaker - local horse racing by remote communication / SMS (GRA Mauritius)
+    - label: Bet 593 Ltd - licences suspended by the GRA (March 2026)
+      page: https://gra.govmu.org/gra/?rest_route=/wp/v2/media&search=BET%20593&mime_type=application/pdf
+      link_pattern: 'SUSPENSION-OF-BET-593-LTD[^"]*\.pdf'
+      format: statement
+      firm: Bet 593 Ltd
+      statement: 'SUSPENSION OF BET 593 LTD LICENCES'
+      statement_by: a GRA press communique
+      inactive_pattern: SUSPENSION
+      licence_type: Bookmaker - football betting incl. remote (GRA Mauritius) - SUSPENDED
+    - label: MACH Book Co Ltd - GRA licence expired (August 2026)
+      page: https://gra.govmu.org/gra/?rest_route=/wp/v2/media&search=MACH&mime_type=application/pdf
+      link_pattern: 'EXPIRATION-DU-PERMIS[^"]*MACH[^"]*\.pdf'
+      format: statement
+      firm: MACH Book Co Ltd
+      statement: 'MACH Book Co Ltd ne d.tient plus de licence valide'
+      statement_by: a GRA press communique
+      inactive_pattern: ne d.tient plus
+      licence_type: Bookmaker - fixed odds on local horse racing at Champ de Mars (GRA Mauritius) - EXPIRED
   KM:
     regulator: Anjouan Gaming
     files:
