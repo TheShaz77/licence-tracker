@@ -905,7 +905,7 @@ function setLetterSpace(val) {
   <div class="container_12">    
       <div class="grid_9" style="width: 833px !important; ">
           
-          <h2><span class="blue">More</span> Links :</h2>
+          <h2><span class="blue">More</span> Links </h2>
           
 		<ul class="footerlist" style="column-count:4">
                   <li ><a href="/Scripts/HolidayMatrixDisplay.aspx">Bank Holidays</a></li>
@@ -924,7 +924,7 @@ function setLetterSpace(val) {
                   <li><a target="_blank" href="https://opportunities.rbi.org.in/scripts/index.aspx">Opportunities<span>@</span>RBI</a></li>
                   <li><a href="/Scripts/rbi_clarification.aspx">RBI Clarifications</a></li>
  		<li><a target="_blank" href="https://rbikehtahai.rbi.org.in/">RBI Kehta Hai</a></li>
-                  <li><a href="https://rbidocs.rbi.org.in/rdocs/content/pdfs/Utkarsh202910042026.pdf" target="_blank">RBI’s Vision and Values <img src="../Images/pdf.gif" alt="PDF document" style="padding-bottom: 4px; width:12px; border:0; vertical-align:middle;"> (652 KB)</a></li>
+                  <li><a href="https://rbidocs.rbi.org.in/rdocs/content/pdfs/Utkarsh202910042026.pdf" target="_blank">RBI’s Vision and Values <img src="../Images/pdf.gif" alt="PDF document" style="padding-bottom: 4px; width:12px; border:0;vertical-align: middle;"> (652 kb)</a></li>
                   <li><a href="/Scripts/Righttoinfoact.aspx">Right to Information Act</a></li>
                   <li><a href="/Scripts/BS_ViewTenders.aspx">Tenders</a></li>
                   
@@ -952,7 +952,7 @@ function setLetterSpace(val) {
 
           <li>
               <a href="https://instagram.com/reservebankofindia" class="videos" target="_blank">
-                  <img src="/images/Instagram.jpg" alt="Instagram Icon" class="videos" style="padding-left: 5%; width:14px;">Instagram
+                  <img src="/images/Instagram.jpg"  alt="Instagram Icon" class="videos" style="padding-left: 5%; width:14px;">Instagram
               </a>
           </li>
           <li style="float: left;"><a href="https://www.facebook.com/RBIsays" class="videos" target="_blank"><img src="/images/Facebook.jpg" style="width:14px;" alt="Facebook Icon" class="videos">Facebook</a></li>
@@ -962,7 +962,7 @@ function setLetterSpace(val) {
               </a>
           </li>
       </ul>
-	<a href="https://www.india.gov.in" class="videos" target="_blank">
+	<a href="https://www.india.gov.in" class="videos" target="_blank" >
                   <img src="/images/indiaGov.png" alt="National Portal of India logo" class="">
               </a>
     </div>
@@ -975,11 +975,11 @@ function setLetterSpace(val) {
         <div class="clearfix"></div>
 
         <div class="grid_6 pull_left">Website owned and managed by Reserve Bank of India. Contact us on helpdoc[at]rbi[dot]org[dot]in</div>
-        <div class="grid_5 pull_right">Website last updated date: Nov 09, 2026</div>
+        <div class="grid_5 pull_right">Website last updated date: Nov 16, 2026</div>
         <div class="clearfix"></div>
 	<div class="grid_6 pull_left"><a href="https://www.rbi.org.in/scripts/wim.aspx">Web Information Manager</a></div>
 	<div class="grid_5 pull_right"><a href="https://rbidocs.rbi.org.in/rdocs/content/pdfs/Accessibility20012026.pdf" target="_blank">Accessibility Statement
-	<img alt="PDF - Accessibility Statement" style="padding: 1px; width:16px; border:0; vertical-align:middle;" src="../Images/pdf.gif" > (133 KB)
+	<img alt="PDF - Accessibility Statement" style="padding: 1px; width:16px; border:0; vertical-align: middle;" src="../Images/pdf.gif" > (133 KB)
 	</a><span aria-hidden="true"> |</span><a href="/scripts/ScreenReader.aspx" title="Information related to screen reader">Screen Reader and Accessibility Help</a></div>
 	<div class="clearfix"></div>
         <div class="grid_12 pull_left">Supports: Google Chrome 147+ | Firefox 150+ | Microsoft Edge Version 147+ | Safari 17+</div>
@@ -1365,7 +1365,7 @@ function linkMessage(){
 	const link = event.target.closest('a[target="_blank"]');
 	if(link){ 
 		event.preventDefault();
-		const docRegx = /\.(pdf|docx?|xlsx?|zip?|xls|doc)$/i;
+		const docRegx = /\.(pdf|docx?|xlsx?|zip?|doc|xls)$/i;
 		if(docRegx.test(link)){
 			if(/\.pdf$/i.test(link))
 			{	
@@ -1398,8 +1398,7 @@ function linkMessage(){
 				window.open(link.href,"_blank");}
 			}
 		}
-
-		else 
+		else
 		if(confirm("This link will open in a new browser tab. Do you want to continue?")){
 			window.open(link.href,"_blank");
 		}
@@ -1418,7 +1417,7 @@ function linkMessage(){
 }
 
 </script>
-<script >
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -1439,9 +1438,9 @@ document.querySelectorAll('table.tablebg').forEach(table => {
     });
 
     if (!hasInPageAnchorsInThisTableOnly) {
-       // table.setAttribute('role', 'presentation');
-       //} else {
-       //    table.removeAttribute('role'); 
+    //    table.setAttribute('role', 'presentation');
+    //} else {
+    //    table.removeAttribute('role'); 
 	if(table.closest('td')){
 	if(table.querySelector('th'))
 	{	
@@ -1539,7 +1538,7 @@ const breadcrumbList = document.querySelector('.breadcrumbs');
 		if($('.breadcrumbs li').last().find('a').length>0)
 		{			
 			const $a = $('.breadcrumbs li').last().find('a');
-			$('<span>',{class: $a.attr('class'), text: $a.text()}).replaceAll($a).attr('aria-current', 'page').css('background','none');
+			$('<span>',{class: $a.attr('class'), text: $a.text()}).replaceAll($a).attr('aria-current', 'page').css('background','none');;
 		}
 		
 		if($('.breadcrumbs li').last().find('span').length>0)
@@ -1550,7 +1549,7 @@ const breadcrumbList = document.querySelector('.breadcrumbs');
 				$('.breadcrumbs li').last().find('span').removeAttr('aria-current');				
 			}
 			else{
-				$('.breadcrumbs li').last().find('span').filter(function(){ return $(this).attr('role')!=='presentation';}).last().attr('aria-current', 'page').css('background','none');					
+				$('.breadcrumbs li').last().find('span').filter(function(){ return $(this).attr('role')!=='presentation';}).last().attr('aria-current', 'page').css('background','none');;					
 			}		
 		}
 		$('.breadcrumbs li').filter(function(){ return $.trim($(this).text())!=="";}).removeAttr('role','presentation'); 
@@ -1579,7 +1578,7 @@ setLetterSpace(false);//]]>
 </html>
 <script type="text/javascript" src="/js/plugins.js"></script>
 <script type="text/javascript" src="/js/script.js"></script>
-<script id="f5_cspm">(function(){var f5_cspm={f5_p:'KJBILLNJGKEIPLJHPDBNGEDCDGAIACIDAPBCJLNBBHBGBPBJDHHPLKFFJBPKEGNFODABKIPGAABGFEPNDAGAIKELAABDANPOOALNMGHCOFOAFKHIOKFDHKNPIGLBLFDM',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,40,(latency>>8));str=f5_cspm.set_byte(str,41,(latency&0xff));str=f5_cspm.set_byte(str,35,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr0455741970aaaaaaaaaaaaaaaa_cspm_='+encodeURIComponent(cookie_val)+';path=/;'+'';}
+<script id="f5_cspm">(function(){var f5_cspm={f5_p:'JKMALHIMEBAFNFEHFEMGACACOBJBPEJIEKHHNLCPMBENADOFFNCJMJAOOAFNEDONFDEBNHOOAAODDPECPNEAJEJJAAPAAOJOGHMKKEMGJIKBMPEJAHKPEIEAPHMJCDBB',setCharAt:function(str,index,chr){if(index>str.length-1)return str;return str.substr(0,index)+chr+str.substr(index+1);},get_byte:function(str,i){var s=(i/16)|0;i=(i&15);s=s*32;return((str.charCodeAt(i+16+s)-65)<<4)|(str.charCodeAt(i+s)-65);},set_byte:function(str,i,b){var s=(i/16)|0;i=(i&15);s=s*32;str=f5_cspm.setCharAt(str,(i+16+s),String.fromCharCode((b>>4)+65));str=f5_cspm.setCharAt(str,(i+s),String.fromCharCode((b&15)+65));return str;},set_latency:function(str,latency){latency=latency&0xffff;str=f5_cspm.set_byte(str,40,(latency>>8));str=f5_cspm.set_byte(str,41,(latency&0xff));str=f5_cspm.set_byte(str,35,2);return str;},wait_perf_data:function(){try{var wp=window.performance.timing;if(wp.loadEventEnd>0){var res=wp.loadEventEnd-wp.navigationStart;if(res<60001){var cookie_val=f5_cspm.set_latency(f5_cspm.f5_p,res);window.document.cookie='f5avr0455741970aaaaaaaaaaaaaaaa_cspm_='+encodeURIComponent(cookie_val)+';path=/;'+'';}
 return;}}
 catch(err){return;}
 setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')

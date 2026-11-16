@@ -9,9 +9,9 @@
  },
  "AE": {
   "CBUAE register": "ok: 240 firms",
-  "DFSA firms": "probe saved (70580 bytes, 6 linked pages)",
+  "DFSA firms": "probe saved (70130 bytes, 6 linked pages)",
   "VARA register page": "ok: 61 firms",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "AR": {
   "BCRA EFT networks": "ok: 3 firms",
@@ -59,7 +59,7 @@
   "CBOB supervised institutions - money transmission service providers": "ok: 5 firms",
   "SCB register of digital asset businesses (DARE Act)": "ok: 35 firms",
   "SCB registrant / licensee search (probe)": "probe saved earlier this week",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "BS (CFD)": {
   "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
@@ -110,15 +110,15 @@
   "SFC establecimientos bancarios": "ok: 576 firms",
   "SFC homepage": "probe saved (230711 bytes, 7 linked pages)",
   "SFC low-value payment system operators": "ok: 24 firms",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "CR": {
-  "Datos sobre Entidades Fiscalizadas": "probe saved (127498 bytes, 2 linked pages)",
+  "Datos sobre Entidades Fiscalizadas": "probe saved (127496 bytes, 2 linked pages)",
   "Entidades Supervisadas": "probe saved (130060 bytes, 2 linked pages)",
-  "Entidades Supervisadas (2)": "probe saved (130053 bytes, 2 linked pages)",
+  "Entidades Supervisadas (2)": "probe saved (130054 bytes, 2 linked pages)",
   "SUGEF exchange houses": "ok: 1 firms",
   "SUGEF supervised entities list": "ok: 18 firms",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "CV": {
   "BCV homepage": "probe saved (257775 bytes, 15 linked pages)",
@@ -137,8 +137,8 @@
   "date": "2026-11-15"
  },
  "DJ": {
-  "BCD homepage": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "BCD homepage": "probe saved (195777 bytes, 15 linked pages)",
+  "date": "2026-11-16"
  },
  "DK (iGaming)": {
   "Denmark - licensed gambling operators": "ok: 44 firms",
@@ -214,8 +214,8 @@
   "date": "2026-11-15"
  },
  "GI (iGaming)": {
-  "Gibraltar licence holders (B2C, B2B, support services)": "disconnected",
-  "date": "2026-11-14"
+  "Gibraltar licence holders (B2C, B2B, support services)": "read failed: no firms matched",
+  "date": "2026-11-16"
  },
  "GM": {
   "CBG approved bureaus": "ok: 82 firms",
@@ -266,14 +266,14 @@
   "date": "2026-11-15"
  },
  "IN": {
-  "List of Agency Banks": "probe saved (67873 bytes, 1 linked pages)",
+  "List of Agency Banks": "probe saved (67876 bytes, 1 linked pages)",
   "List of Approved/Authorised Entities - Payment Sys": "probe saved (211370 bytes, 5 linked pages)",
   "List of Banks Permitted to Provide Mobile Banking ": "probe saved (1069074 bytes, 5 linked pages)",
   "RBI authorised payment system operators": "ok: 144 firms",
   "RBI banks in India": "probe saved (65658 bytes, 2 linked pages)",
   "RBI banks permitted to issue prepaid instruments": "ok: 63 firms",
   "RBI scheduled commercial banks": "ok: 120 firms",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "IT (iGaming)": {
   "Italy - ADM remote gaming concessionaires": "ok: 46 firms from 6 pages",
@@ -293,12 +293,12 @@
   "www.jerseyfsc.org homepage": "probe saved (116331 bytes, 15 linked pages)"
  },
  "KM": {
-  "BCC Comores homepage": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "BCC Comores homepage": "probe saved (99970 bytes, 12 linked pages)",
+  "date": "2026-11-16"
  },
  "KM (iGaming)": {
   "Anjouan licence register (probe - table loads by script)": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "date": "2026-11-16"
  },
  "KR": {
   "FSS banks": "ok: 21 firms",
@@ -325,9 +325,9 @@
   "www.cbsl.gov.lk homepage": "HTTP 403"
  },
  "LR": {
-  "CBL supervision": "probe saved earlier this week",
-  "Senior Staff Directory": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "CBL supervision": "probe saved (78157 bytes, 12 linked pages)",
+  "Senior Staff Directory": "probe saved (90493 bytes, 6 linked pages)",
+  "date": "2026-11-16"
  },
  "LS": {
   "CBL licensed institutions": "SSL error (certificate_verify_failed)",
@@ -374,18 +374,27 @@
  },
  "MT (iGaming)": {
   "MGA licensee register (probe - app loads by script)": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "date": "2026-11-16"
  },
  "MU": {
-  "BoM licensed banks": "probe saved earlier this week",
   "FSC public register - payment intermediaries and virtual-asset licences": "APEX page field not found: name=\"p_flow_id\" value=\"([^\"]+)\"",
-  "date": "2026-11-16",
-  "www.bom.mu homepage": "probe saved earlier this week",
-  "www.fscmauritius.org homepage": "probe saved (328551 bytes, 0 linked pages)"
+  "date": "2026-11-16"
  },
  "MU (CFD)": {
-  "FSC public register - investment dealers": "APEX page field not found: name=\"p_flow_id\" value=\"([^\"]+)\"",
-  "date": "2026-11-14"
+  "FSC public register - investment dealers": "blocked by the site's bot protection (not bypassed)",
+  "date": "2026-11-16"
+ },
+ "MU (iGaming)": {
+  "Automatic Systems Ltd (Superscore) - GRA remote communication licence": "ok: 1 firms",
+  "Automatic Systems Ltd (Supertote) - GRA licence": "ok: 1 firms",
+  "Booksystem - GRA remote communication licence (horse racing)": "ok: 1 firms",
+  "Globalsports Ltd (Totelepep / Sportslepep) - GRA licences": "ok: 1 firms",
+  "Lottotech Ltd - GRA national lottery licence": "read failed: licence statement no longer found on the page",
+  "SIC Management Services Co Ltd (Casinos of Mauritius) - 4 state casinos": "ok: 1 firms",
+  "Stevenhills Ltd - GRA bookmaker licence (football)": "ok: 1 firms",
+  "ValuePlus Ltd - GRA bookmaker licence (football)": "ok: 1 firms",
+  "ValuePlus Ltd - GRA remote communication licence": "ok: 1 firms",
+  "date": "2026-11-16"
  },
  "MV": {
   "MMA homepage": "probe saved (56251 bytes, 0 linked pages)",
@@ -441,7 +450,7 @@
  },
  "NZ (CFD)": {
   "FMA licensed derivatives issuers": "read failed: 403 Client Error: Forbidden for url: https://www.fma.govt.nz/business/licensed-providers/?start=0",
-  "date": "2026-11-14"
+  "date": "2026-11-16"
  },
  "OM": {
   "CBO licensed banks": "ok: 21 firms",
@@ -470,7 +479,7 @@
  },
  "SA": {
   "SAMA licensed entities (probe)": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "date": "2026-11-16"
  },
  "SB": {
   "CBSI financial system": "probe saved (125302 bytes, 7 linked pages)",
@@ -494,9 +503,9 @@
  },
  "SG": {
   "MAS directory cards": "ok: 4 firms",
-  "MAS directory export": "timeout",
+  "MAS directory export": "ok: 687 firms",
   "Print/Download List": "probe saved (2836 bytes, 0 linked pages)",
-  "date": "2026-11-15"
+  "date": "2026-11-16"
  },
  "SM": {
   "BCSM register of authorised parties - San Marino financial companies": "ok: 8 firms",
@@ -504,8 +513,8 @@
   "date": "2026-11-16"
  },
  "ST": {
-  "BCSTP homepage": "probe saved earlier this week",
-  "date": "2026-11-14"
+  "BCSTP homepage": "probe saved (85638 bytes, 8 linked pages)",
+  "date": "2026-11-16"
  },
  "SZ": {
   "CBE Eswatini homepage": "probe saved (358426 bytes, 12 linked pages)",
@@ -539,8 +548,8 @@
   "CBRT e-money institutions": "ok: 53 firms",
   "CBRT payment institutions": "ok: 20 firms",
   "SPK crypto asset service providers": "ok: 48 firms",
-  "SPK crypto list page": "probe saved (36183 bytes, 4 linked pages)",
-  "date": "2026-11-15"
+  "SPK crypto list page": "probe saved (36259 bytes, 4 linked pages)",
+  "date": "2026-11-16"
  },
  "TW": {
   "Banking Bureau e-payment institutions": "probe saved (103070 bytes, 12 linked pages)",
