@@ -2280,3 +2280,12 @@ def test_statement_with_licence_number():
     assert recs[0].reference == "GB20025294" and recs[0].status_detail.startswith('Stated in firm')
     with pytest.raises(RuntimeError):     # number present but for another entity
         parse_file(b"<p>Other Ltd, licence GB20025294, Financial Services Commission.</p>", spec, "MU", "FSC")
+
+
+def test_payment_agents_switched_off_are_dropped():
+    from regtracker.sources.fca import drop_switched_off_agents, record_from_firm
+    st = {"tracked": {"1": {"licence_type": "Payment agent (PSD)"}, "2": {"licence_type": "E-money agent"},
+                      "3": {"licence_type": "Authorised EMI"}}}
+    assert drop_switched_off_agents(st, ("emd",)) == 1 and set(st["tracked"]) == {"2", "3"}
+    firm = {"PSD Agent Status": "Registered", "Status": "Authorised"}
+    assert record_from_firm(123, firm, agents=("emd",)) is None

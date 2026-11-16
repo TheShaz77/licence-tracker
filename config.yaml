@@ -21,14 +21,14 @@ sheet_change_rows: 5000
 sheet_country_tabs: true
 
 sources:
-  fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money & payment agents (FCA API)
+  fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money agents (FCA API)
     timeout_minutes: 80           # safety net only (0 used to mean no limit, and the run hit the job's 3 hours); the FCA step keeps its own time budget below
     enabled: true
     requests_per_second: 4.5      # FCA limit is 50 per 10 seconds
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
     enrich_address: true          # one extra call per firm, once: town, website, phone
     exclude_types: [RAISP]        # licence types not tracked (account-information-only firms)
-    agents: [emd, psd]            # also track e-money agents (emd) and payment agents (psd)
+    agents: [emd]                 # also track e-money agents (emd); payment agents (psd) are left out
     # One-off seed scan, in this order. Editing this list is safe: ranges
     # already scanned are kept, and the rest is re-planned in the new order.
     seed_ranges:
@@ -3622,6 +3622,66 @@ igaming:
       statement_by: a GRA press communique
       inactive_pattern: ne d.tient plus
       licence_type: Bookmaker - fixed odds on local horse racing at Champ de Mars (GRA Mauritius) - EXPIRED
+    - label: Le Grand Casino Du Domaine Limitee - GRA Casino A licence (State Investment Corporation)
+      url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+      format: statement
+      firm: Le Grand Casino Du Domaine Limitee
+      statement: 'Le Grand Casino Du Domaine Limit.e.{0,400}only casinos which have been issued Casino A Licen[cs]e by the Gambling Regulatory Authority'
+      statement_by: the State Investment Corporation (majority shareholder) website
+      licence_type: Casino (Casino A licence, GRA Mauritius) - managed by SIC Management Services Co Ltd
+    - label: Le Caudan Waterfront Casino Limited - GRA Casino A licence (State Investment Corporation)
+      url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+      format: statement
+      firm: Le Caudan Waterfront Casino Limited
+      statement: 'Le Caudan Waterfront Casino Limited.{0,400}only casinos which have been issued Casino A Licen[cs]e by the Gambling Regulatory Authority'
+      statement_by: the State Investment Corporation (majority shareholder) website
+      licence_type: Casino (Casino A licence, GRA Mauritius) - managed by SIC Management Services Co Ltd
+    - label: Casino De Maurice Limited - GRA Casino A licence (State Investment Corporation)
+      url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+      format: statement
+      firm: Casino De Maurice Limited
+      statement: 'Casino De Maurice Limited.{0,400}only casinos which have been issued Casino A Licen[cs]e by the Gambling Regulatory Authority'
+      statement_by: the State Investment Corporation (majority shareholder) website
+      licence_type: Casino (Casino A licence, GRA Mauritius) - managed by SIC Management Services Co Ltd
+    - label: Grand Baie Casino Ltd - GRA Casino A licence (State Investment Corporation)
+      url: https://stateinvestment.mu/subsidairy/entertainment-tourism
+      format: statement
+      firm: Grand Baie Casino Ltd
+      statement: 'Grand Baie Casino Ltd.{0,400}only casinos which have been issued Casino A Licen[cs]e by the Gambling Regulatory Authority'
+      statement_by: the State Investment Corporation (majority shareholder) website
+      licence_type: Casino (Casino A licence, GRA Mauritius) - managed by SIC Management Services Co Ltd
+    - label: Stevebook Ltd - named as a GRA-licensed bookmaker in 2019 press (current licence not confirmed)
+      url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
+      format: statement
+      firm: Stevebook Ltd
+      statement: 'Stevebook Ltd'
+      statement_by: a 2019 press report - current licence not confirmed
+      inactive_pattern: not confirmed
+      licence_type: Off-course bookmaker - local horse racing (GRA Mauritius) - 2019 record, current licence not confirmed
+    - label: Ramabetco Ltd - named as a GRA-licensed bookmaker in 2019 press (current licence not confirmed)
+      url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+      format: statement
+      firm: Ramabetco Ltd
+      statement: 'compagnies Ramabetco Ltd'
+      statement_by: a 2019 press report - current licence not confirmed
+      inactive_pattern: not confirmed
+      licence_type: Off-course bookmaker - local horse racing (GRA Mauritius) - 2019 record, current licence not confirmed
+    - label: S. Ramma Ltd - named as a GRA-licensed bookmaker in 2019 press (current licence not confirmed)
+      url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+      format: statement
+      firm: S. Ramma Ltd
+      statement: 'S\. Ramma Ltd'
+      statement_by: a 2019 press report - current licence not confirmed
+      inactive_pattern: not confirmed
+      licence_type: Off-course bookmaker - local horse racing (GRA Mauritius) - 2019 record, current licence not confirmed
+    - label: Bet On Line Ltd - named as a GRA-licensed bookmaker in 2019 press (current licence not confirmed)
+      url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
+      format: statement
+      firm: Bet On Line Ltd
+      statement: 'Bet On Line Ltd'
+      statement_by: a 2019 press report - current licence not confirmed
+      inactive_pattern: not confirmed
+      licence_type: Betting operator (GRA Mauritius) - 2019 record, current licence not confirmed
   KM:
     regulator: Anjouan Gaming
     files:

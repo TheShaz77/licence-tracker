@@ -207,6 +207,15 @@ AGENT_FIELDS = (("emd", ("E-Money Agent Status", "EMoney Agent Status"), "E-mone
                 ("psd", ("PSD Agent Status",), "Payment agent (PSD)", ("PSD Agent Effective date", "PSD Agent Effective Date")))
 
 
+def drop_switched_off_agents(st: dict, agents) -> int:
+    """Remove tracked agent records whose kind (emd / psd) is no longer in the config's agents list."""
+    off = {ltype for kind, _f, ltype, _d in AGENT_FIELDS if kind not in agents}
+    gone = [f for f, r in st.get("tracked", {}).items() if r.get("licence_type") in off]
+    for f in gone:
+        del st["tracked"][f]
+    return len(gone)
+
+
 def agent_status(firm: dict, kinds=("emd", "psd")):
     """(licence type, active, status text, date) for firms registered as an
     e-money (EMD) or payment (PSD) agent, else None."""
@@ -874,6 +883,13 @@ class FCASource(Source):
         client = FCAClient(ctx, float(cfg.get("requests_per_second", 4.5)))
         client.verify()
         enrich = bool(cfg.get("enrich_address", True))
+
+        # agent types switched off in config.yaml (fca.agents) are dropped for good: not shown, not
+        # re-checked. Not reported as removals (this source never alerts on removals).
+        gone = drop_switched_off_agents(st, getattr(client, "agents", ("emd", "psd")))
+        if gone:
+            save_state(ctx, st)
+            ctx.log.info("FCA: dropped %d agent records of types switched off in config.yaml", gone)
 
         import datetime as dt
         import time as _time
