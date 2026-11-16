@@ -1,0 +1,640 @@
+{
+ "Bahamas (CFD)": {
+  "bahamas|scb|b2b prime services bahamas limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "bahamas|scb|capital union bank ltd.": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "bahamas|scb|ubs ag, nassau branch (formerly known as credit suisse ag nassau branch)": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "bahamas|scb|ubs brazil (bahamas) limited (formerly credit suisse brazil (bahamas) limited)": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  }
+ },
+ "Cyprus (CFD)": {
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|b2b prime services eu ltd (ex menasecurities limited)": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|etoro (europe) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|gbe brokers ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|go markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|lmax broker europe ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|notesco financial services ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|payward europe digital solutions (cy) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|rynat trading ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec, cyprus securities and exchange commission (cysec)|topfx ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|aaa trade ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|aquilla nummus ltd": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "cyprus|cysec|charlgate ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|equiti global markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|eurotrade investments rgb ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|finquotes financial (cyprus) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|fx central clearing ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|leverate financial services ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|mex europe ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "cyprus|cysec|pricewaterhousecoopers investment services (cyprus) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  }
+ },
+ "Malta (Digital Assets)": {
+  "mt|malta|mfsa|op digital services limited": {
+   "backgroundColor": {
+    "red": 1
+   }
+  }
+ },
+ "Mauritius (CFD)": {
+  "mauritius|fsc|pu prime ltd": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "mauritius|fsc|rahal global markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "mauritius|fsc|regulus liquidity": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "mauritius|fsc|sky links capital limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|sthirix capital ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|tabtrade (mauritius) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|tattvam capital markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|thaurus ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|tradesense holding ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|tradin": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|tradit limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|trending markets (international) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|trive financial services ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|uexo global ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|vcg markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|vertex1 brokers limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|xelans markets limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|xs trade services ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "mauritius|fsc|ywo (mu) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  }
+ },
+ "Seychelles (CFD)": {
+  "seychelles|fsa|4xc (seychelles) ltd": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "seychelles|fsa|atc brokers limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|axon markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|b2b prime services sc ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|bdswiss (seychelles) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|cxm group (sc) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|daman markets financial services (seychelles) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|db invest limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|equiti brokerage (seychelles) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|eto markets limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|etoro (seychelles) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|exclusive markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|finprime global limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|fx capital ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|go markets international ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|harmovest capital (seychelles) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|limehouse markets (global) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|maiv limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|mb group (seychelles) ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|moneta markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|plotio fx sc limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|prometheus markets ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|startrader limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|topfx global ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|topline limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|trademax global markets (se) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|tradexfin limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|trive global ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|vs capital limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|xbtfx (sc) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|xm (sc) limited": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  },
+  "seychelles|fsa|zecra trading ltd": {
+   "backgroundColor": {
+    "red": 1
+   },
+   "textFormat": {
+    "fontFamily": "Arial"
+   }
+  }
+ },
+ "Spain (Digital Assets)": {
+  "es|spain|cnmv|crossmint europe s.l.": {
+   "backgroundColor": {
+    "red": 1
+   }
+  }
+ },
+ "Turks and Caicos (FI)": {
+  "tc|turks and caicos|fsc|turks & caicos banking company ltd": {
+   "backgroundColor": {
+    "red": 1
+   }
+  }
+ },
+ "United Arab Emirates (Digital Assets)": {
+  "ae|united arab emirates|vara|aquanow me fze": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "ae|united arab emirates|vara|binance fze": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "ae|united arab emirates|vara|dkk digital fze": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "ae|united arab emirates|vara|fasset fze": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "ae|united arab emirates|vara|gc exchange fze (gcex)": {
+   "backgroundColor": {
+    "red": 1
+   }
+  },
+  "ae|united arab emirates|vara|payward fzco": {
+   "backgroundColor": {
+    "red": 1
+   }
+  }
+ }
+}

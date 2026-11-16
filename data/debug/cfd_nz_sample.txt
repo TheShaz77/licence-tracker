@@ -7,3 +7,115 @@ data rows: None  kept: None
 type values: None
 first lines:
 ''
+
+url: https://www.axi.com/au
+bytes: 801708  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html data-dpl-id="d8070c06b28b38d418efdf131be8252029195a90" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_5c4852" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
+
+url: https://www.acemarkets.co.nz/
+bytes: 116283  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+''
+'<head>'
+"\t<meta charset='UTF-8'>"
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<link rel="profile" href="http://gmpg.org/xfn/11">'
+"\t\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+
+url: https://www.ecmarkets.co.nz/
+bytes: 360175  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html dir="ltr" lang="en-GB" prefix="og: https://ogp.me/ns#">'
+'<head>'
+'  <meta charset="UTF-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <link rel="profile" href="http://gmpg.org/xfn/11">'
+'  <title>EC Markets | The Ultimate Trading Experience</title>'
+'<link data-rocket-prefetch href="https://static.ads-twitter.com" rel="dns-prefetch">'
+
+url: https://www.ig.com/au
+bytes: 776212  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<!--[if IE 10]><html class="ie10 nojs" lang="en-AU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">'
+'<![endif]-->'
+'<!--[if gt IE 10]><!-->'
+'<html class="gtie10 nojs" lang="en-AU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">'
+'<!--<![endif]--> <head> <meta charset="utf-8"/>'
+'<title>IG Australia – CFD and Share Trading Platform | IG AU</title>'
+'<meta name="description" class="swiftype" data-type="string" content="Trade over 18,000 markets with a CFD account, including shares, forex, indices, commodities, options, and more. "/>'
+
+url: https://www.pfd-nz.com/
+bytes: 57163  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<!--[if lt IE 7]>      <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->'
+'<!--[if IE 7]>         <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8"> <![endif]-->'
+'<!--[if IE 8]>         <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9"> <![endif]-->'
+'<!--[if gt IE 8]><!--> <html prefix="og: http://ogp.me/ns#" class="no-js"> <!--<![endif]-->'
+'    <head>'
+''
+'<!-- Google Tag Manager -->'
+
+url: https://www.zeromarkets.com/
+bytes: 221066  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-AU">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'\t<meta http-equiv="X-UA-Compatible" content="ie=edge">'
+'\t<link rel="icon" type="image/x-icon" href="/favicon.ico"/>'
+'\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
+
+url: https://blackbull.com/en/our-company/compliance/
+bytes: 488208  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html lang="en-US">'
+'<head> <script>'
+'var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,s'
+'</script>'
+'<meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"'
+'</script>'
+'\t'

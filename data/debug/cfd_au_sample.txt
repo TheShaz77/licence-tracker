@@ -1,9 +1,324 @@
-url: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/d98a113d-6b50-40e6-b65f-2612efc877f4/download/afs_lic_202602.csv
-bytes: 0  starts: b''
-error: RuntimeError('https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+url: https://www.eightcap.com/en/traders/about-us/
+bytes: 254683  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html data-dpl-id="dpl_DcmQLbHuNdwC7VcVo9kRDZeGPNgq" lang="en" class="__variable_9eb420"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/692df4da22e71021-s.p.woff2?dpl=dpl_DcmQLbHuNdwC7VcVo'
+'</p></div></div><div class="flex flex-col h-full fg-border-subtle border-t pt-2xl gap-3xl"><div class="flex flex-col gap-3xl xl:pr-5xl items-baseline flex-1"><p class="typography-label-md text-lg fg-text-default-black">FCA</p><p class="typography-body-md flex-1 overflow-hidden fg-text-default-black"'
+
+url: https://www.axi.com/au
+bytes: 801708  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html data-dpl-id="d8070c06b28b38d418efdf131be8252029195a90" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_5c4852" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
+
+url: https://gleneagle.com.au/
+bytes: 360380  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html lang="en-AU">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<link rel="profile" href="https://gmpg.org/xfn/11">'
+"\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+''
+
+url: https://www.kcmtradeplus.com.au/
+bytes: 65869  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!-- Last Published: Thu Nov 05 2026 04:47:28 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.kcmtradeplus.com.au" data-wf-page="63b788a9dc31a7f2cb834a70" data-wf-site="63b788a9dc31a7c8a0834a71" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.web'
+'<script>'
+'  var _paq = window._paq = window._paq || [];'
+'  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */'
+'  _paq.push(["setDoNotTrack", true]);'
+"  _paq.push(['trackPageView']);"
+"  _paq.push(['enableLinkTracking']);"
+'  (function() {'
+
+url: https://multibank.exchange/en/about/regulations
+bytes: 173020  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr" class="dwYJqa_variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2" as="font" crossorigin="" type="font/woff2"/><link'
+'$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
+'</body></html>'
+
+url: https://www.mitrade.com/en
+bytes: 148825  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><title>Mitrade | Trade Forex, Gold, Oil, Indices, Shares &amp; More on Our Award-Winning Platform</title><meta name="description" content="We Won 2020&#x27;s Best Mobile Trading Platform. Trade s on Forex, Gold, WTI, Brent Oil, S&'
+'<circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>'
+'<ellipse cx="12" cy="12" rx="3" ry="8" stroke="currentColor" stroke-width="1.5"/>'
+'<path d="M4 12H20" stroke="currentColor" stroke-width="1.5"/>'
+'</svg></div><span class="Navigation_lang-symbol__Tsdj7">EN</span></div><ul class="Navigation_lang__gloKK"><li><a href="/en" class="Navigation_active__hNkeL">English</a></li><li><a href="/id" class="">Bahasa Indonesia</a></li><li><a href="/my" class="">Bahasa Melayu</a></li><li><a href="/zh" class=""'
+'<path d="M5 6H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+'<path d="M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+'<path d="M5 18H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+
+url: https://pepperstone.com/en-au
+bytes: 445694  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html dir="ltr" lang="en-au"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="https://eu-images.contentstack.com/v3/assets/bltd74737b907a31bbb/blt627fbc9df829ed11/69e9bca86b27ed0be18c5590/pepperstone'
+''
+'Award winner, best in Forex and CFD¹</p></div><div class="[animation-fill-mode:both] motion-reduce:animate-none animate-fade-in animation-delay-500"><div class="flex gap-lg"><a class="typography-label-sm group gap-xs text-brand-secondary! hover:text-brand-secondary! hover:text-brand leading-xl group'
+''
+''
+''
+''
+''
+
+url: https://speccapitalgroup.com/
+bytes: 206234  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" class="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable bg-background"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/797e433ab948586e-s'
+'</body></html>'
+
+url: https://www.zeromarkets.com/
+bytes: 221068  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-AU">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'\t<meta http-equiv="X-UA-Compatible" content="ie=edge">'
+'\t<link rel="icon" type="image/x-icon" href="/favicon.ico"/>'
+'\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
+
+url: https://www.tmgm.com/en
+bytes: 359445  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html  lang="en-US" class="" style=""><head><meta charset="utf-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<title>TMGM: CFD Broker | Award-Winning Global Online CFD Trading Platform</title>'
+'<link rel="preconnect" href="https://tmgm-cdn2.com" crossorigin="anonymous">'
+'<script src="//g.alicdn.com/frontend-lib/frontend-lib/2.3.74/antidom.js"></script><script src="//o.alicdn.com/frontend-lib/common-lib/jquery.min.js"></script><script src="https://analytics.ahrefs.com/analytics.js" data-key="+DgyFqQN+Eva8d4CIwgFFA" async></script>'
+'<script type="text/javascript">(function(){var loaded=false;var evts=[\'scroll\',\'click\',\'touchstart\',\'wheel\',\'keydown\'];function loadGtm(){if(loaded)return;loaded=true;evts.forEach(function(e){window.removeEventListener(e,loadGtm,true);});(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':'
+"new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
+"j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
+
+url: https://www.totality.com.au
+bytes: 90132  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!-- Last Published: Mon Nov 09 2026 22:11:52 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.totality.com.au" data-wf-page="68650fd67eb6f416198ff90f" data-wf-site="6800b3aaf21be0776e92432e" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website'
+'{'
+'  "@context": "https://schema.org",'
+'  "@graph": ['
+'    {'
+'      "@type": "Organization",'
+'      "@id": "https://www.totality.com.au/#organization",'
+'      "name": "Totality",'
+
+url: https://www.oanda.com/au-en/
+bytes: 247514  starts: b'\n\n\n\n\n\n\n\n'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
 first lines:
 ''
+''
+''
+''
+''
+''
+''
+''
+
+url: https://www.interactivebrokers.com.au/en/home.php
+bytes: 214925  starts: b'\n<!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+''
+'<!DOCTYPE html>'
+'<html dir="ltr" lang="en" data-theme="light">'
+'<head>'
+'<title>Home | Interactive Brokers Australia Pty. Ltd.</title>'
+'<meta charset="utf-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">'
+'<meta name="description" content="Leading online trading solutions for traders, investors and advisors, with direct global access to stocks, options, futures, currencies and bonds. Transparent, low commissions and financing rates and support for best execution.">'
+
+url: https://advancedmarkets.com/company/
+bytes: 142601  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">'
+'<head>'
+'\t<meta charset="UTF-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<link rel="profile" href="https://gmpg.org/xfn/11">'
+'\t<title>Company - Advanced Markets</title>'
+''
+
+url: https://blueberrymarkets.com/legal-documents/
+bytes: 150959  starts: b'\n\n<!DOCT'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+''
+''
+'<!DOCTYPE html>'
+'<html dir="ltr" lang="en">'
+''
+"<head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})"
+'(window,\'AW-440725986\',\'google_tags_first_party\');</script><script async src="/hrzi/"></script>'
+'\t\t\t<script>'
+
+url: https://capital.com/en-au
+bytes: 539956  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html class="DHVbqa_html _3SJCXq_variable" dir="ltr" lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"/><link rel="preload" as="image" href="https://static.capital.com/capital-v1-3-1/apps/cap'
+'    <script nonce="gzptpFfOr/TPzAOVVCdBow==">'
+'      (()=>{let a,b=(a=globalThis,a.__headerHeightInjectionState??={mutationObserver:null,observedHeader:null,previousHeaderHeight:0,resizeObserver:null},a.__headerHeightInjectionState),c=()=>{let a=document.getElementById("header");if(!a)return;let{height:c}=a.getBoundingClientRect();if(c>0){b.prev'
+'    </script>'
+'  </div><div class="MyiUmG_mainContent"><div class="ibKxCq_mbXl componentsContainer"><div class="fQqZ4a_container"><div class="hBvola_stack"><div class="hBvola_regulationVideoSticky"><section class="aFTfha_container kwzt4G_viewportWrapper"><div class="aFTfha_content kwzt4G_container"><div class="kwz'
+'</div></div></div></div><div class="hBvola_marketLayer"><section class="aFTfha_container aFTfha_bordered crfj1a_viewportWrapper"><picture class="PLDmOa_common ViX1fq_background"><img alt="MarketsFeature background" class="PLDmOa_fillParent" height="1083" loading="lazy" sizes="(min-width: 768px) 1920'
+'</div><div class="TIvQXW_links ibKxCq_showXs"><div class="gHaUCW_grid mBJYLW_root gHaUCW_gXs gHaUCW_inline"><a class="eJGhtW_btnStore js-analyticsClick" data-type="home_platforms_Ios" href="https://app.appsflyer.com/id1230088754" rel="noopener noreferrer nofollow" target="_blank"><img alt="" loading'
+'</div></li><li class="sGznxW_costHighlight"><h3 class="_3rItvW_text _3rItvW_sub _3rItvW_primary">No deposit or withdrawal fees</h3><div class="sGznxW_costHighlightDescription"><p>Trusted payments. Bank transfers, cards, digital wallets.</p>'
+
+url: https://www.cmcmarkets.com/en-au/
+bytes: 293127  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en-au"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/><meta version="1.5.10 (1794791682)" data-next-head=""/><meta name="color-scheme" content="normal" data-next-head=""/><link rel="alte'
+'          '
+'          "><div class="lg:w-3/12 sm:w-6/12 w-full px-3 pb-6 md:px-6"><div class=" flex h-full flex-col "><div data-type="contentBlock" class="relative w-full"><div class=""><div class="flex flex-col stretch"><div class="mx-auto"><svg width="71" height="30" viewBox="0 0 71 30" fill="none" xmlns="htt'
+'\tc-1,0.3-1.8,1.1-2.1,2.1C0,8.1,0,12.1,0,12.1s0,4,0.5,5.8c0.3,1,1.1,1.9,2.1,2.1c1.9,0.5,9.4,0.5,9.4,0.5s7.5,0,9.4-0.5'
+'\tc1-0.3,1.8-1.1,2.1-2.1C24,16,24,12.1,24,12.1S24,8.1,23.5,6.2L23.5,6.2z" fill="#fff"></path></svg></a><a href="https://www.instagram.com/cmcinvest_au/" target="_blank" aria-label="Find us on Instagram" rel="nofollow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
+'            objectives, financial situation and needs. CMC Markets Asia Pacific'
+'            Pty Ltd ABN 11 100 058 213, AFSL No. 238054 (the derivative product'
+'            issuer), CMC Markets Stockbroking Limited, Participant of the ASX'
+
+url: https://www.ebc.com/about-us/
+bytes: 57414  starts: b'"<!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'"<!DOCTYPE html>\\n<html lang=\\"en\\" data-fitter data-theme=\\"dark\\">\\n  <head>\\n    <title>About Us | EBC Financial Group<\\/title>\\n    <meta charset=\\"utf-8\\" \\/>\\n    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\" \\/>\\n    <meta property=\\"og:image\\" content=\\"\\/ebc-static'
+
+url: https://fusionmarkets.com/About-us/Who-we-are
+bytes: 932080  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en"><head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push==\'function\')w[g].push(i)})'
+"(window,'GTM-PZG4W4R','google_tags_first_party');</script><script>(function(w,d,s,l){w[l]=w[l]||[];(function(){w[l].push(arguments);})('set', 'developer_id.dYzg1YT', true);"
+"\t\tw[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],"
+"\t\tj=d.createElement(s);j.async=true;j.src='/a4dc/';"
+'\t\tf.parentNode.insertBefore(j,f);'
+'\t\t})(window,document,\'script\',\'dataLayer\');</script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/155cae559bbd1a77-s.p.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="preload" href="/_next/stati'
+'</body></html>'
+
+url: https://www.gomarkets.com/en-au/about-go-markets
+bytes: 216378  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Thu Nov 12 2026 03:53:02 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.gomarkets.com" data-wf-page="6837a11fe2ddd352d8d73e11" data-wf-site="67d8fdfb81394c638e27c6c5" data-wf-intelli'
+'(function(g,e,o,t,a,r,ge,tl,y,s){'
+'g.getElementsByTagName(o)[0].insertAdjacentHTML(\'afterbegin\',\'<style id="georedirect1760922765987style">body{opacity:0.0 !important;}</style>\');'
+"s=function(){g.getElementById('georedirect1760922765987style').innerHTML='body{opacity:1.0 !important;}';};"
+'t=g.getElementsByTagName(o)[0];y=g.createElement(e);y.async=true;'
+"y.src='https://g10498469755.co/gr?id=-ObzAFaxdzsCWDPE8Qa6&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);"
+'t.parentNode.insertBefore(y,t);y.onerror=function(){s()};'
+'georedirect1760922765987loaded=function(redirect){var to=0;if(redirect){to=5000};'
+
+url: https://www.ig.com/au
+bytes: 776212  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<!--[if IE 10]><html class="ie10 nojs" lang="en-AU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">'
+'<![endif]-->'
+'<!--[if gt IE 10]><!-->'
+'<html class="gtie10 nojs" lang="en-AU" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">'
+'<!--<![endif]--> <head> <meta charset="utf-8"/>'
+'<title>IG Australia – CFD and Share Trading Platform | IG AU</title>'
+'<meta name="description" class="swiftype" data-type="string" content="Trade over 18,000 markets with a CFD account, including shares, forex, indices, commodities, options, and more. "/>'

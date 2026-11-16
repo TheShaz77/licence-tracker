@@ -1,5 +1,5 @@
 url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=7&BusinessType=18
-bytes: 53174  starts: b'\r\n\r\n\r\n<!'
+bytes: 53149  starts: b'\r\n\r\n\r\n<!'
 error: None
 columns used: {'name': 'Name', 'type': 'Business Type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name', 'Trading/Business Name', 'Business Type']
@@ -16,7 +16,7 @@ first lines:
 '    <meta name="description" content="Register Results">'
 
 url: https://www.iomfsa.im/register-results/?entity-name=&entity-current=on&BusinessType=15
-bytes: 50680  starts: b'\r\n\r\n\r\n<!'
+bytes: 50655  starts: b'\r\n\r\n\r\n<!'
 error: None
 columns used: {'name': 'Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name', 'Trading/Business Name', 'Business Type']

@@ -70,7 +70,7 @@ first lines:
 '(binary)'
 
 url: https://www.bnm.gov.my/principal-msb-licensees
-bytes: 218380  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 216311  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']

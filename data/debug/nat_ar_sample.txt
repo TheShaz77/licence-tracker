@@ -1,12 +1,12 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 81380  starts: b'{"succes'
+bytes: 81042  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
-data rows: 240  kept: 239
-type values: [('', 240)]
+data rows: 239  kept: 238
+type values: [('', 239)]
 first lines:
-'{"success":true,"tipo_psp":1,"tipo_psp_nombre":"Proveedor de Servicio de Pago que ofrece Cuenta de Pago","lang":"es","total":240,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), C'
+'{"success":true,"tipo_psp":1,"tipo_psp_nombre":"Proveedor de Servicio de Pago que ofrece Cuenta de Pago","lang":"es","total":239,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), C'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=2&lang=es
 bytes: 1644  starts: b'{"succes'
@@ -49,14 +49,14 @@ first lines:
 '{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":14,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
-bytes: 29005  starts: b'{"succes'
+bytes: 29629  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']
-data rows: 95  kept: 95
-type values: [('', 95)]
+data rows: 97  kept: 97
+type values: [('', 97)]
 first lines:
-'{"success":true,"tipo_psp":7,"tipo_psp_nombre":"Agregador","lang":"es","total":95,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
+'{"success":true,"tipo_psp":7,"tipo_psp_nombre":"Agregador","lang":"es","total":97,"proveedores":[{"codigo":33579,"denominacion_pj":"3 SM S.A.","denominacion":"3 SM S.A.","cuit":33716602139,"domicilio":"BOEDO 2054 PISO 7 DTO.702<br>CABA (CP: C1239AAX), CABA","localidad":"CABA","provincia":"CABA","cod'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=8&lang=es
 bytes: 7223  starts: b'{"succes'
@@ -79,7 +79,7 @@ first lines:
 '{"success":true,"tipo_psp":9,"tipo_psp_nombre":"Administrador QR","lang":"es","total":4,"proveedores":[{"codigo":34618,"denominacion_pj":"BANELSIP S.A.","denominacion":"Banelsip","cuit":30710903812,"domicilio":"Lavardén 247<br>CABA (CP: C1437FBE), CABA","localidad":"CABA","provincia":"CABA","codigo_'
 
 url: https://www.cnv.gov.ar/SitioWeb/Reportes/ListadoRegistrosPsav
-bytes: 39490  starts: b'PK\x03\x04\x14\x00\x06\x00'
+bytes: 39491  starts: b'PK\x03\x04\x14\x00\x06\x00'
 error: None
 columns used: {'name': 'Razon Social', 'type': None, 'id': 'Nro. Matricula', 'lei': None, 'city': None, 'date': 'Fecha Alta', 'status': None, 'website': 'Sitio Web', 'email': 'Correo Electronico', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Nro. Matricula', 'Fecha Alta', 'Razon Social', 'Nombre Comercial', 'Descripcion Fiscal', 'ID Fiscal', 'Actividad', 'Sitio Web', 'Correo Electronico']

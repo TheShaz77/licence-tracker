@@ -1,9 +1,0 @@
-url: https://gamblingdivision.gov.gi/licence-holders
-bytes: 182  starts: b'<html><h'
-error: RuntimeError('no firms matched')
-columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'type', 'require': None}
-headers: ['name', 'type']
-data rows: 0  kept: 0
-type values: []
-first lines:
-'<html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2Flicence-holders&y=ipc:52.159.140.0:1794826658.601"></meta></head></html>'
