@@ -93,8 +93,8 @@ type values: [('', 1)]
 first lines:
 '(binary)'
 
-url: https://booksystem.mu/
-bytes: 73608  starts: b'<!DOCTYP'
+url: https://gra.govmu.org/gra/?page_id=1382
+bytes: 113826  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -102,30 +102,13 @@ data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
 '<!DOCTYPE html>'
-'<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">'
-'    <head>'
-'        <meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'            <meta name="viewport" content="width=device-width, initial-scale=1">'
-'                                <!-- head -->'
-'                <base href="https://booksystem.mu/" />'
-'\t<meta http-equiv="content-type" content="text/html; charset=utf-8" />'
-
-url: https://www.lottotech.mu/about-us/
-bytes: 175113  starts: b'<!DOCTYP'
-error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name', 'website', 'status']
-data rows: 1  kept: 1
-type values: [('', 1)]
-first lines:
-'<!DOCTYPE html>'
-'<html lang="en">'
+'<html lang="en-US">'
 '<head>'
-'    <meta http-equiv="X-UA-Compatible" content="IE=edge">'
-'    <meta charset="UTF-8" />'
-'    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
-'    <meta property="og:image" content="https://www.lottotech.mu/wp-content/themes/lottotech/assets/dist/images/logos/lottotech-logo.svg" />'
+'<meta charset="UTF-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<link rel="profile" href="https://gmpg.org/xfn/11">'
 ''
+'<title>Licencees &#8211; Gambling Regulatory Authority</title>'
 
 url: https://www.casinosofmauritius.mu/about-us
 bytes: 51114  starts: b'<!DOCTYP'
@@ -143,3 +126,67 @@ first lines:
 '\t\t<meta name="viewport" content="width=device-width, initial-scale=1" />'
 "<meta name='robots' content='max-image-preview:large' />"
 '<title>About us &#8211; Casinos of Mauritius</title>'
+
+url: https://silversportsltd.mu/
+bytes: 6280  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'    <meta charset="UTF-8">'
+'    <link rel="icon" href="https://www.silversportsltd.mu/images/logo.png" type="image/x-icon"/>'
+'    <title> Silver Sports Ltd</title>'
+'    <link rel="stylesheet" href="https://www.silversportsltd.mu/style/reset.css"/>'
+'    <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->'
+
+url: https://smspariaz.com/
+bytes: 34757  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'    <meta charset="UTF-8">'
+'    <link rel="icon" href="https://www.smspariaz.com/images/favicon.png" type="image/x-icon"/>'
+'    <title> SMS PARIAZ LTD</title>'
+'    <link rel="stylesheet" href="https://www.smspariaz.com/style/reset.css"/>'
+'    <!-- reference your copy Font Awesome here (from our CDN or by hosting yourself) -->'
+
+url: https://gra.govmu.org/gra/wp-content/uploads/2021/02/Conditions-for-SMS-PARIAZ-LTD-Bookmaker-Local-Horse-Race.pdf
+bytes: 100557  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'(binary)'
+
+url: https://gra.govmu.org/gra/wp-content/uploads/2026/03/GRA-PRESS-COMMUNIQUE-SUSPENSION-OF-BET-593-LTD-LICENCES-WITH-IMMEDIATE-EFFECT-04.03.2026.pdf
+bytes: 165415  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'(binary)'
+
+url: https://gra.govmu.org/gra/wp-content/uploads/2026/08/COMMUNIQUE-DE-PRESSE-DE-LA-GRA-EXPIRATION-DU-PERMIS-DOPERATION-DE-MACH-BOOK-CO-LTD-25.08.2026.pdf
+bytes: 256681  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'(binary)'

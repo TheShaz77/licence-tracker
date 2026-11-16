@@ -1,4 +1,5 @@
 {
+"cfd_mu__ultima_markets_mauritius_ltd_ultima_markets_fsc_investment_d.html": "https://www.ultimamarkets.com/",
 "igm_cw__gleif_curacao_companies_named_bet.txt": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bet&page%5Bsize%5D=200&page%5Bnumber%5D={page}",
 "igm_cw__gleif_curacao_companies_named_bingo.txt": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=bingo&page%5Bsize%5D=200&page%5Bnumber%5D={page}",
 "igm_cw__gleif_curacao_companies_named_games.txt": "https://api.gleif.org/api/v1/lei-records?filter%5Bentity.legalAddress.country%5D=CW&filter%5Bfulltext%5D=games&page%5Bsize%5D=200&page%5Bnumber%5D={page}",

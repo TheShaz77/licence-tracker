@@ -1,0 +1,4 @@
+User-agent: ChatBot
+Disallow:
+User-agent: *
+Disallow: /
