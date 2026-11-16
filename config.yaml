@@ -851,6 +851,14 @@ national:
       date_column: Date of Licence
       licence_type: Payment service provider (Bank of Mauritius)
       register_url: https://www.bom.mu/payment-systems/licensing/list-licensees
+    - label: B2BINPAY MAURITIUS LTD - FSC virtual asset service provider licence (VAITOS)
+      url: https://b2binpay.com/en/news/b2binpay-secures-fsc-mauritius-vasp-licenses
+      regulator: FSC
+      format: statement
+      firm: B2BINPAY MAURITIUS LTD
+      licence_no: GB24203002
+      website: https://b2binpay.com
+      licence_type: Virtual asset service provider (FSC Mauritius, VAITOS Act) - as stated by the firm
   NA:
     regulator: BoN
     files:
@@ -2215,6 +2223,215 @@ cfd:
       type_patterns:
         'SEC-2\.1[AB]\b': Investment dealer - full service (FSC SEC-2.1) - CFD permission not shown on the register
         'SEC-2\.[23]\b|SEC-6\.3\b': Investment dealer - broker (FSC SEC-2.2/2.3/6.3) - CFD permission not shown on the register
+    # The FSC register is behind bot protection (since 13 Nov 2026). Until it opens again, these are
+    # brokers that publish their own FSC Mauritius licence (entity + licence number) on their websites;
+    # each run re-reads the page and keeps the firm only while the statement is still there.
+    - label: Exinity Limited (FXTM) - FSC investment dealer licence C113012295
+      url: https://www.fxtm.com/en/about/licensed-broker/
+      format: statement
+      firm: 'Exinity Limited'
+      licence_no: C113012295
+      website: https://www.fxtm.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Fintrix Markets Ltd (Fintrix Markets) - FSC investment dealer licence GB22200883
+      url: https://fintrixmarkets.com/en/our-regulations/
+      format: statement
+      firm: 'Fintrix Markets Ltd'
+      licence_no: GB22200883
+      website: https://fintrixmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: T.M. Financials Ltd (Tag Markets) - FSC investment dealer licence GB21026474
+      url: https://intercom.help/tag-markets/en/articles/9681644-is-tag-markets-regulated
+      format: statement
+      firm: 'T.M. Financials Ltd'
+      firm_match: 'TM Financial'
+      licence_no: GB21026474
+      website: https://intercom.help
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Trive Financial Services Ltd (Trive) - FSC investment dealer licence GB21026295
+      url: https://www.trive.com/afr/
+      format: statement
+      firm: 'Trive Financial Services Ltd'
+      firm_match: 'Trive Financial Services Ltd'
+      licence_no: GB21026295
+      website: https://www.trive.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: iBull Capital (Mauritius) Ltd (iBull Capital) - FSC investment dealer licence GB24203657
+      url: https://ibullcapital.com/about-us/legal-license/
+      format: statement
+      firm: 'iBull Capital (Mauritius) Ltd'
+      licence_no: GB24203657
+      website: https://ibullcapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Royce Global Markets Limited (Royce Capitals) - FSC investment dealer licence GB25205368
+      url: https://roycecapitals.com/en/regulation-licensing
+      format: statement
+      firm: 'Royce Global Markets Limited'
+      licence_no: GB25205368
+      website: https://roycecapitals.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: GTC Global Ltd (GTCFX) - FSC investment dealer licence GB22200292
+      url: https://www.gtcfx.com/en-intl/company/global-presence
+      format: statement
+      firm: 'GTC Global Ltd'
+      licence_no: GB22200292
+      website: https://www.gtcfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: PU Prime Ltd (PU Prime) - FSC investment dealer licence GB23202672
+      url: https://www.puprime.com/
+      format: statement
+      firm: 'PU Prime Ltd'
+      licence_no: GB23202672
+      website: https://www.puprime.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: EBC Financial (MU) Limited (EBC Financial Group) - FSC investment dealer licence GB24203273
+      url: https://www.ebc.com/
+      format: statement
+      firm: 'EBC Financial (MU) Limited'
+      licence_no: GB24203273
+      website: https://www.ebc.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: JustMarkets (MU) Limited (JustMarkets) - FSC investment dealer licence GB22200881
+      url: https://www.justmarkets.com/
+      format: statement
+      firm: 'JustMarkets (MU) Limited'
+      firm_match: '(MU) Limited'
+      licence_no: GB22200881
+      website: https://www.justmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Exness (MU) Ltd (Exness) - FSC investment dealer licence GB20025294
+      url: https://www.exness.com/
+      format: statement
+      firm: 'Exness (MU) Ltd'
+      licence_no: GB20025294
+      website: https://www.exness.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: AT Global Markets Intl Ltd (ATFX) - FSC investment dealer licence C118023331
+      url: https://www.atfx.com/
+      format: statement
+      firm: 'AT Global Markets Intl Ltd'
+      licence_no: C118023331
+      website: https://www.atfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: XS Trade Services Ltd (XS.com) - FSC investment dealer licence GB25204786
+      url: https://www.xs.com/
+      format: statement
+      firm: 'XS Trade Services Ltd'
+      licence_no: GB25204786
+      website: https://www.xs.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Mitrade International Ltd (Mitrade) - FSC investment dealer licence GB20025791
+      url: https://www.mitrade.com/
+      format: statement
+      firm: 'Mitrade International Ltd'
+      licence_no: GB20025791
+      website: https://www.mitrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: IUX Markets (MU) Ltd (IUX) - FSC investment dealer licence GB22200605
+      url: https://www.iux.com/
+      format: statement
+      firm: 'IUX Markets (MU) Ltd'
+      licence_no: GB22200605
+      website: https://www.iux.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: TabTrade (Mauritius) Ltd (TabTrade) - FSC investment dealer licence GB26206419
+      url: https://tabtrade.com/
+      format: statement
+      firm: 'TabTrade (Mauritius) Ltd'
+      licence_no: GB26206419
+      website: https://tabtrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: VT Markets Limited (VT Markets) - FSC investment dealer licence GB23202269
+      url: https://www.vtmarkets.com/
+      format: statement
+      firm: 'VT Markets Limited'
+      licence_no: GB23202269
+      website: https://www.vtmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: EC Markets Limited (EC Markets) - FSC investment dealer licence GB21200130
+      url: https://www.ecmarkets.com/
+      format: statement
+      firm: 'EC Markets Limited'
+      licence_no: GB21200130
+      website: https://www.ecmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Tradit Limited (Axiory) - FSC investment dealer licence GB21026376
+      url: https://www.axiory.com/
+      format: statement
+      firm: 'Tradit Limited'
+      licence_no: GB21026376
+      website: https://www.axiory.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Valetax International Limited (Valetax) - FSC investment dealer licence GB21026312
+      url: https://valetax.com/
+      format: statement
+      firm: 'Valetax International Limited'
+      licence_no: GB21026312
+      website: https://valetax.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: LiteFinance Investment Limited (LiteFinance) - FSC investment dealer licence GB20025921
+      url: https://www.litefinance.org/
+      format: statement
+      firm: 'LiteFinance Investment Limited'
+      licence_no: GB20025921
+      website: https://www.litefinance.org
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Moneta Markets Trading Limited (Moneta Markets) - FSC investment dealer licence GB24203391
+      url: https://www.monetamarkets.com/
+      format: statement
+      firm: 'Moneta Markets Trading Limited'
+      licence_no: GB24203391
+      website: https://www.monetamarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Nord Premium LTD (NordFX) - FSC investment dealer licence GB24204016
+      url: https://nordfx.com/
+      format: statement
+      firm: 'Nord Premium LTD'
+      licence_no: GB24204016
+      website: https://nordfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Lirunex Limited (Lirunex) - FSC investment dealer licence GB24203882
+      url: https://www.lirunex.com/
+      format: statement
+      firm: 'Lirunex Limited'
+      licence_no: GB24203882
+      website: https://www.lirunex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Eightcap International Trading (Eightcap) - FSC investment dealer licence GB25204603
+      url: https://www.eightcap.com/
+      format: statement
+      firm: 'Eightcap International Trading'
+      licence_no: GB25204603
+      website: https://www.eightcap.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Dupoin International (MU) Ltd (Dupoin) - FSC investment dealer licence GB26206263
+      url: https://www.dupoin.com/
+      format: statement
+      firm: 'Dupoin International (MU) Ltd'
+      licence_no: GB26206263
+      website: https://www.dupoin.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Kohle Capital Markets Limited (KCM Trade) - FSC investment dealer licence C117022600
+      url: https://www.kcmtrade.com/
+      format: statement
+      firm: 'Kohle Capital Markets Limited'
+      licence_no: C117022600
+      website: https://www.kcmtrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Deriv (Mauritius) Ltd - FSC investment dealer licence
+      url: https://deriv.com/ae/regulatory-information
+      format: statement
+      firm: Deriv (Mauritius) Ltd
+      statement: 'Deriv \(Mauritius\) Ltd is licensed as an Investment Dealer'
+      website: https://deriv.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Thaurus Ltd - FSC investment dealer licence
+      url: https://thaurus.com/thaurus-broker-license-regulation/
+      format: statement
+      firm: Thaurus Ltd
+      statement: 'Thaurus Ltd\. the company which owns Thaurus Broker is licensed as a SEC-2\.1B investment dealer'
+      website: https://thaurus.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
   SC:
     regulator: FSA
     files:

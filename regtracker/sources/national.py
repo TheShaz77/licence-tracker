@@ -260,6 +260,29 @@ def read_statement(raw: bytes, spec: dict) -> tuple:
     regulator's report. Each run re-reads the page and keeps the firm only while the statement
     (spec "statement", a regex) is still there; the matching sentence goes into the status column."""
     text = re.sub(r"\s+", " ", " ".join(page_text_lines(raw)))
+    if spec.get("licence_no") and not spec.get("statement"):
+        # the firm's name (or firm_match), its licence number and the regulator's name, all within
+        # one passage of the page: "Exness (MU) Ltd ... licensed by the Financial Services
+        # Commission under licence number GB20025294"
+        firm_rx = r"\s*".join(map(re.escape, (spec.get("firm_match") or spec["firm"]).split()))
+        reg_rx = spec.get("regulator_match", r"Financial Services Commission")
+        m = None
+        for hit in re.finditer(re.escape(spec["licence_no"]), text):
+            window = text[max(0, hit.start() - 700): hit.end() + 400]
+            if re.search(firm_rx, window, re.I) and re.search(reg_rx, window, re.I):
+                offset = max(0, hit.start() - 700)
+                m = re.search(firm_rx, text[offset:], re.I)
+                break
+        if not m:
+            raise RuntimeError("licence statement (firm name + licence number) no longer found on the page")
+        a = text.rfind(". ", 0, offset + m.start())
+        sentence = text[a + 2 if a >= 0 else offset + m.start(): hit.end() + 1].strip()
+        if len(sentence) > 400:
+            sentence = text[offset + m.start(): hit.end() + 1].strip()
+        who = spec.get("statement_by", "firm's own website")
+        return (["name", "id", "website", "status"],
+                [[spec["firm"], spec["licence_no"], spec.get("website", ""),
+                  f"Stated in {who}: \"{sentence[:400]}\""]])
     m = re.search(spec["statement"], text, re.I)
     if not m:
         raise RuntimeError("licence statement no longer found on the page")

@@ -2267,3 +2267,16 @@ def test_page_lists_and_captcha_walls():
     assert _bot_wall(wall.decode())
     with pytest.raises(RuntimeError, match="bot protection"):
         parse_file(wall, {"url": "x", "format": "text_regex", "raw_html": True, "row_regex": "(?P<name>x)"}, "GI", "GGD")
+
+
+def test_statement_with_licence_number():
+    import pytest
+    from regtracker.sources.national import parse_file
+    spec = {"url": "x", "format": "statement", "firm": "Exness (MU) Ltd", "licence_no": "GB20025294",
+            "licence_type": "Investment dealer (FSC Mauritius)"}
+    page = (b"<footer><p>Exness (SC) Ltd is regulated in Seychelles.</p><p>Exness (MU) Ltd is an Investment Dealer, "
+            b"licensed by the Financial Services Commission under licence number GB20025294.</p></footer>")
+    recs, _ = parse_file(page, spec, "MU", "FSC")
+    assert recs[0].reference == "GB20025294" and recs[0].status_detail.startswith('Stated in firm')
+    with pytest.raises(RuntimeError):     # number present but for another entity
+        parse_file(b"<p>Other Ltd, licence GB20025294, Financial Services Commission.</p>", spec, "MU", "FSC")
