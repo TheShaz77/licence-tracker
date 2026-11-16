@@ -2432,6 +2432,786 @@ cfd:
       statement: 'Thaurus Ltd\. the company which owns Thaurus Broker is licensed as a SEC-2\.1B investment dealer'
       website: https://thaurus.com
       licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Accuindex Limited (Accuindex) - FSC investment dealer licence GB19024778
+      url: https://accuindex.com/en
+      format: statement
+      firm: 'Accuindex Limited'
+      licence_no: GB19024778
+      website: https://accuindex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Titan FX (Mauritius investment dealer) (Titan FX) - FSC investment dealer licence GB20026097
+      url: https://titanfx.com/about-us/contact
+      format: statement
+      firm: 'Titan FX (Mauritius investment dealer)'
+      firm_match: 'titanfx'
+      licence_no: GB20026097
+      website: https://titanfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Tattvam Capital Markets Ltd (Tattvam Markets) - FSC investment dealer licence 183299GBC
+      url: https://tattvammarkets.com/en
+      format: statement
+      firm: 'Tattvam Capital Markets Ltd'
+      licence_no: 183299GBC
+      website: https://tattvammarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 6i Trade Mauritius Limited (6i Trade) - FSC investment dealer licence C119023907
+      url: https://www.6itrade.com/
+      format: statement
+      firm: '6i Trade Mauritius Limited'
+      licence_no: C119023907
+      website: https://www.6itrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Doto Global Ltd (Doto) - FSC investment dealer licence C119023978
+      url: https://doto.com/
+      format: statement
+      firm: 'Doto Global Ltd'
+      firm_match: 'Doto Global'
+      licence_no: C119023978
+      website: https://doto.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Lead Capital Global Ltd (TRADE.com) - FSC investment dealer licence C119023948
+      url: https://www.trade.com/en/global/
+      format: statement
+      firm: 'Lead Capital Global Ltd'
+      licence_no: C119023948
+      website: https://www.trade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: CapitalXtend LLC (Mauritius) (CapitalXtend) - FSC investment dealer licence GB23201599
+      url: https://www.capitalxtend.com/
+      format: statement
+      firm: 'CapitalXtend LLC (Mauritius)'
+      firm_match: 'CapitalXtend LLC'
+      licence_no: GB23201599
+      website: https://www.capitalxtend.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Land Prime Ltd (Land Prime) - FSC investment dealer licence GB24203734
+      url: https://www.landprime.com/en-GB
+      format: statement
+      firm: 'Land Prime Ltd'
+      licence_no: GB24203734
+      website: https://www.landprime.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: TRADESENSE HOLDING LTD (TradeEU Global) - FSC investment dealer licence GB21026906
+      url: https://www.tradeeuglobal.net/en
+      format: statement
+      firm: 'TRADESENSE HOLDING LTD'
+      licence_no: GB21026906
+      website: https://www.tradeeuglobal.net
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Key to Markets International Limited (Key to Markets) - FSC investment dealer licence GB19024503
+      url: https://keytomarkets.com/
+      format: statement
+      firm: 'Key to Markets International Limited'
+      firm_match: 'KEY TO MARKETS INTERNATIONAL'
+      licence_no: GB19024503
+      website: https://keytomarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Triomarkets Capital Ltd (TrioMarkets) - FSC investment dealer licence C118023678
+      url: https://www.triomarkets.com/
+      format: statement
+      firm: 'Triomarkets Capital Ltd'
+      licence_no: C118023678
+      website: https://www.triomarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Monaxa (Monaxa) - FSC investment dealer licence GB23201577
+      url: https://monaxa.com/about-us/
+      format: statement
+      firm: 'Monaxa'
+      firm_match: 'Monaxa'
+      licence_no: GB23201577
+      website: https://monaxa.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: CXM Global (CXM) - FSC investment dealer licence GB21026337
+      url: https://cxm.com/en/
+      format: statement
+      firm: 'CXM Global'
+      licence_no: GB21026337
+      website: https://cxm.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Mohicans Markets (Ltd) (MH Markets) - FSC investment dealer licence GB20026131
+      url: https://mhmarkets.com/global/en
+      format: statement
+      firm: 'Mohicans Markets (Ltd)'
+      firm_match: 'Mohicans Markets'
+      licence_no: GB20026131
+      website: https://mhmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Neex International Limited (Neex) - FSC investment dealer licence GB20025869
+      url: https://neex.com/en/
+      format: statement
+      firm: 'Neex International Limited'
+      licence_no: GB20025869
+      website: https://neex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: YWO (MU) Ltd (YWO) - FSC investment dealer licence GB25205550
+      url: https://www.ywo.com/
+      format: statement
+      firm: 'YWO (MU) Ltd'
+      licence_no: GB25205550
+      website: https://www.ywo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Neomarkets Group Ltd (Neomarkets) - FSC investment dealer licence GB22200517
+      url: https://neomarkets.com/
+      format: statement
+      firm: 'Neomarkets Group Ltd'
+      licence_no: GB22200517
+      website: https://neomarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Trending Markets (International) Ltd (Trendo) - FSC investment dealer licence GB25205094
+      url: https://trendo.com/
+      format: statement
+      firm: 'Trending Markets (International) Ltd'
+      licence_no: GB25205094
+      website: https://trendo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: GivTrade Mauritius (GivTrade) - FSC investment dealer licence GB22201329
+      url: https://www.givtrade.com/
+      format: statement
+      firm: 'GivTrade Mauritius'
+      licence_no: GB22201329
+      website: https://www.givtrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: NextTrade (NextTrade) - FSC investment dealer licence GB25204563
+      url: https://nexttrade.com/
+      format: statement
+      firm: 'NextTrade'
+      firm_match: 'NextTrade'
+      licence_no: GB25204563
+      website: https://nexttrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: LIVE GLOBAL CAPITAL Ltd (FX Live Capital) - FSC investment dealer licence GB24203699
+      url: https://fxlivecapital.com/
+      format: statement
+      firm: 'LIVE GLOBAL CAPITAL Ltd'
+      licence_no: GB24203699
+      website: https://fxlivecapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: Ultima Markets (Mauritius) Ltd (Ultima Markets) - FSC investment dealer licence GB23201593
+      url: https://www.ultimamarkets.com/
+      format: statement
+      firm: 'Ultima Markets (Mauritius) Ltd'
+      firm_match: 'Ultima Markets'
+      licence_no: GB23201593
+      website: https://www.ultimamarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'AFC LIVE (MAURITIUS) LTD (AFC LIVE) - FSC investment dealer licence GB24203456'
+      url: 'https://afc-live.com/'
+      format: statement
+      firm: 'AFC LIVE (MAURITIUS) LTD'
+      licence_no: GB24203456
+      website: https://afc-live.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'ACG International Limited (Amana Capital Mauritius) - FSC investment dealer licence C118023192'
+      url: 'https://amana.app/mu/company/about'
+      format: statement
+      firm: 'ACG International Limited'
+      licence_no: C118023192
+      website: https://amana.app
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Aurra Global Markets Limited (Aurra Markets) - FSC investment dealer licence GB25204837'
+      url: 'https://aurramarketsmu.com/'
+      format: statement
+      firm: 'Aurra Global Markets Limited'
+      licence_no: GB25204837
+      website: https://aurramarketsmu.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'AUS GLOBAL MU LIMITED (AUS GLOBAL) - FSC investment dealer licence GB23201412'
+      url: 'https://www.ausglobaluk.com/'
+      format: statement
+      firm: 'AUS GLOBAL MU LIMITED'
+      licence_no: GB23201412
+      website: https://www.ausglobaluk.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Azul Capital Ltd (Azul Markets) - FSC investment dealer licence GB24203284'
+      url: 'https://azulmarkets.com/'
+      format: statement
+      firm: 'Azul Capital Ltd'
+      licence_no: GB24203284
+      website: https://azulmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'BitDelta Limited (BitDelta) - FSC investment dealer licence GB24202926'
+      url: 'https://bitdelta.pro/'
+      format: statement
+      firm: 'BitDelta Limited'
+      licence_no: GB24202926
+      website: https://bitdelta.pro
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Bkquote Global Prime Ltd (BKquote) - FSC investment dealer licence GB26206389'
+      url: 'https://www.bkquote.com/'
+      format: statement
+      firm: 'Bkquote Global Prime Ltd'
+      licence_no: GB26206389
+      website: https://www.bkquote.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Born2trade Ltd (Born2trade) - FSC investment dealer licence GB24203511'
+      url: 'https://born2trade.com/'
+      format: statement
+      firm: 'Born2trade Ltd'
+      licence_no: GB24203511
+      website: https://born2trade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Dana Global Limited (BtcDana) - FSC investment dealer licence GB22200578'
+      url: 'https://www.btcdana.com/'
+      format: statement
+      firm: 'Dana Global Limited'
+      licence_no: GB22200578
+      website: https://www.btcdana.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Capital Street Intermarkets Limited (CapitalStreetfx) - FSC investment dealer licence C112010690'
+      url: 'https://www.capitalstreetfx.com/'
+      format: statement
+      firm: 'Capital Street Intermarkets Limited'
+      licence_no: C112010690
+      website: https://www.capitalstreetfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'CENTRIX MARKETS LIMITED (Centrix Markets) - FSC investment dealer licence GB25101320'
+      url: 'https://centrixmarkets.com/'
+      format: statement
+      firm: 'CENTRIX MARKETS LIMITED'
+      licence_no: GB25101320
+      website: https://centrixmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'CG Global Ltd (Commercial Group FX Limited) - FSC investment dealer licence GB22200249'
+      url: 'https://cginvest.com/'
+      format: statement
+      firm: 'CG Global Ltd'
+      licence_no: GB22200249
+      website: https://cginvest.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Eurotrade International Ltd (Eurotrade International Ltd) - FSC investment dealer licence GB22201125'
+      url: 'https://eurotrader.com/'
+      format: statement
+      firm: 'Eurotrade International Ltd'
+      licence_no: GB22201125
+      website: https://eurotrader.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Evostock Ltd (Evostock) - FSC investment dealer licence GB21027075'
+      url: 'https://www.evostock.com/en/'
+      format: statement
+      firm: 'Evostock Ltd'
+      licence_no: GB21027075
+      website: https://www.evostock.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FastOne Global Financial Markets Limited (F1 Globex) - FSC investment dealer licence C113011860'
+      url: 'https://f1globex.com/Company/Regulations'
+      format: statement
+      firm: 'FastOne Global Financial Markets Limited'
+      licence_no: C113011860
+      website: https://f1globex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Finotive Markets (MU) Limited (Finotive Markets) - FSC investment dealer licence GB25205544'
+      url: 'https://finotive.com/legal/terms-and-conditions/'
+      format: statement
+      firm: 'Finotive Markets (MU) Limited'
+      licence_no: GB25205544
+      website: https://finotive.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Finsai Trade (Mauritius) Ltd (Finsai Trade) - FSC investment dealer licence GB25204899'
+      url: 'https://finsaitrade.com/'
+      format: statement
+      firm: 'Finsai Trade (Mauritius) Ltd'
+      licence_no: GB25204899
+      website: https://finsaitrade.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Fintana Trading Ltd (Fintana) - FSC investment dealer licence GB23201338'
+      url: 'https://www.fintana.com/en/'
+      format: statement
+      firm: 'Fintana Trading Ltd'
+      licence_no: GB23201338
+      website: https://www.fintana.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FINVEO MA Ltd (FINVEO MA) - FSC investment dealer licence GB22200832'
+      url: 'https://www.finveo.com/'
+      format: statement
+      firm: 'FINVEO MA Ltd'
+      licence_no: GB22200832
+      website: https://www.finveo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FlipTrade Group Ltd (FlipTrade Group) - FSC investment dealer licence GB26205911'
+      url: 'https://fliptradegroup.com/regulation'
+      format: statement
+      firm: 'FlipTrade Group Ltd'
+      licence_no: GB26205911
+      website: https://fliptradegroup.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FOT Limited (Fotmarkets) - FSC investment dealer licence GB23201518'
+      url: 'https://fotmarkets.com/'
+      format: statement
+      firm: 'FOT Limited'
+      licence_no: GB23201518
+      website: https://fotmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FP Trading (MU) Limited (FP Trading) - FSC investment dealer licence GB26205878'
+      url: 'https://www.fptrading.com/'
+      format: statement
+      firm: 'FP Trading (MU) Limited'
+      licence_no: GB26205878
+      website: https://www.fptrading.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FBL Global Ltd (FX BAY) - FSC investment dealer licence GB23201367'
+      url: 'https://fxbaylive.com/'
+      format: statement
+      firm: 'FBL Global Ltd'
+      licence_no: GB23201367
+      website: https://fxbaylive.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'GCC Brokers Limited (GCC BROKERS MU) - FSC investment dealer licence GB22200739'
+      url: 'https://gccbrokers.com/en'
+      format: statement
+      firm: 'GCC Brokers Limited'
+      licence_no: GB22200739
+      website: https://gccbrokers.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Giraffe Wealth Management Ltd (Giraffe Markets) - FSC investment dealer licence GB24203636'
+      url: 'https://www.giraffemarkets.com/'
+      format: statement
+      firm: 'Giraffe Wealth Management Ltd'
+      licence_no: GB24203636
+      website: https://www.giraffemarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Hantec Markets Ltd (Hantec Global) - FSC investment dealer licence C114013940'
+      url: 'https://hmarkets.com/'
+      format: statement
+      firm: 'Hantec Markets Ltd'
+      licence_no: C114013940
+      website: https://hmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Hola Prime Ltd (Hola Prime Markets) - FSC investment dealer licence GB24203729'
+      url: 'https://holaprimemarkets.com/'
+      format: statement
+      firm: 'Hola Prime Ltd'
+      licence_no: GB24203729
+      website: https://holaprimemarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'iLimits Invest Limited (ILIMITS) - FSC investment dealer licence GB26205954'
+      url: 'https://ilimits.com/'
+      format: statement
+      firm: 'iLimits Invest Limited'
+      licence_no: GB26205954
+      website: https://ilimits.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'INFINOX Limited (INFINOX FSC) - FSC investment dealer licence GB20025832'
+      url: 'https://infinox.com/global/en'
+      format: statement
+      firm: 'INFINOX Limited'
+      licence_no: GB20025832
+      website: https://infinox.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Investors Europe (Mauritius) Limited (Investors Europe Ltd.) - FSC investment dealer licence C112011088'
+      url: 'https://csbinvestors.com/'
+      format: statement
+      firm: 'Investors Europe (Mauritius) Limited'
+      licence_no: C112011088
+      website: https://csbinvestors.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'IST Markets LTD (IST Markets) - FSC investment dealer licence GB22200573'
+      url: 'https://istmarkets.com/'
+      format: statement
+      firm: 'IST Markets LTD'
+      licence_no: GB22200573
+      website: https://istmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'KIRA Markets Limited (KIRA Markets) - FSC investment dealer licence GB26206125'
+      url: 'https://kiramarkets.com/'
+      format: statement
+      firm: 'KIRA Markets Limited'
+      licence_no: GB26206125
+      website: https://kiramarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Kudo Trade (Mauritius) Ltd (Kudotrade) - FSC investment dealer licence GB24203599'
+      url: 'https://kudo.com/en'
+      format: statement
+      firm: 'Kudo Trade (Mauritius) Ltd'
+      licence_no: GB24203599
+      website: https://kudo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'KVB Plus (MU) Ltd (KVB) - FSC investment dealer licence GB26206294'
+      url: 'https://www.kvbplus.com/en'
+      format: statement
+      firm: 'KVB Plus (MU) Ltd'
+      licence_no: GB26206294
+      website: https://www.kvbplus.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Longhorn Ltd (LHFX) - FSC investment dealer licence GB23202204'
+      url: 'https://lhfx.com/'
+      format: statement
+      firm: 'Longhorn Ltd'
+      licence_no: GB23202204
+      website: https://lhfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Masada Investments Limited (Masada Markets) - FSC investment dealer licence GB23202128'
+      url: 'https://www.masadamarkets.com/'
+      format: statement
+      firm: 'Masada Investments Limited'
+      licence_no: GB23202128
+      website: https://www.masadamarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Mega Fusion Group Limited (Mega Fusion) - FSC investment dealer licence GB23201920'
+      url: 'https://www.mega-fusion.com/'
+      format: statement
+      firm: 'Mega Fusion Group Limited'
+      licence_no: GB23201920
+      website: https://www.mega-fusion.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Mento Markets (Mauritius) Ltd (Mento Markets) - FSC investment dealer licence GB26206478'
+      url: 'https://mentomarkets.com/'
+      format: statement
+      firm: 'Mento Markets (Mauritius) Ltd'
+      licence_no: GB26206478
+      website: https://mentomarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Metritax (MU) Ltd (Metritax) - FSC investment dealer licence GB26206169'
+      url: 'https://metritax.com/en'
+      format: statement
+      firm: 'Metritax (MU) Ltd'
+      licence_no: GB26206169
+      website: https://metritax.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Milele Prime Ltd (Milele Prime) - FSC investment dealer licence GB26206552'
+      url: 'https://www.mileleprime.com/platforms'
+      format: statement
+      firm: 'Milele Prime Ltd'
+      licence_no: GB26206552
+      website: https://www.mileleprime.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Miles Capital Limited (Miles Capital) - FSC investment dealer licence GB22201008'
+      url: 'https://milescapitals.com/'
+      format: statement
+      firm: 'Miles Capital Limited'
+      licence_no: GB22201008
+      website: https://milescapitals.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Monolith Private Wealth Limited (Monolith Market) - FSC investment dealer licence GB22201014'
+      url: 'https://monolithmarket.com/about/regulation'
+      format: statement
+      firm: 'Monolith Private Wealth Limited'
+      licence_no: GB22201014
+      website: https://monolithmarket.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'NEXORA CAPITAL MARKETS LTD (NEXORA) - FSC investment dealer licence GB26206605'
+      url: 'https://www.nxorafx.com/'
+      format: statement
+      firm: 'NEXORA CAPITAL MARKETS LTD'
+      licence_no: GB26206605
+      website: https://www.nxorafx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Novir Markets Ltd (Novir Markets) - FSC investment dealer licence GB21026833'
+      url: 'https://www.novirmarkets.com/'
+      format: statement
+      firm: 'Novir Markets Ltd'
+      licence_no: GB21026833
+      website: https://www.novirmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Rahal Global Markets Ltd (RG Markets) - FSC investment dealer licence GB25205288'
+      url: 'https://rg-markets.com/'
+      format: statement
+      firm: 'Rahal Global Markets Ltd'
+      licence_no: GB25205288
+      website: https://rg-markets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Rinxo Limited (Rinxo) - FSC investment dealer licence GB25205135'
+      url: 'https://rinxo.com/'
+      format: statement
+      firm: 'Rinxo Limited'
+      licence_no: GB25205135
+      website: https://rinxo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Securcap Securities (MU) Ltd (Securcap Securities (MU) Ltd) - FSC investment dealer licence GB20025775'
+      url: 'https://www.securcapmu.com/'
+      format: statement
+      firm: 'Securcap Securities (MU) Ltd'
+      licence_no: GB20025775
+      website: https://www.securcapmu.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Sharewealth Capital Ltd (Sharewealth Capital) - FSC investment dealer licence GB23201585'
+      url: 'https://sharewealthcapital.com/'
+      format: statement
+      firm: 'Sharewealth Capital Ltd'
+      licence_no: GB23201585
+      website: https://sharewealthcapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Sky Links Capital Limited (SKYLINKS CAPITAL) - FSC investment dealer licence GB24202837'
+      url: 'https://skylinkscapital.com/en/'
+      format: statement
+      firm: 'Sky Links Capital Limited'
+      licence_no: GB24202837
+      website: https://skylinkscapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Skyriss Securities (Mauritius) Ltd (Skyriss) - FSC investment dealer licence GB25204272'
+      url: 'https://www.skyriss.com/en/'
+      format: statement
+      firm: 'Skyriss Securities (Mauritius) Ltd'
+      licence_no: GB25204272
+      website: https://www.skyriss.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Spectra Global LTD (Spectra Global Ltd.) - FSC investment dealer licence GB22201302'
+      url: 'https://www.sgfx.com/'
+      format: statement
+      firm: 'Spectra Global LTD'
+      licence_no: GB22201302
+      website: https://www.sgfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'SR Global Markets Ltd (SR Global Markets) - FSC investment dealer licence GB25205088'
+      url: 'https://srglobalmarkets.com/'
+      format: statement
+      firm: 'SR Global Markets Ltd'
+      licence_no: GB25205088
+      website: https://srglobalmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Sthirix Capital Ltd (Sthirix) - FSC investment dealer licence GB22200942'
+      url: 'https://sthirix.com/'
+      format: statement
+      firm: 'Sthirix Capital Ltd'
+      licence_no: GB22200942
+      website: https://sthirix.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'UEXO Global Ltd (UEXO Global) - FSC investment dealer licence GB21026300'
+      url: 'https://uexo.com/'
+      format: statement
+      firm: 'UEXO Global Ltd'
+      licence_no: GB21026300
+      website: https://uexo.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'UP Global Markets Ltd (UPFOREX) - FSC investment dealer licence GB25204570'
+      url: 'https://www.upforex.com/'
+      format: statement
+      firm: 'UP Global Markets Ltd'
+      licence_no: GB25204570
+      website: https://www.upforex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'VCG Markets Ltd (VCG MARKETS) - FSC investment dealer licence GB22200388'
+      url: 'https://vcgmarkets.com/en'
+      format: statement
+      firm: 'VCG Markets Ltd'
+      licence_no: GB22200388
+      website: https://vcgmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Vertex1 Brokers Limited (Vertex1 Brokers) - FSC investment dealer licence GB25205109'
+      url: 'https://www.vertex1brokers.com/new-home'
+      format: statement
+      firm: 'Vertex1 Brokers Limited'
+      licence_no: GB25205109
+      website: https://www.vertex1brokers.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Xelans Markets Limited (Xelans Markets) - FSC investment dealer licence GB23201934'
+      url: 'https://www.xelansmarkets.com/'
+      format: statement
+      firm: 'Xelans Markets Limited'
+      licence_no: GB23201934
+      website: https://www.xelansmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'ZED CAPITAL INTERNATIONAL LIMITED (Zed Capital) - FSC investment dealer licence GB24203133'
+      url: 'https://www.zedcapital.com/'
+      format: statement
+      firm: 'ZED CAPITAL INTERNATIONAL LIMITED'
+      licence_no: GB24203133
+      website: https://www.zedcapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Zyvest Capital Prime Ltd (Zyvest Capital) - FSC investment dealer licence GB25204874'
+      url: 'https://zyvest.com/'
+      format: statement
+      firm: 'Zyvest Capital Prime Ltd'
+      licence_no: GB25204874
+      website: https://zyvest.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: '9Cents Financials Ltd (9Cents Financials) - FSC investment dealer licence GB25204261'
+      url: 'https://www.9cents.com/'
+      format: statement
+      firm: '9Cents Financials Ltd'
+      firm_match: '9Cents Financials'
+      licence_no: GB25204261
+      website: https://www.9cents.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Amillex Global Ltd (Amillex) - FSC investment dealer licence GB24203163'
+      url: 'https://www.amillex.com/'
+      format: statement
+      firm: 'Amillex Global Ltd'
+      licence_no: GB24203163
+      website: https://www.amillex.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Arrow Trade (Arrow Trade) - FSC investment dealer licence GB24202940'
+      url: 'https://www.arrowtradefx.com/'
+      format: statement
+      firm: 'Arrow Trade'
+      firm_match: 'Arrow Trade'
+      licence_no: GB24202940
+      website: https://www.arrowtradefx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Base Markets (Base Markets) - FSC investment dealer licence GB25204723'
+      url: 'https://www.basemarkets.com/'
+      format: statement
+      firm: 'Base Markets'
+      firm_match: 'Base Markets'
+      licence_no: GB25204723
+      website: https://www.basemarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'BCM Markets Ltd (BCM Markets Ltd) - FSC investment dealer licence GB23202163'
+      url: 'https://bcm-markets.com/en/'
+      format: statement
+      firm: 'BCM Markets Ltd'
+      firm_match: 'BCM Markets Ltd'
+      licence_no: GB23202163
+      website: https://bcm-markets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Belleo Markets (MU) (BELLEO FX) - FSC investment dealer licence GB21027167'
+      url: 'https://belleofx.com/'
+      format: statement
+      firm: 'Belleo Markets (MU)'
+      firm_match: 'BELLEO FX'
+      licence_no: GB21027167
+      website: https://belleofx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'BrillantCapital (Brillant Capital) - FSC investment dealer licence GB23202538'
+      url: 'https://brillantcapital.com/'
+      format: statement
+      firm: 'BrillantCapital'
+      firm_match: 'Brillant Capital'
+      licence_no: GB23202538
+      website: https://brillantcapital.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Capstock Ltd (CAPSTOCK) - FSC investment dealer licence C112010791'
+      url: 'https://www.capstockfx.com/'
+      format: statement
+      firm: 'Capstock Ltd'
+      firm_match: 'CAPSTOCK'
+      licence_no: C112010791
+      website: https://www.capstockfx.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Elev8 Markets (Elev8) - FSC investment dealer licence GB21027161'
+      url: 'https://www.elev8.com/'
+      format: statement
+      firm: 'Elev8 Markets'
+      firm_match: 'Elev8'
+      licence_no: GB21027161
+      website: https://www.elev8.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Ellipsys Financial Markets (Ellipsys Financial Markets) - FSC investment dealer licence C111010125'
+      url: 'https://www.elpmarkets.com/'
+      format: statement
+      firm: 'Ellipsys Financial Markets'
+      firm_match: 'Ellipsys Financial Markets'
+      licence_no: C111010125
+      website: https://www.elpmarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FPM Trading (FPM Trading) - FSC investment dealer licence GB25204316'
+      url: 'https://fpmtrading.com/'
+      format: statement
+      firm: 'FPM Trading'
+      firm_match: 'FPM Trading'
+      licence_no: GB25204316
+      website: https://fpmtrading.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'FXEM Limited (FXEM) - FSC investment dealer licence GB22200699'
+      url: 'https://fxem.com/'
+      format: statement
+      firm: 'FXEM Limited'
+      firm_match: 'FXEM'
+      licence_no: GB22200699
+      website: https://fxem.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'ICM Brokers Ltd (ICM Brokers) - FSC investment dealer licence GB24203068'
+      url: 'https://www.icmbrokers.com/'
+      format: statement
+      firm: 'ICM Brokers Ltd'
+      firm_match: 'ICM Brokers'
+      licence_no: GB24203068
+      website: https://www.icmbrokers.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'JKV Global Capital Markets Services Limited (JKV GLOBAL) - FSC investment dealer licence GB23201820'
+      url: 'https://jkvglobal.com/'
+      format: statement
+      firm: 'JKV Global Capital Markets Services Limited'
+      firm_match: 'JKV GLOBAL'
+      licence_no: GB23201820
+      website: https://jkvglobal.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Marketsall LTD (MARKETS ALL) - FSC investment dealer licence GB23201682'
+      url: 'https://www.marketsall.com/en'
+      format: statement
+      firm: 'Marketsall LTD'
+      firm_match: 'MARKETS ALL'
+      licence_no: GB23201682
+      website: https://www.marketsall.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Match Securities (Match Securities) - FSC investment dealer licence GB21026301'
+      url: 'https://matchsecurities.com/'
+      format: statement
+      firm: 'Match Securities'
+      firm_match: 'Match Securities'
+      licence_no: GB21026301
+      website: https://matchsecurities.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'RHC Investments (Metadoro) (METADORO) - FSC investment dealer licence C115015381'
+      url: 'https://metadoro.com/'
+      format: statement
+      firm: 'RHC Investments (Metadoro)'
+      firm_match: 'RHC Investments'
+      licence_no: C115015381
+      website: https://metadoro.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'MY MAA MARKETS LTD (My Maa Markets) - FSC investment dealer licence GB24203320'
+      url: 'https://mymaamarkets.com/'
+      format: statement
+      firm: 'MY MAA MARKETS LTD'
+      firm_match: 'My Maa Markets'
+      licence_no: GB24203320
+      website: https://mymaamarkets.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Nuvesto Markets Ltd (Nuvesto) - FSC investment dealer licence GB25204355'
+      url: 'https://nuvesto.com/access-restricted/'
+      format: statement
+      firm: 'Nuvesto Markets Ltd'
+      firm_match: 'Nuvesto'
+      licence_no: GB25204355
+      website: https://nuvesto.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Regulus Liquidity (Regulus Liquidity) - FSC investment dealer licence GB23202202'
+      url: 'https://regulus.org/'
+      format: statement
+      firm: 'Regulus Liquidity'
+      firm_match: 'Regulus Liquidity'
+      licence_no: GB23202202
+      website: https://regulus.org
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Strifor (Mauritius) Ltd (STRIFOR) - FSC investment dealer licence GB23202670'
+      url: 'https://strifor.org/'
+      format: statement
+      firm: 'Strifor (Mauritius) Ltd'
+      licence_no: GB23202670
+      website: https://strifor.org
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'TibiGlobe (TibiGlobe) - FSC investment dealer licence GB24203464'
+      url: 'https://www.tibiglobe.com/our-company/'
+      format: statement
+      firm: 'TibiGlobe'
+      firm_match: 'TibiGlobe'
+      licence_no: GB24203464
+      website: https://www.tibiglobe.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Tradin (Tradin) - FSC investment dealer licence GB25204266'
+      url: 'https://tradin.com/'
+      format: statement
+      firm: 'Tradin'
+      firm_match: 'Tradin'
+      licence_no: GB25204266
+      website: https://tradin.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Versus Trade (Versus Trade) - FSC investment dealer licence GB25204646'
+      url: 'https://versus.trade/regulation/'
+      format: statement
+      firm: 'Versus Trade'
+      firm_match: 'Versus Trade'
+      licence_no: GB25204646
+      website: https://versus.trade
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
+    - label: 'Yubit Market MU Limited (YUBIT) - FSC investment dealer licence GB26206590'
+      url: 'https://www.yubit.com/en-US'
+      format: statement
+      firm: 'Yubit Market MU Limited'
+      firm_match: 'YUBIT'
+      licence_no: GB26206590
+      website: https://www.yubit.com
+      licence_type: Investment dealer (FSC Mauritius) - as stated by the firm
   SC:
     regulator: FSA
     files:

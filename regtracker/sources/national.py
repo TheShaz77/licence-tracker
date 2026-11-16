@@ -265,7 +265,7 @@ def read_statement(raw: bytes, spec: dict) -> tuple:
         # one passage of the page: "Exness (MU) Ltd ... licensed by the Financial Services
         # Commission under licence number GB20025294"
         firm_rx = r"\s*".join(map(re.escape, (spec.get("firm_match") or spec["firm"]).split()))
-        reg_rx = spec.get("regulator_match", r"Financial Services Commission")
+        reg_rx = spec.get("regulator_match", r"Financial Services Commission|\bFSC\b")
         m = None
         for hit in re.finditer(re.escape(spec["licence_no"]), text):
             window = text[max(0, hit.start() - 700): hit.end() + 400]
