@@ -392,7 +392,8 @@ def cmd_run(args, cfg, data_dir) -> int:
             if covered:
                 extra["Source check"] = compare.report(data_dir, covered, load_snapshot(data_dir, "eba"), ctx.now)
             sheets.publish(records, recent_changes(data_dir, int(cfg.get("sheet_change_rows", 5000))), run_info, log,
-                           per_country=bool(cfg.get("sheet_country_tabs", True)), extra_tabs=extra)
+                           per_country=bool(cfg.get("sheet_country_tabs", True)), extra_tabs=extra,
+                           marks_file=data_dir / "state" / "manual_marks.json")
         except Exception as e:
             log.exception("Google Sheets update failed")
             problems.append(f"Google Sheets: {e}")

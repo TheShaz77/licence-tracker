@@ -2289,3 +2289,32 @@ def test_payment_agents_switched_off_are_dropped():
     assert drop_switched_off_agents(st, ("emd",)) == 1 and set(st["tracked"]) == {"2", "3"}
     firm = {"PSD Agent Status": "Registered", "Status": "Authorised"}
     assert record_from_firm(123, firm, agents=("emd",)) is None
+
+
+def test_hand_made_marks_follow_the_firm(tmp_path):
+    from regtracker import sheets
+    red = {"backgroundColor": {"red": 1, "green": 0, "blue": 0}, "textFormat": {"strikethrough": True}}
+
+    class MarkSheet(FakeSheet):
+        def fetch_sheet_metadata(self, params):
+            if "ranges" not in params:
+                return {"sheets": []}
+            hdr = [{"formattedValue": h} for h in ("Jurisdiction", "Country", "Regulator", "Firm name")]
+            row = [{"formattedValue": v, "userEnteredFormat": red} for v in ("IE", "Ireland", "CBI", "Irish EMI")]
+            plain = [{"formattedValue": v} for v in ("IE", "Ireland", "CBI", "Another EMI")]
+            return {"sheets": [{"properties": {"title": "Ireland (FI)"},
+                                "data": [{"rowData": [{"values": hdr}, {"values": row}, {"values": plain}]}]}]}
+
+    recs = [{**rec("b"), "jurisdiction": "IE", "name": "Irish EMI", "regulator": "CBI"},
+            {**rec("c"), "jurisdiction": "IE", "name": "Aardvark Pay", "regulator": "CBI"}]   # sorts first now
+    sh = MarkSheet(["Ireland (FI)"])
+    store = tmp_path / "marks.json"
+    sheets.publish(recs, [], {}, logging.getLogger("t"), sh=sh, marks_file=store)
+    data = {d["range"]: d["values"] for d in sh.writes[0]["data"]}
+    rows = data["'Ireland (FI)'!A1"]
+    want = next(i for i, r in enumerate(rows) if "Irish EMI" in r)
+    cells = [r["repeatCell"] for b in sh.batches for r in b["requests"] if "repeatCell" in r]
+    assert cells[0]["cell"]["userEnteredFormat"] == {}                          # old positions cleared
+    marked = [c["range"]["startRowIndex"] for c in cells[1:]]
+    assert marked == [want] and cells[1]["cell"]["userEnteredFormat"] == red
+    assert "irish emi" in store.read_text().lower()                              # kept on file too

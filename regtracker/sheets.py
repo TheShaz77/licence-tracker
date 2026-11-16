@@ -201,12 +201,101 @@ def highlight_flags(sh, tabs: dict, existing: dict) -> None:
         sh.batch_update({"requests": reqs})
 
 
+# ---- formatting people add by hand (a row crossed out or coloured red) -----------------------------
+# Every run rewrites the rows in a new order, and Sheets keeps formatting on the cell position, not on
+# the firm. So before writing, the marks are read (columns A-D: country, regulator, firm name), tied to
+# the firm, and after writing they are put back on that firm's row - across the whole row. They are also
+# kept in data/state/manual_marks.json, so a tab that is rebuilt or left out for a run keeps them.
+MARK_FIELDS = "userEnteredFormat(backgroundColor,textFormat)"
+MARK_COLS = 4
+
+
+def _is_mark(fmt: dict) -> bool:
+    if not fmt:
+        return False
+    bg = fmt.get("backgroundColor") or {}
+    if bg and not all(abs(bg.get(c, 0) - 1) < 0.01 for c in ("red", "green", "blue")):
+        return True                                   # a fill other than white
+    tf = fmt.get("textFormat") or {}
+    if tf.get("strikethrough"):
+        return True
+    fg = tf.get("foregroundColor") or {}
+    if fg and any(fg.get(c, 0) > 0.05 for c in ("red", "green", "blue")):
+        return True                                   # coloured text (not black)
+    return False
+
+
+KEY_HEADERS = ("Jurisdiction", "Country", "Regulator", "Firm name")
+
+
+def _key_cols(header: list) -> list:
+    return [i for i, h in enumerate(header[:MARK_COLS]) if h in KEY_HEADERS]
+
+
+def _mark_key(values: list, cols: list) -> str:
+    values = list(values) + [""] * MARK_COLS
+    return "|".join(str(values[i] or "").strip().lower() for i in cols)
+
+
+def read_marks(sh, titles: list) -> dict:
+    """{tab: {row key: format}} for rows someone has formatted by hand."""
+    out = {}
+    for i in range(0, len(titles), 15):
+        part = titles[i:i + 15]
+        ranges = ["'" + t.replace("'", "''") + "'!A1:D" for t in part]
+        meta = sh.fetch_sheet_metadata({
+            "includeGridData": "true", "ranges": ranges,
+            "fields": "sheets(properties(title),data(rowData(values(formattedValue,userEnteredFormat(backgroundColor,textFormat)))))"})
+        for sheet in meta.get("sheets", []):
+            title = sheet["properties"]["title"]
+            marks = {}
+            rows = [r.get("values") or [] for block in sheet.get("data", []) for r in (block.get("rowData") or [])]
+            if not rows:
+                out[title] = marks
+                continue
+            cols = _key_cols([c.get("formattedValue", "") for c in rows[0]])
+            if "Firm name" not in [c.get("formattedValue", "") for c in rows[0]]:
+                continue                                  # not a list of firms
+            for cells in rows[1:]:
+                fmt = next((c.get("userEnteredFormat") for c in cells if _is_mark(c.get("userEnteredFormat"))), None)
+                if fmt:
+                    key = _mark_key([c.get("formattedValue", "") for c in cells], cols)
+                    if key.strip("|"):
+                        marks[key] = {k: v for k, v in fmt.items() if k in ("backgroundColor", "textFormat")}
+            out[title] = marks
+    return out
+
+
+def restore_marks(sh, tabs: dict, existing: dict, marks: dict) -> int:
+    reqs, n = [], 0
+    for title, rows in tabs.items():
+        tab_marks = marks.get(title) or {}
+        if not tab_marks or title not in existing or len(rows) < 2:
+            continue
+        sid, width = existing[title], max(len(r) for r in rows)
+        cols = _key_cols(rows[0])
+        # clear the old positions first (rows have moved), then mark each firm's current row
+        reqs.append({"repeatCell": {"range": {"sheetId": sid, "startRowIndex": 1, "endRowIndex": len(rows),
+                                              "startColumnIndex": 0, "endColumnIndex": width},
+                                    "cell": {"userEnteredFormat": {}}, "fields": MARK_FIELDS}})
+        for i, row in enumerate(rows[1:], start=1):
+            fmt = tab_marks.get(_mark_key([str(v) for v in row], cols))
+            if fmt:
+                reqs.append({"repeatCell": {"range": {"sheetId": sid, "startRowIndex": i, "endRowIndex": i + 1,
+                                                      "startColumnIndex": 0, "endColumnIndex": width},
+                                            "cell": {"userEnteredFormat": fmt}, "fields": MARK_FIELDS}})
+                n += 1
+    for i in range(0, len(reqs), 5000):
+        sh.batch_update({"requests": reqs[i:i + 5000]})
+    return n
+
+
 def _a1(title: str, row: int) -> str:
     return "'" + title.replace("'", "''") + f"'!A{row}"
 
 
 def publish(records: list, change_rows: list, run_info: dict, log, per_country: bool = True, sh=None,
-            extra_tabs: dict | None = None):
+            extra_tabs: dict | None = None, marks_file=None):
     if sh is None:
         import gspread
         gc = gspread.service_account_from_dict(json.loads(os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"]))
@@ -214,6 +303,24 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
 
     tabs = build_tabs(records, change_rows, run_info, per_country, extra_tabs)
     existing = {ws.title: ws.id for ws in sh.worksheets()}
+
+    # 0. hand-made marks (red / crossed-out rows): read them before anything moves, keep them on file
+    marks = {}
+    if marks_file is not None:
+        try:
+            marks = json.loads(open(marks_file).read())
+        except (OSError, ValueError):
+            marks = {}
+    try:
+        readable = [t for t in existing if t not in ("Summary", "Changes", "Source check")]
+        marks.update(read_marks(sh, readable))          # what is on the sheet now wins for tabs that exist
+        if marks_file is not None:
+            os.makedirs(os.path.dirname(str(marks_file)) or ".", exist_ok=True)
+            with open(marks_file, "w") as fh:
+                json.dump({t: m for t, m in marks.items() if m}, fh, indent=1, sort_keys=True)
+        log.info("Hand-made row marks found: %d", sum(len(m) for m in marks.values()))
+    except Exception as e:
+        log.warning("Could not read hand-made row marks (they are re-applied from the saved copy): %s", e)
     # Google Sheets holds at most 10 million cells per spreadsheet. The country tabs already contain
     # every firm, so when everything won't fit, the "FI (all countries)" tab is left out.
     limit = int(os.environ.get("SHEET_CELL_LIMIT", "9800000"))
@@ -273,6 +380,14 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
                 data, size = [], 0
     if data:
         sh.values_batch_update(body={"valueInputOption": "RAW", "data": data})
+
+    # 3b. put the hand-made marks back on the right firms
+    try:
+        n = restore_marks(sh, tabs, existing, marks)
+        if n:
+            log.info("Hand-made row marks re-applied to %d rows", n)
+    except Exception as e:
+        log.warning("Could not re-apply hand-made row marks: %s", e)
 
     # 4. rows flagged "do not contact" / competitor turn red (one conditional-format rule per tab)
     try:
