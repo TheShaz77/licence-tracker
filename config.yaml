@@ -2506,6 +2506,85 @@ igaming:
       url: https://mgalicenseeregister.mga.org.mt/
       probe: true
       follow: api|licensee|register|\.json|\.csv
+  MU:
+    regulator: GRA
+    # The Gambling Regulatory Authority publishes no list of licensees (its site has licence conditions
+    # only; its annual report gives counts, not names). Each firm below states its GRA licence on its own
+    # website or in a published document; every run re-reads that page and drops the firm if the
+    # statement disappears. New licensees are not picked up automatically.
+    files:
+    - label: ValuePlus Ltd - GRA bookmaker licence (football)
+      url: https://valueplus.mu/
+      format: statement
+      firm: ValuePlus Ltd
+      website: https://valueplus.mu
+      statement: 'ValuePlus Ltd is a private company.{0,120}licensed by the Gambling Regulatory Authority as bookmaker to conduct fixed odds betting on football'
+      statement_by: firm's own website
+      licence_type: Bookmaker - fixed odds betting on football (GRA Mauritius)
+    - label: ValuePlus Ltd - GRA remote communication licence
+      url: https://valueplus.mu/
+      format: statement
+      firm: ValuePlus Ltd
+      website: https://valueplus.mu
+      statement: 'ValuePlus Ltd was granted a licence to conduct football betting through remote communication'
+      statement_by: firm's own website
+      licence_type: Bookmaker - remote communication / online and SMS (GRA Mauritius)
+    - label: Globalsports Ltd (Totelepep / Sportslepep) - GRA licences
+      url: https://totelepep.mu/
+      format: statement
+      firm: Globalsports Ltd
+      website: https://totelepep.mu
+      statement: 'Globalsports Ltd is licensed as a Totalisator operator for Local Horse Racing under the name of Totelepep and as Bookmaker on football'
+      statement_by: firm's own website
+      licence_type: Totalisator operator - local horse racing + Bookmaker - football (GRA Mauritius)
+    - label: Automatic Systems Ltd (Supertote) - GRA licence
+      url: https://www.supertote.mu/
+      format: statement
+      firm: Automatic Systems Ltd
+      website: https://www.automaticsystemsltd.mu
+      statement: 'operated by Automatic Systems Ltd and is licensed to offer betting activities under the jurisdiction of the Gambling Regulatory Authority'
+      statement_by: firm's own website
+      licence_type: Totalisator / betting operator (GRA Mauritius)
+    - label: Automatic Systems Ltd (Superscore) - GRA remote communication licence
+      url: https://www.automaticsystemsltd.mu/about-asl/our-history
+      format: statement
+      firm: Automatic Systems Ltd
+      website: https://www.automaticsystemsltd.mu
+      statement: 'The Remote Communication licen[cs]e was obtained, allowing the Company to offer football bets'
+      statement_by: firm's own website
+      licence_type: Bookmaker - remote communication / SMS football betting (GRA Mauritius)
+    - label: Stevenhills Ltd - GRA bookmaker licence (football)
+      url: https://corporate.stevenhills.mu/wp-content/uploads/2025/04/STEVENHILLS-FactSheet2-A4.pdf
+      format: statement
+      firm: Stevenhills Ltd
+      website: https://corporate.stevenhills.mu
+      statement: 'duly\s*licensed and regulated by the Gambling Regulatory Authority'
+      statement_by: the firm's IPO factsheet (2025)
+      licence_type: Bookmaker - fixed odds betting on football (GRA Mauritius)
+    - label: Booksystem - GRA remote communication licence (horse racing)
+      url: https://booksystem.mu/
+      format: statement
+      firm: Booksystem
+      website: https://booksystem.mu
+      statement: 'Licen[cs]e of offering bets on local races via remote communication \(Phone betting\) and the licen[cs]e was granted'
+      statement_by: firm's own website
+      licence_type: Bookmaker - local horse racing by remote communication (GRA Mauritius)
+    - label: Lottotech Ltd - GRA national lottery licence
+      url: https://www.lottotech.mu/about-us/
+      format: statement
+      firm: Lottotech Ltd
+      website: https://www.lottotech.mu
+      statement: 'Gambling Regulatory Authority \(GRA\) grants Lottotech the licen[cs]e to operate the Mauritius National Lottery'
+      statement_by: firm's own website
+      licence_type: Lottery operator - Mauritius National Lottery (GRA Mauritius)
+    - label: SIC Management Services Co Ltd (Casinos of Mauritius) - 4 state casinos
+      url: https://www.casinosofmauritius.mu/about-us
+      format: statement
+      firm: SIC Management Services Co Ltd
+      website: https://www.casinosofmauritius.mu
+      statement: 'SIC MANAGEMENT SERVICES CO LTD.{0,300}four casinos'
+      statement_by: the Casinos of Mauritius website
+      licence_type: Casino operator - the 4 State Investment Corporation casinos (licences confirmed in GRA Annual Report 2022/23)
   KM:
     regulator: Anjouan Gaming
     files:

@@ -254,6 +254,25 @@ def read_pdf_table(raw: bytes, spec: dict) -> tuple:
     return h, rows
 
 
+def read_statement(raw: bytes, spec: dict) -> tuple:
+    """A licence stated in a published document rather than a register list: the firm's own website
+    ("ValuePlus Ltd ... is licensed by the Gambling Regulatory Authority as bookmaker ...") or a
+    regulator's report. Each run re-reads the page and keeps the firm only while the statement
+    (spec "statement", a regex) is still there; the matching sentence goes into the status column."""
+    text = re.sub(r"\s+", " ", " ".join(page_text_lines(raw)))
+    m = re.search(spec["statement"], text, re.I)
+    if not m:
+        raise RuntimeError("licence statement no longer found on the page")
+    a = text.rfind(". ", 0, m.start())
+    b = text.find(". ", m.end())
+    start = m.start()
+    end = min(b + 1 if b >= 0 else len(text), m.end() + 120)
+    sentence = text[start:end].strip()
+    who = spec.get("statement_by", "firm's own website")
+    return (["name", "website", "status"],
+            [[spec["firm"], spec.get("website", ""), f"Stated in {who}: \"{sentence[:400]}\""]])
+
+
 def page_text_lines(raw: bytes) -> list:
     """Text lines of a PDF or an HTML page."""
     if raw[:4] == b"%PDF":
@@ -633,6 +652,8 @@ def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
         headers, rows = read_text_names(raw, spec)
     elif fmt == "pdf_sections":
         headers, rows = read_pdf_sections(raw, spec)
+    elif fmt == "statement":
+        headers, rows = read_statement(raw, spec)
     else:
         headers, rows = read_table(raw, spec.get("sheets", "first"))
     if spec.get("columns") and not spec.get("all_tables"):   # a table without a header row: name the columns here

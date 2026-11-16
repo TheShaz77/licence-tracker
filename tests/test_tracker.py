@@ -2244,3 +2244,16 @@ def test_bom_licensee_cards_and_bot_wall():
                                                    ("Banque Patronus Limitée", "")]
     assert _bot_wall('<html><script src="/_Incapsula_Resource?x=1"></script>Incapsula incident ID: 1</html>')
     assert not _bot_wall("<html><table><tr><td>Firm</td></tr></table></html>")
+
+
+def test_licence_statement_reader():
+    import pytest
+    from regtracker.sources.national import parse_file
+    spec = {"url": "x", "format": "statement", "firm": "ValuePlus Ltd", "website": "https://valueplus.mu",
+            "statement": r"licensed by the Gambling Regulatory Authority as bookmaker",
+            "licence_type": "Bookmaker (GRA Mauritius)"}
+    page = b"<p>About Us</p><p>ValuePlus Ltd is licensed by the Gambling Regulatory Authority as bookmaker. We bet.</p>"
+    recs, _ = parse_file(page, spec, "MU", "GRA")
+    assert recs[0].name == "ValuePlus Ltd" and recs[0].active and "Gambling Regulatory" in recs[0].status_detail
+    with pytest.raises(RuntimeError):
+        parse_file(b"<p>Welcome</p>", spec, "MU", "GRA")
