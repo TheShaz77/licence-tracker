@@ -635,6 +635,8 @@ def country_code(value: str) -> str:
 
 def parse_file(raw: bytes, spec: dict, country: str, regulator: str) -> tuple:
     """Return (records, info) for one downloaded file."""
+    if raw[:1] in (b"<", b" ", b"\n", b"\r") and len(raw) < 20000 and _bot_wall(decode_bytes(raw[:4000])):
+        raise RuntimeError("blocked by the site's bot protection / captcha (not bypassed)")
     if spec.get("format") == "nbs_psd2":
         return parse_nbs_psd2(raw, spec, country, regulator)
     if spec.get("format") == "tw_head_offices":
@@ -1006,7 +1008,9 @@ class NationalSource(Source):
             if spec.get("enabled") is False:
                 continue
             first_url = spec.get("url") or spec.get("page") or ""
-            if first_url.startswith("http"):
+            if isinstance(first_url, (list, tuple)):          # several candidate pages
+                first_url = first_url[0] if first_url else ""
+            if isinstance(first_url, str) and first_url.startswith("http"):
                 import time as _time
                 from urllib.parse import urlparse as _up
                 from ..http import crawl_delay
@@ -1340,7 +1344,8 @@ def _bot_wall(text: str) -> bool:
     """A bot-protection challenge page (Incapsula / Imperva, Cloudflare) instead of the register."""
     head = (text or "")[:4000]
     return bool(re.search(r"Incapsula incident ID|_Incapsula_Resource|cf-chl-|Attention Required! \| Cloudflare|"
-                          r"Just a moment\.\.\.</title>", head))
+                          r"Just a moment\.\.\.</title>|/\.well-known/sgcaptcha/|sgcaptcha|"
+                          r"captcha-delivery\.com|Request unsuccessful\. Incapsula", head))
 
 
 def _legacy_adapter_class():

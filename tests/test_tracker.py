@@ -2257,3 +2257,13 @@ def test_licence_statement_reader():
     assert recs[0].name == "ValuePlus Ltd" and recs[0].active and "Gambling Regulatory" in recs[0].status_detail
     with pytest.raises(RuntimeError):
         parse_file(b"<p>Welcome</p>", spec, "MU", "GRA")
+
+
+def test_page_lists_and_captcha_walls():
+    import pytest
+    from regtracker.sources.national import parse_file, _bot_wall
+    wall = (b'<html><head><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2Flicence-holders">'
+            b'</meta></head></html>')
+    assert _bot_wall(wall.decode())
+    with pytest.raises(RuntimeError, match="bot protection"):
+        parse_file(wall, {"url": "x", "format": "text_regex", "raw_html": True, "row_regex": "(?P<name>x)"}, "GI", "GGD")
