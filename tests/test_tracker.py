@@ -2217,3 +2217,30 @@ def test_ssl_errors_are_named():
     from regtracker.sources.national import _short_error
     e = Exception("Max retries exceeded (Caused by SSLError(SSLError(1, '[SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] x')))")
     assert _short_error(e) == "SSL error (unsafe_legacy_renegotiation_disabled)"
+
+
+def test_kept_intermediate_certificates_are_valid_pem():
+    from pathlib import Path
+    from cryptography import x509
+    certs = sorted((Path(__file__).resolve().parent.parent / "regtracker" / "certs").glob("*.pem"))
+    assert certs
+    for p in certs:
+        c = x509.load_pem_x509_certificate(p.read_bytes())
+        assert "Sectigo" in c.issuer.rfc4514_string() or c.issuer != c.subject
+
+
+def test_bom_licensee_cards_and_bot_wall():
+    import yaml
+    from regtracker.sources.national import parse_file, _bot_wall
+    spec = [f for f in yaml.safe_load(open("config.yaml"))["national"]["MU"]["files"]
+            if f["label"] == "BoM licensees - banks"][0]
+    html = (b'<div class="views-field views-field-title"> <span class="field-content">ABC Banking Corporation Ltd</span> </div>'
+            b'<div class="views-field views-field-body"><div class="field-content"><div>WEAL House</div></div></div>'
+            b'<div class="views-field views-field-field-website"> <div class="field-content">www.ABCBanking.mu</div></div>'
+            b'<div class="views-field views-field-title"> <span class="field-content">Banque Patronus Limit\xc3\xa9e</span> </div>'
+            b'<div class="views-field views-field-body"><div class="field-content">EBENE</div></div>')
+    recs, _ = parse_file(html, spec, "MU", "BoM")
+    assert [(r.name, r.website) for r in recs] == [("ABC Banking Corporation Ltd", "https://www.ABCBanking.mu"),
+                                                   ("Banque Patronus Limitée", "")]
+    assert _bot_wall('<html><script src="/_Incapsula_Resource?x=1"></script>Incapsula incident ID: 1</html>')
+    assert not _bot_wall("<html><table><tr><td>Firm</td></tr></table></html>")

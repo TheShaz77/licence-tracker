@@ -114,6 +114,26 @@ def robots_allowed(session: requests.Session, url: str, agent: str = ROBOTS_AGEN
     return ok
 
 
+def crawl_delay(url: str, agent: str = ROBOTS_AGENT) -> float:
+    """The Crawl-delay a site's robots.txt asks for (seconds, at most 30), from the copy already read
+    by robots_allowed; 0 if none."""
+    from urllib.parse import urlparse
+    p = urlparse(url)
+    text = _TEXT.get(f"{p.scheme}://{p.netloc}") or ""
+    best, applies = 0.0, False
+    for line in text.splitlines():
+        k, _, v = line.split("#")[0].partition(":")
+        k, v = k.strip().lower(), v.strip()
+        if k == "user-agent":
+            applies = v == "*" or v.lower() in agent.lower()
+        elif k == "crawl-delay" and applies:
+            try:
+                best = max(best, float(v))
+            except ValueError:
+                pass
+    return min(best, 30.0)
+
+
 class RateLimiter:
     """Keeps requests at or below `per_second`."""
 

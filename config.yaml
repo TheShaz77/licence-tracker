@@ -807,20 +807,50 @@ national:
         'VA-1\.4\b': Virtual asset advisory services (FSC VAITOS Class I)
         'VA-1\.5\b': Virtual asset marketplace (FSC VAITOS Class S)
         'VT-1\.1\b': Initial token offering issuer (FSC VAITOS)
-    - label: BoM licensed banks
-      url: https://www.bom.mu/financial-stability/supervision/licensees
+    # Bank of Mauritius: banks, deposit-taking institutions, foreign exchange dealers, money changers
+    # (one page per licence type) and payment service providers. Its site leaves an intermediate
+    # certificate out of its chain; the reader supplies it (regtracker/certs), checks stay on.
+    - label: BoM licensees - banks
+      url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=0
       regulator: BoM
-      probe: true
-    - label: www.fscmauritius.org homepage
-      url: https://www.fscmauritius.org/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
-    - label: www.bom.mu homepage
-      url: https://www.bom.mu/
-      probe: true
-      follow: licen|regist|list|supervis|institution|entit|payment|e-money|money|remit|crypto|virtual|bank|banc|banque|pago|paiement|pagamento|autoriz|agr|exchange|bureau|operator
-      follow_max: 15
+      format: text_regex
+      raw_html: true
+      row_regex: 'views-field-title">\s*<span class="field-content">(?P<name>[^<]{2,150})</span>(?:(?:(?!views-field-title)[\s\S])*?views-field-field-website">\s*<div class="field-content">(?P<website>[^<]*)<)?'
+      licence_type: Bank (Bank of Mauritius)
+      register_url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees
+    - label: BoM licensees - foreign exchange dealers
+      url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=1
+      regulator: BoM
+      format: text_regex
+      raw_html: true
+      row_regex: 'views-field-title">\s*<span class="field-content">(?P<name>[^<]{2,150})</span>(?:(?:(?!views-field-title)[\s\S])*?views-field-field-website">\s*<div class="field-content">(?P<website>[^<]*)<)?'
+      licence_type: Foreign exchange dealer (Bank of Mauritius)
+      register_url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees
+    - label: BoM licensees - money changers
+      url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=2
+      regulator: BoM
+      format: text_regex
+      raw_html: true
+      row_regex: 'views-field-title">\s*<span class="field-content">(?P<name>[^<]{2,150})</span>(?:(?:(?!views-field-title)[\s\S])*?views-field-field-website">\s*<div class="field-content">(?P<website>[^<]*)<)?'
+      licence_type: Money changer (Bank of Mauritius)
+      register_url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees
+    - label: BoM licensees - non-bank deposit-taking institutions
+      url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=3
+      regulator: BoM
+      format: text_regex
+      raw_html: true
+      row_regex: 'views-field-title">\s*<span class="field-content">(?P<name>[^<]{2,150})</span>(?:(?:(?!views-field-title)[\s\S])*?views-field-field-website">\s*<div class="field-content">(?P<website>[^<]*)<)?'
+      licence_type: Non-bank deposit-taking institution (Bank of Mauritius)
+      register_url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees
+    - label: BoM licensed payment service providers
+      url: https://www.bom.mu/payment-systems/licensing/list-licensees
+      regulator: BoM
+      format: html_table
+      name_column: Name of Licensee
+      type_column: Type of services
+      date_column: Date of Licence
+      licence_type: Payment service provider (Bank of Mauritius)
+      register_url: https://www.bom.mu/payment-systems/licensing/list-licensees
   NA:
     regulator: BoN
     files:

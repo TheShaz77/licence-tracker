@@ -843,6 +843,8 @@ class NationalSource(Source):
         from urllib.parse import urljoin
         hdr = {"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)", "Accept": "text/html,*/*"}
         r = ctx.session.get(spec["url"], timeout=(15, 90), headers=hdr)
+        if _bot_wall(r.text):
+            raise RuntimeError("blocked by the site's bot protection (not bypassed)")
         r.raise_for_status()
         page = r.text
 
@@ -978,9 +980,20 @@ class NationalSource(Source):
         status = {}
         session = quick_session(ctx.session)
         ctx = Context(**{**ctx.__dict__, "session": session})
+        last_hit = {}            # host -> when this source last read it (for robots.txt Crawl-delay)
         for spec in self.cfg.get("files") or []:
             if spec.get("enabled") is False:
                 continue
+            first_url = spec.get("url") or spec.get("page") or ""
+            if first_url.startswith("http"):
+                import time as _time
+                from urllib.parse import urlparse as _up
+                from ..http import crawl_delay
+                host = _up(first_url).netloc
+                wait = crawl_delay(first_url) - (_time.monotonic() - last_hit.get(host, -1e9))
+                if wait > 0:
+                    _time.sleep(wait)
+                last_hit[host] = _time.monotonic()
             spec = {**spec, "_today": ctx.today}
             if spec.get("codes_url"):
                 spec = {**spec, "_codes": fetch_codes(ctx, spec["codes_url"])}
@@ -1241,6 +1254,13 @@ def _chain_bundle(url: str):
     if host in _BUNDLES:
         return _BUNDLES[host]
     _BUNDLES[host] = None
+    import os
+    from pathlib import Path
+    extra = []
+    # intermediate certificates kept in the repo (regtracker/certs): public CA certificates that some
+    # government sites (e.g. the Bank of Mauritius) leave out of their chain
+    for pem_file in sorted((Path(__file__).resolve().parent.parent / "certs").glob("*.pem")):
+        extra.append(pem_file.read_text())
     try:
         import certifi
         import requests
@@ -1249,7 +1269,6 @@ def _chain_bundle(url: str):
         from cryptography.x509.oid import AuthorityInformationAccessOID, ExtensionOID
         pem = ssl.get_server_certificate((host, urlparse(url).port or 443), timeout=20)
         cert = x509.load_pem_x509_certificate(pem.encode())
-        extra = []
         for _ in range(3):   # walk up at most three issuers
             try:
                 aia = cert.extensions.get_extension_for_oid(ExtensionOID.AUTHORITY_INFORMATION_ACCESS).value
@@ -1277,10 +1296,15 @@ def _chain_bundle(url: str):
             extra.append(cert.public_bytes(Encoding.PEM).decode())
             if cert.issuer == cert.subject:
                 break
-        if not extra:
-            return None
+    except Exception:
+        pass                 # no direct connection or no CA Issuers address: the kept certificates may do
+    if not extra:
+        return None
+    try:
+        import certifi
+        base = os.environ.get("REQUESTS_CA_BUNDLE") or certifi.where()
         f = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
-        f.write(open(certifi.where()).read() + "\n" + "\n".join(extra))
+        f.write(open(base).read() + "\n" + "\n".join(extra))
         f.close()
         _BUNDLES[host] = f.name
     except Exception:
@@ -1289,6 +1313,13 @@ def _chain_bundle(url: str):
 
 
 _LEGACY = set()
+
+
+def _bot_wall(text: str) -> bool:
+    """A bot-protection challenge page (Incapsula / Imperva, Cloudflare) instead of the register."""
+    head = (text or "")[:4000]
+    return bool(re.search(r"Incapsula incident ID|_Incapsula_Resource|cf-chl-|Attention Required! \| Cloudflare|"
+                          r"Just a moment\.\.\.</title>", head))
 
 
 def _legacy_adapter_class():
