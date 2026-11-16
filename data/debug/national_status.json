@@ -32,7 +32,6 @@
   "date": "2026-11-15"
  },
  "AU (CFD)": {
-  "ASIC AFS licensees that make a market in derivatives / FX": "read failed: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/1fc2b334-74ae-4588-85aa-83e3a8c9f2cc/download/afs_lic_202512.tsv is disallowed by robots.txt",
   "date": "2026-11-14"
  },
  "AW": {
@@ -128,10 +127,6 @@
   "Curacao - CGA online gaming licence registry (PDF)": "ok: 305 firms",
   "date": "2026-11-15"
  },
- "CY (CFD)": {
-  "Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC": "ok: 307 firms",
-  "date": "2026-11-15"
- },
  "DE (iGaming)": {
   "Germany - GGL whitelist (online sports betting, slots, poker, casino)": "ok: 62 firms",
   "date": "2026-11-15"
@@ -174,10 +169,6 @@
   "NBE payment instrument issuers and payment system operators": "ok: 27 firms",
   "date": "2026-11-16",
   "nbe.gov.et homepage": "probe saved (372119 bytes, 15 linked pages)"
- },
- "EU (CFD)": {
-  "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2736 firms",
-  "date": "2026-11-15"
  },
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
