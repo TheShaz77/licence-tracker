@@ -111,21 +111,21 @@ first lines:
 '\t<meta http-equiv="content-type" content="text/html; charset=utf-8" />'
 
 url: https://www.lottotech.mu/about-us/
-bytes: 14204  starts: b'<!DOCTYP'
-error: RuntimeError('licence statement no longer found on the page')
-columns used: None
-headers: None
-data rows: None  kept: None
-type values: None
+bytes: 175113  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
 first lines:
 '<!DOCTYPE html>'
-'<html>'
-'  <head>'
-'    <title>Waiting Room powered by Cloudflare</title>'
-'    <meta name="viewport" content="width=device-width, initial-scale=1" />'
-'    <style type="text/css">'
-'      * {'
-'        box-sizing: border-box;'
+'<html lang="en">'
+'<head>'
+'    <meta http-equiv="X-UA-Compatible" content="IE=edge">'
+'    <meta charset="UTF-8" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'    <meta property="og:image" content="https://www.lottotech.mu/wp-content/themes/lottotech/assets/dist/images/logos/lottotech-logo.svg" />'
+''
 
 url: https://www.casinosofmauritius.mu/about-us
 bytes: 51114  starts: b'<!DOCTYP'

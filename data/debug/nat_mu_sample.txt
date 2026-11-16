@@ -1,0 +1,101 @@
+url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=0
+bytes: 207543  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website']
+data rows: 18  kept: 18
+type values: [('', 18)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.o'
+'<head>'
+'  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />'
+'  <meta charset="utf-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" /> '
+'  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=1
+bytes: 197683  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website']
+data rows: 7  kept: 7
+type values: [('', 7)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.o'
+'<head>'
+'  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />'
+'  <meta charset="utf-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" /> '
+'  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=2
+bytes: 195641  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website']
+data rows: 5  kept: 5
+type values: [('', 5)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.o'
+'<head>'
+'  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />'
+'  <meta charset="utf-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" /> '
+'  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=3
+bytes: 196712  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website']
+data rows: 6  kept: 6
+type values: [('', 6)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.o'
+'<head>'
+'  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />'
+'  <meta charset="utf-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" /> '
+'  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+url: https://www.bom.mu/payment-systems/licensing/list-licensees
+bytes: 193578  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'Name of Licensee', 'type': 'Type of services', 'id': None, 'lei': None, 'city': None, 'date': 'Date of Licence/Authorisation (DD/MM/YYYY)', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['Name of Licensee', 'Date of Licence/Authorisation (DD/MM/YYYY)', 'Type of services']
+data rows: 6  kept: 5
+type values: [('Execution of payment transactions where the funds are covered by a credit line for a payment service user, including the execution of – direct debits and one-off direct debits; payment transactions through a payment card or a similar device; credit transfers and standing orders. Issue of payment instruments and/or acquiring of payment transactions', 1), ('Acquiring of Payment Transactions Payment Initiation Services', 1), ('Services enabling cash to be placed on a payment account, including all operations required for operating a payment account; Execution of payment transactions, including transfers of funds on a payment account with the payment service provider of the user or with another payment service provider, including the execution of – direct debits and one-off direct debits; payment transactions through a payment card or a similar device; credit transfers and standing orders Issue of payment instruments and acquiring of payment transactions; and Payment initiation services', 1), ('Issue of payment instruments and/or acquiring of payment transactions Payment initiation services Merchant Aggregator Services', 1), ('Issue of payment instruments; and Payment initiation services', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns# content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.o'
+'<head>'
+'  <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />'
+'  <meta charset="utf-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <meta name="google-site-verification" content="asIBpmWkayQKmqJUYCAzkaVayjJLEPATFUe3qAjXMlo" /> '
+'  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+url: https://b2binpay.com/en/news/b2binpay-secures-fsc-mauritius-vasp-licenses
+bytes: 256847  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr" class="b2-page-scale"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script>'
+"      /* Reload restores scroll after the header's first paint. Remember the offset so the"
+'         scrolled bar can be marked before that paint, instead of flashing transparent. */'
+'      (() => {'
+"        const key = 'b2-header-scroll'"
+'        const path = location.pathname + location.search'
+'        const readY = () => window.scrollY || document.documentElement.scrollTop || 0'
+"        const type = performance.getEntriesByType('navigation')[0]?.type ?? 'navigate'"

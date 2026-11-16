@@ -1,0 +1,449 @@
+url: https://www.fxtm.com/en/about/licensed-broker/
+bytes: 125007  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!--_Wnv2b3_utJIPYEV28Y0U--><html><head><meta charSet="utf-8"/><link rel="preconnect" href="/" crossorigin=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" imageSrcSet="https://cdn.builder.io/api/v1/image/assets%2Fd1ea04c96fbd47f4'
+'    html.ltr-layout body,'
+'    html.rtl-layout body {'
+'      visibility: visible;'
+'    }'
+'    html:not(.ltr-layout):not(.rtl-layout) body {'
+'      visibility: hidden;'
+'    }'
+
+url: https://fintrixmarkets.com/en/our-regulations/
+bytes: 215466  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/brand/fintrix-logo.webp"/><title>Fintrix Markets | FSC Mauritius regulated broker</title><meta name="description" content="Trade with'
+'@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial'
+'</body></html>'
+
+url: https://intercom.help/tag-markets/en/articles/9681644-is-tag-markets-regulated
+bytes: 73818  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><script type="application/ld+json" data-next-head="">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://intercom.help/tag-markets/en/","name":"All Collections",'
+'--body-image: none;'
+'--body-bg-rgb: 255, 255, 255;'
+'--body-border: rgb(230, 230, 230);'
+'--body-primary-color: #1a1a1a;'
+'--body-secondary-color: #595959;'
+'--body-reaction-bg: rgb(242, 242, 242);'
+'--body-reaction-text-color: rgb(89, 89, 89);'
+
+url: https://www.trive.com/afr/
+bytes: 756262  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<!-- Made in Framer · framer.com ✨ -->'
+'<!-- Published Sep 25, 2026, 9:25 AM UTC -->'
+'<html lang="en">'
+'<head>'
+'\t<meta charset="utf-8">'
+'\t<meta name="viewport" content="width=device-width">'
+'\t<meta name="generator" content="Framer 1038c38">'
+
+url: https://ibullcapital.com/about-us/legal-license/
+bytes: 78038  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" class="no-js">'
+'<head>'
+'<meta charset="UTF-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<link rel="profile" href="http://gmpg.org/xfn/11">'
+"<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
+'<!-- This site is optimized with the Yoast SEO plugin v28.0 - https://yoast.com/product/yoast-seo-wordpress/ -->'
+
+url: https://roycecapitals.com/en/regulation-licensing
+bytes: 86041  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html lang="en" dir="ltr" class="ltr" data-bs-theme="dark">'
+'  <head>'
+'    <meta charset="utf-8" />'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
+'    <meta name="apple-mobile-web-app-capable" content="yes" />'
+'    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />'
+'    <meta name="mobile-web-app-capable" content="yes" />'
+
+url: https://www.gtcfx.com/en-intl/company/global-presence
+bytes: 275699  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><link rel="preconnect" href="/" crossorigin=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/logo/main-logo.webp" fe'
+
+url: https://www.puprime.com/
+bytes: 260849  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'\t<link rel="canonical" href="https://www.puprime.com/" />'
+'<link rel="alternate" href="https://www.puprime.com/" hreflang="en" />'
+'<link rel="alternate" href="https://ar.puprime.com/"  hreflang="ar" />'
+'<link rel="alternate" href="https://cn.puprime.com/" hreflang="zh-Hans" />'
+'<link rel="alternate" href="https://de.puprime.com/" hreflang="de-DE" />'
+
+url: https://www.ebc.com/
+bytes: 151913  starts: b'"<!DOCTY'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'"<!DOCTYPE html>\\n<html lang=\\"en\\" data-fitter data-theme=\\"dark\\">\\n\\n<head>\\n  <title>EBC Financial Group | Your Trusted, Regulated, Trader First Broker<\\/title>\\n  <meta charset=\\"utf-8\\" \\/>\\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\" \\/>\\n  <!-- Match the CSS bre'
+
+url: https://www.justmarkets.com/
+bytes: 361685  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html lang="en-US">'
+'<head>'
+'    <meta charset="utf-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">'
+''
+'    <link rel="icon" type="image/x-icon" href="/app/themes/sage/public/images/brands/main/favicon/favicon.ico"'
+'              data-favicon-light="/app/themes/sage/public/images/brands/main/favicon/favicon.ico"'
+
+url: https://www.exness.com/
+bytes: 594013  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" noreg dir="ltr"><head><meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><link rel="preload" as="image" imagesrcset="https://d33vw3iu5hs0zi.cloudfront.net/media/sm_home_header_background_5af89fa200.jpg 576w,https'
+'      window.__initFontFaceObserver = function() {'
+'        /* Font Face Observer v2.3.0 - © Bram Stein. License: BSD-3-Clause */(function(){function p(a,c){document.addEventListener?a.addEventListener("scroll",c,!1):a.attachEvent("scroll",c)}function u(a){document.body?a():document.addEventListener?document.addEventListener("DOMContentLoaded",functi'
+'      };'
+'    </script><script>(function(t){const e="staticLoaded";if(!localStorage.getItem(e)){window.__initFontFaceObserver(),localStorage.setItem(e,"true"),document.documentElement.style.opacity="0";const n=t.fonts.map(function(o){return new window.FontFaceObserver(o.family,{weight:o.weight}).load(t.checkS'
+'</script> <script>(()=>{const r="lcp-detected";let n=!1;function t(){n||(n=!0,document.dispatchEvent(new CustomEvent(r)))}window._onLCP=function(e){n?e():document.addEventListener(r,e,{once:!0})};function o(e){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",e,{once:!0}):'
+'</script><link rel="preload" href="/stats/opF2c/" as="script"> <script>(function(){const scriptFile = "/stats/opF2c/";'
+''
+
+url: https://www.atfx.com/
+bytes: 137957  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html>'
+'<head>'
+'\t<meta charset="utf-8">'
+'\t<meta name="viewport" content="width=device-width, initial-scale=1">'
+'\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">'
+'\t<meta name="author" content="AT Global Markets (UK) Limited">'
+'\t<meta name="wot-verification" content="5bc181a09fa573443590"/>  '
+
+url: https://www.xs.com/
+bytes: 392250  starts: b'<!doctyp'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!doctype html>'
+'<html lang="en">'
+''
+'<head>'
+'            <script>window.API_XS = "https:\\/\\/api.xs.com"; window.CLIENT_API_XS = "https:\\/\\/api.xs.com\\/api\\/proxy\\/client-api"; window.CLIENT_API_REGISTRATION_URL = "https:\\/\\/api.xs.com\\/api\\/proxy\\/client-api\\/register";</script>'
+''
+'    '
+'                        '
+
+url: https://www.mitrade.com/
+bytes: 148825  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr"><head><meta charSet="utf-8"/><title>Mitrade | Trade Forex, Gold, Oil, Indices, Shares &amp; More on Our Award-Winning Platform</title><meta name="description" content="We Won 2020&#x27;s Best Mobile Trading Platform. Trade s on Forex, Gold, WTI, Brent Oil, S&'
+'<circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.5"/>'
+'<ellipse cx="12" cy="12" rx="3" ry="8" stroke="currentColor" stroke-width="1.5"/>'
+'<path d="M4 12H20" stroke="currentColor" stroke-width="1.5"/>'
+'</svg></div><span class="Navigation_lang-symbol__Tsdj7">EN</span></div><ul class="Navigation_lang__gloKK"><li><a href="/en" class="Navigation_active__hNkeL">English</a></li><li><a href="/id" class="">Bahasa Indonesia</a></li><li><a href="/my" class="">Bahasa Melayu</a></li><li><a href="/zh" class=""'
+'<path d="M5 6H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+'<path d="M5 12H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+'<path d="M5 18H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+
+url: https://www.iux.com/
+bytes: 208312  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr" class="inter_fe8b9d92-module__LINzvG__variable bg-background"><head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push==\'function\')w[g].push(i)})'
+"(window,'GTM-MPPCGJM8','google_tags_first_party');</script><script>(function(w,d,s,l){w[l]=w[l]||[];(function(){w[l].push(arguments);})('set', 'developer_id.dY2E1Nz', true);"
+'\t\tvar f=d.getElementsByTagName(s)[0],'
+"\t\tj=d.createElement(s);j.async=true;j.src='/bmetrics/';"
+'\t\tf.parentNode.insertBefore(j,f);'
+'\t\t})(window,document,\'script\',\'dataLayer\');</script><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/media/openai-video/cover-home-poster.webp" as="image" fetchPriority="high"/><link rel="preload" as="image" href="https://cdn-mu.i'
+'  window.dataLayer = window.dataLayer || [];'
+'  function gtag(){dataLayer.push(arguments);}'
+
+url: https://tabtrade.com/
+bytes: 178902  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" dir="ltr" class="scroll-smooth" data-theme="dark"><head><script>'
+'      (function () {'
+"        var theme = 'dark';"
+''
+'        try {'
+"          var storedTheme = localStorage.getItem('tt-theme');"
+"          if (storedTheme === 'light' || storedTheme === 'dark') {"
+'            theme = storedTheme;'
+
+url: https://www.ecmarkets.com/
+bytes: 417977  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html dir="ltr" lang="en-GB" prefix="og: https://ogp.me/ns#">'
+'<head>'
+'  <meta charset="UTF-8">'
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
+'  <link rel="profile" href="http://gmpg.org/xfn/11">'
+'  <title>Homepage - EC Markets</title>'
+''
+
+url: https://www.axiory.com/
+bytes: 121728  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html  class=\'no-js\' lang="en">'
+'<head id="head"><title>'
+'\tZero Limits to Your Trading | Trade with Axiory'
+'</title><meta name="description" content="Trade with zero latency, enhanced execution speed, zero spreads, zero slippage, no deposit fees, and more!" /> '
+'<meta charset="UTF-8" /> '
+'<meta name="keywords" content="Forex Trading, Forex Broker" /> '
+'<meta name="google-site-verification" content="FGEwJCMoEw1gtzlPvIw168jfwlmNs2SiNbzqA8Bpt5E" />'
+
+url: https://valetax.com/
+bytes: 123452  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'    <head>'
+'        <meta charset="UTF-8" />'
+'        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>'
+'        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>'
+'        <meta name="format-detection" content="telephone=no"/>'
+'        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->'
+
+url: https://www.litefinance.org/
+bytes: 148123  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<!--[if lt IE 7 ]>'
+'<html class="ie ie6" lang="en"> <![endif]-->'
+'<!--[if IE 7 ]>'
+'<html class="ie ie7" lang="en"> <![endif]-->'
+'<!--[if IE 8 ]>'
+'<html class="ie ie8" lang="en"> <![endif]-->'
+'<!--[if (gte IE 9)|!(IE)]><!-->'
+
+url: https://www.monetamarkets.com/
+bytes: 358877  starts: b'\n  <!DOC'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+''
+'  <!DOCTYPE html>'
+'<html lang= "en-US" >'
+'  <head>'
+'                <script>'
+'                window.__CF_DATA__ = {'
+'                ip: "135.232.208.187",'
+'                countryCode: "us",'
+
+url: https://nordfx.com/
+bytes: 160881  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en" dir="ltr">'
+'<head>'
+''
+'    <meta charset="utf-8">'
+'<meta http-equiv="X-UA-Compatible" content="IE=edge">'
+'<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">'
+'<meta name="robots" content="all">'
+
+url: https://www.lirunex.com/
+bytes: 207272  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'<meta charset="UTF-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<!-- Bootstrap Icons + Font Awesome are enqueued in functions.php (lx_enqueue_global_assets)'
+'     and loaded non-blocking. Do not hardcode <link> tags here: they block rendering and'
+'     Font Awesome was being downloaded twice (7.0.1 here + 6.5.0 from functions.php). -->'
+
+url: https://www.eightcap.com/
+bytes: 436589  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html data-dpl-id="dpl_DcmQLbHuNdwC7VcVo9kRDZeGPNgq" lang="en" class="__variable_9eb420"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/692df4da22e71021-s.p.woff2?dpl=dpl_DcmQLbHuNdwC7VcVo'
+
+url: https://www.dupoin.com/
+bytes: 1404962  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html dir="auto" lang="en" q:render="ssr" q:route="[area]" q:container="paused" q:version="1.19.2" q:base="/build/" q:locale="" q:manifest-hash="pwdn0d" q:instance="uqt1za6mq7"><!--qv q:id=0 q:key=Z9dw:Xe_1--><!--qv q:s q:sref=0 q:key=--><!--qv q:id=1 q:key=L8eW:Xe_0--><!--qv q:id=2 q'
+'q-B4XOBP95.js#_hW[1]" q:id="3" q:head><meta charSet="utf-8" q:head><meta name="google" content="notranslate" q:head><!--qv q:id=ap q:key=y40K:Xe_3--><style q:style="p6k8jn-0" hidden>@font-face{font-style:normal;font-family:amplitude-regular;src:url(/fonts/amplitude-regular.otf);font-display:swap}@fo'
+'q-DKrr3RBV.js#_hW[1]'
+'q-D7HkWedX.js#_hW[2]'
+'q-CJKxJFYD.js#_hW[3]'
+'q-D64b6Wr2.js#_hW[4]" q:id="8"><!--qv q:sstyle=⭐️69ara-0 q:id=9 q:key=4Wzs:5h_3--><style q:style="69ara-0" hidden>.box.⭐️69ara-0{background:transparent;position:fixed;top:0;inset-inline-start:0;width:calc(100% - var(--scrollbar-width, 0px));z-index:99;color:#fff;transition:background-color .4s linea'
+'    <g clip-path="url(#a)" fill="#2EB5C4">'
+'        <path d="m22.55 4.89-.343-3.518a1.52 1.52 0 0 0-1.513-1.37H6.595l-.624 3.461-.259 1.428h.004l-.955 5.373 4.16 3.965 1.672-9.338h11.956z"/>'
+
+url: https://www.kcmtrade.com/
+bytes: 287442  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!-- Last Published: Thu Nov 12 2026 19:06:16 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.kcmtrade.com" data-wf-page="67ada164308dfcca86a8ed81" data-wf-site="5ff2829edadccfad347a090a" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-fi'
+'<meta name="google-site-verification" content="NOL6bMFl-GUcefyXfJXoA_FMs-02OfPh3j8idTBVvR8" />'
+'<meta name="google-site-verification" content="wTgioFzBEhpawQCuqDyV5l7o6vUuhy3YEtIKcrRizTQ" />'
+'<meta name="theme-color" content="#171e38" />'
+'<meta name="theme-color" content="#171e38" media="(prefers-color-scheme: light)" />'
+'<meta name="theme-color" content="#171e38" media="(prefers-color-scheme: dark)" />'
+'<meta name="msapplication-TileColor" content="#171e38" />'
+'<meta name="msapplication-navbutton-color" content="#171e38" />'
+
+url: https://deriv.com/ae/regulatory-information
+bytes: 110276  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Wed Nov 04 2026 11:53:36 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="ae.deriv.com" data-wf-page="67a58ec184f4eb70279e9ad9" data-wf-site="67a58ec184f4eb70279e9ac9" lang="en-AE"><head><'
+'<link rel="preconnect" href="https://fonts.googleapis.com">'
+'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+'<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap" rel="stylesheet">'
+'<style>'
+'.header_wrapper.smart-banner-active {'
+'  top: 69px;'
+'  transition: top 0.3s ease-in-out; '
+
+url: https://thaurus.com/thaurus-broker-license-regulation/
+bytes: 176478  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-GB" id="main_html">'
+'<head>'
+'\t    <meta charset="UTF-8">'
+'    <meta name="viewport" content="width=device-width, initial-scale=1">'
+'    <link rel="profile" href="https://gmpg.org/xfn/11">'
+'    <link rel="pingback" href="https://thaurus.com/xmlrpc.php">'
+"    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
