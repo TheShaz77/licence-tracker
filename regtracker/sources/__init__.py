@@ -9,10 +9,10 @@ from .fintrac import FINTRACSource
 from .mica import MiCASource
 from .opensanctions_msb import OpenSanctionsMSBSource
 from .southafrica import ZA_SOURCES
-from .swiss_sro import CHSROSource
+from .swiss_sro import CHSROListsSource, CHSROSource
 from .za_wiki import ZABanksWikiSource
 from .pra import PRASource
 
 ALL_SOURCES = {s.name: s for s in (FCASource(), FCACFDSource(), PRASource(), EBASource(), ECBSource(), FINMASource(),
-                                     FINTRACSource(), BoCSource(), FinCENSource(), OpenSanctionsMSBSource(), MiCASource(), CHSROSource(), ZABanksWikiSource(),
+                                     FINTRACSource(), BoCSource(), FinCENSource(), OpenSanctionsMSBSource(), MiCASource(), CHSROSource(), CHSROListsSource(), ZABanksWikiSource(),
                                      *ZA_SOURCES, BrazilSource())}

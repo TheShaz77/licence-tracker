@@ -223,3 +223,107 @@ def apply(records: list, cache: dict) -> int:
             r["ch_sro"] = c["sro"]
             n += 1
     return n
+
+
+# ---- SRO member lists published in full --------------------------------------------------------------
+# Two SROs publish who their members are, through their own websites:
+#   * ARIF (Geneva): its member list page is filled from the site's WordPress data ("membre" entries)
+#   * SO-FIT (Geneva): its "Recherche affiliés / assujettis" page searches a list by name; there is no
+#     download, so the list is read with a set of short generic searches whose results together cover it.
+# Both sites' robots.txt allow this. Members are financial intermediaries supervised for anti-money-
+# laundering by the SRO (payment, FX, crypto, trading, asset management and similar businesses).
+ARIF_URL = "https://arif.ch/wp-json/wp/v2/membre"
+ARIF_PAGE = "https://arif.ch/membres/liste-des-membres/"
+SOFIT_URL = "https://so-fit.ch/wp-json/search"
+SOFIT_PAGE = "https://so-fit.ch/recherche/"
+SOFIT_QUERIES = [" sa", " ag", "sàrl", "sarl", "gmbh", "ltd", "inc", "llc", "s.a", "fin", "cap", "inv", "tra", "man",
+                 "ass", "con", "ent", "ion", "ter", "ges", "int", "pro", "ver", "and", "ale", "ara", "ari", "oli",
+                 "eri", "ana", "ine", "one", "ore", "ste", "ust", "ers", "ell", "ies", "ica", "ial", "art"]
+
+
+def _get_json(ctx, url, params=None, tries=3):
+    import time
+    last = None
+    for i in range(tries):
+        try:
+            r = ctx.session.get(url, params=params, timeout=60,
+                                headers={"User-Agent": "Mozilla/5.0 (compatible; licence-tracker)"})
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:      # the SO-FIT server drops a connection now and then
+            last = e
+            time.sleep(3 * (i + 1))
+    raise last
+
+
+def arif_members(ctx) -> list:
+    import html as _h
+    out, page = [], 1
+    while page < 30:
+        d = _get_json(ctx, ARIF_URL, {"per_page": 100, "page": page, "_fields": "title,slug,modified"})
+        if not d:
+            break
+        out += [_h.unescape(x["title"]["rendered"]).strip() for x in d if x.get("title", {}).get("rendered")]
+        if len(d) < 100:
+            break
+        page += 1
+    return out
+
+
+def sofit_members(ctx) -> dict:
+    import time
+    found = {}
+    for q in SOFIT_QUERIES:
+        d = _get_json(ctx, SOFIT_URL, {"q": q})
+        if isinstance(d, dict):
+            found.update(d)
+        time.sleep(1)
+    return found
+
+
+class CHSROListsSource(Source):
+    """Members of Swiss AML self-regulatory organisations whose member lists are public (ARIF, SO-FIT)."""
+    name = "ch_sro_lists"
+    label = "Switzerland SRO members (ARIF, SO-FIT)"
+    removal_is_event = True
+
+    def fetch(self, ctx: Context) -> list:
+        recs, problems = {}, []
+        if robots_allowed(ctx.session, ARIF_URL):
+            try:
+                for name in arif_members(ctx):
+                    k = match_name(name)
+                    recs[f"ch_sro_lists:arif:{k}"] = Record(
+                        key=f"ch_sro_lists:arif:{k}", source=self.name, jurisdiction="CH", regulator="ARIF (SRO)",
+                        name=name, licence_type="Financial intermediary - AML SRO member (ARIF)", active=True,
+                        status_detail="Listed on ARIF's member list", register_url=ARIF_PAGE)
+            except Exception as e:
+                problems.append(f"ARIF: {e}")
+        else:
+            problems.append("ARIF: disallowed by robots.txt")
+        if robots_allowed(ctx.session, SOFIT_URL):
+            try:
+                rows = sofit_members(ctx)
+                ids = sorted(int(i) for i in rows if str(i).isdigit())
+                if ids and len(ids) < (ids[-1] + 1) * 0.9:
+                    ctx.log.warning("SO-FIT: %d of about %d listed firms found by the searches", len(ids), ids[-1] + 1)
+                for row in rows.values():
+                    name, canton, kind = (list(row) + ["", "", ""])[:3]
+                    kind = (kind or "").strip()
+                    if kind != "OAR":          # "OS" entries are portfolio managers/trustees under FINMA's OS regime
+                        continue
+                    k = match_name(name)
+                    recs[f"ch_sro_lists:sofit:{k}"] = Record(
+                        key=f"ch_sro_lists:sofit:{k}", source=self.name, jurisdiction="CH", regulator="SO-FIT (SRO)",
+                        name=name.strip(), licence_type="Financial intermediary - AML SRO member (SO-FIT)", active=True,
+                        city=f"Canton {canton}".strip() if canton else "",
+                        status_detail="Found in SO-FIT's member search (OAR)", register_url=SOFIT_PAGE)
+            except Exception as e:
+                problems.append(f"SO-FIT: {e}")
+        else:
+            problems.append("SO-FIT: disallowed by robots.txt")
+        for p in problems:
+            ctx.log.warning("%s: %s", self.name, p)
+        if not recs:
+            raise SourceNotReady("; ".join(problems) or "no SRO members read")
+        return list(recs.values())

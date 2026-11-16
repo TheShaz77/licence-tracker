@@ -100,6 +100,10 @@ sources:
     enabled: true
     min_hours: 6
 
+  ch_sro_lists:   # Switzerland: members of the AML self-regulatory organisations that publish their members
+    enabled: true  # (ARIF and SO-FIT; VQF, PolyReg and the others publish no list)
+    min_hours: 20
+
   ch_sro:         # Switzerland: AML SRO membership, looked up firm by firm on FINMA's member search
     enabled: true
     min_hours: 20                 # once a day

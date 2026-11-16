@@ -2318,3 +2318,27 @@ def test_hand_made_marks_follow_the_firm(tmp_path):
     marked = [c["range"]["startRowIndex"] for c in cells[1:]]
     assert marked == [want] and cells[1]["cell"]["userEnteredFormat"] == red
     assert "irish emi" in store.read_text().lower()                              # kept on file too
+
+
+def test_swiss_sro_lists(monkeypatch):
+    from regtracker.sources import swiss_sro
+
+    class R:
+        def __init__(self, d): self.d = d
+        def raise_for_status(self): pass
+        def json(self): return self.d
+
+    class S:
+        def get(self, url, params=None, **kw):
+            if "arif" in url:
+                return R([{"title": {"rendered": "Actfast Services SA"}}] if params["page"] == 1 else [])
+            return R({"1": ["Comservice SA", "GE", "OAR"], "2": ["Finakey SA", "GE", "OS "]})
+
+    class C:
+        session = S()
+        log = logging.getLogger("t")
+    monkeypatch.setattr(swiss_sro, "robots_allowed", lambda *a, **k: True)
+    monkeypatch.setattr(swiss_sro, "SOFIT_QUERIES", [" sa"])
+    recs = swiss_sro.CHSROListsSource().fetch(C)
+    assert sorted((r.name, r.regulator) for r in recs) == [("Actfast Services SA", "ARIF (SRO)"),
+                                                          ("Comservice SA", "SO-FIT (SRO)")]   # OS entry left out
