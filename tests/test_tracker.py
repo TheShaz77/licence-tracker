@@ -2291,6 +2291,23 @@ def test_payment_agents_switched_off_are_dropped():
     assert record_from_firm(123, firm, agents=("emd",)) is None
 
 
+def test_switched_off_agents_leave_the_snapshot_without_tripping_the_drop_guard():
+    import logging
+    from regtracker.diff import check_drop
+    from regtracker.sources.fca import FCASource
+
+    class Ctx:
+        log = logging.getLogger("t")
+        def source_config(self, name):
+            return {"agents": ["emd"]}
+
+    prev = {f"p{i}": {"licence_type": "Payment agent (PSD)", "active": True} for i in range(200)}
+    prev.update({f"e{i}": {"licence_type": "Authorised EMI", "active": True} for i in range(60)})
+    kept = FCASource().prune_snapshot(prev, Ctx())
+    assert len(kept) == 60
+    check_drop(kept, dict(kept))   # no SuspiciousDrop
+
+
 def test_hand_made_marks_follow_the_firm(tmp_path):
     from regtracker import sheets
     red = {"backgroundColor": {"red": 1, "green": 0, "blue": 0}, "textFormat": {"strikethrough": True}}

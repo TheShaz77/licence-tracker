@@ -300,6 +300,8 @@ def cmd_run(args, cfg, data_dir) -> int:
         due_file.write_text(json.dumps(last_fetch, indent=1, sort_keys=True))
         curr = {r.key: r.to_dict() for r in recs if r.jurisdiction not in ctx.excluded_countries}
         prev = load_snapshot(data_dir, src.name)
+        if prev and hasattr(src, "prune_snapshot"):
+            prev = src.prune_snapshot(prev, ctx)
         fp = getattr(src, "fingerprint", None)
         fp_file = data_dir / "snapshots" / f"{src.name}.settings"
         if fp and prev and (not fp_file.exists() or fp_file.read_text() != fp):

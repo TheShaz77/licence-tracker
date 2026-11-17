@@ -875,6 +875,17 @@ class FCASource(Source):
     label = "UK FCA (payment & e-money firms)"
     removal_is_event = False
 
+    def prune_snapshot(self, prev: dict, ctx: Context) -> dict:
+        """Drop records of agent types switched off in config.yaml from the previous snapshot, so the
+        switch-off is not mistaken for firms vanishing from the register (drop guard, removals)."""
+        agents = tuple(ctx.source_config("fca").get("agents", ["emd", "psd"]) or ())
+        off = {ltype for kind, _f, ltype, _d in AGENT_FIELDS if kind not in agents}
+        kept = {k: r for k, r in prev.items() if r.get("licence_type") not in off}
+        if len(kept) < len(prev):
+            ctx.log.info("FCA: removed %d agent records of switched-off types from the snapshot",
+                         len(prev) - len(kept))
+        return kept
+
     def fetch(self, ctx: Context) -> list:
         cfg = ctx.source_config("fca")
         st = load_state(ctx)
