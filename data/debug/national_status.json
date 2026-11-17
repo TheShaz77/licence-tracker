@@ -322,7 +322,7 @@
   "date": "2026-11-17"
  },
  "KM (iGaming)": {
-  "Anjouan licence register (probe - table loads by script)": "probe saved (279092 bytes, 10 linked pages)",
+  "Anjouan licence register (probe - table loads by script)": "probe saved (285033 bytes, 10 linked pages)",
   "date": "2026-11-17"
  },
  "KR": {
@@ -345,9 +345,9 @@
   "www.eccb-centralbank.org homepage": "probe saved earlier this week"
  },
  "LK": {
-  "CBSL licensed payment service providers": "HTTP 403",
+  "CBSL licensed payment service providers": "HTTP 404",
   "date": "2026-11-17",
-  "www.cbsl.gov.lk homepage": "HTTP 403"
+  "www.cbsl.gov.lk homepage": "probe saved (170332 bytes, 15 linked pages)"
  },
  "LR": {
   "CBL supervision": "probe saved earlier this week",
@@ -383,9 +383,9 @@
   "date": "2026-11-17"
  },
  "MK": {
-  "NBRM payment service providers": "HTTP 403",
+  "NBRM payment service providers": "probe saved (0 bytes, 0 linked pages)",
   "date": "2026-11-17",
-  "www.nbrm.mk homepage": "HTTP 403"
+  "www.nbrm.mk homepage": "probe saved (241813 bytes, 15 linked pages)"
  },
  "MN": {
   "Banking license": "probe saved earlier this week",
