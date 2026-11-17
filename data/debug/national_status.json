@@ -153,6 +153,10 @@
   "Curacao - CGA online gaming licence registry (PDF)": "ok: 305 firms",
   "date": "2026-11-16"
  },
+ "CY (CFD)": {
+  "Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC": "ok: 307 firms",
+  "date": "2026-11-17"
+ },
  "DE (iGaming)": {
   "Germany - GGL whitelist (online sports betting, slots, poker, casino)": "ok: 62 firms",
   "date": "2026-11-16"
@@ -195,6 +199,10 @@
   "NBE payment instrument issuers and payment system operators": "ok: 27 firms",
   "date": "2026-11-17",
   "nbe.gov.et homepage": "probe saved earlier this week"
+ },
+ "EU (CFD)": {
+  "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2736 firms",
+  "date": "2026-11-17"
  },
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
@@ -351,9 +359,7 @@
   "date": "2026-11-17"
  },
  "LT": {
-  "date": "2026-11-17",
-  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv": "ok: 41 firms",
-  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv": "ok: 72 firms"
+  "date": "2026-11-17"
  },
  "MC": {
   "AMAF members (Monaco banks)": "ok: 68 firms",
