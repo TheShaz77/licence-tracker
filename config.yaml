@@ -55,7 +55,7 @@ sources:
         - [100000, 499999]        # long-established brokers (IG, CMC, City Index ...)
 
   fca_cfd:        # UK CFD / FX providers found by the FCA scan above (shown in "United Kingdom (CFD)")
-    enabled: false   # CFDs are tracked only for MU, VG, SC, BS, VC, AU, CH, NZ and BM (Nov 2026)
+    enabled: true
 
   pra:            # UK: banks and building societies (PRA monthly lists)
     enabled: false   # banks no longer tracked
@@ -2169,6 +2169,45 @@ wiki_banks:
 # The UK comes from the FCA scan (sources: fca: cfd:).
 cfd_min_hours: 24
 cfd:
+  EU:
+    regulator: ESMA register
+    files:
+    - label: ESMA register - investment firms dealing on own account (all EEA)
+      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20on%20own%20account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      fallback_urls:
+      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7D(%2Bac_serviceName%3A%22Dealing%20On%20Own%20Account%22)&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      - https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=%7B!parent%20which%3D%22type_s%3Aparent%22%7Dac_serviceName%3A*own%5C%20account*&fq=ae_entityTypeCode%3AMIF&wt=json&rows=20000
+      name_column: ae_entityName
+      id_column: ae_lei
+      lei_column: ae_lei
+      country_column: ae_homeMemberState
+      regulator_column: ae_competentAuthority
+      address_column: ae_headOfficeAddress
+      website_column: ae_website
+      status_column: ae_status
+      date_column: ae_authorisationNotificationDateStr
+      exclude_column: ae_officeType
+      exclude_pattern: branch
+      licence_type: Investment firm - dealing on own account (MiFID)
+      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
+  CY:
+    regulator: CySEC
+    files:
+    # CySEC's own site disallows automated access (robots.txt); the same firms are on the ESMA
+    # register, which CySEC reports them to (every Cyprus Investment Firm is a MiFID investment firm)
+    - label: Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC
+      url: https://registers.esma.europa.eu/solr/esma_registers_upreg/select?q=*:*&fq=ae_entityTypeCode%3AMIF&fq=ae_homeMemberState%3Acyprus&wt=json&rows=5000
+      name_column: ae_entityName
+      lei_column: ae_lei
+      address_column: ae_headOfficeAddress
+      website_column: ae_website
+      status_column: ae_status
+      date_column: ae_authorisationNotificationDateStr
+      exclude_column: ae_officeType
+      exclude_pattern: branch
+      licence_type: Cyprus Investment Firm (CySEC, via ESMA register)
+      register_url: https://registers.esma.europa.eu/publication/searchRegister?core=esma_registers_upreg
+
   MU:
     regulator: FSC
     files:
