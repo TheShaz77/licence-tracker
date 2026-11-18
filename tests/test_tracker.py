@@ -337,6 +337,26 @@ def test_cli_run_baseline_then_changes(tmp_path, monkeypatch):
     assert lic.count("\n") == 3  # header + 2 firms (B kept as Inactive)
 
 
+def test_source_waiting_is_warning_not_failed_run(tmp_path, monkeypatch):
+    from regtracker.sources import ALL_SOURCES
+    from regtracker.sources.base import Source, SourceNotReady
+
+    class Waiting(Source):
+        name, label = "waiting", "Waiting register"
+
+        def fetch(self, ctx):
+            raise SourceNotReady("regulator temporarily unavailable")
+
+    monkeypatch.setitem(ALL_SOURCES, "waiting", Waiting())
+    cfgp = tmp_path / "c.yaml"
+    cfgp.write_text("sources:\n  waiting: {enabled: true}\n")
+    data = tmp_path / "data"
+    rc = cli.main(["--config", str(cfgp), "--data", str(data), "run", "--no-sheets", "--no-email", "--no-contacts"])
+    info = json.loads((data / "last_run.json").read_text())
+    assert rc == 0 and info["problems"] == []
+    assert "last known data retained" in info["warnings"][0]
+
+
 # ------------------------------------------------------- GitHub alerts ---
 
 def test_github_issue_alert(monkeypatch):

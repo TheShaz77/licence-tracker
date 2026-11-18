@@ -165,6 +165,8 @@ def cmd_contacts(args, cfg, data_dir) -> int:
     """Background job: read firms' own websites for email and phone."""
     ctx = make_context(cfg, data_dir)
     t0 = time.monotonic()
+    deadline = t0 + args.hours * 3600
+    finish_buffer = 5 * 60       # save state and let in-flight requests finish before the command budget
     records = assemble(cfg, data_dir, ctx)
     c = cfg.get("contacts") or {}
     web = contacts.load(data_dir, contacts.WEB_STATE)
@@ -175,7 +177,10 @@ def cmd_contacts(args, cfg, data_dir) -> int:
                                ("Companies House", enrich.companies_house, c.get("companies_house_minutes", 75))):
         if not minutes:
             continue
-        left = args.hours * 3600 - (time.monotonic() - t0)
+        left = deadline - time.monotonic() - finish_buffer
+        if left <= 0:
+            log.info("Contact job time budget used; remaining enrichment carries on next run")
+            break
         try:
             kw = {"save": lambda: contacts.save(data_dir, web, contacts.WEB_STATE)} if fn is enrich.companies_house else {}
             log.info("%s: %s", label, fn(ctx, records, web, log, min(float(minutes) * 60, left * 0.4), **kw))
@@ -183,9 +188,13 @@ def cmd_contacts(args, cfg, data_dir) -> int:
             log.exception("%s company-details lookup failed (carrying on)", label)
         contacts.save(data_dir, web, contacts.WEB_STATE)
     contacts.apply(records, {**web, **contacts.load(data_dir)})  # websites found via registers/Wikidata
-    hours = max(0.1, args.hours - (time.monotonic() - t0) / 3600)
-    contacts.crawl(ctx, records, hours, log, workers=int(c.get("parallel_sites", 8)),
-                   recheck_days=int(c.get("recheck_days", 180)))
+    seconds = deadline - time.monotonic() - finish_buffer
+    if seconds > 0:
+        contacts.crawl(ctx, records, seconds / 3600, log, workers=int(c.get("parallel_sites", 8)),
+                       recheck_days=int(c.get("recheck_days", 180)))
+    else:
+        contacts.save(data_dir, web, contacts.WEB_STATE)
+        log.info("Contact job time budget used before the website crawl; progress saved")
     return 0
 
 
@@ -284,7 +293,7 @@ def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     retire_guessed_snapshots(data_dir)
     prune_status(cfg, data_dir)
-    all_events, problems, status = [], [], []
+    all_events, problems, warnings, status = [], [], [], []
     due_file = data_dir / "state" / "last_fetch.json"
     last_fetch = json.loads(due_file.read_text()) if due_file.exists() else {}
     tried_file = data_dir / "state" / "last_attempt.json"
@@ -336,7 +345,7 @@ def cmd_run(args, cfg, data_dir) -> int:
             (log.info if getattr(e, "quiet", False) else log.warning)("%s skipped: %s", src.name, e)
             status.append(f"{src.name}: waiting ({e})")
             if not getattr(e, "quiet", False):
-                problems.append(f"{src.label}: unavailable; last known data retained ({e})")
+                warnings.append(f"{src.label}: unavailable; last known data retained ({e})")
             continue
         except Exception as e:
             log.exception("%s failed", src.name)
@@ -371,7 +380,7 @@ def cmd_run(args, cfg, data_dir) -> int:
                 details = "; ".join(w.get("message", str(w)) if isinstance(w, dict) else str(w)
                                     for w in source_warnings)
                 status.append(f"{src.name}: DEGRADED baseline {len(curr)} ({details[:350]})")
-                problems.append(f"{src.label}: partial coverage ({details})")
+                warnings.append(f"{src.label}: partial coverage ({details})")
             else:
                 status.append(f"{src.name}: baseline {len(curr)}")
             continue
@@ -403,7 +412,7 @@ def cmd_run(args, cfg, data_dir) -> int:
             details = "; ".join(w.get("message", str(w)) if isinstance(w, dict) else str(w)
                                 for w in source_warnings)
             status.append(f"{src.name}: DEGRADED ({details[:350]})")
-            problems.append(f"{src.label}: partial coverage; last known records retained where available ({details})")
+            warnings.append(f"{src.label}: partial coverage; last known records retained where available ({details})")
         else:
             status.append(f"{src.name}: ok ({len(events)} changes)")
 
@@ -448,7 +457,7 @@ def cmd_run(args, cfg, data_dir) -> int:
             pass
     run_info = {"finished": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
                 "sources_status": "; ".join(status), "changes": len(all_events),
-                "problems": problems}
+                "problems": problems, "warnings": warnings}
     if args.no_sheets:
         log.info("Skipping Google Sheets (--no-sheets)")
     elif sheets.enabled():
