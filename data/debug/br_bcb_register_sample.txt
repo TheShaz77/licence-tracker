@@ -1,9 +1,9 @@
 url: https://olinda.bcb.gov.br/olinda/servico/Instituicoes_em_funcionamento/versao/v1/odata/SedesSociedades?$top=100000&$format=json
-bytes: 299239  starts: b'{"@odata'
+bytes: 299661  starts: b'{"@odata'
 error: None
 columns used: ['BAIRRO', 'CEP', 'CNPJ', 'COMPLEMENTO', 'DDD', 'ENDERECO', 'E_MAIL', 'MUNICIPIO', 'MUNICIPIO_IBGE', 'NOME_INSTITUICAO', 'SEGMENTO', 'SITIO_NA_INTERNET', 'TELEFONE', 'UF']
 headers: None
-data rows: 703  kept: 703
+data rows: 704  kept: 704
 type values: None
 first lines:
 '{"CNPJ": "15482499", "NOME_INSTITUICAO": "TURCÂMBIO - SOCIEDADE CORRETORA DE CÂMBIO LTDA.", "SEGMENTO": "Sociedade Corretora de Câmbio", "ENDERECO": "AVENIDA DOUTOR JOÃO RIMSA", "COMPLEMENTO": null, "BAIRRO": "CENTRO", "CEP": "88780000", "MUNICIPIO": "IMBITUBA", "UF": "SC", "DDD": "48", "TELEFONE": '

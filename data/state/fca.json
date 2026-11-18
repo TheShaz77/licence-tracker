@@ -4524,6 +4524,35 @@
 "status_detail": "FCA Authorised; may deal in CFDs, rolling spot forex (retail clients)",
 "website": "www.ybs.co.uk"
 },
+"1061351": {
+"_enriched": true,
+"active": true,
+"city": "London",
+"email": "",
+"extra": {
+"business_type": "Institutional / prime broker or liquidity provider (guess)",
+"clients": "professional clients only",
+"companies_house": "OC452360",
+"phone": "+442038294102",
+"postcode": "W1J 7NW",
+"vertical": "CFD"
+},
+"jurisdiction": "GB",
+"key": "fca_cfd:1061351",
+"lei": "",
+"licence_type": "CFD / FX provider (FCA permission to deal in CFDs)",
+"name": "ADF ASSET MANAGEMENT LLP",
+"passports": "",
+"reference": "1061351",
+"register_url": "https://register.fca.org.uk/s/search?q=1061351&type=Companies",
+"regulator": "FCA",
+"services": "",
+"source": "fca_cfd",
+"status": "Active",
+"status_date": "16/11/2026",
+"status_detail": "FCA Authorised; may deal in CFDs, spread bets, rolling spot forex (professional clients only)",
+"website": ""
+},
 "106184": {
 "_enriched": true,
 "active": true,
@@ -88814,7 +88843,7 @@
 },
 "last_cfd_recheck": "2026-11-15",
 "last_full_recheck": "",
-"last_wide_frontier": "2026-11-11",
+"last_wide_frontier": "2026-11-18",
 "max_frn_seen": 1067012,
 "seed": {
 "checked": 1151401,
@@ -91126,7 +91155,7 @@
 "website": "www.getpliant.com"
 },
 "1042638": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91153,7 +91182,7 @@
 "website": ""
 },
 "1042732": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91180,7 +91209,7 @@
 "website": "www.photonpay.com/uk"
 },
 "1043609": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91207,7 +91236,7 @@
 "website": "www.odola.com"
 },
 "1044552": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91234,7 +91263,7 @@
 "website": ""
 },
 "1045630": {
-"_checked": "2026-11-11",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": false,
 "city": "Glasgow",
@@ -91261,7 +91290,7 @@
 "website": ""
 },
 "1045688": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "",
@@ -91288,7 +91317,7 @@
 "website": ""
 },
 "1047222": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91315,7 +91344,7 @@
 "website": "www.remitly.com"
 },
 "1047531": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91342,7 +91371,7 @@
 "website": "www.nsave.com"
 },
 "1050385": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "",
@@ -91369,7 +91398,7 @@
 "website": "www.computershare.com"
 },
 "1051568": {
-"_checked": "2026-11-17",
+"_checked": "2026-11-18",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91394,6 +91423,33 @@
 "status_date": "10/11/2026",
 "status_detail": "Authorised Electronic Money Institution (firm status: Registered)",
 "website": "www.aspireapp.com"
+},
+"1055683": {
+"_checked": "2026-11-18",
+"_enriched": 2,
+"active": true,
+"city": "",
+"email": "",
+"extra": {
+"companies_house": "16918914",
+"phone": "+4402080805139",
+"postcode": "EC2V 7AB"
+},
+"jurisdiction": "GB",
+"key": "fca:1055683",
+"lei": "",
+"licence_type": "Authorised Payment Institution",
+"name": "RIDGEPAY LIMITED",
+"passports": "",
+"reference": "1055683",
+"register_url": "https://register.fca.org.uk/s/search?q=1055683&type=Companies",
+"regulator": "FCA",
+"services": "",
+"source": "fca",
+"status": "Active",
+"status_date": "13/11/2026",
+"status_detail": "Authorised Payment Institution (firm status: See full details)",
+"website": "www.ridgepay.com"
 },
 "114276": {
 "_checked": "2026-11-17",

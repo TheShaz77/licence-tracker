@@ -1,13 +1,17 @@
   json 200    24906 bytes  https://www.bankofcanada.ca/rps-api/cif2/registry-decisions/enforcement/list/
 registered: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/
-  json 200  1187394 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
-  entries: 1832 from matching data, 1832 in the table -> using data
+  json 200  1195055 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
+  entries: 1851 from matching data, 1851 in the table -> using data
   first entry raw: {"main_trade_name": "Khiza Financial", "en_legal_name": "", "fr_legal_name": "Villard Kiza", "head_office_country": "Canada", "status": "Registered", "created_on": "2024-11-01 14:19:44", "registration_date": "2026-04-13", "has_violations": 0, "id": "e72fdf53-5c98-ef11-8a69-6045bd5e516b", "group_label": "registered"}
 applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/
-  json 200  1187394 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
-  entries: 0 from matching data, 424 in the table -> using table
+  json 200  1195055 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/list
+  entries: 0 from matching data, 420 in the table -> using table
   first entry raw: {"Legal name": "100 Exchange Inc.", "Main trade name": "100 Exchange", "Head office country": "Canada", "Date of application": "2026-08-07", "detail_link": "https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=79c0381b-9192-f111-b8dc-70a8a50df491"}
-status / group values (counted per page): {'registered / Registered': 1832, '- / -': 424}
+status / group values (counted per page): {'registered / Registered': 1851, '- / -': 420}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
-firms by status: {'registered': 1832, 'applicant': 424}
-detail pages: 0 fetched this run, 0 still to do, 2261 done in total
+firms by status: {'registered': 1851, 'applicant': 420}
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=011fd369-1fde-f111-84ea-70a8a50dbdd9: {"v": 2, "email": "", "website": "https://flexygroup.ca", "seen": "2026-11-18", "phone": "", "city": "Montreal", "address": "", "legal": "12761645 CANADA INC (FLEXY GROUP)", "trade": "FLEXY GROUP", "status": ""}
+  json 200      834 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/011fd369-1fde-f111-84ea-70a8a50dbdd9
+detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=c6d2c78c-adcf-f111-a05b-3833c5fa6ddd: {"v": 2, "email": "", "website": "https://www.1chain.finance", "seen": "2026-11-18", "phone": "", "city": "Murcia", "address": "", "legal": "1CHAIN INC.", "trade": "1 Chain Finance", "status": ""}
+  json 200      792 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/c6d2c78c-adcf-f111-a05b-3833c5fa6ddd
+detail pages: 15 fetched this run, 0 still to do, 2276 done in total

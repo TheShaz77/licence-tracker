@@ -16,7 +16,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://valueplus.mu/
-bytes: 229754  starts: b'<!doctyp'
+bytes: 229753  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -209,7 +209,7 @@ first lines:
 '(binary)'
 
 url: https://stateinvestment.mu/subsidairy/entertainment-tourism
-bytes: 27348  starts: b'<!DOCTYP'
+bytes: 23382  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -226,7 +226,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://stateinvestment.mu/subsidairy/entertainment-tourism
-bytes: 27348  starts: b'<!DOCTYP'
+bytes: 23382  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -243,7 +243,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://stateinvestment.mu/subsidairy/entertainment-tourism
-bytes: 27348  starts: b'<!DOCTYP'
+bytes: 23382  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -260,7 +260,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://stateinvestment.mu/subsidairy/entertainment-tourism
-bytes: 27348  starts: b'<!DOCTYP'
+bytes: 23382  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -277,7 +277,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
-bytes: 120380  starts: b'<!DOCTYP'
+bytes: 120435  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -290,11 +290,11 @@ first lines:
 '<head>'
 '    <meta charset="utf-8">'
 '    <meta name="viewport" content="width=device-width, initial-scale=1">'
-'    <meta name="csrf-token" content="vDWjyQWlL3xvAvKnxYZQg4OiJ0Mer5u2JGxUowOx">'
+'    <meta name="csrf-token" content="8rrDrwnbQIOj7gaxntc1cRIV23tOEgSS4KjFOVT3">'
 ''
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 270265  starts: b'<!DOCTYP'
+bytes: 277479  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -311,7 +311,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 270131  starts: b'<!DOCTYP'
+bytes: 277264  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -328,7 +328,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 270131  starts: b'<!DOCTYP'
+bytes: 277264  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
