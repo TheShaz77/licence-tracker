@@ -1,5 +1,5 @@
 url: https://cbcg.me/en/core-functions/supervisory-function/banking-system/register-of-banks
-bytes: 101409  starts: b'\n<!docty'
+bytes: 101228  starts: b'\n<!docty'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
@@ -16,7 +16,7 @@ first lines:
 '<!--[if !IE]><html lang="en"><![endif]-->'
 
 url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-payment-institutions
-bytes: 103298  starts: b'\n<!docty'
+bytes: 103117  starts: b'\n<!docty'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
@@ -33,7 +33,7 @@ first lines:
 '<!--[if !IE]><html lang="en"><![endif]-->'
 
 url: https://cbcg.me/en/core-functions/payment-system/registers/register-of-emoney-institutions
-bytes: 99088  starts: b'\n<!docty'
+bytes: 98907  starts: b'\n<!docty'
 error: RuntimeError('no firms matched')
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

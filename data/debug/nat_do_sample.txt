@@ -1,10 +1,10 @@
 url: https://sb.gob.do/supervisados/entidades-de-intermediacion-financiera/?page={page}
-bytes: 154448  starts: b'\r\n\r\n<htm'
+bytes: 155144  starts: b'\r\n\r\n<htm'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type', 'status']
 data rows: 22  kept: 22
-type values: [('Banco de Ahorro y Crédito', 11), ('Asociación de Ahorros y Préstamos', 6), ('Corporación de Crédito', 3), ('Banco Múltiple', 2)]
+type values: [('Asociación de Ahorros y Préstamos', 10), ('Banco de Ahorro y Crédito', 7), ('Corporación de Crédito', 3), ('Entidad Pública', 1), ('Banco Múltiple', 1)]
 first lines:
 ''
 ''

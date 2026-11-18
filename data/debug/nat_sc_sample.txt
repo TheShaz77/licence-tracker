@@ -1,5 +1,5 @@
 url: https://fsaseychelles.sc/vasp/licensed-vasps
-bytes: 164022  starts: b'\n<!docty'
+bytes: 163684  starts: b'\n<!docty'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['type', 'name']

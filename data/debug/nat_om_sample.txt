@@ -1,5 +1,5 @@
 url: https://cbo.gov.om/Pages/LicensedBanks.aspx
-bytes: 205950  starts: b'\r\n<!DOCT'
+bytes: 212378  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
@@ -16,7 +16,7 @@ first lines:
 '            '
 
 url: https://cbo.gov.om/Pages/MoneyExchangeCompanies.aspx
-bytes: 199244  starts: b'\r\n<!DOCT'
+bytes: 205672  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']

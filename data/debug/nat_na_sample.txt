@@ -1,5 +1,5 @@
 url: https://www.bon.com.na/Bank/National-Payment-System/National-Payment-System-Participants.aspx
-bytes: 143383  starts: b'<!DOCTYP'
+bytes: 143214  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Institution', 'type': 'Institution', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Institution', 'NISS', 'EFT', 'Card-switch Facility', 'E-Money', 'SADC-RTGS', 'Third party payment service providers', 'Payment facilitator service provider', 'Virtual Asset Service Provider']
