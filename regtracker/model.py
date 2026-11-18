@@ -202,19 +202,38 @@ import re as _re
 # are crypto / virtual-asset ones (VASP, CASP, DASP, DPT, MiCA, MLR cryptoasset registration, an MSB
 # registered to deal in virtual currency, ...). Everything else is a financial institution ("FI").
 _DIGITAL_LICENCE = _re.compile(
-    r"crypto|virtual[ -]?(?:asset|currenc)|digital[ -]?(?:asset|payment token|token|currenc)|blockchain|"
+    r"crypto|virtual[ -]?(?:asset|currenc(?:y|ies))|digital[ -]?(?:asset|payment token|token|currenc(?:y|ies))|blockchain|"
     r"\btoken|bitlicen|stablecoin|ativos virtuais|activos virtuales|kripto|\bDLT\b", _re.I)
 _DIGITAL_ACRONYM = _re.compile(r"\b(?:VASP|CASP|DASP|DPT|MiCA|PSAV|SPSAV|PSAN|VAITOS|DABA|DARE)\b")
 _DIGITAL_SERVICE = _re.compile(
-    r"crypto|virtual[ -]?(?:asset|currenc)|digital[ -]?(?:asset|payment token|token|currenc)|\bDPT\b", _re.I)
+    r"crypto|virtual[ -]?(?:asset|currenc(?:y|ies))|digital[ -]?(?:asset|payment token|token|currenc(?:y|ies))|\bDPT\b", _re.I)
 SEGMENTS = ("FI", "Digital Assets")
 
 
 def segment_of(r: dict) -> str:
     """'Digital Assets' or 'FI' for a licence record (lead-generation verticals are handled separately)."""
+    return "Digital Assets" if "Digital Assets" in segments_of(r) else "FI"
+
+
+def segments_of(r: dict) -> tuple[str, ...]:
+    """Sheet segments for a licence record.
+
+    A licence that is inherently a crypto / virtual-asset licence belongs only
+    on Digital Assets. A general financial licence whose registered services
+    include both virtual-currency and conventional services belongs on both
+    sets of tabs. This is common for Canadian MSBs.
+    """
     lic = r.get("licence_type") or ""
     if _DIGITAL_LICENCE.search(lic) or _DIGITAL_ACRONYM.search(lic):
-        return "Digital Assets"
+        return ("Digital Assets",)
     ex = r.get("extra") or {}
     services = " ".join(str(x) for x in (r.get("services"), ex.get("services"), ex.get("activities")) if x)
-    return "Digital Assets" if services and _DIGITAL_SERVICE.search(services) else "FI"
+    if not services or not _DIGITAL_SERVICE.search(services):
+        return ("FI",)
+
+    # Remove the phrases that identify the digital activity. If a meaningful
+    # service remains, this is a mixed-purpose financial firm and must also
+    # stay visible to users of the FI tabs.
+    conventional = _DIGITAL_SERVICE.sub(" ", services)
+    conventional = _re.sub(r"[|,;/+\-]+|\band\b|\bservices?\b", " ", conventional, flags=_re.I)
+    return ("FI", "Digital Assets") if _re.search(r"[a-z0-9]", conventional, _re.I) else ("Digital Assets",)

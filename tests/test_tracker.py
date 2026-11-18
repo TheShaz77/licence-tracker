@@ -1924,6 +1924,7 @@ def test_national_keeps_failed_file_firms(tmp_path):
                   log=logging.getLogger("t"))
     names = sorted(r.name for r in src.fetch(ctx))
     assert names == ["Alpha Ltd", "Beta Ltd"]
+    assert ctx.source_warnings and ctx.source_warnings[0]["retained"] == 1
 
 
 def test_text_regex_and_date_key():
@@ -1990,6 +1991,25 @@ def test_national_probe_follow_and_status(tmp_path):
     assert st["gone"] == "HTTP 404" and st["menu"].startswith("probe saved") and "1 linked" in st["menu"]
     saved = sorted(p.name for p in (tmp_path / "debug" / "raw").iterdir())
     assert len(saved) == 2 and any("payment_institutions" in n for n in saved)
+
+
+def test_national_discovery_probes_can_be_disabled(tmp_path):
+    import json, logging
+    from regtracker.sources.national import NationalSource
+    from regtracker.sources.base import Context, SourceNotReady
+
+    class NoNetwork:
+        def get(self, *a, **k):
+            raise AssertionError("disabled discovery probe must not fetch")
+
+    src = NationalSource("ZZ", {"regulator": "X", "files": [
+        {"label": "future register", "url": "https://x.example/register", "probe": True}]})
+    ctx = Context(config={"run_discovery_probes": False}, session=NoNetwork(), today="2026-11-09",
+                  data_dir=tmp_path, excluded_countries=set(), log=logging.getLogger("t"))
+    with pytest.raises(SourceNotReady):
+        src.fetch(ctx)
+    state = json.loads((tmp_path / "debug" / "national_status.json").read_text())["ZZ"]
+    assert state["future register"].startswith("disabled: discovery probe")
 
 
 def test_raw_html_regex_cards():
@@ -2084,8 +2104,9 @@ def test_fi_and_digital_assets_are_on_separate_tabs():
     assert [segment_of(r) for r in recs] == ["FI", "Digital Assets", "Digital Assets", "Digital Assets", "FI", "Digital Assets"]
     tabs = sheets.build_tabs(recs, [], {})
     assert len(tabs["United Kingdom (FI)"]) == 2 and len(tabs["United Kingdom (Digital Assets)"]) == 3
-    assert len(tabs["Digital Assets (all countries)"]) == 5 and len(tabs["FI (all countries)"]) == 3
-    assert "Canada (Digital Assets)" in tabs and "Canada (FI)" not in tabs and "Brazil (FI)" in tabs
+    assert len(tabs["Digital Assets (all countries)"]) == 5 and len(tabs["FI (all countries)"]) == 4
+    assert len(tabs["Canada (FI)"]) == 2 and len(tabs["Canada (Digital Assets)"]) == 2
+    assert "Canada (Digital Assets)" in tabs and "Canada (FI)" in tabs and "Brazil (FI)" in tabs
 
 
 def test_za_casp_reads_fais_export_then_falls_back_to_the_linked_list(tmp_path, monkeypatch):

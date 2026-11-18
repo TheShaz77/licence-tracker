@@ -23,7 +23,7 @@ by email (through a GitHub issue) whenever something changes.
 
 | Source | Jurisdictions | Licence types | How changes are detected | Refresh |
 |---|---|---|---|---|
-| **FCA Register API** | UK | EMIs, small EMIs, APIs, SPIs, e-money agents, payment (PSD) agents, cryptoasset firms (MLR registered) | Each firm's status re-checked daily; new FRNs scanned daily | Live |
+| **FCA Register API** | UK | EMIs, small EMIs, APIs, SPIs and cryptoasset firms (MLR registered); payment and e-money agents are excluded | Each firm's status re-checked daily; new FRNs scanned daily | Live |
 | **EBA PSD2 register** | All EU/EEA countries (about 30) | PIs, EMIs, AISPs, small/exempt PIs and EMIs | Additions, removals, withdrawal dates, type and service changes | Daily |
 | **ESMA MiCA register** | EU/EEA | MiCA CASPs (authorised), financial firms notified for crypto services (Art. 60), e-money token issuers | Additions, removals, end dates | Daily |
 | **FINMA** | Switzerland | FinTech licence holders | Additions and removals | Daily |
@@ -121,8 +121,8 @@ password, e.g. Gmail app passwords or Brevo):
 ### 5. Turn it on
 1. Repo → **Actions** tab → enable workflows if GitHub asks.
 2. Open **Daily licence check** → **Run workflow**. The first run takes about
-   10 minutes and fills the sheet with the UK banks, EU/EEA payment firms and
-   banks, and Swiss banks. The first run of each source is a **baseline** and
+   10 minutes and fills the sheet from the enabled payment, e-money, digital-asset
+   and national-register sources. UK and EU/EEA banks are excluded. The first run of each source is a **baseline** and
    raises no alerts; change alerts start from the second day.
 
 ### 6. Start the one-off FCA scan
@@ -151,6 +151,7 @@ That's it. The check runs every 2 hours, at 17 minutes past (00:17, 02:17 … UT
 | **Licences** | Every tracked firm: jurisdiction, regulator, name, licence type, Active/Inactive, reference number, LEI, city, website (UK), services, passporting, register link, first seen, last changed. Filters are switched on; filter **Status = Active** for the live list. |
 | **Changes** | The change log, newest first. |
 | **Summary** | Counts by jurisdiction and licence type, plus the last run's status. |
+| **Coverage** | Per-register status for existing jurisdictions, including feeds whose last known records had to be retained. |
 
 The same data is kept in the repo as `data/licences.csv` and `data/changes.csv`.
 
@@ -166,8 +167,8 @@ annotate firms, add your own tab and look them up by reference number with
   register has no legal standing and that national registers are authoritative.
   For a decision about a specific firm, check the regulator's own register (the
   link column).
-- **Timing.** The PRA bank lists change monthly, so a UK bank licence change shows
-  up when the next list is published. The FCA, EBA, ECB and FINMA are checked daily.
+- **Timing.** The FCA, EBA and enabled national registers are checked on their
+  configured schedules. PRA and ECB are disabled, so UK and EU/EEA banks are not published.
 - **UK firms with old FRNs.** New UK payment firms get new FRNs and are caught by
   the daily scan. A long-established firm (old FRN) that newly adds a payment
   licence is caught by the weekly re-check only if it's already tracked. To watch
@@ -272,7 +273,7 @@ Licences are split into two groups, each with its own tabs, like the CFD and iGa
   Tabs: "FI (all countries)" and "<Country> (FI)".
 
 A firm holding both kinds of licence appears on both. When the sheet would pass Google's 10-million-cell
-limit, "FI (all countries)" is left out (every FI is still on its country tab).
+limit, publication stops before changing any tab rather than silently leaving a list out.
 
 ## Company details: LinkedIn, headcount, revenue, websites
 
@@ -354,8 +355,8 @@ Licence records are split in two, the same way CFD and iGaming have their own ta
   registered to deal in virtual currencies). Tabs: "Digital Assets (all countries)" and
   "United Kingdom (Digital Assets)", "South Africa (Digital Assets)", ...
 - **FI**: everything else (banks, payment and e-money institutions, MSBs, FX businesses ...). Tabs:
-  "United Kingdom (FI)", ... and "FI (all countries)". Google Sheets holds 10 million cells at most, so
-  when everything does not fit, "FI (all countries)" is the tab left out (every firm stays on its country tab).
+  "United Kingdom (FI)", ... and "FI (all countries)". Google Sheets holds 10 million cells at most; if
+  the complete publication would not fit, the run stops before changing the workbook.
 
 The old "Licences" tab and the old "Country (CC)" tabs are removed automatically on the next run.
 

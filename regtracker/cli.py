@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import csv
 import re
 import datetime as dt
 import json
@@ -45,11 +46,24 @@ def load_config(path: Path) -> dict:
 
 def make_context(cfg: dict, data_dir: Path) -> Context:
     excluded = {c.strip().upper() for c in cfg.get("excluded_countries") or []}
+    allowed = None if cfg.get("allow_new_jurisdictions", True) else existing_jurisdictions(data_dir)
+    if allowed is not None and not allowed:
+        raise RuntimeError("allow_new_jurisdictions is false, but data/licences.csv contains no existing jurisdictions")
     ctx = Context(config=cfg, session=make_session(),
                   today=dt.datetime.now(dt.timezone.utc).date().isoformat(),
-                  data_dir=data_dir, excluded_countries=excluded, log=log)
+                  data_dir=data_dir, excluded_countries=excluded, allowed_jurisdictions=allowed, log=log)
     ctx.now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M")
     return ctx
+
+
+def existing_jurisdictions(data_dir: Path) -> set:
+    """ISO-2 jurisdictions already represented in the published master CSV."""
+    p = data_dir / "licences.csv"
+    if not p.exists():
+        return set()
+    with open(p, newline="", encoding="utf-8-sig") as fh:
+        return {str(r.get("Jurisdiction") or "").strip().upper() for r in csv.DictReader(fh)
+                if re.fullmatch(r"[A-Za-z]{2}", str(r.get("Jurisdiction") or "").strip())}
 
 
 def all_sources(cfg: dict) -> dict:
@@ -71,19 +85,21 @@ EEA_COUNTRIES = {"AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE
                  "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO"}
 
 
-def covered_countries(cfg: dict, data_dir: Path) -> dict:
+def covered_countries(cfg: dict, data_dir: Path, allowed: set | None = None) -> dict:
     """Countries whose national register is live: {country: its snapshot}.
     For these the sheet shows national data and EU-register changes are only
     logged for comparison."""
     out = {}
     for name, src in national_sources(cfg).items():
+        if allowed is not None and src.country not in allowed:
+            continue
         snap = load_snapshot(data_dir, name)
         if snap:
             out[src.country] = snap
     return out
 
 
-def enabled_sources(cfg: dict, only: str | None) -> list:
+def enabled_sources(cfg: dict, only: str | None, allowed_jurisdictions: set | None = None) -> list:
     known = all_sources(cfg)
     names = [n.strip() for n in only.split(",")] if only else [
         n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) and n != "us_states"
@@ -93,19 +109,26 @@ def enabled_sources(cfg: dict, only: str | None) -> list:
     unknown = [n for n in names if n not in known]
     if unknown:
         sys.exit(f"Unknown source(s): {', '.join(unknown)}. Known: {', '.join(known)}")
-    return [known[n] for n in names]
+    out = [known[n] for n in names]
+    if allowed_jurisdictions is not None and not only:
+        out = [s for s in out if not s.name.startswith(("nat_", "cfd_", "igm_"))
+               or getattr(s, "country", "") == "EU"
+               or getattr(s, "country", "") in allowed_jurisdictions]
+    return out
 
 
 def assemble(cfg: dict, data_dir: Path, ctx: Context, covered: dict | None = None) -> list:
     """Master list = every source's latest snapshot (failed sources keep the last good one)."""
-    covered = covered_countries(cfg, data_dir) if covered is None else covered
+    covered = covered_countries(cfg, data_dir, ctx.allowed_jurisdictions) if covered is None else covered
     records = []
     switched_off = {n for n, c in (cfg.get("sources") or {}).items() if (c or {}).get("enabled", True) is False}
     for name in all_sources(cfg):
         if name in switched_off:
             continue  # source turned off in config.yaml: its old snapshot is not shown
         snap = [r for r in load_snapshot(data_dir, name).values()
-                if (r.get("jurisdiction") or "").upper() not in ctx.excluded_countries]   # prohibited countries
+                if (r.get("jurisdiction") or "").upper() not in ctx.excluded_countries
+                and (ctx.allowed_jurisdictions is None
+                     or (r.get("jurisdiction") or "").upper() in ctx.allowed_jurisdictions)]
         if name == "eba":  # national register replaces the EU copy where we have one
             snap = [r for r in snap if r.get("jurisdiction") not in covered]
         records.extend(snap)
@@ -235,6 +258,28 @@ def prune_status(cfg, data_dir) -> None:
         p.write_text(json.dumps(keep, indent=1, sort_keys=True, ensure_ascii=False))
 
 
+def coverage_values(data_dir: Path, allowed: set | None = None) -> list:
+    """Rows for a human-readable sheet tab showing incomplete register inputs."""
+    p = data_dir / "debug" / "national_status.json"
+    try:
+        report = json.loads(p.read_text()) if p.exists() else {}
+    except (OSError, ValueError):
+        report = {}
+    rows = [["Jurisdiction / vertical", "Register or file", "Coverage state", "Last checked (UTC)"]]
+    for country, values in sorted(report.items()):
+        base = country.split(" ", 1)[0].upper()
+        if allowed is not None and base != "EU" and base not in allowed:
+            continue
+        checked = values.get("date", "") if isinstance(values, dict) else ""
+        for label, state in sorted((values or {}).items()):
+            if label == "date":
+                continue
+            rows.append([country, label, state, checked])
+    if len(rows) == 1:
+        rows.append(["", "No national-source diagnostics are available yet", "", ""])
+    return rows
+
+
 def cmd_run(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     retire_guessed_snapshots(data_dir)
@@ -249,7 +294,7 @@ def cmd_run(args, cfg, data_dir) -> int:
     # doesn't fit is left for the next run. Any one source is stopped after `source_timeout_minutes`.
     t0 = time.monotonic()
     budget = float(cfg.get("run_budget_minutes", 140)) * 60
-    sources = enabled_sources(cfg, args.sources)
+    sources = enabled_sources(cfg, args.sources, ctx.allowed_jurisdictions)
     if not args.sources:
         lists = ("nat_", "cfd_", "igm_", "us_", "wiki_banks")
         sources = [s for s in sources if not s.name.startswith(lists)] + sorted(
@@ -283,12 +328,15 @@ def cmd_run(args, cfg, data_dir) -> int:
         tried_file.parent.mkdir(parents=True, exist_ok=True)
         tried_file.write_text(json.dumps(last_try, indent=1, sort_keys=True))
         limit = float(conf.get("timeout_minutes", cfg.get("source_timeout_minutes", 40))) * 60
+        warning_start = len(ctx.source_warnings)
         try:
             with time_limit(limit, src.name):
                 recs = src.fetch(ctx)
         except SourceNotReady as e:
             (log.info if getattr(e, "quiet", False) else log.warning)("%s skipped: %s", src.name, e)
             status.append(f"{src.name}: waiting ({e})")
+            if not getattr(e, "quiet", False):
+                problems.append(f"{src.label}: unavailable; last known data retained ({e})")
             continue
         except Exception as e:
             log.exception("%s failed", src.name)
@@ -298,10 +346,15 @@ def cmd_run(args, cfg, data_dir) -> int:
         last_fetch[src.name] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="minutes")
         due_file.parent.mkdir(parents=True, exist_ok=True)
         due_file.write_text(json.dumps(last_fetch, indent=1, sort_keys=True))
-        curr = {r.key: r.to_dict() for r in recs if r.jurisdiction not in ctx.excluded_countries}
+        source_warnings = ctx.source_warnings[warning_start:]
+        curr = {r.key: r.to_dict() for r in recs if r.jurisdiction not in ctx.excluded_countries
+                and (ctx.allowed_jurisdictions is None or r.jurisdiction in ctx.allowed_jurisdictions)}
         prev = load_snapshot(data_dir, src.name)
         if prev and hasattr(src, "prune_snapshot"):
             prev = src.prune_snapshot(prev, ctx)
+        if ctx.allowed_jurisdictions is not None:
+            prev = {k: r for k, r in prev.items()
+                    if (r.get("jurisdiction") or "").upper() in ctx.allowed_jurisdictions}
         fp = getattr(src, "fingerprint", None)
         fp_file = data_dir / "snapshots" / f"{src.name}.settings"
         if fp and prev and (not fp_file.exists() or fp_file.read_text() != fp):
@@ -314,7 +367,13 @@ def cmd_run(args, cfg, data_dir) -> int:
             _, merged = diff({}, curr, ctx.now, src.removal_is_event)
             save_snapshot(data_dir, src.name, merged)
             log.info("%s: baseline saved with %d records (no change alerts on the first run)", src.name, len(curr))
-            status.append(f"{src.name}: baseline {len(curr)}")
+            if source_warnings:
+                details = "; ".join(w.get("message", str(w)) if isinstance(w, dict) else str(w)
+                                    for w in source_warnings)
+                status.append(f"{src.name}: DEGRADED baseline {len(curr)} ({details[:350]})")
+                problems.append(f"{src.label}: partial coverage ({details})")
+            else:
+                status.append(f"{src.name}: baseline {len(curr)}")
             continue
         try:
             check_drop(prev, curr, float(cfg.get("drop_guard", 0.7)))
@@ -330,7 +389,7 @@ def cmd_run(args, cfg, data_dir) -> int:
         if src.name.startswith("nat_") and getattr(src, "country", "") in EEA_COUNTRIES:
             compare.log_events(data_dir, events, "national")
         elif src.name == "eba":
-            covered = covered_countries(cfg, data_dir)
+            covered = covered_countries(cfg, data_dir, ctx.allowed_jurisdictions)
             shadow = [e for e in events if e["jurisdiction"] in covered]
             compare.log_events(data_dir, shadow, "eu")
             if shadow:
@@ -340,7 +399,13 @@ def cmd_run(args, cfg, data_dir) -> int:
         all_events.extend(events)
         c = Counter(e["event_label"] for e in events)
         log.info("%s: %d records, %d changes %s", src.name, len(curr), len(events), dict(c))
-        status.append(f"{src.name}: ok ({len(events)} changes)")
+        if source_warnings:
+            details = "; ".join(w.get("message", str(w)) if isinstance(w, dict) else str(w)
+                                for w in source_warnings)
+            status.append(f"{src.name}: DEGRADED ({details[:350]})")
+            problems.append(f"{src.label}: partial coverage; last known records retained where available ({details})")
+        else:
+            status.append(f"{src.name}: ok ({len(events)} changes)")
 
     if all_events:
         append_changes_csv(data_dir, all_events)
@@ -357,7 +422,7 @@ def cmd_run(args, cfg, data_dir) -> int:
             flags.expand(ctx, min(float(fl.get("seconds_per_run", 900)), spare - 60), int(fl.get("refresh_days", 30)))
         except Exception:
             log.exception("Do-not-contact related-entity lookup failed (flags from the lists still apply)")
-    covered = covered_countries(cfg, data_dir)
+    covered = covered_countries(cfg, data_dir, ctx.allowed_jurisdictions)
     records = assemble(cfg, data_dir, ctx, covered)
     if (cfg.get("contacts") or {}).get("enabled", True) and not args.sources \
             and not args.no_contacts:
@@ -384,8 +449,6 @@ def cmd_run(args, cfg, data_dir) -> int:
     run_info = {"finished": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M"),
                 "sources_status": "; ".join(status), "changes": len(all_events),
                 "problems": problems}
-    (data_dir / "last_run.json").write_text(json.dumps(run_info, indent=2))
-
     if args.no_sheets:
         log.info("Skipping Google Sheets (--no-sheets)")
     elif sheets.enabled():
@@ -393,14 +456,18 @@ def cmd_run(args, cfg, data_dir) -> int:
             extra = {"MiCA CASPs (EU-EEA)": sheets.mica_tab(records)}
             if covered:
                 extra["Source check"] = compare.report(data_dir, covered, load_snapshot(data_dir, "eba"), ctx.now)
+            extra["Coverage"] = coverage_values(data_dir, ctx.allowed_jurisdictions)
             sheets.publish(records, recent_changes(data_dir, int(cfg.get("sheet_change_rows", 5000))), run_info, log,
                            per_country=bool(cfg.get("sheet_country_tabs", True)), extra_tabs=extra,
                            marks_file=data_dir / "state" / "manual_marks.json")
         except Exception as e:
             log.exception("Google Sheets update failed")
             problems.append(f"Google Sheets: {e}")
+            run_info["problems"] = problems
     else:
         log.info("Google Sheets not configured (GOOGLE_SERVICE_ACCOUNT_JSON / SHEET_ID); CSV written to data/")
+
+    (data_dir / "last_run.json").write_text(json.dumps(run_info, indent=2))
 
     if notify.telegram_enabled() and not args.no_email:
         notify.telegram_connect(log)
@@ -436,7 +503,7 @@ def cmd_status(args, cfg, data_dir) -> int:
 def cmd_doctor(args, cfg, data_dir) -> int:
     ctx = make_context(cfg, data_dir)
     rc = 0
-    for src in enabled_sources(cfg, args.sources):
+    for src in enabled_sources(cfg, args.sources, ctx.allowed_jurisdictions):
         if src.name == "fca":
             client = fca_mod.FCAClient(ctx, 2)
             firm = client.firm(900562)

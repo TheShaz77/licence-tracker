@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import requests
@@ -22,6 +22,8 @@ class Context:
     excluded_countries: set
     log: logging.Logger
     now: str = ""         # YYYY-MM-DD HH:MM (UTC), used to timestamp changes
+    allowed_jurisdictions: set | None = None
+    source_warnings: list = field(default_factory=list)
 
     def source_config(self, name: str) -> dict:
         return (self.config.get("sources") or {}).get(name) or {}

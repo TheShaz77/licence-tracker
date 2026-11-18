@@ -144,10 +144,11 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     ordered = [r for r in ordered if not vertical_of(r)]
     # Financial institutions and digital-asset firms are kept apart: "FI (all countries)" /
     # "Digital Assets (all countries)", and per country "United Kingdom (FI)" / "United Kingdom (Digital Assets)".
-    from .model import SEGMENTS, segment_of
+    from .model import SEGMENTS, segments_of
     by_seg = {seg: [] for seg in SEGMENTS}
     for r in ordered:
-        by_seg[segment_of(r)].append(r)
+        for seg in segments_of(r):
+            by_seg[seg].append(r)
     for seg in reversed(SEGMENTS):          # Digital Assets first: it is the short one
         if by_seg[seg] or seg == "FI":
             tabs[f"{seg} (all countries)"] = [header] + [record_row(r) for r in by_seg[seg]]
@@ -170,7 +171,42 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
             by_tab[cfd_tab(r.get("jurisdiction", ""), vertical)].append(cfd_row(r))
         for title in sorted(by_tab):
             tabs[title] = [vheader] + by_tab[title]
+    validate_tabs(records, tabs, per_country)
     return tabs
+
+
+def validate_tabs(records: list, tabs: dict, per_country: bool = True) -> None:
+    """Refuse to publish if a list record has gone missing during tab routing."""
+    from .model import SEGMENTS, segments_of
+
+    ordinary = [r for r in records if not vertical_of(r)]
+    for seg in SEGMENTS:
+        expected = sum(seg in segments_of(r) for r in ordinary)
+        title = f"{seg} (all countries)"
+        actual = max(0, len(tabs.get(title) or []) - 1)
+        if actual != expected:
+            raise RuntimeError(f"Sheet routing lost {expected - actual} {seg} rows ({expected} expected, {actual} built)")
+
+    if per_country:
+        expected = Counter()
+        for r in ordinary:
+            for seg in segments_of(r):
+                title = cfd_tab(r.get("jurisdiction", ""), seg) if country_tab(r.get("jurisdiction", "")) != OTHER_TAB \
+                    else f"{OTHER_TAB} ({seg})"
+                expected[title] += 1
+        for title, count in expected.items():
+            actual = max(0, len(tabs.get(title) or []) - 1)
+            if actual != count:
+                raise RuntimeError(f"Sheet routing lost {count - actual} rows from {title} ({count} expected, {actual} built)")
+
+    for vertical in VERTICAL_NAMES:
+        recs = merge_cfd([r for r in records if vertical_of(r) == vertical])
+        if not recs:
+            continue
+        title = f"{vertical} (all countries)"
+        actual = max(0, len(tabs.get(title) or []) - 1)
+        if actual != len(recs):
+            raise RuntimeError(f"Sheet routing lost {len(recs) - actual} rows from {title}")
 
 
 FLAG_HEADER = "Do not contact / competitor"
@@ -321,17 +357,13 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
         log.info("Hand-made row marks found: %d", sum(len(m) for m in marks.values()))
     except Exception as e:
         log.warning("Could not read hand-made row marks (they are re-applied from the saved copy): %s", e)
-    # Google Sheets holds at most 10 million cells per spreadsheet. The country tabs already contain
-    # every firm, so when everything won't fit, the "FI (all countries)" tab is left out.
+    # Google Sheets holds at most 10 million cells per spreadsheet. Never make room by silently
+    # removing an all-countries tab: stop before changing the workbook and report the capacity issue.
     limit = int(os.environ.get("SHEET_CELL_LIMIT", "9800000"))
     cells = sum(max(len(rows), 2) * max((len(r) for r in rows), default=1) for rows in tabs.values())
-    dropped = []
-    if cells > limit and per_country and FI_ALL_TAB in tabs:
-        rows = tabs.pop(FI_ALL_TAB)
-        cells -= len(rows) * max((len(r) for r in rows), default=1)
-        dropped.append(FI_ALL_TAB)
-        log.warning("The sheet would need %d cells (Google's limit is 10 million): the 'FI (all countries)' "
-                    "tab is left out; every firm is still on its country tab", cells + len(rows) * len(rows[0]))
+    if cells > limit:
+        raise RuntimeError(f"Google Sheet publication needs {cells:,} cells, above the safe limit of {limit:,}; "
+                           "no tabs were changed")
 
     # 1. create any missing tabs (one request)
     missing = [t for t in tabs if t not in existing]
@@ -364,7 +396,7 @@ def publish(records: list, change_rows: list, run_info: dict, log, per_country: 
     for title, sid in existing.items():
         if title in tabs:
             continue
-        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or title in dropped or title == "Licences" or re.search(r"\(([A-Z]{2}|CFD|iGaming|FI|Digital Assets)\)$", title) or title.endswith("(all countries)"):
+        if title in ("Sheet1", "Feuille 1", "Hoja 1", "Foglio1", "Tabelle1") or title == "Licences" or re.search(r"\(([A-Z]{2}|CFD|iGaming|FI|Digital Assets)\)$", title) or title.endswith("(all countries)"):
             reqs.append({"deleteSheet": {"sheetId": sid}})
     sh.batch_update({"requests": reqs})
 

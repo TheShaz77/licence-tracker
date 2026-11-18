@@ -59,6 +59,17 @@ def test_cfd_tabs_are_separate():
     assert "CFD + Other" in tabs["United Kingdom (CFD)"][1]
 
 
+def test_mixed_virtual_currency_msb_is_on_both_segments():
+    recs = [{"name": "Mixed MSB", "jurisdiction": "CA", "active": True, "source": "fintrac",
+             "licence_type": "Foreign MSB", "services": "Money Transferring, Virtual Currency, PSP"},
+            {"name": "Crypto Only", "jurisdiction": "CA", "active": True, "source": "fintrac",
+             "licence_type": "Foreign MSB", "services": "Virtual Currency"}]
+    tabs = sheets.build_tabs(recs, [], {})
+    assert len(tabs["Canada (FI)"]) == 2
+    assert len(tabs["Canada (Digital Assets)"]) == 3
+    assert tabs["Canada (FI)"][1][3] == "Mixed MSB"
+
+
 def test_igaming_type_guess_and_tabs():
     from regtracker.model import guess_business_type as g
     assert g("Affiliate Media Ltd", "associate", "iGaming") == "Affiliate (guess)"
@@ -253,8 +264,9 @@ def test_source_time_limit():
         time.sleep(0.01)
 
 
-def test_licences_tab_left_out_when_sheet_too_big(monkeypatch):
+def test_sheet_is_unchanged_when_it_would_be_too_big(monkeypatch):
     import logging
+    import pytest
     from regtracker import sheets
     monkeypatch.setenv("SHEET_CELL_LIMIT", "50")
     reqs = []
@@ -271,9 +283,9 @@ def test_licences_tab_left_out_when_sheet_too_big(monkeypatch):
         def fetch_sheet_metadata(self, params): return {"sheets": []}
     recs = [{"name": f"Firm {i}", "jurisdiction": "GB", "active": True, "source": "fca", "licence_type": "EMI"}
             for i in range(3)]
-    sheets.publish(recs, [], {}, logging.getLogger("t"), sh=Sh())
-    flat = [r for b in reqs for r in b["requests"]]
-    assert {"deleteSheet": {"sheetId": 5}} in flat
+    with pytest.raises(RuntimeError, match="no tabs were changed"):
+        sheets.publish(recs, [], {}, logging.getLogger("t"), sh=Sh())
+    assert reqs == []
 
 
 def test_text_regex_sections_and_continuation_rows(monkeypatch):

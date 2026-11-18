@@ -20,6 +20,16 @@ sheet_change_rows: 5000
 # "Licences" tab).
 sheet_country_tabs: true
 
+# Keep the current spreadsheet footprint stable. Sources for jurisdictions that
+# do not already occur in data/licences.csv are not fetched or published.
+# Change this to true only when a new country has been approved for the sheet.
+allow_new_jurisdictions: false
+
+# Discovery probes save regulator pages for developing future adapters but do
+# not produce licence records. Leave them off while the tracker is restricted
+# to its current data coverage.
+run_discovery_probes: false
+
 sources:
   fca:            # UK: EMIs, small EMIs, APIs, SPIs, cryptoasset firms, e-money agents (FCA API)
     timeout_minutes: 80           # safety net only (0 used to mean no limit, and the run hit the job's 3 hours); the FCA step keeps its own time budget below
@@ -28,7 +38,7 @@ sources:
     parallel_requests: 8          # lookups in flight at once (still capped by the line above)
     enrich_address: true          # one extra call per firm, once: town, website, phone
     exclude_types: [RAISP]        # licence types not tracked (account-information-only firms)
-    agents: [emd]                 # also track e-money agents (emd); payment agents (psd) are left out
+    agents: []                    # do not track e-money agents (emd) or payment agents (psd)
     # One-off seed scan, in this order. Editing this list is safe: ranges
     # already scanned are kept, and the rest is re-planned in the new order.
     seed_ranges:

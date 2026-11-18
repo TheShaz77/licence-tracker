@@ -1030,6 +1030,10 @@ class NationalSource(Source):
         for spec in self.cfg.get("files") or []:
             if spec.get("enabled") is False:
                 continue
+            label = spec.get("label") or spec.get("url") or spec.get("page")
+            if spec.get("probe") and not ctx.config.get("run_discovery_probes", True):
+                status[label] = "disabled: discovery probe (current jurisdictions/data only)"
+                continue
             first_url = spec.get("url") or spec.get("page") or ""
             if isinstance(first_url, (list, tuple)):          # several candidate pages
                 first_url = first_url[0] if first_url else ""
@@ -1045,7 +1049,6 @@ class NationalSource(Source):
             spec = {**spec, "_today": ctx.today}
             if spec.get("codes_url"):
                 spec = {**spec, "_codes": fetch_codes(ctx, spec["codes_url"])}
-            label = spec.get("label") or spec.get("url") or spec.get("page")
             if spec.get("probe") and probed_recently(ctx, self.name, label):
                 status[label] = "probe saved earlier this week"
                 continue
@@ -1156,6 +1159,8 @@ class NationalSource(Source):
                     kept += 1
             if kept:
                 ctx.log.info("%s: kept %d firms from the last run for the files that failed", self.name, kept)
+            detail = "; ".join(f"{label}: {status.get(label, 'failed')}" for label in sorted(failed))
+            ctx.source_warnings.append({"source": self.name, "message": detail, "retained": kept})
         return list(recs.values())
 
 

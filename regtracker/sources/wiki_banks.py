@@ -136,6 +136,9 @@ class WikiBanksSource(Source):
         cfg = self.cfg or ctx.config.get("wiki_banks") or {}
         countries = [c.upper() for c in (cfg.get("countries") or [])]
         fi_countries = [c.upper() for c in (cfg.get("fi_countries") or [])]
+        if ctx.allowed_jurisdictions is not None:
+            countries = [c for c in countries if c in ctx.allowed_jurisdictions]
+            fi_countries = [c for c in fi_countries if c in ctx.allowed_jurisdictions]
         if not countries and not fi_countries:
             err = SourceNotReady("no countries listed under wiki_banks: in config.yaml")
             err.quiet = True
