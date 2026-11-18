@@ -72,15 +72,25 @@ def test_mixed_virtual_currency_msb_is_on_both_segments():
 
 def test_igaming_type_guess_and_tabs():
     from regtracker.model import guess_business_type as g
-    assert g("Affiliate Media Ltd", "associate", "iGaming") == "Affiliate (guess)"
-    assert g("Paysafe Payment Solutions", "", "iGaming") == "PSP (guess)"
-    assert g("Spin Ltd", "Remote casino", "iGaming", "bitcoincasino.io") == "Crypto casino (guess)"
-    assert g("Relax Gaming Ltd", "Casino Software Provider Authorization - B2B", "iGaming").startswith("Platform")
-    assert g("Bet Co", "Remote betting + Gambling software", "iGaming").startswith("Operator")
-    recs = [{"name": "Bet Co", "jurisdiction": "MT", "active": True, "source": "igm_mt", "licence_type": "B2C",
-             "extra": {"vertical": "iGaming", "business_type": "Operator (guess)"}}]
+    assert g("Affiliate Media Ltd", "associate", "iGaming") == "Affiliate"
+    assert g("Paysafe Payment Solutions", "", "iGaming") == "Service Provider"
+    assert g("Spin Ltd", "Remote casino", "iGaming", "bitcoincasino.io") == "Operator"
+    assert g("Relax Gaming Ltd", "Casino Software Provider Authorization - B2B", "iGaming") == "Service Provider"
+    assert g("Bet Co", "Remote betting + Gambling software", "iGaming") == "Operator"
+    recs = [
+        {"name": "Bet Co", "jurisdiction": "MT", "active": True, "source": "igm_mt", "licence_type": "B2C",
+         "extra": {"vertical": "iGaming", "business_type": "old value"}},
+        {"name": "Games Platform Ltd", "jurisdiction": "MT", "active": True, "source": "igm_mt",
+         "licence_type": "B2B software provider", "extra": {"vertical": "iGaming"}},
+        {"name": "Affiliate Media Ltd", "jurisdiction": "MT", "active": True, "source": "igm_mt",
+         "licence_type": "Affiliate", "extra": {"vertical": "iGaming"}},
+    ]
     tabs = sheets.build_tabs(recs, [], {})
     assert "Malta (iGaming)" in tabs and "iGaming (all countries)" in tabs and len(tabs["FI (all countries)"]) == 1
+    rows = tabs["Malta (iGaming)"]
+    assert rows[0][5] == "Category"
+    assert {row[5] for row in rows[1:]} == {"Operator", "Service Provider", "Affiliate"}
+    assert not any(title.startswith(("Operator", "Service Provider", "Affiliate")) for title in tabs)
 
 
 def test_join_two_files():
@@ -123,8 +133,8 @@ def test_cfd_name_search(tmp_path):
 
 def test_igaming_supplier_and_affiliate_licences():
     from regtracker.model import guess_business_type as g
-    assert g("Tipico Services Limited", "Marketing / affiliate services licence", "iGaming") == "Affiliate (guess)"
-    assert g("Geocomply Inc.", "Internet gaming vendor registration", "iGaming").startswith("Supplier")
+    assert g("Tipico Services Limited", "Marketing / affiliate services licence", "iGaming") == "Affiliate"
+    assert g("Geocomply Inc.", "Internet gaming vendor registration", "iGaming") == "Service Provider"
 
 
 def test_wiki_banks_parsing_and_fetch(tmp_path):

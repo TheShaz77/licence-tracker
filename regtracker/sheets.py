@@ -17,8 +17,8 @@ import os
 from collections import Counter, defaultdict
 
 from .diff import CHANGE_COLUMNS
-from .model import CFD_COLUMNS, SHEET_COLUMNS
-from .store import cfd_row, record_row, sort_records
+from .model import CFD_COLUMNS, IGAMING_COLUMNS, SHEET_COLUMNS
+from .store import cfd_row, igaming_row, record_row, sort_records
 
 ROWS_PER_REQUEST = 4000   # keeps each request well under Google's size limit
 
@@ -164,11 +164,13 @@ def build_tabs(records: list, change_rows: list, run_info: dict, per_country: bo
     for vertical, recs in verticals.items():
         if not recs:
             continue
-        vheader = [h for _, h in CFD_COLUMNS]
-        tabs[f"{vertical} (all countries)"] = [vheader] + [cfd_row(r) for r in recs]
+        columns = IGAMING_COLUMNS if vertical == "iGaming" else CFD_COLUMNS
+        row = igaming_row if vertical == "iGaming" else cfd_row
+        vheader = [h for _, h in columns]
+        tabs[f"{vertical} (all countries)"] = [vheader] + [row(r) for r in recs]
         by_tab = defaultdict(list)
         for r in recs:
-            by_tab[cfd_tab(r.get("jurisdiction", ""), vertical)].append(cfd_row(r))
+            by_tab[cfd_tab(r.get("jurisdiction", ""), vertical)].append(row(r))
         for title in sorted(by_tab):
             tabs[title] = [vheader] + by_tab[title]
     validate_tabs(records, tabs, per_country)

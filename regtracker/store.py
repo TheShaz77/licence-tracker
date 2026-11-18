@@ -64,6 +64,23 @@ def cfd_row(r: dict) -> list:
     return [str(r.get(k, "") or "") for k, _ in CFD_COLUMNS]
 
 
+def igaming_row(r: dict) -> list:
+    """iGaming row with one of the three standard categories on every record."""
+    from .model import IGAMING_COLUMNS, guess_igaming_type
+    r = dict(r)
+    r["business_type"] = guess_igaming_type(r.get("name", ""), r.get("licence_type", ""), r.get("website", ""))
+    r["status"] = "Active" if r.get("active") else "Inactive"
+    extra = r.get("extra") or {}
+    for k in ("phone", "email", "address"):
+        if not r.get(k) and extra.get(k):
+            r[k] = extra[k]
+    if not r.get("address") and extra.get("postcode"):
+        r["address"] = extra["postcode"]
+    from .countries import COUNTRY_NAMES
+    r["country"] = COUNTRY_NAMES.get((r.get("jurisdiction") or "").upper(), r.get("jurisdiction") or "")
+    return [str(r.get(k, "") or "") for k, _ in IGAMING_COLUMNS]
+
+
 def is_cfd(r: dict) -> bool:
     return (r.get("extra") or {}).get("vertical") == "CFD"
 

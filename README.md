@@ -385,11 +385,13 @@ St Vincent. The Mauritius FSC register lists *investment dealers* but does not s
 so those rows say "Investment dealer (FSC) - CFD permission not shown on the register". Where a country has
 no readable list, its tab is left empty rather than guessed.
 
-## iGaming vertical (crypto casinos, PSPs, platform providers, affiliates)
+## iGaming vertical (operators, service providers and affiliates)
 
 Same idea as the CFD vertical: firms go to "Country (iGaming)" tabs and "iGaming (all countries)",
-configured under `igaming:` in config.yaml. The business-type column (affiliate, PSP, crypto casino,
-platform / game provider, operator) is a guess from the name, website and licence, marked "(guess)".
+configured under `igaming:` in config.yaml. Every country keeps all three categories on the same tab:
+**Operator**, **Service Provider** and **Affiliate**. PSPs, platform/game providers, software suppliers
+and other B2B vendors are normalised to Service Provider; crypto casinos are Operators. The regulator's
+original licence wording remains in the Licence / permission column.
 Entries marked `probe: true` only save the regulator's page for now (data/debug/raw), so a reader can
 be written once its layout is known. Option `join` adds the columns of a second file matched on a
 shared column (the UK Gambling Commission publishes licences and businesses as separate files).

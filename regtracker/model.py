@@ -73,6 +73,13 @@ CFD_COLUMNS = [
     ("last_changed", "Last changed"),
 ]
 
+# iGaming uses the same row shape as CFD, but exposes a stable, filterable
+# three-way category instead of the more granular CFD business-type wording.
+IGAMING_COLUMNS = [
+    (key, "Category" if key == "business_type" else header)
+    for key, header in CFD_COLUMNS
+]
+
 
 @dataclass
 class Record:
@@ -145,8 +152,7 @@ _INST = re.compile(r"\bprime\b|liquidity|institutional|\bLP\b|market ?maker|\bcl
 
 def guess_business_type(name: str, licence: str = "", vertical: str = "CFD", website: str = "") -> str:
     """CFD: 'Retail broker', 'Institutional / prime broker or LP' or 'Prop trading firm'.
-    iGaming: 'Crypto casino', 'PSP', 'Platform / game provider', 'Affiliate' or 'Operator'.
-    Each is marked as a guess."""
+    iGaming: one of the three sheet categories: Operator, Service Provider or Affiliate."""
     if vertical == "iGaming":
         return guess_igaming_type(name, licence, website)
     if _PROP.search(name or ""):
@@ -177,22 +183,25 @@ _IG_B2C = re.compile(r"casino(?! software)|\bbet|betting|bingo|lotter|category 1
 
 
 def guess_igaming_type(name: str, licence: str = "", website: str = "") -> str:
-    """Affiliate / PSP / crypto casino from the name (and website); otherwise operator when the
-    licence covers offering gambling to players, platform / game provider when it is a B2B one."""
+    """Return the stable iGaming category used on every country sheet.
+
+    Regulator wording wins where it identifies affiliate, B2C or B2B/vendor
+    activity. Names and websites fill gaps in registers with generic licences.
+    """
     lic = re.sub(r"\(guess\)", "", licence or "")
     if _IG_AFF.search(name or "") or re.search(r"affiliate|marketing", lic, re.I):
-        return "Affiliate (guess)"
-    if _IG_PSP.search(name or ""):
-        return "PSP (guess)"
-    if _IG_CRYPTO.search(f"{name} {website}"):
-        return "Crypto casino (guess)"
-    if re.search(r"vendor|support services", lic, re.I) and not _IG_B2C.search(lic):
-        return "Supplier / service provider (guess)"
+        return "Affiliate"
+    if re.search(r"vendor|support services|supplier|service provider", lic, re.I) and not _IG_B2C.search(lic):
+        return "Service Provider"
     if _IG_B2C.search(lic):
-        return "Operator - casino / sportsbook (guess)"
-    if _IG_B2B.search(f"{name} {lic}"):
-        return "Platform / game provider (guess)"
-    return "Operator - casino / sportsbook (guess)"
+        return "Operator"
+    if _IG_PSP.search(name or "") or _IG_B2B.search(f"{name} {lic}"):
+        return "Service Provider"
+    # Crypto describes how an operator accepts value, not a fourth business
+    # category. Generic gambling licences also default to operator.
+    if _IG_CRYPTO.search(f"{name} {website}"):
+        return "Operator"
+    return "Operator"
 
 
 # ---------------------------------------------------------------- FI / Digital Assets split
