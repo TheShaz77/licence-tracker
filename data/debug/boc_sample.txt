@@ -10,8 +10,4 @@ applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list
 status / group values (counted per page): {'registered / Registered': 1851, '- / -': 420}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
 firms by status: {'registered': 1851, 'applicant': 420}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=011fd369-1fde-f111-84ea-70a8a50dbdd9: {"v": 2, "email": "", "website": "https://flexygroup.ca", "seen": "2026-11-18", "phone": "", "city": "Montreal", "address": "", "legal": "12761645 CANADA INC (FLEXY GROUP)", "trade": "FLEXY GROUP", "status": ""}
-  json 200      834 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/011fd369-1fde-f111-84ea-70a8a50dbdd9
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=c6d2c78c-adcf-f111-a05b-3833c5fa6ddd: {"v": 2, "email": "", "website": "https://www.1chain.finance", "seen": "2026-11-18", "phone": "", "city": "Murcia", "address": "", "legal": "1CHAIN INC.", "trade": "1 Chain Finance", "status": ""}
-  json 200      792 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/c6d2c78c-adcf-f111-a05b-3833c5fa6ddd
-detail pages: 15 fetched this run, 0 still to do, 2276 done in total
+detail pages: 0 fetched this run, 0 still to do, 2276 done in total
