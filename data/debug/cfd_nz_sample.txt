@@ -9,14 +9,14 @@ first lines:
 ''
 
 url: https://www.axi.com/au
-bytes: 801722  starts: b'<!DOCTYP'
+bytes: 820978  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html data-dpl-id="60e945dc4312c729c9d47e6cd108a4c03ef37282" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_f2b6fa" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
+'<!DOCTYPE html><html data-dpl-id="98d7dff33c845b79cce981e54c166eed0db19a60" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_a20479" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
 
 url: https://www.acemarkets.co.nz/
 bytes: 116283  starts: b'<!DOCTYP'
@@ -53,7 +53,7 @@ first lines:
 '<link data-rocket-prefetch href="https://static.ads-twitter.com" rel="dns-prefetch">'
 
 url: https://www.ig.com/au
-bytes: 776212  starts: b'<!DOCTYP'
+bytes: 776294  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -87,7 +87,7 @@ first lines:
 '<!-- Google Tag Manager -->'
 
 url: https://www.zeromarkets.com/
-bytes: 221056  starts: b'<!DOCTYP'
+bytes: 221069  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -104,7 +104,7 @@ first lines:
 '\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
 
 url: https://blackbull.com/en/our-company/compliance/
-bytes: 457269  starts: b'<!doctyp'
+bytes: 487411  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

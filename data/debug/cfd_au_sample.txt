@@ -10,14 +10,14 @@ first lines:
 '</p></div></div><div class="flex flex-col h-full fg-border-subtle border-t pt-2xl gap-3xl"><div class="flex flex-col gap-3xl xl:pr-5xl items-baseline flex-1"><p class="typography-label-md text-lg fg-text-default-black">FCA</p><p class="typography-body-md flex-1 overflow-hidden fg-text-default-black"'
 
 url: https://www.axi.com/au
-bytes: 801722  starts: b'<!DOCTYP'
+bytes: 820978  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html data-dpl-id="60e945dc4312c729c9d47e6cd108a4c03ef37282" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_f2b6fa" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
+'<!DOCTYPE html><html data-dpl-id="98d7dff33c845b79cce981e54c166eed0db19a60" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_a20479" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
 
 url: https://gleneagle.com.au/
 bytes: 360401  starts: b'<!doctyp'
@@ -63,7 +63,7 @@ type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html lang="en" dir="ltr" class="dwYJqa_variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2" as="font" crossorigin="" type="font/woff2"/><link'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
-'<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement(\'script\');d.innerHTML="window.__CF$cv$params={r:\'a5c3b194895cf316\',t:\'MTc5NDk3MDQ5OQ==\'};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new '
+'</body></html>'
 
 url: https://www.mitrade.com/en
 bytes: 148824  starts: b'<!DOCTYP'
@@ -83,7 +83,7 @@ first lines:
 '<path d="M5 18H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
 
 url: https://pepperstone.com/en-au
-bytes: 442996  starts: b'<!DOCTYP'
+bytes: 448605  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -111,7 +111,7 @@ first lines:
 '</body></html>'
 
 url: https://www.zeromarkets.com/
-bytes: 221066  starts: b'<!DOCTYP'
+bytes: 221069  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -128,7 +128,7 @@ first lines:
 '\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
 
 url: https://www.tmgm.com/en
-bytes: 359445  starts: b'<!DOCTYP'
+bytes: 359446  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -162,7 +162,7 @@ first lines:
 '      "name": "Totality",'
 
 url: https://www.oanda.com/au-en/
-bytes: 250035  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 250145  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -179,7 +179,7 @@ first lines:
 ''
 
 url: https://www.interactivebrokers.com.au/en/home.php
-bytes: 169618  starts: b'\n<!DOCTY'
+bytes: 169642  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -230,7 +230,7 @@ first lines:
 '\t\t\t<script>'
 
 url: https://capital.com/en-au
-bytes: 546880  starts: b'<!DOCTYP'
+bytes: 536529  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -238,23 +238,23 @@ data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html class="DHVbqa_html _3SJCXq_variable" dir="ltr" lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"/><link rel="preload" as="image" href="https://static.capital.com/capital-v1-3-1/apps/cap'
-'    <script nonce="Ko5IeRvKs7qkvFfZ2SUeqA==">'
+'    <script nonce="32JjKKRBY2CZmHnkvb4uMg==">'
 '      (()=>{let a,b=(a=globalThis,a.__headerHeightInjectionState??={mutationObserver:null,observedHeader:null,previousHeaderHeight:0,resizeObserver:null},a.__headerHeightInjectionState),c=()=>{let a=document.getElementById("header");if(!a)return;let{height:c}=a.getBoundingClientRect();if(c>0){b.prev'
 '    </script>'
-'  </div><div aria-hidden="true" class="ita7Oa_overlay"><div class="_3TN7Vq_wrap"><p class="ita7Oa_copy AL3Niq_h1 AL3Niq_noMargins"><span>N</span><span>o</span><span>t</span><span> </span><span>e</span><span>v</span><span>e</span><span>r</span><span>y</span><span> </span><span>d</span><span>e</span><'
+'  </div><div class="MyiUmG_mainContent"><div class="ibKxCq_mbXl componentsContainer"><div class="fQqZ4a_container"><div class="hBvola_stack"><div class="hBvola_regulationVideoSticky"><section class="aFTfha_container kwzt4G_viewportWrapper"><div class="aFTfha_content kwzt4G_container"><div class="kwz'
 '</div></div></div></div><div class="hBvola_marketLayer"><section class="aFTfha_container aFTfha_bordered crfj1a_viewportWrapper"><picture class="PLDmOa_common ViX1fq_background"><img alt="MarketsFeature background" class="PLDmOa_fillParent" height="1083" loading="lazy" sizes="(min-width: 768px) 1920'
 '</div><div class="TIvQXW_links ibKxCq_showXs"><div class="gHaUCW_grid mBJYLW_root gHaUCW_gXs gHaUCW_inline"><a class="eJGhtW_btnStore js-analyticsClick" data-type="home_platforms_Ios" href="https://app.appsflyer.com/id1230088754" rel="noopener noreferrer nofollow" target="_blank"><img alt="" loading'
 '</div></li><li class="sGznxW_costHighlight"><h3 class="_3rItvW_text _3rItvW_sub _3rItvW_primary">No deposit or withdrawal fees</h3><div class="sGznxW_costHighlightDescription"><p>Trusted payments. Bank transfers, cards, digital wallets.</p>'
 
 url: https://www.cmcmarkets.com/en-au/
-bytes: 293127  starts: b'<!DOCTYP'
+bytes: 293552  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="en-au"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/><meta version="1.5.10 (1794892569)" data-next-head=""/><meta name="color-scheme" content="normal" data-next-head=""/><link rel="alte'
+'<!DOCTYPE html><html lang="en-au"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/><meta version="1.5.10 (1794977636)" data-next-head=""/><meta name="color-scheme" content="normal" data-next-head=""/><link rel="alte'
 '          '
 '          "><div class="lg:w-3/12 sm:w-6/12 w-full px-3 pb-6 md:px-6"><div class=" flex h-full flex-col "><div data-type="contentBlock" class="relative w-full"><div class=""><div class="flex flex-col stretch"><div class="mx-auto"><svg width="71" height="30" viewBox="0 0 71 30" fill="none" xmlns="htt'
 '\tc-1,0.3-1.8,1.1-2.1,2.1C0,8.1,0,12.1,0,12.1s0,4,0.5,5.8c0.3,1,1.1,1.9,2.1,2.1c1.9,0.5,9.4,0.5,9.4,0.5s7.5,0,9.4-0.5'
@@ -274,7 +274,7 @@ first lines:
 '"<!DOCTYPE html>\\n<html lang=\\"en\\" data-fitter data-theme=\\"dark\\">\\n  <head>\\n    <title>About Us | EBC Financial Group<\\/title>\\n    <meta charset=\\"utf-8\\" \\/>\\n    <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1\\" \\/>\\n    <meta property=\\"og:image\\" content=\\"\\/ebc-static'
 
 url: https://fusionmarkets.com/About-us/Who-we-are
-bytes: 932087  starts: b'<!DOCTYP'
+bytes: 932115  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -290,14 +290,14 @@ first lines:
 '</body></html>'
 
 url: https://www.gomarkets.com/en-au/about-go-markets
-bytes: 216378  starts: b'<!DOCTYP'
+bytes: 216311  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Tue Nov 17 2026 23:45:10 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.gomarkets.com" data-wf-page="6837a11fe2ddd352d8d73e11" data-wf-site="67d8fdfb81394c638e27c6c5" data-wf-intelli'
+'<!DOCTYPE html><!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Wed Nov 18 2026 04:46:35 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.gomarkets.com" data-wf-page="6837a11fe2ddd352d8d73e11" data-wf-site="67d8fdfb81394c638e27c6c5" data-wf-intelli'
 '(function(g,e,o,t,a,r,ge,tl,y,s){'
 'g.getElementsByTagName(o)[0].insertAdjacentHTML(\'afterbegin\',\'<style id="georedirect1760922765987style">body{opacity:0.0 !important;}</style>\');'
 "s=function(){g.getElementById('georedirect1760922765987style').innerHTML='body{opacity:1.0 !important;}';};"
@@ -307,7 +307,7 @@ first lines:
 'georedirect1760922765987loaded=function(redirect){var to=0;if(redirect){to=5000};'
 
 url: https://www.ig.com/au
-bytes: 776212  starts: b'<!DOCTYP'
+bytes: 776294  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

@@ -1,5 +1,5 @@
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=0
-bytes: 207543  starts: b'<!DOCTYP'
+bytes: 207541  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -16,7 +16,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=1
-bytes: 197683  starts: b'<!DOCTYP'
+bytes: 197681  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -33,7 +33,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=2
-bytes: 195641  starts: b'<!DOCTYP'
+bytes: 195639  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -50,7 +50,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=3
-bytes: 196712  starts: b'<!DOCTYP'
+bytes: 196710  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -67,7 +67,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/payment-systems/licensing/list-licensees
-bytes: 193578  starts: b'<!DOCTYP'
+bytes: 193576  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of Licensee', 'type': 'Type of services', 'id': None, 'lei': None, 'city': None, 'date': 'Date of Licence/Authorisation (DD/MM/YYYY)', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name of Licensee', 'Date of Licence/Authorisation (DD/MM/YYYY)', 'Type of services']

@@ -1,5 +1,5 @@
 url: https://valueplus.mu/
-bytes: 229754  starts: b'<!doctyp'
+bytes: 229034  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -16,7 +16,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://valueplus.mu/
-bytes: 229753  starts: b'<!doctyp'
+bytes: 229034  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -50,7 +50,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://www.supertote.mu/
-bytes: 18514  starts: b'<!DOCTYP'
+bytes: 18515  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -128,7 +128,7 @@ first lines:
 '<title>Licencees &#8211; Gambling Regulatory Authority</title>'
 
 url: https://www.casinosofmauritius.mu/about-us
-bytes: 51114  starts: b'<!DOCTYP'
+bytes: 55546  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -277,7 +277,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
-bytes: 120435  starts: b'<!DOCTYP'
+bytes: 120579  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -290,18 +290,18 @@ first lines:
 '<head>'
 '    <meta charset="utf-8">'
 '    <meta name="viewport" content="width=device-width, initial-scale=1">'
-'    <meta name="csrf-token" content="8rrDrwnbQIOj7gaxntc1cRIV23tOEgSS4KjFOVT3">'
+'    <meta name="csrf-token" content="rwwNu1OxIdBOmBzl3mW4U4wvaQROR8U6x55oXZNn">'
 ''
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 277479  starts: b'<!DOCTYP'
+bytes: 278385  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable JnHUVq_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/160gh6he8n6_v.css" data-precedence="next"/><link rel='
 'Port Louis,'
 'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
@@ -311,14 +311,14 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 277264  starts: b'<!DOCTYP'
+bytes: 278170  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable JnHUVq_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/160gh6he8n6_v.css" data-precedence="next"/><link rel='
 'Port Louis,'
 'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
@@ -328,14 +328,14 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 277264  starts: b'<!DOCTYP'
+bytes: 278170  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable rFzXFW_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1llvysjz920yv.css" data-precedence="next"/><link rel='
+'<!DOCTYPE html><html lang="fr" class="LINzvG_variable fPFf0G_variable JnHUVq_variable antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/160gh6he8n6_v.css" data-precedence="next"/><link rel='
 'Port Louis,'
 'Republic of Mauritius</span></li><li class="mb-2.5 flex items-start gap-2.5 leading-normal"><span class="mt-[3px] w-4 shrink-0 text-center text-[15px] text-dm-red"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/20'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
