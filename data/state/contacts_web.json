@@ -7522,9 +7522,9 @@
 "period": "2025-08-31"
 },
 "ch:05244209": {
-"employees": 28,
+"employees": 27,
 "name": "BELLS SUPERMARKET (OFFMORE) LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:05244316": {
 "employees": 2,
@@ -7719,7 +7719,7 @@
 "ch:05298845": {
 "employees": 5,
 "name": "WANG DYNASTY (UK) LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:05298976": {
 "employees": 5,
@@ -11976,7 +11976,7 @@
 "ch:06633171": {
 "employees": 2,
 "name": "WORLD GAMING TECH LIMITED",
-"period": "2025-06-30"
+"period": "2026-06-30"
 },
 "ch:06633238": {
 "employees": 4,
@@ -13403,11 +13403,9 @@
 "period": "2025-08-31"
 },
 "ch:06980786": {
-"currency": "GBP",
 "employees": 0,
 "name": "GENERAL STORES LIMITED",
-"period": "2025-03-31",
-"revenue": 82884.0
+"period": "2026-03-31"
 },
 "ch:06981667": {
 "employees": 0,
@@ -32327,6 +32325,11 @@
 "name": "TP MO LIMITED",
 "period": "2026-02-28"
 },
+"ch:10030369": {
+"employees": 1,
+"name": "SMS GROUP LTD",
+"period": "2026-02-28"
+},
 "ch:10039951": {
 "employees": 8,
 "name": "Shree Krishna Uk Enterprises Ltd",
@@ -39841,6 +39844,13 @@
 "name": "SARAH COPE ENTERPRISES LIMITED",
 "period": "2026-03-31"
 },
+"ch:11092839": {
+"currency": "GBP",
+"employees": 5,
+"name": "Madfin Tech Ltd",
+"period": "2025-12-31",
+"revenue": 971446.0
+},
 "ch:11093833": {
 "employees": 0,
 "name": "SACHDEVA PVT LTD",
@@ -45271,7 +45281,7 @@
 "ch:11661915": {
 "employees": 5,
 "name": "E27 PARTNERS UK LTD",
-"period": "2024-12-31"
+"period": "2025-12-31"
 },
 "ch:11663368": {
 "employees": 0,
@@ -50395,6 +50405,11 @@
 "employees": 2,
 "name": "A3 GLOBAL TRAVEL LIMITED",
 "period": "2025-06-30"
+},
+"ch:12149365": {
+"employees": 26,
+"name": "Fiscal FX Ltd",
+"period": "2025-12-31"
 },
 "ch:12149419": {
 "employees": 2,
@@ -77461,6 +77476,11 @@
 "name": "Ab Convenience Store Ltd",
 "period": "2025-11-30"
 },
+"ch:15258317": {
+"employees": 1,
+"name": "STEPHEN BARRETT LIMITED",
+"period": "2025-11-30"
+},
 "ch:15260203": {
 "employees": 1,
 "name": "Al Madina Store Ltd",
@@ -86787,10 +86807,20 @@
 "name": "S.P. GRAHAM LIMITED",
 "period": "2025-03-31"
 },
+"ch:NI015904": {
+"employees": 3,
+"name": "O'KANE SUPERMARKETS LIMITED",
+"period": "2026-05-31"
+},
 "ch:NI068339": {
 "employees": 3,
 "name": "Abbey Financial Services (N.I.) Limited",
 "period": "2026-09-30"
+},
+"ch:NI631875": {
+"employees": 0,
+"name": "FW SERVICES LTD",
+"period": "2026-03-31"
 },
 "ch:NI684560": {
 "employees": 5,
@@ -89542,6 +89572,13 @@
 "employees": 1,
 "name": "A1 AMUSEMENT SERVICES LIMITED",
 "period": "2025-09-30"
+},
+"ch:SC562564": {
+"currency": "GBP",
+"employees": 1,
+"name": "INPERSCA LIMITED",
+"period": "2026-04-30",
+"revenue": 291911.0
 },
 "ch:SC591565": {
 "employees": 3,
@@ -92918,6 +92955,7 @@
 "Accounts_Bulk_Data-2026-11-17.zip",
 "Accounts_Bulk_Data-2026-11-18.zip",
 "Accounts_Bulk_Data-2026-11-19.zip",
+"Accounts_Bulk_Data-2026-11-20.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
