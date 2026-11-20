@@ -1,5 +1,5 @@
-url: https://nbg.gov.ge/fm/%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%93%E1%83%90%E1%83%AE%E1%83%93%E1%83%9D/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%A0%E1%83%94%E1%83%92%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A0%E1%83%98%E1%83%A0%E1%83%94%E1%83%91%E1%83%A3%E1%83%9A%E1%83%98/list-of-psps-eng-12-10-26.xlsx
-bytes: 18458  starts: b'PK\x03\x04\x14\x00\x06\x00'
+url: https://nbg.gov.ge/fm/%E1%83%A1%E1%83%90%E1%83%92%E1%83%90%E1%83%93%E1%83%90%E1%83%AE%E1%83%93%E1%83%9D/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%9E%E1%83%A0%E1%83%9D%E1%83%95%E1%83%90%E1%83%98%E1%83%93%E1%83%94%E1%83%A0%E1%83%94%E1%83%91%E1%83%98/%E1%83%A0%E1%83%94%E1%83%92%E1%83%98%E1%83%A1%E1%83%A2%E1%83%A0%E1%83%98%E1%83%A0%E1%83%94%E1%83%91%E1%83%A3%E1%83%9A%E1%83%98/list-of-psps-eng-20-11-26.xlsx
+bytes: 18447  starts: b'PK\x03\x04\x14\x00\x06\x00'
 error: None
 columns used: {'name': 'Name of Provider', 'type': None, 'id': 'Registration №', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['№', 'Registration №', 'Name of Provider', 'Legal Form', 'Identification Code', '№', 'Date (Day, Month, Year)', 'Location', 'Name and Surname of Director']
@@ -8,8 +8,8 @@ type values: [('', 41)]
 first lines:
 '(binary)'
 
-url: https://nbg.gov.ge/fm/საგადახდო/vasps/რეესტრი/vasps-eng-10-11-2026.xlsx
-bytes: 47699  starts: b'PK\x03\x04\x14\x00\x06\x00'
+url: https://nbg.gov.ge/fm/საგადახდო/vasps/რეესტრი/vasps-eng-20-11-2026.xlsx
+bytes: 47714  starts: b'PK\x03\x04\x14\x00\x06\x00'
 error: None
 columns used: {'name': 'Name of the Virtual Asset Service Provider', 'type': None, 'id': 'Registration Number at the National Bank of Georgia', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['№', 'Registration Number at the National Bank of Georgia', 'Name of the Virtual Asset Service Provider', 'Commercial Name', 'Legal Form', 'Identification Number', 'Registration Decree', '', 'Director', 'Virtual Asset Services that Provider is allowed', '', '', '']

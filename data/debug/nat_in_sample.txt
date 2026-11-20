@@ -1,5 +1,5 @@
 url: https://www.rbi.org.in/Scripts/PublicationsView.aspx?Id=12043
-bytes: 211370  starts: b'\r\n<!DOCT'
+bytes: 211376  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'Name of the Authorised Entity', 'type': 'Payment System Authorised', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Sr. No.', 'Name of the Authorised Entity', 'Address of the Principal Office', 'Payment System Authorised', 'Date of issue of Authorisation & Validity Period (given in brackets)']
@@ -16,7 +16,7 @@ first lines:
 '     <title>Publications | Official Website of Reserve Bank of India </title>'
 
 url: https://rbi.org.in/Scripts/bs_viewcontent.aspx?Id=2491
-bytes: 77836  starts: b'\r\n<!DOCT'
+bytes: 77830  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': 'Name of the Banks', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S No.', 'Name of the Banks']
