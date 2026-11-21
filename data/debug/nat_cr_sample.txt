@@ -10,13 +10,13 @@ first lines:
 '<!DOCTYPE html>'
 '<html lang="es">'
 '<head id="ctl00_HeaderMaster">'
-'    <!-- Response Elapsed Time: 15,6168-->'
+'    <!-- Response Elapsed Time: 7,0007-->'
 '    <title>'
 '\tLista de entidades supervisadas por la SUGEF'
 '</title><!-- OPEN GRAPH -->'
 
 url: https://www.sugef.fi.cr/entidades_supervisadas/Lista%20de%20Casas%20de%20Cambio.aspx
-bytes: 135406  starts: b'\r\n<!DOCT'
+bytes: 135412  starts: b'\r\n<!DOCT'
 error: None
 columns used: {'name': '(guessed) Descripción', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Fecha de Actualización', 'Descripción', 'Año', 'Tipo de Documento']
@@ -27,7 +27,7 @@ first lines:
 '<!DOCTYPE html>'
 '<html lang="es">'
 '<head id="ctl00_HeaderMaster">'
-'    <!-- Response Elapsed Time: 0-->'
+'    <!-- Response Elapsed Time: 15,6279-->'
 '    <title>'
 '\tLista de entidades supervisadas por la SUGEF'
 '</title><!-- OPEN GRAPH -->'

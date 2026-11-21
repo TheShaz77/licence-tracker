@@ -50,7 +50,7 @@ first lines:
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
 
 url: https://nbs.rs/en/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/reg_di/
-bytes: 65623  starts: b'<!DOCTYP'
+bytes: 65626  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of the virtual currency service provider', 'type': None, 'id': 'Registration No', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name of the virtual currency service provider', 'No', 'Registration No']

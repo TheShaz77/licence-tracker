@@ -1,5 +1,5 @@
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=1&lang=es
-bytes: 80315  starts: b'{"succes'
+bytes: 80318  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'habilitadoOperaComoServicio', 'id_proveedor']
@@ -49,7 +49,7 @@ first lines:
 '{"success":true,"tipo_psp":6,"tipo_psp_nombre":"Adquirente","lang":"es","total":14,"proveedores":[{"codigo":34720,"denominacion_pj":"Akua Argentina SAS","denominacion":"Akua","cuit":30719113113,"domicilio":"Av Corrientes 311, piso 12º<br>CABA (CP: C1043AAD), CABA","localidad":"CABA","provincia":"CAB'
 
 url: https://www.bcra.gob.ar/api/endpoints/proveedores-psp.php?tipoPSP=7&lang=es
-bytes: 29918  starts: b'{"succes'
+bytes: 29921  starts: b'{"succes'
 error: None
 columns used: {'name': 'denominacion_pj', 'type': None, 'id': 'cuit', 'lei': None, 'city': 'localidad', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': 'telefono', 'country': None, 'regulator': None, 'address': 'domicilio', 'end': None, 'exclude': None, 'require': None}
 headers: ['codigo', 'denominacion_pj', 'denominacion', 'cuit', 'domicilio', 'localidad', 'provincia', 'codigo_postal', 'telefono', 'id_proveedor']

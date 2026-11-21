@@ -1,16 +1,13 @@
 url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
-bytes: 48307  starts: b'\n<!DOCTY'
-error: None
+bytes: 1303  starts: b'\t       '
+error: RuntimeError('no firms matched')
 columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
 headers: ['name', 'section']
-data rows: 55  kept: 18
-type values: [('1. Insurance brokers that have been granted a license pursuant to article 2, paragraph 1, of the State Decree on the Supervision of Insurance Brokers (AB 2014 no. 6)', 14), ('6. Money Transaction Companies that have been granted exemption pursuant to article 10 of the State Ordinance on the Supervision of the Money Transaction Companies (AB 2003 No. 60)', 8), ('2. Credit Institutions that have registered at the Centrale Bank van Aruba pursuant to article 2, paragraph 3, of the State Decree on the Supervision of Insurance Brokers (AB 2014 no. 6)', 5), ('Commercial banks', 4), ('Other financial institutions', 3), ('Fatum General Insurance Aruba N.V. (Trade name: Guardian Group Fatum General Insurance Aruba and Guardian Group General Insurance)', 3), ('Captive insurance companies', 3), ('Credit Institutions that have registered at the CBA pursuant to article 10, paragraph 2, of the State Ordinance on the Supervision of the Securities Business (AB 2016 no. 53)', 3), ('Pawnshops', 2), ('Mortgage brokers', 2), ('Nagico Life Insurance (Aruba) N.V. (Trade Name: Nagico Life Insurance)', 2), ('5. Money Transaction Companies that have been granted authorization pursuant to article 3 of the State Ordinance on the Supervision of the Money Transaction Companies (AB 2003 No. 60)', 2), ('Finance companies', 1), ('Life insurance companies operating in Aruba', 1), ('Bupa Insurance Company, Agency', 1), ('4. Insurance Brokers that have been granted a dispensation pursuant to article 4, paragraph 4, of the State Ordinance on the Supervision of the Insurance Business (AB 2000 No. 82) regarding entities with supplementary insurance brokerage services', 1)]
+data rows: 0  kept: 0
+type values: []
 first lines:
+'\t        <html><title>You are being redirected...</title>'
+'\t\t<noscript>Javascript is required. Please enable javascript before you are allowed to see this page.</noscript>'
+"\t\t<script>var s={},u,c,U,r,i,l=0,a,e=eval,w=String.fromCharCode,sucuri_cloudproxy_js='',S='eD1TdHJpbmcuZnJvbUNoYXJDb2RlKDU3KSArIFN0cmluZy5mcm9tQ2hhckNvZGUoMTAxKSArIFN0cmluZy5mcm9tQ2hhckNvZGUoMTAyKSArICIzIiArICI4IiArICdlJyArICdiJyArICczJyArICI5IiArICczJyArIFN0cmluZy5mcm9tQ2hhckNvZGUoNTQpICsgJzQnICsgJ"
+'        \t'
 ''
-'<!DOCTYPE html>'
-'<html class="not-ie" xml:lang="en-US" lang="en-US" xmlns="http://www.w3.org/1999/xhtml">'
-'<!-- Get list of categories if present for body name -->'
-'<head>'
-'<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
-'<meta name="viewport" content="width=device-width, initial-scale=1">'
-'<meta name="author" content="informationcenter@cbaruba.org" />'

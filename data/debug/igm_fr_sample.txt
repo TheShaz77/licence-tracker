@@ -1,5 +1,5 @@
 url: https://anj.fr/offre-de-jeu-et-marche/operateurs-agrees
-bytes: 96815  starts: b' <!DOCTY'
+bytes: 96940  starts: b' <!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'type']
