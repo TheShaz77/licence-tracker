@@ -3245,7 +3245,7 @@
 "ch:03778465": {
 "employees": 1,
 "name": "Stan Somers (Racing) Limited",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:03796307": {
 "employees": 1,
@@ -3504,9 +3504,9 @@
 "period": "2025-03-31"
 },
 "ch:03959769": {
-"employees": 6,
+"employees": 13,
 "name": "Hallmark Marketing Limited",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:03960337": {
 "employees": 2,
@@ -4846,7 +4846,7 @@
 "ch:04484535": {
 "employees": 3,
 "name": "TOP RATE MUTUAL FINANCE LTD",
-"period": "2025-07-31"
+"period": "2026-07-31"
 },
 "ch:04484761": {
 "employees": 6,
@@ -5585,7 +5585,7 @@
 "ch:04690202": {
 "employees": 0,
 "name": "FALCON NEWS (PORTSMOUTH) LIMITED",
-"period": "2025-08-31"
+"period": "2026-08-31"
 },
 "ch:04690357": {
 "employees": 0,
@@ -5828,9 +5828,9 @@
 "period": "2025-04-30"
 },
 "ch:04748490": {
-"employees": 2,
-"name": "Phone Touch (UK) Limited",
-"period": "2025-03-31"
+"employees": 3,
+"name": "PHONE TOUCH (UK) LIMITED",
+"period": "2026-03-31"
 },
 "ch:04749438": {
 "employees": 6,
@@ -6598,8 +6598,8 @@
 },
 "ch:05002708": {
 "employees": 2,
-"name": "JHA ASSOCIATES (UK) LIMITED",
-"period": "2024-12-31"
+"name": "Jha Associates (UK) Limited",
+"period": "2025-12-31"
 },
 "ch:05003869": {
 "employees": 36,
@@ -10390,7 +10390,7 @@
 "ch:06130863": {
 "employees": 3,
 "name": "EXPRESS CARGO UK LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:06131213": {
 "employees": 1,
@@ -12323,7 +12323,7 @@
 "ch:06715911": {
 "employees": 4,
 "name": "Island Entertainments Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:06717939": {
 "employees": 18,
@@ -22734,9 +22734,9 @@
 "ch:08572919": {
 "currency": "GBP",
 "employees": 2,
-"name": "PARITYFX PLC",
-"period": "2025-06-30",
-"revenue": 23863.0
+"name": "PARITYFX LTD",
+"period": "2026-06-30",
+"revenue": 25870.0
 },
 "ch:08573077": {
 "employees": 1,
@@ -25742,6 +25742,11 @@
 "employees": 10,
 "name": "Concept Bingo Limited",
 "period": "2025-12-31"
+},
+"ch:09031665": {
+"employees": 2,
+"name": "SMART PROPERTY SERVICE LTD",
+"period": "2026-05-31"
 },
 "ch:09032753": {
 "employees": 9,
@@ -40644,7 +40649,7 @@
 "ch:11226636": {
 "employees": 0,
 "name": "Clive Bell Ltd",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:11227915": {
 "employees": 5,
@@ -41805,7 +41810,7 @@
 "ch:11334625": {
 "employees": 1,
 "name": "AL FALAH BUSINESS LTD",
-"period": "2025-04-30"
+"period": "2026-04-30"
 },
 "ch:11335320": {
 "employees": 3,
@@ -68737,6 +68742,11 @@
 "name": "AMAR CONVENIENCE STORE LTD",
 "period": "2025-10-31"
 },
+"ch:14395268": {
+"employees": 0,
+"name": "ORIN LIMITED",
+"period": "2025-10-31"
+},
 "ch:14396340": {
 "employees": 13,
 "name": "Grand Wine Ltd",
@@ -87411,6 +87421,11 @@
 "name": "Kanou Capital LLP",
 "period": "2026-03-31"
 },
+"ch:OC452360": {
+"employees": 1,
+"name": "ADF ASSET MANAGEMENT LLP",
+"period": "2026-03-31"
+},
 "ch:OC453458": {
 "employees": 5,
 "name": "IMPERA CAPITAL LLP",
@@ -88656,7 +88671,7 @@
 "ch:SC416637": {
 "employees": 4,
 "name": "Jachea Ltd",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:SC418046": {
 "employees": 6,
@@ -89579,6 +89594,11 @@
 "name": "INPERSCA LIMITED",
 "period": "2026-04-30",
 "revenue": 291911.0
+},
+"ch:SC589066": {
+"employees": 4,
+"name": "BRAEHEAD STORE LTD",
+"period": "2026-03-31"
 },
 "ch:SC591565": {
 "employees": 3,
@@ -92956,6 +92976,7 @@
 "Accounts_Bulk_Data-2026-11-18.zip",
 "Accounts_Bulk_Data-2026-11-19.zip",
 "Accounts_Bulk_Data-2026-11-20.zip",
+"Accounts_Bulk_Data-2026-11-21.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
