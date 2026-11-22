@@ -106977,6 +106977,15 @@
 "https://smcoaz.com"
 ]
 },
+"q:Q140435392": {
+"checked": "2026-11-22",
+"linkedin": "https://www.linkedin.com/company/meet-velo",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://meetvelo.co"
+]
+},
 "q:Q140454692": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/18303925",
@@ -119766,6 +119775,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.nlb.me"
+]
+},
+"q:Q6496310": {
+"checked": "2026-11-22",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.santander.com"
 ]
 },
 "q:Q65089884": {
@@ -260263,6 +260281,7 @@
 "cfd_eu:5493004I3LZM39BWHQ75": "Q325789",
 "cfd_eu:54930056IRBXK0Q1FP96": "Q9598744",
 "cfd_eu:5493005A90DEIXLTT406": "Q28877433",
+"cfd_eu:5493006QMFDDMYWIAM13": "Q6496310",
 "cfd_eu:54930079HJ1JTMKTW637": "Q137779132",
 "cfd_eu:5493007SJLLCTM6J6M37": "Q20908850",
 "cfd_eu:54930080G2M7EJ097A27": "Q18121568",
@@ -260868,6 +260887,7 @@
 "fincen_os:cab207d887f7": "Q6706160",
 "fincen_os:cbf0b05277b9": "Q94887",
 "fincen_os:d356df40d57b": "Q66730463",
+"fincen_os:d5a4bc044db3": "Q140435392",
 "fincen_os:dc6af71f5968": "Q123151727",
 "fincen_os:e457489f48e1": "Q5531757",
 "fincen_os:e527d84b6341": "Q139858641",
