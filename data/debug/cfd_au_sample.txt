@@ -10,7 +10,7 @@ first lines:
 '</p></div></div><div class="flex flex-col h-full fg-border-subtle border-t pt-2xl gap-3xl"><div class="flex flex-col gap-3xl xl:pr-5xl items-baseline flex-1"><p class="typography-label-md text-lg fg-text-default-black">FCA</p><p class="typography-body-md flex-1 overflow-hidden fg-text-default-black"'
 
 url: https://www.axi.com/au
-bytes: 820900  starts: b'<!DOCTYP'
+bytes: 820375  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -63,10 +63,10 @@ type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html lang="en" dir="ltr" class="dwYJqa_variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2" as="font" crossorigin="" type="font/woff2"/><link'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
-'</body></html>'
+'<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement(\'script\');d.innerHTML="window.__CF$cv$params={r:\'a5e472098fc52779\',t:\'MTc5NTMxMzkyNg==\'};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new '
 
 url: https://www.mitrade.com/en
-bytes: 148824  starts: b'<!DOCTYP'
+bytes: 148825  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -83,7 +83,7 @@ first lines:
 '<path d="M5 18H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
 
 url: https://pepperstone.com/en-au
-bytes: 448975  starts: b'<!DOCTYP'
+bytes: 448899  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -111,7 +111,7 @@ first lines:
 '</body></html>'
 
 url: https://www.zeromarkets.com/
-bytes: 221057  starts: b'<!DOCTYP'
+bytes: 221068  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -179,7 +179,7 @@ first lines:
 ''
 
 url: https://www.interactivebrokers.com.au/en/home.php
-bytes: 169641  starts: b'\n<!DOCTY'
+bytes: 215185  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -230,7 +230,7 @@ first lines:
 '\t\t\t<script>'
 
 url: https://capital.com/en-au
-bytes: 551010  starts: b'<!DOCTYP'
+bytes: 551260  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -238,7 +238,7 @@ data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html class="DHVbqa_html _3SJCXq_variable" dir="ltr" lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"/><link rel="preload" as="image" href="https://static.capital.com/capital-v1-4-0/apps/cap'
-'    <script nonce="0g5fm6qu+xdaTe0AX4Tz2Q==">'
+'    <script nonce="xfest8EgGb3IHxwlnm2b5g==">'
 '      (()=>{let a,b=(a=globalThis,a.__headerHeightInjectionState??={mutationObserver:null,observedHeader:null,previousHeaderHeight:0,resizeObserver:null},a.__headerHeightInjectionState),c=()=>{let a=document.getElementById("header");if(!a)return;let{height:c}=a.getBoundingClientRect();if(c>0){b.prev'
 '    </script>'
 '  </div><div class="MyiUmG_mainContent"><div class="ibKxCq_mbXl componentsContainer"><div class="fQqZ4a_container"><div class="hBvola_stack"><div class="hBvola_regulationVideoSticky"><section class="aFTfha_container kwzt4G_viewportWrapper"><div class="aFTfha_content kwzt4G_container"><div class="kwz'

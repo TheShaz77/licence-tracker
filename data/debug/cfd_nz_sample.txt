@@ -9,7 +9,7 @@ first lines:
 ''
 
 url: https://www.axi.com/au
-bytes: 820900  starts: b'<!DOCTYP'
+bytes: 820375  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -36,7 +36,7 @@ first lines:
 "\t\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
 
 url: https://www.ecmarkets.co.nz/
-bytes: 360175  starts: b'<!DOCTYP'
+bytes: 360232  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -87,7 +87,7 @@ first lines:
 '<!-- Google Tag Manager -->'
 
 url: https://www.zeromarkets.com/
-bytes: 221059  starts: b'<!DOCTYP'
+bytes: 221068  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -104,7 +104,7 @@ first lines:
 '\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
 
 url: https://blackbull.com/en/our-company/compliance/
-bytes: 487412  starts: b'<!doctyp'
+bytes: 487411  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

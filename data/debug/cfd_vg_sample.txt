@@ -50,7 +50,7 @@ first lines:
 '//# sourceURL=breeze-prefetch-js-extra</script> <link rel="https://api.w.org/" href="https://www.ftdsystem.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.ftdsystem.com/wp-json/wp/v2/pages/21771" /><link rel="EditURI" type="application/rsd+xml" title="RSD'
 
 url: https://www.ifcmarkets.com/
-bytes: 198100  starts: b'<!DOCTYP'
+bytes: 197158  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -84,7 +84,7 @@ first lines:
 '\t<meta name="generator" content="Framer 1038c38">'
 
 url: https://zitaplus.com/
-bytes: 79486  starts: b'\xef\xbb\xbf<!DOC'
+bytes: 79744  starts: b'\xef\xbb\xbf<!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -101,7 +101,7 @@ first lines:
 'else if(response.indexOf("message:202018")>-1){openModal(\'Error!\',\'Country information could not be found.\',\'error\');}'
 
 url: https://zooe.com/
-bytes: 207638  starts: b'<!doctyp'
+bytes: 207662  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -135,7 +135,7 @@ first lines:
 ''
 
 url: https://www.instaforex.com/
-bytes: 365431  starts: b'<!DOCTYP'
+bytes: 365396  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -152,7 +152,7 @@ first lines:
 '        <script>'
 
 url: https://www.oanda.com/bvi-en/
-bytes: 229553  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 228684  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
