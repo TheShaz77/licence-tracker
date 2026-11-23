@@ -30,7 +30,18 @@ jobs:
         env:
           FCA_API_EMAIL: ${{ secrets.FCA_API_EMAIL }}
           FCA_API_KEY: ${{ secrets.FCA_API_KEY }}
-        run: python -m regtracker contacts --hours 5
+        # The command normally stops after four hours. GNU timeout is a second
+        # safety net: even if a remote site or bulk file hangs, the save/push
+        # step still gets a full hour before GitHub's 5.5-hour job limit.
+        run: |
+          set +e
+          timeout --signal=TERM --kill-after=2m 270m python -m regtracker contacts --hours 4
+          code=$?
+          if [ "$code" -eq 124 ] || [ "$code" -eq 143 ]; then
+            echo "Contact scan reached its safety limit; saved progress will continue next run"
+            exit 0
+          fi
+          exit "$code"
 
       - name: Save progress
         if: always()
