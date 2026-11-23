@@ -101943,6 +101943,18 @@
 "https://www.wonder.fi"
 ]
 },
+"q:Q110778747": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 24193683000.0,
+"revenue_year": "2025",
+"sites": [
+"https://block.xyz"
+]
+},
 "q:Q110908879": {
 "checked": "2026-11-12",
 "employees": 500.0,
@@ -101988,6 +102000,15 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.volksbank-nottuln.de"
+]
+},
+"q:Q111355785": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.buckaroo.nl"
 ]
 },
 "q:Q1113764": {
@@ -102585,6 +102606,17 @@
 "https://www.adobe.com"
 ]
 },
+"q:Q1151402": {
+"checked": "2026-11-23",
+"employees": 1300.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.deshaw.com"
+]
+},
 "q:Q115167169": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/1177764",
@@ -102807,6 +102839,17 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.partnersbanka.cz"
+]
+},
+"q:Q116973080": {
+"checked": "2026-11-23",
+"employees": 26.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.bellsrestaurant.com"
 ]
 },
 "q:Q1170839": {
@@ -103081,6 +103124,15 @@
 "https://paysend.com/de",
 "https://paysend.com/es",
 "https://paysend.com"
+]
+},
+"q:Q120973101": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.nomadglobal.com"
 ]
 },
 "q:Q121029091": {
@@ -104385,6 +104437,17 @@
 "https://www.spk-ts.de"
 ]
 },
+"q:Q1300943": {
+"checked": "2026-11-23",
+"employees": 775.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.warburgpincus.com"
+]
+},
 "q:Q130220168": {
 "checked": "2026-11-14",
 "linkedin": "https://www.linkedin.com/company/unipaycom",
@@ -104985,6 +105048,18 @@
 "https://aircash.eu"
 ]
 },
+"q:Q131907874": {
+"checked": "2026-11-23",
+"currency": "EUR",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 10919531.0,
+"revenue_year": "2024",
+"sites": [
+"https://spark.ngo"
+]
+},
 "q:Q132125897": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/unity-small-finance-bank",
@@ -105426,6 +105501,16 @@
 "https://www.vrbank-mkb.de"
 ]
 },
+"q:Q135683185": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "PayPal Holdings",
+"parent_linkedin": "https://www.linkedin.com/company/paypal",
+"revenue": 8025000000.0,
+"revenue_year": "2014",
+"sites": []
+},
 "q:Q136328066": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/bok-financial",
@@ -105844,6 +105929,13 @@
 "sites": [
 "https://oima.fi"
 ]
+},
+"q:Q137272273": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
 },
 "q:Q1373038": {
 "checked": "2026-11-12",
@@ -106666,6 +106758,15 @@
 "https://weareblox.com"
 ]
 },
+"q:Q137779199": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://banxa.com"
+]
+},
 "q:Q137779200": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -106833,6 +106934,17 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.ffb.de"
+]
+},
+"q:Q138932758": {
+"checked": "2026-11-23",
+"employees": 26.0,
+"employees_year": "2025",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.bnb.plus"
 ]
 },
 "q:Q1389719": {
@@ -107656,6 +107768,17 @@
 "https://www.sparda-west.de"
 ]
 },
+"q:Q14715762": {
+"checked": "2026-11-23",
+"employees": 159.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.neco.edu"
+]
+},
 "q:Q1471911": {
 "checked": "2026-11-12",
 "employees": 152.0,
@@ -107873,6 +107996,15 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.genobank-mainz.de"
+]
+},
+"q:Q1508234": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "Cerberus Capital Management",
+"parent_linkedin": "https://www.linkedin.com/company/cerberus-capital-management",
+"sites": [
+"https://www.safeway.com"
 ]
 },
 "q:Q1510157": {
@@ -108464,6 +108596,15 @@
 "http://www.vb-westerstede.de"
 ]
 },
+"q:Q1522721": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.gianteagle.com"
+]
+},
 "q:Q1525586": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -108525,6 +108666,20 @@
 "http://www.umweltbank.de"
 ]
 },
+"q:Q153417": {
+"checked": "2026-11-23",
+"currency": "USD",
+"employees": 453000.0,
+"employees_year": "2018",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 148258000000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www.kroger.com"
+]
+},
 "q:Q1535595": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -108541,6 +108696,18 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.spk-schaumburg.de"
+]
+},
+"q:Q15401349": {
+"checked": "2026-11-23",
+"employees": 3830.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.zendesk.com",
+"https://www.zendesk.co.jp"
 ]
 },
 "q:Q1541079": {
@@ -109695,6 +109862,17 @@
 "http://www.kreissparkasse-eichsfeld.de"
 ]
 },
+"q:Q16920292": {
+"checked": "2026-11-23",
+"employees": 1300.0,
+"employees_year": "2024",
+"linkedin": "https://www.linkedin.com/company/imc-financial-markets",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.imc.com"
+]
+},
 "q:Q1693433": {
 "checked": "2026-11-14",
 "linkedin": "",
@@ -109714,6 +109892,22 @@
 "https://newday.co.uk"
 ]
 },
+"q:Q16959310": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
+},
+"q:Q16968655": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://rocketfuel.com"
+]
+},
 "q:Q16972754": {
 "checked": "2026-11-12",
 "currency": "USD",
@@ -109726,6 +109920,15 @@
 "revenue_year": "2022",
 "sites": [
 "https://www.coinbase.com"
+]
+},
+"q:Q16973118": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.ceifx.com"
 ]
 },
 "q:Q1698040": {
@@ -109790,6 +109993,15 @@
 "revenue_year": "2025",
 "sites": [
 "http://www.musculardystrophyuk.org"
+]
+},
+"q:Q17001443": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://bitpay.com"
 ]
 },
 "q:Q17030288": {
@@ -111040,6 +111252,15 @@
 "http://www.volksbank-chemnitz.de"
 ]
 },
+"q:Q18205529": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.bill.com"
+]
+},
 "q:Q18215773": {
 "checked": "2026-11-12",
 "currency": "EUR",
@@ -111636,6 +111857,17 @@
 "https://www.rb-thannhausen.de"
 ]
 },
+"q:Q186047": {
+"checked": "2026-11-23",
+"employees": 797.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.valpo.edu"
+]
+},
 "q:Q18616717": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -112020,6 +112252,15 @@
 "http://www.spk-bbg.de"
 ]
 },
+"q:Q1917753": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://meijer.com"
+]
+},
 "q:Q1921855": {
 "checked": "2026-11-12",
 "currency": "EUR",
@@ -112173,6 +112414,28 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.vr-neuburg-rain.de"
+]
+},
+"q:Q193559": {
+"checked": "2026-11-23",
+"employees": 336.0,
+"employees_year": "2021",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.valvesoftware.com"
+]
+},
+"q:Q1937850": {
+"checked": "2026-11-23",
+"employees": 17500.0,
+"employees_year": "2022",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.ogilvy.com"
 ]
 },
 "q:Q1940058": {
@@ -113662,6 +113925,18 @@
 "http://www.winterbacher-bank.de"
 ]
 },
+"q:Q2299472": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 10424874.0,
+"revenue_year": "2023",
+"sites": [
+"https://www.fellowshipfnd.com"
+]
+},
 "q:Q2299611": {
 "checked": "2026-11-12",
 "currency": "USD",
@@ -114655,6 +114930,15 @@
 "http://www.vbbraunlage.de"
 ]
 },
+"q:Q23133268": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://mtch.com"
+]
+},
 "q:Q23196617": {
 "checked": "2026-11-12",
 "employees": 254.0,
@@ -115616,6 +115900,15 @@
 "http://www.wvb.de"
 ]
 },
+"q:Q25775": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.amg.com"
+]
+},
 "q:Q2578125": {
 "checked": "2026-11-12",
 "employees": 300.0,
@@ -116057,6 +116350,20 @@
 "https://www.esaf.bank.in"
 ]
 },
+"q:Q2831861": {
+"checked": "2026-11-23",
+"currency": "USD",
+"employees": 250000.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "Cerberus Capital Management",
+"parent_linkedin": "https://www.linkedin.com/company/cerberus-capital-management",
+"revenue": 77649700000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www.albertsonscompanies.com"
+]
+},
 "q:Q28401169": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/stroud-district-council",
@@ -116358,6 +116665,15 @@
 "https://www.luminor.ee"
 ]
 },
+"q:Q28971925": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.cardinalpath.com"
+]
+},
 "q:Q28974615": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -116420,6 +116736,18 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.sparkasse-doebeln.de"
+]
+},
+"q:Q2902305": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 3942000000.0,
+"revenue_year": "2013",
+"sites": [
+"https://us.brinks.com"
 ]
 },
 "q:Q29231846": {
@@ -116522,6 +116850,17 @@
 "parent": "",
 "parent_linkedin": "",
 "sites": []
+},
+"q:Q295774": {
+"checked": "2026-11-23",
+"employees": 4800.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.Ansys.com"
+]
 },
 "q:Q29582734": {
 "checked": "2026-11-12",
@@ -116729,6 +117068,18 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.rothschild-cie.fr"
+]
+},
+"q:Q30257887": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 619546.0,
+"revenue_year": "2024",
+"sites": [
+"http://aimsnorthafrica.org"
 ]
 },
 "q:Q30265046": {
@@ -117123,6 +117474,18 @@
 "https://www.cancerresearchuk.org"
 ]
 },
+"q:Q3272257": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 8178559000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www3.mtb.com"
+]
+},
 "q:Q33112045": {
 "checked": "2026-11-12",
 "employees": 179.0,
@@ -117255,6 +117618,29 @@
 "https://www.rb-hardt-bruhrain.de"
 ]
 },
+"q:Q3492905": {
+"checked": "2026-11-23",
+"employees": 5500.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.edelman.com"
+]
+},
+"q:Q3511946": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 6488400000.0,
+"revenue_year": "2022",
+"sites": [
+"http://www.troweprice.com"
+]
+},
 "q:Q3520039": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -117355,6 +117741,17 @@
 "https://www.bdmbanca.it"
 ]
 },
+"q:Q3658429": {
+"checked": "2026-11-23",
+"employees": 82000.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://stopandshop.com"
+]
+},
 "q:Q3661919": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -117428,6 +117825,19 @@
 "revenue_year": "2023",
 "sites": [
 "https://www.nexigroup.com"
+]
+},
+"q:Q38819634": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 12008000.0,
+"revenue_year": "2023",
+"sites": [
+"http://www.rigetti.com",
+"http://rigetti.com"
 ]
 },
 "q:Q38967444": {
@@ -117625,6 +118035,18 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.hlb.com.my"
+]
+},
+"q:Q43895808": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 2721398.0,
+"revenue_year": "2024",
+"sites": [
+"http://www.teamorca.org/orca/index.cfm"
 ]
 },
 "q:Q43930212": {
@@ -117901,6 +118323,18 @@
 "https://www.alternatifbank.com.tr"
 ]
 },
+"q:Q4746242": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 13007939.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.amigos.org"
+]
+},
 "q:Q4750773": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/anadolubank-tr",
@@ -118059,6 +118493,20 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.avanza.se"
+]
+},
+"q:Q483551": {
+"checked": "2026-11-23",
+"currency": "USD",
+"employees": 2330000.0,
+"employees_year": "2024",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 680985000000.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.walmart.com"
 ]
 },
 "q:Q4836931": {
@@ -118561,6 +119009,15 @@
 "https://www.changingfaces.org.uk"
 ]
 },
+"q:Q509255": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.buffalowildwings.com"
+]
+},
 "q:Q5098112": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -118761,6 +119218,15 @@
 "https://www.dcbbank.com"
 ]
 },
+"q:Q5291323": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.domo.com"
+]
+},
 "q:Q52991070": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/bee-diseases-insurance-limited",
@@ -118843,6 +119309,15 @@
 "revenue_year": "2025",
 "sites": [
 "https://www.telekom.sk"
+]
+},
+"q:Q540891": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.nielsen.com"
 ]
 },
 "q:Q541683": {
@@ -119112,6 +119587,30 @@
 "revenue_year": "2024",
 "sites": [
 "https://www.girlguiding.org.uk"
+]
+},
+"q:Q5570289": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 1536139.0,
+"revenue_year": "2023",
+"sites": [
+"http://www.globalexchange.org"
+]
+},
+"q:Q55804268": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 7962438.0,
+"revenue_year": "2023",
+"sites": [
+"http://www.shanti.org"
 ]
 },
 "q:Q55810105": {
@@ -119546,6 +120045,18 @@
 "https://www.credit-agricole.com"
 ]
 },
+"q:Q5972276": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 5922000000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www.voya.com"
+]
+},
 "q:Q5978240": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/zenith-bank-group",
@@ -119568,6 +120079,13 @@
 "sites": [
 "https://www.nts.org.uk"
 ]
+},
+"q:Q601321": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
 },
 "q:Q60540983": {
 "checked": "2026-11-12",
@@ -119786,6 +120304,15 @@
 "https://www.santander.com"
 ]
 },
+"q:Q65": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://lacity.gov"
+]
+},
 "q:Q65089884": {
 "checked": "2026-11-13",
 "linkedin": "https://www.linkedin.com/company/millennium-partners",
@@ -119858,6 +120385,22 @@
 "https://www.ifc.org"
 ]
 },
+"q:Q65760793": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://anicainc.com"
+]
+},
+"q:Q65881": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
+},
 "q:Q66048": {
 "checked": "2026-11-12",
 "currency": "EUR",
@@ -119879,6 +120422,18 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.arionbanki.is"
+]
+},
+"q:Q6654568": {
+"checked": "2026-11-23",
+"employees": 1231.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.liveperson.com",
+"http://www.liveperson.com"
 ]
 },
 "q:Q66730463": {
@@ -119908,6 +120463,18 @@
 "parent_linkedin": "",
 "sites": [
 "http://www.berenberg.de"
+]
+},
+"q:Q672170": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 54942000000.0,
+"revenue_year": "2022",
+"sites": [
+"https://corporate.publix.com"
 ]
 },
 "q:Q6724723": {
@@ -120146,6 +120713,17 @@
 "https://www.popso.it"
 ]
 },
+"q:Q6886673": {
+"checked": "2026-11-23",
+"employees": 489.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.macc.edu"
+]
+},
 "q:Q6918146": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -120228,6 +120806,17 @@
 "parent": "",
 "parent_linkedin": "",
 "sites": []
+},
+"q:Q7002903": {
+"checked": "2026-11-23",
+"employees": 1488.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://home.neustar"
+]
 },
 "q:Q705417": {
 "checked": "2026-11-12",
@@ -120469,6 +121058,20 @@
 "http://www.seb.lt"
 ]
 },
+"q:Q739084": {
+"checked": "2026-11-23",
+"currency": "USD",
+"employees": 68108.0,
+"employees_year": "2020",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 23325000000.0,
+"revenue_year": "2020",
+"sites": [
+"https://www.usbank.com/about-us-bank.html"
+]
+},
 "q:Q7408851": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -120616,6 +121219,17 @@
 "parent": "",
 "parent_linkedin": "",
 "sites": []
+},
+"q:Q752941": {
+"checked": "2026-11-23",
+"employees": 175000.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "Yum! Brands",
+"parent_linkedin": "https://www.linkedin.com/company/yum-brands",
+"sites": [
+"https://www.tacobell.com"
+]
 },
 "q:Q7541907": {
 "checked": "2026-11-12",
@@ -120791,6 +121405,15 @@
 "https://tavid.ee"
 ]
 },
+"q:Q7692685": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://techstars.com"
+]
+},
 "q:Q7694371": {
 "checked": "2026-11-13",
 "currency": "GBP",
@@ -120870,6 +121493,18 @@
 "https://www.lcl.fr"
 ]
 },
+"q:Q7800861": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 367989822.0,
+"revenue_year": "2024",
+"sites": [
+"https://www.tides.org"
+]
+},
 "q:Q7833987": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/wiseaccount",
@@ -120888,6 +121523,15 @@
 "https://tankbus.org"
 ]
 },
+"q:Q7850758": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://tubemogul.com"
+]
+},
 "q:Q7865350": {
 "checked": "2026-11-12",
 "currency": "GBP",
@@ -120898,6 +121542,33 @@
 "revenue_year": "2025",
 "sites": [
 "https://unlock.org.uk"
+]
+},
+"q:Q7899844": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.airship.com"
+]
+},
+"q:Q7934906": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.virtu.com"
+]
+},
+"q:Q7935247": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.virtus.com"
 ]
 },
 "q:Q793699": {
@@ -120927,6 +121598,17 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.bag-bank.de"
+]
+},
+"q:Q795486": {
+"checked": "2026-11-23",
+"employees": 30000.0,
+"employees_year": "",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.truist.com"
 ]
 },
 "q:Q795504": {
@@ -121340,6 +122022,19 @@
 "https://www.caixa.gov.br"
 ]
 },
+"q:Q841458": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 9636000000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www.intercontinentalexchange.com",
+"https://www.theice.com"
+]
+},
 "q:Q846735": {
 "checked": "2026-11-12",
 "linkedin": "https://www.linkedin.com/company/nationwide-building-society",
@@ -121544,6 +122239,18 @@
 "https://www.aliorbank.pl"
 ]
 },
+"q:Q917131": {
+"checked": "2026-11-23",
+"currency": "USD",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"revenue": 4786000000.0,
+"revenue_year": "2022",
+"sites": [
+"https://www.regions.com"
+]
+},
 "q:Q918390": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -121646,6 +122353,24 @@
 "https://www.kbc.com"
 ]
 },
+"q:Q946080": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.paychex.com"
+]
+},
+"q:Q948360": {
+"checked": "2026-11-23",
+"linkedin": "",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"http://www.ci.crystal.mn.us"
+]
+},
 "q:Q94887": {
 "checked": "2026-11-12",
 "currency": "USD",
@@ -121665,6 +122390,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.mercadolibre.com"
+]
+},
+"q:Q95552428": {
+"checked": "2026-11-23",
+"linkedin": "https://www.linkedin.com/company/molliepayments",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.mollie.com"
 ]
 },
 "q:Q9581725": {
@@ -246412,93 +247146,93 @@
 "website": "https://zyvest.com"
 },
 "wd:cc": {
-"AD": "2026-11-22",
-"AE": "2026-11-22",
-"AR": "2026-11-22",
-"AT": "2026-11-22",
-"AU": "2026-11-22",
-"AW": "2026-11-22",
-"BD": "2026-11-22",
-"BE": "2026-11-22",
-"BG": "2026-11-22",
-"BM": "2026-11-22",
-"BN": "2026-11-22",
-"BR": "2026-11-22",
-"BS": "2026-11-22",
-"BZ": "2026-11-22",
-"CA": "2026-11-22",
-"CH": "2026-11-22",
-"CL": "2026-11-22",
-"CO": "2026-11-22",
-"CR": "2026-11-22",
-"CW": "2026-11-22",
-"CY": "2026-11-22",
-"CZ": "2026-11-22",
-"DE": "2026-11-22",
-"DK": "2026-11-22",
-"DO": "2026-11-22",
-"EC": "2026-11-22",
-"EE": "2026-11-22",
-"EG": "2026-11-22",
-"ES": "2026-11-22",
-"ET": "2026-11-22",
-"FI": "2026-11-22",
-"FJ": "2026-11-22",
-"FR": "2026-11-22",
-"GB": "2026-11-22",
-"GE": "2026-11-22",
-"GG": "2026-11-22",
-"GM": "2026-11-22",
-"GR": "2026-11-22",
-"HK": "2026-11-22",
-"HR": "2026-11-22",
-"HU": "2026-11-22",
-"ID": "2026-11-22",
-"IE": "2026-11-22",
-"IM": "2026-11-22",
-"IN": "2026-11-22",
-"IS": "2026-11-22",
-"IT": "2026-11-22",
-"JE": "2026-11-22",
-"KR": "2026-11-22",
-"LI": "2026-11-22",
-"LT": "2026-11-22",
-"LU": "2026-11-22",
-"LV": "2026-11-22",
-"MC": "2026-11-22",
-"MD": "2026-11-22",
-"ME": "2026-11-22",
-"MN": "2026-11-22",
-"MT": "2026-11-22",
-"MU": "2026-11-22",
-"MW": "2026-11-22",
-"MY": "2026-11-22",
-"NA": "2026-11-22",
-"NG": "2026-11-22",
-"NL": "2026-11-22",
-"NO": "2026-11-22",
-"NZ": "2026-11-22",
-"OM": "2026-11-22",
-"PL": "2026-11-22",
-"PT": "2026-11-22",
-"RO": "2026-11-22",
-"RS": "2026-11-22",
-"SC": "2026-11-22",
-"SE": "2026-11-22",
-"SG": "2026-11-22",
-"SI": "2026-11-22",
-"SK": "2026-11-22",
-"SM": "2026-11-22",
-"TC": "2026-11-22",
-"TH": "2026-11-22",
-"TO": "2026-11-22",
-"TR": "2026-11-22",
-"TW": "2026-11-22",
-"US": "2026-11-22",
-"UY": "2026-11-22",
-"VC": "2026-11-22",
-"VG": "2026-11-22",
-"ZA": "2026-11-22"
+"AD": "2026-11-23",
+"AE": "2026-11-23",
+"AR": "2026-11-23",
+"AT": "2026-11-23",
+"AU": "2026-11-23",
+"AW": "2026-11-23",
+"BD": "2026-11-23",
+"BE": "2026-11-23",
+"BG": "2026-11-23",
+"BM": "2026-11-23",
+"BN": "2026-11-23",
+"BR": "2026-11-23",
+"BS": "2026-11-23",
+"BZ": "2026-11-23",
+"CA": "2026-11-23",
+"CH": "2026-11-23",
+"CL": "2026-11-23",
+"CO": "2026-11-23",
+"CR": "2026-11-23",
+"CW": "2026-11-23",
+"CY": "2026-11-23",
+"CZ": "2026-11-23",
+"DE": "2026-11-23",
+"DK": "2026-11-23",
+"DO": "2026-11-23",
+"EC": "2026-11-23",
+"EE": "2026-11-23",
+"EG": "2026-11-23",
+"ES": "2026-11-23",
+"ET": "2026-11-23",
+"FI": "2026-11-23",
+"FJ": "2026-11-23",
+"FR": "2026-11-23",
+"GB": "2026-11-23",
+"GE": "2026-11-23",
+"GG": "2026-11-23",
+"GM": "2026-11-23",
+"GR": "2026-11-23",
+"HK": "2026-11-23",
+"HR": "2026-11-23",
+"HU": "2026-11-23",
+"ID": "2026-11-23",
+"IE": "2026-11-23",
+"IM": "2026-11-23",
+"IN": "2026-11-23",
+"IS": "2026-11-23",
+"IT": "2026-11-23",
+"JE": "2026-11-23",
+"KR": "2026-11-23",
+"LI": "2026-11-23",
+"LT": "2026-11-23",
+"LU": "2026-11-23",
+"LV": "2026-11-23",
+"MC": "2026-11-23",
+"MD": "2026-11-23",
+"ME": "2026-11-23",
+"MN": "2026-11-23",
+"MT": "2026-11-23",
+"MU": "2026-11-23",
+"MW": "2026-11-23",
+"MY": "2026-11-23",
+"NA": "2026-11-23",
+"NG": "2026-11-23",
+"NL": "2026-11-23",
+"NO": "2026-11-23",
+"NZ": "2026-11-23",
+"OM": "2026-11-23",
+"PL": "2026-11-23",
+"PT": "2026-11-23",
+"RO": "2026-11-23",
+"RS": "2026-11-23",
+"SC": "2026-11-23",
+"SE": "2026-11-23",
+"SG": "2026-11-23",
+"SI": "2026-11-23",
+"SK": "2026-11-23",
+"SM": "2026-11-23",
+"TC": "2026-11-23",
+"TH": "2026-11-23",
+"TO": "2026-11-23",
+"TR": "2026-11-23",
+"TW": "2026-11-23",
+"US": "2026-11-23",
+"UY": "2026-11-23",
+"VC": "2026-11-23",
+"VG": "2026-11-23",
+"ZA": "2026-11-23"
 },
 "wd:lei:097900CAKA0000233454": {
 "checked": "2026-11-11",
@@ -259491,6 +260225,8 @@
 "cfd_eu:1VUV7VQFKUOQSJ21A208": "Q3006172",
 "cfd_eu:21380045KC28948FNE32": "Q137779118",
 "cfd_eu:2138005DRCU66B8BNY04": "Q4650306",
+"cfd_eu:2138008UL4MT8SNYKX10": "Q113465639",
+"cfd_eu:213800A1PNS41NG89H87": "Q16920292",
 "cfd_eu:213800BVHZ8XUCN63U23": "Q54979571",
 "cfd_eu:213800CDJOF7ZZVSKW68": "Q22906965",
 "cfd_eu:213800GIFQMSV7HROS23": "Q133815052",
@@ -259571,6 +260307,7 @@
 "cfd_eu:391200ZNJFEKQQPEIB08": "Q22674621",
 "cfd_eu:391200ZTFCDHOQ7F6P07": "Q2531816",
 "cfd_eu:3KXUNHVVQFIJN6RHLO76": "Q133823758",
+"cfd_eu:3TK20IVIUJ8J3ZU0QE75": "Q2304977",
 "cfd_eu:3U8WV1YX2VMUHH7Z1Q21": "Q1642179",
 "cfd_eu:52990000BSH4E0SCC868": "Q27056966",
 "cfd_eu:5299000237YH143E2993": "Q2307720",
@@ -260289,12 +261026,14 @@
 "cfd_eu:5493009VJC01E4H6HH77": "Q4827724",
 "cfd_eu:5493009W2E2YDCXY6S81": "Q17488861",
 "cfd_eu:549300BZZFFS0SOWR325": "Q1436735",
+"cfd_eu:549300CLJI9XDH12XV51": "Q21009903",
 "cfd_eu:549300CQ9NLEHMRCU505": "Q17624732",
 "cfd_eu:549300E5ENQVY2IBLF67": "Q113466783",
 "cfd_eu:549300FH0WJAPEHTIQ77": "Q131535600",
 "cfd_eu:549300FXBIWWGK7T0Y98": "Q104429642",
 "cfd_eu:549300GH3DFCXVNBHE59": "Q17521037",
 "cfd_eu:549300GKFG0RYRRQ1414": "Q80788",
+"cfd_eu:549300HFXRW8BZRK3J17": "Q113465638",
 "cfd_eu:549300I48OJHSE9OZS95": "Q137779116",
 "cfd_eu:549300IRGNL8Q3O8Y413": "Q7234083",
 "cfd_eu:549300JB1P61FUTPEZ75": "Q12778981",
@@ -260305,6 +261044,7 @@
 "cfd_eu:549300ND1MQ8SNNYMJ22": "Q2205755",
 "cfd_eu:549300OL514RA0SXJJ44": "Q132775437",
 "cfd_eu:549300OLBL49CW8CT155": "Q5907815",
+"cfd_eu:549300OOZDNZ3F2XJW21": "Q133814921",
 "cfd_eu:549300PZMFIQR79Q0T97": "Q15614925",
 "cfd_eu:549300Q3OIWRHQUQM052": "Q124155619",
 "cfd_eu:549300RFKNCOX56F8591": "Q7283806",
@@ -260328,6 +261068,8 @@
 "cfd_eu:6B2PBRV1FCJDMR45RZ53": "Q941020",
 "cfd_eu:6EWKU0FGVX5QQJHFGT48": "Q2877312",
 "cfd_eu:6TJCK1B7E7UTXP528Y04": "Q113465134",
+"cfd_eu:724500BQ54Y1PNS8NC78": "Q113465620",
+"cfd_eu:724500Z00EOW32ZU4V52": "Q113465530",
 "cfd_eu:7437006WYM821IJ3MN73": "Q4349236",
 "cfd_eu:743700FTBNXAUN57RH30": "Q7387053",
 "cfd_eu:743700GC62JLHFBUND16": "Q4353753",
@@ -260430,9 +261172,12 @@
 "cfd_eu:9845002A8BS4B6869B79": "Q141987271",
 "cfd_eu:98450068F88BDF3E8D32": "Q137779130",
 "cfd_eu:984500A7AA88D8EFFQ20": "Q110461223",
+"cfd_eu:984500AA963ED2BA8460": "Q137779191",
 "cfd_eu:9KOGW2C2FCIOJQ7FF485": "Q341100",
 "cfd_eu:B81CK4ESI35472RHJ606": "Q451814",
+"cfd_eu:BFXS5XCH7N0Y05NIXW11": "Q287471",
 "cfd_eu:D2OIGPB6E66YOBJ9GT20": "Q796419",
+"cfd_eu:DG3RU1DBUFHT4ZF9WN62": "Q252004",
 "cfd_eu:DIZES5CFO5K3I5R58746": "Q464702",
 "cfd_eu:DKGVVH5FKILG8R13CO13": "Q131535576",
 "cfd_eu:DSNHHQ2B9X5N6OUJ1236": "Q561418",
@@ -260442,6 +261187,7 @@
 "cfd_eu:EZKODONU5TYHW4PP1R34": "Q301141",
 "cfd_eu:F0HUI1NY1AZMJMD8LP67": "Q3125186",
 "cfd_eu:F3JS33DEI6XQ4ZBPTN86": "Q975655",
+"cfd_eu:G8ZTNESVNKW4NN761W05": "Q113465558",
 "cfd_eu:H0YX5LBGKDVOWCXBZ594": "Q62233",
 "cfd_eu:I6USJ58BDV2BO5KP3C31": "Q24282966",
 "cfd_eu:IYKCAVNFR8QGF00HV840": "Q1541079",
@@ -260638,7 +261384,13 @@
 "eba:MT_MFSA!MLIM17": "Q137779188",
 "eba:MT_MFSA!PAP": "Q130238956",
 "eba:MT_MFSA!ZBL": "Q133815050",
+"eba:NL_DNB!F0003": "Q111355785",
+"eba:NL_DNB!F0038": "Q95552428",
+"eba:NL_DNB!R131279": "Q131907874",
 "eba:NL_DNB!R135007": "Q115167244",
+"eba:NL_DNB!R190553": "Q137779197",
+"eba:NL_DNB!R193684": "Q137779200",
+"eba:NL_DNB!R194916": "Q133814920",
 "eba:PSD_EMI!IT_BI!06874351007": "Q3909459",
 "eba:PSD_EMI!MT_MFSA!MFT": "Q131385439",
 "eba:PSD_EPI!SK_NBS!35763469": "Q540733",
@@ -260835,67 +261587,120 @@
 "fca_cfd:912920": "Q139894100",
 "fca_cfd:949967": "Q113466008",
 "fca_cfd:978402": "Q130558352",
+"fincen_os:00b4cf6c05e1": "Q7800861",
+"fincen_os:02ad2d4cc730": "Q1508234",
+"fincen_os:040e4a671610": "Q21009903",
 "fincen_os:0b5e3b4c2c5b": "Q5558336",
 "fincen_os:0b5fef322213": "Q107309310",
 "fincen_os:0c369ee34eb6": "Q5343830",
 "fincen_os:0cd579a39903": "Q6822267",
+"fincen_os:0d71f72f1c25": "Q38819634",
+"fincen_os:0f6c175b20ee": "Q2831861",
 "fincen_os:15ab1e223996": "Q7286970",
 "fincen_os:181bb7cf92fa": "Q22906202",
 "fincen_os:1959ab8d2e91": "Q101606525",
 "fincen_os:1d2ed4a945dc": "Q2008551",
 "fincen_os:1e3b2e55d619": "Q656801",
+"fincen_os:2518f3e31ca5": "Q1151402",
+"fincen_os:28c1e95065be": "Q193559",
 "fincen_os:2a1fbc64262d": "Q141501181",
 "fincen_os:2be5ec1d0119": "Q30609598",
 "fincen_os:2c8e6e5ac8d4": "Q142199221",
 "fincen_os:2d6370a644bc": "Q121497191",
 "fincen_os:309eb02d2789": "Q109824499",
+"fincen_os:3198de78bb7d": "Q2299472",
+"fincen_os:333a1c065ef5": "Q17001443",
 "fincen_os:35da0abe7f62": "Q7834339",
+"fincen_os:36ee82b7e611": "Q137272273",
 "fincen_os:3bb17121bae6": "Q141839352",
 "fincen_os:3f2d37af907e": "Q7229656",
+"fincen_os:42a616d96f52": "Q116973080",
+"fincen_os:42be33e01b8e": "Q841458",
+"fincen_os:458d99897858": "Q3272257",
 "fincen_os:46389381689b": "Q109996844",
+"fincen_os:46f440f7a917": "Q65",
 "fincen_os:47d94202b614": "Q106696870",
 "fincen_os:487b34124780": "Q125924689",
+"fincen_os:498969e07290": "Q948360",
+"fincen_os:49f3d7afd3c6": "Q138932758",
+"fincen_os:49ffee28b020": "Q25775",
+"fincen_os:4d0b184b8aa1": "Q5972276",
 "fincen_os:4e1733adf589": "Q122808411",
+"fincen_os:4fd577c0740b": "Q14715762",
 "fincen_os:5118541432dc": "Q2578125",
+"fincen_os:576102edad20": "Q3492905",
+"fincen_os:57a66bbc3d10": "Q5291323",
+"fincen_os:57cb8696598b": "Q18205529",
+"fincen_os:5a07578e6742": "Q5570289",
+"fincen_os:5a3ab3731da4": "Q120973101",
 "fincen_os:5f61a149d0d2": "Q124022589",
 "fincen_os:67115d29bbd4": "Q744149",
 "fincen_os:69dabb648558": "Q20011294",
 "fincen_os:6c138d63dfef": "Q5558336",
+"fincen_os:7046f400eb2d": "Q30257887",
 "fincen_os:709c83895df8": "Q47796826",
+"fincen_os:70c71bba7558": "Q3511946",
 "fincen_os:71166c2a8ed7": "Q16972754",
 "fincen_os:75074fc5f485": "Q48977274",
 "fincen_os:78161cf49673": "Q140348243",
+"fincen_os:7983237feea5": "Q1300943",
+"fincen_os:79f1c6880ea8": "Q186047",
+"fincen_os:7d7e932d6365": "Q739084",
 "fincen_os:7ea52ddd0961": "Q136655210",
 "fincen_os:818016bc33f6": "Q1034654",
 "fincen_os:81d025a11c20": "Q66730463",
+"fincen_os:833c83befaf2": "Q153417",
 "fincen_os:85104740ec2a": "Q136328066",
 "fincen_os:851aef7af76c": "Q136666317",
 "fincen_os:86f32c7f66d3": "Q7156870",
 "fincen_os:8ef888c90d6b": "Q126894750",
 "fincen_os:90a37f2ec35a": "Q803873",
+"fincen_os:92cea9e2c2b9": "Q4746242",
 "fincen_os:966b2d7d702c": "Q121029091",
+"fincen_os:9806dfe83017": "Q3658429",
 "fincen_os:9a585b58c33d": "Q1411292",
 "fincen_os:9ad8889e9b5d": "Q139922976",
 "fincen_os:9be2e8b80fbe": "Q849363",
 "fincen_os:9e71c6de6912": "Q1740314",
+"fincen_os:a22d25eb30d5": "Q1937850",
 "fincen_os:a76bbf168f78": "Q27877295",
 "fincen_os:a78f853f5abc": "Q141612756",
+"fincen_os:a7afcf8d1c2e": "Q6886673",
+"fincen_os:b13b8d2103e8": "Q65760793",
+"fincen_os:b1fea14548eb": "Q795486",
 "fincen_os:b541b3f00851": "Q20540697",
+"fincen_os:b602c520b365": "Q16959310",
+"fincen_os:b62df1affcba": "Q7692685",
 "fincen_os:b6fff887aafe": "Q289362",
 "fincen_os:b8f45acbea49": "Q135284888",
+"fincen_os:b9fec885cfe5": "Q16973118",
 "fincen_os:bff052c24d3f": "Q114587135",
+"fincen_os:ca3c3a264977": "Q55804268",
 "fincen_os:cab207d887f7": "Q6706160",
+"fincen_os:cabf0e5b4fcc": "Q65881",
 "fincen_os:cbf0b05277b9": "Q94887",
+"fincen_os:d1f2da89ee25": "Q1917753",
 "fincen_os:d356df40d57b": "Q66730463",
 "fincen_os:d5a4bc044db3": "Q140435392",
+"fincen_os:dbc3cc275ef1": "Q135683185",
+"fincen_os:dc20636d2b22": "Q917131",
 "fincen_os:dc6af71f5968": "Q123151727",
+"fincen_os:dde69ca9b88f": "Q7934906",
 "fincen_os:e457489f48e1": "Q5531757",
 "fincen_os:e527d84b6341": "Q139858641",
 "fincen_os:e7802a752a75": "Q744149",
+"fincen_os:e7ac4e9da2bd": "Q43895808",
+"fincen_os:e83c1abd7349": "Q110778747",
+"fincen_os:e8cccf401f45": "Q21009903",
+"fincen_os:ea881e79e179": "Q672170",
 "fincen_os:eb028b886acc": "Q5474315",
 "fincen_os:ecfe2b64afd9": "Q108788211",
+"fincen_os:f2c478f8289a": "Q1522721",
 "fincen_os:f85d65636145": "Q140637323",
+"fincen_os:f85f8eac0376": "Q483551",
+"fincen_os:faf87b1523a4": "Q7935247",
 "fincen_os:fbd654853012": "Q22908594",
+"fincen_os:ff58f97b29e5": "Q601321",
 "finma:CHE-485.125.244": "Q130517879",
 "fintrac:C100000516": "Q120411431",
 "fintrac:M08450895": "Q1032001",
@@ -261061,15 +261866,25 @@
 "igm_us:63993": "Q29231846",
 "igm_us:82184": "Q11463",
 "igm_us:85216": "Q1390577",
+"igm_us:86663": "Q2900982",
 "igm_us:86706": "Q142199221",
 "igm_us:86794": "Q25022243",
+"igm_us:86800": "Q7002903",
+"igm_us:86806": "Q6654568",
 "igm_us:86854": "Q485593",
+"igm_us:86912": "Q7850758",
 "igm_us:86977": "Q380",
 "igm_us:87098": "Q128586687",
 "igm_us:87285": "Q121886362",
+"igm_us:87467": "Q295774",
+"igm_us:87596": "Q7899844",
+"igm_us:87663": "Q16968655",
 "igm_us:87795": "Q2299611",
+"igm_us:88042": "Q540891",
 "igm_us:88157": "Q4778915",
+"igm_us:88325": "Q135683185",
 "igm_us:88985": "Q141800926",
+"igm_us:89042": "Q15401349",
 "igm_us:89237": "Q115215521",
 "igm_us:90867": "Q7994404",
 "igm_us:91375": "Q99542438",
@@ -261077,6 +261892,10 @@
 "igm_us:91671": "Q141820052",
 "igm_us:91681": "Q741046",
 "igm_us:91710": "Q7942354",
+"igm_us:91721": "Q23133268",
+"igm_us:91743": "Q509255",
+"igm_us:91861": "Q752941",
+"igm_us:92092": "Q28971925",
 "mica:097900CAKA0000249459": "Q137779213",
 "mica:097900CAKA0000269926": "Q137779212",
 "mica:097900CAKA0000272448": "Q137779210",
@@ -261095,6 +261914,7 @@
 "mica:254900BBV7FA7LUG5913": "Q137779182",
 "mica:254900FESD7AF56FOQ37": "Q133815050",
 "mica:254900GTP4UXQO1UMI36": "Q137779176",
+"mica:254900KXWAZ3B1340G26": "Q133814918",
 "mica:254900XTUI35BGIBXP21": "Q137779156",
 "mica:31570000GC0U68O6PA08": "Q137779211",
 "mica:3157002JBFAI478MD587": "Q1718069",
@@ -261205,6 +262025,7 @@
 "mica:549300I48OJHSE9OZS95": "Q137779116",
 "mica:549300LZMQXXYV4JJ603": "Q137779119",
 "mica:549300OL514RA0SXJJ44": "Q132775437",
+"mica:549300OOZDNZ3F2XJW21": "Q133814921",
 "mica:549300U4LIZV0REEQQ46": "Q5139377",
 "mica:549300XG5LFGN1IGYC71": "Q113466695",
 "mica:549300XIBGTJ0PLIEO72": "Q137779179",
@@ -261212,7 +262033,24 @@
 "mica:635400NEDOJDEJEQZQ77": "Q137779166",
 "mica:636700PBO692C1R9V561": "Q137779121",
 "mica:6488907MV9XAA08E4E40": "Q137779177",
+"mica:69940000HAL9ODW3IMO22": "Q137779199",
+"mica:699400TPXCI7R4A0NG65": "Q137779192",
 "mica:6B2PBRV1FCJDMR45RZ53": "Q941020",
+"mica:7245001BEJ6U6AUU1S58": "Q137779203",
+"mica:7245009PN18D4I1TKJ50": "Q133814919",
+"mica:7245009PWS7YLG3JPF78": "Q137779190",
+"mica:724500B2I1LR33CAWG54": "Q133814920",
+"mica:724500BUG93MDFGYQG03": "Q137779205",
+"mica:724500C4D3LQAKCEZ198": "Q137779193",
+"mica:724500DMUDFJZNYNEF35": "Q137779201",
+"mica:724500G7QSOMFR1GQA47": "Q137779200",
+"mica:724500GVWT7QULV8CR59": "Q137779197",
+"mica:724500H1WRSMD7CAS549": "Q137779202",
+"mica:724500J6RZI9SE1AAP41": "Q137779204",
+"mica:724500MX2WBKDJP9HE56": "Q133040428",
+"mica:724500T7PFN30PF3ZQ87": "Q137779194",
+"mica:724500UI8UD7HKGVJX65": "Q137779195",
+"mica:724500Z8JCXSX3351I94": "Q137779198",
 "mica:7437009FHK501IOCWZ66": "Q137779149",
 "mica:743700CHRVVP342JOA67": "Q137779150",
 "mica:743700GULNWPBLJ7A022": "Q137779148",
@@ -261225,10 +262063,12 @@
 "mica:894500C1QM5XBU31PT95": "Q137779134",
 "mica:894500ISUYBQF9I7BE66": "Q137779183",
 "mica:894500IY99QLL9M0SR28": "Q137779178",
+"mica:894500KQLQQYOD1PPX55": "Q137779189",
 "mica:894500LM6DICD790FQ34": "Q137779157",
 "mica:894500QKMN1PCG2V7U40": "Q137779209",
 "mica:894500R5KSX3ZKIHSA46": "Q137779162",
 "mica:894500RKZ3TVTPIF7V84": "Q137779154",
+"mica:894500ZVOL3A9LO8LN34": "Q137779196",
 "mica:9695003EKRFOMYXJQL11": "Q137779159",
 "mica:969500D241WXU9J7MI33": "Q50258367",
 "mica:969500DBF3ZL9U0KUA51": "Q137779153",
@@ -261246,6 +262086,7 @@
 "mica:98450068F88BDF3E8D32": "Q137779130",
 "mica:9845007FA1A8E1DE3989": "Q137779165",
 "mica:9845009F15A5B9FD7F45": "Q137779151",
+"mica:984500AA963ED2BA8460": "Q137779191",
 "mica:984500D6A0F945BB5A15": "Q137779186",
 "mica:984500DEID7B03J77118": "Q133815047",
 "mica:984500EBA2E9980CDD80": "Q137779185",
@@ -261253,6 +262094,7 @@
 "mica:984500F75CJ82D8B7D76": "Q137779170",
 "mica:984500FD0NZ8949F4363": "Q137779171",
 "mica:K8MS7FD7N5Z2WQ51AZ71": "Q806189",
+"mica_emt:724500GVWT7QULV8CR59": "Q137779197",
 "mica_emt:9695002I9DJHZ3449O66": "Q131552879",
 "mica_emt:969500FX8K40ZDW4F377": "Q137779160",
 "nat_ad:andorrabancagrcolreigsa": "Q11905472",
@@ -261370,60 +262212,89 @@
 "nat_tw:808": "Q5321663",
 "nat_tw:823": "Q67933792",
 "nat_uy:bancodelarepublicaorientaldeluruguay": "Q4077337",
+"us_ak:011875": "Q17001443",
 "us_ak:012300": "Q20540697",
 "us_ak:013023": "Q142199221",
 "us_ak:013176": "Q109824499",
 "us_ak:015347": "Q66730463",
 "us_ak:015468": "Q125924689",
+"us_ak:10020": "Q135683185",
 "us_ak:10066": "Q124022589",
+"us_ak:10074": "Q18205529",
 "us_ak:10076": "Q7156870",
 "us_ak:10088": "Q16972754",
 "us_ak:10113": "Q109996844",
 "us_ak:10121": "Q22908594",
+"us_ca:2077": "Q135683185",
 "us_ca:2458": "Q124022589",
 "us_ca:2522": "Q7156870",
+"us_ca:2529": "Q18205529",
 "us_ca:2678": "Q142199221",
+"us_ct:MT-1007645": "Q18205529",
+"us_ct:MT-1029977": "Q946080",
 "us_ct:MT-1041524": "Q7156870",
 "us_ct:MT-1163082": "Q16972754",
 "us_ct:MT-1271971": "Q109996844",
+"us_ct:MT-1496848": "Q17001443",
 "us_ct:MT-1518126": "Q22908594",
 "us_ct:MT-1527313": "Q125924689",
 "us_ct:MT-1737896": "Q20540697",
 "us_ct:MT-1906809": "Q66730463",
 "us_ct:MT-1986669": "Q142199221",
 "us_ct:MT-2327474": "Q135284888",
+"us_ct:MT-907740": "Q16973118",
+"us_ct:MT-910457": "Q135683185",
 "us_ct:MT-942933": "Q124022589",
 "us_de:012262": "Q124022589",
 "us_de:012400": "Q7156870",
 "us_de:019214": "Q16972754",
 "us_de:020253": "Q109996844",
+"us_de:021201": "Q18205529",
 "us_de:024051": "Q22908594",
+"us_de:024118": "Q17001443",
 "us_de:030079": "Q142199221",
 "us_de:030512": "Q20540697",
 "us_de:043356": "Q66730463",
+"us_de:044101": "Q137272273",
+"us_de:5698": "Q135683185",
+"us_fl:FT20800006": "Q946080",
+"us_fl:FT20800026": "Q16973118",
+"us_fl:FT20800048": "Q16959310",
+"us_fl:FT20800066": "Q2902305",
+"us_fl:FT20800093": "Q135683185",
 "us_fl:FT230000084": "Q7156870",
 "us_fl:FT230000087": "Q124022589",
+"us_fl:FT230000114": "Q18205529",
 "us_fl:FT230000139": "Q109996844",
 "us_fl:FT230000152": "Q16972754",
+"us_fl:FT230000164": "Q16959310",
 "us_fl:FT230000193": "Q125924689",
+"us_fl:FT230000212": "Q17001443",
 "us_fl:FT230000286": "Q66730463",
 "us_fl:FT230000303": "Q109824499",
 "us_fl:FT230000333": "Q7156870",
 "us_fl:FT230000357": "Q142199221",
 "us_fl:FT230000419": "Q135284888",
+"us_fl:FT230000548": "Q137272273",
 "us_fl:FT230000565": "Q142199221",
+"us_fl:athenabitcoin": "Q137272273",
+"us_fl:bitpay": "Q17001443",
 "us_fl:coinbase": "Q16972754",
 "us_fl:coinhub": "Q126195855",
 "us_fl:geminitrust": "Q22908594",
 "us_fl:walgreen": "Q1591889",
+"us_in:billcom": "Q18205529",
 "us_in:block": "Q124022589",
 "us_in:coinbase": "Q16972754",
 "us_in:payoneer": "Q7156870",
+"us_in:paypal": "Q135683185",
 "us_in:riverfinancial": "Q66730463",
 "us_in:tipalti": "Q109996844",
+"us_la:billcom": "Q18205529",
 "us_la:block": "Q124022589",
 "us_la:coinbase": "Q16972754",
 "us_la:payoneer": "Q7156870",
+"us_la:paypal": "Q135683185",
 "us_la:riverfinancial": "Q66730463",
 "us_la:tipalti": "Q109996844",
 "za_banks:absabank": "Q58641733",
