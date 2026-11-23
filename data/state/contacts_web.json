@@ -107505,6 +107505,15 @@
 "https://www.forte.net"
 ]
 },
+"q:Q142262248": {
+"checked": "2026-11-23",
+"linkedin": "https://www.linkedin.com/company/hansen-&-heinrich-ag",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://www.hansen-heinrich.de"
+]
+},
 "q:Q1423788": {
 "checked": "2026-11-12",
 "linkedin": "",
@@ -260869,6 +260878,7 @@
 "cfd_eu:529900SV6B61DRHMOP66": "Q18630921",
 "cfd_eu:529900SZOAGFMH59A131": "Q2307280",
 "cfd_eu:529900T2FE9GA6AWW345": "Q23787043",
+"cfd_eu:529900T2U4IQHCNRME32": "Q142262248",
 "cfd_eu:529900T35VSXHR9Q1Q56": "Q15134092",
 "cfd_eu:529900T3Z29V78YK5Z10": "Q15125804",
 "cfd_eu:529900T4FLOFH8Y1IG58": "Q18334184",
