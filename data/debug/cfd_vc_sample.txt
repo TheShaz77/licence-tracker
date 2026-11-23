@@ -1,5 +1,5 @@
 url: https://www.landprime.com/en-GB
-bytes: 213887  starts: b'<!DOCTYP'
+bytes: 214069  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -26,7 +26,7 @@ first lines:
 '    gap: 14px;'
 
 url: https://www.instaforex.com/
-bytes: 366204  starts: b'<!DOCTYP'
+bytes: 366140  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -43,7 +43,7 @@ first lines:
 '        <script>'
 
 url: https://www.litefinance.org/
-bytes: 148248  starts: b'<!DOCTYP'
+bytes: 147993  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

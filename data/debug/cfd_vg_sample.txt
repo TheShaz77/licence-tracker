@@ -1,5 +1,5 @@
 url: https://cfds.thebcr.com/
-bytes: 325938  starts: b'<!DOCTYP'
+bytes: 326115  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -16,7 +16,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1.0" />'
 
 url: https://www.fibogroup.com/
-bytes: 65694  starts: b'<!DOCTYP'
+bytes: 65425  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -84,7 +84,7 @@ first lines:
 '\t<meta name="generator" content="Framer 1038c38">'
 
 url: https://zitaplus.com/
-bytes: 79744  starts: b'\xef\xbb\xbf<!DOC'
+bytes: 80017  starts: b'\xef\xbb\xbf<!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -101,7 +101,7 @@ first lines:
 'else if(response.indexOf("message:202018")>-1){openModal(\'Error!\',\'Country information could not be found.\',\'error\');}'
 
 url: https://zooe.com/
-bytes: 207662  starts: b'<!doctyp'
+bytes: 207664  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -135,7 +135,7 @@ first lines:
 ''
 
 url: https://www.instaforex.com/
-bytes: 365396  starts: b'<!DOCTYP'
+bytes: 366104  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

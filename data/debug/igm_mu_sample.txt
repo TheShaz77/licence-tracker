@@ -1,5 +1,5 @@
 url: https://valueplus.mu/
-bytes: 229356  starts: b'<!doctyp'
+bytes: 229421  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -16,7 +16,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://valueplus.mu/
-bytes: 229356  starts: b'<!doctyp'
+bytes: 229421  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -50,7 +50,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://www.supertote.mu/
-bytes: 18624  starts: b'<!DOCTYP'
+bytes: 18625  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -277,7 +277,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
-bytes: 120207  starts: b'<!DOCTYP'
+bytes: 120127  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -290,11 +290,11 @@ first lines:
 '<head>'
 '    <meta charset="utf-8">'
 '    <meta name="viewport" content="width=device-width, initial-scale=1">'
-'    <meta name="csrf-token" content="GiDAeL7Nqk2IxlbLdREfSkaaRXl09kO65EqY7teq">'
+'    <meta name="csrf-token" content="2if1aD4R3ce3qR9MDe3H6ZH8REyjuqzGppkQOef2">'
 ''
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 278865  starts: b'<!DOCTYP'
+bytes: 278832  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -311,7 +311,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 278650  starts: b'<!DOCTYP'
+bytes: 278617  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -328,7 +328,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 278650  starts: b'<!DOCTYP'
+bytes: 278617  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']

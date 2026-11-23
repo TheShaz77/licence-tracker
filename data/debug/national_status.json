@@ -53,7 +53,7 @@
   "Totality Wealth Limited (formerly Saxo Capital Markets (Australia)) - AFSL 280372": "ok: 1 firms",
   "Trademax Australia Limited - AFSL 436416": "ok: 1 firms",
   "Zero Markets Australia Pty Ltd - AFSL 313016": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "AW": {
   "CBA institutions under supervision": "read failed: no firms matched",
@@ -68,7 +68,7 @@
  "BM (CFD)": {
   "CMC Markets Bermuda Limited - BMA investment business licence": "ok: 1 firms",
   "IG International Limited - BMA investment business licence": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "BN": {
   "BDCB list of licensees (banks, finance companies, payment system operators, money changers, remitters)": "ok: 54 firms from 15 pages",
@@ -88,7 +88,7 @@
  },
  "BS (CFD)": {
   "SCB registered securities firms (SIA) - dealing / CFD trading": "ok: 76 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "BT": {
   "RMA licensed institutions": "probe saved earlier this week",
@@ -106,11 +106,11 @@
   "Kahnawake casino software provider authorizations": "ok: 2 firms",
   "Kahnawake client provider authorizations (operators and their sites)": "ok: 53 firms",
   "Ontario registered internet gaming operators (probe)": "disabled: discovery probe (current jurisdictions/data only)",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "CH (CFD)": {
   "FINMA securities firms": "ok: 77 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "CL": {
   "CMF fintech register (Registro de Prestadores de Servicios Financieros) (probe)": "disabled: discovery probe (current jurisdictions/data only)",
@@ -151,15 +151,15 @@
  },
  "CW (iGaming)": {
   "Curacao - CGA online gaming licence registry (PDF)": "ok: 305 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "CY (CFD)": {
   "Cyprus Investment Firms (CIFs) - ESMA register, as reported by CySEC": "ok: 308 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "DE (iGaming)": {
   "Germany - GGL whitelist (online sports betting, slots, poker, casino)": "ok: 62 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "DJ": {
   "BCD homepage": "probe saved earlier this week",
@@ -167,7 +167,7 @@
  },
  "DK (iGaming)": {
   "Denmark - licensed gambling operators": "ok: 45 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "DO": {
   "SB financial intermediation entities (banks, savings and loan, credit corporations)": "ok: 46 firms from 5 pages",
@@ -191,7 +191,7 @@
  },
  "ES (iGaming)": {
   "Spain - DGOJ licensed gambling operators": "ok: 77 firms from 30 pages",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "ET": {
   "NBE banks": "ok: 33 firms",
@@ -202,7 +202,7 @@
  },
  "EU (CFD)": {
   "ESMA register - investment firms dealing on own account (all EEA)": "ok: 2737 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "FJ": {
   "RBF licensed institutions (banks, credit institutions, FX dealers, PSPs)": "ok: 22 firms",
@@ -211,11 +211,11 @@
  },
  "FR (iGaming)": {
   "France - ANJ licensed online operators": "ok: 16 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "GB (iGaming)": {
-  "UKGC register - remote and B2B gambling licences": "ok: 2337 firms",
-  "date": "2026-11-22"
+  "UKGC register - remote and B2B gambling licences": "ok: 2336 firms",
+  "date": "2026-11-23"
  },
  "GE": {
   "NBG register of payment service providers": "ok: 41 firms",
@@ -236,7 +236,7 @@
   "Alderney core service provider associates": "ok: 3 firms",
   "Alderney eGambling licensees": "ok: 20 firms",
   "Alderney temporary eGambling licensees": "register is empty (the regulator lists no firms of this type)",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "GI (iGaming)": {
   "Gibraltar licence holders (B2C, B2B, support services)": "disconnected",
@@ -275,7 +275,7 @@
  },
  "IE (iGaming)": {
   "Gambling Regulatory Authority of Ireland register": "ok: 40 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "IM": {
   "Bank Recovery and Resolution": "disabled: discovery probe (current jurisdictions/data only)",
@@ -288,7 +288,7 @@
  },
  "IM (iGaming)": {
   "Isle of Man online gambling (OGRA) licence holders": "ok: 49 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "IN": {
   "List of Agency Banks": "disabled: discovery probe (current jurisdictions/data only)",
@@ -302,7 +302,7 @@
  },
  "IT (iGaming)": {
   "Italy - ADM remote gaming concessionaires": "ok: 46 firms from 6 pages",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "JE": {
   "Digital asset funds": "disabled: discovery probe (current jurisdictions/data only)",
@@ -364,7 +364,7 @@
   "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv": "ok: 72 firms"
  },
  "MC": {
-  "AMAF members (Monaco banks)": "ok: 68 firms",
+  "AMAF members (Monaco banks)": "ok: 69 firms",
   "AMAF members page": "disabled: discovery probe (current jurisdictions/data only)",
   "date": "2026-11-23"
  },
@@ -549,7 +549,7 @@
   "Yubit Market MU Limited (YUBIT) - FSC investment dealer licence GB26206590": "ok: 1 firms",
   "ZED CAPITAL INTERNATIONAL LIMITED (Zed Capital) - FSC investment dealer licence GB24203133": "ok: 1 firms",
   "Zyvest Capital Prime Ltd (Zyvest Capital) - FSC investment dealer licence GB25204874": "ok: 1 firms",
-  "date": "2026-11-22",
+  "date": "2026-11-23",
   "iBull Capital (Mauritius) Ltd (iBull Capital) - FSC investment dealer licence GB24203657": "ok: 1 firms",
   "iLimits Invest Limited (ILIMITS) - FSC investment dealer licence GB26205954": "ok: 1 firms"
  },
@@ -576,7 +576,7 @@
   "Stevenhills Ltd - GRA bookmaker licence (football)": "ok: 1 firms",
   "ValuePlus Ltd - GRA bookmaker licence (football)": "ok: 1 firms",
   "ValuePlus Ltd - GRA remote communication licence": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "MV": {
   "MMA homepage": "probe saved earlier this week",
@@ -639,7 +639,7 @@
   "IG Australia Pty Ltd - NZ derivatives issuer licence (FSP 684191)": "ok: 1 firms",
   "Pacific Financial Derivatives Limited - FSP 28944": "ok: 1 firms",
   "Zero Markets (NZ) Limited - FSP 569807": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "OM": {
   "CBO licensed banks": "ok: 21 firms",
@@ -688,7 +688,7 @@
  },
  "SC (CFD)": {
   "FSA capital markets - securities dealers": "ok: 231 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "SG": {
   "MAS directory cards": "ok: 4 firms",
@@ -751,7 +751,7 @@
  },
  "US (iGaming)": {
   "New Jersey internet gaming vendors incl. affiliates and payment firms (DGE list dated March 2020)": "ok: 927 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "UY": {
   "BCU banks": "ok: 11 firms",
@@ -768,7 +768,7 @@
   "Insta Service Ltd - SVG company registration IBC22945": "ok: 1 firms",
   "Land Prime (SVG) - SVG company registration 23627 IBC 2016": "ok: 1 firms",
   "LiteFinance Global LLC - SVG company registration 931 LLC 2021": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "VG (CFD)": {
   "BCR Co Pty Ltd - BVI FSC licence SIBA/L/19/1122": "ok: 1 firms",
@@ -782,7 +782,7 @@
   "Trive International Limited - BVI FSC licence SIBA/L/14/1066": "ok: 1 firms",
   "Z Trading & Technology Inc - BVI FSC licence SIBA/L/23/1162": "ok: 1 firms",
   "Zooe Global Ltd - BVI FSC licence SIBA/L/21/1139": "ok: 1 firms",
-  "date": "2026-11-22"
+  "date": "2026-11-23"
  },
  "WS": {
   "CBS Samoa supervision": "probe saved earlier this week",
