@@ -501,7 +501,7 @@
 "ch:00992067": {
 "employees": 3,
 "name": "G. &amp; T. Williams (Course) Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:00998813": {
 "employees": 1,
@@ -2167,7 +2167,7 @@
 "ch:03013164": {
 "employees": 0,
 "name": "WESSEX COIN LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:03015714": {
 "employees": 4,
@@ -2722,6 +2722,13 @@
 "employees": 0,
 "name": "DOUGLAS MACMILLAN HOSPICE STAFFORDSHIRE LOTTERIES LIMITED",
 "period": "2026-03-31"
+},
+"ch:03522485": {
+"currency": "GBP",
+"employees": 13,
+"name": "Astral Marine Services Limited",
+"period": "2026-04-30",
+"revenue": 1291067.0
 },
 "ch:03524498": {
 "employees": 1,
@@ -5532,6 +5539,11 @@
 "name": "Moseley Care Limited",
 "period": "2025-03-31"
 },
+"ch:04680804": {
+"employees": 0,
+"name": "THOMAS WARREN LIMITED",
+"period": "2026-04-05"
+},
 "ch:04681998": {
 "employees": 26,
 "name": "Patson's Limited",
@@ -7259,7 +7271,7 @@
 "ch:05182335": {
 "employees": 1,
 "name": "CP EXPRESS LIMITED",
-"period": "2025-07-31"
+"period": "2026-07-31"
 },
 "ch:05182574": {
 "employees": 2,
@@ -11518,7 +11530,7 @@
 "ch:06495240": {
 "employees": 0,
 "name": "FARCO LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:06495982": {
 "employees": 1,
@@ -12547,7 +12559,7 @@
 "ch:06826838": {
 "employees": 1,
 "name": "ACETEM UK LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:06827509": {
 "employees": 1,
@@ -14594,6 +14606,11 @@
 "employees": 0,
 "name": "Zelow Ltd.",
 "period": "2025-03-31"
+},
+"ch:07206520": {
+"employees": 0,
+"name": "ITINERANT-GPS UK LIMITED",
+"period": "2026-03-31"
 },
 "ch:07206859": {
 "employees": 1,
@@ -24075,7 +24092,7 @@
 "ch:08802656": {
 "employees": 1,
 "name": "The Food and Wine Store Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:08803579": {
 "employees": 15,
@@ -24790,7 +24807,7 @@
 "ch:08891955": {
 "employees": 2,
 "name": "MEDELLIN Y SU MODA LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:08892370": {
 "employees": 26,
@@ -28320,6 +28337,11 @@
 "employees": 2,
 "name": "Grace &amp; Glory News Limited",
 "period": "2026-02-28"
+},
+"ch:09448620": {
+"employees": 2,
+"name": "Petrov Limited",
+"period": "2026-03-31"
 },
 "ch:09457103": {
 "employees": 2,
@@ -38655,7 +38677,7 @@
 "ch:10964575": {
 "employees": 1,
 "name": "Atek Services Ltd",
-"period": "2025-09-30"
+"period": "2026-09-30"
 },
 "ch:10964785": {
 "employees": 0,
@@ -40524,6 +40546,11 @@
 "ch:11190127": {
 "employees": 0,
 "name": "R &amp; R EUROPE LTD",
+"period": "2026-02-28"
+},
+"ch:11208813": {
+"employees": 0,
+"name": "Altarex Ltd",
 "period": "2026-02-28"
 },
 "ch:11210117": {
@@ -53156,7 +53183,7 @@
 "ch:12385932": {
 "employees": 1,
 "name": "SKYNET TECHNOLOGY LTD",
-"period": "2025-01-31"
+"period": "2026-01-31"
 },
 "ch:12385935": {
 "employees": 0,
@@ -60661,7 +60688,7 @@
 "ch:13225581": {
 "employees": 0,
 "name": "BONNY LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:13226459": {
 "employees": 6,
@@ -61228,7 +61255,7 @@
 "ch:13291907": {
 "employees": 2,
 "name": "STEPHEN HOLMES LTD",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:13291972": {
 "employees": 8,
@@ -71733,6 +71760,11 @@
 "employees": 2,
 "name": "GVK&amp;PT PVT LTD",
 "period": "2026-02-28"
+},
+"ch:14688346": {
+"employees": 0,
+"name": "CALL HOME LIMITED",
+"period": "2026-02-27"
 },
 "ch:14700415": {
 "employees": 5,
@@ -87270,6 +87302,11 @@
 "name": "JORDLEEN LLP",
 "period": "2025-07-31"
 },
+"ch:OC372068": {
+"employees": 0,
+"name": "Bluetower Associates LLP",
+"period": "2026-02-28"
+},
 "ch:OC376560": {
 "currency": "GBP",
 "employees": 11,
@@ -87301,6 +87338,13 @@
 "employees": 0,
 "name": "CF SUSTAINABLE INVESTMENTS LLP",
 "period": "2026-03-31"
+},
+"ch:OC401960": {
+"currency": "GBP",
+"employees": 12,
+"name": "EDGBASTON INVESTMENT PARTNERS LLP",
+"period": "2026-03-31",
+"revenue": 7427931.0
 },
 "ch:OC416917": {
 "employees": 0,
@@ -88374,7 +88418,7 @@
 "ch:SC373124": {
 "employees": 1,
 "name": "Audio visual Automatics (Aberdeen) Ltd",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:SC373531": {
 "employees": 2,
@@ -90739,7 +90783,7 @@
 "ch:SC688356": {
 "employees": 6,
 "name": "EWAN FRASER LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:SC688379": {
 "employees": 3,
@@ -92880,6 +92924,11 @@
 "name": "GAMBLOR GAMING TECHNOLOGIES LTD",
 "period": "2025-10-31"
 },
+"ch:SC796437": {
+"employees": 1,
+"name": "Stephen Moss Ltd",
+"period": "2026-01-31"
+},
 "ch:SC819130": {
 "employees": 1,
 "name": "Realmrise Ltd",
@@ -92977,6 +93026,7 @@
 "Accounts_Bulk_Data-2026-11-19.zip",
 "Accounts_Bulk_Data-2026-11-20.zip",
 "Accounts_Bulk_Data-2026-11-21.zip",
+"Accounts_Bulk_Data-2026-11-24.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
@@ -102774,6 +102824,13 @@
 "sites": [
 "http://www.dzb-bank.de"
 ]
+},
+"q:Q115813673": {
+"checked": "2026-11-24",
+"linkedin": "https://www.linkedin.com/company/balyasny-asset-management-l.p.",
+"parent": "",
+"parent_linkedin": "",
+"sites": []
 },
 "q:Q1160928": {
 "checked": "2026-11-12",
@@ -261667,6 +261724,7 @@
 "fincen_os:90a37f2ec35a": "Q803873",
 "fincen_os:92cea9e2c2b9": "Q4746242",
 "fincen_os:966b2d7d702c": "Q121029091",
+"fincen_os:974dca7ad57b": "Q115813673",
 "fincen_os:9806dfe83017": "Q3658429",
 "fincen_os:9a585b58c33d": "Q1411292",
 "fincen_os:9ad8889e9b5d": "Q139922976",
