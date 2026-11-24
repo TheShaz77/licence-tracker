@@ -10,8 +10,4 @@ applicant: https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list
 status / group values (counted per page): {'registered / Registered': 1870, '- / -': 413}
 detail page patterns: {'registered': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/psp-registry/psp-registry-details/?account_id={id}', 'applicant': 'https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id={id}'}
 firms by status: {'registered': 1870, 'applicant': 413}
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=4021bc14-52d9-f111-84ea-000d3a0c9521: {"v": 2, "email": "", "website": "https://www.b7finpay.com", "seen": "2026-11-24", "phone": "", "city": "Vancouver", "address": "", "legal": "B7 FINTECH HUB LTD.", "trade": "B7 Finpay", "status": ""}
-  json 200      783 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/4021bc14-52d9-f111-84ea-000d3a0c9521
-detail sample https://www.bankofcanada.ca/regulatory-oversight/retail-payments/list-of-applicants/psp-applicant-details/?account_id=152a394f-4ce4-f111-84ea-3833c5fa6ddd: {"v": 2, "email": "", "website": "https://www.betterpays.ca", "seen": "2026-11-24", "phone": "", "city": "Coquitlam", "address": "", "legal": "Betterpay Talents Solution Inc.", "trade": "", "status": ""}
-  json 200      784 bytes  https://www.bankofcanada.ca/rps-api/cif2/accounts/152a394f-4ce4-f111-84ea-3833c5fa6ddd
-detail pages: 14 fetched this run, 0 still to do, 2290 done in total
+detail pages: 0 fetched this run, 0 still to do, 2290 done in total

@@ -1,5 +1,5 @@
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=0
-bytes: 207540  starts: b'<!DOCTYP'
+bytes: 207538  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -16,7 +16,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=1
-bytes: 197680  starts: b'<!DOCTYP'
+bytes: 197678  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -33,7 +33,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=2
-bytes: 195638  starts: b'<!DOCTYP'
+bytes: 195636  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -50,7 +50,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/financial-stability/supervision/licensees/list-of-licensees?field_licensees_type_value=3
-bytes: 196709  starts: b'<!DOCTYP'
+bytes: 196707  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website']
@@ -67,7 +67,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://www.bom.mu/payment-systems/licensing/list-licensees
-bytes: 193575  starts: b'<!DOCTYP'
+bytes: 193573  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of Licensee', 'type': 'Type of services', 'id': None, 'lei': None, 'city': None, 'date': 'Date of Licence/Authorisation (DD/MM/YYYY)', 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name of Licensee', 'Date of Licence/Authorisation (DD/MM/YYYY)', 'Type of services']
@@ -84,18 +84,18 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://b2binpay.com/en/news/b2binpay-secures-fsc-mauritius-vasp-licenses
-bytes: 252953  starts: b'<!DOCTYP'
+bytes: 255566  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="en" dir="ltr" class="b2-page-scale"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script>'
-"      /* Reload restores scroll after the header's first paint. Remember the offset so the"
-'         scrolled bar can be marked before that paint, instead of flashing transparent. */'
-'      (() => {'
-"        const key = 'b2-header-scroll'"
-'        const path = location.pathname + location.search'
-'        const readY = () => window.scrollY || document.documentElement.scrollTop || 0'
-"        const type = performance.getEntriesByType('navigation')[0]?.type ?? 'navigate'"
+'<!DOCTYPE html><html lang="en" dir="ltr" class="b2-page-scale"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script>(function () {'
+'  var landingName = "first_landing_page";'
+'  var dateName = "first_time_visit_date";'
+'  var maxAge = 31536000;'
+''
+'  function readCookie(name) {'
+"    var parts = document.cookie ? document.cookie.split(';') : [];"
+'    for (var i = 0; i < parts.length; i++) {'

@@ -1,5 +1,5 @@
 url: https://bnm.md/en/print/node/54787
-bytes: 21860  starts: b'\n<!DOCTY'
+bytes: 21728  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'Denumirea societății de plată/ furnizorului de servicii poștale', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'notes', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['N/O', 'Denumirea societății de plată/ furnizorului de servicii poștale', 'Codul fiscal (IDNO), sediul societății de plată/ furnizorului de servicii poștale', 'Serviciile de plată, pentru prestarea cărora s-a eliberat licența', 'Numărul și data hotărârii privind eliberarea licenței', 'Seria, numărul și data de eliberare a licenței', 'Administratorii societății de plată/ furnizorului de servicii poștale', 'Informații privind reperfectarea, eliberarea duplicatelor licenței', 'Informații privind retragerea licenței', 'Informații privind sucursalele/ agenții de plată2 ai societății de plată/ furnizorului de servicii poștale care are dreptul de a presta servicii de plată', 'notes']
