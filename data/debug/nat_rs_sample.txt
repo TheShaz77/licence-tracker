@@ -1,5 +1,5 @@
 url: https://webappcenter.nbs.rs/WebApp/FinInstBank/LegalEntityFinInstitution/Index
-bytes: 29021  starts: b'<!doctyp'
+bytes: 28610  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'Назив', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Назив', 'Адреса', 'Телефон', 'Телефакс', '']
@@ -16,7 +16,7 @@ first lines:
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
 
 url: https://webappcenter.nbs.rs/WebApp/FinInstPayment/LegalEntityFinInstitution/Index
-bytes: 13057  starts: b'<!doctyp'
+bytes: 12646  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'Назив', 'type': None, 'id': 'Регистарски број', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Назив', 'Регистарски број', '']
@@ -33,7 +33,7 @@ first lines:
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
 
 url: https://webappcenter.nbs.rs/WebApp/FinInstElectronicMoney/LegalEntityFinInstitution/Index
-bytes: 12739  starts: b'<!doctyp'
+bytes: 12328  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'Назив', 'type': None, 'id': 'Регистарски број', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Назив', 'Регистарски број', '']
@@ -50,7 +50,7 @@ first lines:
 '<link rel="icon" type="image/svg+xml" href="_content/NBS.Common.WebApp/css/favicon.svg">'
 
 url: https://nbs.rs/en/ciljevi-i-funkcije/nadzor-nad-finansijskim-institucijama/digital-imo/reg_di/
-bytes: 65615  starts: b'<!DOCTYP'
+bytes: 65610  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of the virtual currency service provider', 'type': None, 'id': 'Registration No', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name of the virtual currency service provider', 'No', 'Registration No']

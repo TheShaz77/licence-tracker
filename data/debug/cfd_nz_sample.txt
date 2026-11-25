@@ -9,7 +9,7 @@ first lines:
 ''
 
 url: https://www.axi.com/au
-bytes: 823050  starts: b'<!DOCTYP'
+bytes: 823674  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -36,7 +36,7 @@ first lines:
 "\t\t<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
 
 url: https://www.ecmarkets.co.nz/
-bytes: 360232  starts: b'<!DOCTYP'
+bytes: 360554  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -50,7 +50,7 @@ first lines:
 '  <meta name="viewport" content="width=device-width, initial-scale=1.0">'
 '  <link rel="profile" href="http://gmpg.org/xfn/11">'
 '  <title>EC Markets | The Ultimate Trading Experience</title>'
-'<link data-rocket-prefetch href="https://static.ads-twitter.com" rel="dns-prefetch">'
+'<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">'
 
 url: https://www.ig.com/au
 bytes: 776294  starts: b'<!DOCTYP'
@@ -87,7 +87,7 @@ first lines:
 '<!-- Google Tag Manager -->'
 
 url: https://www.zeromarkets.com/
-bytes: 221070  starts: b'<!DOCTYP'
+bytes: 221069  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -104,7 +104,7 @@ first lines:
 '\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
 
 url: https://blackbull.com/en/our-company/compliance/
-bytes: 487413  starts: b'<!doctyp'
+bytes: 487692  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

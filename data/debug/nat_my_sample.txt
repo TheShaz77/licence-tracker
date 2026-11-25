@@ -1,5 +1,5 @@
 url: https://www.bnm.gov.my/non-bank-e-money-issuers
-bytes: 232284  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 230215  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
@@ -33,7 +33,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory
-bytes: 302310  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 300241  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category of License, Approval, or Registration', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']
@@ -87,7 +87,7 @@ first lines:
 ''
 
 url: https://www.bnm.gov.my/regulations/fsp-directory?p_p_id=com_liferay_asset_publisher_web_portlet_AssetPublisherPortlet_INSTANCE_approved_payment_system_operators
-bytes: 215336  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 217405  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'Company Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Company Name', 'Category of License, Approval, or Registration']

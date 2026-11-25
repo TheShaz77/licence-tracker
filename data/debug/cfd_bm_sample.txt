@@ -16,7 +16,7 @@ first lines:
 '        }"><table role="table" class="sticky-first-column"><colgroup><col style="width:var(--cmc-table-first-column-width)"/></colgroup><thead data-header-row="true"><tr><th data-column-header="NAME" data-column-alignment="left" data-table-header="true" class="sortable" colSpan="1"><div class="th-co'
 
 url: https://www.ig.com/en
-bytes: 716893  starts: b'<!DOCTYP'
+bytes: 716340  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']

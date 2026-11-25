@@ -7,13 +7,3 @@ data rows: 41  kept: 41
 type values: [('', 41)]
 first lines:
 '(binary)'
-
-url: https://nbg.gov.ge/fm/საგადახდო/vasps/რეესტრი/vasps-eng-20-11-2026.xlsx
-bytes: 47714  starts: b'PK\x03\x04\x14\x00\x06\x00'
-error: None
-columns used: {'name': 'Name of the Virtual Asset Service Provider', 'type': None, 'id': 'Registration Number at the National Bank of Georgia', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['№', 'Registration Number at the National Bank of Georgia', 'Name of the Virtual Asset Service Provider', 'Commercial Name', 'Legal Form', 'Identification Number', 'Registration Decree', '', 'Director', 'Virtual Asset Services that Provider is allowed', '', '', '']
-data rows: 46  kept: 45
-type values: [('', 45)]
-first lines:
-'(binary)'

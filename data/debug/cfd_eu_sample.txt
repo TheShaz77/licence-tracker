@@ -9,7 +9,7 @@ first lines:
 '{'
 '  "responseHeader":{'
 '    "status":0,'
-'    "QTime":22,'
+'    "QTime":60,'
 '    "params":{'
 '      "q":"{!parent which=\\"type_s:parent\\"}(+ac_serviceName:\\"Dealing on own account\\")",'
 '      "fq":"ae_entityTypeCode:MIF",'

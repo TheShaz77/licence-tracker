@@ -4408,6 +4408,35 @@
 "status_detail": "FCA Authorised; may deal in CFDs (professional clients only)",
 "website": "www.capelasset.com"
 },
+"1058594": {
+"_enriched": true,
+"active": true,
+"city": "London",
+"email": "",
+"extra": {
+"business_type": "Institutional / prime broker or liquidity provider (guess)",
+"clients": "professional clients only",
+"companies_house": "OC454642",
+"phone": "+442072684852",
+"postcode": "W1J 8AJ",
+"vertical": "CFD"
+},
+"jurisdiction": "GB",
+"key": "fca_cfd:1058594",
+"lei": "",
+"licence_type": "CFD / FX provider (FCA permission to deal in CFDs)",
+"name": "TGW Intrinsic LLP",
+"passports": "",
+"reference": "1058594",
+"register_url": "https://register.fca.org.uk/s/search?q=1058594&type=Companies",
+"regulator": "FCA",
+"services": "",
+"source": "fca_cfd",
+"status": "Active",
+"status_date": "18/11/2026",
+"status_detail": "FCA Authorised; may deal in CFDs, rolling spot forex (professional clients only)",
+"website": "www.tgwintrinsic.com"
+},
 "106054": {
 "_enriched": true,
 "active": true,
@@ -88843,7 +88872,7 @@
 },
 "last_cfd_recheck": "2026-11-22",
 "last_full_recheck": "",
-"last_wide_frontier": "2026-11-18",
+"last_wide_frontier": "2026-11-25",
 "max_frn_seen": 1067362,
 "seed": {
 "checked": 1151401,
@@ -91101,7 +91130,7 @@
 "website": "www.getpliant.com"
 },
 "1042638": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91128,7 +91157,7 @@
 "website": ""
 },
 "1042732": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91155,7 +91184,7 @@
 "website": "www.photonpay.com/uk"
 },
 "1043609": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91182,7 +91211,7 @@
 "website": "www.odola.com"
 },
 "1044552": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91209,7 +91238,7 @@
 "website": ""
 },
 "1045688": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "",
@@ -91236,7 +91265,7 @@
 "website": ""
 },
 "1047222": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "LONDON",
@@ -91263,7 +91292,7 @@
 "website": "www.remitly.com"
 },
 "1047531": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91290,7 +91319,7 @@
 "website": "www.nsave.com"
 },
 "1050385": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "",
@@ -91317,7 +91346,7 @@
 "website": "www.computershare.com"
 },
 "1051568": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "London",
@@ -91343,8 +91372,62 @@
 "status_detail": "Authorised Electronic Money Institution (firm status: Registered)",
 "website": "www.aspireapp.com"
 },
+"1052174": {
+"_checked": "2026-11-25",
+"_enriched": 2,
+"active": true,
+"city": "",
+"email": "",
+"extra": {
+"companies_house": "05613061",
+"phone": "+442076556000",
+"postcode": "EC2M 3TQ"
+},
+"jurisdiction": "GB",
+"key": "fca:1052174",
+"lei": "",
+"licence_type": "Authorised Payment Institution",
+"name": "MAREX FINANCIAL",
+"passports": "",
+"reference": "1052174",
+"register_url": "https://register.fca.org.uk/s/search?q=1052174&type=Companies",
+"regulator": "FCA",
+"services": "",
+"source": "fca",
+"status": "Active",
+"status_date": "20/11/2026",
+"status_detail": "Authorised Payment Institution (firm status: See full details)",
+"website": "www.marex.com"
+},
+"1052569": {
+"_checked": "2026-11-25",
+"_enriched": 2,
+"active": true,
+"city": "Marlow",
+"email": "",
+"extra": {
+"companies_house": "16553528",
+"phone": "+4402030263604",
+"postcode": "SL7 1EY"
+},
+"jurisdiction": "GB",
+"key": "fca:1052569",
+"lei": "",
+"licence_type": "Authorised Payment Institution",
+"name": "ZOVEL LTD",
+"passports": "",
+"reference": "1052569",
+"register_url": "https://register.fca.org.uk/s/search?q=1052569&type=Companies",
+"regulator": "FCA",
+"services": "",
+"source": "fca",
+"status": "Active",
+"status_date": "24/11/2026",
+"status_detail": "Authorised Payment Institution (firm status: See full details)",
+"website": "www.zovel.com"
+},
 "1055683": {
-"_checked": "2026-11-24",
+"_checked": "2026-11-25",
 "_enriched": 2,
 "active": true,
 "city": "",

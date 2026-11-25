@@ -1,16 +1,16 @@
 url: https://www.eightcap.com/en/traders/about-us/
-bytes: 251686  starts: b'<!DOCTYP'
+bytes: 252153  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html data-dpl-id="dpl_7JhKEyrgj8wFJDzHb5fXd8Y9pL8c" lang="en" class="__variable_02bff6"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/692df4da22e71021-s.p.woff2?dpl=dpl_7JhKEyrgj8wFJDzHb'
+'<!DOCTYPE html><html data-dpl-id="dpl_CfTSgqvF7beyVHN4L2nK2qecRurK" lang="en" class="__variable_02bff6"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/692df4da22e71021-s.p.woff2?dpl=dpl_CfTSgqvF7beyVHN4L'
 '</p></div></div><div class="flex flex-col h-full fg-border-subtle border-t pt-2xl gap-3xl"><div class="flex flex-col gap-3xl xl:pr-5xl items-baseline flex-1"><p class="typography-label-md text-lg fg-text-default-black">FCA</p><p class="typography-body-md flex-1 overflow-hidden fg-text-default-black"'
 
 url: https://www.axi.com/au
-bytes: 823675  starts: b'<!DOCTYP'
+bytes: 823674  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -54,7 +54,7 @@ first lines:
 '  (function() {'
 
 url: https://multibank.exchange/en/about/regulations
-bytes: 173791  starts: b'<!DOCTYP'
+bytes: 174236  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -63,10 +63,10 @@ type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html lang="en" dir="ltr" class="dwYJqa_variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/d8aeca813a9ab546-s.p.18rizl4rsrl42.woff2" as="font" crossorigin="" type="font/woff2"/><link'
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
-'</body></html>'
+'<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement(\'script\');d.innerHTML="window.__CF$cv$params={r:\'a5fd60fbed2a3700\',t:\'MTc5NTU3NTM3Mg==\'};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new '
 
 url: https://www.mitrade.com/en
-bytes: 148825  starts: b'<!DOCTYP'
+bytes: 148824  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -83,7 +83,7 @@ first lines:
 '<path d="M5 18H19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
 
 url: https://pepperstone.com/en-au
-bytes: 448086  starts: b'<!DOCTYP'
+bytes: 444717  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -111,7 +111,7 @@ first lines:
 '</body></html>'
 
 url: https://www.zeromarkets.com/
-bytes: 221069  starts: b'<!DOCTYP'
+bytes: 221060  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -152,7 +152,7 @@ headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!-- Last Published: Thu Nov 19 2026 15:51:22 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.totality.com.au" data-wf-page="68650fd67eb6f416198ff90f" data-wf-site="6800b3aaf21be0776e92432e" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website'
+'<!DOCTYPE html><!-- Last Published: Tue Nov 24 2026 10:04:31 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="www.totality.com.au" data-wf-page="68650fd67eb6f416198ff90f" data-wf-site="6800b3aaf21be0776e92432e" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website'
 '{'
 '  "@context": "https://schema.org",'
 '  "@graph": ['
@@ -162,7 +162,7 @@ first lines:
 '      "name": "Totality",'
 
 url: https://www.oanda.com/au-en/
-bytes: 250145  starts: b'\n\n\n\n\n\n\n\n'
+bytes: 250318  starts: b'\n\n\n\n\n\n\n\n'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -179,7 +179,7 @@ first lines:
 ''
 
 url: https://www.interactivebrokers.com.au/en/home.php
-bytes: 215184  starts: b'\n<!DOCTY'
+bytes: 216699  starts: b'\n<!DOCTY'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -196,7 +196,7 @@ first lines:
 '<meta name="description" content="Leading online trading solutions for traders, investors and advisors, with direct global access to stocks, options, futures, currencies and bonds. Transparent, low commissions and financing rates and support for best execution.">'
 
 url: https://advancedmarkets.com/company/
-bytes: 142601  starts: b'<!doctyp'
+bytes: 142536  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -230,7 +230,7 @@ first lines:
 '\t\t\t<script>'
 
 url: https://capital.com/en-au
-bytes: 540762  starts: b'<!DOCTYP'
+bytes: 553395  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -238,7 +238,7 @@ data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
 '<!DOCTYPE html><html class="DHVbqa_html _3SJCXq_variable" dir="ltr" lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover"/><link rel="preload" as="image" href="https://static.capital.com/capital-v1-4-1/apps/cap'
-'    <script nonce="6Kc1PqfDd0pW52EfH3jiLQ==">'
+'    <script nonce="EfznpTRjUpA7rk1KvJn9VQ==">'
 '      (()=>{let a,b=(a=globalThis,a.__headerHeightInjectionState??={mutationObserver:null,observedHeader:null,previousHeaderHeight:0,resizeObserver:null},a.__headerHeightInjectionState),c=()=>{let a=document.getElementById("header");if(!a)return;let{height:c}=a.getBoundingClientRect();if(c>0){b.prev'
 '    </script>'
 '  </div><div aria-hidden="true" class="ita7Oa_overlay"><div class="_3TN7Vq_wrap"><p class="ita7Oa_copy AL3Niq_h1 AL3Niq_noMargins"><span>N</span><span>o</span><span>t</span><span> </span><span>e</span><span>v</span><span>e</span><span>r</span><span>y</span><span> </span><span>d</span><span>e</span><'
@@ -247,7 +247,7 @@ first lines:
 '</div></li><li class="sGznxW_costHighlight"><h3 class="_3rItvW_text _3rItvW_sub _3rItvW_primary">No deposit or withdrawal fees</h3><div class="sGznxW_costHighlightDescription"><p>Trusted payments. Bank transfers, cards, digital wallets.</p>'
 
 url: https://www.cmcmarkets.com/en-au/
-bytes: 293273  starts: b'<!DOCTYP'
+bytes: 293274  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
