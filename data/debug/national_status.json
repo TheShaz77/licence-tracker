@@ -75,7 +75,7 @@
   "date": "2026-11-25"
  },
  "BR (iGaming)": {
-  "Brazil - companies authorised for fixed-odds betting and online games (SPA)": "connection failed",
+  "Brazil - companies authorised for fixed-odds betting and online games (SPA)": "ok: 76 firms",
   "date": "2026-11-25"
  },
  "BS": {
@@ -359,9 +359,7 @@
   "date": "2026-11-18"
  },
  "LT": {
-  "date": "2026-11-25",
-  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=6&export=csv": "ok: 41 firms",
-  "https://www.lb.lt/en/sfi-financial-market-participants?market=1&type=7&export=csv": "ok: 72 firms"
+  "date": "2026-11-25"
  },
  "MC": {
   "AMAF members (Monaco banks)": "ok: 69 firms",

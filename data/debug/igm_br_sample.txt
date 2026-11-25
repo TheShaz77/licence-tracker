@@ -1,0 +1,9 @@
+url: https://www.gov.br/fazenda/pt-br/composicao/orgaos/secretaria-de-premios-e-apostas/lista-de-empresas/ListadeAutorizaes12.08.25.5.pdf
+bytes: 50981  starts: b'%PDF-1.7'
+error: None
+columns used: {'name': 'DENOMINAÇÃO SOCIAL DA EMPRESA', 'type': None, 'id': 'CNPJ', 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'DOMÍNIOS', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['NÚMERO E ANO DO REQUERIMENTO', 'PORTARIA DE AUTORIZAÇÃO', 'DENOMINAÇÃO SOCIAL DA EMPRESA', 'CNPJ', 'MARCAS', 'DOMÍNIOS']
+data rows: 181  kept: 76
+type values: [('', 78)]
+first lines:
+'(binary)'
