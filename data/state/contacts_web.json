@@ -3344,7 +3344,7 @@
 "ch:03851760": {
 "employees": 0,
 "name": "PADDY CAMPBELL RACING LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:03857340": {
 "employees": 4,
@@ -4908,7 +4908,7 @@
 "ch:04500359": {
 "employees": 5,
 "name": "Wellington Stores Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:04501332": {
 "employees": 0,
@@ -4979,6 +4979,11 @@
 "employees": 0,
 "name": "CLASSIC NEWS LIMITED",
 "period": "2025-12-31"
+},
+"ch:04518589": {
+"employees": 3,
+"name": "M &amp; J Gill Limited",
+"period": "2026-04-30"
 },
 "ch:04518897": {
 "employees": 51,
@@ -10410,9 +10415,9 @@
 "period": "2026-03-31"
 },
 "ch:06133956": {
-"employees": 3,
+"employees": 4,
 "name": "Felpham Corner Shop Limited",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:06137698": {
 "employees": 0,
@@ -12748,6 +12753,11 @@
 "ch:06866898": {
 "employees": 13,
 "name": "Currencies 4 You Limited",
+"period": "2026-03-31"
+},
+"ch:06866916": {
+"employees": 1,
+"name": "MARGA LIMITED",
 "period": "2026-03-31"
 },
 "ch:06867022": {
@@ -16574,6 +16584,11 @@
 "name": "All In One Express Ltd",
 "period": "2025-02-28"
 },
+"ch:07538668": {
+"employees": 1,
+"name": "AFRICAN ALPHA INVESTMENT PARTNERS LIMITED",
+"period": "2026-02-28"
+},
 "ch:07538761": {
 "employees": 2,
 "name": "HILLSIDE TRAVEL LTD",
@@ -17945,6 +17960,11 @@
 "employees": 0,
 "name": "BRISTOL TRADING (UK) LTD",
 "period": "2025-09-30"
+},
+"ch:07780767": {
+"employees": 2,
+"name": "ELMI LIMITED",
+"period": "2025-11-30"
 },
 "ch:07781652": {
 "employees": 6,
@@ -22601,7 +22621,7 @@
 "ch:08541636": {
 "employees": 6,
 "name": "DES RAJ LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:08543366": {
 "employees": 3,
@@ -33921,6 +33941,11 @@
 "name": "BESTONE RHYL (NW) LIMITED",
 "period": "2025-08-31"
 },
+"ch:10348585": {
+"employees": 2,
+"name": "UNITED REMIT LIMITED",
+"period": "2026-08-31"
+},
 "ch:10348888": {
 "employees": 6,
 "name": "NANGPAL TRADERS LTD",
@@ -35440,9 +35465,9 @@
 "period": "2026-02-28"
 },
 "ch:10639436": {
-"employees": 7,
+"employees": 12,
 "name": "ASK GLOBAL SOLUTIONS LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:10639842": {
 "employees": 5,
@@ -36503,7 +36528,7 @@
 "ch:10731050": {
 "employees": 0,
 "name": "Kalooki Racing Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:10731516": {
 "employees": 2,
@@ -53696,9 +53721,9 @@
 "period": "2025-03-31"
 },
 "ch:12419963": {
-"employees": 2,
+"employees": 3,
 "name": "Sahar Services Uk Ltd",
-"period": "2025-01-31"
+"period": "2026-01-31"
 },
 "ch:12420653": {
 "employees": 2,
@@ -55061,6 +55086,11 @@
 "name": "Mount Seenai Limited",
 "period": "2026-04-30"
 },
+"ch:12562039": {
+"employees": 2,
+"name": "PAYDOG LTD",
+"period": "2026-04-30"
+},
 "ch:12562318": {
 "employees": 3,
 "name": "STOP AND SHOP CONVENIENCE LTD",
@@ -55826,6 +55856,13 @@
 "employees": 5,
 "name": "Lulu Express Ltd",
 "period": "2025-06-30"
+},
+"ch:12640831": {
+"currency": "GBP",
+"employees": 10,
+"name": "S8UK Limited",
+"period": "2026-06-30",
+"revenue": 1610000.0
 },
 "ch:12641127": {
 "employees": 0,
@@ -57912,7 +57949,7 @@
 "ch:12938274": {
 "employees": 9,
 "name": "Kalooki Sportsbook Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:12938920": {
 "employees": 4,
@@ -65990,6 +66027,11 @@
 "ch:13967638": {
 "employees": 5,
 "name": "RMS NEWARK LTD",
+"period": "2026-03-31"
+},
+"ch:13970912": {
+"employees": 0,
+"name": "ASKIR ALI LTD",
 "period": "2026-03-31"
 },
 "ch:13986187": {
@@ -79743,6 +79785,11 @@
 "name": "AL EHSAN BIRMINGHAM LIMITED",
 "period": "2025-02-28"
 },
+"ch:15527735": {
+"employees": 3,
+"name": "J&amp;S News Ltd",
+"period": "2026-02-28"
+},
 "ch:15527857": {
 "employees": 0,
 "name": "Express Flats Ltd",
@@ -86428,6 +86475,11 @@
 "name": "SPIRITS EXPRESS LTD",
 "period": "2026-02-28"
 },
+"ch:16283092": {
+"employees": 1,
+"name": "GSK Liquor Stop Ltd",
+"period": "2026-02-28"
+},
 "ch:16289935": {
 "employees": 2,
 "name": "K2K Trading Ltd",
@@ -86608,6 +86660,11 @@
 "ch:16361854": {
 "employees": 2,
 "name": "SHANTHY LTD",
+"period": "2026-04-30"
+},
+"ch:16362784": {
+"employees": 6,
+"name": "SCORP LTD",
 "period": "2026-04-30"
 },
 "ch:16366771": {
@@ -87199,6 +87256,13 @@
 "period": "2026-03-31",
 "revenue": 2395837.0
 },
+"ch:OC326579": {
+"currency": "GBP",
+"employees": 17,
+"name": "CERNO CAPITAL PARTNERS LLP",
+"period": "2026-03-31",
+"revenue": 4713536.0
+},
 "ch:OC326895": {
 "currency": "GBP",
 "employees": 32,
@@ -87765,6 +87829,11 @@
 "ch:SC200834": {
 "employees": 0,
 "name": "Henderson Loggie Financial Planning Limited",
+"period": "2026-03-31"
+},
+"ch:SC204656": {
+"employees": 4,
+"name": "JAMES MORRISON LTD",
 "period": "2026-03-31"
 },
 "ch:SC205313": {
@@ -93027,6 +93096,7 @@
 "Accounts_Bulk_Data-2026-11-20.zip",
 "Accounts_Bulk_Data-2026-11-21.zip",
 "Accounts_Bulk_Data-2026-11-24.zip",
+"Accounts_Bulk_Data-2026-11-25.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
@@ -107578,6 +107648,15 @@
 "parent_linkedin": "",
 "sites": [
 "https://www.chelvertonam.com"
+]
+},
+"q:Q142281184": {
+"checked": "2026-11-25",
+"linkedin": "https://www.linkedin.com/company/paacapital",
+"parent": "",
+"parent_linkedin": "",
+"sites": [
+"https://paacapital.com"
 ]
 },
 "q:Q1423788": {
@@ -261760,6 +261839,7 @@
 "fincen_os:d1f2da89ee25": "Q1917753",
 "fincen_os:d356df40d57b": "Q66730463",
 "fincen_os:d5a4bc044db3": "Q140435392",
+"fincen_os:d791e6c0b720": "Q142281184",
 "fincen_os:dbc3cc275ef1": "Q135683185",
 "fincen_os:dc20636d2b22": "Q917131",
 "fincen_os:dc6af71f5968": "Q123151727",
