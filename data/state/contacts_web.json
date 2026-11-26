@@ -1975,9 +1975,9 @@
 "period": "2025-12-30"
 },
 "ch:02852669": {
-"employees": 29,
+"employees": 33,
 "name": "WILLOWBROOK HOSPICE TRADING COMPANY LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:02863879": {
 "employees": 1,
@@ -2123,6 +2123,11 @@
 "employees": 0,
 "name": "WAYBEST LTD",
 "period": "2025-09-30"
+},
+"ch:02993073": {
+"employees": 13,
+"name": "CONNEXION LIMITED",
+"period": "2025-11-30"
 },
 "ch:02993612": {
 "employees": 55,
@@ -2417,8 +2422,8 @@
 },
 "ch:03230116": {
 "employees": 1,
-"name": "Global Express Limited",
-"period": "2025-03-31"
+"name": "GLOBAL EXPRESS LIMITED",
+"period": "2026-03-31"
 },
 "ch:03233475": {
 "employees": 0,
@@ -3053,7 +3058,7 @@
 "ch:03689508": {
 "employees": 0,
 "name": "Worcestershire Hospices Lottery Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:03691074": {
 "employees": 17,
@@ -6210,9 +6215,9 @@
 "period": "2025-08-31"
 },
 "ch:04864637": {
-"employees": 9,
+"employees": 8,
 "name": "Forward Management Limited",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:04865582": {
 "employees": 5,
@@ -9023,6 +9028,11 @@
 "name": "M &amp; K (HEBBURN) LTD",
 "period": "2026-01-31"
 },
+"ch:05688109": {
+"employees": 7,
+"name": "Big Bite Limited",
+"period": "2026-02-28"
+},
 "ch:05689465": {
 "employees": 1,
 "name": "PENIEL SERVICES LIMITED",
@@ -9161,7 +9171,7 @@
 "ch:05734790": {
 "employees": 1,
 "name": "GRAHAM LISTER LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:05735078": {
 "employees": 9,
@@ -9538,9 +9548,9 @@
 "period": "2025-03-31"
 },
 "ch:05852185": {
-"employees": 5,
+"employees": 4,
 "name": "OZZY FOOD &amp; WINE LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:05853453": {
 "employees": 13,
@@ -12526,6 +12536,11 @@
 "name": "BRIDGE EXPRESS LTD",
 "period": "2026-02-28"
 },
+"ch:06812190": {
+"employees": 3,
+"name": "PURE GROUP OF COMPANIES LTD",
+"period": "2026-02-28"
+},
 "ch:06819047": {
 "employees": 0,
 "name": "HANTEC MARKETS LIMITED",
@@ -14297,8 +14312,8 @@
 },
 "ch:07152980": {
 "employees": 0,
-"name": "ZION CONCEPT LIMITED",
-"period": "2025-02-28"
+"name": "Zion Concept Limited",
+"period": "2026-02-28"
 },
 "ch:07153300": {
 "employees": 2,
@@ -20157,6 +20172,11 @@
 "name": "Homestead Stores Ltd",
 "period": "2026-03-31"
 },
+"ch:08129618": {
+"employees": 2,
+"name": "FREE FUSION LTD",
+"period": "2026-07-31"
+},
 "ch:08130047": {
 "employees": 2,
 "name": "PIMLICO BITS AND PC LTD",
@@ -24169,6 +24189,11 @@
 "ch:08810478": {
 "employees": 1,
 "name": "ASHAP LIMITED",
+"period": "2025-12-31"
+},
+"ch:08811793": {
+"employees": 0,
+"name": "PAWN IT LIMITED",
 "period": "2025-12-31"
 },
 "ch:08812249": {
@@ -28353,10 +28378,20 @@
 "name": "EXPENSEPLUS LTD",
 "period": "2026-03-31"
 },
+"ch:09423824": {
+"employees": 2,
+"name": "Fides Limited",
+"period": "2026-02-28"
+},
 "ch:09426223": {
 "employees": 2,
 "name": "Grace &amp; Glory News Limited",
 "period": "2026-02-28"
+},
+"ch:09443179": {
+"employees": 0,
+"name": "EVERGREEN ESTATES LIMITED",
+"period": "2025-05-22"
 },
 "ch:09448620": {
 "employees": 2,
@@ -35492,7 +35527,7 @@
 "ch:10640853": {
 "employees": 0,
 "name": "AYAAT TELETRONICS LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:10640972": {
 "employees": 1,
@@ -57991,6 +58026,11 @@
 "name": "Barking Fresh Fruit &amp; Grocery Store Ltd",
 "period": "2025-10-31"
 },
+"ch:12942805": {
+"employees": 0,
+"name": "SANN LTD",
+"period": "2025-10-31"
+},
 "ch:12943776": {
 "employees": 1,
 "name": "Sporting Leagues Limited",
@@ -60409,9 +60449,9 @@
 "period": "2025-02-28"
 },
 "ch:13192112": {
-"employees": 2,
-"name": "LA VERA LTD",
-"period": "2025-02-28"
+"employees": 1,
+"name": "La Vera Ltd",
+"period": "2026-02-28"
 },
 "ch:13192176": {
 "employees": 5,
@@ -71477,7 +71517,7 @@
 "ch:14654696": {
 "employees": 2,
 "name": "JS Food &amp; Wine Ltd",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:14654951": {
 "employees": 3,
@@ -71575,9 +71615,9 @@
 "period": "2025-02-28"
 },
 "ch:14662080": {
-"employees": 1,
+"employees": 0,
 "name": "NOVELTY BUSINESS SOLUTION",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:14662315": {
 "employees": 3,
@@ -71956,7 +71996,7 @@
 "ch:14720570": {
 "employees": 0,
 "name": "Electroworld Ltd",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:14720838": {
 "employees": 2,
@@ -76559,6 +76599,11 @@
 "employees": 3,
 "name": "BANI FOOD &amp; WINE LTD",
 "period": "2025-09-30"
+},
+"ch:15169746": {
+"employees": 2,
+"name": "Pabel Sarker Ltd",
+"period": "2026-03-31"
 },
 "ch:15169958": {
 "employees": 1,
@@ -81179,6 +81224,11 @@
 "name": "THISHA PRIVATE LIMITED",
 "period": "2025-04-30"
 },
+"ch:15672618": {
+"employees": 1,
+"name": "Citytravel Ltd",
+"period": "2026-04-30"
+},
 "ch:15673304": {
 "employees": 0,
 "name": "VIAJAR LTD",
@@ -84819,7 +84869,7 @@
 "ch:15987929": {
 "employees": 2,
 "name": "PAUL BARRATT LIMITED",
-"period": "2025-09-30"
+"period": "2026-09-30"
 },
 "ch:15988583": {
 "employees": 0,
@@ -87361,6 +87411,13 @@
 "name": "IPAYLINKS UK LLP",
 "period": "2025-04-30"
 },
+"ch:OC365747": {
+"currency": "GBP",
+"employees": 10,
+"name": "Hengistbury Investment Partners LLP",
+"period": "2026-03-31",
+"revenue": 83885312.0
+},
 "ch:OC366659": {
 "employees": 0,
 "name": "JORDLEEN LLP",
@@ -87837,9 +87894,9 @@
 "period": "2026-03-31"
 },
 "ch:SC205313": {
-"employees": 20,
+"employees": 19,
 "name": "LOCHS SERVICES LIMITED",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:SC205355": {
 "employees": 9,
@@ -90303,7 +90360,7 @@
 "ch:SC653797": {
 "employees": 2,
 "name": "Stevenston Stores Ltd",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:SC654237": {
 "employees": 5,
@@ -93097,6 +93154,7 @@
 "Accounts_Bulk_Data-2026-11-21.zip",
 "Accounts_Bulk_Data-2026-11-24.zip",
 "Accounts_Bulk_Data-2026-11-25.zip",
+"Accounts_Bulk_Data-2026-11-26.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
@@ -259567,6 +259625,10 @@
 "wd:lei:9845007FA1A8E1DE3989": {
 "checked": "2026-11-11",
 "q": "Q137779165"
+},
+"wd:lei:98450085064BC682EE31": {
+"checked": "2026-11-26",
+"q": ""
 },
 "wd:lei:984500856AF4DF5FAT57": {
 "checked": "2026-11-11",
