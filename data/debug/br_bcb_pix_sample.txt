@@ -1,13 +1,13 @@
-url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261124.pdf
-bytes: 158212  starts: b'%PDF-1.4'
+url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261125.pdf
+bytes: 158349  starts: b'%PDF-1.4'
 error: None
 columns used: {}
 headers: None
-data rows: 2748  kept: 838
+data rows: 2750  kept: 838
 type values: None
 first lines:
 'Lista de participantes ativos do Pix.'
-'Publicado em: 24/11/2026'
+'Publicado em: 25/11/2026'
 'Para fazer o download do arquivo no formato CSV, clique aqui.'
 'Iniciação de Facilitador'
 'Tipo de Tipo de Modalidade de'
@@ -69,7 +69,7 @@ first lines:
 '...'
 '(applicants table)'
 'Lista de instituições em processo de adesão ao Pix.'
-'Publicado em: 24/11/2026'
+'Publicado em: 25/11/2026'
 'Autorizad Tipo de Tipo de Modalidade de'
 'Status da'
 'Nome Reduzido ISPB CNPJ Tipo de Instituição a pelo Participação Participação Participação'
@@ -87,9 +87,11 @@ first lines:
 'Provedor de Conta Ativo em operação'
 '4 CREDIMÓVEL SCD S.A. 45341994 45.341.994/0001-48 Sociedade de Crédito Direto Sim Indireta Facultativa'
 'Transacional restrita'
-'Provedor de Conta Etapa'
-'5 EXTRATTA IP 36000836 36.000.836/0001-33 Instituição de Pagamento Sim Indireta Facultativa'
-'Transacional Homologatória'
+'Aguardando Início'
+'Provedor de Conta'
+'5 EXTRATTA IP 36000836 36.000.836/0001-33 Instituição de Pagamento Sim Indireta Facultativa da Etapa de'
+'Transacional'
+'Operação Restrita'
 'Provedor de Conta Etapa'
 '6 FLASH IP LTDA. 32223020 32.223.020/0001-18 Instituição de Pagamento Sim Indireta Facultativa'
 'Transacional Homologatória'

@@ -1,5 +1,5 @@
 url: https://cbaruba.org/financial-institutions-under-supervision-of-the-central-bank
-bytes: 1463  starts: b'\t       '
+bytes: 1359  starts: b'\t       '
 error: RuntimeError('no firms matched')
 columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
 headers: ['name', 'section']
@@ -8,6 +8,6 @@ type values: []
 first lines:
 '\t        <html><title>You are being redirected...</title>'
 '\t\t<noscript>Javascript is required. Please enable javascript before you are allowed to see this page.</noscript>'
-"\t\t<script>var s={},u,c,U,r,i,l=0,a,e=eval,w=String.fromCharCode,sucuri_cloudproxy_js='',S='bj0nOCcgKyAiMyIgKyBTdHJpbmcuZnJvbUNoYXJDb2RlKDQ4KSArICc0JyArIFN0cmluZy5mcm9tQ2hhckNvZGUoNTcpICsgImYiICsgU3RyaW5nLmZyb21DaGFyQ29kZSg0OSkgKyBTdHJpbmcuZnJvbUNoYXJDb2RlKDUyKSArICdkJyArIFN0cmluZy5mcm9tQ2hhckNvZGUoN"
+"\t\t<script>var s={},u,c,U,r,i,l=0,a,e=eval,w=String.fromCharCode,sucuri_cloudproxy_js='',S='bT0nZCcgKyBTdHJpbmcuZnJvbUNoYXJDb2RlKDU3KSArICdmJyArICc3JyArICdhJyArIFN0cmluZy5mcm9tQ2hhckNvZGUoOTgpICsgU3RyaW5nLmZyb21DaGFyQ29kZSgxMDIpICsgU3RyaW5nLmZyb21DaGFyQ29kZSgxMDEpICsgU3RyaW5nLmZyb21DaGFyQ29kZSg5OCkgK"
 '        \t'
 ''

@@ -16,7 +16,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1" />'
 
 url: https://www.afa.ad/ca/entitats-supervisades/entitats-financeres/entitats-financeres-no-bancaries-de-credit-especialitzat/registre-dentitats-autoritzades
-bytes: 390523  starts: b'<!DOCTYP'
+bytes: 390520  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type', 'status']
@@ -67,7 +67,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1" />'
 
 url: https://www.afa.ad/ca/entitats-supervisades/actius-digitals/participants-actius-digitals/registre_entitats_autoritzades
-bytes: 388329  starts: b'<!DOCTYP'
+bytes: 388326  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type', 'status']

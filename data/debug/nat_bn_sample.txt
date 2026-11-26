@@ -11,6 +11,6 @@ first lines:
 ''
 '<head>'
 '    <!-- Google tag (gtag.js) -->'
-'    <script nonce="oxvkBYLhlIjehKihxgorz8pxWHAQLQCP" async src="https://www.googletagmanager.com/gtag/js?id=G-EJTXFQ5GZP"></script>'
-'    <script nonce="oxvkBYLhlIjehKihxgorz8pxWHAQLQCP">'
+'    <script nonce="GUKYZdEvW2neATzwbajrDZb9OZiDa6aX" async src="https://www.googletagmanager.com/gtag/js?id=G-EJTXFQ5GZP"></script>'
+'    <script nonce="GUKYZdEvW2neATzwbajrDZb9OZiDa6aX">'
 '        window.dataLayer = window.dataLayer || [];'

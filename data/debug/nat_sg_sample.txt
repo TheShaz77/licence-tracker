@@ -1,10 +1,10 @@
 url: https://eservices.mas.gov.sg/fid/custom/printpartial?count=0
-bytes: 10485982  starts: b'\r\n\r\n\r\n<h'
+bytes: 10480915  starts: b'\r\n\r\n\r\n<h'
 error: None
 columns used: {'name': 'Organisation Name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'Website', 'email': None, 'phone': 'Phone Number', 'country': None, 'regulator': None, 'address': 'Address', 'end': None, 'exclude': None, 'require': None}
 headers: ['No.', 'Organisation Name', 'Address', 'Phone Number', 'Website', 'Sector', 'Licence Type/Status', 'Activity/Business Type', 'Sub-Activity/Product']
-data rows: 8735  kept: 691
-type values: [('', 8735)]
+data rows: 8732  kept: 690
+type values: [('', 8732)]
 first lines:
 ''
 ''
