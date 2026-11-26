@@ -50,7 +50,7 @@ first lines:
 '    <link href="/Content/css?v=bK052syt6gfEUZwiiaeXhN_e_tDFyh-4cVIw7Rbs9nI1" rel="stylesheet"/>'
 
 url: https://www.supertote.mu/
-bytes: 18656  starts: b'<!DOCTYP'
+bytes: 20081  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -67,7 +67,7 @@ first lines:
 'name="description" content="Supertote gives you all the odds and dividends for Mauritian horse racing and allows you to place your bets easily, via our terminals, agencies or phone with Teletote. Grand pools include win, place, trifecta, quartet, double, exacta, swinger, pick  four, pick six and pla'
 
 url: https://www.automaticsystemsltd.mu/about-asl/our-history
-bytes: 29352  starts: b'\r\n\r\n\r\n<!'
+bytes: 29353  starts: b'\r\n\r\n\r\n<!'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -128,7 +128,7 @@ first lines:
 '<title>Licencees &#8211; Gambling Regulatory Authority</title>'
 
 url: https://www.casinosofmauritius.mu/about-us
-bytes: 51146  starts: b'<!DOCTYP'
+bytes: 55546  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -277,7 +277,7 @@ first lines:
 '<meta name="title" content="SIC | Hospitality and Entertainment Cluster">'
 
 url: https://lexpress.mu/article/350113/bookmakers-course-gra-deboutee-cour
-bytes: 120873  starts: b'<!DOCTYP'
+bytes: 120468  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -290,11 +290,11 @@ first lines:
 '<head>'
 '    <meta charset="utf-8">'
 '    <meta name="viewport" content="width=device-width, initial-scale=1">'
-'    <meta name="csrf-token" content="4sdlq3POgHzXeOvw3cjo6vhtZwrE5nuK5ut3n56m">'
+'    <meta name="csrf-token" content="e6T86LMv2ST5QB3WkbbGaJqnXdimHhAQZ7pO9bDN">'
 ''
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 277096  starts: b'<!DOCTYP'
+bytes: 276979  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -311,7 +311,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 276881  starts: b'<!DOCTYP'
+bytes: 276764  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
@@ -328,7 +328,7 @@ first lines:
 '<p>À l’appel de l’affaire, la GRA, représentée par l’avouée Saya Ragavoodoo, a déposé un affidavit en réplique à celui des bookmakers déposé le 4 février 2019. Me Jaykar Gujadhur, Senior Attorney, représentant les bookmakers s’est quant à lui référé au cas de Stevebook Ltd v GRA où la GRA avait été '
 
 url: https://defimedia.info/non-renouvellement-de-permis-des-bookmakers-contestent-une-decision-de-la-gra
-bytes: 276881  starts: b'<!DOCTYP'
+bytes: 276764  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']

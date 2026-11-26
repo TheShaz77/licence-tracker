@@ -84,7 +84,7 @@ first lines:
 '  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
 
 url: https://b2binpay.com/en/news/b2binpay-secures-fsc-mauritius-vasp-licenses
-bytes: 255527  starts: b'<!DOCTYP'
+bytes: 255504  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

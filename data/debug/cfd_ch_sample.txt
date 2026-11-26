@@ -1,5 +1,5 @@
 url: https://www.finma.ch/en/~/media/finma/dokumente/bewilligungstraeger/csv/uid.csv
-bytes: 465957  starts: b'\xef\xbb\xbf"Name'
+bytes: 465959  starts: b'\xef\xbb\xbf"Name'
 error: None
 columns used: {'name': 'Name', 'type': 'AuthorisationTypeEN', 'id': 'UID', 'lei': None, 'city': 'City', 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['Name', 'City', 'AuthorisationTypeDE', 'AuthorisationTypeFR', 'AuthorisationTypeIT', 'AuthorisationTypeEN', 'UID']

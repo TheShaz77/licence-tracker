@@ -1,5 +1,5 @@
 url: https://cfds.thebcr.com/
-bytes: 326115  starts: b'<!DOCTYP'
+bytes: 326178  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -16,7 +16,7 @@ first lines:
 '    <meta name="viewport" content="width=device-width, initial-scale=1.0" />'
 
 url: https://www.fibogroup.com/
-bytes: 65429  starts: b'<!DOCTYP'
+bytes: 65403  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -33,7 +33,7 @@ first lines:
 '<script type="text/javascript" src="/assets/script-0-e9cA7R4cwXviHI87kwWfRg.js"></script>'
 
 url: https://www.ftdsystem.com/
-bytes: 159710  starts: b'<!DOCTYP'
+bytes: 159725  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -84,7 +84,7 @@ first lines:
 '\t<meta name="generator" content="Framer 1038c38">'
 
 url: https://zitaplus.com/
-bytes: 79729  starts: b'\xef\xbb\xbf<!DOC'
+bytes: 79564  starts: b'\xef\xbb\xbf<!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -101,7 +101,7 @@ first lines:
 'else if(response.indexOf("message:202018")>-1){openModal(\'Error!\',\'Country information could not be found.\',\'error\');}'
 
 url: https://zooe.com/
-bytes: 207663  starts: b'<!doctyp'
+bytes: 207646  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -135,7 +135,7 @@ first lines:
 ''
 
 url: https://www.instaforex.com/
-bytes: 362814  starts: b'<!DOCTYP'
+bytes: 365052  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -169,7 +169,7 @@ first lines:
 ''
 
 url: https://deriv.com/regulatory
-bytes: 129256  starts: b'<!DOCTYP'
+bytes: 130312  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'website', 'status']
