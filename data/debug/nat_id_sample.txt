@@ -8,18 +8,8 @@ type values: [('', 23)]
 first lines:
 '(binary)'
 
-url: https://www.ojk.go.id/id/Fungsi-Utama/ITSK/Perizinan-ITSK-Aset-Keuangan-Digital-Aset-Kripto/Documents/Daftar%20Penyelenggara%20ITSK%20Posisi%2023%20November%202026.pdf
-bytes: 4072835  starts: b'%PDF-1.4'
-error: None
-columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
-headers: ['name']
-data rows: 19  kept: 19
-type values: [('', 19)]
-first lines:
-'(binary)'
-
 url: https://www.bi.go.id/en/layanan/informasi-perizinan/sistem-pembayaran/default.aspx
-bytes: 732149  starts: b'\r\n\r\n<!DO'
+bytes: 732188  starts: b'\r\n\r\n<!DO'
 error: None
 columns used: {'name': 'Company Name', 'type': 'Category', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': 'Status', 'website': None, 'email': 'Email', 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Company Name', 'Location', 'Category', 'Status', 'Permission/Approval Number', 'Permission/Approval Date', 'Email', 'Action']

@@ -1,5 +1,5 @@
 url: https://www.rbf.gov.fj/core-functions/financial-stability/licensing/
-bytes: 428079  starts: b'<style>#'
+bytes: 428325  starts: b'<style>#'
 error: None
 columns used: {'name': 'Name', 'type': 'Activity', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': 'section', 'require': None}
 headers: ['Name', 'Country of incorporation', 'Country of ownership', 'Activity', 'section']

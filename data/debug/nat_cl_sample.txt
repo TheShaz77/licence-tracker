@@ -16,7 +16,7 @@ first lines:
 '76965744-4,"LOS ANDES TARJETAS DE PREPAGO S.A.",732,Vigente'
 
 url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TPOPE
-bytes: 540  starts: b'\xef\xbb\xbfR.U.T'
+bytes: 495  starts: b'\xef\xbb\xbfR.U.T'
 error: None
 columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
@@ -25,15 +25,15 @@ type values: [('', 10)]
 first lines:
 'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
 '76625125-0,"BAASKIT PAGOS S.A.",Vigente'
+'77190692-3,"GETNET OPERADORA S.A.",Vigente'
 '99546900-6,"ISWITCH S.A.",Vigente'
 '77597984-4,"KUSHKI OPERADORA S.A.",Vigente'
 '76516950-K,"MERCADO PAGO OPERADORA S.A.",Vigente'
 '77955969-6,"OPERADORA DE TARJETAS BANCHILE PAGOS S.A.",Vigente'
 '77190661-3,"PAGOS Y SERVICIOS S.A.\xa0",Vigente'
-'76693183-9,"RED GLOBAL S.A.",Vigente'
 
 url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=FBOTP
-bytes: 182  starts: b'\xef\xbb\xbfR.U.T'
+bytes: 137  starts: b'\xef\xbb\xbfR.U.T'
 error: None
 columns used: {'name': 'Entidad', 'type': None, 'id': 'R.U.T.', 'lei': None, 'city': None, 'date': None, 'status': 'Seleccione: VigentesNo VigentesTodas', 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['R.U.T.', 'Entidad', 'Seleccione: VigentesNo VigentesTodas']
@@ -41,8 +41,8 @@ data rows: 2  kept: 2
 type values: [('', 2)]
 first lines:
 'R.U.T.,Entidad,"Seleccione: VigentesNo VigentesTodas"'
+'77190692-3,"GETNET OPERADORA S.A.",Vigente'
 '76693183-9,"RED GLOBAL S.A.",Vigente'
-'77190692-3,"SOCIEDAD OPERADORA DE TARJETAS DE PAGO SANTANDER GETNET CHILE S.A.",Vigente'
 ''
 
 url: https://www.cmfchile.cl/institucional/mercados/descargar_consulta?mercado=B&Estado=VI&entidad=TCEEM

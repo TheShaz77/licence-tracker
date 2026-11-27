@@ -33,7 +33,7 @@ first lines:
 '        <title>TCMB - Ödeme Kuruluşları</title>'
 
 url: https://spk.gov.tr/kurumlar/kripto-varlik-hizmet-saglayicilar/faaliyette-bulunanlar-listesi
-bytes: 35594  starts: b'\n<!docty'
+bytes: 35518  starts: b'\n<!docty'
 error: None
 columns used: {'name': '(guessed) Güncel Ünvan', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['No', 'Güncel Ünvan', 'Eski Ünvan (Varsa)']
@@ -50,7 +50,7 @@ first lines:
 '    <meta http-equiv="X-UA-Compatible" content="IE=edge" />'
 
 url: https://www.bddk.org.tr/Kurulus/Liste/77
-bytes: 198130  starts: b'\r\n\r\n<!DO'
+bytes: 198486  starts: b'\r\n\r\n<!DO'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': None, 'phone': 'phone', 'country': None, 'regulator': None, 'address': 'address', 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'phone', 'address', 'website']
