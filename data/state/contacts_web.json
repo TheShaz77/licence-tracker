@@ -830,10 +830,10 @@
 },
 "ch:01387954": {
 "currency": "GBP",
-"employees": 26,
+"employees": 23,
 "name": "COURTIERS INVESTMENT SERVICES LIMITED",
-"period": "2025-03-31",
-"revenue": 7205762.0
+"period": "2026-03-31",
+"revenue": 7386208.0
 },
 "ch:01394145": {
 "employees": 1,
@@ -1145,6 +1145,13 @@
 "employees": 9,
 "name": "FINSTEAD (HOXTON) LIMITED",
 "period": "2025-03-31"
+},
+"ch:01829156": {
+"currency": "GBP",
+"employees": 108,
+"name": "RML Group Limited",
+"period": "2026-09-30",
+"revenue": 17650806.0
 },
 "ch:01830771": {
 "currency": "GBP",
@@ -2867,7 +2874,7 @@
 "ch:03580724": {
 "employees": 5,
 "name": "Saint Catherines Hospice Lottery Limited",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:03582673": {
 "currency": "GBP",
@@ -3910,7 +3917,7 @@
 "ch:04155979": {
 "employees": 3,
 "name": "HAX INTERNATIONAL LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:04156727": {
 "employees": 81,
@@ -7810,6 +7817,11 @@
 "period": "2025-05-31",
 "revenue": 14105346.0
 },
+"ch:05320350": {
+"employees": 1,
+"name": "ANGLING TRUST LIMITED",
+"period": "2026-03-31"
+},
 "ch:05323620": {
 "employees": 7,
 "name": "JJI Co Limited",
@@ -7983,7 +7995,7 @@
 "ch:05372982": {
 "employees": 0,
 "name": "CAPITEL C LTD",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:05375621": {
 "employees": 28,
@@ -10574,6 +10586,11 @@
 "name": "SPUC PRO-LIFE LIMITED",
 "period": "2026-02-28"
 },
+"ch:06197570": {
+"employees": 10,
+"name": "N S GAMING LIMITED",
+"period": "2026-03-31"
+},
 "ch:06197722": {
 "employees": 2,
 "name": "Denby Limited",
@@ -11824,7 +11841,7 @@
 "ch:06584434": {
 "employees": 6,
 "name": "TOP HOUSE MORTGAGE SOLUTIONS LIMITED",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:06584822": {
 "employees": 3,
@@ -12605,6 +12622,11 @@
 "employees": 1,
 "name": "FTFT FINANCE UK LIMITED",
 "period": "2025-02-28"
+},
+"ch:06833430": {
+"employees": 2,
+"name": "IFEPAY SERVICES LTD",
+"period": "2026-03-31"
 },
 "ch:06837547": {
 "employees": 3,
@@ -16344,11 +16366,9 @@
 "period": "2025-10-31"
 },
 "ch:07489441": {
-"currency": "GBP",
 "employees": 3,
 "name": "RIEVES LOTTERIES LIMITED",
-"period": "2025-03-31",
-"revenue": 550049.0
+"period": "2026-03-31"
 },
 "ch:07490846": {
 "employees": 3,
@@ -17129,7 +17149,7 @@
 "ch:07636778": {
 "employees": 0,
 "name": "SWEETBURY&#39;S LOCAL LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:07637017": {
 "employees": 0,
@@ -19721,9 +19741,9 @@
 "period": "2025-05-31"
 },
 "ch:08055249": {
-"employees": 0,
+"employees": 4,
 "name": "THE CASH EXCHANGE LIMITED",
-"period": "2025-05-31"
+"period": "2026-05-31"
 },
 "ch:08055676": {
 "employees": 10,
@@ -21140,9 +21160,9 @@
 "period": "2025-11-30"
 },
 "ch:08284038": {
-"employees": 25,
+"employees": 18,
 "name": "SRI STORE LTD",
-"period": "2025-03-31"
+"period": "2026-03-31"
 },
 "ch:08285068": {
 "employees": 2,
@@ -21789,7 +21809,7 @@
 "ch:08385442": {
 "employees": 4,
 "name": "CASH FALL AMUSEMENTS LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:08387550": {
 "employees": 6,
@@ -21971,6 +21991,11 @@
 "ch:08422780": {
 "employees": 2,
 "name": "SKM SUPER STORE LTD",
+"period": "2026-02-28"
+},
+"ch:08424267": {
+"employees": 1,
+"name": "ETOILE &amp; CO LIMITED",
 "period": "2026-02-28"
 },
 "ch:08434710": {
@@ -23302,6 +23327,13 @@
 "employees": 5,
 "name": "SAINTS OFF LICENCE LIMITED",
 "period": "2025-09-30"
+},
+"ch:08685372": {
+"currency": "GBP",
+"employees": 0,
+"name": "BRUNSWICK INVESTMENT MANAGEMENT LIMITED",
+"period": "2026-03-31",
+"revenue": 94336.0
 },
 "ch:08687199": {
 "employees": 0,
@@ -24673,7 +24705,7 @@
 "ch:08872334": {
 "employees": 0,
 "name": "Europa Taste Limited",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:08874973": {
 "employees": 3,
@@ -24955,9 +24987,9 @@
 "period": "2026-03-31"
 },
 "ch:08908068": {
-"employees": 3,
+"employees": 1,
 "name": "GOLDLUXEL SERVICES LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:08911609": {
 "employees": 5,
@@ -28386,6 +28418,11 @@
 "ch:09426223": {
 "employees": 2,
 "name": "Grace &amp; Glory News Limited",
+"period": "2026-02-28"
+},
+"ch:09429269": {
+"employees": 3,
+"name": "SHREECHANDER LIMITED",
 "period": "2026-02-28"
 },
 "ch:09443179": {
@@ -40608,6 +40645,11 @@
 "name": "R &amp; R EUROPE LTD",
 "period": "2026-02-28"
 },
+"ch:11196609": {
+"employees": 2,
+"name": "TRANSYLVANYA LIMITED",
+"period": "2026-02-28"
+},
 "ch:11208813": {
 "employees": 0,
 "name": "Altarex Ltd",
@@ -40616,6 +40658,11 @@
 "ch:11210117": {
 "employees": 7,
 "name": "POP IN PRIVATE LTD",
+"period": "2026-02-28"
+},
+"ch:11213057": {
+"employees": 2,
+"name": "JAMILSONS LIMITED",
 "period": "2026-02-28"
 },
 "ch:11214058": {
@@ -47047,6 +47094,11 @@
 "employees": 3,
 "name": "Project Customer Services Ltd",
 "period": "2026-07-31"
+},
+"ch:11815990": {
+"employees": 2,
+"name": "Azizi Exchange Limited",
+"period": "2026-02-28"
 },
 "ch:11822390": {
 "employees": 10,
@@ -54193,9 +54245,9 @@
 "period": "2025-02-28"
 },
 "ch:12461749": {
-"employees": 5,
+"employees": 4,
 "name": "SONGUL FOOD LIMITED",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:12462610": {
 "employees": 3,
@@ -60416,7 +60468,7 @@
 "ch:13187772": {
 "employees": 3,
 "name": "FULHAM FOOD &amp; WINE LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:13189622": {
 "employees": 1,
@@ -79314,7 +79366,7 @@
 "ch:15482997": {
 "employees": 6,
 "name": "BASIC FOOD LTD",
-"period": "2025-02-28"
+"period": "2026-02-28"
 },
 "ch:15483290": {
 "employees": 30,
@@ -87428,6 +87480,11 @@
 "name": "Bluetower Associates LLP",
 "period": "2026-02-28"
 },
+"ch:OC372185": {
+"employees": 0,
+"name": "ASTOR RIDGE LLP",
+"period": "2026-04-05"
+},
 "ch:OC376560": {
 "currency": "GBP",
 "employees": 11,
@@ -87470,6 +87527,11 @@
 "ch:OC416917": {
 "employees": 0,
 "name": "FODENS LLP",
+"period": "2026-03-31"
+},
+"ch:OC421679": {
+"employees": 23,
+"name": "ASHGROVE CAPITAL LLP",
 "period": "2026-03-31"
 },
 "ch:OC423850": {
@@ -93155,6 +93217,7 @@
 "Accounts_Bulk_Data-2026-11-24.zip",
 "Accounts_Bulk_Data-2026-11-25.zip",
 "Accounts_Bulk_Data-2026-11-26.zip",
+"Accounts_Bulk_Data-2026-11-27.zip",
 "Accounts_Monthly_Data-April2026.zip",
 "Accounts_Monthly_Data-August2026.zip",
 "Accounts_Monthly_Data-December2025.zip",
