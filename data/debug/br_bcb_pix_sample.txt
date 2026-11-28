@@ -1,13 +1,13 @@
-url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261126.pdf
-bytes: 158349  starts: b'%PDF-1.4'
+url: https://www.bcb.gov.br/content/estabilidadefinanceira/participantes_pix_pdf/lista-participantes-instituicoes-em-adesao-pix-20261127.pdf
+bytes: 157920  starts: b'%PDF-1.4'
 error: None
 columns used: {}
 headers: None
-data rows: 2750  kept: 838
+data rows: 2741  kept: 835
 type values: None
 first lines:
 'Lista de participantes ativos do Pix.'
-'Publicado em: 26/11/2026'
+'Publicado em: 27/11/2026'
 'Para fazer o download do arquivo no formato CSV, clique aqui.'
 'Iniciação de Facilitador'
 'Tipo de Tipo de Modalidade de'
@@ -69,7 +69,7 @@ first lines:
 '...'
 '(applicants table)'
 'Lista de instituições em processo de adesão ao Pix.'
-'Publicado em: 26/11/2026'
+'Publicado em: 27/11/2026'
 'Autorizad Tipo de Tipo de Modalidade de'
 'Status da'
 'Nome Reduzido ISPB CNPJ Tipo de Instituição a pelo Participação Participação Participação'
@@ -105,7 +105,7 @@ first lines:
 '9 LEND SCD S.A. 37526080 37.526.080/0001-23 Sociedade de Crédito Direto Sim Direta Facultativa'
 'Transacional Homologatória'
 'Provedor de Conta Etapa'
-'10 NAIP IP S.A. 09.092.759/0001-16 Instituição de Pagamento Sim Facultativa'
+'10 NAIP IP S.A. 09.092.759/0001-16 Instituição de Pagamento Sim Obrigatória'
 'Transacional Homologatória'
 'Provedor de Conta Ativo em operação'
 '11 QYON IP LTDA. 42547503 42.547.503/0001-21 Instituição de Pagamento Sim Indireta Facultativa'

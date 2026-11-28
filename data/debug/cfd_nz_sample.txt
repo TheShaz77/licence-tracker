@@ -9,14 +9,14 @@ first lines:
 ''
 
 url: https://www.axi.com/au
-bytes: 820344  starts: b'<!DOCTYP'
+bytes: 739319  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html data-dpl-id="98d7dff33c845b79cce981e54c166eed0db19a60" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_a20479" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
+'<!DOCTYPE html><html data-dpl-id="7f4913f02876c8ef82b0c7c7d38b4015932bbbcf" lang="en-AU" dir="ltr" class="light group/html font_variable__SvpZj font_variable__omlP2 __variable_b7bede" data-design-system="v2" data-page-type="axi-main" data-scroll-behavior="smooth"><head><meta charSet="utf-8"/><link r'
 
 url: https://www.acemarkets.co.nz/
 bytes: 116633  starts: b'<!DOCTYP'
@@ -87,7 +87,7 @@ first lines:
 '<!-- Google Tag Manager -->'
 
 url: https://www.zeromarkets.com/
-bytes: 221070  starts: b'<!DOCTYP'
+bytes: 221069  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -104,7 +104,7 @@ first lines:
 '\t<title>Trade with Confidence at ZERO Markets | Zero Markets | Forex Broker\t</title>'
 
 url: https://blackbull.com/en/our-company/compliance/
-bytes: 487690  starts: b'<!doctyp'
+bytes: 487696  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

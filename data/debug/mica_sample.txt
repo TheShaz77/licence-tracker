@@ -1,10 +1,10 @@
 url: https://www.esma.europa.eu/sites/default/files/2024-12/CASPS.csv
-bytes: 201660  starts: b'\xef\xbb\xbfae_co'
+bytes: 204349  starts: b'\xef\xbb\xbfae_co'
 error: None
 columns used: {}
 headers: ['ae_competentAuthority', 'ae_homeMemberState', 'ae_lei_name', 'ae_lei', 'ae_lei_cou_code', 'ae_commercial_name', 'ae_address', 'ae_website', 'ae_website_platform', 'ac_authorisationNotificationDate', 'ac_authorisationEndDate', 'ac_serviceCode', 'ac_serviceCode_cou', 'ac_comments', 'ac_lastupdate', 'ac_legal_basis']
-data rows: 409  kept: 406
-type values: [('Article 60 - Notification', 159), ('Article 63 - CASP authorisation', 140), ('', 85), ('Article 63', 10), ('Both Article 60 & 63', 8), ('Article 60', 7)]
+data rows: 415  kept: 412
+type values: [('Article 60 - Notification', 166), ('Article 63 - CASP authorisation', 145), ('', 78), ('Article 63', 11), ('Both Article 60 & 63', 8), ('Article 60', 7)]
 first lines:
 'ae_competentAuthority,ae_homeMemberState,ae_lei_name,ae_lei,ae_lei_cou_code,ae_commercial_name,ae_address,ae_website,ae_website_platform,ac_authorisationNotificationDate,ac_authorisationEndDate,ac_serviceCode,ac_serviceCode_cou,ac_comments,ac_lastupdate,ac_legal_basis'
 'Austrian Financial Market Authority (FMA),AT,Bitpanda GmbH,5493007WZ7IFULIL8G21,AT,Bitpanda,"Stella-Klein-Löw-Weg 17, 1020 Vienna, Austria",https://www.bitpanda.com,,09/04/2025,,a. providing custody and administration of crypto-assets on behalf of clients | c. exchange of crypto-assets for funds | d'
@@ -16,7 +16,7 @@ first lines:
 'Austrian Financial Market Authority (FMA),AT,DADAT Krypto GmbH,529900KTP3Y86BZKY754,AT,DADAT,"Franz-Josef-Straße 22, 5020 Salzburg, Austria",https://www.dad.at,,16/12/2025,,e. execution of orders for crypto-assets on behalf of clients,AT,,19/12/2025,Article 63 - CASP authorisation'
 
 url: https://www.esma.europa.eu/sites/default/files/2024-12/EMTWP.csv
-bytes: 18252  starts: b'\xef\xbb\xbfae_co'
+bytes: 18356  starts: b'\xef\xbb\xbfae_co'
 error: None
 columns used: {}
 headers: ['ae_competentAuthority', 'ae_homeMemberState', 'ae_lei_name', 'ae_lei', 'ae_lei_cou_code', 'ae_commercial_name', 'ae_address', 'ae_website', 'ac_authorisationNotificationDate', 'ac_authorisationEndDate', 'ae_exemption48_4', 'ae_exemption48_5', 'ae_authorisation_other_emt', 'ae_DTI_FFG', 'ae_DTI', 'wp_url', 'wp_authorisationNotificationDate', 'wp_comments', 'wp_lastupdate']

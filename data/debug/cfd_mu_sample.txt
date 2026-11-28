@@ -1,12 +1,12 @@
 url: https://www.fxtm.com/en/about/licensed-broker/
-bytes: 115721  starts: b'<!DOCTYP'
+bytes: 115726  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!--MMahYWgUMaBO9S97D3n9U--><html><head><meta charSet="utf-8"/><link rel="preconnect" href="/" crossorigin=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" imageSrcSet="https://cdn.builder.io/api/v1/image/assets%2Fd1ea04c96fbd47f4'
+'<!DOCTYPE html><!--ymiDhh_hzt6MtGdvj9EEy--><html><head><meta charSet="utf-8"/><link rel="preconnect" href="/" crossorigin=""/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" imageSrcSet="https://cdn.builder.io/api/v1/image/assets%2Fd1ea04c96fbd47f4'
 '    html.ltr-layout body,'
 '    html.rtl-layout body {'
 '      visibility: visible;'
@@ -16,7 +16,7 @@ first lines:
 '    }'
 
 url: https://fintrixmarkets.com/en/our-regulations/
-bytes: 223825  starts: b'<!DOCTYP'
+bytes: 225063  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -28,7 +28,7 @@ first lines:
 '</body></html>'
 
 url: https://intercom.help/tag-markets/en/articles/9681644-is-tag-markets-regulated
-bytes: 73972  starts: b'<!DOCTYP'
+bytes: 73978  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -133,7 +133,7 @@ first lines:
 '              data-favicon-light="/app/themes/sage/public/images/brands/main/favicon/favicon.ico"'
 
 url: https://www.exness.com/
-bytes: 594035  starts: b'<!DOCTYP'
+bytes: 594032  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -218,7 +218,7 @@ first lines:
 '  function gtag(){dataLayer.push(arguments);}'
 
 url: https://tabtrade.com/
-bytes: 176546  starts: b'<!DOCTYP'
+bytes: 176583  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -235,7 +235,7 @@ first lines:
 '            theme = storedTheme;'
 
 url: https://www.ecmarkets.com/
-bytes: 422888  starts: b'<!DOCTYP'
+bytes: 423014  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -286,7 +286,7 @@ first lines:
 '        <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->'
 
 url: https://www.litefinance.org/
-bytes: 147835  starts: b'<!DOCTYP'
+bytes: 147893  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -303,7 +303,7 @@ first lines:
 '<!--[if (gte IE 9)|!(IE)]><!-->'
 
 url: https://www.monetamarkets.com/
-bytes: 372719  starts: b'\n  <!DOC'
+bytes: 364754  starts: b'\n  <!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -316,11 +316,11 @@ first lines:
 '  <head>'
 '                <script>'
 '                window.__CF_DATA__ = {'
-'                ip: "20.80.95.146",'
+'                ip: "20.59.219.33",'
 '                countryCode: "us",'
 
 url: https://nordfx.com/
-bytes: 160365  starts: b'<!DOCTYP'
+bytes: 160367  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -336,6 +336,23 @@ first lines:
 '<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">'
 '<meta name="robots" content="all">'
 
+url: https://www.lirunex.com/
+bytes: 210077  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'<meta charset="UTF-8">'
+'<meta name="viewport" content="width=device-width, initial-scale=1">'
+'<!-- Bootstrap Icons + Font Awesome are enqueued in functions.php (lx_enqueue_global_assets)'
+'     and loaded non-blocking. Do not hardcode <link> tags here: they block rendering and'
+'     Font Awesome was being downloaded twice (7.0.1 here + 6.5.0 from functions.php). -->'
+
 url: https://www.eightcap.com/
 bytes: 435185  starts: b'<!DOCTYP'
 error: None
@@ -347,21 +364,21 @@ first lines:
 '<!DOCTYPE html><html data-dpl-id="dpl_9Mxx3sf4aCNuJb4NVL1B6R8bKYRh" lang="en" class="__variable_02bff6"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/692df4da22e71021-s.p.woff2?dpl=dpl_9Mxx3sf4aCNuJb4NV'
 
 url: https://www.dupoin.com/
-bytes: 1421444  starts: b'<!DOCTYP'
+bytes: 1426432  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html dir="auto" lang="en" q:render="ssr" q:route="[area]" q:container="paused" q:version="1.19.2" q:base="/build/" q:locale="" q:manifest-hash="t1l1g0" q:instance="oqof3brde0q"><!--qv q:id=0 q:key=2USj:Xe_1--><!--qv q:s q:sref=0 q:key=--><!--qv q:id=1 q:key=L8eW:Xe_0--><!--qv q:id=2 '
-'q-BqgxUSmd.js#_hW[1]" q:id="3" q:head><meta charSet="utf-8" q:head><meta name="google" content="notranslate" q:head><!--qv q:id=ap q:key=y40K:Xe_3--><style q:style="p6k8jn-0" hidden>@font-face{font-style:normal;font-family:amplitude-regular;src:url(/fonts/amplitude-regular.otf);font-display:swap}@fo'
+'<!DOCTYPE html><html dir="auto" lang="en" q:render="ssr" q:route="[area]" q:container="paused" q:version="1.19.2" q:base="/build/" q:locale="" q:manifest-hash="gy62g1" q:instance="umpabjkox5f"><!--qv q:id=0 q:key=2USj:Xe_1--><!--qv q:s q:sref=0 q:key=--><!--qv q:id=1 q:key=L8eW:Xe_0--><!--qv q:id=2 '
+'q-CiAW4vEn.js#_hW[1]" q:id="3" q:head><meta charSet="utf-8" q:head><meta name="google" content="notranslate" q:head><!--qv q:id=ap q:key=y40K:Xe_3--><style q:style="p6k8jn-0" hidden>@font-face{font-style:normal;font-family:amplitude-regular;src:url(/fonts/amplitude-regular.otf);font-display:swap}@fo'
 'q-BkgShmly.js#_hW[1]'
 'q-IPj6vi2A.js#_hW[2]'
 'q-B9BS9BGB.js#_hW[3]'
 'q-iKDwmP6-.js#_hW[4]" q:id="8"><!--qv q:sstyle=⭐️69ara-0 q:id=9 q:key=4Wzs:5h_3--><style q:style="69ara-0" hidden>.box.⭐️69ara-0{background:transparent;position:fixed;top:0;inset-inline-start:0;width:calc(100% - var(--scrollbar-width, 0px));z-index:99;color:#fff;transition:background-color .4s linea'
-'    <g clip-path="url(#a)" fill="#2EB5C4">'
-'        <path d="m22.55 4.89-.343-3.518a1.52 1.52 0 0 0-1.513-1.37H6.595l-.624 3.461-.259 1.428h.004l-.955 5.373 4.16 3.965 1.672-9.338h11.956z"/>'
+'q-Ie2XCL5y.js#_hW[9]'
+'q-CJRe1T_H.js#_hW[10]'
 
 url: https://www.kcmtrade.com/
 bytes: 287687  starts: b'<!DOCTYP'
@@ -393,7 +410,7 @@ first lines:
 'Here are our subsidiary companies with their respective registration and licensing information.</p></div></div></div></div></section></div></div><div data-raven-section-index="1" data-raven-section-id="entityInfoSection-1" data-raven-slot="regulatory-information:regulatory-licence-1" data-raven-surf'
 ''
 'The company is licensed and regulated by the UAE Capital Market Authority (CMA) as a Category 1 Trading Broker for Over-the-Counter Derivatives Contracts &amp; Currencies Spot Markets, a Financial Products Dealer (Licence number 20200000243), and a Category 5 Financial Consultant (Licence number 202'
-'</body></html>'
+'<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement(\'script\');d.innerHTML="window.__CF$cv$params={r:\'a615cb0019d6b837\',t:\'MTc5NTgzMTM3Mg==\'};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new '
 
 url: https://thaurus.com/thaurus-broker-license-regulation/
 bytes: 176474  starts: b'<!DOCTYP'
@@ -479,7 +496,7 @@ first lines:
 '        "sameAs": ['
 
 url: https://www.trade.com/en/global/
-bytes: 269326  starts: b'\xef\xbb\xbf<!DOC'
+bytes: 271824  starts: b'\xef\xbb\xbf<!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -513,7 +530,7 @@ first lines:
 '  --cx-bg:           #000000;'
 
 url: https://www.landprime.com/en-GB
-bytes: 214119  starts: b'<!DOCTYP'
+bytes: 225447  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -523,7 +540,7 @@ first lines:
 '<!DOCTYPE html><html lang="en-GB"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/1vrcc75r7wu7a.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chu'
 
 url: https://www.tradeeuglobal.net/en
-bytes: 115891  starts: b'<!DOCTYP'
+bytes: 116847  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -540,7 +557,7 @@ first lines:
 '})();'
 
 url: https://keytomarkets.com/
-bytes: 363550  starts: b'<!DOCTYP'
+bytes: 368129  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -557,7 +574,7 @@ first lines:
 '\t\t\t\t<link rel="profile" href="https://gmpg.org/xfn/11" />'
 
 url: https://www.triomarkets.com/
-bytes: 276429  starts: b'<!DOCTYP'
+bytes: 295325  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -625,7 +642,7 @@ first lines:
 '  "><ul class="block 2xl:flex lg:gap-x-6 xl:gap-x-7 2xl:gap-x-5 overflow-y-hidden leading-tight mx-4 md:container md:mx-auto"><li class="2xl:flex items-center"><div class="flex w-full items-center justify-between gap-2 py-3 text-base font-semibold 2xl:font-normal 2xl:ms-2 xl:inline-flex  whitespace-'
 
 url: https://neex.com/en/
-bytes: 284761  starts: b'<!DOCTYP'
+bytes: 293768  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -720,7 +737,7 @@ first lines:
 '<!DOCTYPE html><html lang="en" class="dark bYvC1W_variable h-full antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/07c7676b89ed2778-s.p.2bn3s6zvc0dyp.woff2" as="font" crossorigin="" type="font'
 
 url: https://fxlivecapital.com/
-bytes: 1005816  starts: b'<!doctyp'
+bytes: 1026450  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -729,12 +746,29 @@ type values: [('', 1)]
 first lines:
 '<!doctype html>'
 '<!-- Made in Framer · framer.com -->'
-'<!-- Published Nov 23, 2026, 5:21 PM UTC -->'
+'<!-- Published Nov 27, 2026, 3:59 PM UTC -->'
 '<html lang="es">'
 '<head>'
 '\t<meta charset="utf-8">'
 '\t<meta name="viewport" content="width=device-width">'
-'\t<meta name="generator" content="Framer 0d9ff52">'
+'\t<meta name="generator" content="Framer 2dea36b">'
+
+url: https://www.ultimamarkets.com/
+bytes: 251792  starts: b'<!DOCTYP'
+error: RuntimeError('licence statement (firm name + licence number) no longer found on the page')
+columns used: None
+headers: None
+data rows: None  kept: None
+type values: None
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en-US">'
+'<head>'
+'    <title>'
+'        Ultima Markets | Trusted &amp; Regulated CFD Trading Broker    </title>'
+''
+'    <meta property="og:image" content="/wp-content/uploads/2026/05/20260519-144209.jpg" /> <meta property="og:image:width" content="480" /> <meta property="og:image:height" content="320" /> <meta property="og:image:type" content="image/jpeg" />    <meta name="viewport" content="width=device-width, i'
+'\t<meta charset="UTF-8" />'
 
 url: https://afc-live.com/
 bytes: 82677  starts: b'<!doctyp'
@@ -787,7 +821,7 @@ first lines:
 'Website Usage Warning: Information provided on this website is for general reference and does not provide financial or investment advice that fulfils your personal financial objectives or needs. Please review our legal documentation to ensure you have a comprehensive understanding of all risks invol'
 
 url: https://www.ausglobaluk.com/
-bytes: 185480  starts: b'<!DOCTYP'
+bytes: 185479  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -855,14 +889,14 @@ first lines:
 '\t<meta name="generator" content="Framer 0918601">'
 
 url: https://born2trade.com/
-bytes: 236611  starts: b'<!DOCTYP'
+bytes: 248698  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!-- Last Published: Wed Nov 25 2026 08:01:52 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="born2trade.com" data-wf-page="6ade13998e540fa26396ea1b" data-wf-site="6adb2c1d768ff96c27a35704" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-file'
+'<!DOCTYPE html><!-- Last Published: Fri Nov 27 2026 16:06:00 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="born2trade.com" data-wf-page="6ade13998e540fa26396ea1b" data-wf-site="6adb2c1d768ff96c27a35704" lang="en"><head><meta charset="utf-8"/><link href="https://cdn.prod.website-file'
 '{'
 '  "@context": "https://schema.org",'
 '  "@graph": ['
@@ -872,7 +906,7 @@ first lines:
 '      "name": "Born2trade",'
 
 url: https://www.btcdana.com/
-bytes: 470747  starts: b'<!DOCTYP'
+bytes: 472352  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -883,7 +917,7 @@ first lines:
 '</body></html>'
 
 url: https://www.capitalstreetfx.com/
-bytes: 406859  starts: b'<!DOCTYP'
+bytes: 408561  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -934,7 +968,7 @@ first lines:
 '    (function (document, window) {'
 
 url: https://eurotrader.com/
-bytes: 660931  starts: b'<!DOCTYP'
+bytes: 490430  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1002,7 +1036,7 @@ first lines:
 "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
 
 url: https://finsaitrade.com/
-bytes: 223047  starts: b'<!DOCTYP'
+bytes: 223268  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1019,7 +1053,7 @@ first lines:
 'Broker 2024" loading="lazy" decoding="async" data-nimg="fill" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;object-fit:contain;object-position:center;color:transparent;filter:brightness(0) invert(1)" sizes="(max-width: 768px) 174px, 174px" srcSet="/_next/image?url=%2F'
 
 url: https://www.fintana.com/en/
-bytes: 147557  starts: b'\n<!docty'
+bytes: 147555  starts: b'\n<!docty'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1085,7 +1119,7 @@ first lines:
 ''
 
 url: https://www.fptrading.com/
-bytes: 168454  starts: b'<!doctyp'
+bytes: 173356  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1119,7 +1153,7 @@ first lines:
 "<meta name='robots' content='noindex, nofollow' />"
 
 url: https://gccbrokers.com/en
-bytes: 595820  starts: b'<!DOCTYP'
+bytes: 595847  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1130,8 +1164,25 @@ first lines:
 '$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentN'
 '</body></html>'
 
+url: https://www.giraffemarkets.com/
+bytes: 173052  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html><html lang="en" class="h-full antialiased"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/e8f2fbee2754df70-s.p.0fzkl03jw-sdz.woff2" as="font" crossorigin="" type="font/woff2"/><link rel="p'
+'          @keyframes breathing {'
+'            0%, 100% {'
+'              transform: scale(1);'
+'              opacity: 0.6;'
+'            }'
+'            50% {'
+'              transform: scale(1.15);'
+
 url: https://hmarkets.com/
-bytes: 375377  starts: b'<!DOCTYP'
+bytes: 375375  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1182,7 +1233,7 @@ first lines:
 '\t    \t<!-- responsive meta -->'
 
 url: https://infinox.com/global/en
-bytes: 249860  starts: b'<!DOCTYP'
+bytes: 249846  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1257,7 +1308,7 @@ headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!--jTdr3gmMv_F7_V2pO_Pyd--><html lang="en" dir="ltr" class="__variable_245d8d __variable_d96591"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/27834908180db20f-s.p.woff2" as="font" cross'
+'<!DOCTYPE html><!--96kFn7RCR0hnHRzxdAIsJ--><html lang="en" dir="ltr" class="__variable_245d8d __variable_d96591"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" href="/_next/static/media/27834908180db20f-s.p.woff2" as="font" cross'
 '          iframe#launcher { display: none !important; }'
 ''
 '          /* Scale the Zendesk messaging window to 75% (25% smaller) */'
@@ -1284,7 +1335,7 @@ first lines:
 '    <path d="M19.192 4.453a.75.75 0 0 1 .104.974l-.07.086-6.123 6.529 6.57 6.57a.75.75 0 0 1-.977 1.133l-.084-.073-6.535-6.534-6.53 6.966a.75.75 0 0 1-1.164-.94l.07-.086 6.562-7.002L4.47 5.53a.75.75 0 0 1 .976-1.133l.084.073 6.512 6.511 6.09-6.494a.75.75 0 0 1 1.06-.034z" fill="currentColor"/>'
 
 url: https://lhfx.com/
-bytes: 369600  starts: b'<!DOCTYP'
+bytes: 369342  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1318,7 +1369,7 @@ first lines:
 "if(rh===l.hostname){rh='';}"
 
 url: https://www.mega-fusion.com/
-bytes: 190231  starts: b'\r\n\t<!DOC'
+bytes: 192033  starts: b'\r\n\t<!DOC'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1328,14 +1379,14 @@ first lines:
 ''
 '\t<!DOCTYPE html>\t'
 '\t'
-'\t<html lang="sc" dir="">'
+'\t<html lang="en" dir="">'
 ''
 '\t'
 ''
 '\t<head>'
 
 url: https://mentomarkets.com/
-bytes: 141814  starts: b'<!doctyp'
+bytes: 142053  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1362,7 +1413,7 @@ first lines:
 '<!DOCTYPE html><html data-dpl-id="dpl_CbRi3h2t3dabWBT8BjiK2rZxBuso" lang="en" dir="ltr" class="fontinter_43350688-module__JaqHFa__variable fontlexend_7f464cf-module__09R4ga__variable"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload'
 
 url: https://www.mileleprime.com/platforms
-bytes: 96943  starts: b'<!doctyp'
+bytes: 100066  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1453,7 +1504,7 @@ first lines:
 '<meta charset="UTF-8" />'
 '<meta name="viewport" content="width=device-width, initial-scale=1" />'
 "<link rel='preload' as='font' type='font/woff2' crossorigin='anonymous' id='tinvwl-webfont-font-css' href='https://rg-markets.com/wp-content/plugins/ti-woocommerce-wishlist/assets/fonts/tinvwl-webfont.woff2?ver=xu2uyi' media='all' /> "
-'<link rel="preload" href="https://rg-markets.com/wp-content/cache/fvm/min/0-css273814772ba7ab87a761782c04f62f33b990f50aae59efb1b9a0acd1475d9.css" as="style" media="all" />'
+'<link rel="preload" href="https://rg-markets.com/wp-content/cache/fvm/min/0-css17715e46ba5d5de68f7647014c3e8a6589d1a9a3e0a7aae72e7b6127a8d0b.css" as="style" media="all" />'
 '<script data-cfasync="false">if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]iebrowser/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?iebrowser=1"}el'
 
 url: https://rinxo.com/
@@ -1553,21 +1604,21 @@ first lines:
 '</body></html>'
 
 url: https://srglobalmarkets.com/
-bytes: 304640  starts: b'<!DOCTYP'
+bytes: 33535  starts: b'<!doctyp'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><!--Zl5334yYXRpALRiH8D_WD-->'
-'<html lang="en" class="dark">'
-''
+'<!doctype html>'
+'<html lang="en">'
 '<head>'
-'  <!-- Google Analytics 4 -->'
-'  <script async src="https://www.googletagmanager.com/gtag/js?id=G-14870233072"></script>'
-'  <script>'
-'    window.dataLayer = window.dataLayer || [];'
+'  <meta charset="utf-8" />'
+'  <meta name="viewport" content="width=device-width, initial-scale=1" />'
+'  <title>SR Global Markets — Deep liquidity. Precise execution.</title>'
+'  <meta name="description" content="SR Global Markets is a regulated STP CFD broker. Trade forex, metals, indices, energy and 500+ stocks with spreads from 0.0 pips, leverage up to 1:500 and execution under 0.1s." />'
+'  <link rel="icon" type="image/png" href="assets/favicon.png" />'
 
 url: https://sthirix.com/
 bytes: 93571  starts: b'<!doctyp'
@@ -1604,7 +1655,7 @@ first lines:
 '    <meta name="facebook-domain-verification" content="aqy0hcc8vszxyayr4llmbf1sl2lwr0" />'
 
 url: https://www.upforex.com/
-bytes: 137093  starts: b'<!DOCTYP'
+bytes: 137114  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1621,7 +1672,7 @@ first lines:
 '    <!-- ✅ Meta Description -->'
 
 url: https://vcgmarkets.com/en
-bytes: 441914  starts: b'<!DOCTYP'
+bytes: 444202  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1723,7 +1774,7 @@ first lines:
 '  };'
 
 url: https://www.amillex.com/
-bytes: 460183  starts: b'<!DOCTYP'
+bytes: 459286  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1740,17 +1791,17 @@ first lines:
 '<!-- Search Engine Optimisation by Rank Math - https://rankmath.com/ -->'
 
 url: https://www.arrowtradefx.com/
-bytes: 174835  starts: b'<!DOCTYP'
+bytes: 175106  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
 data rows: 1  kept: 1
 type values: [('', 1)]
 first lines:
-'<!DOCTYPE html><html lang="en" dir="ltr" class="__variable_5e81af __variable_69d019 __variable_ef21aa __variable_7f266f"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/_next/image?url=%2Fbrand%2Fmark-post'
+'<!DOCTYPE html><html lang="en" dir="ltr" class="__variable_5e81af __variable_69d019 __variable_3ab197"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" imageSrcSet="/_next/image?url=%2Fbrand%2Fmark-poster-hero.png&amp;w='
 
 url: https://www.basemarkets.com/
-bytes: 106292  starts: b'<!DOCTYP'
+bytes: 106358  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1763,8 +1814,8 @@ first lines:
 '</style>'
 ''
 '</head><body class="home wp-singular page-template page-template-templates page-template-homepage page-template-templateshomepage-php page page-id-7 wp-embed-responsive wp-theme-blankslate wp-child-theme-blankslate-child-base header-dark browser_unknown page-homepage"><a href="#content" class="skip-'
-'</body></html>'
-'<!--HTML compressed, size saved 21.23%. From 120248 bytes, now 94715 bytes-->'
+'<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement(\'script\');d.innerHTML="window.__CF$cv$params={r:\'a615cd7ea836869a\',t:\'MTc5NTgzMTQ3NA==\'};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new '
+'<!--HTML compressed, size saved 21.22%. From 120314 bytes, now 94781 bytes-->'
 
 url: https://bcm-markets.com/en/
 bytes: 72077  starts: b'<!DOCTYP'
@@ -1835,7 +1886,7 @@ first lines:
 "<meta name='robots' content='noindex, nofollow' />"
 
 url: https://www.elev8.com/
-bytes: 279325  starts: b'<!DOCTYP'
+bytes: 279327  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']
@@ -1953,6 +2004,23 @@ first lines:
 "<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />"
 '<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/86c9643ed6785bf0dd13c0ee/script.js"></script><link rel="alternate" href="https://matchsecurities.com/" hreflang="en" />'
 
+url: https://metadoro.com/
+bytes: 158982  starts: b'<!DOCTYP'
+error: None
+columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
+headers: ['name', 'id', 'website', 'status']
+data rows: 1  kept: 1
+type values: [('', 1)]
+first lines:
+'<!DOCTYPE html>'
+'<html lang="en">'
+'<head>'
+'    <meta charset="UTF-8"/>'
+'    <title>Regulated CFD Trading Platform | Stocks, Crypto & ETFs - Metadoro</title>'
+'    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=no"/>'
+''
+'    <link rel="icon" type="image/png" href="/public/bundles/app/img/favicon/favicon-16x16.png" sizes="16x16">'
+
 url: https://mymaamarkets.com/
 bytes: 581872  starts: b'<!DOCTYP'
 error: None
@@ -1967,7 +2035,7 @@ first lines:
 "      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src="
 "      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
 "      })(window,document,'script','dataLayer','GTM-MNQKCL48');"
-'    </script><script type="49110685553282973d475457-text/javascript">(function(){try{var t=localStorage.getItem(\'theme\');if(t!==\'dark\'&&t!==\'light\'){t=\'light\';}document.documentElement.classList.remove(\'light\',\'dark\');document.documentElement.classList.add(t);}catch(e){}})();</script><script src="/_'
+'    </script><script type="c7f66217019b0e96c65be4e2-text/javascript">(function(){try{var t=localStorage.getItem(\'theme\');if(t!==\'dark\'&&t!==\'light\'){t=\'light\';}document.documentElement.classList.remove(\'light\',\'dark\');document.documentElement.classList.add(t);}catch(e){}})();</script><script src="/_'
 '  relative'
 
 url: https://nuvesto.com/access-restricted/
@@ -2046,7 +2114,7 @@ first lines:
 '<!DOCTYPE html><html data-dpl-id="dpl_CyvBZsmEW4aFKA2PLjeMUGGNXD63" class="min-h-dvh font-sans jH_X6W_variable Ngdv6q_variable ZntnYW_variable _0jD9Na_variable" data-scroll-behavior="smooth" dir="ltr" lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-s'
 
 url: https://www.yubit.com/en-US
-bytes: 461317  starts: b'<!DOCTYP'
+bytes: 462017  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': 'id', 'lei': None, 'city': None, 'date': None, 'status': 'status', 'website': 'website', 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'id', 'website', 'status']

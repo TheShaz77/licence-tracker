@@ -1,10 +1,10 @@
 url: https://fsaseychelles.sc/regulated-entities/capital-markets
-bytes: 1065097  starts: b'\n<!docty'
+bytes: 1067378  starts: b'\n<!docty'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': 'website', 'email': 'email', 'phone': 'phone', 'country': None, 'regulator': None, 'address': 'address', 'end': None, 'exclude': None, 'require': None}
 headers: ['type', 'name', 'address', 'phone', 'email', 'website']
-data rows: 438  kept: 232
-type values: [('securities-dealer', 232), ('securities-dealer-representative', 195), ('investment-advisor-representative', 3), ('securities-exchange', 2), ('securities-facility', 2), ('clearing-agency', 2), ('investment-advisor', 2)]
+data rows: 439  kept: 233
+type values: [('securities-dealer', 233), ('securities-dealer-representative', 195), ('investment-advisor-representative', 3), ('securities-exchange', 2), ('securities-facility', 2), ('clearing-agency', 2), ('investment-advisor', 2)]
 first lines:
 ''
 '<!doctype html>'

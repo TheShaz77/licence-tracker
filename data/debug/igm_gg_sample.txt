@@ -1,5 +1,5 @@
 url: https://www.gamblingcontrol.org/applications-guidance/egambling-licensees
-bytes: 619979  starts: b'<!DOCTYP'
+bytes: 621347  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': 'type', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'type']
@@ -16,17 +16,17 @@ first lines:
 '  <meta name="generator" content="Wix.com Website Builder"/>'
 
 url: https://www.gamblingcontrol.org/temporary-egambling-licensees
-bytes: 550163  starts: b'\n<!DOCTY'
+bytes: 554664  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
 data rows: 0  kept: 0
 type values: []
 first lines:
-''
 '<!DOCTYPE html>'
 '<html lang="en">'
 '<head>'
+'  '
 "  <meta charset='utf-8'>"
 '  <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />'
 '  <meta http-equiv="X-UA-Compatible" content="IE=edge">'

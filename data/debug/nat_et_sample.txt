@@ -1,5 +1,5 @@
 url: https://nbe.gov.et/payment-instrument-issuers-system-operators/
-bytes: 490647  starts: b'<!DOCTYP'
+bytes: 490649  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': 'section', 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name', 'section']
@@ -16,7 +16,7 @@ first lines:
 '<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\\/\\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\\/\\/nbe.gov.et\\/payment-instrument-issuers-system-operators\\/","url":"https:\\/\\/nbe.gov.et\\/payment-instrument-issuers-system-operators\\/","name":"Payment Instru'
 
 url: https://nbe.gov.et/mta/
-bytes: 397934  starts: b'<!DOCTYP'
+bytes: 397936  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'name', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['name']
@@ -33,7 +33,7 @@ first lines:
 '<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\\/\\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\\/\\/nbe.gov.et\\/mta\\/","url":"https:\\/\\/nbe.gov.et\\/mta\\/","name":"MTA - National Bank of Ethiopia","isPartOf":{"@id":"https:\\/\\/nbe.gov.et\\/#website"},"datePubl'
 
 url: https://nbe.gov.et/summary-of-banks-foreign-exchange-related-fees-and-charges/
-bytes: 270677  starts: b'<!DOCTYP'
+bytes: 270679  starts: b'<!DOCTYP'
 error: None
 columns used: {'name': 'Name of Bank', 'type': None, 'id': None, 'lei': None, 'city': None, 'date': None, 'status': None, 'website': None, 'email': None, 'phone': None, 'country': None, 'regulator': None, 'address': None, 'end': None, 'exclude': None, 'require': None}
 headers: ['S/N', 'Name of Bank', 'Fx Related Fees and Charges']
